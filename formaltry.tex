@@ -1,0 +1,110 @@
+\documentclass[math, english, info]{cours}
+
+\def\cont{\Gamma\vdash}
+\def\poulpe{\qquad}
+
+\title{Formalizing Typing Rules for Natural Languages using Effects}
+\author{Matthieu Boyer}
+
+\begin{document}
+\bettertitle
+
+\section{Basic Idea}
+The main idea is that you can consider some words to act as functors, for example determiners: they don't change the way a word acts in a sentence,
+but more the setting in which the word works.
+
+\section{Formally}
+In the next section, we will designate by $\mL$ our language, as a set of words (with their semantics) and syntactic rules to combine them semantically.
+We denote by $\O\left( \mL \right)$ the set of words in the language whose semantic representation is a low-order function and $\mF\left( \mL \right)$ the set of words whose semantic representation is a functor or high-order function.
+In the following, we will consider the different ways we can represent algebraically our typing rules.
+
+\subsection{Polymorphism}
+Let $\mC$ be a closed cartesian category. This represents our main typing system, consisting of words $\O(\mL)$ that can be expressed without effects.
+Remember that $\mC$ contains a terminal object $\bot$ representing the empty type or the lack thereof.
+We can consider $\bar{\mC}$ the category closure of $\mF\left( \mL \right)\left(\O\left( \mL \right)\right)$, that is consisting of all the different type constructors (ergo, functors) that could be formed in the language.
+In that sense, $\bar{\mC}$ is still a closed cartesian category (since all our functors induce isomorphisms on their image)\footnote{We can even close it if we want to.}.
+$\bar{\mC}$ is our typing category.
+
+We consider for our types the quotient set $\star = \mathrm{Obj}\left( \bar{\mC} \right)/\mF\left( \mL \right)$.
+Since $\mF\left( \mL \right)$ does not induce an equivalence relation on $\Obj\left( \bar{\mC} \right)$ but a preorder, we consider the chains obtained by the closure of the relation $x\succeq y \Leftrightarrow \exists F, y = F(x)$ (which is seen as a subtyping relation).
+We also define $\star_{0}$ to be the set obtained when considering types which have not yet been \emph{affected}, that is $\Obj(\mC)$.
+In contexts of polymorphism, we identify $\star_{0}$ to the adequate subset of $\star$.
+
+In this paradigm, constant objects (or results of fully done computations) are functions with type $\bot \to \tau$ which we will denote directly by $\tau \in \star_{0}$.
+
+This leads us to consider functors as polymorphic functions: for a (possibly restrained, though it seems to always be $\star$) set of base types $S$, a functor is a function
+\begin{equation*}
+	x: \tau\in S\subseteq \star \mapsto F x: F\tau
+\end{equation*}
+Remember that $\star$ is a fibration of the types in $\bar{\mC}$.
+This means that if a functor can be applied to a type, it can also be applied to all \emph{affected} versions of that type, i.e. $\mF\left( L \right)(\tau\in \star)$.
+More importantly, while it seems that $F$'s type is the identity on $\star$, the important part is that it changes the effects applied to $x$ (or $\tau$).
+In that sense, $F$ has the following typing judgements:
+\begin{equation*}
+	\frac{\Gamma\vdash x: \tau \in \star_{0}}{\Gamma\vdash F x: F\tau \notin \star_{0}}\fracnotate{$\text{Func}_{0}$} \hspace{2cm} \frac{\Gamma\vdash x: \tau}{\Gamma\vdash Fx : F\tau\preceq \tau}\fracnotate{Func}
+\end{equation*}
+We use the same notation for the \emph{language functor} and the \emph{type functor} in the examples, but it is important to note those are two different objects, although connected.
+
+In the same fashion, we can consider functions (with a non-zero arity) to have a type in $\star$ or more precisely of the form $\star \to \star$ which is a subset of $\star$.
+This explains how functors can act on functions.
+
+In that sense, applicatives and monads only provide with more flexibility on the ways to combine functions:
+they provide intermediate judgements to help with the combination of trees. For example, the multiplication of the monad:
+\begin{equation*}
+	\frac{\Gamma\vdash x: MM\tau}{\Gamma\vdash x: M\tau \preceq MM\tau}\fracnotate{Monad}
+\end{equation*}
+The difference between this judgement and the judgement Func is that here we have equality between the two types $MM\tau$ and $M\tau$.
+
+We could also add judgements for adjunctions, but the most interesting thing is to add judgements for natural transformations.
+While in general we do not want to find natural transformations, we want to be able to express these in two situations:
+\begin{enumerate}
+	\item If we have an adjunction $L\dashv R$, we have natural transformations for $\Id_{\mC} \Rightarrow L \circ R$ and $R\circ L \Rightarrow \Id_{\mC}$.
+	\item Though I don't have an example in the english language yet, there could be words which act as functor modificators or transformations, which will probably be natural.
+		In the event where such transformations exist, we will be able to express them easily.
+\end{enumerate}
+
+
+To complete this section, let's look at a simple list of different typing composition judgements through which we also re-derive the subtyping judgement to allow for its implementation.
+\begin{table}
+\begin{align*}
+	\forall F \in \mF\left( \mL \right),\poulpe
+	\frac{\cont x: \tau \poulpe \cont F: S\subseteq \star \poulpe \overbrace{\tau \in S}^{\exists \tau'\in S, \tau \preceq \tau'}}{\cont Fx: F\tau \preceq \tau}\fracnotate{Cons}\\
+	\frac{\cont x: \tau \poulpe \tau \in \star_{0}}{\cont Fx: F\tau \notin \star_{0}}\fracnotate{$FT_{0}$}\\
+	\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}\\
+	\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}
+\end{align*}
+
+\begin{align*}
+	\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}}\\
+	\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right) = A\tau_{1} \to A\tau_{2}}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}}
+\end{align*}
+
+\begin{align*}
+	\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}
+\end{align*}
+\begin{align*}
+	\forall F \overset{\theta}{\Longrightarrow} G,\poulpe \frac{\cont F: S\subseteq \star \poulpe \cont x: \tau \in S \cap S' \poulpe \cont G: S' \subseteq \star \poulpe \cont \phi: \tau \to \tau'}{\cont F\phi Fx = F\left( \phi x \right): G\tau'}\fracnotate{\texttt{nat}}
+\end{align*}
+
+\caption{Typing and Subtyping Judgements}
+\end{table}
+Note that here, the syntax is not taken into account: a function is always written left of its arguments, whether or not they are actually in that order in the sentence.
+This issue will be resolved by giving the syntactic tree of the sentence (or infering it at runtime).
+
+\subsection{Product Category (and a bit of polymorphism)}
+Another way to start would be to consider product categories: one for the main type system and one for the effects.
+Let $\mC_{0}$ be a closed cartesian category representing our main type system.
+Here we again consider constants and full computations as functions $\bot \to \tau$ or $\tau \in \mathrm{Obj}\left( \mC_{0} \right)$.
+Now, to type functions and functors, we need to consider a second category:
+We consider $\mC_{1}$ the category representing the free monoid on $\mF\left( \mL \right)$.
+Monads and Applicatives will generate relations in that monoid.
+To ease notation we will denote \emph{functor types} in $\mC_{1}$ as lists written with head on the left.
+
+Finally, let $\mC = \mC_{0} \times \mC_{1}$ be the product category. This will be our typing category.
+This means that the real type of objects will be $\left( \bot \to \tau, [] \right)$, which we will still denote by $\tau$.
+We will denote by $F_{n} \cdots F_{0} \tau$ the type of an object, as if it were a composition of functions\footnote{It is!}.
+
+In that paradigm, functors simply append to the head of the \emph{functor type} (with the same possible restrictions as before, though I do not see what they would be needed for) while functions will take a polymorphic form:
+$x: L\tau_{1} \mapsto \phi x: L\tau_{2}$ and $\phi$'s type can be written as $\star\tau_{1} \to \star\tau_{2}$.
+
+\end{document}

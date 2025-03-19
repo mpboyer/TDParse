@@ -52,7 +52,7 @@ openEval eval e s = case (e, s) of
   (,) (Fst (ev -> t))           _      -> unwind ev (Fst t) s
   (,) (Snd (ev -> Pair _ t2))   _      -> eval t2 s -- or here
   (,) (Snd (ev -> t))           _      -> unwind ev (Snd t) s
-  (,) (Set t1 t2)               []     -> Set (ev t1) (ev t2) 
+  (,) (Set t1 t2)               []     -> Set (ev t1) (ev t2)
   (,) (Set _  _ )               (a:_)  -> error ("trying to apply a set: "
                                                  ++ showTerm e ++ " to " ++ showTerm a)
   (,) (Dom (ev -> Set t1 _))    []     -> ev t1 -- or here
@@ -105,23 +105,22 @@ openFinal eval e s = case (e, s) of
 unwind _ t [] = t
 unwind f t (t1:rest) = unwind f (t `App` f t1) rest
 
-rewind t [] = t
-rewind t (v1:rest) = (Lam v1 (rewind t rest))
+rewind = foldr Lam
 
 unrollDom eval e@(Set dom rng) vs =
   let vars' = enoughVars dom vs
       occs = map (\s -> (occurs e s, s)) vars'
-      vars = map (\((f,v'),s) -> if f then bump_color v' s else s) occs
+      vars = map (\((f,v'),s) -> if f then bumpColor v' s else s) occs
       getvar (v:vs) = (Var v, vs)
       getvar [] = error "could not getvar while unrolling dom"
       go t vs apps = let (v, rest) = getvar vs in
         case t of
           Pair t1 t2 -> Pair (eval $ unwind eval t1 apps) (go t2 rest (v:apps))
-          _          -> (eval $ unwind eval t apps)
+          _          -> eval $ unwind eval t apps
    in (go dom vars [], vars)
 unrollDom _ e _ = error ("trying to unroll dom with: " ++ show e)
 
-rerollDom d d' vs = go (linearize d d') [] vs
+rerollDom d d' = go (linearize d d') []
   where
     linearize (Pair d0 d1) d = Pair d0 (linearize d1 d)
     linearize t d = Pair t d
@@ -130,17 +129,17 @@ rerollDom d d' vs = go (linearize d d') [] vs
     go t use _                    = rewind t use
 
 tuple [] = error "not enough vars"
-tuple (v:[]) = v
+tuple [v] = v
 tuple (v:vs)  = Pair v (tuple vs)
 
-varStock = map (VC 0) $ "s":"t":"u":"v":"w":"a":"b":"c":[]
+varStock = map (VC 0) ["s", "t", "u", "v", "w", "a", "b", "c"]
 
 enoughVars :: Term -> [VarName] -> [VarName]
-enoughVars t vs = go t vs
+enoughVars = go
   where
     go t [] = error "exceeded variable stock"
     go (Pair t1 t2) (v:vars) = v : go t2 vars
-    go _ (v:vars) = v:[]
+    go _ (v:vars) = [v]
 
 
 subst t@(Con s) _ _ = t
@@ -157,27 +156,27 @@ subst (App t1 t2) v st = App (subst t1 v st) (subst t2 v st)
 subst (Cct s) v st = Cct (subst s v st)
 subst (Spl n s) v st = Spl n (subst s v st)
 subst t@(Lam x _) v _ | v == x  = t
-subst (Lam x body) v st = (Lam x' (subst body' v st))
+subst (Lam x body) v st = Lam x' (subst body' v st)
   where
     (f,x_occur_st) = occurs st x
     (x',body') =
       if f
-        then let x_uniq_st_v       = bump_color' (bump_color x x_occur_st) v
+        then let x_uniq_st_v       = bumpColor' (bumpColor x x_occur_st) v
                  (bf,x_occur_body) = occurs body x_uniq_st_v
                  x_unique =
-                   if bf then bump_color x_uniq_st_v x_occur_body else x_uniq_st_v
+                   if bf then bumpColor x_uniq_st_v x_occur_body else x_uniq_st_v
              -- in (x_unique,subst body x (Var x'))
               in (x_unique,subst body x (Var x_unique))
      else (x,body)
 
-bump_color (VC color name) (VC color' _) =
-  (VC ((max color color')+1) name)
-bump_color' v1@(VC _ name) v2@(VC _ name') =
-  if name==name' then bump_color v1 v2 else v1
+bumpColor (VC color name) (VC color' _) =
+  VC (max color color' + 1) name
+bumpColor' v1@(VC _ name) v2@(VC _ name') =
+  if name==name' then bumpColor v1 v2 else v1
 
 occurs (Con s) v = (False, v)
 occurs (Var v'@(VC c' name')) v@(VC c name)
-  | not (name == name')  = (False, v)
+  | name /= name'  = (False, v)
   | c == c'              = (True, v)
   | otherwise            = (False,v')
 occurs (App t1 t2) v =
@@ -566,4 +565,3 @@ mweval_tests = and [
 
 all_tests = and [ free_var_tests, alpha_comparison_tests,
                   subst_tests, eval_tests, mweval_tests ]
-

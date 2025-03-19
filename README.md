@@ -4,6 +4,8 @@ Type-driven syntactic and semantic effectful parsing for natural language.
 $ ghci TDDemo.hs
 ```
 
+Fork from Dylan Bumford and Simon Charlow's work.
+
 Handles functors, applicatives, monads, adjoints, and commutative effects.
 Currently supports Reader for anaphora and context-sensitivity, various
 Writer's for not-at-issue content and dref introduction, List/Set for
