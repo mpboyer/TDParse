@@ -1,0 +1,32 @@
+\begin{thebibliography}{MZ15}
+
+\bibitem[BC]{bumfordEffectdrivenInterpretation}
+Dylan Bumford and Simon Charlow.
+\newblock Effect-driven interpretation.
+
+\bibitem[BP14]{bauerEffectSystemAlgebraic2014}
+Andrej Bauer and Matija Pretnar.
+\newblock An {{Effect System}} for {{Algebraic Effects}} and {{Handlers}}.
+\newblock {\em Logical Methods in Computer Science}, Volume 10, Issue 4,
+  December 2014.
+
+\bibitem[MZ15]{melliesFunctorsAreType2015}
+Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger.
+\newblock Functors are {{Type Refinement Systems}}.
+\newblock In {\em Proceedings of the 42nd {{Annual ACM SIGPLAN-SIGACT
+  Symposium}} on {{Principles}} of {{Programming Languages}}}, pages 3--16,
+  Mumbai India, January 2015. ACM.
+
+\bibitem[Par]{parteeLecture2Lambda}
+B~Partee.
+\newblock Lecture 2. {{Lambda}} abstraction, {{NP}} semantics, and a
+  {{Fragment}} of {{English}}.
+\newblock {\em Formal Semantics}.
+
+\bibitem[PP13]{plotkinHandlingAlgebraicEffects2013}
+Gordon~D. Plotkin and Matija Pretnar.
+\newblock Handling {{Algebraic Effects}}.
+\newblock {\em Logical Methods in Computer Science}, Volume 9, Issue 4,
+  December 2013.
+
+\end{thebibliography}

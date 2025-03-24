@@ -1,0 +1,326 @@
+\documentclass[math, english, info]{cours}
+
+\def\cont{\Gamma\vdash}
+\def\poulpe{\qquad}
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\section{\bibname}
+      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
+\makeatletter
+\def\black@or@white#1#2{%
+  \@tempdima#2 pt
+  \ifdim\@tempdima>0.5 pt
+    \definecolor{temp@c}{gray}{0}%
+  \else
+    \definecolor{temp@c}{gray}{1}%
+  \fi}
+\def\letterbox#1#{\protect\letterb@x{#1}}
+\def\letterb@x#1#2#3{%
+  \colorlet{temp@c}[gray]{#2}%
+  \extractcolorspec{temp@c}{\color@spec}%
+  \expandafter\black@or@white\color@spec
+  {\color#1{temp@c}\tallcbox#1{#2}{#3}}}
+\def\tallcbox#1#{\protect\color@box{#1}}
+\def\color@box#1#2{\color@b@x\relax{\color#1{#2}}}
+\long\def\color@b@x#1#2#3%
+ {\leavevmode
+  \setbox\z@\hbox{{\set@color#3}}%
+  \ht\z@\ht\strutbox
+  \dp\z@\dp\strutbox
+  {#1{#2\color@block{\wd\z@}{\ht\z@}{\dp\z@}\box\z@}}}
+\makeatother
+
+\contourlength{0.005em}
+\def\backbox#1{\letterbox{Lavender!40}{\contour{black}{#1}}}
+
+\def\ty#1{\backbox{\tt\color{yulm!90!black}#1}}
+\def\f#1{\backbox{\tt\color{vulm}#1}}
+\def\w#1{\mathbf{#1}\,}
+
+\def\e{\ty{e}}
+\def\t{\ty{t}}
+\def\r{\ty{r}}
+
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{L}{>{$}l<{$}}
+\def\fmap{\texttt{fmap}}
+
+
+\makeatletter
+\newcommand{\@word}[4][]{%
+#2 & #3 & #4\\
+\ifx&#1&%
+	%
+\else
+&\multicolumn{2}{l}{Similar to: \textbf{#1}}\\%
+\fi%
+	\rule{0pt}{14pt}
+}
+\def\word#1#2#3#4{\@word[#4]{#1}{#2}{#3}}
+\makeatother
+
+
+\title{Formalizing Typing Rules for Natural Languages using Effects}
+\author{Matthieu Boyer}
+
+\begin{document}
+\bettertitle
+
+\begin{abstract}
+The main idea is that you can consider some words to act as functors, for example determiners: they don't change the way a word acts in a sentence,
+but more the setting in which the word works.
+This document is based on \cite{bumfordEffectdrivenInterpretation}.
+\end{abstract}
+
+\section*{Introduction}
+J'ai rien à dire maaaaaais.
+
+\section{Typing System}
+In this section, we will designate by $\mL$ our language, as a set of words (with their semantics) and syntactic rules to combine them semantically.
+We denote by $\O\left( \mL \right)$ the set of words in the language whose semantic representation is a low-order function and $\mF\left( \mL \right)$ the set of words whose semantic representation is a functor or high-order function.
+
+\subsection{Typing Category}
+\subsubsection{Types}
+Let $\mC$ be a closed cartesian category. This represents our main typing system, consisting of words $\O(\mL)$ that can be expressed without effects.
+Remember that $\mC$ contains a terminal object $\bot$ representing the empty type or the lack thereof.
+We can consider $\bar{\mC}$ the category closure of $\mF\left( \mL \right)\left(\O\left( \mL \right)\right)$, that is consisting of all the different type constructors (ergo, functors) that could be formed in the language.
+In that sense, $\bar{\mC}$ is still a closed cartesian category (since all our functors induce isomorphisms on their image)\footnote{We can even close it if we want to.}.
+$\bar{\mC}$ is our typing category.
+
+We consider for our types the quotient set $\star = \mathrm{Obj}\left( \bar{\mC} \right)/\mF\left( \mL \right)$.
+Since $\mF\left( \mL \right)$ does not induce an equivalence relation on $\Obj\left( \bar{\mC} \right)$ but a preorder, we consider the chains obtained by the closure of the relation $x\succeq y \Leftrightarrow \exists F, y = F(x)$ (which is seen as a subtyping relation as proposed in \cite{melliesFunctorsAreType2015}).
+We also define $\star_{0}$ to be the set obtained when considering types which have not yet been \emph{affected}, that is $\Obj(\mC)$.
+In contexts of polymorphism, we identify $\star_{0}$ to the adequate subset of $\star$.
+
+In this paradigm, constant objects (or results of fully done computations) are functions with type $\bot \to \tau$ which we will denote directly by $\tau \in \star_{0}$.
+
+\subsubsection{Functors, Applicatives and Monads}
+This leads us to consider functors as polymorphic functions: for a (possibly restrained, though it seems to always be $\star$) set of base types $S$, a functor is a function
+\begin{equation*}
+	x: \tau\in S\subseteq \star \mapsto F x: F\tau
+\end{equation*}
+Remember that $\star$ is a fibration of the types in $\bar{\mC}$.
+This means that if a functor can be applied to a type, it can also be applied to all \emph{affected} versions of that type, i.e. $\mF\left( L \right)(\tau\in \star)$.
+More importantly, while it seems that $F$'s type is the identity on $\star$, the important part is that it changes the effects applied to $x$ (or $\tau$).
+In that sense, $F$ has the following typing judgements:
+\begin{equation*}
+	\frac{\Gamma\vdash x: \tau \in \star_{0}}{\Gamma\vdash F x: F\tau \notin \star_{0}}\fracnotate{$\text{Func}_{0}$} \hspace{2cm} \frac{\Gamma\vdash x: \tau}{\Gamma\vdash Fx : F\tau\preceq \tau}\fracnotate{Func}
+\end{equation*}
+We use the same notation for the \emph{language functor} and the \emph{type functor} in the examples, but it is important to note those are two different objects, although connected.
+
+In the same fashion, we can consider functions (with a non-zero arity) to have a type in $\star$ or more precisely of the form $\star \to \star$ which is a subset of $\star$.
+This explains how functors can act on functions.
+
+In that sense, applicatives and monads only provide with more flexibility on the ways to combine functions:
+they provide intermediate judgements to help with the combination of trees. For example, the multiplication of the monad:
+\begin{equation*}
+	\frac{\Gamma\vdash x: MM\tau}{\Gamma\vdash x: M\tau \preceq MM\tau}\fracnotate{Monad}
+\end{equation*}
+The difference between this judgement and the judgement Func is that here we have equality between the two types $MM\tau$ and $M\tau$.
+
+\subsubsection{Natural Transformations for Handlers}
+We could also add judgements for adjunctions, but the most interesting thing is to add judgements for natural transformations.
+While in general we do not want to find natural transformations, we want to be able to express these in two situations:
+\begin{enumerate}
+	\item If we have an adjunction $L\dashv R$, we have natural transformations for $\Id_{\mC} \Rightarrow L \circ R$ and $R\circ L \Rightarrow \Id_{\mC}$.
+	\item Though I don't have an example in the english language yet, there could be words which act as functor modificators or transformations, which will probably be natural.
+		In the event where such transformations exist, we will be able to express them easily.
+\end{enumerate}
+To see why we want this rule, which is a larger version of the monad multiplication and the monad/applicative unit, it suffices to see that the diagram below provides a way to construct the ``correct function'' on the ``correct functor'' side of types. If we have a natural transformation \begin{tikzcd}
+	F\ar[r, Rightarrow, "\theta"] & G
+\end{tikzcd} then for all arrows $f: \tau_{1} \to \tau_{2}$ we have:
+\begin{category}
+	F\tau_{1}\ar[r, "Ff"]\ar[d, "\theta_{\tau_{1}}"'] & F\tau_{2}\ar[d, "\theta_{\tau_{2}}"]\\
+	G\tau_{1}\ar[r, "Gf"] & G\tau_{2}
+\end{category}
+and this implies, from it being true for all arrows, that from $\cont x: F\tau$ we have an easy construct to show $\cont x: G\tau$.
+This could also give us a way to construct handlers for our effects as per \cite{bauerEffectSystemAlgebraic2014} or \cite{plotkinHandlingAlgebraicEffects2013}.
+
+\subsubsection{Natural Transformations for Higher-Order Constructs}
+We might want to add plurals, superlatives, tenses, aspects and other similar constructs which act as function modificators.
+For each of these, we give a functor $\Pi$ corresponding to a new class of types along with natural transformations for all other functors $F$ from $F$ to $\Pi \circ F$ and $F\circ \Pi$ as well as from $\Pi \circ F$ to $F\circ \Pi$ which should be defined in a similar way for all functors.
+This allows us to add complexity not in the compositional aspects but in the lexicon aspects.
+We do not want these functors to be applicatives, as we do not want a way to \emph{create} them in the parser if they are not marked in the sentence.
+
+One of the main issues with this is the following:
+In the English language, plural is marked on all words (except verbs, and even then case could be made for it to be marked),
+while future is marked only on verbs (through the \textit{will + verb} construct which creates a ``\emph{new}'' verb in a sense) though it applies also to the arguments on the verb.
+A way to solve this would be to include in the natural transformations rules to propagate the functor depending on the type of the object.
+Consider the superlative effect \textbf{most}\footnote{We do not care about morphological markings here, we say that $\mathbf{largest} = \mathbf{most} \circ \mathbf{large}$}.
+As it can only be applied on adjectives, we can assume its argument is a function (but the definition would hold anyway taking $\tau_{1} = \bot$).
+It is associated with the following function (which is a rewriting of the natural transformation rule):
+\begin{equation*}
+	\frac{\cont x: \tau_{1} \to \tau_{2}}{\cont \mathbf{most}\, x \coloneqq \Pi_{\tau_{2}} \circ x = x \circ \Pi_{\tau_{1}}}
+\end{equation*}
+What curryfication implies, is that higher-order constructs can be passed down to the arguments of the functions they are applied to, explaining how we can reconciliate the following semantic equation even if some of the words are not marked properly:
+\begin{equation*}
+	\bf future\left(be\left( I, a\ cat \right)\right) = will\ be\left( future\left( I \right), a\ cat \right) = be\left( future\left( I \right), a\ cat \right)
+\end{equation*}
+Indeed the above equation could be simply written by our natural transformation rule as:
+\begin{equation*}
+	\bf future\left( be \right)\left( arg_{1}, arg_{2} \right) = future\left( be \right)\left( arg_{2} \right)\left( future\left( arg_{1} \right) \right) =
+\end{equation*}
+
+\subsection{Typing Judgements}
+To complete this section, let's look at a simple list of different typing composition judgements through which we also re-derive the subtyping judgement to allow for its implementation.
+\begin{table}
+\begin{align*}
+	\forall F \in \mF\left( \mL \right),\poulpe
+	\frac{\cont x: \tau \poulpe \cont F: S\subseteq \star \poulpe \overbrace{\tau \in S}^{\exists \tau'\in S, \tau \preceq \tau'}}{\cont Fx: F\tau \preceq \tau}\fracnotate{Cons}\\
+	\frac{\cont x: \tau \poulpe \tau \in \star_{0}}{\cont Fx: F\tau \notin \star_{0}}\fracnotate{$FT_{0}$}\\
+	\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}\\
+	\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}
+\end{align*}
+
+\begin{align*}
+	\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}}\\
+	\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right) = A\tau_{1} \to A\tau_{2}}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}}
+\end{align*}
+
+\begin{align*}
+	\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}
+\end{align*}
+\begin{align*}
+	\forall F \overset{\theta}{\Longrightarrow} G,\poulpe \frac{\cont x: F\tau \poulpe \cont G: S' \subseteq \star \poulpe \tau \in S'}{\cont x : G\tau}\fracnotate{\texttt{nat}}
+\end{align*}
+
+\caption{Typing and Subtyping Judgements}
+\end{table}
+Note that here, the syntax is not taken into account: a function is always written left of its arguments, whether or not they are actually in that order in the sentence.
+This issue will be resolved by giving the syntactic tree of the sentence (or infering it at runtime).
+We could also add symmetry induced rules for application.
+
+
+\section{Language Translation}
+In this section we will give a list of words along with a way to express them as either arrows or endo-functors of our typing category.
+This will also give a set of functors and constructs in our language.
+
+\subsection{Types of Syntax}
+For syntactic categories, the types that are generally used are the following, and we will see it matches with our lexicon, and simplifies our functorial definitions\footnote{We don't consider effects in the given typings.}.
+Those are based on \cite{parteeLecture2Lambda}. Here $\Upsilon$ is the operator which retrieves the type from a certain syntactic category.
+\begin{table}[H]
+	\centering
+	\begin{minipage}{.7\textwidth}
+\begin{multicols}{2}
+\begin{description}
+	\item[S] $\t$
+	\item[CN(P)] $\e\to \t$
+	\item[ProperN] $\e$
+	\item[NP] Either:
+		\begin{description}
+			\item[$\e$] \textsl{John, a cat}
+			\item[$\left(\e\to\t\right) \to \t$] \textsl{the cat, every man}
+		\end{description}
+	\item[DET] $\Upsilon\left( \mathbf{CN} \right) \to \Upsilon\left( \mathbf{NP} \right)$
+	\item[ADJ(P)] Either:
+		\begin{description}
+			\item[$\left( \e \to \t \right)$] \textsl{carnivorous, happy}
+			\item[$\left( \e \to \t \right) \to \left( \e \to \t \right)$] \textsl{skillful}
+		\end{description}
+	\item[REL] $\e \to \t$
+	\item[VP, IV(P)] $\e \to \t$
+	\item[TV(P)] $\Upsilon\left( \mathbf{NP} \right) \to \Upsilon\left( \mathbf{VP }\right)$
+	\item[\it is] $\left( \e \to \t \right) \to \e \to \t$
+\end{description}
+\end{multicols}
+\end{minipage}
+\caption{Usual Typings for some Syntactic Categories}
+\label{tab:sctypes}
+\end{table}
+\subsection{Lexicon: Semantic Denotations for Words}
+Many words will have basically the same ``high-level'' denotation.
+For example, the denotation for most common nouns will be of the form: $\cont \lambda x. \mathbf{planet} x: \e \to \t$.
+In Table \ref{tab:lexicon} we give a lexicon for a subset of the english language.
+We describe the constructor for the functors used by our denotations in the table, but all functors will be reminded and properly defined in Table \ref{tab:functors} along with their respective \fmap.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{>{\bf}LLL}
+		Expression & \rm Type & \lambda\text{-Term}\\
+		\midrule
+		\word{planet}{\e\to\t}{\lambda x. \w{planet} x}{dog, cat, chair\ldots}
+		\word{she}{\e\to\e}{\lambda x. x}{}
+		\word{which}{\left( \e \to \t \right)\to \f{S}\e}{\lambda p. \left\{x \mid px\right\}}{}
+		\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p = \{x\} \text{ else } \#}{}
+		\word{no}{\left( \e \to \t \right) \to \f{C}\e}{\lambda p. \lambda c. \lnot \exists x. p x \land c\, x}{}
+		\word{a}{\left( \e \to \t \right) \to \f{D}\e}{\lambda s. \left\{ \scalar{x, x + s}\suchthat p x\right\}}{}
+		\word{it}{\left( \bot \to \f{G}\e \right)}{\lambda g. g_{0}}{}
+	\end{tabular}
+	\caption{$\lambda$-calculus representation of the english language $\mL$}
+	\label{tab:lexicon}
+\end{table}
+
+For most of the applicatives/monads in Table \ref{tab:functors} we do not specify the unit and multiplication functions, as they are quite usual examples.
+We still provide the \fmap{} for good measure.
+
+\begin{table}[H]
+	\centering
+	\def\arraystretch{1.3}
+	\begin{NiceTabular}{CLLc}
+		\rm Functor & \rm Constructor & \fmap & Typeclass\\
+		\f{G} & \f{G}\left( \tau \right) = \r \to \tau & \f{G}\phi\left( x \right) = \lambda r. \phi \left(x r\right) & Monad\\
+		\f{W} & \f{W}\left( \tau \right) = \tau \times \t & \f{W}\phi\left( \left( a, p \right) \right) = \left( \phi a, p \right) & Monad\\
+		\f{S} & \f{S}\left( \tau \right) = \{ \tau \} & \f{S}\phi\left( \left\{ x \right\} \right) = \left\{ \phi(x) \right\} & Monad\\
+		\f{M} & \f{M}\left( \tau \right) = \tau + \bot & \f{M}\phi\left( x \right) = \begin{cases}
+			\phi\left( x \right) & \text{if } \cont x: \tau\\
+			\# & \text{if } \cont x: \#
+	\end{cases}& Monad\\
+		\f{C} & \f{C}\left( \tau \right) = \left( \tau \to \t \right) \to \t & \f{C}\phi\left( x \right) = \lambda c. x\left( \lambda a. c \left( \phi a \right) \right) & Monad\\
+		\CodeAfter
+		\begin{tikzpicture}
+			\foreach\r in {2,3,...,6} {%
+				\draw (1|-\r) -- (5|-\r);
+			}
+		\end{tikzpicture}
+	\end{NiceTabular}
+	\caption{Denotations for the functors used}
+	\label{tab:functors}
+\end{table}
+
+Let us explain a few of those functors: $\f G$ designates reading from a certain environment of type $\r$ while $\f W$ encodes the possibility of logging a message of type $\t$ along with the expression.
+The functor $\f M$ describes the possibility for a computation to fail, for example when retrieving a value that does not exist (see $\w{the}$).
+
+
+
+\appendix
+\section{Other Considered Things}
+\subsection{Typing with a Product Category (and a bit of polymorphism)}
+Another way to start would be to consider product categories: one for the main type system and one for the effects.
+Let $\mC_{0}$ be a closed cartesian category representing our main type system.
+Here we again consider constants and full computations as functions $\bot \to \tau$ or $\tau \in \mathrm{Obj}\left( \mC_{0} \right)$.
+Now, to type functions and functors, we need to consider a second category:
+We consider $\mC_{1}$ the category representing the free monoid on $\mF\left( \mL \right)$.
+Monads and Applicatives will generate relations in that monoid.
+To ease notation we will denote \emph{functor types} in $\mC_{1}$ as lists written with head on the left.
+
+Finally, let $\mC = \mC_{0} \times \mC_{1}$ be the product category. This will be our typing category.
+This means that the real type of objects will be $\left( \bot \to \tau, [] \right)$, which we will still denote by $\tau$.
+We will denote by $F_{n} \cdots F_{0} \tau$ the type of an object, as if it were a composition of functions\footnote{It is!}.
+
+In that paradigm, functors simply append to the head of the \emph{functor type} (with the same possible restrictions as before, though I do not see what they would be needed for) while functions will take a polymorphic form:
+$x: L\tau_{1} \mapsto \phi x: L\tau_{2}$ and $\phi$'s type can be written as $\star\tau_{1} \to \star\tau_{2}$.
+
+
+\bibliographystyle{alpha}
+\bibliography{tdparse.bib}
+
+
+\end{document}
