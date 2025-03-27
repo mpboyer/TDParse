@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Bauer and Pretnar(2014)}]{bauerEffectSystemAlgebraic2014}
@@ -21,6 +21,11 @@ Irene Heim and Angelika Kratzer. 1998.
 \newblock \emph{Semantics in Generative Grammar}.
 \newblock Number~13 in Blackwell Textbooks in Linguistics. Blackwell, Malden,
   MA.
+
+\bibitem[{Mar{\v s}{\'i}k and Amblard()}]{marsikAlgebraicEffectsHandlers}
+Ji{\v r}{\'i} Mar{\v s}{\'i}k and Maxime Amblard.
+\newblock Algebraic {{Effects}} and {{Handlers}} in {{Natural Language
+  Interpretation}}.
 
 \bibitem[{Melli{\`e}s and Zeilberger(2015)}]{melliesFunctorsAreType2015}
 Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger. 2015.
@@ -49,5 +54,27 @@ Gordon~D. Plotkin and Matija Pretnar. 2013.
 \newblock \href {https://doi.org/10.2168/LMCS-9(4:23)2013} {Handling
   {{Algebraic Effects}}}.
 \newblock \emph{Logical Methods in Computer Science}, Volume 9, Issue 4.
+
+\bibitem[{{van den Berg} and
+  Schrijvers(2024)}]{vandenbergFrameworkHigherorderEffects2024}
+Birthe {van den Berg} and Tom Schrijvers. 2024.
+\newblock \href {https://doi.org/10.1016/j.scico.2024.103086} {A framework for
+  higher-order effects \& handlers}.
+\newblock \emph{Science of Computer Programming}, 234:103086.
+
+\bibitem[{Wadler(1989)}]{wadlerTheoremsFree1989}
+Philip Wadler. 1989.
+\newblock \href {https://doi.org/10.1145/99370.99404} {Theorems for free!}
+\newblock In \emph{Proceedings of the Fourth International Conference on
+  {{Functional}} Programming Languages and Computer Architecture}, {{FPCA}}
+  '89, pages 347--359, New York, NY, USA. Association for Computing Machinery.
+
+\bibitem[{Wu et~al.(2014)Wu, Schrijvers, and Hinze}]{wuEffectHandlersScope2014}
+Nicolas Wu, Tom Schrijvers, and Ralf Hinze. 2014.
+\newblock \href {https://doi.org/10.1145/2633357.2633358} {Effect handlers in
+  scope}.
+\newblock In \emph{Proceedings of the 2014 {{ACM SIGPLAN}} Symposium on
+  {{Haskell}}}, Haskell '14, pages 1--12, New York, NY, USA. Association for
+  Computing Machinery.
 
 \end{thebibliography}

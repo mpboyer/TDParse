@@ -112,6 +112,18 @@
   file = {/home/matthieu/Zotero/storage/28HCNCED/12552561.html}
 }
 
+@misc{grodinPolymorphicEffectHandlers2024,
+  title = {Poly-Morphic Effect Handlers},
+  author = {Grodin, Harrison and Spivak, David},
+  year = {2024},
+  month = jan,
+  journal = {Topos Institute},
+  urldate = {2025-03-27},
+  abstract = {In computer science, programmers often perform effects to interact with the surrounding environment. For example, a program may print strings or interact with mutable state. Then, effects may be handled, implemented in terms of other effects. In this post, we reconstruct a categorical semantics for programs with effects, and we isolate a class of composable effect handlers that may be concisely described in the language of polynomial functors, the free monad monad, and the Grothendieck construction.},
+  howpublished = {https://topos.institute/blog/2024-01-03-algebraic-effect-handlers/},
+  langid = {english}
+}
+
 @book{heimSemanticsGenerativeGrammar1998,
   title = {Semantics in Generative Grammar},
   author = {Heim, Irene and Kratzer, Angelika},
@@ -125,6 +137,14 @@
   lccn = {P325.5.G45 H45 1998},
   keywords = {Generative grammar,Semantics},
   file = {/home/matthieu/Zotero/storage/LUU4QX72/Heim et Kratzer - 1998 - Semantics in generative grammar.pdf}
+}
+
+@article{marsikAlgebraicEffectsHandlers,
+  title = {Algebraic {{Effects}} and {{Handlers}} in {{Natural Language Interpretation}}},
+  author = {Mar{\v s}{\'i}k, Ji{\v r}{\'i} and Amblard, Maxime},
+  abstract = {Phenomena on the syntax-semantics interface of natural languages have been observed to have links with programming language semantics, namely computational effects and evaluation order. We explore this connection to be able to profit from recent development in the study of effects. We propose adopting algebraic effects and handlers as tools for facilitating a uniform and integrated treatment of different non-compositional phenomena on the syntax-semantics interface.},
+  langid = {english},
+  file = {/home/matthieu/Zotero/storage/HN2B2R2Q/Maršík et Amblard - Algebraic Effects and Handlers in Natural Language.pdf}
 }
 
 @inproceedings{melliesFunctorsAreType2015,
@@ -165,6 +185,23 @@
   isbn = {978-0-8186-1954-0},
   langid = {english},
   file = {/home/matthieu/Zotero/storage/XGQYMUFX/Moggi - 1989 - Computational lambda-calculus and monads.pdf}
+}
+
+@article{moggiNotionsComputationMonads1991,
+  title = {Notions of Computation and Monads},
+  author = {Moggi, Eugenio},
+  year = {1991},
+  month = jul,
+  journal = {Information and Computation},
+  series = {Selections from 1989 {{IEEE Symposium}} on {{Logic}} in {{Computer Science}}},
+  volume = {93},
+  number = {1},
+  pages = {55--92},
+  issn = {0890-5401},
+  doi = {10.1016/0890-5401(91)90052-4},
+  urldate = {2025-03-27},
+  abstract = {The {$\lambda$}-calculus is considered a useful mathematical tool in the study of programming languages, since programs can be identified with {$\lambda$}-terms. However, if one goes further and uses {$\beta\eta$}-conversion to prove equivalence of programs, then a gross simplification is introduced (programs are identified with total functions from values to values) that may jeopardise the applicability of theoretical results. In this paper we introduce calculi, based on a categorical semantics for computations, that provide a correct basis for proving equivalence of programs for a wide range of notions of computation.},
+  file = {/home/matthieu/Zotero/storage/4SZ4JAH5/0890540191900524.html}
 }
 
 @misc{MonadsEffects,
@@ -216,6 +253,22 @@
   journal = {Formal Semantics},
   langid = {english},
   file = {/home/matthieu/Zotero/storage/BLXAQ26Q/Partee - Lecture 2. Lambda abstraction, NP semantics, and a.pdf}
+}
+
+@article{pietersGeneralizedMonoidalEffects2020,
+  title = {Generalized Monoidal Effects and Handlers},
+  author = {Pieters, Ruben P. and Rivas, Exequiel and Schrijvers, Tom},
+  year = {2020},
+  month = jan,
+  journal = {Journal of Functional Programming},
+  volume = {30},
+  pages = {e23},
+  issn = {0956-7968, 1469-7653},
+  doi = {10.1017/S0956796820000106},
+  urldate = {2025-03-27},
+  abstract = {Algebraic effects and handlers are a convenient method for structuring monadic effects with primitive effectful operations and separating the syntax from the interpretation of these operations. However, the scope of conventional handlers is limited as not all side effects are monadic in nature. This paper generalizes the notion of algebraic effects and handlers from monads to generalized monoids, which notably covers applicative functors and arrows as well as monads. For this purpose, we switch the category theoretical basis from free algebras to free monoids. In addition, we show how lax monoidal functors enable the reuse of handlers and programs across different computation classes, for example, handling applicative computations with monadic handlers. We motivate and present these handler interfaces in the context of build systems. Tasks in a build system are represented by a free computation and their interpretation as a handler. This use case is based on the work of Mokhov et al. [(2018). PACMPL2(ICFP), 79:1--79:29.].},
+  langid = {english},
+  file = {/home/matthieu/Zotero/storage/AIB8FBZ5/Pieters et al. - 2020 - Generalized monoidal effects and handlers.pdf}
 }
 
 @inproceedings{plotkinComputationalEffectsOperations2004,
@@ -333,6 +386,39 @@
   file = {/home/matthieu/Zotero/storage/2RLFMCTV/Swart et Farkas - 2010 - The semantics and pragmatics of plurals.pdf}
 }
 
+@article{swierstraDataTypesCarte2008,
+  title = {Data Types {\`a} La Carte},
+  author = {Swierstra, Wouter},
+  year = {2008},
+  month = jul,
+  journal = {Journal of Functional Programming},
+  volume = {18},
+  number = {4},
+  pages = {423--436},
+  issn = {1469-7653, 0956-7968},
+  doi = {10.1017/S0956796808006758},
+  urldate = {2025-03-27},
+  abstract = {This paper describes a technique for assembling both data types and functions from isolated individual components. We also explore how the same technology can be used to combine free monads and, as a result, structure Haskell's monolithic IO monad.},
+  langid = {english},
+  file = {/home/matthieu/Zotero/storage/WHA9BIFJ/Swierstra - 2008 - Data types à la carte.pdf}
+}
+
+@article{vandenbergFrameworkHigherorderEffects2024,
+  title = {A Framework for Higher-Order Effects \& Handlers},
+  author = {{van den Berg}, Birthe and Schrijvers, Tom},
+  year = {2024},
+  month = may,
+  journal = {Science of Computer Programming},
+  volume = {234},
+  pages = {103086},
+  issn = {0167-6423},
+  doi = {10.1016/j.scico.2024.103086},
+  urldate = {2025-03-27},
+  abstract = {Algebraic effects \& handlers are a modular approach for modeling side-effects in functional programming. Their syntax is defined in terms of a signature of effectful operations, encoded as a functor, that are plugged into the free monad; their denotational semantics is defined by fold-style handlers that only interpret their part of the syntax and forward the rest. However, not all effects are algebraic: some need to access an internal computation. For example, scoped effects distinguish between a computation in scope and out of scope; parallel effects parallelize over a computation, latent effects defer a computation. Separate definitions have been proposed for these higher-order effects and their corresponding handlers, often leading to expedient and complex monad definitions. In this work we propose a generic framework for higher-order effects, generalizing algebraic effects \& handlers: a generic free monad with higher-order effect signatures and a corresponding interpreter. Specializing this higher-order syntax leads to various definitions of previously defined (scoped, parallel, latent) and novel (writer, bracketing) effects. Furthermore, we formally show our framework theoretically correct, also putting different effect instances on formal footing; a significant contribution for parallel, latent, writer and bracketing effects.},
+  keywords = {Algebraic effects and handlers,Datatypes a la carte,Free monad,Higher-order effects and handlers},
+  file = {/home/matthieu/Zotero/storage/ANWYSW98/van den Berg et Schrijvers - 2024 - A framework for higher-order effects & handlers.pdf;/home/matthieu/Zotero/storage/RESW4VTB/S0167642324000091.html}
+}
+
 @inproceedings{wadlerTheoremsFree1989,
   title = {Theorems for Free!},
   booktitle = {Proceedings of the Fourth International Conference on {{Functional}} Programming Languages and Computer Architecture},
@@ -364,4 +450,21 @@
   abstract = {Girard and Reynolds independently invented System F (a.k.a. the second-order polymorphically typed lambda calculus) to handle problems in logic and computer programming language design, respectively. Viewing F in the Curry style, which associates types with untyped lambda terms, raises the questions of typability and type checking. Typability asks for a term whether there exists some type it can be given. Type checking asks, for a particular term and type, whether the term can be given that type. The decidability of these problems has been settled for restrictions and extensions of F and related systems and complexity lower-bounds have been determined for typability in F, but this report is the first to resolve whether these problems are decidable for System F. This report proves that type checking in F is undecidable, by a reduction from semi-unification, and that typability in F is undecidable, by a reduction from type checking. Because there is an easy reduction from typability to type checking, the two problems are equivalent. The reduction from type checking to typability uses a novel method of constructing lambda terms that simulate arbitrarily chosen type environments. All of the results also hold for the {$\lambda$}I-calculus.},
   keywords = {Lambda calculus,Semi-unification,System F,Typability,Type checking,Type inference},
   file = {/home/matthieu/Zotero/storage/2THFKMCM/S0168007298000475.html}
+}
+
+@inproceedings{wuEffectHandlersScope2014,
+  title = {Effect Handlers in Scope},
+  booktitle = {Proceedings of the 2014 {{ACM SIGPLAN}} Symposium on {{Haskell}}},
+  author = {Wu, Nicolas and Schrijvers, Tom and Hinze, Ralf},
+  year = {2014},
+  month = sep,
+  series = {Haskell '14},
+  pages = {1--12},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  doi = {10.1145/2633357.2633358},
+  urldate = {2025-03-27},
+  abstract = {Algebraic effect handlers are a powerful means for describing effectful computations. They provide a lightweight and orthogonal technique to define and compose the syntax and semantics of different effects. The semantics is captured by handlers, which are functions that transform syntax trees.Unfortunately, the approach does not support syntax for scoping constructs, which arise in a number of scenarios. While handlers can be used to provide a limited form of scope, we demonstrate that this approach constrains the possible interactions of effects and rules out some desired semantics.This paper presents two different ways to capture scoped constructs in syntax, and shows how to achieve different semantics by reordering handlers. The first approach expresses scopes using the existing algebraic handlers framework, but has some limitations. The problem is fully solved in the second approach where we introduce higher-order syntax.},
+  isbn = {978-1-4503-3041-1},
+  file = {/home/matthieu/Zotero/storage/H5YL93HH/Wu et al. - 2014 - Effect handlers in scope.pdf}
 }
