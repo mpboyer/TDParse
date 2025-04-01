@@ -2,6 +2,7 @@
 
 \usepackage{bigstrut}
 \usepackage{makecell}
+\usepackage{tikz-dependency}
 
 \def\cont{\Gamma\vdash}
 \def\poulpe{\qquad}
@@ -121,7 +122,7 @@ In particular we consider words such as \textsl{the} or \textsl{a} whose applica
 This allows us to develop typing judgements and an extended typing system for compositional semantics of natural languages.
 Type-driven compositional semantics acts under the premise that given a set of words and their denotations, a set of grammar rules for composition and their associated typing judgements, we are able to form an enhanced parser for natural language which provides a mathematical representation of the meaning of sentences, as proposed by \newcite{heimSemanticsGenerativeGrammar1998}
 
-\section{Typing System}
+\section{Categorical Semantics of Effects: A Typing System}
 \label{sec:typingsystem}
 In this section, we will designate by $\mL$ our language, as a set of words (with their semantics) and syntactic rules to combine them semantically.
 We denote by $\O\left( \mL \right)$ the set of words in the language whose semantic representation is a low-order function and $\mF\left( \mL \right)$ the set of words whose semantic representation is a functor or high-order function.
@@ -203,8 +204,8 @@ This will guarantee for us that given a \emph{Haskell} construction for a polymo
 
 \paragraph{Adjunctions}
 \label{par:adjunctions}
-We will not go in much details about adjunctions, as a full example is provided in \ref{subsec:effects}.
-To understand why adjunctions are useful, one simply needs to understand that an adjunction $L \dashv R$ is a pair of functors $L: \A \to \B$ and $R: \B \to \A$, and a pair of natural transformations $\eta: \Id_{\A}  \Rightarrow R \circ L$ and $\epsilon: L\circ R \Rightarrow \Id_{\A}$ such that the two following equations are satisfied:
+We will not go in much details about adjunctions, as a full example and generalization process is provided in \ref{subsec:effects}.
+First, we remind the definition: an adjunction $L \dashv R$ is a pair of functors $L: \A \to \B$ and $R: \B \to \A$, and a pair of natural transformations $\eta: \Id_{\A}  \Rightarrow R \circ L$ and $\epsilon: L\circ R \Rightarrow \Id_{\A}$ such that the two following equations are satisfied:
 	\begin{equation*}
 		\begin{tikzcd}
 			\A\ar[r, "\id_{\A}" name=idA]\ar[dr, "L"'] &[1.8cm] \A\ar[dr, "L"]\ar[phantom, "" name=A] &[1.8cm] \\[2cm]
@@ -226,8 +227,9 @@ To understand why adjunctions are useful, one simply needs to understand that an
 	\end{tikzcd}
 	\end{equation*}
 
-Remember that an adjunction defines two different structures over itself: a monad $L \circ R$ and a comonad $R\circ L$.
+An adjunction defines two different structures over itself: a monad $L \circ R$ and a comonad $R\circ L$.
 The fact these structures arise from the interaction between two effects renders them an intrinsic property of the language.
+In this lies the usefulness of adjunction in a typing system which uses effects: adjunctions provide a way to combine effects and to handle effects, allowing to simplify the computations on the free monoid on the set of functors.
 
 \paragraph{Handlers}
 \label{par:handlers}
@@ -237,14 +239,22 @@ As considered by \newcite{wuEffectHandlersScope2014} and \newcite{vandenbergFram
 Considering handlers as so, allows us to directly handle our computations inside our typing system, by ``transporting'' our functors one order higher up without loss of information or generality since all our functors undergo the same transformation.
 Using the framework proposed in \cite{vandenbergFrameworkHigherorderEffects2024} we simply need to create handlers for our effects/functors and we will then have in our language the result needed.
 
+\medskip
+
 What does this mean in our typing category ?
 It means that either our language or our parser for the language \footnote{Depending whether we think handling effects is an intrinsic construct of the semantics of the language or whether it is associated with a speaker.} should contain natural transformations $F \Rightarrow \Id$ for $F \in \mF\left( \mL \right)$.
-However, consider the following sentence:
-\begin{center}
-	\sl Jupiter, a planet, has a moon.
-\end{center}
-Here we \emph{record} in memory that Jupiter is a planet, but we never access this record.
-This leads to the main issue with handling: some effects are meant to be considered at the scale of a text and we might want to consider that sentences are true and be able to use this to provide further reduction and make use of adjunctions instead of \emph{out of the blue} natural transformations.
+In this goal, we remember that from any polymorphic function in \emph{Haskell} we get a natural transformation \cite{wadlerTheoremsFree1989} meaning that it is enough to be able to define our handler in \emph{Haskell} to be ensured of its good definition.
+Note that the choice of the handler being part of the lexicon or the parser over the other is a philosophical question more than a semantical one, as both options will result in semantically equivalent models, the only difference will be in the way we consider the resolution of effects.
+Mathematically\footnote{Computer-wise, actually.}, this means the choice of either one of the options is purely of detail left during the implementation.
+
+However, this choice does not arise in the case of the adjunction-induced handlers. Indeed here, the choice is caused by the non-uniqueness of the choices for the handlers.
+For example, two different speakers may have different ways to resolve the $\f{S}$ (which will be introduced as the \emph{Powerset} monad in Section \ref{subsec:effects}) that arises from the phrase \textsl{A chair}.
+This usual example of the differences between the cognitive representation of words is actually a specific example of the different possible handlers for the powerset representation of non-determinism/indefinites:
+there are $\abs{S}$ arrows from the initial object to $S$ in $\mathit{Set}$, representing the different elements of $S$.
+In that sense, while handlers may have a normal form or representation purely dependant on the effect, the actual handler does not necessarily have a canonical form.
+This is the difference with the adjunctions: adjunctions are intrinsic properties of the coexistence of the effects\footnote{Which we identify to their functorial representations, which we may identify to their free monad in the framework \cite{vandenbergFrameworkHigherorderEffects2024}.}, while the handlers are user-defined.
+As such, we choose to say that our handlers are implemented parser-side but again, this does not change our modelisation of handlers as natural transformations and most importantly, this does not add non-determinism to our model:
+The non-determinism that arises from the variety of possible handlers does not add to the non-determinism in the parsing.
 
 \paragraph{Higher-Order Constructs}
 \label{par:higherorder}
@@ -296,6 +306,94 @@ This issue will be resolved by giving the syntactic tree of the sentence (or inf
 We could also add symmetry induced rules for application.
 
 Furthermore, note that the App rule is the \texttt{fmap} rule for the identity functor and that the \texttt{pure/return} and \texttt{>>=} is the \texttt{nat} rule for the monad unit (or applicative unit) and multiplication.
+
+\medskip
+
+Using these typing rules for our combinators, it is important to see that our grammar will still be ambiguous and thus our reduction process will be non-deterministic.
+As an example, we provide the typing reductions for the classic example: \textsl{The man sees the girl using a telescope} in Figure \ref{fig:ud}.
+
+\makeatletter
+\def\c@lsep{2.3}
+\def\r@wsep{.8}
+
+\tikzset{
+	uptree/.style={
+		draw=green!80!black,
+		thick,
+	},
+	typenode/.style={
+		align=center,
+		text width=24mm,
+		%font={\large},
+	},
+	wordnode/.style={
+		inner sep=0pt,
+		align=center,
+		font={\large},
+	},
+	downtree/.style={
+		draw=red!80!black,
+		thick,
+	},
+}
+
+\newcommand{\wnode}[3]{%
+	\node (#2) at (#1*\c@lsep, 0) [wordnode] {#2};
+	\node[anchor=north] (#2-) at ($(#1*\c@lsep, 0) + (0, -.142)$) [typenode] {\ensuremath{#3}};
+}
+\newcommand{\utnode}[3]{%
+	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q1) at (\x1, {max(\y1, \y2)});
+	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q2) at (\x2, {max(\y1, \y2)});
+	\node (#2#3) at ($($(Q1)!0.5!(Q2)$) + (0, 1)$) [typenode] {\ensuremath{#1}};
+	\draw[uptree] ($(#2.north) + (0, .142)$) -- (#2#3.south);
+	\draw[uptree] ($(#3.north) + (0, .142)$) -- (#2#3.south);
+}
+\newcommand{\dtnode}[4][0.5]{%
+	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q1) at (\x1, {min(\y1, \y2)});
+	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q2) at (\x2, {min(\y1, \y2)});
+	\node (#3#4) at ($($(Q1)!#1!(Q2)$) + (0, -1)$) [typenode] {\ensuremath{#2}};
+	\draw[downtree] ($(#3.south) + (0, -.142)$) -- (#3#4.north);
+	\draw[downtree] ($(#4.south) + (0, -.142)$) -- (#3#4.north);
+}
+\makeatother
+
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+	\wnode{0}{the}{\left( \e \to \t \right) \to \f{M}\e}
+	\wnode{1}{man}{\left( \e \to \t \right)}
+	\utnode{\f{M}\e}{the}{man}
+	\dtnode{\f{M}\e}{the-}{man-}
+	\wnode{2}{sees}{\left( \e \to \e \to \t \right)}
+	\utnode{\f{M}\left( \e \to \t \right)}{theman}{sees}
+	\dtnode{\f{M}\left( \e \to \t \right)}{the-man-}{sees-}
+	\wnode{3}{the}{\left( \e \to \t \right) \to \f{M}\e}
+	\wnode{4}{girl}{\left( \e \to \t \right)}
+	\dtnode{\f{M}\e}{the-}{girl-}
+	\wnode{5}{using}{\left( \e \to \t \right) \to \e \to \left( \e \to \t \right)}
+	\wnode{6}{a}{\left( \e \to \t \right) \to \f{D}\e}
+	\wnode{7}{telescope}{\left( \e \to \t \right)}
+	\utnode{\f{D}\e}{a}{telescope}
+	\dtnode{\f{D}\e}{a-}{telescope-}
+	\utnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using}{atelescope}
+	\dtnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using-}{a-telescope-}
+	\utnode{\f{D}\left( \e \to \t \right)}{girl}{usingatelescope}
+	\utnode{\f{M}\f{D}\e}{the}{girlusingatelescope}
+	\utnode{\f{M}\f{M}\f{D}\t}{themansees}{thegirlusingatelescope}
+	\utnode{\f{M}\f{D}\t}{themanseesthegirlusingatelescope}{themanseesthegirlusingatelescope}
+	\dtnode[0.3]{\f{D}\f{M}\left( \e \to \t \right)}{the-man-sees-}{using-a-telescope-}
+	\dtnode[1.2]{\f{D}\f{M}\f{M}\t}{the-man-sees-using-a-telescope-}{the-girl-}
+	\dtnode{\f{D}\f{M}\t}{the-man-sees-using-a-telescope-the-girl-}{the-man-sees-using-a-telescope-the-girl-}
+	%
+	%
+\end{tikzpicture}
+  \caption{Parsing trees for the typing of \textsl{The man sees the girl using a telescope}.}
+  \label{fig:ud}
+\end{figure*}
+
+This non-determinism is a component of our language's grammar and semantics: a same sentence can have multiple interpretation without context.
+By the same reasoning we applied on handlers, we choose not to resolve the ambiguity in the parser but we will try in Section \ref{sec:nondet} to reduce it to a minimum.
+Even so some of our derivations will include ways to read from a context (for example the \textbf{Jupiter, a planet} construct), we forget about the definition of the context, or its updating after a sentence, in our first proposition.
 
 \section{Language Translation}
 \label{sec:language}
@@ -429,8 +527,8 @@ We will now explain ways to formalise higher-order concepts as described in Sect
 
 First, let us consider in this example the plural concept.
 Here we do not focus on whether our denotation of the plural is semantically correct, but simply on whether our modelisation makes sense.
-As such, we give ourselves a way to measure if a certain $x$ is plural our not, which we will denote by $\abs{x} \geq 1$.
-It is important to note that if $\tau$ is a type, and $\cont x: \tau$ then we should have $\abs{\Pi x} \geq 1 = \top\footnote{This is a typing judgement~!}$.
+As such, we give ourselves a way to measure if a certain $x$ is plural our not, which we will denote by $\abs{x} \geq 2$\footnote{We chose this representation as an example, it is not important for our formalism that this denotation is actually a good choice for the plural.}.
+It is important to note that if $\tau$ is a type, and $\cont x: \tau$ then we should have $\abs{\Pi x} \geq 1 = \top\footnote{This might be seen as a typing judgement~!}$.
 We then need to define the functor $\Pi$ which models the plural. We do not need to define it on types in any way other than $\Pi\left( \tau \right) = \Pi\tau$.
 We only need to look at the transformation on arrows\footnote{\texttt{fmap}, basically.}.
 This one depends on the \emph{syntactic}\footnote{Actually it depends on the word considered, but since the denotations (when considered effect-less) provided in Table \ref{tab:lexicon} are more or less related to the syntactic category of the word, our approximation suffices.} type of the arrow, as seen in Table \ref{tab:lexicon}.
@@ -440,14 +538,14 @@ This one depends on the \emph{syntactic}\footnote{Actually it depends on the wor
 	\setcellgapes{3pt}
 	\makegapedcells
 	\begin{NiceTabular}{>{\bf}c>{\cont}C>{\Pi(p) = }L}
-		CN(P) & p: \left(\e \to \t\right) & \lambda x.\left( px \land \abs{x} \geq 1 \right)\\
-		\multirow{2}{*}{\bf ADJ(P)} & p: \left( \e \to \t \right) & \lambda x. \left( px \land \abs{x} \geq 1 \right)\\
-		& p: \left( \e \to \t \right) \to \left( \e \to \t \right) & \lambda \nu. \lambda x. \left( p\left( \nu \right)\left( x \right) \land \abs{x} \geq 1 \right)\\
+		CN(P) & p: \left(\e \to \t\right) & \lambda x.\left( px \land \abs{x} \geq 2 \right)\\
+		\multirow{2}{*}{\bf ADJ(P)} & p: \left( \e \to \t \right) & \lambda x. \left( px \land \abs{x} \geq 2 \right)\\
+		& p: \left( \e \to \t \right) \to \left( \e \to \t \right) & \lambda \nu. \lambda x. \left( p\left( \nu \right)\left( x \right) \land \abs{x} \geq 2 \right)\\
 		\multirow{2}{*}{\bf NP} & p: \e & p \\
 		& p: \left( \e \to \t \right) \to \t & \lambda \nu. p\left( \Pi \nu \right)\\
-		IV(P)/VP & p: \e \to \t & \lambda o. \left( po \land \abs{x} \geq 1 \right)\\
-		TV(P) & p: \e \to \e \to \t & \lambda s. \lambda o. \left( p\left( s \right)\left( o \right) \land \abs{s} \geq 1 \right)\\
-		REL(P) & p: \e \to \t & \lambda x. \left( px \land \abs{x} \geq 1 \right)\\
+		IV(P)/VP & p: \e \to \t & \lambda o. \left( po \land \abs{x} \geq 2 \right)\\
+		TV(P) & p: \e \to \e \to \t & \lambda s. \lambda o. \left( p\left( s \right)\left( o \right) \land \abs{s} \geq 2 \right)\\
+		REL(P) & p: \e \to \t & \lambda x. \left( px \land \abs{x} \geq 2 \right)\\
 		\multirow{2}{*}{\bf DET} & p: \left( \e \to \t \right) \to \left( \left( \e \to \t  \right) \to \t \right) & \lambda \nu. p\left( \Pi \nu \right)\\
 		& p: \left( \e \to \t \right) \to \e & \lambda \nu. p\left( \Pi \nu \right)
 		\CodeAfter
@@ -457,11 +555,18 @@ This one depends on the \emph{syntactic}\footnote{Actually it depends on the wor
 			\draw (2|-1) -- (2|-11);
 		\end{tikzpicture}
 	\end{NiceTabular}
-	\caption{Definition for the $\Pi$ Plural Functor}
+	\caption{(Partial) Definition for the $\Pi$ Plural Functor}
 	\label{tab:pluralfunctor}
 \end{table}
+There is actually a presupposition in our definition. Whenever we apply $\Pi$ to an arrow representing a predicate $p: \e \to \t$, we still apply $p$ to its argument $x$ even though we say that $\Pi p$ is the one that applies to a plural entity $x$.
+This slight notation abuse results from our point of view on plural/its predicate representation: we assume the predicate $p$ (the common noun, the adjectve, the VP\ldots) applies to an object without regarding its cardinality.
+The two point of views on the singular/plural distinction could be adapted to our formalism: whether we believe that singular is the \emph{natural} state of the objects or that it is to be always specified in the same way as plural does not change anything:
+In the former, we do not change anything from the proposed functors.
+In the latter we simply need to create another functor $\Sigma$ with basically the same rules that represents the singular and ask of our predicates $p$ to be defined on $\left(\Pi\star\right) \sqcup \left(\Sigma \star\right)$.
 
-See that our functor only acts on the which return a boolean by adding a plurality condition, and is simply passed down else.
+\medskip
+
+See that our functor only acts on the words which return a boolean by adding a plurality condition, and is simply passed down on the other words.
 Note however there is an issue with the \textbf{NP} category: in the case where a \textbf{NP} is constructed from a determiner and a common noun (phrase) the plural is not passed down.
 This comes from the fact that in this case, either the determiner or the common noun (phrase) will be marked, and by functoriality the plural will go up the tree.
 
@@ -485,6 +590,24 @@ We can easily define natural transformations for the other functors in a similar
 Now, in quite a similar way, we can create functors from any sort of judgement that can be seen as a function $\e \to \t$ in our language\footnote{An easy way to define those would be, similarly to the plural, to define a series of judgement from a property that could be infered.}.
 Indeed, we simply need to replace the $\abs{p} \geq 1$ in most of the definitions by our function and the rest would stay the same.
 Remember that our use of natural transformations is only there to allow for possible under-markings of the considered effects and propagating the value resulting from the computation of the high-order effect.
+
+\section{Solving Non-Determinism}\label{sec:nondet}
+The typing judgements proposed in Section \ref{subsec:judgements} lead to ambiguity.
+In this section we propose ways to get our derivations to a certain normal form, by deriving an equivalence relation on our derivation and parsing trees, based on string diagrams.
+
+\subsection{String Diagrams}
+String diagrams are the Poincaré duals of the usual categorical diagrams when considered in the $2$-category of categories and functors.
+In this category, the endofunctors are natural transformations.
+This means that we represent categories as regions of the plane, functors as lines separating regions and natural transformations as the intersection points between two lines.
+We will always consider application as applying to the right of the line.
+This gives us a new graphical formalism to represent our effects using a few equality rules between diagrams.
+The commutative aspect of functional diagrams is now replaced by an equality of string diagrams.
+
+The important aspect of string diagrams that we will use is that two diagrams that are planarily homotopic are equal and that we can map a string diagram to a sequence of computations on computation: the vertical composition of natural transformations (bottom-up) represents the reductions that we can do on our set of effects.
+This means that even when adding handlers, we get a way to visually see the meaning get reduced from effectful composition to propositional values, without the need to specify what the handler does.
+Indeed we only look at \emph{when} we apply handlers and natural transformations reducing the number of effects.
+This delimits our usage of string diagrams as ways to look at computations and a tool to provide equality rules to reduce non-determinism by constructing an equivalence relationship and yielding a quotient set on the computations to get \emph{normal forms}
+
 
 
 
