@@ -988,7 +988,6 @@ Let us now look at a few of the equations that arise from the commutation of cer
 			      \end{equation}
 		      \end{minipage}
 		      \begin{minipage}{.2\linewidth}
-
 		      \end{minipage}
 		      \begin{minipage}{.4\linewidth}
 			      \begin{equation}
@@ -1010,6 +1009,7 @@ Let us now look at a few of the equations that arise from the commutation of cer
 							\fill[catmca] let \p1 = (bot), \p2 = (eta), \p3 = (top) in
 							(ctltop) to [out=-90, in=0] (eta) -- (\x2, \y1) -- ($(1, 0) + (\x3, \y1)$) -- ($(top) + (1, 0)$) -- (top) -- (ctltop);
 							\fill[catmca] (eta) to[out=180, in=-90] (ctlmid) -- (ctlbot) -- (bot) -| (eta);
+							\fill[catmca] (ctlbot) -- (ctlmid) to[out=90, in=0] (eps) to[out=180, in=90] (ctlbot);
 						\end{pgfonlayer}
 				      \end{tikzpicture}
 				      =
