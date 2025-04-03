@@ -3,6 +3,7 @@
 \usepackage{bigstrut}
 \usepackage{makecell}
 \usepackage{tikz-dependency}
+\usepackage{diag}
 
 \def\cont{\Gamma\vdash}
 \def\poulpe{\qquad}
@@ -101,6 +102,19 @@
 }
 \def\Sq#1{\textSq{\ensuremath{#1}}}%
 \makeatother
+
+
+\catstyle{catone}{gray!50}
+\catstyle{catmc}{vulm!10!yulm}
+\catstyle{catmca}{vulm!20!yulm}
+\catstyle{catmcb}{vulm!30!yulm}
+\catstyle{catmcc}{vulm!40!yulm}
+\catstyle{catmcd}{vulm!50!yulm}
+\catstyle{catmce}{vulm!60!yulm}
+\catstyle{catmcf}{vulm!70!yulm}
+\catstyle{catmcg}{vulm!80!yulm}
+\catstyle{catmch}{vulm!90!yulm}
+
 
 \title{Formalizing Typing Rules for Natural Languages using Effects}
 \author{Matthieu Boyer}
@@ -595,19 +609,252 @@ Remember that our use of natural transformations is only there to allow for poss
 The typing judgements proposed in Section \ref{subsec:judgements} lead to ambiguity.
 In this section we propose ways to get our derivations to a certain normal form, by deriving an equivalence relation on our derivation and parsing trees, based on string diagrams.
 
-\subsection{String Diagrams}
+\subsection{String Diagram Modelisation of Sentences}
+\label{subsec:sd}
 String diagrams are the Poincaré duals of the usual categorical diagrams when considered in the $2$-category of categories and functors.
 In this category, the endofunctors are natural transformations.
 This means that we represent categories as regions of the plane, functors as lines separating regions and natural transformations as the intersection points between two lines.
-We will always consider application as applying to the right of the line.
+We will change the color of the regions when crossing a functor, and draw the identity functor as a dashed line or no line at all in the following sections.
+We will always consider application as applying to the right of the line so that composition is written in the same way as in equations:
+\begin{center}
+\begin{tikzpicture}
+\path coordinate[dot, label=left:$h$] (h) +(0,1) coordinate[label=above:$Y$] (tl)
+	++(0,-1) coordinate[dot, label=left:$a$] (a) +(0,-3) coordinate[label=below:$X$] (bl)
+	++(2,-3) coordinate[label=below:$T'$] (br)
+ 	(bl) ++(1,0) coordinate[label=below:$F$] (bm)
+ 	(a) ++(3,0) coordinate (r) ++(0,2) coordinate[label=above:$F$] (tr);
+\draw (bl) -- (a) -- (h) -- (tl);
+\draw[name path=curv] (bm) to[out=90, in=-90] (r) -- (tr);
+\draw[name path=vert] (a) to[out=0, in=90] (br);
+\path[name intersections={of=vert and curv}] coordinate[dot, label=-45:$\alpha$] (alpha) at (intersection-1);
+\begin{pgfonlayer}{background}
+\fill[catmcc] ($(tl) + (-1,0)$) rectangle (br);
+\fill[catmcb] (bl) rectangle ($(tr) + (1,0)$);
+\fill[catmca] (bm) to[out=90, in=-90] (r) -- (tr) -- ++(1,0) -- ++(0,-5) -- cycle;
+\end{pgfonlayer}
+\end{tikzpicture}\end{center}
 This gives us a new graphical formalism to represent our effects using a few equality rules between diagrams.
-The commutative aspect of functional diagrams is now replaced by an equality of string diagrams.
+The commutative aspect of functional diagrams is now replaced by an equality of string diagrams, which will be detailed in the following section.
 
-The important aspect of string diagrams that we will use is that two diagrams that are planarily homotopic are equal and that we can map a string diagram to a sequence of computations on computation: the vertical composition of natural transformations (bottom-up) represents the reductions that we can do on our set of effects.
+The important aspect of string diagrams that we will use is that two diagrams that are planarily homotopic are equal \cite{delpeuchNormalizationPlanarString2022} and that we can map a string diagram to a sequence of computations on computation: the vertical composition of natural transformations (bottom-up) represents the reductions that we can do on our set of effects.
 This means that even when adding handlers, we get a way to visually see the meaning get reduced from effectful composition to propositional values, without the need to specify what the handler does.
 Indeed we only look at \emph{when} we apply handlers and natural transformations reducing the number of effects.
-This delimits our usage of string diagrams as ways to look at computations and a tool to provide equality rules to reduce non-determinism by constructing an equivalence relationship and yielding a quotient set on the computations to get \emph{normal forms}
+This delimits our usage of string diagrams as ways to look at computations and a tool to provide equality rules to reduce non-determinism by constructing an equivalence relationship (which we denote by $\eqcirc$) and yielding a quotient set of \emph{normal forms} for our computations.
 
+\medskip
+
+First let's look at the fact we can see functors as natural transformations and morphisms as functors, to justify that our typing tree are, in a sense string diagrams.
+Let us define the category $\mathds{1}$ with exactly one object and one arrow: the identity on that object. It will be shown in grey in the string diagrams below.
+A functor of type $\mathds{1} \to \mC$ is equivalent to choosing an object in $\mC$, and a natural between two such functors $\tau_{1}, \tau_{2}$ is exactly an arrow in $\mC$ of type $\tau_{1} \to \tau_{2}$.
+This gives us a way to map the composition of our sentence to a simple string in our diagram.
+Knowing that allows us to represent the type resulting from a sequence of computations as a sequence of strings whose farthest right represents an object in $\mC$, that is, a base type.
+\begin{center}
+\begin{tikzpicture}
+	\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 1) coordinate[dot, label=left:$\w{sleeps}$] (sleeps) + (0, 2) coordinate[label=above:$\t$] (bool)
+	++(-2, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe)
+	++(2, -2) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -2) coordinate[label=below:$\bot$] (bot);
+	\draw (cat) -- (the) -- (sleeps) -- (bool);
+	\draw[name path=effect] (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+	\draw[dashed] (bot) -- (cat);
+	\begin{pgfonlayer}{background}
+		\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+		\fill[catmca] (bot) rectangle ($(effthe) + (-1, 0)$);
+		\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
+	\end{pgfonlayer}
+\end{tikzpicture}
+\end{center}
+
+For simplicity reasons, and because the effects that are buried in our typing system not only give rise to functors but also have types that are not purely currifiable, we will write our string diagrams on the fully parsed sentence, with its most simplified/composed expression.
+Indeed, the question of providing rules to compose the string diagram for \textbf{the} and the one for \textbf{cat} to give the one for \textbf{the cat} is a difficult question, that natural solutions to are not obvious\footnote{I will suggest a solution when discussing the set of equations between our diagrams and the way we construct our \emph{normal forms}.}.
+The natural composition rules on diagrams being the gluing together of diagrams, we do need to add something to our toolbox.
+\begin{equation}
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate (input)
+			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+			\node[anchor=north] at (input) {$\e \to \t$};
+		\draw (input) -- (bool);
+		\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (input) rectangle ($(bool) + (1, 0)$);
+			\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+			\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	\bigotimes
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path coordinate[dot, label=right:$\w{cat}$] (cat) + (0, 1) coordinate[label=above:$\t$] (bool) ++ (0, -1) coordinate[label=below:$\e$] (input);
+		\draw (input) -- (bool);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (input) rectangle ($(bool) + (1, 0)$);
+			\fill[catmc] (input) rectangle ($(bool) + (-1, 0)$);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	=
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path coordinate[dot, label=right:$\w{the}\w{cat}$] (the) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+		\draw (the) -- (bool);
+		\draw[dashed] (input) -- (the);
+		\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (input) rectangle ($(bool) + (1.5, 0)$);
+			\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+			\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	\label{eq:CSD}
+	\tag{CSD}
+\end{equation}
+
+To justify our proposition to only consider fully reduced expressions note that in this formalism we don't consider the expressions for our functors and natural transformations\footnote{Here, we are talking about the actual \emph{natural transformations} that are used for handling effects, whether they're the ones associated to algebraic handlers or adjunctions/monads\ldots} but simply the sequence in which they are applied.
+In particular, this means the following diagrams commute for any $F, G$ functors and $\theta$ natural transformation.
+\begin{category}
+	G\ar[r, "F"]\ar[d, "\theta"'] & F\circ G\ar[d, "F\circ \theta"] &[2cm] G\ar[r, "F"]\ar[d, "\theta"'] & G\circ F \ar[d, "\theta\circ F"] \\
+	\theta G\ar[r, "F"'] & F\circ \theta G & \theta G\ar[r, "F"'] & \theta G \circ F
+\end{category}
+The property of natural transformations to be applied before or after any arrow in the category justifies that even when composing before the handling we get the same result.
+These properties justifies the fact that we only need to prove the equality of two reductions at the farthest step of the reductions, even though in practice the handling might be done at earlier points in the parsing.
+We have indeed covered all the composition options of our language by talking about functors and arrows.
+
+In the end, we will have the need to go from a certain set of strings (the effects that applied) to a single one, through a sequence of handlers, monadic and comonadic rules and so on.
+Notice that we never reference the zero-cells and that in particular their colors are purely an artistical touch\footnote{It looks nice and makes you forget this is applied abstract nonsense.}.
+\begin{center}
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path
+			coordinate[label=below:$\t$] (bf0) + (0, 1) coordinate[label=above:$\t$] (tf0)
+			++ (-1, 1) coordinate[label=above:$\f{F}_{1}$] (tf1) + (0, -1) coordinate[label=below:$\f{F}_{1}$] (bf1)
+			++ (-1, -1) coordinate[label=below:$\f{F}_{2}$] (bf2) + (0, 1) coordinate[label=above:$\f{F}_{2}$] (tf2)
+			++ (-1, 1) coordinate[label=above:$\f{F}_{3}$] (tf3) + (0, -1) coordinate[label=below:$\f{F}_{3}$] (bf3)
+			++ (-1, -1) coordinate[label=below:$\f{F}_{4}$] (bf4) + (0, 1) coordinate[label=above:$\f{F}_{4}$] (tf4)
+			++ (-1, 1) coordinate[label=above:$\f{F}_{5}$] (tf5) + (0, -1) coordinate[label=below:$\f{F}_{5}$] (bf5);
+		\foreach \i in {1,...,5} {\draw (tf\i) -- (bf\i);}
+		\begin{pgfonlayer}{background}
+			\fill[catone] ($(bf0) + (1, 0)$) rectangle ($(tf5) + (-1, 0)$);
+			\fill[catmc] ($(bf1) + (1, 0)$) rectangle ($(tf5) + (-1, 0)$);
+			\fill[catmca] ($(bf2) + (1, 0)$) rectangle ($(tf5) + (-1, 0)$);
+			\fill[catmcb] ($(bf3) + (1, 0)$) rectangle ($(tf5) + (-1, 0)$);
+			\fill[catmcc] ($(bf4) + (1, 0)$) rectangle ($(tf5) + (-1, 0)$);
+			\fill[catmcd] ($(bf5) + (1, 0)$) rectangle ($(tf5) + (-1, 0)$);
+			\fill[catmce] ($(bf5) + (0, 0)$) rectangle ($(tf5) + (-1, 0)$);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	$\Longrightarrow$
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\fill[catone] (0, 0) rectangle +(1, 1);
+		\fill[catmc] (0, 0) rectangle +(-6, 1);
+		\draw (0, 0) -- (0, 1);
+		\node[anchor=north] at (0, 0) {$\t$};
+		\node[anchor=south] at (0, 1) {$\t$};
+	\end{tikzpicture}
+\end{center}
+
+\subsection{Achieving Normal Forms}
+\label{subsec:normalforms}
+We will now provide a set of rewriting rules on string diagrams (written as equations) which define the set of different possible reductions and explain how our typing rules compose diagrammatically.
+
+\subsubsection{The Composition Dilemma}
+In Equation \eqref{eq:CSD} we provide an example of why composing string diagrams, in our paradigm, is not as simple as we would like.
+However, we could solve this conundrum by adding to our set of equations the following rule, which we denote as the \emph{Curryfication} rule:
+\begin{equation}
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path coordinate[dot, label=right:$\w{cat}$] (cat) + (0, 1) coordinate[label=above:$\t$] (bool) ++ (0, -1) coordinate[label=below:$\e$] (input);
+		\draw (input) -- (bool);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (input) rectangle ($(bool) + (1, 0)$);
+			\fill[catmc] (input) rectangle ($(bool) + (-1, 0)$);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	=
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path coordinate[dot, label=right:$\w{cat}$] (cat) + (0, 1) coordinate[label=above:$\e\to\t$] (bool) ++ (0, -1) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input);
+		\draw[dashed] (input) -- (cat);
+		\draw[ultra thick] (cat) -- (bool);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (input) rectangle ($(bool) + (1, 0)$);
+			\fill[catmc] (input) rectangle ($(bool) + (-1, 0)$);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	\label{eq:curry}\tag{Curryfication}
+\end{equation}
+This rule is to be seen as a straight-forward consequence of the isomorphism between $\mC\left( A, B\right)$ the arrows between $A$ and $B$ and $A \Rightarrow B$ the exponential object of $B$ to the $A$.
+Allowing for that and remembering the fact that you can always replace a diagram by an equivalent one before composing answers the question of how we create composition rules for string diagrams, or almost: there is still a situation that is not accounted for, or at least explained: what happens when applying an effectful diagram\footnote{When the associated effect is monadic this type of diagram represents an arrow in the Kleisli category of the monad.}  to another effectful diagram?
+Take the equation below:
+\begin{equation*}
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\e\to\t$] (bool)
+	++(-2, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe)
+	++(2, -2) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+	\draw (cat) -- (the) -- (eats) -- (bool);
+	\draw[name path=effect] (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+	\draw[dashed] (bot) -- (cat);
+	\begin{pgfonlayer}{background}
+		\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+		\fill[catmca] (bot) rectangle ($(effthe) + (-1, 0)$);
+		\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
+	\end{pgfonlayer}
+	\end{tikzpicture}
+%
+	\bigotimes
+%
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (mouse) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa);
+		\draw (mouse) -- (bool);
+		\draw[dashed] (input) -- (mouse);
+		\draw (mouse) to[out=180, in=-90] (ctla) -- (effa);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
+			\fill[catmca] (input) rectangle ($(effa) + (-1, 0)$);
+			\fill[catmc] (mouse) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (mouse);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+%
+%
+	\overset{\rm curry}{=}
+%
+%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+	++(-2, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe)
+	++(2, -2) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -2) coordinate[label=below:$\e$] (bot);
+	\draw (cat) -- (the) -- (eats) -- (bool);
+	\draw[name path=effect] (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+	\draw (bot) -- (cat);
+	\begin{pgfonlayer}{background}
+		\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+		\fill[catmca] (bot) rectangle ($(effthe) + (-1, 0)$);
+		\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
+	\end{pgfonlayer}
+	\end{tikzpicture}
+%
+	\bigotimes
+%
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+		\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (mouse) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa);
+		\draw (mouse) -- (bool);
+		\draw[dashed] (input) -- (mouse);
+		\draw (mouse) to[out=180, in=-90] (ctla) -- (effa);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
+			\fill[catmca] (input) rectangle ($(effa) + (-1, 0)$);
+			\fill[catmc] (mouse) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (mouse);
+		\end{pgfonlayer}
+	\end{tikzpicture}
+\end{equation*}
+If we applied our pasting rule for $\otimes$ here, the resulting type that would be found would be $\f{D}\f{M}\t$.
+However, when computing this, the resulting type should be $\f{M}\f{D}\t$.
+Since clearly $\f{M} \circ \f{D} \neq \f{D}\circ \f{M}$, it means that the pasting of diagram is not actually the right way to compose.
+
+\subsubsection{Equations}
+\label{subsubsec:sdq}
+First, we begin by a set of rules which allow the replacement of diagrams with equivalent ones, freely generating an equivalence relation.
+Theorem \ref{thm:isotopy} reminds the main result by \newcite{joyalGeometryTensorCalculus1991} about string diagrams which shows that our artistic representation of diagrams is correct and does not modify the equation or the rule we are presenting.
+\begin{thm}[Theorem 3.1 \cite{selingerSurveyGraphicalLanguages2010}, Theorem 1.2 \cite{joyalGeometryTensorCalculus1991}]
+	\label{thm:isotopy}
+	A well-formed equation between morphism terms in the language of monoidal categories follows from the axioms of monoidal categories if and only if it holds, up to planar isotopy, in the graphical language.
+\end{thm}
+We will not prove this theorem here as it implies huge portions of graph theory and algebra which are out of the scope of this paper.
 
 
 
