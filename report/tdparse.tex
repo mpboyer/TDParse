@@ -32,9 +32,7 @@
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
       \endlist}
-\makeatother
 
-\makeatletter
 \def\black@or@white#1#2{%
   \@tempdima#2 pt
   \ifdim\@tempdima>0.5 pt
@@ -123,10 +121,10 @@
 \bettertitle
 
 \begin{abstract}
-The main idea is that you can consider some words to act as functors in a typing category, for example determiners:
-they don't change the way a word acts in a sentence,
-but more the setting in which the word works by adding an effect to the work.
-This document is based mostly on \newcite{bumfordEffectdrivenInterpretation} and \newcite{bumfordEffectfulCompositionNatural}.
+	The main idea is that you can consider some words to act as functors in a typing category, for example determiners:
+	they don't change the way a word acts in a sentence,
+	but more the setting in which the word works by adding an effect to the work.
+	This document is based mostly on \newcite{bumfordEffectdrivenInterpretation} and \newcite{bumfordEffectfulCompositionNatural}.
 \end{abstract}
 
 \section*{Introduction}
@@ -198,11 +196,11 @@ We could also add judgements for adjunctions, but the most interesting thing is 
 While in general we do not want to find natural transformations, we want to be able to express these in three situations:
 \begin{enumerate}
 	\item If we have an adjunction $L\dashv R$, we have natural transformations for $\Id_{\mC} \Rightarrow L \circ R$ and $R\circ L \Rightarrow \Id_{\mC}$.
-		In particular we get a monad and a comonad from a canonical setting.
+	      In particular we get a monad and a comonad from a canonical setting.
 	\item To deal with the resolution of effects, we can map handlers to natural transformations which go from some functor $F$ to the $\Id$ functor, allowing for a sequential\footnote{In particular, non-necessarily commutative} computation of the effects added to the meaning.
-		We will develop a bit more on this idea in \ref{par:handlers}.
+	      We will develop a bit more on this idea in \ref{par:handlers}.
 	\item To create \emph{higher-order} constructs which transform words from our language into other words, while keeping the functorial aspect.
-		This idea is developed in \ref{par:higherorder}.
+	      This idea is developed in \ref{par:higherorder}.
 \end{enumerate}
 To see why we want this rule, which is a larger version of the monad multiplication and the monad/applicative unit, it suffices to see that the diagram below provides a way to construct the ``correct function'' on the ``correct functor'' side of types. If we have a natural transformation \begin{tikzcd}
 	F\ar[r, Rightarrow, "\theta"] & G
@@ -220,16 +218,16 @@ This will guarantee for us that given a \emph{Haskell} construction for a polymo
 \label{par:adjunctions}
 We will not go in much details about adjunctions, as a full example and generalization process is provided in \ref{subsec:effects}.
 First, we remind the definition: an adjunction $L \dashv R$ is a pair of functors $L: \A \to \B$ and $R: \B \to \A$, and a pair of natural transformations $\eta: \Id_{\A}  \Rightarrow R \circ L$ and $\epsilon: L\circ R \Rightarrow \Id_{\A}$ such that the two following equations are satisfied:
-	\begin{equation*}
-		\begin{tikzcd}
-			\A\ar[r, "\id_{\A}" name=idA]\ar[dr, "L"'] &[1.8cm] \A\ar[dr, "L"]\ar[phantom, "" name=A] &[1.8cm] \\[2cm]
+\begin{equation*}
+	\begin{tikzcd}
+		\A\ar[r, "\id_{\A}" name=idA]\ar[dr, "L"'] &[1.8cm] \A\ar[dr, "L"]\ar[phantom, "" name=A] &[1.8cm] \\[2cm]
 		& \B\ar[u, "R"]\ar[phantom, "" name=B]\ddarrow["\Sq{\eta}"]{idA}{B}\ar[r, "\id_{B}" name=idB]\ddarrow["\text{\textcircled{$\epsilon$}}"]{A}{idB} & \B
 	\end{tikzcd}
 	= \begin{tikzcd}
 		\A\ar[r, bend left=45, "L"' name=L]\ar[r, bend right=45, "L" name=R]\ddarrow["\id_{L}"]{L}{R}&[2cm] \B
 	\end{tikzcd}
-	\end{equation*}
-	\begin{equation*}
+\end{equation*}
+\begin{equation*}
 	\begin{tikzcd}
 		&[1.8cm] \A\ar[r, "\id_{\A}" name=idA]\ar[d, "L"'] \ar[phantom, "" name=A]&[1.8cm] \A\\[2cm]
 		\B\ar[ur, "R"]\ar[r, "\id_{B}" name=idB]\ddarrow["\text{\textcircled{$\epsilon$}}"]{A}{idB} & \B\ar[ur, "R"]\ar[phantom, "" name=B] \ddarrow["\Sq{\eta}"]{idA}{B}
@@ -239,7 +237,7 @@ First, we remind the definition: an adjunction $L \dashv R$ is a pair of functor
 	\begin{tikzcd}
 		\B\ar[r, bend left=45, "R"' name=L]\ar[r, bend right=45, "R" name=R]\ddarrow["\id_{R}"]{L}{R}&[2cm] \A
 	\end{tikzcd}
-	\end{equation*}
+\end{equation*}
 
 An adjunction defines two different structures over itself: a monad $L \circ R$ and a comonad $R\circ L$.
 The fact these structures arise from the interaction between two effects renders them an intrinsic property of the language.
@@ -301,19 +299,19 @@ This is not a definitive rule as we could want to stop at a step in the derivati
 \subsection{Typing Judgements}\label{subsec:judgements}
 To complete this section, Table \ref{tab:judgements} gives a simple list of different typing composition judgements through which we also re-derzive the subtyping judgement to allow for its implementation.
 \begin{table}
-\begin{align*}
-	\forall F \in \mF\left( \mL \right),\poulpe
-	\frac{\cont x: \tau \poulpe \cont F: S\subseteq \star \poulpe \overbrace{\tau \in S}^{\exists \tau'\in S, \tau \preceq \tau'}}{\cont Fx: F\tau \preceq \tau}\fracnotate{Cons}\\[.25cm]
-	\frac{\cont x: \tau \poulpe \tau \in \star_{0}}{\cont Fx: F\tau \notin \star_{0}}\fracnotate{$FT_{0}$}\\[.25cm]
-	\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}\\[.25cm]
-	\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}\\[.5cm]
-	\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right)}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}}\\[.25cm]
-	\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}}\\[.5cm]
-	\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}\\[.25cm]
-	\forall F \overset{\theta}{\Longrightarrow} G,\poulpe \frac{\cont x: F\tau \poulpe \cont G: S' \subseteq \star \poulpe \tau \in S'}{\cont x : G\tau}\fracnotate{\texttt{nat}}
-\end{align*}
-\caption{Typing and Subtyping Judgements}
-\label{tab:judgements}
+	\begin{align*}
+		\forall F \in \mF\left( \mL \right),\poulpe
+		\frac{\cont x: \tau \poulpe \cont F: S\subseteq \star \poulpe \overbrace{\tau \in S}^{\exists \tau'\in S, \tau \preceq \tau'}}{\cont Fx: F\tau \preceq \tau}\fracnotate{Cons} \\[.25cm]
+		\frac{\cont x: \tau \poulpe \tau \in \star_{0}}{\cont Fx: F\tau \notin \star_{0}}\fracnotate{$FT_{0}$}                                                                        \\[.25cm]
+		\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}                                                       \\[.25cm]
+		\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}                                                                    \\[.5cm]
+		\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right)}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}}                                         \\[.25cm]
+		\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}}                                                                                                         \\[.5cm]
+		\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}                                                                                                               \\[.25cm]
+		\forall F \overset{\theta}{\Longrightarrow} G,\poulpe \frac{\cont x: F\tau \poulpe \cont G: S' \subseteq \star \poulpe \tau \in S'}{\cont x : G\tau}\fracnotate{\texttt{nat}}
+	\end{align*}
+	\caption{Typing and Subtyping Judgements}
+	\label{tab:judgements}
 \end{table}
 Note that here, the syntax is not taken into account: a function is always written left of its arguments, whether or not they are actually in that order in the sentence.
 This issue will be resolved by giving the syntactic tree of the sentence (or infering it at runtime).
@@ -332,23 +330,27 @@ As an example, we provide the typing reductions for the classic example: \textsl
 
 \tikzset{
 	uptree/.style={
-		draw=green!80!black,
-		thick,
-	},
+			draw=green!80!black,
+			thick,
+		},
 	typenode/.style={
-		align=center,
-		text width=24mm,
-		%font={\large},
-	},
+			align=center,
+			text width=24mm,
+			%font={\large},
+		},
+	treenode/.style={
+			align=center,
+			text width=24mm,
+		},
 	wordnode/.style={
-		inner sep=0pt,
-		align=center,
-		font={\large},
-	},
+			inner sep=0pt,
+			align=center,
+			font={\large},
+		},
 	downtree/.style={
-		draw=red!80!black,
-		thick,
-	},
+			draw=red!80!black,
+			thick,
+		},
 }
 
 \newcommand{\wnode}[3]{%
@@ -358,51 +360,53 @@ As an example, we provide the typing reductions for the classic example: \textsl
 \newcommand{\utnode}[3]{%
 	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q1) at (\x1, {max(\y1, \y2)});
 	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q2) at (\x2, {max(\y1, \y2)});
-	\node (#2#3) at ($($(Q1)!0.5!(Q2)$) + (0, 1)$) [typenode] {\ensuremath{#1}};
+	\node (#2#3) at ($($(Q1)!0.5!(Q2)$) + (0, 1)$) [treenode] {\ensuremath{#1}};
 	\draw[uptree] ($(#2.north) + (0, .142)$) -- (#2#3.south);
 	\draw[uptree] ($(#3.north) + (0, .142)$) -- (#2#3.south);
 }
 \newcommand{\dtnode}[4][0.5]{%
 	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q1) at (\x1, {min(\y1, \y2)});
 	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q2) at (\x2, {min(\y1, \y2)});
-	\node (#3#4) at ($($(Q1)!#1!(Q2)$) + (0, -1)$) [typenode] {\ensuremath{#2}};
+	\node (#3#4) at ($($(Q1)!#1!(Q2)$) + (0, -1)$) [treenode] {\ensuremath{#2}};
 	\draw[downtree] ($(#3.south) + (0, -.142)$) -- (#3#4.north);
 	\draw[downtree] ($(#4.south) + (0, -.142)$) -- (#3#4.north);
 }
 \makeatother
 
 \begin{figure*}
-\centering
-\begin{tikzpicture}
-	\wnode{0}{the}{\left( \e \to \t \right) \to \f{M}\e}
-	\wnode{1}{man}{\left( \e \to \t \right)}
-	\utnode{\f{M}\e}{the}{man}
-	\dtnode{\f{M}\e}{the-}{man-}
-	\wnode{2}{sees}{\left( \e \to \e \to \t \right)}
-	\utnode{\f{M}\left( \e \to \t \right)}{theman}{sees}
-	\dtnode{\f{M}\left( \e \to \t \right)}{the-man-}{sees-}
-	\wnode{3}{the}{\left( \e \to \t \right) \to \f{M}\e}
-	\wnode{4}{girl}{\left( \e \to \t \right)}
-	\dtnode{\f{M}\e}{the-}{girl-}
-	\wnode{5}{using}{\left( \e \to \t \right) \to \e \to \left( \e \to \t \right)}
-	\wnode{6}{a}{\left( \e \to \t \right) \to \f{D}\e}
-	\wnode{7}{telescope}{\left( \e \to \t \right)}
-	\utnode{\f{D}\e}{a}{telescope}
-	\dtnode{\f{D}\e}{a-}{telescope-}
-	\utnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using}{atelescope}
-	\dtnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using-}{a-telescope-}
-	\utnode{\f{D}\left( \e \to \t \right)}{girl}{usingatelescope}
-	\utnode{\f{M}\f{D}\e}{the}{girlusingatelescope}
-	\utnode{\f{M}\f{M}\f{D}\t}{themansees}{thegirlusingatelescope}
-	\utnode{\f{M}\f{D}\t}{themanseesthegirlusingatelescope}{themanseesthegirlusingatelescope}
-	\dtnode[0.3]{\f{D}\f{M}\left( \e \to \t \right)}{the-man-sees-}{using-a-telescope-}
-	\dtnode[1.2]{\f{D}\f{M}\f{M}\t}{the-man-sees-using-a-telescope-}{the-girl-}
-	\dtnode{\f{D}\f{M}\t}{the-man-sees-using-a-telescope-the-girl-}{the-man-sees-using-a-telescope-the-girl-}
-	%
-	%
-\end{tikzpicture}
-  \caption{Parsing trees for the typing of \textsl{The man sees the girl using a telescope}.}
-  \label{fig:ud}
+	\centering
+	\begin{tikzpicture}
+		\wnode{2}{sees}{\left( \e \to \e \to \t \right)}
+		\wnode{3}{the}{\left( \e \to \t \right) \to \f{M}\e}
+		\wnode{4}{girl}{\left( \e \to \t \right)}
+		\dtnode{\f{M}\e}{the-}{girl-}
+		\wnode{5}{using}{\left( \e \to \t \right) \to \e \to \left( \e \to \t \right)}
+		\wnode{6}{a}{\left( \e \to \t \right) \to \f{D}\e}
+		\wnode{7}{telescope}{\left( \e \to \t \right)}
+		\utnode{\f{D}\e}{a}{telescope}
+		\dtnode{\f{D}\e}{a-}{telescope-}
+		\utnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using}{atelescope}
+		\dtnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using-}{a-telescope-}
+		\utnode{\f{D}\left( \e \to \t \right)}{girl}{usingatelescope}
+		\utnode{\f{M}\f{D}\e}{the}{girlusingatelescope}
+		\utnode{\f{M}\f{D}\left( \e \to \t \right)}{sees}{thegirlusingatelescope}
+		%
+		\wnode{0}{the}{\left( \e \to \t \right) \to \f{M}\e}
+		\wnode{1}{man}{\left( \e \to \t \right)}
+		\utnode{\f{M}\e}{the}{man}
+		\utnode{\f{M}\f{M}\f{D}\t}{theman}{seesthegirlusingatelescope}
+		\utnode{\f{M}\f{D}\t}{themanseesthegirlusingatelescope}{themanseesthegirlusingatelescope}
+		%
+		\dtnode[.8]{\f{M}\left( \e \to \t \right)}{sees-}{the-girl-}
+		\dtnode[.2]{\f{D}\left( \e \to \t \right)}{man-}{using-a-telescope-}
+		\dtnode{\f{M}\f{D}\t}{the-}{man-using-a-telescope-}
+		\dtnode[.8]{\f{M}\f{M}\f{D}\t}{the-man-using-a-telescope-}{sees-the-girl-}
+		\dtnode{\f{M}\f{D}\t}{the-man-using-a-telescope-sees-the-girl-}{the-man-using-a-telescope-sees-the-girl-}
+		%
+		%
+	\end{tikzpicture}
+	\caption{Parsing trees for the typing of \textsl{The man sees the girl using a telescope}.}
+	\label{fig:ud}
 \end{figure*}
 
 This non-determinism is a component of our language's grammar and semantics: a same sentence can have multiple interpretation without context.
@@ -421,31 +425,31 @@ Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the operat
 \begin{table}
 	\centering
 	\begin{minipage}{.7\textwidth}
-\begin{multicols}{2}
-\begin{description}
-	\item[S] $\t$
-	\item[CN(P)] $\e\to \t$
-	\item[ProperN] $\e$
-	\item[NP] Either:
-		\begin{description}
-			\item[$\e$] \textsl{John, a cat}
-			\item[$\left(\e\to\t\right) \to \t$] \textsl{the cat, every man}
-		\end{description}
-	\item[DET] $\Upsilon\left( \mathbf{CN} \right) \to \Upsilon\left( \mathbf{NP} \right)$
-	\item[ADJ(P)] Either:
-		\begin{description}
-			\item[$\left( \e \to \t \right)$] \textsl{carnivorous, happy}
-			\item[$\left( \e \to \t \right) \to \left( \e \to \t \right)$] \textsl{skillful}
-		\end{description}
-	\item[REL] $\e \to \t$
-	\item[VP, IV(P)] $\e \to \t$
-	\item[TV(P)] $\Upsilon\left( \mathbf{NP} \right) \to \Upsilon\left( \mathbf{VP }\right)$
-	\item[\it is] $\left( \e \to \t \right) \to \e \to \t$
-\end{description}
-\end{multicols}
-\end{minipage}
-\caption{Usual Typings for some Syntactic Categories}
-\label{tab:sctypes}
+		\begin{multicols}{2}
+			\begin{description}
+				\item[S] $\t$
+				\item[CN(P)] $\e\to \t$
+				\item[ProperN] $\e$
+				\item[NP] Either:
+				      \begin{description}
+					      \item[$\e$] \textsl{John, a cat}
+					      \item[$\left(\e\to\t\right) \to \t$] \textsl{the cat, every man}
+				      \end{description}
+				\item[DET] $\Upsilon\left( \mathbf{CN} \right) \to \Upsilon\left( \mathbf{NP} \right)$
+				\item[ADJ(P)] Either:
+				      \begin{description}
+					      \item[$\left( \e \to \t \right)$] \textsl{carnivorous, happy}
+					      \item[$\left( \e \to \t \right) \to \left( \e \to \t \right)$] \textsl{skillful}
+				      \end{description}
+				\item[REL] $\e \to \t$
+				\item[VP, IV(P)] $\e \to \t$
+				\item[TV(P)] $\Upsilon\left( \mathbf{NP} \right) \to \Upsilon\left( \mathbf{VP }\right)$
+				\item[\it is] $\left( \e \to \t \right) \to \e \to \t$
+			\end{description}
+		\end{multicols}
+	\end{minipage}
+	\caption{Usual Typings for some Syntactic Categories}
+	\label{tab:sctypes}
 \end{table}
 \subsection{Lexicon: Semantic Denotations for Words}\label{subsec:lexicon}
 Many words will have basically the same ``high-level'' denotation.
@@ -457,13 +461,13 @@ We describe the constructor for the functors used by our denotations in the tabl
 	\setcellgapes{2pt}
 	\makegapedcells
 	\begin{NiceTabular}{>{\bf}LLL}
-		Expression & \rm Type & \lambda\text{-Term}\\
+		Expression & \rm Type & \lambda\text{-Term} \\
 		\word{planet}{\e\to\t}{\lambda x. \w{planet} x}{common nouns}
 		\word{carnivorous}{\left( \e \to \t \right)}{\lambda x. \w{carnivorous}x}{predicative adjectives}
 		\word{skillful}{\left( \e \to \t \right) \to \left( \e \to \t \right)}{\lambda p. \lambda x. px \land \w{skillful} x}{predicate modifier adjectives}
 		\word{Jupiter}{\e}{{\bf j}\in \Var}{proper nouns}
 		\word{sleep}{\e \to \t}{\lambda x. \w{sleep} x}{intranitive verbs}
-		\word{chase}{\e \to \e \to \t}{\lambda x. \lambda y. \mathbf{chase}\left( x, y \right)}{transitive verbs}
+		\word{chase}{\e \to \e \to \t}{\lambda o. \lambda s. \mathbf{chase}\left( o \right)\left( s \right)}{transitive verbs}
 		\word{be}{\left( \e \to \t \right) \to \e \to \t}{\lambda p. \lambda x. px}{}
 		\word{she}{\e\to\e}{\lambda x. x}{}
 		\word{it}{\left( \bot \to \f{G}\e \right)}{\lambda g. g_{0}}{}
@@ -493,21 +497,21 @@ We still provide the \fmap{} for good measure.
 	\setcellgapes{2pt}
 	\makegapedcells
 	\begin{NiceTabular}{LLc}
-		\rm Constructor & \fmap & Typeclass\\
-		\f{G}\left( \tau \right) = \r \to \tau & \f{G}\phi\left( x \right) = \lambda r. \phi \left(x r\right) & Monad\\
-		\f{W}\left( \tau \right) = \tau \times \t & \f{W}\phi\left( \left( a, p \right) \right) = \left( \phi a, p \right) & Monad\\
-		\f{S}\left( \tau \right) = \{ \tau \} & \f{S}\phi\left( \left\{ x \right\} \right) = \left\{ \phi(x) \right\} & Monad\\
-		\f{C}\left( \tau \right) = \left( \tau \to \t \right) \to \t & \f{C}\phi\left( x \right) = \lambda c. x\left( \lambda a. c \left( \phi a \right) \right) & Monad\\
-		\f{M}\left( \tau \right) = \tau + \bot & \f{M}\phi\left( x \right) = \begin{cases}
-			\phi\left( x \right) & \text{if } \cont x: \tau\\
-			\# & \text{if } \cont x: \#
-	\end{cases}& Monad\\
+		\rm Constructor                                              & \fmap                                                                                     & Typeclass \\
+		\f{G}\left( \tau \right) = \r \to \tau                       & \f{G}\phi\left( x \right) = \lambda r. \phi \left(x r\right)                              & Monad     \\
+		\f{W}\left( \tau \right) = \tau \times \t                    & \f{W}\phi\left( \left( a, p \right) \right) = \left( \phi a, p \right)                    & Monad     \\
+		\f{S}\left( \tau \right) = \{ \tau \}                        & \f{S}\phi\left( \left\{ x \right\} \right) = \left\{ \phi(x) \right\}                     & Monad     \\
+		\f{C}\left( \tau \right) = \left( \tau \to \t \right) \to \t & \f{C}\phi\left( x \right) = \lambda c. x\left( \lambda a. c \left( \phi a \right) \right) & Monad     \\
+		\f{M}\left( \tau \right) = \tau + \bot                       & \f{M}\phi\left( x \right) = \begin{cases}
+			                                                                                           \phi\left( x \right) & \text{if } \cont x: \tau \\
+			                                                                                           \#                   & \text{if } \cont x: \#
+		                                                                                           \end{cases}                                        & Monad                \\
 		\CodeAfter
 		\begin{tikzpicture}
 			\draw[double] (1|-2) -- (5|-2);
 			\foreach\r in {3,...,6} {%
-				\draw (1|-\r) -- (5|-\r);
-			}
+					\draw (1|-\r) -- (5|-\r);
+				}
 		\end{tikzpicture}
 	\end{NiceTabular}
 	\caption{Denotations for the functors used}
@@ -521,12 +525,12 @@ The $\f S$ functor represents the space of possibilities that arises from a non-
 We can then define an adjunction between $\f G$ and $\f W$ using our definitions:
 \begin{equation*}
 	\phi: \begin{array}{l}
-		\left( \alpha \to \f{G}\beta \right)\to \f{W}\alpha \to \beta\\
+		\left( \alpha \to \f{G}\beta \right)\to \f{W}\alpha \to \beta \\
 		\lambda k. \lambda \left( a, g \right) . k a g
 	\end{array}
 	\text{ and }
 	\psi: \begin{array}{l}
-		\left( \f{W}\alpha \to \beta \right) \to \alpha \to \f{G} \beta\\
+		\left( \f{W}\alpha \to \beta \right) \to \alpha \to \f{G} \beta \\
 		\lambda c \lambda a \lambda g. c \left( a, g \right)
 	\end{array}
 \end{equation*}
@@ -552,16 +556,16 @@ This one depends on the \emph{syntactic}\footnote{Actually it depends on the wor
 	\setcellgapes{3pt}
 	\makegapedcells
 	\begin{NiceTabular}{>{\bf}c>{\cont}C>{\Pi(p) = }L}
-		CN(P) & p: \left(\e \to \t\right) & \lambda x.\left( px \land \abs{x} \geq 2 \right)\\
-		\multirow{2}{*}{\bf ADJ(P)} & p: \left( \e \to \t \right) & \lambda x. \left( px \land \abs{x} \geq 2 \right)\\
-		& p: \left( \e \to \t \right) \to \left( \e \to \t \right) & \lambda \nu. \lambda x. \left( p\left( \nu \right)\left( x \right) \land \abs{x} \geq 2 \right)\\
-		\multirow{2}{*}{\bf NP} & p: \e & p \\
-		& p: \left( \e \to \t \right) \to \t & \lambda \nu. p\left( \Pi \nu \right)\\
-		IV(P)/VP & p: \e \to \t & \lambda o. \left( po \land \abs{x} \geq 2 \right)\\
-		TV(P) & p: \e \to \e \to \t & \lambda s. \lambda o. \left( p\left( s \right)\left( o \right) \land \abs{s} \geq 2 \right)\\
-		REL(P) & p: \e \to \t & \lambda x. \left( px \land \abs{x} \geq 2 \right)\\
-		\multirow{2}{*}{\bf DET} & p: \left( \e \to \t \right) \to \left( \left( \e \to \t  \right) \to \t \right) & \lambda \nu. p\left( \Pi \nu \right)\\
-		& p: \left( \e \to \t \right) \to \e & \lambda \nu. p\left( \Pi \nu \right)
+		CN(P)                       & p: \left(\e \to \t\right)                                                       & \lambda x.\left( px \land \abs{x} \geq 2 \right)                                                \\
+		\multirow{2}{*}{\bf ADJ(P)} & p: \left( \e \to \t \right)                                                     & \lambda x. \left( px \land \abs{x} \geq 2 \right)                                               \\
+		                            & p: \left( \e \to \t \right) \to \left( \e \to \t \right)                        & \lambda \nu. \lambda x. \left( p\left( \nu \right)\left( x \right) \land \abs{x} \geq 2 \right) \\
+		\multirow{2}{*}{\bf NP}     & p: \e                                                                           & p                                                                                               \\
+		                            & p: \left( \e \to \t \right) \to \t                                              & \lambda \nu. p\left( \Pi \nu \right)                                                            \\
+		IV(P)/VP                    & p: \e \to \t                                                                    & \lambda o. \left( po \land \abs{x} \geq 2 \right)                                               \\
+		TV(P)                       & p: \e \to \e \to \t                                                             & \lambda s. \lambda o. \left( p\left( s \right)\left( o \right) \land \abs{s} \geq 2 \right)     \\
+		REL(P)                      & p: \e \to \t                                                                    & \lambda x. \left( px \land \abs{x} \geq 2 \right)                                               \\
+		\multirow{2}{*}{\bf DET}    & p: \left( \e \to \t \right) \to \left( \left( \e \to \t  \right) \to \t \right) & \lambda \nu. p\left( \Pi \nu \right)                                                            \\
+		                            & p: \left( \e \to \t \right) \to \e                                              & \lambda \nu. p\left( \Pi \nu \right)
 		\CodeAfter
 		\begin{tikzpicture}
 			\foreach \r in {2,...,10} {\draw[dashed] ($(2|-\r) + (.1, 0)$) -- (4|-\r);}
@@ -591,10 +595,10 @@ However, when looking at our transformation rule (and our functorial rule) we se
 The natural transformation $\theta$ we set is easily inferable:
 \begin{equation*}
 	\theta_{A}:
-		\begin{tikzcd}
-			\left( \Pi \circ \f{S} \right) A \ar[r, "\theta_{A}"] & \left( \f{S} \circ \Pi \right) A\\[-.7cm]
-			\Pi\left( \left\{ x \right\} \right) \ar[r, mapsto] &  \left\{ \Pi(x) \right\}
-		\end{tikzcd}
+	\begin{tikzcd}
+		\left( \Pi \circ \f{S} \right) A \ar[r, "\theta_{A}"] & \left( \f{S} \circ \Pi \right) A\\[-.7cm]
+		\Pi\left( \left\{ x \right\} \right) \ar[r, mapsto] &  \left\{ \Pi(x) \right\}
+	\end{tikzcd}
 \end{equation*}
 The naturality follows from the definition of $\fmap$ for the $\f{S}$ functor.
 We can easily define natural transformations for the other functors in a similar way: $\Pi \circ \f{F} \overset{\theta}{\Rightarrow} \f{F} \circ \Pi$ defined by $\theta_{\tau} = \fmap_{\f{F}}\left( \Pi \right)$.
@@ -617,22 +621,22 @@ This means that we represent categories as regions of the plane, functors as lin
 We will change the color of the regions when crossing a functor, and draw the identity functor as a dashed line or no line at all in the following sections.
 We will always consider application as applying to the right of the line so that composition is written in the same way as in equations:
 \begin{center}
-\begin{tikzpicture}
-\path coordinate[dot, label=left:$h$] (h) +(0,1) coordinate[label=above:$Y$] (tl)
-	++(0,-1) coordinate[dot, label=left:$a$] (a) +(0,-3) coordinate[label=below:$X$] (bl)
-	++(2,-3) coordinate[label=below:$T'$] (br)
- 	(bl) ++(1,0) coordinate[label=below:$F$] (bm)
- 	(a) ++(3,0) coordinate (r) ++(0,2) coordinate[label=above:$F$] (tr);
-\draw (bl) -- (a) -- (h) -- (tl);
-\draw[name path=curv] (bm) to[out=90, in=-90] (r) -- (tr);
-\draw[name path=vert] (a) to[out=0, in=90] (br);
-\path[name intersections={of=vert and curv}] coordinate[dot, label=-45:$\alpha$] (alpha) at (intersection-1);
-\begin{pgfonlayer}{background}
-\fill[catmcc] ($(tl) + (-1,0)$) rectangle (br);
-\fill[catmcb] (bl) rectangle ($(tr) + (1,0)$);
-\fill[catmca] (bm) to[out=90, in=-90] (r) -- (tr) -- ++(1,0) -- ++(0,-5) -- cycle;
-\end{pgfonlayer}
-\end{tikzpicture}\end{center}
+	\begin{tikzpicture}
+		\path coordinate[dot, label=left:$h$] (h) +(0,1) coordinate[label=above:$Y$] (tl)
+		++(0,-1) coordinate[dot, label=left:$a$] (a) +(0,-3) coordinate[label=below:$X$] (bl)
+		++(2,-3) coordinate[label=below:$T'$] (br)
+		(bl) ++(1,0) coordinate[label=below:$F$] (bm)
+		(a) ++(3,0) coordinate (r) ++(0,2) coordinate[label=above:$F$] (tr);
+		\draw (bl) -- (a) -- (h) -- (tl);
+		\draw[name path=curv] (bm) to[out=90, in=-90] (r) -- (tr);
+		\draw[name path=vert] (a) to[out=0, in=90] (br);
+		\path[name intersections={of=vert and curv}] coordinate[dot, label=-45:$\alpha$] (alpha) at (intersection-1);
+		\begin{pgfonlayer}{background}
+			\fill[catmcc] ($(tl) + (-1,0)$) rectangle (br);
+			\fill[catmcb] (bl) rectangle ($(tr) + (1,0)$);
+			\fill[catmca] (bm) to[out=90, in=-90] (r) -- (tr) -- ++(1,0) -- ++(0,-5) -- cycle;
+		\end{pgfonlayer}
+	\end{tikzpicture}\end{center}
 This gives us a new graphical formalism to represent our effects using a few equality rules between diagrams.
 The commutative aspect of functional diagrams is now replaced by an equality of string diagrams, which will be detailed in the following section.
 
@@ -649,19 +653,19 @@ A functor of type $\mathds{1} \to \mC$ is equivalent to choosing an object in $\
 This gives us a way to map the composition of our sentence to a simple string in our diagram.
 Knowing that allows us to represent the type resulting from a sequence of computations as a sequence of strings whose farthest right represents an object in $\mC$, that is, a base type.
 \begin{center}
-\begin{tikzpicture}
-	\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 1) coordinate[dot, label=left:$\w{sleeps}$] (sleeps) + (0, 2) coordinate[label=above:$\t$] (bool)
-	++(-2, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe)
-	++(2, -2) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -2) coordinate[label=below:$\bot$] (bot);
-	\draw (cat) -- (the) -- (sleeps) -- (bool);
-	\draw[name path=effect] (the) to[out=180, in=-90] (ctlthe) -- (effthe);
-	\draw[dashed] (bot) -- (cat);
-	\begin{pgfonlayer}{background}
-		\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
-		\fill[catmca] (bot) rectangle ($(effthe) + (-1, 0)$);
-		\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
-	\end{pgfonlayer}
-\end{tikzpicture}
+	\begin{tikzpicture}
+		\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 1) coordinate[dot, label=left:$\w{sleeps}$] (sleeps) + (0, 2) coordinate[label=above:$\t$] (bool)
+		++(-2, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe)
+		++(2, -2) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -2) coordinate[label=below:$\bot$] (bot);
+		\draw (cat) -- (the) -- (sleeps) -- (bool);
+		\draw[name path=effect] (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+		\draw[dashed] (bot) -- (cat);
+		\begin{pgfonlayer}{background}
+			\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+			\fill[catmca] (bot) rectangle ($(effthe) + (-1, 0)$);
+			\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
+		\end{pgfonlayer}
+	\end{tikzpicture}
 \end{center}
 
 For simplicity reasons, and because the effects that are buried in our typing system not only give rise to functors but also have types that are not purely currifiable, we will write our string diagrams on the fully parsed sentence, with its most simplified/composed expression.
@@ -670,8 +674,8 @@ The natural composition rules on diagrams being the gluing together of diagrams,
 \begin{equation}
 	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
 		\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate (input)
-			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
-			\node[anchor=north] at (input) {$\e \to \t$};
+		++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+		\node[anchor=north] at (input) {$\e \to \t$};
 		\draw (input) -- (bool);
 		\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
 		\begin{pgfonlayer}{background}
@@ -692,7 +696,7 @@ The natural composition rules on diagrams being the gluing together of diagrams,
 	=
 	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
 		\path coordinate[dot, label=right:$\w{the}\w{cat}$] (the) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
-			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+		++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
 		\draw (the) -- (bool);
 		\draw[dashed] (input) -- (the);
 		\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
@@ -721,12 +725,12 @@ Notice that we never reference the zero-cells and that in particular their color
 \begin{center}
 	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
 		\path
-			coordinate[label=below:$\t$] (bf0) + (0, 1) coordinate[label=above:$\t$] (tf0)
-			++ (-1, 1) coordinate[label=above:$\f{F}_{1}$] (tf1) + (0, -1) coordinate[label=below:$\f{F}_{1}$] (bf1)
-			++ (-1, -1) coordinate[label=below:$\f{F}_{2}$] (bf2) + (0, 1) coordinate[label=above:$\f{F}_{2}$] (tf2)
-			++ (-1, 1) coordinate[label=above:$\f{F}_{3}$] (tf3) + (0, -1) coordinate[label=below:$\f{F}_{3}$] (bf3)
-			++ (-1, -1) coordinate[label=below:$\f{F}_{4}$] (bf4) + (0, 1) coordinate[label=above:$\f{F}_{4}$] (tf4)
-			++ (-1, 1) coordinate[label=above:$\f{F}_{5}$] (tf5) + (0, -1) coordinate[label=below:$\f{F}_{5}$] (bf5);
+		coordinate[label=below:$\t$] (bf0) + (0, 1) coordinate[label=above:$\t$] (tf0)
+		++ (-1, 1) coordinate[label=above:$\f{F}_{1}$] (tf1) + (0, -1) coordinate[label=below:$\f{F}_{1}$] (bf1)
+		++ (-1, -1) coordinate[label=below:$\f{F}_{2}$] (bf2) + (0, 1) coordinate[label=above:$\f{F}_{2}$] (tf2)
+		++ (-1, 1) coordinate[label=above:$\f{F}_{3}$] (tf3) + (0, -1) coordinate[label=below:$\f{F}_{3}$] (bf3)
+		++ (-1, -1) coordinate[label=below:$\f{F}_{4}$] (bf4) + (0, 1) coordinate[label=above:$\f{F}_{4}$] (tf4)
+		++ (-1, 1) coordinate[label=above:$\f{F}_{5}$] (tf5) + (0, -1) coordinate[label=below:$\f{F}_{5}$] (bf5);
 		\foreach \i in {1,...,5} {\draw (tf\i) -- (bf\i);}
 		\begin{pgfonlayer}{background}
 			\fill[catone] ($(bf0) + (1, 0)$) rectangle ($(tf5) + (-1, 0)$);
@@ -780,71 +784,115 @@ This rule is to be seen as a straight-forward consequence of the isomorphism bet
 Allowing for that and remembering the fact that you can always replace a diagram by an equivalent one before composing answers the question of how we create composition rules for string diagrams, or almost: there is still a situation that is not accounted for, or at least explained: what happens when applying an effectful diagram\footnote{When the associated effect is monadic this type of diagram represents an arrow in the Kleisli category of the monad.}  to another effectful diagram?
 Take the equation below:
 \begin{equation*}
+	\begin{aligned}
 		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-	\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\e\to\t$] (bool)
-	++(-2, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe)
-	++(2, -2) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
-	\draw (cat) -- (the) -- (eats) -- (bool);
-	\draw[name path=effect] (the) to[out=180, in=-90] (ctlthe) -- (effthe);
-	\draw[dashed] (bot) -- (cat);
-	\begin{pgfonlayer}{background}
-		\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
-		\fill[catmca] (bot) rectangle ($(effthe) + (-1, 0)$);
-		\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
-	\end{pgfonlayer}
-	\end{tikzpicture}
-%
-	\bigotimes
-%
-	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-		\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (mouse) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
-			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa);
-		\draw (mouse) -- (bool);
-		\draw[dashed] (input) -- (mouse);
-		\draw (mouse) to[out=180, in=-90] (ctla) -- (effa);
-		\begin{pgfonlayer}{background}
-			\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
-			\fill[catmca] (input) rectangle ($(effa) + (-1, 0)$);
-			\fill[catmc] (mouse) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (mouse);
-		\end{pgfonlayer}
-	\end{tikzpicture}
-%
-%
-	\overset{\rm curry}{=}
-%
-%
+			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\e\to\t$] (bool)
+			++(-2, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++(2, -2) coordinate[dot, label=left:$\w{mouse}$] (mouse) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\draw (mouse) -- (a) -- (eats) -- (bool);
+			\draw[name path=effect] (a) to[out=180, in=-90] (ctla) -- (effa);
+			\draw[dashed] (bot) -- (cat);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+				\fill[catmca] (bot) rectangle ($(effa) + (-1, 0)$);
+				\fill[catmc] (the) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (a);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		\bigotimes
+		%
 		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-	\path coordinate[dot, label=right:$\w{the}$] (the) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
-	++(-2, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe)
-	++(2, -2) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -2) coordinate[label=below:$\e$] (bot);
-	\draw (cat) -- (the) -- (eats) -- (bool);
-	\draw[name path=effect] (the) to[out=180, in=-90] (ctlthe) -- (effthe);
-	\draw (bot) -- (cat);
-	\begin{pgfonlayer}{background}
-		\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
-		\fill[catmca] (bot) rectangle ($(effthe) + (-1, 0)$);
-		\fill[catmc] (the) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (the);
-	\end{pgfonlayer}
-	\end{tikzpicture}
-%
-	\bigotimes
-%
-	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-		\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (mouse) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
-			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa);
-		\draw (mouse) -- (bool);
-		\draw[dashed] (input) -- (mouse);
-		\draw (mouse) to[out=180, in=-90] (ctla) -- (effa);
-		\begin{pgfonlayer}{background}
-			\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
-			\fill[catmca] (input) rectangle ($(effa) + (-1, 0)$);
-			\fill[catmc] (mouse) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (mouse);
-		\end{pgfonlayer}
-	\end{tikzpicture}
+			\path coordinate[dot, label=right:$\w{the}\w{cat}$] (cat) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+			\draw (cat) -- (bool);
+			\draw[dashed] (input) -- (cat);
+			\draw (cat) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
+				\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmc] (cat) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (cat);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		%
+		\overset{\rm curry}{=}\,   &
+		%
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+			++(-2, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++(2, -2) coordinate[dot, label=left:$\w{mouse}$] (mouse) + (0, -2) coordinate[label=below:$\e$] (bot);
+			\draw (mouse) -- (a) -- (eats) -- (bool);
+			\draw[name path=effect] (a) to[out=180, in=-90] (ctla) -- (effa);
+			\draw (bot) -- (mouse);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+				\fill[catmca] (bot) rectangle ($(effa) + (-1, 0)$);
+				\fill[catmc] (a) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (a);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		\bigotimes
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{the}\w{cat}$] (cat) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+			\draw (cat) -- (bool);
+			\draw[dashed] (input) -- (cat);
+			\draw (cat) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
+				\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmc] (cat) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (cat);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		\\
+		%
+		%
+		%
+		\overset{\rm paste}{=}\,   &
+		%
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+			++ (-1.5, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++ (1.5, -2) coordinate[dot, label=left:$\w{mouse}$] (mouse)
+			++ (0, -1) coordinate[dot, label=right:$\w{the}$] (the) + (-3, 2) coordinate (ctlthe) + (-3, 4) coordinate[label=above:$\f{M}$] (effthe)
+			++ (0, -1) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -1) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\draw[dashed] (bot) -- (cat);
+			\draw (cat) -- (bool);
+			\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\draw (a) to[out=180, in=-90] (ctla) -- (effa);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (1.5, 0)$);
+				\fill[catmcb] (bot) rectangle ($(effthe) + (-1.5, 0)$);
+				\fill[catmca] (the) to[out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- cycle;
+				\fill[catmc] (a) to[out=180, in=-90] (ctla) -- (effa) -- (bool) -- cycle;
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		\\
+		\overset{\rm compose}{=}\, &
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (a) + (0, 1) coordinate[dot, label=right:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++ (1, -2) coordinate[dot, label=right:$\w{the}\w{cat}$] (the) + (-2, 2) coordinate (ctlthe) + (-2, 3) coordinate[label=above:$\f{M}$] (effthe)
+			++ (0, -1) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\draw[dashed] (bot) -- (the);
+			\draw (the) -- (bool);
+			\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\draw (a) to[out=180, in=-90] (ctla) -- (effa);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (2, 0)$);
+				\fill[catmcb] (bot) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmca] (the) to[out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- cycle;
+				\fill[catmc] (a) to[out=180, in=-90] (ctla) -- (effa) -- (bool) -- cycle;
+			\end{pgfonlayer}
+		\end{tikzpicture}
+	\end{aligned}
 \end{equation*}
-If we applied our pasting rule for $\otimes$ here, the resulting type that would be found would be $\f{D}\f{M}\t$.
-However, when computing this, the resulting type should be $\f{M}\f{D}\t$.
-Since clearly $\f{M} \circ \f{D} \neq \f{D}\circ \f{M}$, it means that the pasting of diagram is not actually the right way to compose.
+
+When you're not a moron and you remember the order in which you choose to apply the arguments of the function, you
 
 \subsubsection{Equations}
 \label{subsubsec:sdq}
@@ -856,6 +904,128 @@ Theorem \ref{thm:isotopy} reminds the main result by \newcite{joyalGeometryTenso
 \end{thm}
 We will not prove this theorem here as it implies huge portions of graph theory and algebra which are out of the scope of this paper.
 
+\medskip
+
+Let us now look at a few of the equations that arise from the commutation of certain diagrams:
+\begin{description}
+	\item[The \emph{Elevator} Equations] are a consequence of theorem \ref{thm:isotopy} but also highlight one of the most important properties of string diagrams in their modelisation of multi-threaded computations: what happens on one string does not influence what happens on another in the same time:
+	      \begin{equation}
+		      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			      \path coordinate[dot, label=left:$\mu$] (mu) + (0, 2) coordinate (t1) + (0, -1) coordinate (b1)
+			      ++ (1, 0) coordinate[dot, label=right:$\epsilon$] (eps) + (0, 2) coordinate (t2) + (0, -1) coordinate (b2);
+			      \draw (t1) -- (b1) (t2) -- (b2);
+			      \begin{pgfonlayer}{background}
+				      \fill[catmc] (b2) rectangle ($(t2) + (1, 0)$);
+				      \fill[catmca] (b1) rectangle (t2);
+				      \fill[catmcb] (b1) rectangle ($(t1) + (-1, 0)$);
+			      \end{pgfonlayer}
+		      \end{tikzpicture}
+		      =
+		      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			      \path coordinate[dot, label=left:$\mu$] (mu) + (0, 1) coordinate (t1) + (0, -2) coordinate (b1)
+			      ++ (1, -1) coordinate[dot, label=right:$\epsilon$] (eps) + (0, 2) coordinate (t2) + (0, -1) coordinate (b2);
+			      \draw (t1) -- (b1) (t2) -- (b2);
+			      \begin{pgfonlayer}{background}
+				      \fill[catmc] (b2) rectangle ($(t2) + (1, 0)$);
+				      \fill[catmca] (b1) rectangle (t2);
+				      \fill[catmcb] (b1) rectangle ($(t1) + (-1, 0)$);
+			      \end{pgfonlayer}
+		      \end{tikzpicture}
+		      =
+		      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			      \path coordinate[dot, label=left:$\mu$] (mu) + (0, 2) coordinate (t1) + (0, -1) coordinate (b1)
+			      ++ (1, 1) coordinate[dot, label=right:$\epsilon$] (eps) + (0, 1) coordinate (t2) + (0, -2) coordinate (b2);
+			      \draw (t1) -- (b1) (t2) -- (b2);
+			      \begin{pgfonlayer}{background}
+				      \fill[catmc] (b2) rectangle ($(t2) + (1, 0)$);
+				      \fill[catmca] (b1) rectangle (t2);
+				      \fill[catmcb] (b1) rectangle ($(t1) + (-1, 0)$);
+			      \end{pgfonlayer}
+		      \end{tikzpicture}
+		      =
+		      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			      \path coordinate[dot, label=left:$\mu$] (mu) + (0, 1) coordinate (t1) + (0, -2) coordinate (b1)
+			      ++ (1, 0) coordinate[dot, label=right:$\epsilon$] (eps) + (0, 1) coordinate (t2) + (0, -2) coordinate (b2);
+			      \draw (t1) -- (b1) (t2) -- (b2);
+			      \begin{pgfonlayer}{background}
+				      \fill[catmc] (b2) rectangle ($(t2) + (1, 0)$);
+				      \fill[catmca] (b1) rectangle (t2);
+				      \fill[catmcb] (b1) rectangle ($(t1) + (-1, 0)$);
+			      \end{pgfonlayer}
+		      \end{tikzpicture}
+		      \label{eq:elevator}
+		      \tag{\href{https://î.fr/ascenseurs}{î}} % FIXME: add elevator emoji
+	      \end{equation}
+
+	\item[The \emph{Snake} Equations] are a rewriting of the categorical diagrams of Paragraph \ref{par:adjunctions} which are the defining properties of an adjunction.
+	      \begin{center}
+			  \label{eq:snake}
+		      \begin{minipage}{.4\linewidth}
+			      \begin{equation}
+				      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+						  \path coordinate[label=below:$L$] (top)
+						  ++ (0, 2) coordinate (ctltop)
+						  ++ (1, 1) coordinate[dot, label=above:$\eta$] (eta)
+						  ++ (1, -1) coordinate (ctlmid)
+						  ++ (1, -1) coordinate[dot, label=below:$\epsilon$] (eps)
+						  ++ (1, 1) coordinate (ctlbot)
+						  ++ (0, 2) coordinate[label=above:$R$] (bot);
+						  \draw (top) -- (ctltop)
+						  		to[out=90, in=180] (eta)
+								to[out=0, in=90] (ctlmid)
+								to[out=-90, in=180] (eps)
+								to[out=0, in=-90] (ctlbot) -- (bot);
+				      \end{tikzpicture}
+				      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+						  \path coordinate[dot, label=right:$\id_{L}$] (id) + (0, 1) coordinate[label=above:$L$] (top) + (0, -1) coordinate[label=below:$L$] (bot);
+					      \draw (top) -- (bot);
+					      \begin{pgfonlayer}{background}
+						      \fill[catmc] (top) rectangle ($(bot) + (1, 0)$);
+						      \fill[catmca] (top) rectangle ($(bot) + (-1, 0)$);
+					      \end{pgfonlayer}
+				      \end{tikzpicture}
+					  \tag{snake1}
+			      \end{equation}
+		      \end{minipage}
+		      \begin{minipage}{.2\linewidth}
+
+		      \end{minipage}
+		      \begin{minipage}{.4\linewidth}
+			      \begin{equation}
+				      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+						  \path coordinate[label=above:$R$] (top)
+						  ++ (0, -2) coordinate (ctltop)
+						  ++ (-1, -1) coordinate[dot, label=above:$\eta$] (eta)
+						  ++ (-1, 1) coordinate (ctlmid)
+						  ++ (-1, 1) coordinate[dot, label=below:$\epsilon$] (eps)
+						  ++ (-1, -1) coordinate (ctlbot)
+						  ++ (0, -2) coordinate[label=below:$R$] (bot);
+						  \draw (top) -- (ctltop)
+						  		to[out=-90, in=0] (eta)
+								to[out=180, in=-90] (ctlmid)
+								to[out=90, in=0] (eps)
+								to[out=180, in=90] (ctlbot) -- (bot);
+						\begin{pgfonlayer}{background}
+							\fill[catmc] ($(bot) + (-1, 0)$) rectangle (top);
+							\fill[catmca] let \p1 = (bot), \p2 = (eta), \p3 = (top) in
+							(ctltop) to [out=-90, in=0] (eta) -- (\x2, \y1) -- ($(1, 0) + (\x3, \y1)$) -- ($(top) + (1, 0)$) -- (top) -- (ctltop);
+							\fill[catmca] (eta) to[out=180, in=-90] (ctlmid) -- (ctlbot) -- (bot) -| (eta);
+						\end{pgfonlayer}
+				      \end{tikzpicture}
+				      =
+				      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+						  \path coordinate[dot, label=right:$\id_{R}$] (id) + (0, 1) coordinate[label=above:$R$] (top) + (0, -1) coordinate[label=below:$R$] (bot);
+					      \draw (top) -- (bot);
+					      \begin{pgfonlayer}{background}
+						      \fill[catmca] (top) rectangle ($(bot) + (1, 0)$);
+						      \fill[catmc] (top) rectangle ($(bot) + (-1, 0)$);
+					      \end{pgfonlayer}
+				      \end{tikzpicture}
+					  \tag{snake2} % FIXME: add snake emoji
+				\end{equation}
+		      \end{minipage}
+	      \end{center}
+\end{description}
 
 
 \clearpage
