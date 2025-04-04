@@ -1,0 +1,25 @@
+	\setcellgapes{2pt}
+	\makegapedcells
+	\begin{NiceTabular}{>{\bf}LLL}
+		Expression & \rm Type & \lambda\text{-Term} \\
+		\word{planet}{\e\to\t}{\lambda x. \w{planet} x}{common nouns}
+		\word{carnivorous}{\left( \e \to \t \right)}{\lambda x. \w{carnivorous}x}{predicative adjectives}
+		\word{skillful}{\left( \e \to \t \right) \to \left( \e \to \t \right)}{\lambda p. \lambda x. px \land \w{skillful} x}{predicate modifier adjectives}
+		\word{Jupiter}{\e}{{\bf j}\in \Var}{proper nouns}
+		\word{sleep}{\e \to \t}{\lambda x. \w{sleep} x}{intranitive verbs}
+		\word{chase}{\e \to \e \to \t}{\lambda o. \lambda s. \mathbf{chase}\left( o \right)\left( s \right)}{transitive verbs}
+		\word{be}{\left( \e \to \t \right) \to \e \to \t}{\lambda p. \lambda x. px}{}
+		\word{she}{\e\to\e}{\lambda x. x}{}
+		\word{it}{\left( \bot \to \f{G}\e \right)}{\lambda g. g_{0}}{}
+		\word{which}{\left( \e \to \t \right)\to \f{S}\e}{\lambda p. \left\{x \suchthat px\right\}}{}
+		\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p = \{x\} \text{ else } \#}{}
+		\word{a}{\left( \e \to \t \right) \to \f{D}\e}{\lambda p. \lambda s. \left\{ \scalar{x, x + s}\suchthat p x\right\}}{}
+		\word{no}{\left( \e \to \t \right) \to \f{C}\e}{\lambda p. \lambda c. \lnot \exists x. p x \land c\, x}{}
+		\word{every}{\left( \e \to \t \right)\to \f{C}\e}{\lambda p. \lambda c. \forall x, px \Rightarrow cx}{}
+		\CodeAfter
+		\begin{tikzpicture}
+			\draw[double] (1|-2) -- (4|-2);
+			\foreach \r in {4,6,...,14} {\draw (1|-\r) -- (4|-\r);}
+			\foreach \r in {15,...,21} {\draw (1|-\r) -- (4|-\r);}
+		\end{tikzpicture}
+	\end{NiceTabular}

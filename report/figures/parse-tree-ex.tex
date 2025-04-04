@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+		\wnode{2}{sees}{\left( \e \to \e \to \t \right)}
+		\wnode{3}{the}{\left( \e \to \t \right) \to \f{M}\e}
+		\wnode{4}{girl}{\left( \e \to \t \right)}
+		\dtnode{\f{M}\e}{the-}{girl-}
+		\wnode{5}{using}{\left( \e \to \t \right) \to \e \to \left( \e \to \t \right)}
+		\wnode{6}{a}{\left( \e \to \t \right) \to \f{D}\e}
+		\wnode{7}{telescope}{\left( \e \to \t \right)}
+		\utnode{\f{D}\e}{a}{telescope}
+		\dtnode{\f{D}\e}{a-}{telescope-}
+		\utnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using}{atelescope}
+		\dtnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using-}{a-telescope-}
+		\utnode{\f{D}\left( \e \to \t \right)}{girl}{usingatelescope}
+		\utnode{\f{M}\f{D}\e}{the}{girlusingatelescope}
+		\utnode{\f{M}\f{D}\left( \e \to \t \right)}{sees}{thegirlusingatelescope}
+		%
+		\wnode{0}{the}{\left( \e \to \t \right) \to \f{M}\e}
+		\wnode{1}{man}{\left( \e \to \t \right)}
+		\utnode{\f{M}\e}{the}{man}
+		\utnode{\f{M}\f{M}\f{D}\t}{theman}{seesthegirlusingatelescope}
+		\utnode{\f{M}\f{D}\t}{themanseesthegirlusingatelescope}{themanseesthegirlusingatelescope}
+		%
+		\dtnode[.8]{\f{M}\left( \e \to \t \right)}{sees-}{the-girl-}
+		\dtnode[.2]{\f{D}\left( \e \to \t \right)}{man-}{using-a-telescope-}
+		\dtnode{\f{M}\f{D}\t}{the-}{man-using-a-telescope-}
+		\dtnode[.8]{\f{M}\f{M}\f{D}\t}{the-man-using-a-telescope-}{sees-the-girl-}
+		\dtnode{\f{M}\f{D}\t}{the-man-using-a-telescope-sees-the-girl-}{the-man-using-a-telescope-sees-the-girl-}
+		%
+		%
+	\end{tikzpicture}
