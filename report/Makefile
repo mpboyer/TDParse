@@ -3,3 +3,6 @@ main:
 
 all:
 	lmake tdparse.tex
+
+clean:
+	\rm tdparse.log tdparse.out tdparse.toc tdparse.aux

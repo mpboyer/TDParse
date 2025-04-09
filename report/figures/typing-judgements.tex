@@ -1,0 +1,11 @@
+	\begin{align*}
+		\forall F \in \mF\left( \mL \right),\poulpe
+		\frac{\cont x: \tau \poulpe \cont F: S\subseteq \star \poulpe \overbrace{\tau \in S}^{\exists \tau'\in S, \tau \preceq \tau'}}{\cont Fx: F\tau \preceq \tau}\fracnotate{Cons} \\[.25cm]
+		\frac{\cont x: \tau \poulpe \tau \in \star_{0}}{\cont Fx: F\tau \notin \star_{0}}\fracnotate{$FT_{0}$}                                                                        \\[.25cm]
+		\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}                                                       \\[.25cm]
+		\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}                                                                    \\[.5cm]
+		\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right)}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}}                                         \\[.25cm]
+		\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}}                                                                                                         \\[.5cm]
+		\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}                                                                                                               \\[.25cm]
+		\forall F \overset{\theta}{\Longrightarrow} G,\poulpe \frac{\cont x: F\tau \poulpe \cont G: S' \subseteq \star \poulpe \tau \in S'}{\cont x : G\tau}\fracnotate{\texttt{nat}}
+	\end{align*}

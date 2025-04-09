@@ -1,0 +1,7 @@
+\begin{tikzcd}
+		\A\ar[r, "\id_{\A}" name=idA]\ar[dr, "L"'] &[1.8cm] \A\ar[dr, "L"]\ar[phantom, "" name=A] &[1.8cm] \\[2cm]
+		& \B\ar[u, "R"]\ar[phantom, "" name=B]\ddarrow["\Sq{\eta}"]{idA}{B}\ar[r, "\id_{B}" name=idB]\ddarrow["\text{\textcircled{$\epsilon$}}"]{A}{idB} & \B
+	\end{tikzcd}
+	= \begin{tikzcd}
+		\A\ar[r, bend left=45, "L"' name=L]\ar[r, bend right=45, "L" name=R]\ddarrow["\id_{L}"]{L}{R}&[2cm] \B
+	\end{tikzcd}

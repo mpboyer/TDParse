@@ -1,0 +1,168 @@
+\usepackage{bigstrut}
+\usepackage{makecell}
+\usepackage{emoji}
+\usepackage{tikz-dependency}
+\usepackage{diag}
+
+\def\cont{\Gamma\vdash}
+\def\poulpe{\qquad}
+
+\setlength\belowcaptionskip{0pt}
+\setlength\abovecaptionskip{\baselineskip}
+
+\DeclareMathOperator{\Var}{Var}
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\section{\bibname}
+      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+
+\def\black@or@white#1#2{%
+  \@tempdima#2 pt
+  \ifdim\@tempdima>0.5 pt
+    \definecolor{temp@c}{gray}{0}%
+  \else
+    \definecolor{temp@c}{gray}{1}%
+  \fi}
+\def\letterbox#1#{\protect\letterb@x{#1}}
+\def\letterb@x#1#2#3{%
+  \colorlet{temp@c}[gray]{#2}%
+  \extractcolorspec{temp@c}{\color@spec}%
+  \expandafter\black@or@white\color@spec
+  {\color#1{temp@c}\tallcbox#1{#2}{#3}}}
+\def\tallcbox#1#{\protect\color@box{#1}}
+\def\color@box#1#2{\color@b@x\relax{\color#1{#2}}}
+\long\def\color@b@x#1#2#3%
+ {\leavevmode
+  \setbox\z@\hbox{{\set@color#3}}%
+  \ht\z@\ht\strutbox
+  \dp\z@\dp\strutbox
+  {#1{#2\color@block{\wd\z@}{\ht\z@}{\dp\z@}\box\z@}}}
+\makeatother
+
+\contourlength{0.005em}
+\def\backbox#1{\letterbox{Lavender!40}{\contour{black}{#1}}}
+
+\def\ty#1{\backbox{\tt\color{yulm!90!black}#1}}
+\def\f#1{\backbox{\tt\color{vulm}#1}}
+\def\w#1{\mathbf{#1}\,}
+
+\def\e{\ty{e}}
+\def\t{\ty{t}}
+\def\r{\ty{r}}
+
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+\def\fmap{\texttt{fmap}}
+
+
+\makeatletter
+\newcommand{\@word}[4][]{%
+	#2 & #3 & #4\\
+\ifx&#1&%
+	%
+\else
+	&\multicolumn{2}{l}{Generalizes to \textbf{#1}}\\%
+\fi%
+}
+\def\word#1#2#3#4{\@word[#4]{#1}{#2}{#3}}
+\makeatother
+
+\usepackage{calc}
+
+\makeatletter
+\def\textSq#1{%
+\begingroup% make boxes and lengths local
+\setlength{\fboxsep}{0.4ex}% SET ANY DESIRED PADDING HERE
+\setbox1=\hbox{#1}% save the contents
+\setlength{\@tempdima}{\maxof{\wd1}{\ht1+\dp1}}% size of the box
+\setlength{\@tempdimb}{(\@tempdima-\ht1+\dp1)/2}% vertical raise
+\raise-\@tempdimb\hbox{\fbox{\vbox to \@tempdima{%
+  \vfil\hbox to \@tempdima{\hfil\copy1\hfil}\vfil}}}%
+\endgroup%
+}
+\def\Sq#1{\textSq{\ensuremath{#1}}}%
+
+\def\c@lsep{2.3}
+\def\r@wsep{.8}
+
+\tikzset{
+	uptree/.style={
+			draw=green!80!black,
+			thick,
+		},
+	typenode/.style={
+			align=center,
+			text width=24mm,
+			%font={\large},
+		},
+	treenode/.style={
+			align=center,
+			text width=24mm,
+		},
+	wordnode/.style={
+			inner sep=0pt,
+			align=center,
+			font={\large},
+		},
+	downtree/.style={
+			draw=red!80!black,
+			thick,
+		},
+}
+
+\newcommand{\wnode}[3]{%
+	\node (#2) at (#1*\c@lsep, 0) [wordnode] {#2};
+	\node[anchor=north] (#2-) at ($(#1*\c@lsep, 0) + (0, -.142)$) [typenode] {\ensuremath{#3}};
+}
+\newcommand{\utnode}[3]{%
+	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q1) at (\x1, {max(\y1, \y2)});
+	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q2) at (\x2, {max(\y1, \y2)});
+	\node (#2#3) at ($($(Q1)!0.5!(Q2)$) + (0, 1)$) [treenode] {\ensuremath{#1}};
+	\draw[uptree] ($(#2.north) + (0, .142)$) -- (#2#3.south);
+	\draw[uptree] ($(#3.north) + (0, .142)$) -- (#2#3.south);
+}
+\newcommand{\dtnode}[4][0.5]{%
+	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q1) at (\x1, {min(\y1, \y2)});
+	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q2) at (\x2, {min(\y1, \y2)});
+	\node (#3#4) at ($($(Q1)!#1!(Q2)$) + (0, -1)$) [treenode] {\ensuremath{#2}};
+	\draw[downtree] ($(#3.south) + (0, -.142)$) -- (#3#4.north);
+	\draw[downtree] ($(#4.south) + (0, -.142)$) -- (#3#4.north);
+}
+
+\def\inputtikz#1{
+	\ifnum\tikzimp@rt=1
+		\input{figures/#1}
+	\else
+		\ensuremath{\text{\Huge\color{vulm}A TikZ PICTURE GOES HERE.}}
+	\fi
+}
+\makeatother
+
+\catstyle{catone}{gray!50}
+\catstyle{catmc}{vulm!10!yulm}
+\catstyle{catmca}{vulm!20!yulm}
+\catstyle{catmcb}{vulm!30!yulm}
+\catstyle{catmcc}{vulm!40!yulm}
+\catstyle{catmcd}{vulm!50!yulm}
+\catstyle{catmce}{vulm!60!yulm}
+\catstyle{catmcf}{vulm!70!yulm}
+\catstyle{catmcg}{vulm!80!yulm}
+\catstyle{catmch}{vulm!90!yulm}

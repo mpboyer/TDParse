@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  4 APR 2025 11:36
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  8 APR 2025 14:37
  system commands enabled.
 **tdparse.tex
 (./tdparse.tex
@@ -2102,6 +2102,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 43.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd))
+(./preamble.tex
 (/usr/local/texlive/2024/texmf-dist/tex/latex/multirow/bigstrut.sty
 Package: bigstrut 2021/03/15 v2.8 Provide larger struts in tabulars
 )
@@ -2163,46 +2164,46 @@ s/tikzlibraryintersections.code.tex
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryinterse
 ctions.code.tex
 \pgf@intersect@solutions=\count489
-)))
+))))
 runsystem(command -v pygmentize && touch tdparse.aex)...executed.
 runsystem(rm tdparse.aex)...executed.
  (./tdparse.aux)
 \openout1 = tdparse.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-30.
+2.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 130.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 13
-0.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 12.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 12
+.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    ... okay on input line 12.
 \Etoc@tf=\read7
 
 *geometry* driver: auto-detecting
@@ -2280,7 +2281,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 130.
+Package hyperref Info: Link coloring OFF on input line 12.
 
 (./tdparse.out) (./tdparse.out)
 \@outlinefile=\write6
@@ -2310,23 +2311,40 @@ fBuzz].
 (fontspec)             Emoji:mode=harf;script=DFLT;language=dflt;"
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 130.
+(Font)              <5> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 131.
+(Font)              <12> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 131.
+(Font)              <8> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 131.
+(Font)              <6> on input line 13.
 </home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf, id=88, 136.57294pt x 55.74188
 pt>
 File: /home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf Graphic file (type pdf)
 <use /home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf>
 Package luatex.def Info: /home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf  used 
-on input line 131.
+on input line 13.
 (luatex.def)             Requested size: 147.01308pt x 60.0pt.
 \tf@toc=\write7
 
 \openout7 = tdparse.toc
+
+
+Package natbib Warning: Citation `bumfordEffectdrivenInterpretation' on page 1 
+undefined on input line 19.
+
+
+Package natbib Warning: Citation `bumfordEffectfulCompositionNatural' on page 1
+ undefined on input line 19.
+
+
+Package natbib Warning: Citation `moggiComputationalLambdacalculusMonads1989' o
+n page 1 undefined on input line 23.
+
+
+Package natbib Warning: Citation `heimSemanticsGenerativeGrammar1998' on page 1
+ undefined on input line 34.
+
 
 
 [1
@@ -2334,86 +2352,103 @@ on input line 131.
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}</home/mat
 thieu/Documents/ETUDES/ENS/ens_psl.pdf>]
 
+Package natbib Warning: Citation `coeckeMathematicalFoundationsCompositional201
+0' on page 2 undefined on input line 39.
+
+
+Package natbib Warning: Citation `melliesFunctorsAreType2015' on page 2 undefin
+ed on input line 69.
+
+
+
 [2]
 
 [3]
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@3-1-2''? on inp
-ut line 235.
+Package natbib Warning: Citation `wadlerTheoremsFree1989' on page 4 undefined o
+n input line 130.
 
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@3-1-2''? on inp
-ut line 235.
+Package natbib Warning: Citation `marsikAlgebraicEffectsHandlers' on page 4 und
+efined on input line 154.
 
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@3-2-2''? on inp
-ut line 235.
+Package natbib Warning: Citation `bauerEffectSystemAlgebraic2014' on page 4 und
+efined on input line 155.
 
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@3-2-2''? on inp
-ut line 235.
-
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 2
-35.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 235.
+Package natbib Warning: Citation `plotkinHandlingAlgebraicEffects2013' on page 
+4 undefined on input line 155.
 
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@5-1-2''? on inp
-ut line 245.
+Package natbib Warning: Citation `wuEffectHandlersScope2014' on page 4 undefine
+d on input line 156.
 
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@5-1-2''? on inp
-ut line 245.
+Package natbib Warning: Citation `vandenbergFrameworkHigherorderEffects2024' on
+ page 4 undefined on input line 156.
 
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@5-2-2''? on inp
-ut line 245.
+Package natbib Warning: Citation `vandenbergFrameworkHigherorderEffects2024' on
+ page 4 undefined on input line 158.
 
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``tikz@f@5-2-2''? on inp
-ut line 245.
+Package natbib Warning: Citation `wadlerTheoremsFree1989' on page 4 undefined o
+n input line 164.
 
 
 
-[4]
-contour: Using real outline for `\tt \color {vulm}S' on input line 273.
+[4
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.1
+.1'
+<./luatex.AnvRAF/1.png>]
+contour: Using real outline for `\tt \color {vulm}S' on input line 169.
+
+Package natbib Warning: Citation `vandenbergFrameworkHigherorderEffects2024' on
+ page 5 undefined on input line 173.
+
 
 
 [5
 Non-PDF special ignored!
 Non-PDF special ignored!]
 
+Package natbib Warning: Citation `parteeLecture2Lambda' on page 6 undefined on 
+input line 242.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 251
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 251
+.
+
+
 [6]
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 414
+contour: Using real outline for `\tt \color {vulm}G' on input line 272.
+contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 272
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 414
+contour: Using real outline for `\tt \color {vulm}W' on input line 272.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 272
 .
-contour: Using real outline for `\tt \color {vulm}G' on input line 435.
-contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 435
+contour: Using real outline for `\tt \color {vulm}M' on input line 273.
+contour: Using real outline for `\tt \color {vulm}S' on input line 274.
+contour: Using real outline for `\tt \color {vulm}G' on input line 276.
+contour: Using real outline for `\tt \color {vulm}W' on input line 276.
+contour: Using real outline for `\tt \color {vulm}G' on input line 279.
+contour: Using real outline for `\tt \color {vulm}W' on input line 279.
+contour: Using real outline for `\tt \color {vulm}W' on input line 284.
+contour: Using real outline for `\tt \color {vulm}G' on input line 284.
+contour: Using real outline for `\tt \color {vulm}W' on input line 289.
+contour: Using real outline for `\tt \color {vulm}G' on input line 289.
+contour: Using real outline for `\tt \color {vulm}G' on input line 291.
+contour: Using real outline for `\tt \color {vulm}W' on input line 291.
+contour: Using real outline for `\tt \color {vulm}W' on input line 292.
+contour: Using real outline for `\tt \color {vulm}G' on input line 292.
+contour: Using real outline for `\tt \color {vulm}W' on input line 292.
+contour: Using real outline for `\tt \color {vulm}G' on input line 292.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 310
 .
-contour: Using real outline for `\tt \color {vulm}W' on input line 435.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 435
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 310
 .
-contour: Using real outline for `\tt \color {vulm}M' on input line 436.
-contour: Using real outline for `\tt \color {vulm}S' on input line 437.
-contour: Using real outline for `\tt \color {vulm}G' on input line 439.
-contour: Using real outline for `\tt \color {vulm}W' on input line 439.
-contour: Using real outline for `\tt \color {vulm}G' on input line 442.
-contour: Using real outline for `\tt \color {vulm}W' on input line 442.
-contour: Using real outline for `\tt \color {vulm}W' on input line 447.
-contour: Using real outline for `\tt \color {vulm}G' on input line 447.
 
 
 [7
@@ -2432,22 +2467,48 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 Non-PDF special ignored!]
-contour: Using real outline for `\tt \color {vulm}W' on input line 452.
-contour: Using real outline for `\tt \color {vulm}G' on input line 452.
-contour: Using real outline for `\tt \color {vulm}G' on input line 454.
-contour: Using real outline for `\tt \color {vulm}W' on input line 454.
-contour: Using real outline for `\tt \color {vulm}W' on input line 455.
-contour: Using real outline for `\tt \color {vulm}G' on input line 455.
-contour: Using real outline for `\tt \color {vulm}W' on input line 455.
-contour: Using real outline for `\tt \color {vulm}G' on input line 455.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 473
+contour: Using real outline for `\tt \color {vulm}S' on input line 324.
+contour: Using real outline for `\tt \color {vulm}S' on input line 324.
+contour: Using real outline for `\tt \color {vulm}S' on input line 325.
+contour: Using real outline for `\tt \color {vulm}S' on input line 330.
+contour: Using real outline for `\tt \color {vulm}S' on input line 330.
+contour: Using real outline for `\tt \color {vulm}S' on input line 334.
+contour: Using real outline for `\tt \color {vulm}F' on input line 335.
+contour: Using real outline for `\tt \color {vulm}F' on input line 335.
+contour: Using real outline for `\tt \color {vulm}F' on input line 335.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 339
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 473
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 339
 .
-contour: Using real outline for `\tt \color {vulm}S' on input line 487.
-contour: Using real outline for `\tt \color {vulm}S' on input line 487.
-contour: Using real outline for `\tt \color {vulm}S' on input line 488.
 
 
 [8
@@ -2476,56 +2537,18 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
 Non-PDF special ignored!]
-contour: Using real outline for `\tt \color {vulm}S' on input line 493.
-contour: Using real outline for `\tt \color {vulm}S' on input line 493.
-contour: Using real outline for `\tt \color {vulm}S' on input line 497.
-contour: Using real outline for `\tt \color {vulm}F' on input line 498.
-contour: Using real outline for `\tt \color {vulm}F' on input line 498.
-contour: Using real outline for `\tt \color {vulm}F' on input line 498.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 502
-.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 502
-.
 
+Package natbib Warning: Citation `delpeuchNormalizationPlanarString2022' on pag
+e 9 undefined on input line 360.
 
-[9
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 5
-31.
-
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 3
+68.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 
-[10]
+[9]
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .1'
 
@@ -2537,9 +2560,25 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .1'
+
+Package natbib Warning: Citation `joyalGeometryTensorCalculus1991' on page 10 u
+ndefined on input line 433.
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 590.
+(mdframed)              on input line 434.
+
+Package natbib Warning: Citation `selingerSurveyGraphicalLanguages2010' on page
+ 10 undefined on input line 434.
+
+
+Package natbib Warning: Citation `joyalGeometryTensorCalculus1991' on page 10 u
+ndefined on input line 434.
+
+
+
+[10]
+Package mdframed Info: Not enough space on this page on input line 437.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .1'
@@ -2577,8 +2616,6 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .1'
 
-
-[11<./luatex.26GcEG/1.png><./luatex.26GcEG/2.png>]
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .1'
 
@@ -2603,79 +2640,84 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .1'
 
+Package natbib Warning: Citation `delpeuchNormalizationPlanarString2022' on pag
+e 11 undefined on input line 487.
 
-[12] (./tdparse.bbl
+
+
+[11<./luatex.AnvRAF/2.png><./luatex.AnvRAF/3.png>]
+
+[12]
+No file tdparse.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+
 
 [13
 
-])
-
-[14] (./tdparse.aux)
+] (./tdparse.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `tdparse.out' has not changed.
-(rerunfilecheck)             Checksum: 049E929F47F617617B1D5BC405425AB1;3852.
+(rerunfilecheck)             Checksum: A050FA0125C46895676F3FE560B4BF73;3921.
 )
 
 Here is how much of LuaTeX's memory you used:
- 84998 strings out of 475931
+ 84707 strings out of 475931
  125129,3417909 words of node,token memory allocated
- 4781 words of node memory still in use:
-   67 hlist, 2 vlist, 2 rule, 16 math, 139 glue, 4 kern, 9 glyph, 432 attribute,
- 122 glue_spec, 377 attribute_list, 2 write, 194 pdf_literal, 2 pdf_action, 20 p
-df_colorstack nodes
-   avail lists: 2:6286,3:1974,4:460,5:559,6:121,7:10316,8:96,9:1337,10:21,11:713
-
- 105686 multiletter control sequences out of 65536+600000
- 125 fonts using 12566087 bytes
- 119i,20n,127p,733b,1124s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 4767 words of node memory still in use:
+   67 hlist, 2 vlist, 2 rule, 16 math, 138 glue, 4 kern, 10 glyph, 431 attribute
+, 122 glue_spec, 377 attribute_list, 2 write, 194 pdf_literal, 20 pdf_colorstack
+ nodes
+   avail lists: 1:1,2:2535,3:726,4:606,5:568,6:117,7:9683,8:96,9:954,10:21,11:79
+8
+ 105415 multiletter control sequences out of 65536+600000
+ 125 fonts using 14229247 bytes
+ 119i,19n,127p,733b,1124s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditali
 c.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmsans10-bold
 .otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman8-itali
 c.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmmono8-regul
 ar.otf>{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/lo
-cal/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>{/usr/
-local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texli
-ve/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2024/tex
-mf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/local/texlive/2024/t
-exmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/local/texlive/2024
-/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf>{/usr/local/texlive/20
-24/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2024/texmf-di
-st/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2024/texmf-
-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf></usr/local/texlive/202
-4/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/texlive/2
-024/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/texlive
-/2024/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf></usr/local/texlive/
-2024/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texli
-ve/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texli
-ve/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texli
-ve/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/local/te
-xlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/20
-24/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2024/texmf-dis
-t/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
-1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm
-/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024
-/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/f
-onts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/pu
-blic/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri1
-0.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texli
-ve/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on tdparse.pdf (14 pages, 351772 bytes).
+cal/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman8-bold.otf></usr/loc
+al/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>{/usr/l
+ocal/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
+e/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2024/texm
+f-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/local/texlive/2024/te
+xmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/local/texlive/2024/
+texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf>{/usr/local/texlive/202
+4/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2024/texmf-dis
+t/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2024/texmf-d
+ist/fonts/opentype/public/lm/lmromanslant10-regular.otf></usr/local/texlive/2024
+/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/texlive/20
+24/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/texlive/
+2024/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf></usr/local/texlive/2
+024/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texliv
+e/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texliv
+e/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texliv
+e/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/local/tex
+live/2024/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2024/texmf-dist
+/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1
+/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/
+lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/
+texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2024/texmf-dist/fo
+nts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/pub
+lic/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10
+.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on tdparse.pdf (13 pages, 335540 bytes).
 
-PDF statistics: 553 PDF objects out of 1000 (max. 8388607)
- 445 compressed objects within 5 object streams
- 90 named destinations out of 1000 (max. 131072)
+PDF statistics: 528 PDF objects out of 1000 (max. 8388607)
+ 398 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 131072)
  193 words of extra memory for PDF output out of 10000 (max. 100000000)
 
