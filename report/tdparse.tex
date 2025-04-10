@@ -74,7 +74,7 @@ In this paradigm, constant objects (or results of fully done computations) are f
 What this construct actually means, in categorical terms, is that a type is an object of $\bar{\mC}$ (as intended) but we add a subtyping relationship based on the procedure used to construct $\bar{\mC}$.
 Note that we can translate that subtyping relationship on functions as $F\left( A \xrightarrow{\phi} B \right)$ has types $F\left( A\Rightarrow B \right)$ and $FA \Rightarrow FB$.
 
-We will provide in Table \ref{tab:sctypes} a list of the effect-less usual types associated to regular linguistic objects.
+We will provide in Table \ref{fig:sctypes} a list of the effect-less usual types associated to regular linguistic objects.
 
 \subsubsection{Functors, Applicatives and Monads}\label{subsubsec:functors}
 Our point of view leads us to consider \emph{language functors}\footnote{The elements of our language, not the categorical construct.} as polymorphic functions: for a (possibly restrained, though it seems to always be $\star$) set of base types $S$, a functor is a function
@@ -203,12 +203,12 @@ Indeed the above equation could be simply written by our natural transformation 
 This is not a definitive rule as we could want to stop at a step in the derivation, depending on our understanding of the notion of future in the language.
 
 \subsection{Typing Judgements}\label{subsec:judgements}
-To complete this section, Table \ref{tab:judgements} gives a simple list of different typing composition judgements through which we also re-derzive the subtyping judgement to allow for its implementation.
-\begin{table}
+To complete this section, Table \ref{fig:judgements} gives a simple list of different typing composition judgements through which we also re-derzive the subtyping judgement to allow for its implementation.
+\begin{figure}
 	\inputtikz{typing-judgements}
 	\caption{Typing and Subtyping Judgements}
-	\label{tab:judgements}
-\end{table}
+	\label{fig:judgements}
+\end{figure}
 Note that here, the syntax is not taken into account: a function is always written left of its arguments, whether or not they are actually in that order in the sentence.
 This issue will be resolved by giving the syntactic tree of the sentence (or infering it at runtime).
 We could also add symmetry induced rules for application.
@@ -230,115 +230,6 @@ As an example, we provide the typing reductions for the classic example: \textsl
 This non-determinism is a component of our language's grammar and semantics: a same sentence can have multiple interpretation without context.
 By the same reasoning we applied on handlers, we choose not to resolve the ambiguity in the parser but we will try in Section \ref{sec:nondet} to reduce it to a minimum.
 Even so some of our derivations will include ways to read from a context (for example the \textbf{Jupiter, a planet} construct), we forget about the definition of the context, or its updating after a sentence, in our first proposition.
-
-\section{Language Translation}
-\label{sec:language}
-In this section we will give a list of words along with a way to express them as either arrows or endo-functors of our typing category.
-This will also give a set of functors and constructs in our language.
-
-\subsection{Types of Syntax}\label{subsec:syntax}
-We first need to setup some guidelines for our denotations, by asking ourselves how the different components of sentences interact with each other.
-For syntactic categories, the types that are generally used are the following, and we will see it matches with our lexicon, and simplifies our functorial definitions\footnote{We don't consider effects in the given typings.}.
-Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the operator which retrieves the type from a certain syntactic category.
-\begin{table}
-	\centering
-	\inputtikz{syntactic-categories}
-	\caption{Usual Typings for some Syntactic Categories}
-	\label{tab:sctypes}
-\end{table}
-\subsection{Lexicon: Semantic Denotations for Words}\label{subsec:lexicon}
-Many words will have basically the same ``high-level'' denotation.
-For example, the denotation for most common nouns will be of the form: $\cont \lambda x. \mathbf{planet} x: \e \to \t$.
-In Table \ref{tab:lexicon} we give a lexicon for a subset of the english language.
-We describe the constructor for the functors used by our denotations in the table, but all functors will be reminded and properly defined in Table \ref{tab:functors} along with their respective \fmap.
-\begin{table}
-	\centering
-	\inputtikz{lexicon-table}
-	\caption{$\lambda$-calculus representation of the english language $\mL$}
-	\label{tab:lexicon}
-\end{table}
-
-\subsection{Effects of the Language}\label{subsec:effects}
-For the applicatives/monads in Table \ref{tab:functors} we do not specify the unit and multiplication functions, as they are quite usual examples.
-We still provide the \fmap{} for good measure.
-
-\begin{table}
-	\centering
-	\inputtikz{functors-table}
-	\caption{Denotations for the functors used}
-	\label{tab:functors}
-\end{table}
-
-Let us explain a few of those functors: $\f G$ designates reading from a certain environment of type $\r$ while $\f W$ encodes the possibility of logging a message of type $\t$ along with the expression.
-The functor $\f M$ describes the possibility for a computation to fail, for example when retrieving a value that does not exist (see $\mathbf{the}$).
-The $\f S$ functor represents the space of possibilities that arises from a non-deterministic computation (see $\mathbf{which}$).
-
-We can then define an adjunction between $\f G$ and $\f W$ using our definitions:
-\begin{equation*}
-	\phi: \begin{array}{l}
-		\left( \alpha \to \f{G}\beta \right)\to \f{W}\alpha \to \beta \\
-		\lambda k. \lambda \left( a, g \right) . k a g
-	\end{array}
-	\text{ and }
-	\psi: \begin{array}{l}
-		\left( \f{W}\alpha \to \beta \right) \to \alpha \to \f{G} \beta \\
-		\lambda c \lambda a \lambda g. c \left( a, g \right)
-	\end{array}
-\end{equation*}
-where $\phi \circ \psi = \id$ and $\psi \circ \phi = \id$ on the properly defined sets.
-Now it is easy to see that $\phi$ and $\psi$ do define a natural transformation and thus our adjunction $\f{W} \dashv \f{G}$ is well-defined, and that its unit $\eta$ is $\psi \circ \id$ and its co-unit $\epsilon$ is $\phi \circ \id$.
-
-As a reminder, this means our language canonically defines a monad $\f{G}\circ \f{W}$.
-Moreover, the co-unit of the adjunction provides a canonical way for us to deconstruct entirely the comonad $\f{W}\circ \f{G} $, that is we have a natural transformation from $\f{W} \circ \f{G} \Rightarrow \Id$.
-
-\subsection{Modality, Plurality, Aspect, Tense}\label{subsec:modality}
-We will now explain ways to formalise higher-order concepts as described in Section \ref{par:higherorder}.
-
-First, let us consider in this example the plural concept.
-Here we do not focus on whether our denotation of the plural is semantically correct, but simply on whether our modelisation makes sense.
-As such, we give ourselves a way to measure if a certain $x$ is plural our not, which we will denote by $\abs{x} \geq 2$\footnote{We chose this representation as an example, it is not important for our formalism that this denotation is actually a good choice for the plural.}.
-It is important to note that if $\tau$ is a type, and $\cont x: \tau$ then we should have $\abs{\Pi x} \geq 1 = \top\footnote{This might be seen as a typing judgement~!}$.
-We then need to define the functor $\Pi$ which models the plural. We do not need to define it on types in any way other than $\Pi\left( \tau \right) = \Pi\tau$.
-We only need to look at the transformation on arrows\footnote{\texttt{fmap}, basically.}.
-This one depends on the \emph{syntactic}\footnote{Actually it depends on the word considered, but since the denotations (when considered effect-less) provided in Table \ref{tab:lexicon} are more or less related to the syntactic category of the word, our approximation suffices.} type of the arrow, as seen in Table \ref{tab:lexicon}.
-\begin{table}
-	\centering
-	\inputtikz{plural-table}
-	\caption{(Partial) Definition for the $\Pi$ Plural Functor}
-	\label{tab:pluralfunctor}
-\end{table}
-There is actually a presupposition in our definition. Whenever we apply $\Pi$ to an arrow representing a predicate $p: \e \to \t$, we still apply $p$ to its argument $x$ even though we say that $\Pi p$ is the one that applies to a plural entity $x$.
-This slight notation abuse results from our point of view on plural/its predicate representation: we assume the predicate $p$ (the common noun, the adjectve, the VP\ldots) applies to an object without regarding its cardinality.
-The two point of views on the singular/plural distinction could be adapted to our formalism: whether we believe that singular is the \emph{natural} state of the objects or that it is to be always specified in the same way as plural does not change anything:
-In the former, we do not change anything from the proposed functors.
-In the latter we simply need to create another functor $\Sigma$ with basically the same rules that represents the singular and ask of our predicates $p$ to be defined on $\left(\Pi\star\right) \sqcup \left(\Sigma \star\right)$.
-
-\medskip
-
-See that our functor only acts on the words which return a boolean by adding a plurality condition, and is simply passed down on the other words.
-Note however there is an issue with the \textbf{NP} category: in the case where a \textbf{NP} is constructed from a determiner and a common noun (phrase) the plural is not passed down.
-This comes from the fact that in this case, either the determiner or the common noun (phrase) will be marked, and by functoriality the plural will go up the tree.
-
-Now clearly our functor verifies the identity and composition laws and works as theorised in Section \ref{par:higherorder}.
-To understand a bit more why this works as described in our natural transformation rules, consider $\Pi\left( \mathbf{which} \right)$.
-The result will be of type $\Pi\left( \f{S}\left( e \right) \right) = \left(\Pi \circ \f{S}\right) \left( e \right)$.
-However, when looking at our transformation rule (and our functorial rule) we see that the result will actually be of type $\f{S}\left( \Pi e \right)$ which is exactly the expected type when considering the phrase $\w{which} p$.
-The natural transformation $\theta$ we set is easily inferable:
-\begin{equation*}
-	\theta_{A}:
-	\begin{tikzcd}
-		\left( \Pi \circ \f{S} \right) A \ar[r, "\theta_{A}"] & \left( \f{S} \circ \Pi \right) A\\[-.7cm]
-		\Pi\left( \left\{ x \right\} \right) \ar[r, mapsto] &  \left\{ \Pi(x) \right\}
-	\end{tikzcd}
-\end{equation*}
-The naturality follows from the definition of $\fmap$ for the $\f{S}$ functor.
-We can easily define natural transformations for the other functors in a similar way: $\Pi \circ \f{F} \overset{\theta}{\Rightarrow} \f{F} \circ \Pi$ defined by $\theta_{\tau} = \fmap_{\f{F}}\left( \Pi \right)$.
-
-\medskip
-
-Now, in quite a similar way, we can create functors from any sort of judgement that can be seen as a function $\e \to \t$ in our language\footnote{An easy way to define those would be, similarly to the plural, to define a series of judgement from a property that could be infered.}.
-Indeed, we simply need to replace the $\abs{p} \geq 1$ in most of the definitions by our function and the rest would stay the same.
-Remember that our use of natural transformations is only there to allow for possible under-markings of the considered effects and propagating the value resulting from the computation of the high-order effect.
 
 \section{Solving Non-Determinism}\label{sec:nondet}
 The typing judgements proposed in Section \ref{subsec:judgements} lead to ambiguity.
@@ -585,7 +476,7 @@ leads to a confluent reduction system, and the well definition of our normal for
 
 Before proving the theorem, let us first provide the reductions for the different
 equations for our description of string diagrams.
-It suffices to provide the reductions for Equations \ref{eq:snek1}, \ref{eq:snek2}
+It suffices to provide the reductions for Equations \ref{eq:snek1}, \ref{eq:snek2},
 \ref{eq:muax} and \ref{eq:unitax} as Equation \ref{eq:elevator} is a
 reformulation of Theorem \ref{thm:isotopy} which is taken care of by the first
 point of our theorem.
@@ -597,28 +488,28 @@ point of our theorem.
 	      \begin{itemize}
 		      \item $\dnlg{\dlb{D}{i}} = \dnlg{\dlb{D}{i + 1}} - 1$
 		      \item $\dlb{D}{i} = \eta_{L, R}$
-			  \item $\dlb{D}{i + 1} = \epsilon_{L, R}$
+		      \item $\dlb{D}{i + 1} = \epsilon_{L, R}$
 	      \end{itemize}
 	      This comes from the fact that we can't send either $\epsilon$
-		  above $\eta$ (or the other way around) using right reductions and
-		  that there cannot be any natural transformations between the two.
+	      above $\eta$ (or the other way around) using right reductions and
+	      that there cannot be any natural transformations between the two.
 	      Obviously Equation \ref{eq:snek2} has almost the same definition.
 	      Then, the reduction is easy: we simply delete both strings,
-		  removing $i$ and $i + 1$ from $D$ and reindexing the other nodes.
+	      removing $i$ and $i + 1$ from $D$ and reindexing the other nodes.
 	\item[The Monadic Equations] For the monadic equations, we only use
-		  Equation \ref{eq:unitax} as a way to reduce the number of natural
-		  transformations, since the goal here is to attain normal forms
-		  and not find all possible reductions.
+	      Equation \ref{eq:unitax} as a way to reduce the number of natural
+	      transformations, since the goal here is to attain normal forms
+	      and not find all possible reductions.
 	      We ask that equation \ref{eq:muax} is always used in the direct
-		  sense $\mu\left( \mu\left( TT \right),T \right) \to \mu\left(
-		  T\mu\left( TT \right) \right)$ so that the algorithm terminates.
+	      sense $\mu\left( \mu\left( TT \right),T \right) \to \mu\left(
+		      T\mu\left( TT \right) \right)$ so that the algorithm terminates.
 	      We use the same convention for the comonadic equations.
 	      The validity conditions are as easy to define for the monadic
-		  equations as for the \emph{snake} equations when considering
-		  diagrams in \emph{right} normal forms.
+	      equations as for the \emph{snake} equations when considering
+	      diagrams in \emph{right} normal forms.
 	      Then, for Equation \eqref{eq:unitax} we simply delete the nodes
-		  and for Equation \eqref{eq:muax} we switch the horizontal
-		  positions for $i$ and $i + 1$.
+	      and for Equation \eqref{eq:muax} we switch the horizontal
+	      positions for $i$ and $i + 1$.
 \end{description}
 
 \begin{proof}[Proof of the Confluence Theorem]
@@ -632,15 +523,135 @@ point of our theorem.
 	of Theorem \ref{thm:confluence}.
 \end{proof}
 
-Let's now give an upper bound on the number of reductions.
-Since each reductions either reduces the number of $2$-cells or applies the
-associativity of a monad, we know the number of reductions is linear in the
-number of natural transformations.
-Moreover, since checking if a reduction is possible at height $i$ is done in
-constant time, checking if a reduction is possible at a step is done in
-linear time, rendering the reduction algorithm quadratic in the number of
-natural transformations.
 
+\begin{thm}[Normalization Complexity]
+	Reducing a diagram to its normal form is done in quadratic time in
+	the number of natural transformations in it.
+\end{thm}
+\begin{proof}
+	Let's now give an upper bound on the number of reductions.
+	Since each reductions either reduces the number of $2$-cells or applies the
+	associativity of a monad, we know the number of reductions is linear in the
+	number of natural transformations.
+	Moreover, since checking if a reduction is possible at height $i$ is done in
+	constant time, checking if a reduction is possible at a step is done in
+	linear time, rendering the reduction algorithm quadratic in the number of
+	natural transformations.
+	Since we need to \emph{right} normalize before and after this method, and
+	that this is done in linear time, our theorem is proved.
+\end{proof}
+
+\subsection{Computing Forms}
+\section{Language Translation}
+\label{sec:language}
+In this section we will give a list of words along with a way to express them as either arrows or endo-functors of our typing category.
+This will also give a set of functors and constructs in our language.
+
+\subsection{Types of Syntax}\label{subsec:syntax}
+We first need to setup some guidelines for our denotations, by asking ourselves how the different components of sentences interact with each other.
+For syntactic categories, the types that are generally used are the following, and we will see it matches with our lexicon, and simplifies our functorial definitions\footnote{We don't consider effects in the given typings.}.
+Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the operator which retrieves the type from a certain syntactic category.
+\begin{figure}
+	\centering
+	\inputtikz{syntactic-categories}
+	\caption{Usual Typings for some Syntactic Categories}
+	\label{fig:sctypes}
+\end{figure}
+\subsection{Lexicon: Semantic Denotations for Words}\label{subsec:lexicon}
+Many words will have basically the same ``high-level'' denotation.
+For example, the denotation for most common nouns will be of the form: $\cont \lambda x. \mathbf{planet} x: \e \to \t$.
+In Table \ref{fig:lexicon} we give a lexicon for a subset of the english language.
+We describe the constructor for the functors used by our denotations in the table, but all functors will be reminded and properly defined in Table \ref{fig:functors} along with their respective \fmap.
+\begin{figure}
+	\centering
+	\inputtikz{lexicon-table}
+	\caption{$\lambda$-calculus representation of the english language $\mL$}
+	\label{fig:lexicon}
+\end{figure}
+Note that for terms with two lambdas, we also say that inverting the lambdas also provides a valid denotation.
+This is important for our formalism as we want to be able to add effects in the order that we want.
+
+\subsection{Effects of the Language}\label{subsec:effects}
+For the applicatives/monads in Table \ref{fig:functors} we do not specify the unit and multiplication functions, as they are quite usual examples.
+We still provide the \fmap{} for good measure.
+
+\begin{figure}
+	\centering
+	\inputtikz{functors-table}
+	\caption{Denotations for the functors used}
+	\label{fig:functors}
+\end{figure}
+
+Let us explain a few of those functors: $\f G$ designates reading from a certain environment of type $\r$ while $\f W$ encodes the possibility of logging a message of type $\t$ along with the expression.
+The functor $\f M$ describes the possibility for a computation to fail, for example when retrieving a value that does not exist (see $\mathbf{the}$).
+The $\f S$ functor represents the space of possibilities that arises from a non-deterministic computation (see $\mathbf{which}$).
+
+We can then define an adjunction between $\f G$ and $\f W$ using our definitions:
+\begin{equation*}
+	\phi: \begin{array}{l}
+		\left( \alpha \to \f{G}\beta \right)\to \f{W}\alpha \to \beta \\
+		\lambda k. \lambda \left( a, g \right) . k a g
+	\end{array}
+	\text{ and }
+	\psi: \begin{array}{l}
+		\left( \f{W}\alpha \to \beta \right) \to \alpha \to \f{G} \beta \\
+		\lambda c \lambda a \lambda g. c \left( a, g \right)
+	\end{array}
+\end{equation*}
+where $\phi \circ \psi = \id$ and $\psi \circ \phi = \id$ on the properly defined sets.
+Now it is easy to see that $\phi$ and $\psi$ do define a natural transformation and thus our adjunction $\f{W} \dashv \f{G}$ is well-defined, and that its unit $\eta$ is $\psi \circ \id$ and its co-unit $\epsilon$ is $\phi \circ \id$.
+
+As a reminder, this means our language canonically defines a monad $\f{G}\circ \f{W}$.
+Moreover, the co-unit of the adjunction provides a canonical way for us to deconstruct entirely the comonad $\f{W}\circ \f{G} $, that is we have a natural transformation from $\f{W} \circ \f{G} \Rightarrow \Id$.
+
+\subsection{Modality, Plurality, Aspect, Tense}\label{subsec:modality}
+We will now explain ways to formalise higher-order concepts as described in Section \ref{par:higherorder}.
+
+First, let us consider in this example the plural concept.
+Here we do not focus on whether our denotation of the plural is semantically correct, but simply on whether our modelisation makes sense.
+As such, we give ourselves a way to measure if a certain $x$ is plural our not, which we will denote by $\abs{x} \geq 2$\footnote{We chose this representation as an example, it is not important for our formalism that this denotation is actually a good choice for the plural.}.
+It is important to note that if $\tau$ is a type, and $\cont x: \tau$ then we should have $\abs{\Pi x} \geq 1 = \top\footnote{This might be seen as a typing judgement~!}$.
+We then need to define the functor $\Pi$ which models the plural. We do not need to define it on types in any way other than $\Pi\left( \tau \right) = \Pi\tau$.
+We only need to look at the transformation on arrows\footnote{\texttt{fmap}, basically.}.
+This one depends on the \emph{syntactic}\footnote{Actually it depends on the word considered, but since the denotations (when considered effect-less) provided in Table \ref{fig:lexicon} are more or less related to the syntactic category of the word, our approximation suffices.} type of the arrow, as seen in Table \ref{fig:lexicon}.
+\begin{figure}
+	\centering
+	\inputtikz{plural-table}
+	\caption{(Partial) Definition for the $\Pi$ Plural Functor}
+	\label{fig:pluralfunctor}
+\end{figure}
+There is actually a presupposition in our definition. Whenever we apply $\Pi$ to an arrow representing a predicate $p: \e \to \t$, we still apply $p$ to its argument $x$ even though we say that $\Pi p$ is the one that applies to a plural entity $x$.
+This slight notation abuse results from our point of view on plural/its predicate representation: we assume the predicate $p$ (the common noun, the adjectve, the VP\ldots) applies to an object without regarding its cardinality.
+The two point of views on the singular/plural distinction could be adapted to our formalism: whether we believe that singular is the \emph{natural} state of the objects or that it is to be always specified in the same way as plural does not change anything:
+In the former, we do not change anything from the proposed functors.
+In the latter we simply need to create another functor $\Sigma$ with basically the same rules that represents the singular and ask of our predicates $p$ to be defined on $\left(\Pi\star\right) \sqcup \left(\Sigma \star\right)$.
+
+\medskip
+
+See that our functor only acts on the words which return a boolean by adding a plurality condition, and is simply passed down on the other words.
+Note however there is an issue with the \textbf{NP} category: in the case where a \textbf{NP} is constructed from a determiner and a common noun (phrase) the plural is not passed down.
+This comes from the fact that in this case, either the determiner or the common noun (phrase) will be marked, and by functoriality the plural will go up the tree.
+
+Now clearly our functor verifies the identity and composition laws and works as theorised in Section \ref{par:higherorder}.
+To understand a bit more why this works as described in our natural transformation rules, consider $\Pi\left( \mathbf{which} \right)$.
+The result will be of type $\Pi\left( \f{S}\left( e \right) \right) = \left(\Pi \circ \f{S}\right) \left( e \right)$.
+However, when looking at our transformation rule (and our functorial rule) we see that the result will actually be of type $\f{S}\left( \Pi e \right)$ which is exactly the expected type when considering the phrase $\w{which} p$.
+The natural transformation $\theta$ we set is easily inferable:
+\begin{equation*}
+	\theta_{A}:
+	\begin{tikzcd}
+		\left( \Pi \circ \f{S} \right) A \ar[r, "\theta_{A}"] & \left( \f{S} \circ \Pi \right) A\\[-.7cm]
+		\Pi\left( \left\{ x \right\} \right) \ar[r, mapsto] &  \left\{ \Pi(x) \right\}
+	\end{tikzcd}
+\end{equation*}
+The naturality follows from the definition of $\fmap$ for the $\f{S}$ functor.
+We can easily define natural transformations for the other functors in a similar way: $\Pi \circ \f{F} \overset{\theta}{\Rightarrow} \f{F} \circ \Pi$ defined by $\theta_{\tau} = \fmap_{\f{F}}\left( \Pi \right)$.
+
+\medskip
+
+Now, in quite a similar way, we can create functors from any sort of judgement that can be seen as a function $\e \to \t$ in our language\footnote{An easy way to define those would be, similarly to the plural, to define a series of judgement from a property that could be infered.}.
+Indeed, we simply need to replace the $\abs{p} \geq 1$ in most of the definitions by our function and the rest would stay the same.
+Remember that our use of natural transformations is only there to allow for possible under-markings of the considered effects and propagating the value resulting from the computation of the high-order effect.
 
 \section*{Acknowledgements}
 Thanks to Antoine Groudiev for his precious insights on the direction the snakes for \eqref{eq:snek1} and \eqref{eq:snek2} should face.

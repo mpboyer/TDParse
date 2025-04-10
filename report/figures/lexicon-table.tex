@@ -12,7 +12,7 @@
 		\word{she}{\e\to\e}{\lambda x. x}{}
 		\word{it}{\left( \bot \to \f{G}\e \right)}{\lambda g. g_{0}}{}
 		\word{which}{\left( \e \to \t \right)\to \f{S}\e}{\lambda p. \left\{x \suchthat px\right\}}{}
-		\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p = \{x\} \text{ else } \#}{}
+		\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p^{-1}\left( \top \right) = \{x\} \text{ else } \#}{}
 		\word{a}{\left( \e \to \t \right) \to \f{D}\e}{\lambda p. \lambda s. \left\{ \scalar{x, x + s}\suchthat p x\right\}}{}
 		\word{no}{\left( \e \to \t \right) \to \f{C}\e}{\lambda p. \lambda c. \lnot \exists x. p x \land c\, x}{}
 		\word{every}{\left( \e \to \t \right)\to \f{C}\e}{\lambda p. \lambda c. \forall x, px \Rightarrow cx}{}

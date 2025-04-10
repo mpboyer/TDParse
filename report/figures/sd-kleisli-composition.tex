@@ -29,7 +29,7 @@
 		\end{tikzpicture}
 		%
 		%
-		& \overset{\rm curry}{=}\,
+		\overset{\rm curry}{=}\,
 		%
 		%
 		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
@@ -61,11 +61,11 @@
 			\end{pgfonlayer}
 		\end{tikzpicture}
 		%
+		%
 		\\
 		%
 		%
-		%
-		& \overset{\rm paste}{=}\,
+		\overset{\rm paste}{=}\,
 		%
 		%
 		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
@@ -85,8 +85,9 @@
 				\fill[catmc] (a) to[out=180, in=-90] (ctla) -- (effa) -- (bool) -- cycle;
 			\end{pgfonlayer}
 		\end{tikzpicture}
-		\\
-		& \overset{\rm compose}{=}\,
+		%
+		\overset{\rm compose}{=}\,
+		%
 		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
 			\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (a) + (0, 1) coordinate[dot, label=right:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
 			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)

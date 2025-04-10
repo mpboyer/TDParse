@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  10 APR 2025 11:42
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  10 APR 2025 14:14
  system commands enabled.
 **tdparse.tex
 (./tdparse.tex
@@ -2325,7 +2325,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 13.
-</home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf, id=100, 136.57294pt x 55.7418
+</home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf, id=104, 136.57294pt x 55.7418
 8pt>
 File: /home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf Graphic file (type pdf)
 <use /home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf>
@@ -2399,7 +2399,7 @@ ut line 5.
 [4
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.1
 .1'
-<./luatex.cDPf0S/1.png>]
+<./luatex.1eu1GT/1.png>]
 contour: Using real outline for `\tt \color {vulm}S' on input line 169.
 
 
@@ -2529,203 +2529,9 @@ Overfull \hbox (15.48648pt too wide) in paragraph at lines 30--226
  [][] 
  []
 
-(./figures/syntactic-categories.tex
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 4.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 5.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 5.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 6.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
+(./figures/sd-examples.tex)
 
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 15.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 15.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 16.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 16.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 18.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 18.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 21.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 21.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 21.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 21.
-
-)
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 251
-.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 251
-.
-(./figures/lexicon-table.tex
-\g__nicematrix_max_cell_width_dim=\dimen485
-\c@iRow=\count497
-\c@jCol=\count498
-\l__nicematrix_cell_box=\box176
-\l__nicematrix_the_array_box=\box177
-\l__nicematrix_left_delim_dim=\dimen486
-\l__nicematrix_right_delim_dim=\dimen487
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 5.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 5.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 6.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 6.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 8.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 11.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 11.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 12.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 12.
-
-contour: Using real outline for `\tt \color {vulm}G' on input line 13.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 13.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 14.
-
-contour: Using real outline for `\tt \color {vulm}S' on input line 14.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 15.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 15.
-
-contour: Using real outline for `\tt \color {vulm}M' on input line 15.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 15.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 16.
-
-contour: Using real outline for `\tt \color {vulm}D' on input line 16.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 17.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 17.
-
-contour: Using real outline for `\tt \color {vulm}C' on input line 17.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 17.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 18.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 18.
-
-contour: Using real outline for `\tt \color {vulm}C' on input line 18.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 18.
-
-\g__nicematrix_ddots_int=\count499
-\g__nicematrix_iddots_int=\count500
-\g__nicematrix_delta_x_one_dim=\dimen488
-\g__nicematrix_delta_y_one_dim=\dimen489
-\g__nicematrix_delta_x_two_dim=\dimen490
-\g__nicematrix_delta_y_two_dim=\dimen491
-\l__nicematrix_initial_i_int=\count501
-\l__nicematrix_initial_j_int=\count502
-\l__nicematrix_final_i_int=\count503
-\l__nicematrix_final_j_int=\count504
-) (./figures/functors-table.tex
-contour: Using real outline for `\tt \color {vulm}G' on input line 6.
-contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 6.
-contour: Using real outline for `\tt \color {vulm}G' on input line 6.
-contour: Using real outline for `\tt \color {vulm}W' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
-contour: Using real outline for `\tt \color {vulm}W' on input line 7.
-contour: Using real outline for `\tt \color {vulm}S' on input line 8.
-contour: Using real outline for `\tt \color {vulm}S' on input line 8.
-contour: Using real outline for `\tt \color {vulm}C' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
-contour: Using real outline for `\tt \color {vulm}C' on input line 9.
-contour: Using real outline for `\tt \color {vulm}M' on input line 10.
-contour: Using real outline for `\tt \color {vulm}M' on input line 10.
-)
-
-[7
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
+[7]
 
 [8
 Non-PDF special ignored!
@@ -2882,331 +2688,8 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-
-[9
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
-contour: Using real outline for `\tt \color {vulm}G' on input line 272.
-contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 272
-.
-contour: Using real outline for `\tt \color {vulm}W' on input line 272.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 272
-.
-contour: Using real outline for `\tt \color {vulm}M' on input line 273.
-contour: Using real outline for `\tt \color {vulm}S' on input line 274.
-contour: Using real outline for `\tt \color {vulm}G' on input line 276.
-contour: Using real outline for `\tt \color {vulm}W' on input line 276.
-contour: Using real outline for `\tt \color {vulm}G' on input line 279.
-contour: Using real outline for `\tt \color {vulm}W' on input line 279.
-contour: Using real outline for `\tt \color {vulm}W' on input line 284.
-contour: Using real outline for `\tt \color {vulm}G' on input line 284.
-contour: Using real outline for `\tt \color {vulm}W' on input line 289.
-contour: Using real outline for `\tt \color {vulm}G' on input line 289.
-contour: Using real outline for `\tt \color {vulm}G' on input line 291.
-contour: Using real outline for `\tt \color {vulm}W' on input line 291.
-contour: Using real outline for `\tt \color {vulm}W' on input line 292.
-contour: Using real outline for `\tt \color {vulm}G' on input line 292.
-contour: Using real outline for `\tt \color {vulm}W' on input line 292.
-contour: Using real outline for `\tt \color {vulm}G' on input line 292.
-(./figures/plural-table.tex
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 5.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 5.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 6.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 6.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 8.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 11.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 12.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 12.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 13.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 13.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 13.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 13.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 13.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 14.
-
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
-
-)
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 310
-.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 310
-.
-
-
-[10
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
-contour: Using real outline for `\tt \color {vulm}S' on input line 324.
-contour: Using real outline for `\tt \color {vulm}S' on input line 324.
-contour: Using real outline for `\tt \color {vulm}S' on input line 325.
-contour: Using real outline for `\tt \color {vulm}S' on input line 330.
-contour: Using real outline for `\tt \color {vulm}S' on input line 330.
-contour: Using real outline for `\tt \color {vulm}S' on input line 334.
-contour: Using real outline for `\tt \color {vulm}F' on input line 335.
-contour: Using real outline for `\tt \color {vulm}F' on input line 335.
-contour: Using real outline for `\tt \color {vulm}F' on input line 335.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 339
-.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 339
-.
-
-
-[11
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] (./figures/sd-examples.tex)
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 3
-68.
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
+59.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
@@ -3214,9 +2697,7 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 (./figures/sd-thecatsleeps.tex
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 3.
 contour: Using real outline for `\tt \color {vulm}M' on input line 4.
-)
-
-[12] (./figures/sd-csd-example.tex
+) (./figures/sd-csd-example.tex
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 2.
 contour: Using real outline for `\tt \color {vulm}M' on input line 3.
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 4.
@@ -3246,7 +2727,7 @@ contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 25.
 contour: Using real outline for `\tt \color {vulm}M' on input line 25.
 )
 
-[13
+[9
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -3284,16 +2765,46 @@ contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 25.
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 26.
 
 )
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+
+[10
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-curry.tex
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 2.
@@ -3393,34 +2904,34 @@ contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 76.
 
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 76.
 
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 92.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 93.
 
-contour: Using real outline for `\tt \color {vulm}D' on input line 93.
-contour: Using real outline for `\tt \color {vulm}M' on input line 94.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {vulm}D' on input line 94.
+contour: Using real outline for `\tt \color {vulm}M' on input line 95.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 94.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 95.
 
 )
-Overfull \hbox (0.22253pt too wide) detected at line 435
+Overfull \hbox (0.22253pt too wide) detected at line 326
 [][]
  []
 
 
 
-[14
+[11
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -3429,36 +2940,6 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!]
-
-[15
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -3493,85 +2974,606 @@ Non-PDF special ignored!
 Non-PDF special ignored!]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 445.
+(mdframed)              on input line 336.
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-elevator.tex)
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-snake1.tex)
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-snake2.tex)
 
-[16<./luatex.cDPf0S/2.png><./luatex.cDPf0S/3.png>]
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+[12<./luatex.1eu1GT/2.png><./luatex.1eu1GT/3.png>]
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-monad-unit.tex)
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-monad-mult.tex)
 
-[17]
+[13]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 540.
+put line 431.
+
+
+[14]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 576.
-Package mdframed Info: Not enough space on this page on input line 584.
+(mdframed)              on input line 467.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 527.
 
 
-[18]
-Package mdframed Info: Not enough space on this page on input line 584.
+[15] (./figures/syntactic-categories.tex
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 4.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 5.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 5.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 6.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 15.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 15.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 16.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 16.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 18.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 18.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 21.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 21.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 21.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 21.
+
+)
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 562
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 562
+.
+(./figures/lexicon-table.tex
+\g__nicematrix_max_cell_width_dim=\dimen485
+\c@iRow=\count497
+\c@jCol=\count498
+\l__nicematrix_cell_box=\box176
+\l__nicematrix_the_array_box=\box177
+\l__nicematrix_left_delim_dim=\dimen486
+\l__nicematrix_right_delim_dim=\dimen487
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 5.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 5.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 6.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 6.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 8.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 11.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 11.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 12.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 12.
+
+contour: Using real outline for `\tt \color {vulm}G' on input line 13.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 13.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 14.
+
+contour: Using real outline for `\tt \color {vulm}S' on input line 14.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 15.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 15.
+
+contour: Using real outline for `\tt \color {vulm}M' on input line 15.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 15.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 16.
+
+contour: Using real outline for `\tt \color {vulm}D' on input line 16.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 17.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 17.
+
+contour: Using real outline for `\tt \color {vulm}C' on input line 17.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 17.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 18.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 18.
+
+contour: Using real outline for `\tt \color {vulm}C' on input line 18.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 18.
+
+\g__nicematrix_ddots_int=\count499
+\g__nicematrix_iddots_int=\count500
+\g__nicematrix_delta_x_one_dim=\dimen488
+\g__nicematrix_delta_y_one_dim=\dimen489
+\g__nicematrix_delta_x_two_dim=\dimen490
+\g__nicematrix_delta_y_two_dim=\dimen491
+\l__nicematrix_initial_i_int=\count501
+\l__nicematrix_initial_j_int=\count502
+\l__nicematrix_final_i_int=\count503
+\l__nicematrix_final_j_int=\count504
+) (./figures/functors-table.tex
+contour: Using real outline for `\tt \color {vulm}G' on input line 6.
+contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 6.
+contour: Using real outline for `\tt \color {vulm}G' on input line 6.
+contour: Using real outline for `\tt \color {vulm}W' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
+contour: Using real outline for `\tt \color {vulm}W' on input line 7.
+contour: Using real outline for `\tt \color {vulm}S' on input line 8.
+contour: Using real outline for `\tt \color {vulm}S' on input line 8.
+contour: Using real outline for `\tt \color {vulm}C' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
+contour: Using real outline for `\tt \color {vulm}C' on input line 9.
+contour: Using real outline for `\tt \color {vulm}M' on input line 10.
+contour: Using real outline for `\tt \color {vulm}M' on input line 10.
+)
+contour: Using real outline for `\tt \color {vulm}G' on input line 585.
+contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 585
+.
+contour: Using real outline for `\tt \color {vulm}W' on input line 585.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 585
+.
+contour: Using real outline for `\tt \color {vulm}M' on input line 586.
+contour: Using real outline for `\tt \color {vulm}S' on input line 587.
 
 
-[19] (./tdparse.bbl
+[16
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+
+[17
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+contour: Using real outline for `\tt \color {vulm}G' on input line 589.
+contour: Using real outline for `\tt \color {vulm}W' on input line 589.
+contour: Using real outline for `\tt \color {vulm}G' on input line 592.
+contour: Using real outline for `\tt \color {vulm}W' on input line 592.
+contour: Using real outline for `\tt \color {vulm}W' on input line 597.
+contour: Using real outline for `\tt \color {vulm}G' on input line 597.
+contour: Using real outline for `\tt \color {vulm}W' on input line 602.
+contour: Using real outline for `\tt \color {vulm}G' on input line 602.
+contour: Using real outline for `\tt \color {vulm}G' on input line 604.
+contour: Using real outline for `\tt \color {vulm}W' on input line 604.
+contour: Using real outline for `\tt \color {vulm}W' on input line 605.
+contour: Using real outline for `\tt \color {vulm}G' on input line 605.
+contour: Using real outline for `\tt \color {vulm}W' on input line 605.
+contour: Using real outline for `\tt \color {vulm}G' on input line 605.
+(./figures/plural-table.tex
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 5.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 5.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 6.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 6.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 7.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 8.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 9.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 11.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 11.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 12.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 12.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 13.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 13.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 13.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 13.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 13.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 14.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
+
+)
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 623
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 623
+.
+
+
+[18
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+contour: Using real outline for `\tt \color {vulm}S' on input line 637.
+contour: Using real outline for `\tt \color {vulm}S' on input line 637.
+contour: Using real outline for `\tt \color {vulm}S' on input line 638.
+contour: Using real outline for `\tt \color {vulm}S' on input line 643.
+contour: Using real outline for `\tt \color {vulm}S' on input line 643.
+contour: Using real outline for `\tt \color {vulm}S' on input line 647.
+contour: Using real outline for `\tt \color {vulm}F' on input line 648.
+contour: Using real outline for `\tt \color {vulm}F' on input line 648.
+contour: Using real outline for `\tt \color {vulm}F' on input line 648.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 652
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 652
+.
+
+
+[19
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!] (./tdparse.bbl
 
 [20
 
@@ -3583,38 +3585,38 @@ LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `tdparse.out' has not changed.
-(rerunfilecheck)             Checksum: E588BE9C18F54F980E42BBDB733CED0C;4416.
+(rerunfilecheck)             Checksum: 048050AB7EC8212D357E8A018563F2E7;4552.
 )
 
 Here is how much of LuaTeX's memory you used:
- 88136 strings out of 475931
- 305544,3417909 words of node,token memory allocated
- 4874 words of node memory still in use:
-   67 hlist, 2 vlist, 2 rule, 16 math, 143 glue, 4 kern, 9 glyph, 450 attribute,
- 123 glue_spec, 386 attribute_list, 2 write, 194 pdf_literal, 3 pdf_action, 20 p
+ 88137 strings out of 475931
+ 195539,3417909 words of node,token memory allocated
+ 4887 words of node memory still in use:
+   67 hlist, 2 vlist, 2 rule, 16 math, 144 glue, 4 kern, 9 glyph, 452 attribute,
+ 123 glue_spec, 387 attribute_list, 2 write, 194 pdf_literal, 3 pdf_action, 20 p
 df_colorstack nodes
-   avail lists: 1:1,2:21866,3:3722,4:2685,5:577,6:133,7:11228,8:96,9:4575,10:21,
-11:809
- 108682 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:15066,3:4276,4:1865,5:641,6:128,7:11018,8:96,9:4402,10:21,
+11:815
+ 108681 multiletter control sequences out of 65536+600000
  127 fonts using 14284983 bytes
  119i,21n,393p,733b,1282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local
 /texlive/2024/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></us
-r/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.ot
-f></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf
-></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.ot
-f></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.o
+r/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf></u
+sr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.o
+tf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.ot
+f></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.o
 tf>{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/
 texlive/2024/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>{/usr/loca
 l/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2
-024/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/local/texlive
-/2024/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/local/texli
-ve/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf>{/usr/local/tex
-live/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2024/t
+024/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf>{/usr/local/texlive
+/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2024/texmf
+-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/local/texlive/2024/tex
+mf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/local/texlive/2024/t
 exmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2024
 /texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf></usr/local/texl
-ive/2024/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/te
-xlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/
+ive/2024/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/te
+xlive/2024/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/
 texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf></usr/local/t
 exlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/loca
 l/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/loca
@@ -3637,10 +3639,10 @@ lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 l/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on tdparse.pdf (21 pages, 441881 bytes).
+Output written on tdparse.pdf (21 pages, 442992 bytes).
 
-PDF statistics: 719 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
- 113 named destinations out of 1000 (max. 131072)
- 217 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 725 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
+ 115 named destinations out of 1000 (max. 131072)
+ 225 words of extra memory for PDF output out of 10000 (max. 100000000)
 
