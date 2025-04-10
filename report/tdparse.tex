@@ -1,7 +1,7 @@
 \documentclass[math, english, info]{cours}
 
 \makeatletter
-\def\tikzimp@rt{0}
+\def\tikzimp@rt{1}
 \makeatother
 
 \input{preamble}
@@ -114,7 +114,7 @@ While in general we do not want to find natural transformations, we want to be a
 	\item If we have an adjunction $L\dashv R$, we have natural transformations for $\Id_{\mC} \Rightarrow L \circ R$ and $R\circ L \Rightarrow \Id_{\mC}$.
 	      In particular we get a monad and a comonad from a canonical setting.
 	\item To deal with the resolution of effects, we can map handlers to natural transformations which go from some functor $F$ to the $\Id$ functor, allowing for a sequential\footnote{In particular, non-necessarily commutative} computation of the effects added to the meaning.
-		We will develop a bit more on this idea in Paragraph \ref{par:handlers} and in Section \ref{sec:nondet}.
+	      We will develop a bit more on this idea in Paragraph \ref{par:handlers} and in Section \ref{sec:nondet}.
 	\item To create \emph{higher-order} constructs which transform words from our language into other words, while keeping the functorial aspect.
 	      This idea is developed in \ref{par:higherorder}.
 \end{enumerate}
@@ -136,8 +136,8 @@ We will not go in much details about adjunctions, as a full example and generali
 First, we remind the definition: an adjunction $L \dashv R$ is a pair of functors $L: \A \to \B$ and $R: \B \to \A$, and a pair of natural transformations $\eta: \Id_{\A}  \Rightarrow R \circ L$ and $\epsilon: L\circ R \Rightarrow \Id_{\A}$ such that the two following equations are satisfied:
 \begin{equation}
 	\inputtikz{cd-zigzag}
-	\label{eq:zigzag}
 	\tag{\emoji{cloud-with-lightning}}
+	\label{eq:zigzag}
 \end{equation}
 \begin{equation}
 	\inputtikz{cd-zagzig}
@@ -357,7 +357,7 @@ We will always consider application as applying to the right of the line so that
 This gives us a new graphical formalism to represent our effects using a few equality rules between diagrams.
 The commutative aspect of functional diagrams is now replaced by an equality of string diagrams, which will be detailed in the following section.
 
-The important aspect of string diagrams that we will use is that two diagrams that are planarily homotopic are equal \cite{delpeuchNormalizationPlanarString2022} and that we can map a string diagram to a sequence of computations on computation: the vertical composition of natural transformations (bottom-up) represents the reductions that we can do on our set of effects.
+The important aspect of string diagrams that we will use is that two diagrams that are planarily homotopic are equal \cite{joyalGeometryTensorCalculus1991} and that we can map a string diagram to a sequence of computations on computation: the vertical composition of natural transformations (bottom-up) represents the reductions that we can do on our set of effects.
 This means that even when adding handlers, we get a way to visually see the meaning get reduced from effectful composition to propositional values, without the need to specify what the handler does.
 Indeed we only look at \emph{when} we apply handlers and natural transformations reducing the number of effects.
 This delimits our usage of string diagrams as ways to look at computations and a tool to provide equality rules to reduce non-determinism by constructing an equivalence relationship (which we denote by $\eqcirc$) and yielding a quotient set of \emph{normal forms} for our computations.
@@ -398,6 +398,17 @@ In the following sections, we will differentiate the different \emph{regions} of
 \begin{center}
 	\inputtikz{sd-reduction-example}
 \end{center}
+
+
+It is important to acknowledge that a previous modelisation of parsers by string diagrams has already been proposed (\newcite{coeckeMathematicalFoundationsCompositional2010}, \newcite{wang-mascianicaStringDiagramsText2023}).
+When considering their way of using string diagrams for syntactic reductions, we can use our effects to improve the typing by asking that effects arising from a computation are sent to an axis orthogonal to the one used to represent the sentence, allowing for a reduction on a second axis in a second time.
+\begin{center}
+	% TODO: ADD DRAWING REPRESENTING WHAT WE MEAN BY THAT
+\end{center}
+Since we provide a compositional addition to a denotation system, it amounts to replacing/improving the category of meaning in the product category with the pregroup category and thus means we can integrate our theory inside their formalism.
+Indeed, we start from a meaning category $\mC$ and then build on it, instead of providing a full on denotation system\footnote{Section \ref{sec:language} proposes a translation of the english language based on usual denotations, but our system could be applied onto a fully different representation of meaning, as long as it can be mapped to a cartesian closed category.}.
+Moreover, when seeing their parsing trees as string diagrams and using the fact that we can always assume natural transformations (or $2$-cells) to be at different heights\footnote{Geometrically, see Lemma 1.7 in \newcite{delpeuchNormalizationPlanarString2022}.}, we can see that their model of string diagrams is just a rewriting of our model for vertical composition, and allows for other reductions in the parser to reduce non-determinism.
+We keep the work on vertically composing string diagrams as a way to see how the effects pile up, as presented in Section \ref{subsubsec:cds}.
 
 \subsection{Achieving Normal Forms}
 \label{subsec:normalforms}
@@ -462,6 +473,12 @@ Let us now look at a few of the equations that arise from the commutation of cer
 		      \label{eq:snek2}
 	      \end{equation}
 	      Note that we could express these equations using the following section, though it is, for now, a bit easier to keep it that way.
+
+	      What the reduction means is that we have a commutative mapping:
+	      \begin{category}[]
+		      \eqref{eq:zigzag}\ar[d, "\texttt{\textbackslash reflectbox}"']\ar[r, "\texttt{string}"]  & \eqref{eq:snek1}\ar[d, "\texttt{\textbackslash reflectbox}"]  \\
+		      \eqref{eq:zagzig}\ar[r, "\texttt{string}"'] & \eqref{eq:snek2}
+	      \end{category}
 	\item[The \emph{(co-)Monadic} Equations] explain the very familiar sentence that a monad is just\footnote{Which is a monad} a monoid on the category of the endofunctors, that is, a multiplication law and a unit.
 	      Here we do not present the co-monadic equations which are the exact same one but with a few letter changes and the up and down reversed.
 	      \begin{equation}
@@ -488,9 +505,142 @@ Now that we have a set of rules telling us what we can and cannot do in our mode
 in linear time for equality under Theorem \ref{thm:isotopy}.
 However, this model does not suffice to account for all of our equations, especially as
 labelling will influence the equations for monads, comonads and adjunctions.
-However, adding edges to our data structure will render the linear time algorithm invalid and
-probably provide problems that are solvable in polynomial time, but with their naive
-algorithmic solution having a too large to compute complexity.
+To provide with more flexibility (in exchange for a bit of time complexity) we use the
+description provided and change the description of inputs and outputs of each $2$-cell by
+adding types and enforcing types.
+In this section we formally describe the data structure we propose, as well as algorithms for
+validity of diagrams and a system of rewriting that allows us to compute the normal forms
+for our system of effects.
+
+\subsubsection{Representing String Diagrams}
+We follow \newcite{delpeuchNormalizationPlanarString2022} in their combinatorial description
+of string diagrams. We describe a diagram by an ordered set of its $2$-cells (the natural
+transformations) along with the number of input strings, for each $2$-cell the following
+information:
+\begin{itemize}
+	\item Its horizontal position: the number of strings that are right of it (we adopt this
+	      convention to match our graphical representation of effects: the number of strings
+	      is the distance to the base type).
+	\item Its type: an array of effects (read from left to right) that are the inputs to the
+	      natural transformation and an array of effects that are the outputs to the natural
+	      transformation. The empty array represents the identity functor.
+	      Of course, we will not actually copy arrays and arrays inside our datastructure but
+	      simply copy labels which are keys to a dictionary containing such arrays to limit
+	      the size of our structure, allowing for $\O(1)$ access to the associated properties.
+\end{itemize}
+We will then write a diagram $D$ as a tuple of $3$ elements\footnote{We could write it
+	as a tuple of $5$ elements by replacing $\dl{D}$ by three functions that lower level}:
+$\left( D.N, D.S, D.L \right)$ where $D.N$ is a positive integers representing the
+height (or number of nodes) of $D$, $D.S$ is an array for the input strings of $D$ and
+where $D.L$ is a function which takes a natural number smaller than $D.N - 1$ and
+returns its type as a tuple of arrays
+$nat = \left( \dnlg{nat}, \dnin{nat}, \dnout{nat} \right)$.
+From this, we propose a naive algorithm to check if a string diagram is valid or not:
+\begin{algorithm}[h]
+	\caption{Validity Check}
+	\begin{algorithmic}
+		\Function{isValid}{$D$}
+		\State{$S \gets \din{D}$}
+		\For{$i < \dnb{D}$}
+		\State{$nat \gets \dlb{D}{i}$}
+		\State{$b, e \gets \dnlg{nat}, \dnlg{nat} + \abs{\dnin{nat}}$}
+		\If{$S[b:e] \neq \dnin{nat}$}
+		\Return{False}
+		\EndIf
+		\State{$S[b:e] \gets \dnout{nat}$}\Comment{To understand as replacing in place.}
+		\EndFor
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+Note that here the algorithm does not require that all effects are handled for validity.
+
+\medskip
+
+Since our representation contains strictly more information (without slowing access by a
+non-constant factor) than the one it is based on, our datastructure supports the linear
+and polynomial time algorithms proposed with the structure by \newcite{delpeuchNormalizationPlanarString2022}.
+This in particular means that our structure can be normalized in polynomial time to check for
+equality under Theorem \ref{thm:isotopy}.
+More precisely, the complexity of our algorithm is in $\O\left( n \times \sup_{i} \abs{\dnin{\dlb{D}{i}}} + \abs{\dnout{\dlb{D}{i}}} \right)$, which depends on our lexicon but most of the times will be linear time.
+
+\subsubsection{Equational Reductions}
+We are faced a problem when computing reductions using the equations for our diagrams
+which is that by definition, an equation is symmetric.
+To solve this issue, we only use equations from left to right to reduce as much as
+possible our result instead.
+This also means that trivially our reduction system computes normal forms: it suffices
+to re-apply the algorithm for recumbent equivalence after the rest of equational
+reduction is done.
+Moreover, note that all our reductions are either incompatible or commutative, which
+leads to a confluent reduction system, and the well definition of our normal forms:
+\begin{thm}[Confluence]\label{thm:confluence}
+	Our reduction system is confluent and therefore defines normal forms:
+	\begin{enumerate}
+		\item Right reductions are confluent and therefore define \emph{right} normal forms for
+		      diagrams under the equivalence relation induced by exchange.
+		\item Equational reductions are confluent and therefore define \emph{equational}
+		      normal forms for diagrams under the equivalence relation induced by exchange.
+	\end{enumerate}
+\end{thm}
+
+Before proving the theorem, let us first provide the reductions for the different
+equations for our description of string diagrams.
+It suffices to provide the reductions for Equations \ref{eq:snek1}, \ref{eq:snek2}
+\ref{eq:muax} and \ref{eq:unitax} as Equation \ref{eq:elevator} is a
+reformulation of Theorem \ref{thm:isotopy} which is taken care of by the first
+point of our theorem.
+\begin{description}
+	\item[The Snake Equations]
+	      First, let's see when we can apply Equation \ref{eq:snek1} to a diagram $D$ which is in \emph{right} normal form, meaning it's been right reduced as much as possible.
+	      Suppose we have an adjunction $L \dashv R$.
+	      Then we can reduce $D$ along \eqref{eq:snek1} at $i$ if, and only if:
+	      \begin{itemize}
+		      \item $\dnlg{\dlb{D}{i}} = \dnlg{\dlb{D}{i + 1}} - 1$
+		      \item $\dlb{D}{i} = \eta_{L, R}$
+			  \item $\dlb{D}{i + 1} = \epsilon_{L, R}$
+	      \end{itemize}
+	      This comes from the fact that we can't send either $\epsilon$
+		  above $\eta$ (or the other way around) using right reductions and
+		  that there cannot be any natural transformations between the two.
+	      Obviously Equation \ref{eq:snek2} has almost the same definition.
+	      Then, the reduction is easy: we simply delete both strings,
+		  removing $i$ and $i + 1$ from $D$ and reindexing the other nodes.
+	\item[The Monadic Equations] For the monadic equations, we only use
+		  Equation \ref{eq:unitax} as a way to reduce the number of natural
+		  transformations, since the goal here is to attain normal forms
+		  and not find all possible reductions.
+	      We ask that equation \ref{eq:muax} is always used in the direct
+		  sense $\mu\left( \mu\left( TT \right),T \right) \to \mu\left(
+		  T\mu\left( TT \right) \right)$ so that the algorithm terminates.
+	      We use the same convention for the comonadic equations.
+	      The validity conditions are as easy to define for the monadic
+		  equations as for the \emph{snake} equations when considering
+		  diagrams in \emph{right} normal forms.
+	      Then, for Equation \eqref{eq:unitax} we simply delete the nodes
+		  and for Equation \eqref{eq:muax} we switch the horizontal
+		  positions for $i$ and $i + 1$.
+\end{description}
+
+\begin{proof}[Proof of the Confluence Theorem]
+	The first point of this theorem is exactly Theorem 4.2
+	in \newcite{delpeuchNormalizationPlanarString2022}.
+	To prove the second part, note that the reduction process terminates as
+	we strictly decrease the number of $2$-cells with each reduction.
+	Moreover, our claim that the reduction process is confluent is obvious
+	from the associativity of Equation \eqref{eq:muax} and the fact the other
+	equations delete node and simply delete equations, completing our proof
+	of Theorem \ref{thm:confluence}.
+\end{proof}
+
+Let's now give an upper bound on the number of reductions.
+Since each reductions either reduces the number of $2$-cells or applies the
+associativity of a monad, we know the number of reductions is linear in the
+number of natural transformations.
+Moreover, since checking if a reduction is possible at height $i$ is done in
+constant time, checking if a reduction is possible at a step is done in
+linear time, rendering the reduction algorithm quadratic in the number of
+natural transformations.
+
 
 \section*{Acknowledgements}
 Thanks to Antoine Groudiev for his precious insights on the direction the snakes for \eqref{eq:snek1} and \eqref{eq:snek2} should face.
