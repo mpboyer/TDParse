@@ -10,6 +10,8 @@
 		\dtnode{\f{D}\e}{a-}{telescope-}
 		\utnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using}{atelescope}
 		\dtnode{\f{D}\left(\left( \e \to \t \right) \to \left( \e \to \t \right)\right)}{using-}{a-telescope-}
+		\dtnode{\f{M}\left( \e \to \t \right)}{sees-}{the-girl-}
+		\dtnode{\f{D}\f{M}\left( \e \to \t \right)}{sees-the-girl-}{using-a-telescope-}
 		\utnode{\f{D}\left( \e \to \t \right)}{girl}{usingatelescope}
 		\utnode{\f{M}\f{D}\e}{the}{girlusingatelescope}
 		\utnode{\f{M}\f{D}\left( \e \to \t \right)}{sees}{thegirlusingatelescope}
@@ -20,11 +22,9 @@
 		\utnode{\f{M}\f{M}\f{D}\t}{theman}{seesthegirlusingatelescope}
 		\utnode{\f{M}\f{D}\t}{themanseesthegirlusingatelescope}{themanseesthegirlusingatelescope}
 		%
-		\dtnode[.8]{\f{M}\left( \e \to \t \right)}{sees-}{the-girl-}
-		\dtnode[.2]{\f{D}\left( \e \to \t \right)}{man-}{using-a-telescope-}
-		\dtnode{\f{M}\f{D}\t}{the-}{man-using-a-telescope-}
-		\dtnode[.8]{\f{M}\f{M}\f{D}\t}{the-man-using-a-telescope-}{sees-the-girl-}
-		\dtnode{\f{M}\f{D}\t}{the-man-using-a-telescope-sees-the-girl-}{the-man-using-a-telescope-sees-the-girl-}
+		\dtnode{\f{M}\e}{the-}{man-}
+		\dtnode{\f{D}\f{M}\f{M}\t}{the-man-}{sees-the-girl-using-a-telescope-}
+		\dtnode{\f{D}\f{M}\t}{the-man-sees-the-girl-using-a-telescope-}{the-man-sees-the-girl-using-a-telescope-}
 		%
 		%
 	\end{tikzpicture}

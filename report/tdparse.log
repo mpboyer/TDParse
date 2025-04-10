@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  10 APR 2025 14:14
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  10 APR 2025 14:53
  system commands enabled.
 **tdparse.tex
 (./tdparse.tex
@@ -2399,7 +2399,7 @@ ut line 5.
 [4
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.1
 .1'
-<./luatex.1eu1GT/1.png>]
+<./luatex.ZDZf40/1.png>]
 contour: Using real outline for `\tt \color {vulm}S' on input line 169.
 
 
@@ -2463,65 +2463,65 @@ Overfull \hbox (33.79648pt too wide) in paragraph at lines 12--12
  [][]$[][] []$ 
  []
 
-contour: Using real outline for `\tt \color {vulm}D' on input line 13.
+contour: Using real outline for `\tt \color {vulm}M' on input line 13.
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 13.
 
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 13.
 
-contour: Using real outline for `\tt \color {vulm}M' on input line 14.
 contour: Using real outline for `\tt \color {vulm}D' on input line 14.
+contour: Using real outline for `\tt \color {vulm}M' on input line 14.
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 14.
 
-contour: Using real outline for `\tt \color {vulm}M' on input line 15.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 14.
+
 contour: Using real outline for `\tt \color {vulm}D' on input line 15.
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 15.
 
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 15.
 
+contour: Using real outline for `\tt \color {vulm}M' on input line 16.
+contour: Using real outline for `\tt \color {vulm}D' on input line 16.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
+
+contour: Using real outline for `\tt \color {vulm}M' on input line 17.
+contour: Using real outline for `\tt \color {vulm}D' on input line 17.
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 17.
 
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 17.
 
-contour: Using real outline for `\tt \color {vulm}M' on input line 17.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 17.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
 
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 18.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 18.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
 
 contour: Using real outline for `\tt \color {vulm}M' on input line 19.
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
 
-contour: Using real outline for `\tt \color {vulm}M' on input line 20.
-contour: Using real outline for `\tt \color {vulm}M' on input line 20.
-contour: Using real outline for `\tt \color {vulm}D' on input line 20.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 20.
+
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 20.
 
 contour: Using real outline for `\tt \color {vulm}M' on input line 21.
-contour: Using real outline for `\tt \color {vulm}D' on input line 21.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 21.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 21.
+
+contour: Using real outline for `\tt \color {vulm}M' on input line 22.
+contour: Using real outline for `\tt \color {vulm}M' on input line 22.
+contour: Using real outline for `\tt \color {vulm}D' on input line 22.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 22.
 
 contour: Using real outline for `\tt \color {vulm}M' on input line 23.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 23.
-
+contour: Using real outline for `\tt \color {vulm}D' on input line 23.
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 23.
 
-contour: Using real outline for `\tt \color {vulm}D' on input line 24.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 24.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 24.
-
 contour: Using real outline for `\tt \color {vulm}M' on input line 25.
-contour: Using real outline for `\tt \color {vulm}D' on input line 25.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 25.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 25.
 
-contour: Using real outline for `\tt \color {vulm}M' on input line 26.
-contour: Using real outline for `\tt \color {vulm}M' on input line 26.
 contour: Using real outline for `\tt \color {vulm}D' on input line 26.
+contour: Using real outline for `\tt \color {vulm}M' on input line 26.
+contour: Using real outline for `\tt \color {vulm}M' on input line 26.
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 26.
 
-contour: Using real outline for `\tt \color {vulm}M' on input line 27.
 contour: Using real outline for `\tt \color {vulm}D' on input line 27.
+contour: Using real outline for `\tt \color {vulm}M' on input line 27.
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 27.
 
 )
@@ -3013,7 +3013,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-snake2.tex)
 
-[12<./luatex.1eu1GT/2.png><./luatex.1eu1GT/3.png>]
+[12<./luatex.ZDZf40/2.png><./luatex.ZDZf40/3.png>]
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
@@ -3589,7 +3589,7 @@ Package rerunfilecheck Info: File `tdparse.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 88137 strings out of 475931
+ 88132 strings out of 475931
  195539,3417909 words of node,token memory allocated
  4887 words of node memory still in use:
    67 hlist, 2 vlist, 2 rule, 16 math, 144 glue, 4 kern, 9 glyph, 452 attribute,
@@ -3597,7 +3597,7 @@ Here is how much of LuaTeX's memory you used:
 df_colorstack nodes
    avail lists: 1:1,2:15066,3:4276,4:1865,5:641,6:128,7:11018,8:96,9:4402,10:21,
 11:815
- 108681 multiletter control sequences out of 65536+600000
+ 108676 multiletter control sequences out of 65536+600000
  127 fonts using 14284983 bytes
  119i,21n,393p,733b,1282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local
@@ -3639,7 +3639,7 @@ lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 l/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on tdparse.pdf (21 pages, 442992 bytes).
+Output written on tdparse.pdf (21 pages, 442924 bytes).
 
 PDF statistics: 725 PDF objects out of 1000 (max. 8388607)
  571 compressed objects within 6 object streams
