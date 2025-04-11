@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  11 APR 2025 14:59
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  11 APR 2025 15:07
  system commands enabled.
 **tdparse.tex
 (./tdparse.tex
@@ -2399,7 +2399,7 @@ ut line 5.
 [4
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.1
 .1'
-<./luatex.wejUf6/1.png>]
+<./luatex.VurxDD/1.png>]
 contour: Using real outline for `\tt \color {vulm}S' on input line 169.
 
 
@@ -3013,7 +3013,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 (./figures/sd-snake2.tex)
 
-[12<./luatex.wejUf6/2.png><./luatex.wejUf6/3.png>]
+[12<./luatex.VurxDD/2.png><./luatex.VurxDD/3.png>]
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
@@ -3724,7 +3724,7 @@ lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 l/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on tdparse.pdf (21 pages, 447425 bytes).
+Output written on tdparse.pdf (21 pages, 447473 bytes).
 
 PDF statistics: 725 PDF objects out of 1000 (max. 8388607)
  571 compressed objects within 6 object streams
