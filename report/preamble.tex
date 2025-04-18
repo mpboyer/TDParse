@@ -176,3 +176,23 @@
 \def\dnlg#1{#1\mathrm{.h}}
 \def\dnin#1{#1\mathrm{.in}}
 \def\dnout#1{#1\mathrm{.out}}
+
+\newcounter{lingexcnt}
+\newcounter{tmplingexcnt}
+\renewcommand*{\thelingexcnt}{(\arabic{lingexcnt})}
+\newenvironment{sentence}[1][]{
+     \begin{list}{\thelingexcnt}{\refstepcounter{lingexcnt}}\item
+     \ifnum\pdfstrcmp{#1}{}=0\else\label{#1}\fi
+}{\end{list}}
+
+\newenvironment{nsentence}{%
+     \setcounter{tmplingexcnt}{\value{lingexcnt}}
+     \addtocounter{tmplingexcnt}{-1}
+     \begin{list}{\thelingexcnt}{
+         \usecounter{lingexcnt}
+         \setcounter{lingexcnt}{\value{tmplingexcnt}}
+         \refstepcounter{lingexcnt}
+     }
+}{\end{list}}
+
+\newcommand*{\oneSentence}[2][]{\begin{sentence}[#1]#2\end{sentence}}

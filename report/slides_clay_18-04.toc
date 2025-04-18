@@ -1,6 +1,0 @@
-\babel@toc {british}{}\relax 
-\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Mathematical Background}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Category Theory}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{Type Theory}{24}{0}{2}
-\beamer@sectionintoc {3}{Effects, Semantics}{32}{0}{3}
