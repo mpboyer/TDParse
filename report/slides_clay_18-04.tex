@@ -1,0 +1,236 @@
+\documentclass[math, english, info, noamsthm]{beamercours}
+\makeatletter
+\def\tikzimp@rt{1}
+\makeatother
+
+\input{preamble}
+
+\title{Formalizing Typing Rules for Natural Languages using Effects}
+\author{Matthieu Boyer}
+% \institute{\includegraphics[height=3em]{ens_psl}\hspace{2cm}\includegraphics[height=3em]{yale_logo}}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\begin{frame}[fragile]
+	\frametitle{What the hell am I doing?}
+	% What I'm working on, generic scope => Simon's work
+	% What we're going to talk about in math
+	% What I have already done
+	\begin{center}
+			\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (a) + (0, 1) coordinate[dot, label=right:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++ (1, -2) coordinate[dot, label=right:$\w{the}\w{cat}$] (the) + (-2, 2) coordinate (ctlthe) + (-2, 3) coordinate[label=above:$\f{M}$] (effthe)
+			++ (0, -1) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\draw[dashed] (bot) -- (the);
+			\draw (the) -- (bool);
+			\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\draw (a) to[out=180, in=-90] (ctla) -- (effa);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (2, 0)$);
+				\fill[catmcb] (bot) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmca] (the) to[out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- cycle;
+				\fill[catmc] (a) to[out=180, in=-90] (ctla) -- (effa) -- (bool) -- cycle;
+			\end{pgfonlayer}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Defining definites and indefinites}
+
+\end{frame}
+
+\section{Mathematical Background}
+\subsection{Category Theory}
+\begin{frame}[fragile]
+	\frametitle{Slide 42}
+	\only<1-6>{\begin{definition}[Category]
+	A (small) \emph{category} is described by the following data:
+	\begin{itemize}
+			\only<1-4>{\item[0] A class of objects (nodes of a graph).}
+			\only<2-4>{\item[1] For a pair $A, B$ of objects, a set $\Hom(A, B)$ of functions from $A$ to $B$ called \emph{morphisms}, \emph{maps} or \emph{arrows}.
+			We denote it by $f: A \to B$ or $A \xrightarrow{f} B$.}
+		\only<3-4>{\item[2] For all triplets $A, B, C$, a composition law $\circ_{A, B, C}$:
+			\vspace{-4pt}
+		      \begin{equation*}
+			      \begin{array}{rcl}
+				      \Hom(B, C) \times \Hom(A, B) & \rightarrow & \Hom(A, C) \\
+				      (g, f)                       & \mapsto     & g\circ f
+			      \end{array}
+		  \end{equation*}}
+	  	\only<4>{\item[2] For all objects $A$, an identity map $\id_{A} \in \Hom(A, A)$.}
+		\only<5-6>{\item[3] Associativity: $f\circ \left( g \circ h \right) = \left( f\circ g \right) \circ h = f \circ g \circ h$}
+			  \only<6>{\item[3] Unitarity: $f\circ \id_{A} = f = \id_{B} \circ f$.}
+	\end{itemize}
+	\label{def:categorie}
+\end{definition}}
+\only<7->{%
+	A few examples of categories are:
+	\begin{description}
+			\only<7->{\item[Set] whose objects are Sets and arrows are functions between sets.}
+			\only<8->{\item[Top] whose objects are Topological Spaces and arrows are continuous maps between those.}
+			\only<9->{\item[Grp] whose objects are Groups and arrows are Group Homomorphisms.}
+			\only<10->{\item[Vec] whose objects are Vector Spaces on a field $k$ and arrows are Linear Maps.}
+	\end{description}
+}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Commuter Rail, basically}
+	The right language for categories is the commutative diagram one. The associativity rewrites as:
+			\begin{category}[]
+				& B \ar[r, "g"] & C\ar[dr, "h"] & \\
+				A\ar[ur, "f"]\ar[urr, "g\circ f"']\arrow[rrr, "h\circ\left(g\circ f\right)"'] & & & D
+			\end{category}
+		\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Commuter Rail, basically}
+		In $Set$ we have the following commutative diagram:
+		\begin{category}[]
+			\R\ar[r, "\times 2"]\ar[d, "\cdot^{2}"'] & \R\ar[d, "\cdot^{2}"]\\
+			\R^{+}\ar[r, "\times 4"] & \R^{+}
+		\end{category}
+		\visible<2>{It simply states that:
+		\begin{equation*}
+			\forall x \in \R, \left( 2x^{2} \right) = 4x^{2}
+	\end{equation*}}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Of wolf, and man.}
+\begin{definition}
+	Let $\A, \B$ be two categories.
+	A functor $\mF : \A\to \B$ is:
+	\begin{enumerate}
+		\item[0] An object $F(A) \in \B$ for each object $A$ of $\A$.
+		\item[1] For each pair $A_{1}, A_{2} \in \A$, a function:
+		      \begin{equation*}
+			      F_{A_{1}, A_{2}}: \applic{\Hom_{\A}(A_{1}, A_{2})}{\Hom_{\B}(FA_{1}, FA_{2})}{f}{F(f)}
+		  \end{equation*}
+	\end{enumerate}
+	\label{def:foncteur}
+\end{definition}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Of wolf, and man.}
+	We ask the following equations to be satisfied:
+				  $F(g \circ f) = F(g) \circ F(f)$, that is
+						\begin{category}
+							A\ar[r, "g"]\ar[d, "F"] & B\ar[r, "f"]\ar[d, "F"] & C\ar[d, "F"] \\
+							FA\ar[r, "Fg"'] & FB\ar[r, "Ff"'] & FC
+						\end{category}
+					and $F(\id_{A}) = \id_{F(A)}$
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{O.K. Corral}
+\begin{definition}
+	A natural transformation is a functor in the category of small categories and functors. If $F, G: \A \Rightarrow \B$ are functors, a natural transformation $\theta$ from $F$ to $G$ is, for each object of $\A$ a function $\theta_{A}$ such that the following diagram commutes for all $f: A \to B$.
+\begin{category}
+	FA\ar[r, "Ff"]\ar[d, "\theta_{A}"'] & FB\ar[d, "\theta_{B}"]\\
+	GA\ar[r, "Gf"] & GB
+\end{category}
+\end{definition}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{O.K. Corral}
+	\begin{definition}
+		An adjunction $L \dashv R$ between two functors $L: \A \to \B$ and $R: \B \to \A$ is a pair of natural transformations $\eta: \Id_{\A} \Rightarrow R \circ L$ and $\epsilon: L \circ R \Rightarrow \Id_{\B}$ verifying the zigzag equations:
+		\begin{center}
+			\resizebox{\linewidth}{!}{\input{figures/cd-zigzag.tex}}
+	\end{center}
+	\end{definition}
+\end{frame}
+
+\subsection{Type Theory}
+\begin{frame}[fragile]
+	\frametitle{Yu-Gi-Oh}
+	\begin{definition}
+	A product of two objects $A$ and $B$ in a category $\phi$ is a triplet
+	\begin{equation*}
+		\left(A \times B, \pi_{1}: A\times B \to A, \pi_{2}: A \times B \to B\right)
+	\end{equation*}
+	\begin{category}[]
+		A & & B \\
+		& A\times B \arrow{ul}{\pi_{1}}\arrow{ur}{\pi_{2}} &
+	\end{category}
+	such that for all pair of arrows $X\xrightarrow{f} A$ et $X\xrightarrow{g} B$, there is a unique $h: X \to A \times B$ such that
+	$f = \pi_{1} \circ h, g = \pi_{2} \circ h$.
+	\label{def:prodcart}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Yu-Gi-Oh 2}
+	\begin{definition}
+		A terminal object $\mathds{1}$ in a category $\cont$ is an object such that for all $A$ in $\cont$ there is one and only one arrow $A \to \mathds{1}$.
+	\end{definition}
+	An initial object is the same thing with the arrows reversed.
+	\begin{definition}
+		A category is cartesian if all products exist and it has a terminal object $\mathds{1}$.
+	\end{definition}
+	Cartesian products and terminal objects are unique, up to isomorphism.
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Yu-Gi-Oh 3}
+	\begin{definition}
+		A cartesian closed category is a cartesian category where we define for each object $A$ a functor $A \Rightarrow \cont \to \cont$ right adjunct to $A \times \cont \to \cont$.
+		This means we have bijections $\Phi_{X, Y}: \Hom\left( A \times X, Y \right) \to \Hom\left( X, A \Rightarrow Y \right)$ called currification bijections..
+	\end{definition}
+	\visible<2>{$Set$ is a cartesian closed category, where currification is defined by the partial application of high arity functions to a subset of their arguments.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Use the Types, Luke}
+	\only<1>{\begin{definition}
+		The $\lambda$-calculus is defined by the following basic grammar:
+		\begin{grammar}
+			\firstrule{E}{$x \in Var$}{Variables}
+			\grule{$App(E, E)$}{Application}
+			\grule{$\lambda x.E$}{Evaluation}
+		\end{grammar}
+\end{definition}}
+\only<2>{\begin{definition}
+We give ourselves a set of type variables $TyVar$ and define types by:
+\begin{center}
+\begin{mgrammar}
+	\firstrule{A, B}{\alpha\in TyVar}{}
+	\grule{A\times B}{}
+	\grule{\mathds{1}}{}
+	\grule{A \Rightarrow B}{}
+\end{mgrammar}
+\end{center}
+A context $M = x_{1}: A_{1}, \ldots, x_{n}: A_{n}$ is a list of pairs $x_{i}: A_{i}$ with a variable $x_{i}$ and a type $A_{i}$, all the variables being different.
+\end{definition}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fudge Supreme}
+\begin{definition}
+	A typing $\Gamma\vdash M: A$ is a triplet composed of a context $\Gamma$, a $\lambda$-term $M$ and a type $A$, such that all free variables of $M$ are in $\Gamma$.
+	A proof tree for a typing judgement is constructed inductively from a set of rules of the form:
+	\begin{align*}
+		\frac{}{x:A \vdash x:A}\fracnotate{Var}\\
+		\frac{\Gamma, x:A\vdash M:B}{\Gamma\vdash \lambda x.M:A\Rightarrow B}\fracnotate{Lam}\\
+		\frac{\Gamma\vdash M:A \Rightarrow B \hspace{1cm} \Delta \vdash N:A}{\Gamma, \Delta\vdash App(M, N):B}\fracnotate{App}
+	\end{align*}
+\end{definition}
+\end{frame}
+
+\section{Effects, Semantics}
+
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliography}
+\bibliographystyle{nals}
+\bibliography{tdparse.bib}
+\end{frame}
+
+\end{document}
