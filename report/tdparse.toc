@@ -4,25 +4,27 @@
 \contentsline {subsection}{\numberline {1.1}Typing Category}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Types}{2}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Functors, Applicatives and Monads}{3}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Natural Transformations for Handlers and Higher-Order Constructs}{3}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.3}Natural Transformations for Handlers and Higher-Order Constructs}{4}{subsubsection.1.1.3}%
 \contentsline {paragraph}{\numberline {1.1.3.1}Adjunctions}{4}{paragraph.1.1.3.1}%
-\contentsline {paragraph}{\numberline {1.1.3.2}Handlers}{5}{paragraph.1.1.3.2}%
+\contentsline {paragraph}{\numberline {1.1.3.2}Handlers}{4}{paragraph.1.1.3.2}%
 \contentsline {paragraph}{\numberline {1.1.3.3}Higher-Order Constructs}{5}{paragraph.1.1.3.3}%
 \contentsline {subsection}{\numberline {1.2}Typing Judgements}{6}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Solving Non-Determinism}{7}{section.2}%
 \contentsline {subsection}{\numberline {2.1}String Diagram Modelisation of Sentences}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Achieving Normal Forms}{10}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}The Composition Dilemma}{11}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Equations}{12}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Computing Normal Forms}{14}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Representing String Diagrams}{14}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{15}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}Computing Forms}{16}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Language Translation}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Types of Syntax}{16}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Lexicon: Semantic Denotations for Words}{16}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Effects of the Language}{16}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Modality, Plurality, Aspect, Tense}{18}{subsection.3.4}%
-\contentsline {section}{\numberline {A}Other Considered Things}{20}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{20}{subsection.A.1}%
-\contentsline {section}{\numberline {B}Bibliography}{20}{appendix.B}%
+\contentsline {subsection}{\numberline {2.2}Achieving Normal Forms}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}The Composition Dilemma}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Equations}{9}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Computing Normal Forms}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Representing String Diagrams}{10}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{11}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Computing Forms}{12}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Language Translation}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Lambda-Calculus}{12}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Types of Syntax}{13}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Lexicon: Semantic Denotations for Words}{13}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Effects of the Language}{13}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Modality, Plurality, Aspect, Tense}{14}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Manifold Representation of Concepts}{15}{subsection.3.2}%
+\contentsline {section}{\numberline {A}Other Considered Things}{16}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{16}{subsection.A.1}%
+\contentsline {section}{\numberline {B}Bibliography}{16}{appendix.B}%

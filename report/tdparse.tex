@@ -1,7 +1,7 @@
 \documentclass[math, english, info]{cours}
 
 \makeatletter
-\def\tikzimp@rt{1}
+\def\tikzimp@rt{0}
 \makeatother
 
 \input{preamble}
@@ -156,6 +156,7 @@ This could also give us a way to construct handlers for our effects as per \newc
 As considered by \newcite{wuEffectHandlersScope2014} and \newcite{vandenbergFrameworkHigherorderEffects2024}, handlers are to be seen as natural transformations describing the free monad on an algebraic effect.
 Considering handlers as so, allows us to directly handle our computations inside our typing system, by ``transporting'' our functors one order higher up without loss of information or generality since all our functors undergo the same transformation.
 Using the framework proposed in \cite{vandenbergFrameworkHigherorderEffects2024} we simply need to create handlers for our effects/functors and we will then have in our language the result needed.
+The only thing we will require from an algebraic handler $h$ is that for any applicative functor of unit $\eta$, $h\circ \eta = \id$.
 
 \medskip
 
@@ -300,6 +301,15 @@ Since we provide a compositional addition to a denotation system, it amounts to 
 Indeed, we start from a meaning category $\mC$ and then build on it, instead of providing a full on denotation system\footnote{Section \ref{sec:language} proposes a translation of the english language based on usual denotations, but our system could be applied onto a fully different representation of meaning, as long as it can be mapped to a cartesian closed category.}.
 Moreover, when seeing their parsing trees as string diagrams and using the fact that we can always assume natural transformations (or $2$-cells) to be at different heights\footnote{Geometrically, see Lemma 1.7 in \newcite{delpeuchNormalizationPlanarString2022}.}, we can see that their model of string diagrams is just a rewriting of our model for vertical composition, and allows for other reductions in the parser to reduce non-determinism.
 We keep the work on vertically composing string diagrams as a way to see how the effects pile up, as presented in Section \ref{subsubsec:cds}.
+
+\medskip
+
+There is however one thing that may seem to be an issue: existential quantifiers inside \textbf{if then} sentences and other functions looking like $\f{M}\ty{a} \to \ty{b}$.
+Indeed, \cite{bumfordEffectdrivenInterpretation} suggests that those could be of type $\f{S}\t \to \t$ and that we might want to apply that function to something of type $\f{S}\t$ by first using the unit of the monad $\f{S}$ then invoking \texttt{fmap}.
+There is no issue with that in our typing system, as this combination mode is the composition of two typing judgements (in a sense).
+To graphically reconciliate this and our string diagrams, especially since units and handlers cancel each other, we suggest to see the effects as being dragged along the parsing trees (or parsing string diagrams) until it's never needed again.
+This means that edges in parsing trees (or strings in string diagrams) could be viewed as bundles of effects with individual strings being sent as proposed before on an axis in the order in which they arrive once no function (or composition mode) requires its presence.
+As such, we forget that units actually appear in the composition modes.
 
 \subsection{Achieving Normal Forms}
 \label{subsec:normalforms}
@@ -548,7 +558,10 @@ point of our theorem.
 In this section we will give a list of words along with a way to express them as either arrows or endo-functors of our typing category.
 This will also give a set of functors and constructs in our language.
 
-\subsection{Types of Syntax}\label{subsec:syntax}
+\subsection{Lambda-Calculus}
+In this section we use the traditional lambda-calculus denotations.
+
+\subsubsection{Types of Syntax}\label{subsec:syntax}
 We first need to setup some guidelines for our denotations, by asking ourselves how the different components of sentences interact with each other.
 For syntactic categories, the types that are generally used are the following, and we will see it matches with our lexicon, and simplifies our functorial definitions\footnote{We don't consider effects in the given typings.}.
 Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the operator which retrieves the type from a certain syntactic category.
@@ -558,7 +571,7 @@ Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the operat
 	\caption{Usual Typings for some Syntactic Categories}
 	\label{fig:sctypes}
 \end{figure}
-\subsection{Lexicon: Semantic Denotations for Words}\label{subsec:lexicon}
+\subsubsection{Lexicon: Semantic Denotations for Words}\label{subsec:lexicon}
 Many words will have basically the same ``high-level'' denotation.
 For example, the denotation for most common nouns will be of the form: $\cont \lambda x. \w{planet} x: \e \to \t$.
 In Table \ref{fig:lexicon} we give a lexicon for a subset of the english language.
@@ -572,7 +585,7 @@ We describe the constructor for the functors used by our denotations in the tabl
 Note that for terms with two lambdas, we also say that inverting the lambdas also provides a valid denotation.
 This is important for our formalism as we want to be able to add effects in the order that we want.
 
-\subsection{Effects of the Language}\label{subsec:effects}
+\subsubsection{Effects of the Language}\label{subsec:effects}
 For the applicatives/monads in Table \ref{fig:functors} we do not specify the unit and multiplication functions, as they are quite usual examples.
 We still provide the \fmap{} for good measure.
 
@@ -605,7 +618,7 @@ Now it is easy to see that $\phi$ and $\psi$ do define a natural transformation 
 As a reminder, this means our language canonically defines a monad $\f{G}\circ \f{W}$.
 Moreover, the co-unit of the adjunction provides a canonical way for us to deconstruct entirely the comonad $\f{W}\circ \f{G} $, that is we have a natural transformation from $\f{W} \circ \f{G} \Rightarrow \Id$.
 
-\subsection{Modality, Plurality, Aspect, Tense}\label{subsec:modality}
+\subsubsection{Modality, Plurality, Aspect, Tense}\label{subsec:modality}
 We will now explain ways to formalise higher-order concepts as described in Section \ref{par:higherorder}.
 
 First, let us consider in this example the plural concept.
@@ -654,6 +667,8 @@ Now, in quite a similar way, we can create functors from any sort of judgement t
 Indeed, we simply need to replace the $\abs{p} \geq 1$ in most of the definitions by our function and the rest would stay the same.
 Remember that our use of natural transformations is only there to allow for possible under-markings of the considered effects and propagating the value resulting from the computation of the high-order effect.
 
+\subsection{Manifold Representation of Concepts}
+In this section we provide explanations on how to adapt our formalism to the representation of word semantics proposed by \newcite{goodaleManifoldsConceptualRepresentations2022}.
 \section*{Acknowledgements}
 Thanks to Antoine Groudiev for his precious insights on the direction the snakes for \eqref{eq:snek1} and \eqref{eq:snek2} should face.
 \clearpage
