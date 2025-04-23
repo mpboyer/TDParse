@@ -14,5 +14,4 @@ Continuous Logic
 Probability Monad ->
     Grove and Bernardy
     Grove and White
-Sadrzadeh and Muskens
 DL Probabilistic Programming Languages Josh Tenenbaum
