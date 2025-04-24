@@ -18,7 +18,7 @@ eval = show
 print :: Show m => m -> IO String
 print x = return $ show x
 
-infix %    -- Infix Application of Denotations
+infixl 8 %    -- Infix Application of Denotations
 (%) = (++)
 
 infixr :->
