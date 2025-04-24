@@ -71,7 +71,6 @@ data SynTree
   deriving ( Show, Eq )
 
 
--- Returns all syntactically valid parse trees
 coreParser ::
   Monad m
   => CFG
@@ -80,31 +79,12 @@ coreParser ::
 coreParser _ _ (_, _, [(s, sign)]) = return [(c, Leaf s d t) | (d, c, t) <- sign]
 coreParser cfg parse phrase = concat <$> mapM help (bisect phrase)
   where
-    bisect (lo, hi, u) = do
+    bisect (lo, hi, u) = do 
       i <- [1 .. length u - 1]
-      let (ls, rs) = splitAt i u
+      let (ls, rc) = splitAt i u
       let break = lo + i
       return ((lo, break - 1, ls), (break, hi, rs))
+      
 
-    help (ls, rs) = do
-      parsesL <- parse ls
-      parsesR <- parse rs
-      return $
-        [ (cat, mkIsland cat lsyn rsyn)
-        | (lcat, lsyn) <- parsesL
-        , (rcat, rsyn) <- parsesR
-        , cat <- cfg lcat rcat
-        ]
-
-    mkIsland CP = Island
-    mkIsland _  = Branch
-
-
-parse :: Lang -> String -> Maybe [SynTree]
-parse lang input = do
-  let lexes = filter (/= "") $ words input >>= stripClitics
-  ws <- mapM (\s -> (s,) <$> lookup s (lexicon lang)) lexes
-  return $ snd <$> memo (coreParser $ grammar lang) (0, length ws - 1, ws)
-  where
-    stripClitics s = clitics >>= \c -> maybe [s] ((:[c]) . reverse) $ stripPrefix (reverse c) (reverse s)
-    clitics = ["'s"]
+parser :: Lang -> Phrase -> [SynTree]
+parser _ _ = []

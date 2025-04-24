@@ -3,7 +3,12 @@
 
 module Lang where
 
-import Prelude hiding ( Word )
+import Prelude hiding ( (<>), (^), Word, (*) )
+import Control.Monad ( join, liftM2 )
+import Data.Function ( fix )
+import Data.Functor ( (<&>) )
+import Data.List ( isPrefixOf, stripPrefix )
+import Memo
 import TypeSystem -- Note that the Type System here, is seen as the base
 -- TypeSystem is to be seen as part of the language, but is not as it also includes denotations.
 
@@ -46,4 +51,4 @@ type Word = (String, [Sense])
 type Phrase = [Word]
 type Lexicon = [Word]
 
-data Lang = Lang { lex :: Lexicon,  grammar :: CFG }
+data Lang = Lang { lexicon :: Lexicon,  grammar :: CFG }
