@@ -87,6 +87,17 @@
 \def\word#1#2#3#4{\@word[#4]{#1}{#2}{#3}}
 \makeatother
 
+\newtcbox{\tboxed}{on line, colframe=black, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt, boxrule=1pt}
+
+\foreach\i in {0,...,10}{%
+	\expandafter\newtcbox{thefbox\i}{on line, colback=vulm!\i0!yulm, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt}
+}
+
+\def\functor#1#2{\csname thefbox#1\endcsname{\tt #2}}
+\def\effect#1#2#3{
+	\tboxed{\csname thefbox#1\endcsname{\tt #2}\ensuremath{\tt #3}}
+}
+
 \usepackage{calc}
 
 \makeatletter

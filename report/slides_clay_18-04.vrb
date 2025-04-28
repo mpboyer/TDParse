@@ -1,0 +1,6 @@
+\frametitle{Go Fish}
+	\begin{definition}
+		A cartesian closed category is a cartesian category where we define for each object $A$ a functor $A \Rightarrow \cont \to \cont$ right adjunct to $A \times \cont \to \cont$.
+		This means we have bijections $\Phi_{X, Y}: \Hom\left( A \times X, Y \right) \to \Hom\left( X, A \Rightarrow Y \right)$ called currification bijections..
+	\end{definition}
+	\visible<2>{$Set$ is a cartesian closed category, where currification is defined by the partial application of high arity functions to a subset of their arguments.}

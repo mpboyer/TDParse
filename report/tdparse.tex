@@ -1,7 +1,7 @@
 \documentclass[math, english, info]{cours}
 
 \makeatletter
-\def\tikzimp@rt{1}
+\def\tikzimp@rt{0}
 \makeatother
 
 \input{preamble}
@@ -55,6 +55,11 @@ possibilities of combinations.
 In this section, we will designate by $\mL$ our language, as a set of words (with their semantics) and syntactic rules to combine them semantically.
 We denote by $\O\left( \mL \right)$ the set of words in the language whose semantic representation is a low-order function and $\mF\left( \mL \right)$ the set of words whose semantic representation is a functor or high-order function.
 Our goals here are to describe more formally, using a categorical vocabulary, the environment in which the typing system for our language will exist, and how we connect words and other linguistic objects to the categorical formulation.
+
+\functor{6}{F}
+\csname thefbox6\endcsname{\tt F}
+\tboxed{\tt F}
+\effect{6}{F}{$e\to t$}
 
 \subsection{Typing Category}\label{subsec:typingcategory}
 \subsubsection{Types}\label{subsubsec:types}

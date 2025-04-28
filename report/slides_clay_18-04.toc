@@ -1,0 +1,9 @@
+\babel@toc {british}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Mathematical Background}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Category Theory}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{Type Theory}{29}{0}{2}
+\beamer@sectionintoc {3}{Effects, Semantics}{39}{0}{3}
+\beamer@subsectionintoc {3}{1}{Integrating Effects}{40}{0}{3}
+\beamer@subsectionintoc {3}{2}{Handling Effects and Non-Determinism}{59}{0}{3}
+\beamer@sectionintoc {4}{La suite}{89}{0}{4}
