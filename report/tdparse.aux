@@ -8,7 +8,7 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}}
 \babel@aux{english}{}
-\citation{bumfordEffectdrivenInterpretation}
+\citation{bumfordEffectdrivenInterpretationFunctors2025}
 \citation{bumfordEffectfulCompositionNatural}
 \citation{moggiComputationalLambdacalculusMonads1989}
 \citation{heimSemanticsGenerativeGrammar1998}
@@ -56,7 +56,7 @@
 \citation{coeckeMathematicalFoundationsCompositional2010}
 \citation{wang-mascianicaStringDiagramsText2023}
 \citation{delpeuchNormalizationPlanarString2022}
-\citation{bumfordEffectdrivenInterpretation}
+\citation{bumfordEffectdrivenInterpretationFunctors2025}
 \newlabel{eq:CSD}{{{CSD}}{8}{String Diagram Modelisation of Sentences}{AMS.5}{}}
 \citation{joyalGeometryTensorCalculus1991}
 \citation{selingerSurveyGraphicalLanguages2010}
@@ -83,17 +83,16 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{11}{subsubsection.2.3.2}\protected@file@percent }
 \citation{delpeuchNormalizationPlanarString2022}
 \newlabel{thm:confluence}{{2.2}{12}{Confluence}{theoremeT.2.2}{}}
+\citation{bumfordEffectdrivenInterpretationFunctors2025}
 \citation{parteeLecture2Lambda}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Usual Typings for some Syntactic Categories}}{13}{figure.caption.12}\protected@file@percent }
 \newlabel{fig:sctypes}{{3}{13}{Usual Typings for some Syntactic Categories}{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Parsing}{13}{section.3}\protected@file@percent }
-\newlabel{sec:parsing}{{3}{13}{Parsing}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Naïvely Computing Parsing Trees}{13}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Generating the Tree}{13}{subsubsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Handling Effects}{13}{subsubsection.3.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Optimizations}{13}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}In Tree Generation}{13}{subsubsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}In Effect Handling}{13}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $\lambda $-calculus representation of the english language $\mathcal  {L}$}}{13}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:lexicon}{{4}{13}{$\lambda $-calculus representation of the english language $\mL $}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Semantic Parsing}{13}{section.3}\protected@file@percent }
+\newlabel{sec:parsing}{{3}{13}{Semantic Parsing}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Semantic Parsing on Syntactic Parsing}{13}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Islands}{13}{subsubsection.3.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Language Translation}{13}{section.4}\protected@file@percent }
 \newlabel{sec:language}{{4}{13}{Language Translation}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Lambda-Calculus}{13}{subsection.4.1}\protected@file@percent }
@@ -102,10 +101,10 @@
 \newlabel{subsec:syntax}{{4.1.1}{13}{Types of Syntax}{subsubsection.4.1.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Lexicon: Semantic Denotations for Words}{13}{subsubsection.4.1.2}\protected@file@percent }
 \newlabel{subsec:lexicon}{{4.1.2}{13}{Lexicon: Semantic Denotations for Words}{subsubsection.4.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $\lambda $-calculus representation of the english language $\mathcal  {L}$}}{14}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:lexicon}{{4}{14}{$\lambda $-calculus representation of the english language $\mL $}{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Denotations for the functors used}}{14}{figure.caption.14}\protected@file@percent }
 \newlabel{fig:functors}{{5}{14}{Denotations for the functors used}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces (Partial) Definition for the $\Pi $ Plural Functor}}{14}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:pluralfunctor}{{6}{14}{(Partial) Definition for the $\Pi $ Plural Functor}{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Effects of the Language}{14}{subsubsection.4.1.3}\protected@file@percent }
 \newlabel{subsec:effects}{{4.1.3}{14}{Effects of the Language}{subsubsection.4.1.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}Modality, Plurality, Aspect, Tense}{14}{subsubsection.4.1.4}\protected@file@percent }
@@ -113,12 +112,10 @@
 \citation{goodaleManifoldsConceptualRepresentations2022}
 \citation{sadrzadehStaticDynamicVector2018}
 \citation{groveProbabilisticCompositionalSemantics2023}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces (Partial) Definition for the $\Pi $ Plural Functor}}{15}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:pluralfunctor}{{6}{15}{(Partial) Definition for the $\Pi $ Plural Functor}{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Other Representation of Concepts}{15}{subsection.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Manifold Representation}{15}{subsubsection.4.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Vector Representation}{15}{subsubsection.4.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Probabilistic Monad}{16}{subsubsection.4.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Probabilistic Monad}{15}{subsubsection.4.2.3}\protected@file@percent }
 \bibstyle{nals}
 \bibdata{tdparse.bib}
 \bibcite{bauerEffectSystemAlgebraic2014}{{1}{2014}{{Bauer and Pretnar}}{{}}}
@@ -134,11 +131,12 @@
 \bibcite{parteeLecture2Lambda}{{11}{}{{Partee}}{{}}}
 \bibcite{plotkinHandlingAlgebraicEffects2013}{{12}{2013}{{Plotkin and Pretnar}}{{}}}
 \bibcite{selingerSurveyGraphicalLanguages2010}{{13}{2010}{{Selinger}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Other Considered Things}{16}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{16}{subsection.A.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Enhanced Grammar}{16}{subsection.A.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Bibliography}{16}{appendix.B}\protected@file@percent }
 \bibcite{vandenbergFrameworkHigherorderEffects2024}{{14}{2024}{{{van den Berg} and Schrijvers}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Other Considered Things}{17}{appendix.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{17}{subsection.A.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Bibliography}{17}{appendix.B}\protected@file@percent }
 \bibcite{wadlerTheoremsFree1989}{{15}{1989}{{Wadler}}{{}}}
 \bibcite{wang-mascianicaStringDiagramsText2023}{{16}{2023}{{Wang-Ma{\'s}cianica}}{{}}}
 \bibcite{wuEffectHandlersScope2014}{{17}{2014}{{Wu et~al.}}{{Wu, Schrijvers, and Hinze}}}
-\gdef \@abspage@last{18}
+\gdef \@abspage@last{17}

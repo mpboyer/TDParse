@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  25 APR 2025 14:48
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  28 APR 2025 15:16
  system commands enabled.
 **tdparse.tex
 (./tdparse.tex
@@ -2328,7 +2328,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 13.
-</home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf, id=148, 136.57294pt x 55.7418
+</home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf, id=136, 136.57294pt x 55.7418
 8pt>
 File: /home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf Graphic file (type pdf)
 <use /home/matthieu/Documents/ETUDES/ENS/ens_psl.pdf>
@@ -2344,9 +2344,12 @@ on input line 13.
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}</home/mat
 thieu/Documents/ETUDES/ENS/ens_psl.pdf>]
+
+Package natbib Warning: Citation `bumfordEffectdrivenInterpretationFunctors2025
+' on page 2 undefined on input line 19.
+
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
 62.
-
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<ot1tt.cmap>>
@@ -2358,7 +2361,7 @@ File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [4
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.1
 .1'
-<./luatex.I5Ljsn/1.png>]
+<./luatex.DWTTD5/1.png>]
 contour: Using real outline for `\tt \color {vulm}S' on input line 175.
 
 
@@ -2379,6 +2382,10 @@ contour: Using real outline for `\tt \color {yulm!90!black}a' on input line 312
 .
 contour: Using real outline for `\tt \color {yulm!90!black}b' on input line 312
 .
+
+Package natbib Warning: Citation `bumfordEffectdrivenInterpretationFunctors2025
+' on page 8 undefined on input line 313.
+
 contour: Using real outline for `\tt \color {vulm}S' on input line 313.
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 313
 .
@@ -2417,6 +2424,18 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 351.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
+.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
+.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
+.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
+.1'
 
 
 [9
@@ -2474,20 +2493,8 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
-.1'
 
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
-.1'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
-.1'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
-.1'
-
-
-[10<./luatex.I5Ljsn/2.png><./luatex.I5Ljsn/3.png>]
+[10<./luatex.DWTTD5/2.png><./luatex.DWTTD5/3.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 446.
 Package mdframed Info: mdframed detected package amsthm 
@@ -2503,9 +2510,13 @@ Package mdframed Info: mdframed detected package amsthm
 
 
 [12]
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 596
+
+Package natbib Warning: Citation `bumfordEffectdrivenInterpretationFunctors2025
+' on page 13 undefined on input line 566.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 589
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 596
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 589
 .
 
 
@@ -2514,31 +2525,31 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
+contour: Using real outline for `\tt \color {vulm}G' on input line 612.
+contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 612
+.
+contour: Using real outline for `\tt \color {vulm}W' on input line 612.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 612
+.
+contour: Using real outline for `\tt \color {vulm}M' on input line 613.
+contour: Using real outline for `\tt \color {vulm}S' on input line 614.
+contour: Using real outline for `\tt \color {vulm}G' on input line 616.
+contour: Using real outline for `\tt \color {vulm}W' on input line 616.
 contour: Using real outline for `\tt \color {vulm}G' on input line 619.
-contour: Using real outline for `\tt \color {yulm!90!black}r' on input line 619
-.
 contour: Using real outline for `\tt \color {vulm}W' on input line 619.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 619
-.
-contour: Using real outline for `\tt \color {vulm}M' on input line 620.
-contour: Using real outline for `\tt \color {vulm}S' on input line 621.
-contour: Using real outline for `\tt \color {vulm}G' on input line 623.
-contour: Using real outline for `\tt \color {vulm}W' on input line 623.
-contour: Using real outline for `\tt \color {vulm}G' on input line 626.
-contour: Using real outline for `\tt \color {vulm}W' on input line 626.
-contour: Using real outline for `\tt \color {vulm}W' on input line 631.
+contour: Using real outline for `\tt \color {vulm}W' on input line 624.
+contour: Using real outline for `\tt \color {vulm}G' on input line 624.
+contour: Using real outline for `\tt \color {vulm}W' on input line 629.
+contour: Using real outline for `\tt \color {vulm}G' on input line 629.
 contour: Using real outline for `\tt \color {vulm}G' on input line 631.
-contour: Using real outline for `\tt \color {vulm}W' on input line 636.
-contour: Using real outline for `\tt \color {vulm}G' on input line 636.
-contour: Using real outline for `\tt \color {vulm}G' on input line 638.
-contour: Using real outline for `\tt \color {vulm}W' on input line 638.
-contour: Using real outline for `\tt \color {vulm}W' on input line 639.
-contour: Using real outline for `\tt \color {vulm}G' on input line 639.
-contour: Using real outline for `\tt \color {vulm}W' on input line 639.
-contour: Using real outline for `\tt \color {vulm}G' on input line 639.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 657
+contour: Using real outline for `\tt \color {vulm}W' on input line 631.
+contour: Using real outline for `\tt \color {vulm}W' on input line 632.
+contour: Using real outline for `\tt \color {vulm}G' on input line 632.
+contour: Using real outline for `\tt \color {vulm}W' on input line 632.
+contour: Using real outline for `\tt \color {vulm}G' on input line 632.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 650
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 657
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 650
 .
 
 
@@ -2587,30 +2598,30 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-contour: Using real outline for `\tt \color {vulm}S' on input line 671.
-contour: Using real outline for `\tt \color {vulm}S' on input line 671.
-contour: Using real outline for `\tt \color {vulm}S' on input line 672.
-contour: Using real outline for `\tt \color {vulm}S' on input line 677.
-contour: Using real outline for `\tt \color {vulm}S' on input line 677.
-contour: Using real outline for `\tt \color {vulm}S' on input line 681.
-contour: Using real outline for `\tt \color {vulm}F' on input line 682.
-contour: Using real outline for `\tt \color {vulm}F' on input line 682.
-contour: Using real outline for `\tt \color {vulm}F' on input line 682.
-contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 686
+contour: Using real outline for `\tt \color {vulm}S' on input line 664.
+contour: Using real outline for `\tt \color {vulm}S' on input line 664.
+contour: Using real outline for `\tt \color {vulm}S' on input line 665.
+contour: Using real outline for `\tt \color {vulm}S' on input line 670.
+contour: Using real outline for `\tt \color {vulm}S' on input line 670.
+contour: Using real outline for `\tt \color {vulm}S' on input line 674.
+contour: Using real outline for `\tt \color {vulm}F' on input line 675.
+contour: Using real outline for `\tt \color {vulm}F' on input line 675.
+contour: Using real outline for `\tt \color {vulm}F' on input line 675.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 679
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 686
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 679
 .
 
 Package natbib Warning: Citation `goodaleManifoldsConceptualRepresentations2022
-' on page 15 undefined on input line 694.
+' on page 15 undefined on input line 687.
 
 
 Package natbib Warning: Citation `sadrzadehStaticDynamicVector2018' on page 15 
-undefined on input line 697.
+undefined on input line 690.
 
 
 Package natbib Warning: Citation `groveProbabilisticCompositionalSemantics2023'
- on page 15 undefined on input line 700.
+ on page 15 undefined on input line 693.
 
 
 
@@ -2636,11 +2647,9 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
-Non-PDF special ignored!]
+Non-PDF special ignored!] (./tdparse.bbl
 
-[16] (./tdparse.bbl
-
-[17
+[16
 
 ])
 
@@ -2648,24 +2657,24 @@ Package natbib Warning: There were undefined citations.
 
 
 
-[18] (./tdparse.aux)
+[17] (./tdparse.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `tdparse.out' has not changed.
-(rerunfilecheck)             Checksum: 990A90A33D4C4019165AF56FBD2BD640;6419.
+(rerunfilecheck)             Checksum: DDD7D4F9F4B6B59133057E822C1ACC6C;5971.
 )
 
 Here is how much of LuaTeX's memory you used:
- 85021 strings out of 475931
+ 85014 strings out of 475931
  125129,3417909 words of node,token memory allocated
  4894 words of node memory still in use:
    67 hlist, 2 vlist, 2 rule, 16 math, 145 glue, 4 kern, 10 glyph, 451 attribute
 , 122 glue_spec, 387 attribute_list, 2 write, 194 pdf_literal, 3 pdf_action, 20 
 pdf_colorstack nodes
-   avail lists: 2:2763,3:732,4:578,5:614,6:137,7:11092,8:96,9:918,10:21,11:796
- 105669 multiletter control sequences out of 65536+600000
+   avail lists: 2:2763,3:727,4:572,5:614,6:136,7:11068,8:96,9:899,10:21,11:796
+ 105666 multiletter control sequences out of 65536+600000
  130 fonts using 14639191 bytes
  119i,19n,127p,733b,1282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local
@@ -2706,10 +2715,10 @@ lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/loca
 l/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on tdparse.pdf (18 pages, 401520 bytes).
+Output written on tdparse.pdf (17 pages, 400284 bytes).
 
-PDF statistics: 767 PDF objects out of 1000 (max. 8388607)
- 615 compressed objects within 7 object streams
- 123 named destinations out of 1000 (max. 131072)
- 318 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 743 PDF objects out of 1000 (max. 8388607)
+ 593 compressed objects within 6 object streams
+ 119 named destinations out of 1000 (max. 131072)
+ 294 words of extra memory for PDF output out of 10000 (max. 100000000)
 

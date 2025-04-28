@@ -116,9 +116,9 @@ data SemObj
   | Comb Mode Denot
   deriving (Eq, Show)
 
-denote :: SemObj -> Denot
-denote (Lex w)    = w
-denote (Comb m d) = d
+getDenote :: SemObj -> Denot
+getDenote (Lex w)    = w
+getDenote (Comb m d) = d
 
 data Derivation = Derivation String SemObj Ty [Derivation]
   deriving (Show, Eq)
@@ -132,7 +132,7 @@ derive = execute . go
     go = \case
       Leaf   s d t -> return [Derivation s (Lex d) t []] -- Amount to Axioms
       Branch l r   -> goWith False id l r
-      Island l r   -> goWith True (filter $ \(_,_,t) -> evaluated t) l r
+      Island l r   -> goWith True (filter $ \(_,_,t) -> True) l r
 
     goWith tag handler l r = do
       lefts  <- go l
@@ -144,5 +144,5 @@ derive = execute . go
           combos <- combineWith tag handler lty rty
           return do
             (op, d, ty) <- combos
-            let cval = Comb op (eval $ d % denote lval % denote rval)
+            let cval = Comb op (eval $ d % getDenote lval % getDenote rval)
             return $ Derivation (lstr ++ " " ++ rstr) cval ty [lp, rp]

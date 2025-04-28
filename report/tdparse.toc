@@ -17,13 +17,9 @@
 \contentsline {subsection}{\numberline {2.3}Computing Normal Forms}{10}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Representing String Diagrams}{11}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{11}{subsubsection.2.3.2}%
-\contentsline {section}{\numberline {3}Parsing}{13}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Naïvely Computing Parsing Trees}{13}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Generating the Tree}{13}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Handling Effects}{13}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Optimizations}{13}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}In Tree Generation}{13}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}In Effect Handling}{13}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {3}Semantic Parsing}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Semantic Parsing on Syntactic Parsing}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Islands}{13}{subsubsection.3.1.1}%
 \contentsline {section}{\numberline {4}Language Translation}{13}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Lambda-Calculus}{13}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Types of Syntax}{13}{subsubsection.4.1.1}%
@@ -33,7 +29,8 @@
 \contentsline {subsection}{\numberline {4.2}Other Representation of Concepts}{15}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Manifold Representation}{15}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}Vector Representation}{15}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Probabilistic Monad}{16}{subsubsection.4.2.3}%
-\contentsline {section}{\numberline {A}Other Considered Things}{17}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{17}{subsection.A.1}%
-\contentsline {section}{\numberline {B}Bibliography}{17}{appendix.B}%
+\contentsline {subsubsection}{\numberline {4.2.3}Probabilistic Monad}{15}{subsubsection.4.2.3}%
+\contentsline {section}{\numberline {A}Other Considered Things}{16}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{16}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Enhanced Grammar}{16}{subsection.A.2}%
+\contentsline {section}{\numberline {B}Bibliography}{16}{appendix.B}%
