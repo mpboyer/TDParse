@@ -6,6 +6,3 @@ all:
 
 clean:
 	\rm tdparse.log tdparse.out tdparse.toc tdparse.aux
-
-slides:
-	lmake slides_clay_18-04.tex
