@@ -561,7 +561,8 @@ point of our theorem.
 In this section we explain our algorithms and heuristics for efficient parsing with as little non-determinism as possible, and reducing time complexity of our parsing strategy.
 
 \subsection{Naïve Semantic Parsing on Syntactic Parsing}
-In this section we suppose that we have a set of syntax trees (or parsing trees) corresponding to a certain sentence.
+In this section we suppose that we have a set of syntax trees (or parsing trees) corresponding to a certain
+sentence.
 We will now focus on how to derive proofs of typing from a syntax tree.
 First, note that \cite{bumfordEffectdrivenInterpretationFunctors2025} provides a way to do so by constructing
 semantic trees labelled by sequence of \emph{combinators}.
@@ -571,23 +572,55 @@ This is easily done in linear time in the number of nodes in the parsing tree (w
 more on that in the next section), multiplied by a constant whose size depends on the size of the inference
 structure.
 The main idea is that to each node of the tree, both nodes have a type and there is only a finite set of rules
-that can be applied, provided by the following rules, which are a rewriting of \ref{fig:judgements}:
-\begin{figure}
+that can be applied, provided by the following rules, which are a rewriting of \ref{fig:judgements}.
+In Figure \ref{tab:proof-trees} we provide \emph{matching-like} rules for different possibilities on the types to
+combine and the associated possible proof tree(s).
+If multiple cases are possible, all different possible proof trees should be added to the set of derivations: the
+set of proof trees for the union of cases is the union of set of proof trees for each case, naturally.
+Remember again that the order of presuppositions for an inference structure does not matter, so always we have the
+other order of arguments available.
+\begin{table}
 	\centering
-	\begin{itemize}
-		\item
-	\end{itemize}
+	\input{figures/match-judgement}
 	\caption{List of possible combinations for different types}
-	\label{fig:proof-trees}
-\end{figure}
-It is important to note that here the proof trees are done ``in the wrong direction'', as they are written top-down
-instead of bottom-up in the sense that we start by the axioms which are the typing judgements of constants in the
-lexicon (this could actually be said to be a part of the sentence, but non-determinism in the meanings is fine as
-long as the syntactic category is provided in the parsing tree).
-This leads to proof trees being a bit weird to the type theorist and are a bit weird to the linguist as they are
+	\label{tab:proof-trees}
+\end{table}
+It is important to note that here the proof trees are done ``in the wrong direction'', as they are written
+top-down instead of bottom-up in the sense that we start by the axioms which are the typing judgements of
+constants in the lexicon (this could actually be said to be a part of the sentence, but non-determinism in the
+meanings is fine as long as the syntactic category is provided in the parsing tree).
+This leads to proof trees being a bit weird to the type theorist and a bit weird to the linguist as they are
 not written as usual trees.
+Moreover, while a proof tree only provides a type, the tree also provides the sequence of function applications
+that is needed to compute the actual denotation.
 
 \subsubsection{Islands}
+\cite{bumfordEffectdrivenInterpretationFunctors2025} provide a formal analysis of islands\footnote{Syntactic
+structures which prevent some notion of moving outside of the island.} based on a islands being a different type
+of branching nodes in the syntactic tree of a sentence, which asks to resolve all $\f{C}$ effects\footnote{Those
+represent continuations.} before that node or being resolved at that node.
+The main example they propose is the one of existential closure inside conditioning.
+To reconcile this inside our type system, we propose the following change to their formalism: once the syntactic
+information of an island existing is added to the tree (or at semantic parsing time, this does not change the
+time complexity), we \emph{mark} each node inside the island by adding an ``void effect'' to it, in the same
+way as we did for our model of plural.
+This translates into a functor which just maintains the \emph{island marker} on \texttt{fmap} and add to the
+words which create an island node\footnote{Or \emph{post-compose} the proof trees with a rule on handling the
+$\f{C}$ effect.} a function which handles the $\f{C}$ effects, which could be seen as adding a node in the
+semantics parse tree from the syntactic parse tree.
+A way to do this would be the following: we pass all functors until finding a $\f{C}$, handle it inside the other
+functors and keep going, on both sides, where $\mathrm{PT}$ is defined in Table \ref{tab:proof-trees}:
+\begin{equation*}
+	\mathrm{PT}\left(
+		\dashdfrac{\cont x_{1}: \f{F}\f{C}\f{F'}\tau}{\cont x_{1}: \f{F}\f{F'}\tau}\suchthat
+		\dashdfrac{\cont x_{2}: \f{F}\f{C}\f{F'}\tau}{\cont x_{2}: \f{F}\f{F'}\tau}
+	\right)
+\end{equation*}
+Note that this preserves the linear size of the parse tree in the number of input words, as we at most double the
+number of nodes, and note that this would be preserved with additional similar constructs.
+This idea amounts to seeing islands, whatever their type, as a form of grammatical/syntactic effect, which is
+still part of the language but not of the lexicon, a bit like future, modality or plurals, without the semantic
+component.
 
 \subsection{Rewriting Rules}
 Here we provide a rewriting system on derivation trees that allows us to improve our time complexity\footnote{In
