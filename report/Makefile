@@ -5,4 +5,4 @@ all:
 	lmake tdparse.tex
 
 clean:
-	\rm tdparse.log tdparse.out tdparse.toc tdparse.aux
+	\rm tdparse.log tdparse.out tdparse.toc tdparse.aux tdparse.bbl

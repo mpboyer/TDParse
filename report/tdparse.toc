@@ -5,11 +5,11 @@
 \contentsline {subsubsection}{\numberline {1.1.1}Types}{3}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Functors, Applicatives and Monads}{3}{subsubsection.1.1.2}%
 \contentsline {subsubsection}{\numberline {1.1.3}Natural Transformations for Handlers and Higher-Order Constructs}{4}{subsubsection.1.1.3}%
-\contentsline {paragraph}{\numberline {1.1.3.1}Adjunctions}{4}{paragraph.1.1.3.1}%
+\contentsline {paragraph}{\numberline {1.1.3.1}Adjunctions}{5}{paragraph.1.1.3.1}%
 \contentsline {paragraph}{\numberline {1.1.3.2}Handlers}{5}{paragraph.1.1.3.2}%
-\contentsline {paragraph}{\numberline {1.1.3.3}Higher-Order Constructs}{5}{paragraph.1.1.3.3}%
+\contentsline {paragraph}{\numberline {1.1.3.3}Higher-Order Constructs}{6}{paragraph.1.1.3.3}%
 \contentsline {subsection}{\numberline {1.2}Typing Judgements}{6}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Solving Non-Determinism}{7}{section.2}%
+\contentsline {section}{\numberline {2}Handling Non-Determinism}{7}{section.2}%
 \contentsline {subsection}{\numberline {2.1}String Diagram Modelisation of Sentences}{7}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Achieving Normal Forms}{9}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}The Composition Dilemma}{9}{subsubsection.2.2.1}%
@@ -19,19 +19,19 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{11}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Semantic Parsing}{13}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Naïve Semantic Parsing on Syntactic Parsing}{13}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Islands}{13}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Rewriting Rules}{14}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Language Translation}{14}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Lambda-Calculus}{14}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Types of Syntax}{14}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Lexicon: Semantic Denotations for Words}{14}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Effects of the Language}{15}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Modality, Plurality, Aspect, Tense}{15}{subsubsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.2}Other Representation of Concepts}{16}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Manifold Representation}{16}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Vector Representation}{16}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Probabilistic Monad}{16}{subsubsection.4.2.3}%
-\contentsline {section}{\numberline {A}Other Considered Things}{17}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{17}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Enhanced Grammar}{17}{subsection.A.2}%
-\contentsline {section}{\numberline {B}Bibliography}{17}{appendix.B}%
+\contentsline {subsubsection}{\numberline {3.1.1}Islands}{15}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Rewriting Rules}{15}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Language Translation}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Syntax}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Lambda-Calculus}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Types of Syntax}{16}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Lexicon: Semantic Denotations for Words}{16}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Effects of the Language}{16}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Modality, Plurality, Aspect, Tense}{17}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Other Representation of Concepts}{18}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Manifold Representation}{18}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Vector Representation}{18}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Probabilistic Monad}{18}{subsubsection.4.3.3}%
+\contentsline {section}{\numberline {A}Other Considered Things}{19}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Typing with a Product Category (and a bit of polymorphism)}{19}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Enhanced Grammar}{19}{subsection.A.2}%

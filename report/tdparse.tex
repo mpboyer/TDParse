@@ -6,7 +6,7 @@
 
 \input{preamble}
 
-\title{Formalizing Typing Rules for Natural Languages using Effects}
+\title{On a Categorical Type and Effect Inference Structure for Semantic Denotation Combinations in Natural Languages:\\ A Purely Functional Analysis of English}
 \author{Matthieu Boyer}
 
 \begin{document}
@@ -16,7 +16,7 @@
 	The main idea is that you can consider some words to act as functors in a typing category, for example determiners:
 	they don't change the way a word acts in a sentence,
 	but more the setting in which the word works by adding an effect to the work.
-	This document is based mostly on \newcite{bumfordEffectdrivenInterpretationFunctors2025} and \newcite{bumfordEffectfulCompositionNatural}.
+	The linguistics is based mostly on work by \newcite{bumfordEffectdrivenInterpretationFunctors2025}.
 \end{abstract}
 
 \section*{Introduction}
@@ -56,11 +56,24 @@ In this section, we will designate by $\mL$ our language, as a set of words (wit
 We denote by $\O\left( \mL \right)$ the set of words in the language whose semantic representation is a low-order function and $\mF\left( \mL \right)$ the set of words whose semantic representation is a functor or high-order function.
 Our goals here are to describe more formally, using a categorical vocabulary, the environment in which the typing system for our language will exist, and how we connect words and other linguistic objects to the categorical formulation.
 
-\functor{6}{F}
-\csname thefbox6\endcsname{\tt F}
-\tboxed{\tt F}
-\effect{6}{F}{$e\to t$}
+\begin{center}
 
+\newtcbox{\tboxed}{on line, colframe=black, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt, boxrule=1pt}
+\foreach\i in {0,...,10}{%
+	\pgfmathtruncatemacro{\j}{\i * 10}
+	\expandafter\colorlet{boxcolor}{vulm!\j!yulm}
+	\i, \j, \textcolor{boxcolor}{Hello,} \\
+	\newtcbox{thefbox\i}{on line, colback=boxcolor, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt}
+}
+
+\def\functor#1#2{\csname thefbox#1\endcsname{\tt #2}}
+\def\effect#1#2#3{%
+	\tboxed{\functor{#1}{#2}~\ensuremath{\tt #3}}
+}
+\csname thefbox6\endcsname{\tt F}
+\functor{6}{F}
+\effect{9}{F}{$e\to t$}
+\end{center}
 \subsection{Typing Category}\label{subsec:typingcategory}
 \subsubsection{Types}\label{subsubsec:types}
 Let $\mC$ be a closed cartesian category. This represents our main typing system, consisting of words $\O(\mL)$ that can be expressed without effects.
@@ -210,11 +223,11 @@ This is not a definitive rule as we could want to stop at a step in the derivati
 
 \subsection{Typing Judgements}\label{subsec:judgements}
 To complete this section, Table \ref{fig:judgements} gives a simple list of different typing composition judgements through which we also re-derzive the subtyping judgement to allow for its implementation.
-\begin{figure}
+\begin{table}
 	\inputtikz{typing-judgements}
 	\caption{Typing and Subtyping Judgements}
-	\label{fig:judgements}
-\end{figure}
+	\label{tab:judgements}
+\end{table}
 Note that here, the syntax is not taken into account: a function is always written left of its arguments, whether or not they are actually in that order in the sentence.
 This issue will be resolved by giving the syntactic tree of the sentence (or infering it at runtime).
 We could also add symmetry induced rules for application.
@@ -237,7 +250,8 @@ This non-determinism is a component of our language's grammar and semantics: a s
 By the same reasoning we applied on handlers, we choose not to resolve the ambiguity in the parser but we will try in Section \ref{sec:nondet} to reduce it to a minimum.
 Even so some of our derivations will include ways to read from a context (for example the \textbf{Jupiter, a planet} construct), we forget about the definition of the context, or its updating after a sentence, in our first proposition.
 
-\section{Solving Non-Determinism}\label{sec:nondet}
+\section{Handling Non-Determinism}
+\label{sec:nondet}
 The typing judgements proposed in Section \ref{subsec:judgements} lead to ambiguity.
 In this section we propose ways to get our derivations to a certain normal form, by deriving an equivalence relation on our derivation and parsing trees, based on string diagrams.
 
@@ -557,7 +571,8 @@ point of our theorem.
 	that this is done in linear time, our theorem is proved.
 \end{proof}
 
-\section{Semantic Parsing}\label{sec:parsing}
+\section{Semantic Parsing}
+\label{sec:parsing}
 In this section we explain our algorithms and heuristics for efficient parsing with as little non-determinism as possible, and reducing time complexity of our parsing strategy.
 
 \subsection{Naïve Semantic Parsing on Syntactic Parsing}
@@ -572,19 +587,26 @@ This is easily done in linear time in the number of nodes in the parsing tree (w
 more on that in the next section), multiplied by a constant whose size depends on the size of the inference
 structure.
 The main idea is that to each node of the tree, both nodes have a type and there is only a finite set of rules
-that can be applied, provided by the following rules, which are a rewriting of \ref{fig:judgements}.
-In Figure \ref{tab:proof-trees} we provide \emph{matching-like} rules for different possibilities on the types to
+that can be applied, provided by the following rules, which are a rewriting of Table \ref{tab:judgements}.
+In Table \ref{tab:proof-trees} we provide \emph{matching-like} rules for different possibilities on the types to
 combine and the associated possible proof tree(s).
+Note that there is no condition on what the types \emph{look like}, they can be effectful.
 If multiple cases are possible, all different possible proof trees should be added to the set of derivations: the
-set of proof trees for the union of cases is the union of set of proof trees for each case, naturally.
+set of proof trees for the union of cases is the union of set of proof trees for each case, naturally:
+\begin{equation*}
+	PT\left( \cup C \right) = \cup PT(C)
+\end{equation*}
 Remember again that the order of presuppositions for an inference structure does not matter, so always we have the
 other order of arguments available.
+
 \begin{table}
 	\centering
 	\input{figures/match-judgement}
-	\caption{List of possible combinations for different types}
+	\caption{List of possible combinations for different presuppositions for inputs, as a definition of a function
+	$PT$ from proof trees to proof trees.}
 	\label{tab:proof-trees}
 \end{table}
+
 It is important to note that here the proof trees are done ``in the wrong direction'', as they are written
 top-down instead of bottom-up in the sense that we start by the axioms which are the typing judgements of
 constants in the lexicon (this could actually be said to be a part of the sentence, but non-determinism in the
@@ -594,8 +616,21 @@ not written as usual trees.
 Moreover, while a proof tree only provides a type, the tree also provides the sequence of function applications
 that is needed to compute the actual denotation.
 
+This leads the induced algorithm (for computing the set of denotations) to be exponential in the input in the
+worst case, when using the recursive scheme that naturally arises from the definition of $PT$.
+Indeed, and while this may seem weird, in the case of a function $\f{F}\ta \to \tb$ where $\f{F}$ is applicative
+and the other combinator is of type $\f{F}\ta$, one might apply the function directly or apply it under the $\f{F}$
+of the argument, leading to two different proof trees:
+\begin{align*}
+	\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb} \\
+	\Japp{l}{\f{F}\ta}{\tb}{r}
+\end{align*}
+Those two different proof trees have different semantic interpretations that may be useful, as discussed by
+\newcite{bumfordEffectdrivenInterpretationFunctors2025}, especially in their analysis of closure properties, which
+is modified in the following section.
+
 \subsubsection{Islands}
-\cite{bumfordEffectdrivenInterpretationFunctors2025} provide a formal analysis of islands\footnote{Syntactic
+\newcite{bumfordEffectdrivenInterpretationFunctors2025} provide a formal analysis of islands\footnote{Syntactic
 structures which prevent some notion of moving outside of the island.} based on a islands being a different type
 of branching nodes in the syntactic tree of a sentence, which asks to resolve all $\f{C}$ effects\footnote{Those
 represent continuations.} before that node or being resolved at that node.
@@ -612,23 +647,56 @@ A way to do this would be the following: we pass all functors until finding a $\
 functors and keep going, on both sides, where $\mathrm{PT}$ is defined in Table \ref{tab:proof-trees}:
 \begin{equation*}
 	\mathrm{PT}\left(
-		\dashdfrac{\cont x_{1}: \f{F}\f{C}\f{F'}\tau}{\cont x_{1}: \f{F}\f{F'}\tau}\suchthat
-		\dashdfrac{\cont x_{2}: \f{F}\f{C}\f{F'}\tau}{\cont x_{2}: \f{F}\f{F'}\tau}
+		\suppfrac{\cont x_{1}: \f{F}\f{C}\f{F'}\tau}{\cont x_{1}: \f{F}\f{F'}\tau}\suchthat
+		\suppfrac{\cont x_{2}: \f{F}\f{C}\f{F'}\tau}{\cont x_{2}: \f{F}\f{F'}\tau}
 	\right)
 \end{equation*}
 Note that this preserves the linear size of the parse tree in the number of input words, as we at most double the
 number of nodes, and note that this would be preserved with additional similar constructs.
+
+\medskip
+
 This idea amounts to seeing islands, whatever their type, as a form of grammatical/syntactic effect, which is
 still part of the language but not of the lexicon, a bit like future, modality or plurals, without the semantic
 component.
+The idea of seeing everything as effects, while semantically void, allows us to translate into our theory of
+type-driven semantics outer information from syntax, morphology or phonology that influences the semantics of the
+sentence.
+Other examples of this can be found in the modelisation of plural (for morphology, see Sections \ref{par:higherorder}
+and \ref{subsec:modality}) and the emphasis of the words by the $\f{F}$ effect (for phonology), and show the
+empirical well-foundedness of this point of view.
+While we do not aim to provide a theory of everything linguistics through categories\footnote{``\emph{A theory is as
+large as its most well understood examples}''.}, the idea of expressing everything in our effect-driven type-driven
+theory of semantics allows us to prepare for any theoretical or empirical observation that has an impact on the
+semantics of a word/sentence, the allowed combinators and even the addition of rules.
 
 \subsection{Rewriting Rules}
-Here we provide a rewriting system on derivation trees that allows us to improve our time complexity\footnote{In
-the worst case there is no improvement, but there is no loss.}.
+\label{subsec:rewrite}
+Here we provide a rewriting system on derivation trees that allows us to improve our time complexity.
+In the worst case, in big o notation there is no improvement, but there is no loss.
+The goal is to reduce branching in the definition of $PT$.
+
+First, let's consider the reductions proposed in Section \ref{sec:nondet}.
+Those define normal forms under Theorem \ref{thm:confluence} and thus we can use those to reduce the number
+of trees.
+Indeed, we usually want to reduce the number of effects by first using the rules \emph{inside} the language,
+understand, the adjunction co-unit and monadic join.
+Thus, when we have a presupposition of the form:
+\begin{equation*}
+	\suppfrac{\blank}{\cont x: \f{M}\f{M}\tau} \poulpe \text{or} \poulpe \suppfrac{\blank}{\cont x: RL\tau}
+\end{equation*}
+we always simplify it directly, as not always doing it would propagate multiple trees.
+This in turn means we always verify the derivational rules we set up in the previous section for the join
+equations of the monad.
+
 \section{Language Translation}
 \label{sec:language}
 In this section we will give a list of words along with a way to express them as either arrows or endo-functors of our typing category.
 This will also give a set of functors and constructs in our language.
+
+\subsection{Syntax}
+We don't talk about syntactic production rules or any system of the sort: it exists, we take it for granted.
+The only discussion of translating syntax will be found in Appendix \ref{app:prodgram}.
 
 \subsection{Lambda-Calculus}\label{subsec:lambdacalc}
 In this section we use the traditional lambda-calculus denotations.
@@ -755,8 +823,12 @@ In this section we provide explanations on how to translate other semantic descr
 Thanks to Antoine Groudiev for his precious insights on the direction the snakes for \eqref{eq:snek1} and \eqref{eq:snek2} should face.
 \clearpage
 \appendix
+\bibliographystyle{main_natbib}
+\bibliography{tdparse.bib}
+
 \section{Other Considered Things}
 \subsection{Typing with a Product Category (and a bit of polymorphism)}
+\label{app:prodcat}
 Another way to start would be to consider product categories: one for the main type system and one for the effects.
 Let $\mC_{0}$ be a closed cartesian category representing our main type system.
 Here we again consider constants and full computations as functions $\bot \to \tau$ or $\tau \in \mathrm{Obj}\left( \mC_{0} \right)$.
@@ -773,8 +845,6 @@ In that paradigm, functors simply append to the head of the \emph{functor type} 
 $x: L\tau_{1} \mapsto \phi x: L\tau_{2}$ and $\phi$'s type can be written as $\star\tau_{1} \to \star\tau_{2}$.
 
 \subsection{Enhanced Grammar}
-
-\bibliographystyle{nals}
-\bibliography{tdparse.bib}
+\label{app:prodgram}
 
 \end{document}

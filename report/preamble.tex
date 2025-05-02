@@ -74,8 +74,9 @@
 \newcolumntype{R}{>{$}r<{$}}
 \def\fmap{\texttt{fmap}}
 
-\newcommand{\dashdfrac}[2]{%
-  {\sbox0{$\genfrac{}{}{0pt}{0}{#1}{#2}$}%
+\def\fracpad{1pt}
+\newcommand{\suppfrac}[2]{%
+	{\sbox0{$\genfrac{}{}{0pt}{0}{\raisebox{\fracpad}{\ensuremath{#1}}}{\raisebox{-\fracpad}{\ensuremath{#2}}}$}%
    \vphantom{\copy0}%
    \ooalign{%
      \hidewidth
@@ -89,13 +90,19 @@
    \box0\cr}}%
 }
 
+\newcommand{\balancedVPhantom}[1]{% gives minimum vertical size
+  $\mathsurround=0pt \vcenter{\hrule width0pt height #1}$\ignorespaces
+}
+
+\newcommand{\prooffrac}[2]{\genfrac{}{}{}{0}{\raisebox{\fracpad}{\ensuremath{#1}}}{\raisebox{-\fracpad}{\ensuremath{#2}}}}%
+
 \def\ta{\ty{a}}
 \def\tb{\ty{b}}
 \def\blank{\phantom{.}}
-\def\PT#1#2{\dashdfrac{#1}{#2}\fracnotate{$\top$}\phantom{\top\quad}}
+\def\PT#1#2{\suppfrac{#1}{#2}\fracnotate{$\top$}\phantom{\top\quad}}
 
 \def\Japp#1#2#3#4{%
-	\frac{%
+	\prooffrac{%
 		\PT{\blank}{\cont #1: #2 \to #3} \poulpe \PT{\blank}{\cont #4: #2}
 	}{%
 		\cont #1 #4: #3
@@ -103,7 +110,7 @@
 }
 
 \def\Jconj#1#2#3{%
-	\frac{%
+	\prooffrac{%
 		\PT{\blank}{\cont #1: #3 \to \t} \poulpe
 		\PT{\blank}{\cont #2: #3 \to \t}
 	}{%
@@ -113,7 +120,7 @@
 
 
 \def\Jfmap#1#2#3#4#5{%
-	\frac{%
+	\prooffrac{%
 		\PT{\blank}{\cont #1: \mC \Rightarrow \mC} \poulpe \PT{\blank}{\cont #2 = #1#2': #1#3} \poulpe \PT{\PT{\blank}{\cont #2':#3} \poulpe \PT{\blank}{\cont #4:#3 \to #5}}{\cont #4#2': #5}
 	}{%
 		\cont #2#4: #1#5
@@ -121,7 +128,7 @@
 }
 
 \def\Junit#1#2#3#4#5{%
-	\frac{%
+	\prooffrac{%
 		\PT{\blank}{\cont #1: \mC \Rightarrow \mC} \poulpe
 		\PT{\blank}{\cont #2 = #1#2': #1\left(#3 \to #5\right)} \poulpe
 		\PT{%
@@ -145,17 +152,6 @@
 }
 \def\word#1#2#3#4{\@word[#4]{#1}{#2}{#3}}
 \makeatother
-
-\newtcbox{\tboxed}{on line, colframe=black, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt, boxrule=1pt}
-
-\foreach\i in {0,...,10}{%
-	\expandafter\newtcbox{thefbox\i}{on line, colback=vulm!\i0!yulm, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt}
-}
-
-\def\functor#1#2{\csname thefbox#1\endcsname{\tt #2}}
-\def\effect#1#2#3{
-	\tboxed{\csname thefbox#1\endcsname{\tt #2}\ensuremath{\tt #3}}
-}
 
 \usepackage{calc}
 

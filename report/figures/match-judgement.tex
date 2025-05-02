@@ -1,9 +1,9 @@
 \resizebox{\linewidth}{!}{%
-	\begin{NiceTabular}{CCCC}[hvlines]
-		                             & S_{1}                                & S_{2}                & PT(S_{1}, S_{2})          \\
-		\Block{2-1}{\rm Base Types}  & l: \ta \to \tb                       & r: \ta               & \Japp{l}{\ta}{\tb}{r}     \\
-		                             & l: \ta \to \t                        & r: \ta \to \t        & \Jconj{l}{r}{\ta}         \\
-		\Block{1-1}{\rm Functors}    & \cont l: \f{F}\ta                        & \cont r: \ta \to \tb & \Jfmap{\f{F}}{l}{\ta}{r}{\tb} \\
-		\Block{1-1}{\rm Applicative} & \cont l: \f{F}\left( \ta \to \tb \right) & \cont r: \ta         & \Junit{\f{F}}{l}{\ta}{r}{\tb}
+	\begin{NiceTabular}{CCC>{\balancedVPhantom{3cm}$}c<{$}}[hvlines]
+		                             & S_{1}                                  & S_{2}                & PT(S_{1}, S_{2})              \\
+		\Block{2-1}{\rm Base Types}  & l: \ta \to \tb                         & r: \ta               & \Japp{l}{\ta}{\tb}{r}         \\
+		                             & l: \ta \to \t                          & r: \ta \to \t        & \Jconj{l}{r}{\ta}             \\
+		\Block{1-1}{\rm Functors}    & \cont l: \f{F}\ta                      & \cont r: \ta \to \tb & \Jfmap{\f{F}}{l}{\ta}{r}{\tb} \\
+		\Block{1-1}{\rm Applicative} & \cont l: \f{F}\left(\ta \to \tb\right) & \cont r: \ta         & \Junit{\f{F}}{l}{\ta}{r}{\tb}
 	\end{NiceTabular}
 }
