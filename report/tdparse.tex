@@ -676,6 +676,8 @@ Here we provide a rewriting system on derivation trees that allows us to improve
 In the worst case, in big o notation there is no improvement, but there is no loss.
 The goal is to reduce branching in the definition of $PT$.
 
+\mesdkip
+
 First, let's consider the reductions proposed in Section \ref{sec:nondet}.
 Those define normal forms under Theorem \ref{thm:confluence} and thus we can use those to reduce the number
 of trees.
@@ -688,6 +690,30 @@ Thus, when we have a presupposition of the form:
 we always simplify it directly, as not always doing it would propagate multiple trees.
 This in turn means we always verify the derivational rules we set up in the previous section for the join
 equations of the monad.
+
+\medskip
+
+Secondly, while there is no way to reduce the branching proposed in the previous section since they end in
+completely different reductions, there is another case in which two different reductions arise:
+\begin{equation*}
+	\PT{\blank}{\cont x: \f{F}\tau_{1}} \poulpe \text{and} \poulpe \PT{\blank}{\cont y: \f{G}\tau_{2}}
+\end{equation*}
+Indeed, in that case we could either get a result with effects $\f{F}\f{G}$ or with effects $\f{G}\f{F}$.
+In general those effects are not the same, but if they happen to be, which trivially will be the case when one of
+the effects is external, the plural or islands functors for example.
+When the two functors commute, the order of application does not matter and thus we choose to get the outer
+effect the one of the left side of the combinator.
+
+\medskip
+
+The observant reader might have noticed that in the definition of $PT$, we actually do not cover all the possible
+cases, as in particular, we have not included the option of using the unit of an applicative/monad alone, as it
+actually would reduce to equivalent cases most of times.
+Note moreover that this is simply of scheme to apply typing rules to a syntactic derivation, but that this will not
+be enough to actually gain all reductions possible.
+This will actually happen once a confluent reduction scheme is provided for the denotations.
+When this is done, we can combine the reduction schemes for effects along with the one for denotation and the one
+for combinations in one large reduction scheme.
 
 \section{Language Translation}
 \label{sec:language}
