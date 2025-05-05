@@ -1,0 +1,30 @@
+				      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+						  \path coordinate[label=below:$L$] (top)
+						  ++ (0, 2) coordinate (ctltop)
+						  ++ (1, 1) coordinate[dot, label=above:$\eta$] (eta)
+						  ++ (1, -1) coordinate (ctlmid)
+						  ++ (1, -1) coordinate[dot, label=below:$\epsilon$] (eps)
+						  ++ (1, 1) coordinate (ctlbot)
+						  ++ (0, 2) coordinate[label=above:$R$] (bot);
+						  \draw (top) -- (ctltop)
+						  		to[out=90, in=180] (eta)
+								to[out=0, in=90] (ctlmid)
+								to[out=-90, in=180] (eps)
+								to[out=0, in=-90] (ctlbot) -- (bot);
+						\begin{pgfonlayer}{background}
+							\fill[catmc] ($(bot) + (1, 0)$) rectangle (top);
+							\fill[catmca] (eta) rectangle (bot);
+							\fill[catmca] (eta) to[out=0, in=90] (ctlmid) -- (ctlbot) -- (bot) -- cycle;
+							\fill[catmca] (ctlmid) to[out=-90, in=180] (eps) to[out=0, in=-90] (ctlbot) -- (ctlmid);
+							\fill[catmca] (eta) to[out=180, in=90] (ctltop) -- (top) -- ($(top) + (-1, 0)$) |- (bot) -- cycle;
+						\end{pgfonlayer}
+				      \end{tikzpicture}
+					  =
+				      \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+						  \path coordinate[dot, label=right:$\id_{L}$] (id) + (0, 1) coordinate[label=above:$L$] (top) + (0, -1) coordinate[label=below:$L$] (bot);
+					      \draw (top) -- (bot);
+					      \begin{pgfonlayer}{background}
+						      \fill[catmc] (top) rectangle ($(bot) + (1, 0)$);
+						      \fill[catmca] (top) rectangle ($(bot) + (-1, 0)$);
+					      \end{pgfonlayer}
+				      \end{tikzpicture}

@@ -1,0 +1,144 @@
+\section{Semantic Parsing}
+\label{sec:parsing}
+In this section we explain our algorithms and heuristics for efficient parsing with as little non-determinism as possible, and reducing time complexity of our parsing strategy.
+
+\subsection{Naïve Semantic Parsing on Syntactic Parsing}
+In this section we suppose that we have a set of syntax trees (or parsing trees) corresponding to a certain
+sentence.
+We will now focus on how to derive proofs of typing from a syntax tree.
+First, note that \cite{bumfordEffectdrivenInterpretationFunctors2025} provides a way to do so by constructing
+semantic trees labelled by sequence of \emph{combinators}.
+In our formalism, this amounts to constructing proof trees by mapping combination modes to their equivalent proof
+trees, inverting if needed the order of the presuppositions to account for the order of the words.
+This is easily done in linear time in the number of nodes in the parsing tree (which is linear in the input size,
+more on that in the next section), multiplied by a constant whose size depends on the size of the inference
+structure.
+The main idea is that to each node of the tree, both nodes have a type and there is only a finite set of rules
+that can be applied, provided by the following rules, which are a rewriting of Table \ref{tab:judgements}.
+In Table \ref{tab:proof-trees} we provide \emph{matching-like} rules for different possibilities on the types to
+combine and the associated possible proof tree(s).
+Note that there is no condition on what the types \emph{look like}, they can be effectful.
+If multiple cases are possible, all different possible proof trees should be added to the set of derivations: the
+set of proof trees for the union of cases is the union of set of proof trees for each case, naturally:
+\begin{equation*}
+	PT\left( \cup C \right) = \cup PT(C)
+\end{equation*}
+Remember again that the order of presuppositions for an inference structure does not matter, so always we have the
+other order of arguments available.
+
+\begin{table}
+	\centering
+	\input{figures/match-judgement}
+	\caption{List of possible combinations for different presuppositions for inputs, as a definition of a function
+		$PT$ from proof trees to proof trees.}
+	\label{tab:proof-trees}
+\end{table}
+
+It is important to note that here the proof trees are done ``in the wrong direction'', as they are written
+top-down instead of bottom-up in the sense that we start by the axioms which are the typing judgements of
+constants in the lexicon (this could actually be said to be a part of the sentence, but non-determinism in the
+meanings is fine as long as the syntactic category is provided in the parsing tree).
+This leads to proof trees being a bit weird to the type theorist and a bit weird to the linguist as they are
+not written as usual trees.
+Moreover, while a proof tree only provides a type, the tree also provides the sequence of function applications
+that is needed to compute the actual denotation.
+
+This leads the induced algorithm (for computing the set of denotations) to be exponential in the input in the
+worst case, when using the recursive scheme that naturally arises from the definition of $PT$.
+Indeed, and while this may seem weird, in the case of a function $\f{F}\ta \to \tb$ where $\f{F}$ is applicative
+and the other combinator is of type $\f{F}\ta$, one might apply the function directly or apply it under the $\f{F}$
+of the argument, leading to two different proof trees:
+\begin{align*}
+	\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb} \\
+	\Japp{l}{\f{F}\ta}{\tb}{r}
+\end{align*}
+Those two different proof trees have different semantic interpretations that may be useful, as discussed by
+\newcite{bumfordEffectdrivenInterpretationFunctors2025}, especially in their analysis of closure properties, which
+is modified in the following section.
+
+\subsubsection{Islands}
+\newcite{bumfordEffectdrivenInterpretationFunctors2025} provide a formal analysis of islands\footnote{Syntactic
+	structures which prevent some notion of moving outside of the island.} based on a islands being a different type
+of branching nodes in the syntactic tree of a sentence, which asks to resolve all $\f{C}$ effects\footnote{Those
+	represent continuations.} before that node or being resolved at that node.
+The main example they propose is the one of existential closure inside conditioning.
+To reconcile this inside our type system, we propose the following change to their formalism: once the syntactic
+information of an island existing is added to the tree (or at semantic parsing time, this does not change the
+time complexity), we \emph{mark} each node inside the island by adding an ``void effect'' to it, in the same
+way as we did for our model of plural.
+This translates into a functor which just maintains the \emph{island marker} on \texttt{fmap} and add to the
+words which create an island node\footnote{Or \emph{post-compose} the proof trees with a rule on handling the
+	$\f{C}$ effect.} a function which handles the $\f{C}$ effects, which could be seen as adding a node in the
+semantics parse tree from the syntactic parse tree.
+A way to do this would be the following: we pass all functors until finding a $\f{C}$, handle it inside the other
+functors and keep going, on both sides, where $\mathrm{PT}$ is defined in Table \ref{tab:proof-trees}:
+\begin{equation*}
+	\mathrm{PT}\left(
+	\suppfrac{\cont x_{1}: \f{F}\f{C}\f{F'}\tau}{\cont x_{1}: \f{F}\f{F'}\tau}\suchthat
+	\suppfrac{\cont x_{2}: \f{F}\f{C}\f{F'}\tau}{\cont x_{2}: \f{F}\f{F'}\tau}
+	\right)
+\end{equation*}
+Note that this preserves the linear size of the parse tree in the number of input words, as we at most double the
+number of nodes, and note that this would be preserved with additional similar constructs.
+
+\medskip
+
+This idea amounts to seeing islands, whatever their type, as a form of grammatical/syntactic effect, which is
+still part of the language but not of the lexicon, a bit like future, modality or plurals, without the semantic
+component.
+The idea of seeing everything as effects, while semantically void, allows us to translate into our theory of
+type-driven semantics outer information from syntax, morphology or phonology that influences the semantics of the
+sentence.
+Other examples of this can be found in the modelisation of plural (for morphology, see Sections \ref{par:higherorder}
+and \ref{subsec:modality}) and the emphasis of the words by the $\f{F}$ effect (for phonology), and show the
+empirical well-foundedness of this point of view.
+While we do not aim to provide a theory of everything linguistics through categories\footnote{``\emph{A theory is as
+		large as its most well understood examples}''.}, the idea of expressing everything in our effect-driven type-driven
+theory of semantics allows us to prepare for any theoretical or empirical observation that has an impact on the
+semantics of a word/sentence, the allowed combinators and even the addition of rules.
+
+\subsection{Rewriting Rules}
+\label{subsec:rewrite}
+Here we provide a rewriting system on derivation trees that allows us to improve our time complexity.
+In the worst case, in big o notation there is no improvement, but there is no loss.
+The goal is to reduce branching in the definition of $PT$.
+
+\mesdkip
+
+First, let's consider the reductions proposed in Section \ref{sec:nondet}.
+Those define normal forms under Theorem \ref{thm:confluence} and thus we can use those to reduce the number
+of trees.
+Indeed, we usually want to reduce the number of effects by first using the rules \emph{inside} the language,
+understand, the adjunction co-unit and monadic join.
+Thus, when we have a presupposition of the form:
+\begin{equation*}
+	\suppfrac{\blank}{\cont x: \f{M}\f{M}\tau} \poulpe \text{or} \poulpe \suppfrac{\blank}{\cont x: RL\tau}
+\end{equation*}
+we always simplify it directly, as not always doing it would propagate multiple trees.
+This in turn means we always verify the derivational rules we set up in the previous section for the join
+equations of the monad.
+
+\medskip
+
+Secondly, while there is no way to reduce the branching proposed in the previous section since they end in
+completely different reductions, there is another case in which two different reductions arise:
+\begin{equation*}
+	\PT{\blank}{\cont x: \f{F}\tau_{1}} \poulpe \text{and} \poulpe \PT{\blank}{\cont y: \f{G}\tau_{2}}
+\end{equation*}
+Indeed, in that case we could either get a result with effects $\f{F}\f{G}$ or with effects $\f{G}\f{F}$.
+In general those effects are not the same, but if they happen to be, which trivially will be the case when one of
+the effects is external, the plural or islands functors for example.
+When the two functors commute, the order of application does not matter and thus we choose to get the outer
+effect the one of the left side of the combinator.
+Note that this is also true when we have an equation that
+
+\medskip
+
+The observant reader might have noticed that in the definition of $PT$, we actually do not cover all the possible
+cases, as in particular, we have not included the option of using the unit of an applicative/monad alone, as it
+actually would reduce to equivalent cases most of times.
+Note moreover that this is simply of scheme to apply typing rules to a syntactic derivation, but that this will not
+be enough to actually gain all reductions possible.
+This will actually happen once a confluent reduction scheme is provided for the denotations.
+When this is done, we can combine the reduction schemes for effects along with the one for denotation and the one
+for combinations in one large reduction scheme.

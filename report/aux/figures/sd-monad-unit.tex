@@ -1,0 +1,33 @@
+				  \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+					  \path coordinate[dot, label=below:$\mu$] (mu)
+					  + (0, 1) coordinate[label=above:$T$] (top)
+					  + (-1, -1) coordinate[dot, label=below:$\eta$] (eta)
+					  ++ (1, -1) coordinate (ctl) + (0, -1) coordinate[label=below:$T$] (bot);
+					 \draw (mu) -- (top);
+					 \draw (mu) to[out=180, in=90] (eta);
+					 \draw (mu) to[out=0, in=90] (ctl) -- (bot);
+					\begin{pgfonlayer}{background}
+						\fill[catmc] ($(bot) + (.3, 0)$) rectangle ($(top) + (-1.3, 0)$);
+					\end{pgfonlayer}
+				  \end{tikzpicture}
+				  =
+				  \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+					\path coordinate[label=below:$T$] (bot) + (0, 1) coordinate[label=above:$T$] (top);
+					\draw (bot) -- (top);
+					\begin{pgfonlayer}{background}
+						\fill[catmc] ($(bot) + (.3, 0)$) rectangle ($(top) + (-.3, 0)$);
+					\end{pgfonlayer}
+				  \end{tikzpicture}
+				  =
+				  \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+					  \path coordinate[dot, label=below:$\mu$] (mu)
+					  + (0, 1) coordinate[label=above:$T$] (top)
+					  + (1, -1) coordinate[dot, label=below:$\eta$] (eta)
+					  ++ (-1, -1) coordinate (ctl) + (0, -1) coordinate[label=below:$T$] (bot);
+					 \draw (mu) -- (top);
+					 \draw (mu) to[out=0, in=90] (eta);
+					 \draw (mu) to[out=180, in=90] (ctl) -- (bot);
+					\begin{pgfonlayer}{background}
+						\fill[catmc] ($(bot) + (-.3, 0)$) rectangle ($(top) + (1.3, 0)$);
+					\end{pgfonlayer}
+				  \end{tikzpicture}

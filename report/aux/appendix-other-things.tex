@@ -1,0 +1,20 @@
+\section{Other Considered Things}
+\subsection{Typing with a Product Category (and a bit of polymorphism)}
+\label{app:prodcat}
+Another way to start would be to consider product categories: one for the main type system and one for the effects.
+Let $\mC_{0}$ be a closed cartesian category representing our main type system.
+Here we again consider constants and full computations as functions $\bot \to \tau$ or $\tau \in \mathrm{Obj}\left( \mC_{0} \right)$.
+Now, to type functions and functors, we need to consider a second category:
+We consider $\mC_{1}$ the category representing the free monoid on $\mF\left( \mL \right)$.
+Monads and Applicatives will generate relations in that monoid.
+To ease notation we will denote \emph{functor types} in $\mC_{1}$ as lists written with head on the left.
+
+Finally, let $\mC = \mC_{0} \times \mC_{1}$ be the product category. This will be our typing category.
+This means that the real type of objects will be $\left( \bot \to \tau, [] \right)$, which we will still denote by $\tau$.
+We will denote by $F_{n} \cdots F_{0} \tau$ the type of an object, as if it were a composition of functions\footnote{It is!}.
+
+In that paradigm, functors simply append to the head of the \emph{functor type} (with the same possible restrictions as before, though I do not see what they would be needed for) while functions will take a polymorphic form:
+$x: L\tau_{1} \mapsto \phi x: L\tau_{2}$ and $\phi$'s type can be written as $\star\tau_{1} \to \star\tau_{2}$.
+
+\subsection{Enhanced Grammar}
+\label{app:prodgram}
