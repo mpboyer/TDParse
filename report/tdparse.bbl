@@ -1,0 +1,120 @@
+\begin{thebibliography}{19}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Bauer and Pretnar(2014)}]{bauerEffectSystemAlgebraic2014}
+Andrej Bauer and Matija Pretnar. 2014.
+\newblock \href {https://doi.org/10.2168/LMCS-10(4:9)2014} {An {{Effect
+  System}} for {{Algebraic Effects}} and {{Handlers}}}.
+\newblock \emph{Logical Methods in Computer Science}, Volume 10, Issue 4.
+
+\bibitem[{Bumford and
+  Charlow(2025)}]{bumfordEffectdrivenInterpretationFunctors2025}
+Dylan Bumford and Simon Charlow. 2025.
+\newblock Effect-driven interpretation: {{Functors}} for natural language
+  composition.
+
+\bibitem[{Coecke et~al.(2010)Coecke, Sadrzadeh, and
+  Clark}]{coeckeMathematicalFoundationsCompositional2010}
+Bob Coecke, Mehrnoosh Sadrzadeh, and Stephen Clark. 2010.
+\newblock \href {https://doi.org/10.48550/arXiv.1003.4394} {Mathematical
+  {{Foundations}} for a {{Compositional Distributional Model}} of {{Meaning}}}.
+
+\bibitem[{Delpeuch and Vicary(2022)}]{delpeuchNormalizationPlanarString2022}
+Antonin Delpeuch and Jamie Vicary. 2022.
+\newblock \href {https://doi.org/10.48550/arXiv.1804.07832} {Normalization for
+  planar string diagrams and a quadratic equivalence algorithm}.
+
+\bibitem[{Goodale(2022)}]{goodaleManifoldsConceptualRepresentations2022}
+Michael Goodale. 2022.
+\newblock Manifolds as conceptual representations in formal semantics.
+
+\bibitem[{Grove and
+  Bernardy(2023)}]{groveProbabilisticCompositionalSemantics2023}
+Julian Grove and Jean-Philippe Bernardy. 2023.
+\newblock Probabilistic compositional semantics, purely.
+
+\bibitem[{Heim and Kratzer(1998)}]{heimSemanticsGenerativeGrammar1998}
+Irene Heim and Angelika Kratzer. 1998.
+\newblock \emph{Semantics in Generative Grammar}.
+\newblock Number~13 in Blackwell Textbooks in Linguistics. Blackwell, Malden,
+  MA.
+
+\bibitem[{Joyal and Street(1991)}]{joyalGeometryTensorCalculus1991}
+Andr{\'e} Joyal and Ross Street. 1991.
+\newblock \href {https://doi.org/10.1016/0001-8708(91)90003-P} {The geometry of
+  tensor calculus, {{I}}}.
+\newblock \emph{Advances in Mathematics}, 88(1):55--112.
+
+\bibitem[{Mar{\v s}{\'i}k and Amblard()}]{marsikAlgebraicEffectsHandlers}
+Ji{\v r}{\'i} Mar{\v s}{\'i}k and Maxime Amblard.
+\newblock Algebraic {{Effects}} and {{Handlers}} in {{Natural Language
+  Interpretation}}.
+
+\bibitem[{Melli{\`e}s and Zeilberger(2015)}]{melliesFunctorsAreType2015}
+Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger. 2015.
+\newblock \href {https://doi.org/10.1145/2676726.2676970} {Functors are {{Type
+  Refinement Systems}}}.
+\newblock In \emph{Proceedings of the 42nd {{Annual ACM SIGPLAN-SIGACT
+  Symposium}} on {{Principles}} of {{Programming Languages}}}, pages 3--16,
+  Mumbai India. ACM.
+
+\bibitem[{Moggi(1989)}]{moggiComputationalLambdacalculusMonads1989}
+E.~Moggi. 1989.
+\newblock \href {https://doi.org/10.1109/LICS.1989.39155} {Computational
+  lambda-calculus and monads}.
+\newblock In \emph{[1989] {{Proceedings}}. {{Fourth Annual Symposium}} on
+  {{Logic}} in {{Computer Science}}}, pages 14--23, Pacific Grove, CA, USA.
+  IEEE Comput. Soc. Press.
+
+\bibitem[{Partee()}]{parteeLecture2Lambda}
+B~Partee.
+\newblock Lecture 2. {{Lambda}} abstraction, {{NP}} semantics, and a
+  {{Fragment}} of {{English}}.
+\newblock \emph{Formal Semantics}.
+
+\bibitem[{Plotkin and Pretnar(2013)}]{plotkinHandlingAlgebraicEffects2013}
+Gordon~D. Plotkin and Matija Pretnar. 2013.
+\newblock \href {https://doi.org/10.2168/LMCS-9(4:23)2013} {Handling
+  {{Algebraic Effects}}}.
+\newblock \emph{Logical Methods in Computer Science}, Volume 9, Issue 4.
+
+\bibitem[{Sadrzadeh and Muskens(2018)}]{sadrzadehStaticDynamicVector2018}
+Mehrnoosh Sadrzadeh and Reinhard Muskens. 2018.
+\newblock \href {https://doi.org/10.48550/arXiv.1810.11351} {Static and
+  {{Dynamic Vector Semantics}} for {{Lambda Calculus Models}} of {{Natural
+  Language}}}.
+
+\bibitem[{Selinger(2010)}]{selingerSurveyGraphicalLanguages2010}
+Peter Selinger. 2010.
+\newblock \href {https://doi.org/10.1007/978-3-642-12821-9_4} {A survey of
+  graphical languages for monoidal categories}.
+\newblock volume 813, pages 289--355.
+
+\bibitem[{{van den Berg} and
+  Schrijvers(2024)}]{vandenbergFrameworkHigherorderEffects2024}
+Birthe {van den Berg} and Tom Schrijvers. 2024.
+\newblock \href {https://doi.org/10.1016/j.scico.2024.103086} {A framework for
+  higher-order effects \& handlers}.
+\newblock \emph{Science of Computer Programming}, 234:103086.
+
+\bibitem[{Wadler(1989)}]{wadlerTheoremsFree1989}
+Philip Wadler. 1989.
+\newblock \href {https://doi.org/10.1145/99370.99404} {Theorems for free!}
+\newblock In \emph{Proceedings of the Fourth International Conference on
+  {{Functional}} Programming Languages and Computer Architecture}, {{FPCA}}
+  '89, pages 347--359, New York, NY, USA. Association for Computing Machinery.
+
+\bibitem[{{Wang-Ma{\'s}cianica}(2023)}]{wang-mascianicaStringDiagramsText2023}
+V.~{Wang-Ma{\'s}cianica}. 2023.
+\newblock \emph{String Diagrams for Text}.
+\newblock {{http://purl.org/dc/dcmitype/Text}}, University of Oxford.
+
+\bibitem[{Wu et~al.(2014)Wu, Schrijvers, and Hinze}]{wuEffectHandlersScope2014}
+Nicolas Wu, Tom Schrijvers, and Ralf Hinze. 2014.
+\newblock \href {https://doi.org/10.1145/2633357.2633358} {Effect handlers in
+  scope}.
+\newblock In \emph{Proceedings of the 2014 {{ACM SIGPLAN}} Symposium on
+  {{Haskell}}}, Haskell '14, pages 1--12, New York, NY, USA. Association for
+  Computing Machinery.
+
+\end{thebibliography}

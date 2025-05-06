@@ -2,7 +2,12 @@ main:
 	lualatex --shell-escape tdparse.tex
 
 all:
-	lmake tdparse.tex
+	make clean;
+	\rm -f tdparse.bbl;
+	make main; 
+	bibtex tdparse.tex;
+	make main; 
+	make main;
 
 clean:
-	\rm tdparse.log tdparse.out tdparse.toc tdparse.aux tdparse.bbl
+	\rm -f tdparse.log tdparse.out tdparse.toc tdparse.aux 

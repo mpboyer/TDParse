@@ -16,46 +16,46 @@
 
 \makeatletter
 \renewenvironment{thebibliography}[1]
-     {\section{\bibname}
-      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
-      \list{\@biblabel{\@arabic\c@enumiv}}%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
+{\section{\bibname}
+	\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m}
+{\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist}
 
 \def\black@or@white#1#2{%
-  \@tempdima#2 pt
-  \ifdim\@tempdima>0.5 pt
-    \definecolor{temp@c}{gray}{0}%
-  \else
-    \definecolor{temp@c}{gray}{1}%
-  \fi}
+	\@tempdima#2 pt
+	\ifdim\@tempdima>0.5 pt
+		\definecolor{temp@c}{gray}{0}%
+	\else
+		\definecolor{temp@c}{gray}{1}%
+	\fi}
 \def\letterbox#1#{\protect\letterb@x{#1}}
 \def\letterb@x#1#2#3{%
-  \colorlet{temp@c}[gray]{#2}%
-  \extractcolorspec{temp@c}{\color@spec}%
-  \expandafter\black@or@white\color@spec
-  {\color#1{temp@c}\tallcbox#1{#2}{#3}}}
+	\colorlet{temp@c}[gray]{#2}%
+	\extractcolorspec{temp@c}{\color@spec}%
+	\expandafter\black@or@white\color@spec
+	{\color#1{temp@c}\tallcbox#1{#2}{#3}}}
 \def\tallcbox#1#{\protect\color@box{#1}}
 \def\color@box#1#2{\color@b@x\relax{\color#1{#2}}}
 \long\def\color@b@x#1#2#3%
- {\leavevmode
-  \setbox\z@\hbox{{\set@color#3}}%
-  \ht\z@\ht\strutbox
-  \dp\z@\dp\strutbox
-  {#1{#2\color@block{\wd\z@}{\ht\z@}{\dp\z@}\box\z@}}}
+{\leavevmode
+	\setbox\z@\hbox{{\set@color#3}}%
+	\ht\z@\ht\strutbox
+	\dp\z@\dp\strutbox
+	{#1{#2\color@block{\wd\z@}{\ht\z@}{\dp\z@}\box\z@}}}
 \makeatother
 
 \contourlength{0.005em}
@@ -70,28 +70,24 @@
 \def\r{\ty{r}}
 
 \newcolumntype{C}{>{$}c<{$}}
-\newcolumntype{L}{>{$}l<{$}}
+	\newcolumntype{L}{>{$}l<{$}}
 \newcolumntype{R}{>{$}r<{$}}
 \def\fmap{\texttt{fmap}}
 
 \def\fracpad{1pt}
 \newcommand{\suppfrac}[2]{%
 	{\sbox0{$\genfrac{}{}{0pt}{0}{\raisebox{\fracpad}{\ensuremath{#1}}}{\raisebox{-\fracpad}{\ensuremath{#2}}}$}%
-   \vphantom{\copy0}%
-   \ooalign{%
-     \hidewidth
-     $\vcenter{\moveright\nulldelimiterspace
-       \hbox to\wd0{%
-         \xleaders\hbox{\kern.5pt\vrule height 0.4pt width 1.5pt\kern.5pt}\hfill
-         \kern-1.5pt
-       }%
-     }$
-     \hidewidth\cr
-   \box0\cr}}%
-}
-
-\newcommand{\balancedVPhantom}[1]{% gives minimum vertical size
-  $\mathsurround=0pt \vcenter{\hrule width0pt height #1}$\ignorespaces
+			\vphantom{\copy0}%
+			\ooalign{%
+				\hidewidth
+				$\vcenter{\moveright\nulldelimiterspace
+						\hbox to\wd0{%
+							\xleaders\hbox{\kern.5pt\vrule height 0.4pt width 1.5pt\kern.5pt}\hfill
+							\kern-1.5pt
+						}%
+					}$
+				\hidewidth\cr
+				\box0\cr}}%
 }
 
 \newcommand{\prooffrac}[2]{\genfrac{}{}{}{0}{\raisebox{\fracpad}{\ensuremath{#1}}}{\raisebox{-\fracpad}{\ensuremath{#2}}}}%
@@ -144,11 +140,11 @@
 \makeatletter
 \newcommand{\@word}[4][]{%
 	#2 & #3 & #4\\
-\ifx&#1&%
+	\ifx&#1&%
 	%
-\else
+	\else
 	&\multicolumn{2}{l}{Generalizes to \textbf{#1}}\\%
-\fi%
+	\fi%
 }
 \def\word#1#2#3#4{\@word[#4]{#1}{#2}{#3}}
 \makeatother
@@ -157,14 +153,14 @@
 
 \makeatletter
 \def\textSq#1{%
-\begingroup% make boxes and lengths local
-\setlength{\fboxsep}{0.4ex}% SET ANY DESIRED PADDING HERE
-\setbox1=\hbox{#1}% save the contents
-\setlength{\@tempdima}{\maxof{\wd1}{\ht1+\dp1}}% size of the box
-\setlength{\@tempdimb}{(\@tempdima-\ht1+\dp1)/2}% vertical raise
-\raise-\@tempdimb\hbox{\fbox{\vbox to \@tempdima{%
-  \vfil\hbox to \@tempdima{\hfil\copy1\hfil}\vfil}}}%
-\endgroup%
+	\begingroup% make boxes and lengths local
+	\setlength{\fboxsep}{0.4ex}% SET ANY DESIRED PADDING HERE
+	\setbox1=\hbox{#1}% save the contents
+	\setlength{\@tempdima}{\maxof{\wd1}{\ht1+\dp1}}% size of the box
+	\setlength{\@tempdimb}{(\@tempdima-\ht1+\dp1)/2}% vertical raise
+	\raise-\@tempdimb\hbox{\fbox{\vbox to \@tempdima{%
+				\vfil\hbox to \@tempdima{\hfil\copy1\hfil}\vfil}}}%
+	\endgroup%
 }
 \def\Sq#1{\textSq{\ensuremath{#1}}}%
 
@@ -247,18 +243,18 @@
 \newcounter{tmplingexcnt}
 \renewcommand*{\thelingexcnt}{(\arabic{lingexcnt})}
 \newenvironment{sentence}[1][]{
-     \begin{list}{\thelingexcnt}{\refstepcounter{lingexcnt}}\item
-     \ifnum\pdfstrcmp{#1}{}=0\else\label{#1}\fi
-}{\end{list}}
+	\begin{list}{\thelingexcnt}{\refstepcounter{lingexcnt}}\item
+		      \ifnum\pdfstrcmp{#1}{}=0\else\label{#1}\fi
+		      }{\end{list}}
 
 \newenvironment{nsentence}{%
-     \setcounter{tmplingexcnt}{\value{lingexcnt}}
-     \addtocounter{tmplingexcnt}{-1}
-     \begin{list}{\thelingexcnt}{
-         \usecounter{lingexcnt}
-         \setcounter{lingexcnt}{\value{tmplingexcnt}}
-         \refstepcounter{lingexcnt}
-     }
-}{\end{list}}
+	\setcounter{tmplingexcnt}{\value{lingexcnt}}
+	\addtocounter{tmplingexcnt}{-1}
+	\begin{list}{\thelingexcnt}{
+			\usecounter{lingexcnt}
+			\setcounter{lingexcnt}{\value{tmplingexcnt}}
+			\refstepcounter{lingexcnt}
+		}
+		}{\end{list}}
 
 \newcommand*{\oneSentence}[2][]{\begin{sentence}[#1]#2\end{sentence}}

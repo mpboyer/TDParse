@@ -4,27 +4,59 @@ In this section we will give a list of words along with a way to express them as
 This will also give a set of functors and constructs in our language.
 
 \subsection{Syntax}
-We don't talk about syntactic production rules or any system of the sort: it exists, we take it for granted.
-The only discussion of translating syntax will be found in Appendix \ref{app:prodgram}.
+\label{subsec:syntax}
+In Figure \ref{fig:english-cfg} we provide a toy Context-Free Grammar to
+support the claims made in Section \ref{subsec:ssparsing}.
+The discussion of whether this system accurately models the syntax of the
+english language is far beyond the scope of this paper, but could replace
+fully this section.
+Our syntactic categories will be written in a more linguistically
+appreciated style than the one proposed in Figure \ref{fig:sctypes}.
+Our set of categories is the following:
+\begin{equation*}
+	\left\{\tt CP, Cmp, CBar, DBar, Cor, DP, Det, Gen, GenD, Dmp, NP, TN, VP, TV, DV, AV, AdjP, TAdj, Deg, AdvP, TAdv \right\}
+\end{equation*}
+
+\begin{figure}
+	\inputtikz{english-cfg}
+	\caption{Partial CFG for the English Language}\label{fig:english-cfg}
+\end{figure}
 
 \subsection{Lambda-Calculus}\label{subsec:lambdacalc}
-In this section we use the traditional lambda-calculus denotations.
+In this section we use the traditional lambda-calculus denotations, with
+two types for truth values and entities freely generating our typing category.
 
-\subsubsection{Types of Syntax}\label{subsec:syntax}
-We first need to setup some guidelines for our denotations, by asking ourselves how the different components of sentences interact with each other.
-For syntactic categories, the types that are generally used are the following, and we will see it matches with our lexicon, and simplifies our functorial definitions\footnote{We don't consider effects in the given typings.}.
-Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the operator which retrieves the type from a certain syntactic category.
+\subsubsection{Types of Syntax}\label{subsec:typingsyntax}
+We first need to setup some guidelines for our denotations, by asking ourselves
+how the different components of sentences interact with each other.
+For syntactic categories\footnote{Those are a subset of the ones proposed
+	in Section \ref{subsec:syntax}.}, the types that are generally used are the
+following, and we will see it matches with our lexicon, and simplifies our
+functorial definitions\footnote{We don't consider effects in the given typings.}.
+Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the
+operator which retrieves the type from a certain syntactic category.
 \begin{figure}
 	\centering
 	\inputtikz{syntactic-categories}
 	\caption{Usual Typings for some Syntactic Categories}
 	\label{fig:sctypes}
 \end{figure}
+
 \subsubsection{Lexicon: Semantic Denotations for Words}\label{subsec:lexicon}
 Many words will have basically the same ``high-level'' denotation.
-For example, the denotation for most common nouns will be of the form: $\cont \lambda x. \w{planet} x: \e \to \t$.
-In Table \ref{fig:lexicon} we give a lexicon for a subset of the english language.
-We describe the constructor for the functors used by our denotations in the table, but all functors will be reminded and properly defined in Table \ref{fig:functors} along with their respective \fmap.
+For example, the denotation for most common nouns will be of the form:
+$\cont \lambda x. \w{planet} x: \e \to \t$.
+In Table \ref{fig:lexicon} we give a lexicon for a subset of the english
+language, without the syntactic categories associated with each word, since
+some are not actually words but modifiers on words\footnote{Emphasis,
+	for example.}, and since most are obvious but only contain one meaning of a
+word.
+We describe the constructor for the functors used by our denotations in the
+table, but all functors will be reminded and properly defined in Table
+\ref{fig:functors} along with their respective \fmap.
+For denotations that might not be clear at first glance, $\cdot_{\tt F}$ is the
+phonologic accentuation or emphasis of a word and ${\cdot, \bf a \cdot}$ is the
+apposition of a \textbf{NP} to a \textbf{DP} or proper noun.
 \begin{figure}
 	\centering
 	\inputtikz{lexicon-table}

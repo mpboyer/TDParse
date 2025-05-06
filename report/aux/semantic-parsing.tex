@@ -28,7 +28,7 @@ other order of arguments available.
 
 \begin{table}
 	\centering
-	\input{figures/match-judgement}
+	\inputtikz{match-judgement}
 	\caption{List of possible combinations for different presuppositions for inputs, as a definition of a function
 		$PT$ from proof trees to proof trees.}
 	\label{tab:proof-trees}
@@ -97,13 +97,13 @@ While we do not aim to provide a theory of everything linguistics through catego
 theory of semantics allows us to prepare for any theoretical or empirical observation that has an impact on the
 semantics of a word/sentence, the allowed combinators and even the addition of rules.
 
-\subsection{Rewriting Rules}
+\subsubsection{Rewriting Rules}
 \label{subsec:rewrite}
 Here we provide a rewriting system on derivation trees that allows us to improve our time complexity.
 In the worst case, in big o notation there is no improvement, but there is no loss.
 The goal is to reduce branching in the definition of $PT$.
 
-\mesdkip
+\medskip
 
 First, let's consider the reductions proposed in Section \ref{sec:nondet}.
 Those define normal forms under Theorem \ref{thm:confluence} and thus we can use those to reduce the number
@@ -142,3 +142,44 @@ be enough to actually gain all reductions possible.
 This will actually happen once a confluent reduction scheme is provided for the denotations.
 When this is done, we can combine the reduction schemes for effects along with the one for denotation and the one
 for combinations in one large reduction scheme.
+Indeed, trivally, the tensor product of confluent reduction schemes forms a confluent reduction scheme, whose maximal
+reduction length is the sum of the maximal reduction lengths\footnote{Actually it is at most that, but that does not
+	really matter.}.
+
+
+\subsubsection{Measuring Improvements}
+Since all our improvements cannot remove the inherent exponentiality of the
+algorithm behind, let's see if this exponentiality is actually an issue.
+Yes, it is!
+
+\subsection{Syntactic-Semantic Parsing}
+\label{subsec:ssparsing}
+If using a naïve strategy on the trees yields an exponential algorithm,
+the best way to improve the algorithm, is to directly leave the naïve strategy.
+To do so, we could simply extend the grammar system used to do the syntactic
+part of the parsing.
+In this section, we will take the example of a CFG since it suffices to create
+our typing combinators,
+For example, we can increase the alphabet to be the free monoid on the product
+$\Sigma$ of the usual base alphabet and $\bar{\mC}$ our typing category.
+Since the usual syntactic structure and our combination modes can both be
+expressed by CFGs (cf Figure \ref{fig:combination-cfg}), our product system
+can be expressed by a CFG.
+Here, we change our notations from the proof trees of Table
+\ref{tab:proof-trees} to have a more explicit grammar of combination modes
+provided below is a rewriting of the proof trees provided earlier, and
+highlights the combination modes in a simpler way, based on
+\cite{bumfordEffectdrivenInterpretationFunctors2025} as it simplifies the
+rewriting of our typing judgements in a CFG\footnote{That, in a sense, was
+	already implicitly provided in Figure \ref{tab:judgements}.}.
+The CFG in Figures \ref{fig:english-cfg} and \ref{fig:combination-cfg} are actually
+used from right to left, as we actually do combinations over the types and
+syntactic categories of the words and try to reduce the sentence, not derive it from
+nothing.
+
+\begin{figure}
+	\centering
+	\inputtikz{combination-cfg}
+	\caption{}\label{fig:combination-cfg}
+\end{figure}
+

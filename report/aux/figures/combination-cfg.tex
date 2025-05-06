@@ -1,0 +1,12 @@
+\begin{mgrammar}
+	\firstrule{\tau}{\left(\alpha \to \tau\right), \alpha}{}
+	\grule{\alpha, \left(\alpha \to \tau\right)}{$\forall \alpha, \tau \in \bar{\mC}$}
+	\gskip%
+	\firstrule{\t}{\t, \t}{Where $\t$ is a truth value type}
+	\gskip%
+	\firstrule{\f{F}\tau}{\tau}{$\text{If } \texttt{applicative}\left(\f{F}\right)$}
+	\grule{\f{F}\f{F}\tau}{$\text{If } \texttt{monad}\left(\f{F}\right)$}
+	\grule{\f{F}\alpha, \left(\alpha \to \tau\right)}{}
+	\grule{ \left(\alpha \to \tau\right), \f{F}\alpha}{$\forall \alpha, \tau \in \bar{\mC}, \f{F}\in \mathcal{F}\left(\mL\right)$}
+\end{mgrammar}
+
