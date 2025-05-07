@@ -1,12 +1,41 @@
+\def\sobj{\mathit{Sem}}
+\centering
+\begin{multicols}{2}
 \begin{mgrammar}
-	\firstrule{\tau}{\left(\alpha \to \tau\right), \alpha}{}
-	\grule{\alpha, \left(\alpha \to \tau\right)}{$\forall \alpha, \tau \in \bar{\mC}$}
-	\gskip%
-	\firstrule{\t}{\t, \t}{Where $\t$ is a truth value type}
-	\gskip%
-	\firstrule{\f{F}\tau}{\tau}{$\text{If } \texttt{applicative}\left(\f{F}\right)$}
-	\grule{\f{F}\f{F}\tau}{$\text{If } \texttt{monad}\left(\f{F}\right)$}
-	\grule{\f{F}\alpha, \left(\alpha \to \tau\right)}{}
-	\grule{ \left(\alpha \to \tau\right), \f{F}\alpha}{$\forall \alpha, \tau \in \bar{\mC}, \f{F}\in \mathcal{F}\left(\mL\right)$}
+  \firstrule{r}{\tau}{}
+  \grule{T}{}
+  \gskip
+  \firstrule{\tau}{\pi}{}
+  \grule{\phi}{}
+  \grule{\bar{\tau}}{}
+  \gskip
+  \firstrule{\pi}{\scalar{r, r}}{}
+  \gskip
+  \firstrule{\phi}{r \to r}{}
+  \gskip
+  \firstrule{\bar{\tau}}{\e}{}
+  \grule{\t}{}
+  \grule{\vdots}{}
+  \gskip
+  \firstrule{T}{F \tau}{}
+  \gskip
+  \firstrule{F}{\mathcal{F}\left(\mL\right)^{*}}{}
+  \gskip
 \end{mgrammar}
 
+\begin{mgrammar}
+  \firstrule{B}{\mathrm{>} \enspace|\enspace \mathrm{<} \enspace|\enspace \wedge \enspace|\enspace \vee}{}
+  \gskip
+  \firstrule{M}{B}{}
+  \grule{ML, M \enspace|\enspace MR, M}{\fmap}
+  \grule{UL, M \enspace|\enspace UR, M}{\tt pure/return}
+  \grule{J, M}{\tt join}
+  \grule{CU, M}{\tt counit}
+  \grule{ER, M \enspace|\enspace EL, M}{}
+  \grule{DN, M}{\tt closure}
+\end{mgrammar}
+\begin{mgrammar}
+  \firstrule{\sobj}{M r}{}
+  \gskip
+\end{mgrammar}
+\end{multicols}

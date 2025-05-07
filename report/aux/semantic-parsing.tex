@@ -51,7 +51,7 @@ Indeed, and while this may seem weird, in the case of a function $\f{F}\ta \to \
 and the other combinator is of type $\f{F}\ta$, one might apply the function directly or apply it under the $\f{F}$
 of the argument, leading to two different proof trees:
 \begin{align*}
-	\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb} \\
+\resizebox{\textwidth}{!}{$\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb}$} \\
 	\Japp{l}{\f{F}\ta}{\tb}{r}
 \end{align*}
 Those two different proof trees have different semantic interpretations that may be useful, as discussed by
@@ -202,8 +202,8 @@ grammar.
 
 \begin{thm}
 	\label{thm:ptime-parse}
-	Generalized semantic parsing of a sentence is polynomial in the length of the
-	sentence and the size of the type system and syntax system.
+	Semantic parsing of a sentence is polynomial in the length of the	sentence 
+  and the size of the type system and syntax system.
 \end{thm}
 \begin{proof}
 	Suppose we are given a syntactic generating structure $G_{s}$ along with our
