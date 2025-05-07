@@ -1,6 +1,8 @@
-\section{Semantic Parsing}
+\section{Efficient Semantic Parsing}
 \label{sec:parsing}
-In this section we explain our algorithms and heuristics for efficient parsing with as little non-determinism as possible, and reducing time complexity of our parsing strategy.
+In this section we explain our algorithms and heuristics for efficient semantic
+parsing with as little non-determinism as possible, and reducing time complexity
+of our parsing strategies.
 
 \subsection{Naïve Semantic Parsing on Syntactic Parsing}
 In this section we suppose that we have a set of syntax trees (or parsing trees) corresponding to a certain
@@ -146,7 +148,6 @@ Indeed, trivally, the tensor product of confluent reduction schemes forms a conf
 reduction length is the sum of the maximal reduction lengths\footnote{Actually it is at most that, but that does not
 	really matter.}.
 
-
 \subsubsection{Measuring Improvements}
 Since all our improvements cannot remove the inherent exponentiality of the
 algorithm behind, let's see if this exponentiality is actually an issue.
@@ -172,14 +173,113 @@ highlights the combination modes in a simpler way, based on
 \cite{bumfordEffectdrivenInterpretationFunctors2025} as it simplifies the
 rewriting of our typing judgements in a CFG\footnote{That, in a sense, was
 	already implicitly provided in Figure \ref{tab:judgements}.}.
-The CFG in Figures \ref{fig:english-cfg} and \ref{fig:combination-cfg} are actually
-used from right to left, as we actually do combinations over the types and
-syntactic categories of the words and try to reduce the sentence, not derive it from
-nothing.
+The CFGs provided  in Figures \ref{fig:english-cfg} and \ref{fig:combination-cfg}
+are actually used from right to left, as we actually do combinations over the
+types and syntactic categories of the words and try to reduce the sentence, not
+derive it from nothing.
+Now, note that this means all the improvements discussed in Section \ref{subsec:rewrite}
+can still be applied here, just a bit differently, as this amounts to reducing
+ambiguity in the grammar.
 
 \begin{figure}
 	\centering
+	% TODO: expand the grammar below so that the number of rules is actually 
+	% finite and so functorial application can only be done by blocks.
+	% F1F2l · G1G2r cannot be F1G1F2G2 but only F1F2G1G2 or G1G2F1F2.
 	\inputtikz{combination-cfg}
-	\caption{}\label{fig:combination-cfg}
+	\caption{Possible Type Combinations in the form of a CFG}
+	\label{fig:combination-cfg}
 \end{figure}
+
+We do not prove here that these typing rules cannot be written in a simpler
+syntactic structure\footnote{It is important to note that for a typing system,
+	we only have syntactic rules that allow, or not, to combine types.}, but it is
+easy to see why a regular expression would not work, and since we need trees,
+to express our full system, the best we can do would be to disambiguate the
+grammar.
+
+\medskip
+
+\begin{thm}
+	\label{thm:ptime-parse}
+	Generalized semantic parsing of a sentence is polynomial in the length of the
+	sentence and the size of the type system and syntax system.
+\end{thm}
+\begin{proof}
+	Suppose we are given a syntactic generating structure $G_{s}$ along with our
+	type combination grammar $G_{\tau}$.
+	The system $G$ that can be constructed from the (tensor) product of $G_{s}$ and
+	$G_{\tau}$ has size $\abs{G_{s}}\times \abs{G_{\tau}}$.
+	Indeed, we think of its rules as a rule for the syntactic categories and a rule
+	for the type combinations. Its terminals and non terminals are also in the
+	cartesian products of the adequate sets in the original grammars.
+	What this in turn means, is that if we can syntactically parse a sentence in
+	polynomial time in the size of the input and in $\abs{G_{s}}$, then we can
+	syntactico-semantically parse it in polynomial time in the size of the input,
+	$\abs{G_{s}}$ and $\abs{G_{\tau}}$.
+\end{proof}
+
+While we have gone with the hypothesis that we have a CFG for our language,
+any type of structure could work\footnote{Simply, the algorithm will need to be
+	adapted to at least process the CFG for the typing rules.}, as long as it is
+more expressive than a CFG.
+We will do the following analysis using a CFG since it allows to cover enough of
+the language for our example and for simplicity of describing the process of
+adding the typing CFG, even though some think that English is not a context
+free language \cite{higginbothamEnglishNotContextFree1984}.
+Since the CYK algorithm provides us with an algorithm for CFG based parsing
+cubic in the input and linear in the grammar size, we end up with an algorithm
+for semantically parsing a sentence that is cubic in the length of the sentence
+and linear in the size of the grammar modeling the language and the type system.
+
+\begin{thm}
+	\label{thm:ptime-denot}
+	Retrieving a pure denotation for a sentence can be done in polynomial time in
+	the length of the sentence, given a polynomial time syntactic parsing
+	algorithm and polynomial time combinators.
+\end{thm}
+\begin{proof}
+	We have proved in Theorem \ref{thm:ptime-parse} that we can retrieve all the
+	semantic parse trees from a	sentence in polynomial time in the input.
+	Since we also have shown that the length of a semantic parse tree is quadratic
+	in the length of the sentence it represents, being linear in the length of a
+	syntactic parse tree linear in the length of the sentence.
+	We have already seen that given a denotation, handling all effects and
+	reducing effect handling to normal forms can be done in polynomial time.
+	The superposition of these steps yields a polynomial-time algorithm in the
+	length of the input sentence.
+\end{proof}
+
+The \emph{polynomial time combinators} assumption is not a complex assumption,
+this is for example true for our denotations in Section \ref{sec:language},
+with function application being linear in the number of uses of variables in
+the function term, which in turn is linear in the number of terms used to
+construct the function term and thus of words, and \fmap being in constant
+time\footnote{Depending on the functor but still bounded by a constant.} for
+the same reason.
+Of course, function application could be said to be in constant time too, but
+we consider here the duration of the $\beta$-reduction:
+\begin{equation*}
+	\left(\lambda x. M\right)N \xrightarrow{\beta} M\left[x / N\right]
+\end{equation*}
+
+\medskip
+
+Let's be a bit more precise on the actual polynomial that hides in our
+algorithm.
+We denote by $S\left(G_{s}, n\right)$ the polynomial measuring the complexity
+of syntactic parsing.
+For example, $S_{CFG}\left(G_{s}, n\right) = \abs{G_{s}}n^{3}$.
+We cannot achieve a non-ambiguous syntactic structure for the English language,
+so the number of parse trees will be exponential in the size of the sentence.
+However, when combining the structures, we get a semantic parse tree in
+$S(\abs{G_{s}}\abs{G_{\tau}}, n)$.
+We then simply need to add $\O\left(n^{3}\right)$ for the normalization of the
+effects and handling.
+Again, we cannot derive in polynomial time all the different trees for the
+handling of effects, so we stay conservative and compute only one diagram.
+Finally, since trivially we have bounded every step of the computation of a
+denotation in linear time in the size of everything, we can finalize the
+computation of the whole equivalent denotation.
+
 

@@ -7,6 +7,7 @@ all:
 	make main; 
 	bibtex tdparse.tex;
 	make main; 
+	bibtex tdparse.tex;
 	make main;
 
 clean:

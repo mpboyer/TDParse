@@ -13,45 +13,45 @@ Warning--empty journal in marsikAlgebraicEffectsHandlers
 Warning--empty year in parteeLecture2Lambda
 Warning--empty booktitle in selingerSurveyGraphicalLanguages2010
 Warning--missing publisher in selingerSurveyGraphicalLanguages2010
-You've used 19 entries,
+You've used 20 entries,
             3571 wiz_defined-function locations,
-            835 strings with 9664 characters,
-and the built_in function-call counts, 11365 in all, are:
-= -- 1056
-> -- 395
-< -- 24
-+ -- 129
-- -- 102
-* -- 685
-:= -- 1760
-add.period$ -- 72
-call.type$ -- 19
-change.case$ -- 138
-chr.to.int$ -- 19
-cite$ -- 24
-duplicate$ -- 754
-empty$ -- 870
-format.name$ -- 169
-if$ -- 2530
+            845 strings with 9855 characters,
+and the built_in function-call counts, 11977 in all, are:
+= -- 1113
+> -- 408
+< -- 25
++ -- 133
+- -- 105
+* -- 721
+:= -- 1852
+add.period$ -- 76
+call.type$ -- 20
+change.case$ -- 144
+chr.to.int$ -- 20
+cite$ -- 25
+duplicate$ -- 794
+empty$ -- 926
+format.name$ -- 173
+if$ -- 2669
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 141
-newline$ -- 92
-num.names$ -- 76
-pop$ -- 335
+missing$ -- 149
+newline$ -- 97
+num.names$ -- 80
+pop$ -- 347
 preamble$ -- 1
-purify$ -- 110
+purify$ -- 115
 quote$ -- 0
-skip$ -- 625
+skip$ -- 660
 stack$ -- 0
-substring$ -- 383
-swap$ -- 363
+substring$ -- 419
+swap$ -- 385
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 168
+type$ -- 177
 warning$ -- 5
-while$ -- 75
+while$ -- 80
 width$ -- 0
-write$ -- 236
+write$ -- 249
 (There were 5 warnings)

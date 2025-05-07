@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{20}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Bauer and Pretnar(2014)}]{bauerEffectSystemAlgebraic2014}
@@ -38,6 +38,12 @@ Irene Heim and Angelika Kratzer. 1998.
 \newblock \emph{Semantics in Generative Grammar}.
 \newblock Number~13 in Blackwell Textbooks in Linguistics. Blackwell, Malden,
   MA.
+
+\bibitem[{Higginbotham(1984)}]{higginbothamEnglishNotContextFree1984}
+James Higginbotham. 1984.
+\newblock \href {http://arxiv.org/abs/4178381} {English {{Is Not}} a
+  {{Context-Free Language}}}.
+\newblock \emph{Linguistic Inquiry}, 15(2):225--234.
 
 \bibitem[{Joyal and Street(1991)}]{joyalGeometryTensorCalculus1991}
 Andr{\'e} Joyal and Ross Street. 1991.
