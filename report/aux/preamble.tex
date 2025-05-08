@@ -74,29 +74,20 @@
 \newcolumntype{R}{>{$}r<{$}}
 \def\fmap{\texttt{fmap}}
 
-\newlength\suppht
-\newlength\supphtaux
-\def\fracpad{1pt}
 \newcommand{\suppfrac}[2]{%
-	\sbox2{%
-		\sbox0{$\genfrac{}{}{0pt}{0}{\ensuremath{#1}}{\ensuremath{#2}}$}%
-		\setlength{\suppht}{\ht0}
-		\setlength{\supphtaux}{\ht0 minus 2.5pt}
-		\sbox1{$\tikz[baseline=\supphtaux]{\draw[blue] (0, 0) -- +(0, 2\supphtaux);}$}
-		\vrule height \ht1 width 1pt \kern-1pt
-		\ooalign{%
-			\hidewidth
-			$\vcenter{\moveright\nulldelimiterspace
-					\hbox to\wd0{%
-						\xleaders\hbox{\kern.5pt\vrule height 0.4pt width 1.5pt\kern.5pt}\hfill
-						\kern-1.5pt
-					}%
-				}$
-			\hidewidth\cr
-			\box0\cr}%
-	}%
-	\box2
+	\sbox0{$\genfrac{}{}{0pt}{0}{\ensuremath{#1}}{\ensuremath{#2}}$}%
+	\ooalign{%
+		\hidewidth
+		$\vcenter{\moveright\nulldelimiterspace
+				\hbox to\wd0{%
+					\xleaders\hbox{\kern.5pt\vrule height 0.4pt width 1.5pt\kern.5pt}\hfill
+					\kern-1.5pt
+				}%
+			}$
+		\hidewidth\cr
+		$\genfrac{}{}{0pt}{0}{\raisebox{5pt}{\ensuremath{#1}}}{\ensuremath{#2}}$\cr}%
 }
+
 
 \newcommand{\prooffrac}[2]{\genfrac{}{}{}{0}{\ensuremath{#1}}{\ensuremath{#2}}}%
 

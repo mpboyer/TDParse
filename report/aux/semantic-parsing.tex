@@ -30,7 +30,7 @@ other order of arguments available.
 
 \begin{table}
 	\centering
-	\inputtikz{match-judgement}
+	\input{aux/figures/match-judgement}
 	\caption{List of possible combinations for different presuppositions for inputs, as a definition of a function
 		$PT$ from proof trees to proof trees.}
 	\label{tab:proof-trees}
@@ -51,7 +51,7 @@ Indeed, and while this may seem weird, in the case of a function $\f{F}\ta \to \
 and the other combinator is of type $\f{F}\ta$, one might apply the function directly or apply it under the $\f{F}$
 of the argument, leading to two different proof trees:
 \begin{align*}
-\resizebox{\textwidth}{!}{$\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb}$} \\
+	\resizebox{\textwidth}{!}{$\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb}$} \\
 	\Japp{l}{\f{F}\ta}{\tb}{r}
 \end{align*}
 Those two different proof trees have different semantic interpretations that may be useful, as discussed by
@@ -164,8 +164,8 @@ our typing combinators,
 For example, we can increase the alphabet to be the free monoid on the product
 $\Sigma$ of the usual base alphabet and $\bar{\mC}$ our typing category.
 Since the usual syntactic structure and our combination modes can both be
-expressed by CFGs (cf Figure \ref{fig:combination-cfg}), our product system
-can be expressed by a CFG.
+expressed by CFGs (or almost, cf Figure \ref{fig:combination-cfg}), our product
+system can be expressed by (almost) a CFG.
 Here, we change our notations from the proof trees of Table
 \ref{tab:proof-trees} to have a more explicit grammar of combination modes
 provided below is a rewriting of the proof trees provided earlier, and
@@ -173,19 +173,17 @@ highlights the combination modes in a simpler way, based on
 \cite{bumfordEffectdrivenInterpretationFunctors2025} as it simplifies the
 rewriting of our typing judgements in a CFG\footnote{That, in a sense, was
 	already implicitly provided in Figure \ref{tab:judgements}.}.
-The CFGs provided  in Figures \ref{fig:english-cfg} and \ref{fig:combination-cfg}
+The grammars provided  in Figures \ref{fig:english-cfg} and \ref{fig:combination-cfg}
 are actually used from right to left, as we actually do combinations over the
 types and syntactic categories of the words and try to reduce the sentence, not
 derive it from nothing.
-Now, note that this means all the improvements discussed in Section \ref{subsec:rewrite}
+Now, all the improvements discussed in Section \ref{subsec:rewrite}
 can still be applied here, just a bit differently, as this amounts to reducing
 ambiguity in the grammar.
 
 \begin{figure}
 	\centering
-	% TODO: expand the grammar below so that the number of rules is actually 
-	% finite and so functorial application can only be done by blocks.
-	% F1F2l · G1G2r cannot be F1G1F2G2 but only F1F2G1G2 or G1G2F1F2.
+	% TODO: expand the grammar below 
 	\inputtikz{combination-cfg}
 	\caption{Possible Type Combinations in the form of a CFG}
 	\label{fig:combination-cfg}
@@ -197,13 +195,18 @@ syntactic structure\footnote{It is important to note that for a typing system,
 easy to see why a regular expression would not work, and since we need trees,
 to express our full system, the best we can do would be to disambiguate the
 grammar.
+Moreover, it is important to note that while we talk about the structure in
+Figure \ref{fig:combination-cfg} as a grammar, it is more of a polynomial
+structure that computes if it is possible or not to combine two types and how.
+While our structure is not actually a CFG, it is easy to see that we can modify
+the CYK algorithm for parsing with a CFG to implement our combination grammar.
 
 \medskip
 
 \begin{thm}
 	\label{thm:ptime-parse}
-	Semantic parsing of a sentence is polynomial in the length of the	sentence 
-  and the size of the type system and syntax system.
+	Semantic parsing of a sentence is polynomial in the length of the	sentence
+	and the size of the type system and syntax system.
 \end{thm}
 \begin{proof}
 	Suppose we are given a syntactic generating structure $G_{s}$ along with our
