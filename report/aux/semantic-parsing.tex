@@ -76,8 +76,8 @@ A way to do this would be the following: we pass all functors until finding a $\
 functors and keep going, on both sides, where $\mathrm{PT}$ is defined in Table \ref{tab:proof-trees}:
 \begin{equation*}
 	\mathrm{PT}\left(
-	\suppfrac{\cont x_{1}: \f{F}\f{C}\f{F'}\tau}{\cont x_{1}: \f{F}\f{F'}\tau}\suchthat
-	\suppfrac{\cont x_{2}: \f{F}\f{C}\f{F'}\tau}{\cont x_{2}: \f{F}\f{F'}\tau}
+	\suppfrac{\raisebox{-5pt}{$\cont x_{1}: \f{F}\f{C}\f{F'}\tau$}}{\cont x_{1}: \f{F}\f{F'}\tau}\suchthat
+	\suppfrac{\raisebox{-5pt}{$\cont x_{2}: \f{F}\f{C}\f{F'}\tau$}}{\cont x_{2}: \f{F}\f{F'}\tau}
 	\right)
 \end{equation*}
 Note that this preserves the linear size of the parse tree in the number of input words, as we at most double the
@@ -242,8 +242,8 @@ and linear in the size of the grammar modeling the language and the type system.
 	algorithm and polynomial time combinators.
 \end{thm}
 \begin{proof}
-	We have proved in Theorem \ref{thm:ptime-parse} that we can retrieve all the
-	semantic parse trees from a	sentence in polynomial time in the input.
+	We have proved in Theorem \ref{thm:ptime-parse} that we can retrieve a
+	semantic parse tree from a	sentence in polynomial time in the input.
 	Since we also have shown that the length of a semantic parse tree is quadratic
 	in the length of the sentence it represents, being linear in the length of a
 	syntactic parse tree linear in the length of the sentence.
@@ -272,9 +272,12 @@ Let's be a bit more precise on the actual polynomial that hides in our
 algorithm.
 We denote by $S\left(G_{s}, n\right)$ the polynomial measuring the complexity
 of syntactic parsing.
-For example, $S_{CFG}\left(G_{s}, n\right) = \abs{G_{s}}n^{3}$.
-We cannot achieve a non-ambiguous syntactic structure for the English language,
-so the number of parse trees will be exponential in the size of the sentence.
+For example, $S_{CFG}\left(G_{s}, n\right) = \abs{G_{s}}n^{3}$. Again, this is
+actually what we can achieve when considering the improvement on CYK discussed
+earlier, as $G_{tau}$ below is not a CFG.
+We cannot and do not want to achieve a non-ambiguous syntactic structure for
+the English language, so the number of parse trees will be exponential in the
+size of the sentence.
 However, when combining the structures, we get a semantic parse tree in
 $S(\abs{G_{s}}\abs{G_{\tau}}, n)$.
 We then simply need to add $\O\left(n^{3}\right)$ for the normalization of the

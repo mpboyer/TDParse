@@ -4,24 +4,6 @@ In this section, we will designate by $\mL$ our language, as a set of words (wit
 We denote by $\O\left( \mL \right)$ the set of words in the language whose semantic representation is a low-order function and $\mF\left( \mL \right)$ the set of words whose semantic representation is a functor or high-order function.
 Our goals here are to describe more formally, using a categorical vocabulary, the environment in which the typing system for our language will exist, and how we connect words and other linguistic objects to the categorical formulation.
 
-\begin{center}
-
-	\newtcbox{\tboxed}{on line, colframe=black, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt, boxrule=1pt}
-	\foreach\i in {0,...,10}{%
-			\pgfmathtruncatemacro{\j}{\i * 10}
-			\expandafter\colorlet{boxcolor}{vulm!\j!yulm}
-			\i, \j, \textcolor{boxcolor}{Hello,} \\
-			\newtcbox{thefbox\i}{on line, colback=boxcolor, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, arc=2pt}
-		}
-
-	\def\functor#1#2{\csname thefbox#1\endcsname{\tt #2}}
-	\def\effect#1#2#3{%
-		\tboxed{\functor{#1}{#2}~\ensuremath{\tt #3}}
-	}
-	\csname thefbox6\endcsname{\tt F}
-	\functor{6}{F}
-	\effect{9}{F}{$e\to t$}
-\end{center}
 \subsection{Typing Category}\label{subsec:typingcategory}
 \subsubsection{Types}\label{subsubsec:types}
 Let $\mC$ be a closed cartesian category. This represents our main typing system, consisting of words $\O(\mL)$ that can be expressed without effects.
