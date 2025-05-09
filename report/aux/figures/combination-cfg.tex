@@ -1,5 +1,5 @@
-\def\sobj{\mathit{Sem}}
 \centering
+\setlength{\columnsep}{-24pt}
 \begin{multicols}{2}
 	\begin{mgrammar}
 		\firstrule{r}{\tau}{}
@@ -22,22 +22,50 @@
 		\firstrule{F}{\mathcal{F}\left(\mL\right)^{*}}{}
 		\gskip
 	\end{mgrammar}
-
 	\begin{mgrammar}
 		\firstrule{B}{\mathrm{>} \enspace|\enspace \mathrm{<} \enspace|\enspace \wedge \enspace|\enspace \vee}{}
 		\gskip
 		\firstrule{M}{B}{}
-		\grule{ML, M \enspace|\enspace MR, M}{\fmap}
-		\grule{UL, M \enspace|\enspace UR, M}{\tt pure/return}
-		\grule{J, M}{\tt join}
-		\grule{CU, M}{\tt counit}
-		\grule{ER, M \enspace|\enspace EL, M}{}
+		\grule{\combML, M \enspace|\enspace \combMR, M}{\fmap}
+		\grule{\combUL, M \enspace|\enspace \combUR, M}{\tt pure}
+		\grule{\combA, M}{\tt Struct}
+		\grule{\combJ, M}{\tt join}
+		\grule{\combC, M}{\tt counit}
+		\grule{ER, M \enspace|\enspace EL, M}{\tt eject}
 		\grule{DN, M}{\tt closure}
+	\end{mgrammar}
+
+	\def\arraystretch{1.2}
+	\setlength\tabcolsep{4pt}
+	\begin{tabular}{LLCLLr}
+		\firstrule{>                                   & \beta}{(\alpha \to \beta)           & \alpha}{}
+		\firstrule{<                                   & \beta}{\alpha                       & (\alpha \to \beta)}{}
+		\firstrule{\wedge                              & (\alpha \to \t)}{(\alpha \to \t)    & (\alpha \to \t)}{}
+		\firstrule{\vee                                & (\alpha \to \t)}{(\alpha \to \t)    & (\alpha \to \t)}{}
 		\gskip
+		\firstrule{\combMR_{\f{F}} <                   & \f{F}\beta}{\f{F}\alpha             & (\alpha \to \beta)}{}
+		\firstrule{\combML_{\f{F}} >                   & \f{F}\beta}{(\alpha \to \beta)      & \f{F}\alpha}{}
+		\firstrule{\combUR_{\f{A}} >                   & \f{F}\beta}{\f{A}(\alpha \to \beta) & \alpha}{}
+		\firstrule{\combMR_{\f{M}}\combUR_{\f{M}} >    & \f{M}\beta}{(\f{M}\alpha \to \beta) & \f{M}\alpha}{}
+		\firstrule{\combJ_{\f{M}}\combMR_{\f{F}} <     & \f{M}\beta}{\f{M}\alpha             & (\alpha \to \f{M}\beta)}{}
+		\firstrule{\combC_{\f{L}\f{R}} <               & \beta}{\f{L}\alpha                  & \f{R}(\alpha \to \beta)}{}
+		\firstrule{\combC_{\f{L}\f{R}}\combMR_{\f{F}}< & \f{F}\beta}{\f{L}\alpha             & \f{R}(\f{F}(\alpha \to \beta))}{}
+		\firstrule{\combA <                            & \f{F}\beta}{\f{F}\alpha             & \f{F}(\alpha \to \beta)}{}
+		\firstrule{\combER                             & \beta}{\f{R}(\alpha \to \beta)      & }{}
 		\gskip
+		\firstrule{\combML_{\f{F}}M                    & \tau}{M \tau                        & \_\ \f{F}\tau}{}
+		\firstrule{\combMR_{\f{F}}M                    & \tau}{\_\ \f{F}\tau                 & M \tau}{}
+	\end{tabular}
+	\begin{mgrammar}
 		\firstrule{\sobj}{M, r}{}
+		\grule{>, (\alpha\to \beta) \to \alpha \to \beta}{}
+		\grule{<, \alpha \to (\alpha \to \beta) \to \beta}{}
+		\grule{\wedge, (\alpha \to \t) \to (\alpha \to \t) \to (\alpha \to \t)}{}
+		\grule{\vee, (\alpha \to \t) \to (\alpha \to \t) \to (\alpha \to \t)}{}
+		& \vdots & \\
+		\firstrule{\combMR_{\f{F}} M, \f{F}\alpha \to \beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
+		\firstrule{\combML_{\f{F}} M, \alpha \to \f{F}\beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
+		\firstrule{\combA_{\f{F} M, \f{F}\alpha \to \f{F}\beta \to \f{F}\gamma}}{M, \alpha \to \beta \to \gamma}{}
 		\gskip
-		\firstrule{>, \beta}{(\alpha \to \beta), \alpha}{}
-		\firstrule{<, \beta}{\alpha, (\alpha \to \beta)}{}
 	\end{mgrammar}
 \end{multicols}

@@ -46,13 +46,13 @@ operator which retrieves the type from a certain syntactic category.
 Many words will have basically the same ``high-level'' denotation.
 For example, the denotation for most common nouns will be of the form:
 $\cont \lambda x. \w{planet} x: \e \to \t$.
-In Table \ref{fig:lexicon} we give a lexicon for a subset of the english
+In Figure \ref{fig:lexicon} we give a lexicon for a subset of the english
 language, without the syntactic categories associated with each word, since
 some are not actually words but modifiers on words\footnote{Emphasis,
 	for example.}, and since most are obvious but only contain one meaning of a
 word.
 We describe the constructor for the functors used by our denotations in the
-table, but all functors will be reminded and properly defined in Table
+table, but all functors will be reminded and properly defined in Figure
 \ref{fig:functors} along with their respective \fmap.
 For denotations that might not be clear at first glance, $\cdot_{\tt F}$ is the
 phonologic accentuation or emphasis of a word and ${\cdot, \bf a \cdot}$ is the
@@ -67,7 +67,7 @@ Note that for terms with two lambdas, we also say that inverting the lambdas als
 This is important for our formalism as we want to be able to add effects in the order that we want.
 
 \subsubsection{Effects of the Language}\label{subsec:effects}
-For the applicatives/monads in Table \ref{fig:functors} we do not specify the unit and multiplication functions, as they are quite usual examples.
+For the applicatives/monads in Figure \ref{fig:functors} we do not specify the unit and multiplication functions, as they are quite usual examples.
 We still provide the \fmap{} for good measure.
 
 \begin{figure}
@@ -108,7 +108,7 @@ As such, we give ourselves a way to measure if a certain $x$ is plural our not, 
 It is important to note that if $\tau$ is a type, and $\cont x: \tau$ then we should have $\abs{\Pi x} \geq 1 = \top\footnote{This might be seen as a typing judgement~!}$.
 We then need to define the functor $\Pi$ which models the plural. We do not need to define it on types in any way other than $\Pi\left( \tau \right) = \Pi\tau$.
 We only need to look at the transformation on arrows\footnote{\texttt{fmap}, basically.}.
-This one depends on the \emph{syntactic}\footnote{Actually it depends on the word considered, but since the denotations (when considered effect-less) provided in Table \ref{fig:lexicon} are more or less related to the syntactic category of the word, our approximation suffices.} type of the arrow, as seen in Table \ref{fig:lexicon}.
+This one depends on the \emph{syntactic}\footnote{Actually it depends on the word considered, but since the denotations (when considered effect-less) provided in Figure \ref{fig:lexicon} are more or less related to the syntactic category of the word, our approximation suffices.} type of the arrow, as seen in Figure \ref{fig:lexicon}.
 \begin{figure}
 	\centering
 	\inputtikz{plural-table}

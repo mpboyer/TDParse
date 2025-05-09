@@ -16,8 +16,8 @@ This is easily done in linear time in the number of nodes in the parsing tree (w
 more on that in the next section), multiplied by a constant whose size depends on the size of the inference
 structure.
 The main idea is that to each node of the tree, both nodes have a type and there is only a finite set of rules
-that can be applied, provided by the following rules, which are a rewriting of Table \ref{tab:judgements}.
-In Table \ref{tab:proof-trees} we provide \emph{matching-like} rules for different possibilities on the types to
+that can be applied, provided by the following rules, which are a rewriting of Figure \ref{tab:judgements}.
+In Figure \ref{tab:proof-trees} we provide \emph{matching-like} rules for different possibilities on the types to
 combine and the associated possible proof tree(s).
 Note that there is no condition on what the types \emph{look like}, they can be effectful.
 If multiple cases are possible, all different possible proof trees should be added to the set of derivations: the
@@ -28,13 +28,13 @@ set of proof trees for the union of cases is the union of set of proof trees for
 Remember again that the order of presuppositions for an inference structure does not matter, so always we have the
 other order of arguments available.
 
-\begin{table}
+\begin{figure*}
 	\centering
 	\input{aux/figures/match-judgement}
 	\caption{List of possible combinations for different presuppositions for inputs, as a definition of a function
 		$PT$ from proof trees to proof trees.}
 	\label{tab:proof-trees}
-\end{table}
+\end{figure*}
 
 It is important to note that here the proof trees are done ``in the wrong direction'', as they are written
 top-down instead of bottom-up in the sense that we start by the axioms which are the typing judgements of
@@ -73,7 +73,7 @@ words which create an island node\footnote{Or \emph{post-compose} the proof tree
 	$\f{C}$ effect.} a function which handles the $\f{C}$ effects, which could be seen as adding a node in the
 semantics parse tree from the syntactic parse tree.
 A way to do this would be the following: we pass all functors until finding a $\f{C}$, handle it inside the other
-functors and keep going, on both sides, where $\mathrm{PT}$ is defined in Table \ref{tab:proof-trees}:
+functors and keep going, on both sides, where $\mathrm{PT}$ is defined in Figure \ref{tab:proof-trees}:
 \begin{equation*}
 	\mathrm{PT}\left(
 	\suppfrac{\raisebox{-5pt}{$\cont x_{1}: \f{F}\f{C}\f{F'}\tau$}}{\cont x_{1}: \f{F}\f{F'}\tau}\suchthat
@@ -166,7 +166,7 @@ $\Sigma$ of the usual base alphabet and $\bar{\mC}$ our typing category.
 Since the usual syntactic structure and our combination modes can both be
 expressed by CFGs (or almost, cf Figure \ref{fig:combination-cfg}), our product
 system can be expressed by (almost) a CFG.
-Here, we change our notations from the proof trees of Table
+Here, we change our notations from the proof trees of Figure
 \ref{tab:proof-trees} to have a more explicit grammar of combination modes
 provided below is a rewriting of the proof trees provided earlier, and
 highlights the combination modes in a simpler way, based on
@@ -181,13 +181,12 @@ Now, all the improvements discussed in Section \ref{subsec:rewrite}
 can still be applied here, just a bit differently, as this amounts to reducing
 ambiguity in the grammar.
 
-\begin{figure}
+\begin{figure*}
 	\centering
-	% TODO: expand the grammar below 
-	\inputtikz{combination-cfg}
+	\input{aux/figures/combination-cfg}
 	\caption{Possible Type Combinations in the form of a CFG}
 	\label{fig:combination-cfg}
-\end{figure}
+\end{figure*}
 
 We do not prove here that these typing rules cannot be written in a simpler
 syntactic structure\footnote{It is important to note that for a typing system,
@@ -195,11 +194,28 @@ syntactic structure\footnote{It is important to note that for a typing system,
 easy to see why a regular expression would not work, and since we need trees,
 to express our full system, the best we can do would be to disambiguate the
 grammar.
+A thing to note is that this grammar is not complete but explains how types can
+be combined in a compact form.
+For example, the rules of the form $\combML_{\f{F}} M \gets M\tau, \tau$ are
+rules that provide ways to combine effects from the two inputs in the order we
+want to: we can combine $\f{R}\f{S}\e$ and $\f{C}\f{W}(\e \to \t)$ into
+$\f{R}\f{C}\f{W}\f{S}\t$ with the mode $\combML\combMR\combMR\combML <$ (see
+\cite{bumfordEffectdrivenInterpretationFunctors2025} Example 5.14).
+
+\medskip
+
 Moreover, it is important to note that while we talk about the structure in
 Figure \ref{fig:combination-cfg} as a grammar, it is more of a polynomial
 structure that computes if it is possible or not to combine two types and how.
 While our structure is not actually a CFG, it is easy to see that we can modify
 the CYK algorithm for parsing with a CFG to implement our combination grammar.
+In particular, our grammar is not finite, since there are infinitely many types
+that can be playing the part of $\alpha$ and $\beta$, and infinitely many
+functors that can play the roles for $\f{F}$ and so on.
+The good news is, with our grammar, we always have our functors before our type
+and they are not in the same base alphabet, leading to a system that can choose
+the rules that can be applied in linear time in the length of the sentence, and
+more precisely the number of words below th combinator.
 
 \medskip
 
