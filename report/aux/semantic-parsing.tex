@@ -184,7 +184,7 @@ ambiguity in the grammar.
 \begin{figure*}
 	\centering
 	\input{aux/figures/combination-cfg}
-	\caption{Possible Type Combinations in the form of a CFG}
+	\caption{Possible Type Combinations in the form of a near CFG}
 	\label{fig:combination-cfg}
 \end{figure*}
 
@@ -205,19 +205,16 @@ $\f{R}\f{C}\f{W}\f{S}\t$ with the mode $\combML\combMR\combMR\combML <$ (see
 \medskip
 
 Moreover, it is important to note that while we talk about the structure in
-Figure \ref{fig:combination-cfg} as a grammar, it is more of a polynomial
-structure that computes if it is possible or not to combine two types and how.
-While our structure is not actually a CFG, it is easy to see that we can modify
-the CYK algorithm for parsing with a CFG to implement our combination grammar.
+Figure \ref{fig:combination-cfg} as a grammar, it is more of a structure that
+computes if it is possible or not to combine two types and how.
 In particular, our grammar is not finite, since there are infinitely many types
 that can be playing the part of $\alpha$ and $\beta$, and infinitely many
-functors that can play the roles for $\f{F}$ and so on.
-The good news is, with our grammar, we always have our functors before our type
-and they are not in the same base alphabet, leading to a system that can choose
-the rules that can be applied in linear time in the length of the sentence, and
-more precisely the number of words below th combinator.
-
-\medskip
+functors that can play the roles for $\f{F}$ and so on, but that does not pose
+a problem, as recognizing the general form of a type can be done in constant
+time for the forms that we want to check, given a proper memory representation.
+However, we still need to find a way to render that structure close enough of
+a CFG to keep a polynomial computation time, as that will be the basis for
+Theorem \ref{thm:ptime-parse}.
 
 \begin{thm}
 	\label{thm:ptime-parse}
@@ -239,9 +236,9 @@ more precisely the number of words below th combinator.
 \end{proof}
 
 While we have gone with the hypothesis that we have a CFG for our language,
-any type of structure could work\footnote{Simply, the algorithm will need to be
-	adapted to at least process the CFG for the typing rules.}, as long as it is
-more expressive than a CFG.
+any type of polynomial-time structure could work\footnote{Simply, the algorithm
+	will need to be	adapted to at least process the CFG for the typing rules.},
+as long as it is more expressive than a CFG.
 We will do the following analysis using a CFG since it allows to cover enough of
 the language for our example and for simplicity of describing the process of
 adding the typing CFG, even though some think that English is not a context
@@ -282,26 +279,5 @@ we consider here the duration of the $\beta$-reduction:
 	\left(\lambda x. M\right)N \xrightarrow{\beta} M\left[x / N\right]
 \end{equation*}
 
-\medskip
-
-Let's be a bit more precise on the actual polynomial that hides in our
-algorithm.
-We denote by $S\left(G_{s}, n\right)$ the polynomial measuring the complexity
-of syntactic parsing.
-For example, $S_{CFG}\left(G_{s}, n\right) = \abs{G_{s}}n^{3}$. Again, this is
-actually what we can achieve when considering the improvement on CYK discussed
-earlier, as $G_{tau}$ below is not a CFG.
-We cannot and do not want to achieve a non-ambiguous syntactic structure for
-the English language, so the number of parse trees will be exponential in the
-size of the sentence.
-However, when combining the structures, we get a semantic parse tree in
-$S(\abs{G_{s}}\abs{G_{\tau}}, n)$.
-We then simply need to add $\O\left(n^{3}\right)$ for the normalization of the
-effects and handling.
-Again, we cannot derive in polynomial time all the different trees for the
-handling of effects, so we stay conservative and compute only one diagram.
-Finally, since trivially we have bounded every step of the computation of a
-denotation in linear time in the size of everything, we can finalize the
-computation of the whole equivalent denotation.
 
 

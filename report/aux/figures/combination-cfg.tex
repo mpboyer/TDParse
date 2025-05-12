@@ -1,5 +1,8 @@
 \centering
-\setlength{\columnsep}{-24pt}
+\newdimen\thecolsep
+\thecolsep=-1cm
+\advance\thecolsep by -50pt
+\setlength{\columnsep}{\thecolsep}
 \begin{multicols}{2}
 	\begin{mgrammar}
 		\firstrule{r}{\tau}{}
@@ -45,7 +48,7 @@
 		& \vdots & \\
 		\firstrule{\combMR_{\f{F}} M, \f{F}\alpha \to \beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
 		\firstrule{\combML_{\f{F}} M, \alpha \to \f{F}\beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
-		\firstrule{\combA_{\f{F} M, \f{F}\alpha \to \f{F}\beta \to \f{F}\gamma}}{M, \alpha \to \beta \to \gamma}{}
-		\gskip
+		\firstrule{\combA_{\f{F}} M, \f{F}\alpha \to \f{F}\beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
+		\firstrule{\combUR_{\f{F}} M, \alpha \to (\f{F}\beta \to \beta') \to \gamma}{\alpha \to (\beta \to \beta') \to \gamma}{}
 	\end{mgrammar}
 \end{multicols}
