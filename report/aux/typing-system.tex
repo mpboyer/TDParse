@@ -154,7 +154,7 @@ This is not a definitive rule as we could want to stop at a step in the derivati
 \subsection{Typing Judgements}\label{subsec:judgements}
 To complete this section, Figure \ref{tab:judgements} gives a simple list of different typing composition judgements through which we also re-derzive the subtyping judgement to allow for its implementation.
 \begin{figure}
-	\inputtikz{typing-judgements}
+	\input{aux/figures/typing-judgements}
 	\caption{Typing and Subtyping Judgements}
 	\label{tab:judgements}
 \end{figure}
@@ -179,3 +179,18 @@ As an example, we provide the typing reductions for the classic example: \textsl
 This non-determinism is a component of our language's grammar and semantics: a same sentence can have multiple interpretation without context.
 By the same reasoning we applied on handlers, we choose not to resolve the ambiguity in the parser but we will try in Section \ref{sec:nondet} to reduce it to a minimum.
 Even so some of our derivations will include ways to read from a context (for example the \textbf{Jupiter, a planet} construct), we forget about the definition of the context, or its updating after a sentence, in our first proposition.
+
+\subsection{Decidability}
+The observant reader might have notice (without too much trouble), that our
+typing system is not decidable, because of the \texttt{nat/pure/return} rules
+which may allow for infinite derivations.
+The good news is, this is only an issue when trying to type things that cannot
+be typed.
+Indeed, because of the considerations on handling, and the fact that
+semantically void units will in the end get deleted without any modifications
+on the end meaning, we can just remove the rules that allow for unbounded
+derivations, especially the usage of units of applicatives and natural
+transformations that allow to switch back and forth between two or more
+functors.
+This leads to derivations of sentences to be of bounded height, linear in the
+length of the sentence.

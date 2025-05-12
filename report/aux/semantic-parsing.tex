@@ -12,7 +12,7 @@ First, note that \cite{bumfordEffectdrivenInterpretationFunctors2025} provides a
 semantic trees labelled by sequence of \emph{combinators}.
 In our formalism, this amounts to constructing proof trees by mapping combination modes to their equivalent proof
 trees, inverting if needed the order of the presuppositions to account for the order of the words.
-This is easily done in linear time in the number of nodes in the parsing tree (which is linear in the input size,
+Computing one tree is easily done in linear time in the number of nodes in the parsing tree (which is linear in the input size,
 more on that in the next section), multiplied by a constant whose size depends on the size of the inference
 structure.
 The main idea is that to each node of the tree, both nodes have a type and there is only a finite set of rules
