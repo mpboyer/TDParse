@@ -183,7 +183,7 @@ ambiguity in the grammar.
 
 \begin{figure*}
 	\centering
-	\input{aux/figures/combination-cfg}
+	\inputtikz{combination-cfg}
 	\caption{Possible Type Combinations in the form of a near CFG}
 	\label{fig:combination-cfg}
 \end{figure*}
@@ -196,7 +196,7 @@ to express our full system, the best we can do would be to disambiguate the
 grammar.
 A thing to note is that this grammar is not complete but explains how types can
 be combined in a compact form.
-For example, the rules of the form $\combML_{\f{F}} M \gets M\tau, \tau$ are
+For example, the rules of the form $\combML_{\f{F}} M, \tau' \gets M, \tau$ are
 rules that provide ways to combine effects from the two inputs in the order we
 want to: we can combine $\f{R}\f{S}\e$ and $\f{C}\f{W}(\e \to \t)$ into
 $\f{R}\f{C}\f{W}\f{S}\t$ with the mode $\combML\combMR\combMR\combML <$ (see

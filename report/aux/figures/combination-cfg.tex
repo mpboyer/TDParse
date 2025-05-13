@@ -1,8 +1,5 @@
 \centering
-\newdimen\thecolsep
-\thecolsep=-1cm
-\advance\thecolsep by -50pt
-\setlength{\columnsep}{\thecolsep}
+\setlength{\columnsep}{-1cm}
 \begin{multicols}{2}
 	\begin{mgrammar}
 		\firstrule{r}{\tau}{}
@@ -34,21 +31,31 @@
 		\grule{\combA, M}{\tt Struct}
 		\grule{\combJ, M}{\tt join}
 		\grule{\combC, M}{\tt counit}
-		\grule{ER, M \enspace|\enspace EL, M}{\tt eject}
-		\grule{DN, M}{\tt closure}
+		\grule{\combER, M \enspace|\enspace \combEL, M}{\tt eject}
+		\grule{\combDN, M}{\tt closure}
 	\end{mgrammar}
 
-	\def\arraystretch{1.2}
 	\begin{mgrammar}
 		\firstrule{\sobj}{M, r}{}
 		\grule{>, (\alpha\to \beta) \to \alpha \to \beta}{}
 		\grule{<, \alpha \to (\alpha \to \beta) \to \beta}{}
 		\grule{\wedge, (\alpha \to \t) \to (\alpha \to \t) \to (\alpha \to \t)}{}
 		\grule{\vee, (\alpha \to \t) \to (\alpha \to \t) \to (\alpha \to \t)}{}
-		& \vdots & \\
+		\gskip
+		\gskip
+		\gskip
+	\end{mgrammar}
+	\def\arraystretch{1.2}
+	\begin{mgrammar}
 		\firstrule{\combMR_{\f{F}} M, \f{F}\alpha \to \beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
 		\firstrule{\combML_{\f{F}} M, \alpha \to \f{F}\beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
 		\firstrule{\combA_{\f{F}} M, \f{F}\alpha \to \f{F}\beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
-		\firstrule{\combUR_{\f{F}} M, \alpha \to (\f{F}\beta \to \beta') \to \gamma}{\alpha \to (\beta \to \beta') \to \gamma}{}
+		\firstrule{\combUR_{\f{F}} M, \alpha \to (\f{F}\beta \to \beta') \to \gamma}{M, \alpha \to (\beta \to \beta') \to \gamma}{}
+		\firstrule{\combUL_{\f{F}} M, (\f{F}\beta \to \beta') \to \alpha \to \gamma}{M, (\beta \to \beta') \to \alpha \to \gamma}{}
+		\firstrule{\combJ_{\f{F}} M, \alpha \to \beta \to \f{F}\gamma}{M, \alpha \to \beta \f{F}\f{F}\gamma}{}
+		\firstrule{\combC_{\f{L}\f{R}} M, \f{L}\alpha \to \f{R}\beta \to \gamma}{M, \alpha \to \beta \to \gamma}{}
+		\firstrule{\combER_{\f{R}} M, (\alpha \to \f{R}\alpha') \to \beta \to \gamma}{M, \f{R}(\alpha \to \alpha')  \to \beta \to \gamma}{}
+		\firstrule{\combEL_{\f{R}} M, \alpha \to (\beta \to \f{R}\beta') \to \gamma}{M, \alpha \to \f{R}(\beta \to \beta') \to \gamma}{}
+		\firstrule{\combDN_{\f{C}} M, \alpha \to \beta \to \gamma}{\alpha \to \beta \to \f{C}_{\gamma}\gamma}{}
 	\end{mgrammar}
 \end{multicols}
