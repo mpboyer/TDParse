@@ -1,31 +1,22 @@
 \centering
 \setlength{\columnsep}{-1cm}
 \begin{multicols}{2}
+	\def\arraystretch{1.2}
 	\begin{mgrammar}
-		\firstrule{r}{\tau}{}
-		\grule{T}{}
-		\gskip
-		\firstrule{\tau}{\pi}{}
-		\grule{\phi}{}
+		\firstrule{\tau}{\tau \Rightarrow \tau}{}
+		\grule{\scalar{\tau, \tau}}{}
 		\grule{\bar{\tau}}{}
+		\grule{\mathrm{F}\tau}{}
 		\gskip
-		\firstrule{\pi}{\scalar{r, r}}{}
+		\firstrule{\bar{\tau}}{\t \enspace|\enspace \e \enspace|\enspace \cdots}{}
 		\gskip
-		\firstrule{\phi}{r \to r}{}
+		\firstrule{\mathrm{F}}{\mathcal{F}\left(\mL\right)^{*}}{}
 		\gskip
-		\firstrule{\bar{\tau}}{\e}{}
-		\grule{\t}{}
-		\grule{\vdots}{}
-		\gskip
-		\firstrule{T}{F \tau}{}
-		\gskip
-		\firstrule{F}{\mathcal{F}\left(\mL\right)^{*}}{}
-		\gskip
+		\firstrule{\text{Tree}}{\tau, \tau}{}
 	\end{mgrammar}
 
+	\def\arraystretch{1}
 	\begin{mgrammar}
-		\firstrule{\text{Tree}}{\tau, \tau}{}
-		\gskip
 		\firstrule{\text{SM}}{\combML \enspace|\enspace \combMR}{\fmap}
 		\grule{\combUL \enspace|\enspace \combUR}{\tt pure}
 		\grule{\combA}{\tt Struct}
@@ -41,44 +32,28 @@
 	\end{mgrammar}
 \end{multicols}
 
-\def\arraystretch{1.5}
-\begin{mgrammar}
-	\firstrule{\combMR_{\f{F}} (\alpha, \beta)}{\f{F}\alpha, \beta}{}
-	\firstrule{\combML_{\f{F}} (\alpha, \beta)}{\alpha, \f{F}\beta}{}
-	\firstrule{\combA_{\f{F}} (\alpha, \beta)}{\f{F}\alpha, \f{F}\beta}{}
-	\firstrule{\combUR_{\f{F}} (\alpha \to \alpha', \beta)}{\f{F}\alpha\to \alpha', \beta}{}
-	\firstrule{\combUL_{\f{F}} (\alpha, \beta\to \beta')}{\alpha, \f{F}\beta \to \beta'}{}
-	\firstrule{\combC_{\f{L}\f{R}} (\f{L} \alpha, \f{R}\beta)}{(\alpha, \beta)}{}
-	\firstrule{\combER_{\f{R}} (\f{R}(\alpha \to \alpha'), \beta)}{\alpha\to \f{R}\alpha', \beta}{}
-	\firstrule{\combEL_{\f{R}} (\alpha, \f{R}(\beta \to \beta'))}{\alpha, \beta\to \f{R}\beta'}{}
-	\gskip
-	\firstrule{>, \beta}{(\alpha\to \beta), \alpha}{}
-	\firstrule{<, \beta}{\alpha, (\alpha \to \beta)}{}
-	\firstrule{\wedge, \alpha \to \t}{(\alpha \to \t), (\alpha \to \t)}{}
-	\firstrule{\vee, \alpha \to \t}{(\alpha \to \t), (\alpha \to \t)}{}
-	\gskip
-	\firstrule{\combJ_{\f{F}} \f{F}\tau}{\f{F}\f{F}\tau}{}
-	\firstrule{\combDN_{\f{C}} \tau}{\f{C}_{\tau}\tau}{}
-\end{mgrammar}
+\begin{multicols}{2}
+	\def\arraystretch{1.5}
+	\begin{mgrammar}
+		\firstrule{\combMR_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \beta}{}
+		\firstrule{\combML_{\f{F}} \left(\alpha, \beta\right)}{\alpha, \f{F}\beta}{}
+		\firstrule{\combA_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \f{F}\beta}{}
+		\firstrule{\combUR_{\f{F}} \left(\alpha \to \alpha', \beta\right)}{\f{F}\alpha\to \alpha', \beta}{}
+		\firstrule{\combUL_{\f{F}} \left(\alpha, \beta\to \beta'\right)}{\alpha, \f{F}\beta \to \beta'}{}
+		\firstrule{\combC_{\f{L}\f{R}} \left(\f{L} \alpha, \f{R}\beta\right)}{\left(\alpha, \beta\right)}{}
+		\firstrule{\combER_{\f{R}} \left(\f{R}\left(\alpha \to \alpha'\right), \beta\right)}{\alpha\to \f{R}\alpha', \beta}{}
+		\firstrule{\combEL_{\f{R}} \left(\alpha, \f{R}\left(\beta \to \beta'\right)\right)}{\alpha, \beta\to \f{R}\beta'}{}
+	\end{mgrammar}
 
-\medskip
-
-\begin{mgrammar}
-	\firstrule{\sobj}{M, r}{}
-\end{mgrammar}
-
-\medskip
-
-\def\arraystretch{1.2}
-\begin{mgrammar}
-	\firstrule{\combMR_{\f{F}} M, \f{F}\alpha \to \beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
-	\firstrule{\combML_{\f{F}} M, \alpha \to \f{F}\beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
-	\firstrule{\combA_{\f{F}} M, \f{F}\alpha \to \f{F}\beta \to \f{F}\gamma}{M, \alpha \to \beta \to \gamma}{}
-	\firstrule{\combUR_{\f{F}} M, \alpha \to (\f{F}\beta \to \beta') \to \gamma}{M, \alpha \to (\beta \to \beta') \to \gamma}{}
-	\firstrule{\combUL_{\f{F}} M, (\f{F}\beta \to \beta') \to \alpha \to \gamma}{M, (\beta \to \beta') \to \alpha \to \gamma}{}
-	\firstrule{\combJ_{\f{F}} M, \alpha \to \beta \to \f{F}\gamma}{M, \alpha \to \beta \f{F}\f{F}\gamma}{}
-	\firstrule{\combC_{\f{L}\f{R}} M, \f{L}\alpha \to \f{R}\beta \to \gamma}{M, \alpha \to \beta \to \gamma}{}
-	\firstrule{\combER_{\f{R}} M, (\alpha \to \f{R}\alpha') \to \beta \to \gamma}{M, \f{R}(\alpha \to \alpha')  \to \beta \to \gamma}{}
-	\firstrule{\combEL_{\f{R}} M, \alpha \to (\beta \to \f{R}\beta') \to \gamma}{M, \alpha \to \f{R}(\beta \to \beta') \to \gamma}{}
-	\firstrule{\combDN_{\f{C}} M, \alpha \to \beta \to \gamma}{\alpha \to \beta \to \f{C}_{\gamma}\gamma}{}
-\end{mgrammar}
+	\def\arraystretch{1.5}
+	\begin{mgrammar}
+		\gskip
+		\firstrule{>, \beta}{\left(\alpha\to \beta\right), \alpha}{}
+		\firstrule{<, \beta}{\alpha, \left(\alpha \to \beta\right)}{}
+		\firstrule{\wedge, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
+		\firstrule{\vee, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
+		\gskip
+		\firstrule{\combJ_{\f{F}}\  \f{F}\tau}{\f{F}\f{F}\tau}{}
+		\firstrule{\combDN_{\f{C}}\  \tau}{\f{C}_{\tau}\tau}{}
+	\end{mgrammar}
+\end{multicols}

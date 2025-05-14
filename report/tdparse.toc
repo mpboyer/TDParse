@@ -27,14 +27,14 @@
 \contentsline {subsection}{\numberline {3.2}Syntactic-Semantic Parsing}{16}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Language Translation}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Syntax}{18}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Lambda-Calculus}{19}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Types of Syntax}{19}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Lexicon: Semantic Denotations for Words}{19}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2}Lambda-Calculus}{18}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Types of Syntax}{18}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Lexicon: Semantic Denotations for Words}{18}{subsubsection.4.2.2}%
 \contentsline {subsubsection}{\numberline {4.2.3}Effects of the Language}{19}{subsubsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.4}Modality, Plurality, Aspect, Tense}{20}{subsubsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.3}Other Representation of Concepts}{21}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Manifold Representation}{21}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Vector Representation}{21}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.4}Modality, Plurality, Aspect, Tense}{19}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Other Representation of Concepts}{20}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Manifold Representation}{20}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Vector Representation}{20}{subsubsection.4.3.2}%
 \contentsline {subsubsection}{\numberline {4.3.3}Probabilistic Monad}{21}{subsubsection.4.3.3}%
 \contentsline {section}{\numberline {A}Bibliography}{22}{appendix.A}%
 \contentsline {section}{\numberline {B}Other Considered Things}{23}{appendix.B}%
