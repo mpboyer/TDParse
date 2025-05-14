@@ -212,9 +212,13 @@ that can be playing the part of $\alpha$ and $\beta$, and infinitely many
 functors that can play the roles for $\f{F}$ and so on, but that does not pose
 a problem, as recognizing the general form of a type can be done in constant
 time for the forms that we want to check, given a proper memory representation.
-However, we still need to find a way to render that structure close enough of
-a CFG to keep a polynomial computation time, as that will be the basis for
-Theorem \ref{thm:ptime-parse}.
+Furthermore, it can easily be rendered into something that looks like a
+Chomsky Normal Form for a CFG and allows us to integrate this in the CYK
+algorithm, and even get a correct time complexity.
+Since our grammar is not actually finite, the modified version of CYK that
+parses only the types (not the full system) will have a complexity in the
+size of $\mathcal{F}\left(\mL\right)$ that is linear, albeit with a not so
+small constant factor.
 
 \begin{thm}
 	\label{thm:ptime-parse}

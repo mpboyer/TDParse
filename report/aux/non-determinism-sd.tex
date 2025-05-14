@@ -297,8 +297,11 @@ point of our theorem.
 	we strictly decrease the number of $2$-cells with each reduction.
 	Moreover, our claim that the reduction process is confluent is obvious
 	from the associativity of Equation \eqref{eq:muax} and the fact the other
-	equations delete node and simply delete equations, completing our proof
-	of Theorem \ref{thm:confluence}.
+	equations delete node and simply delete equations.
+	Since right reductions do not modify the equational reductions, and thus
+	right reducing an equational normal form yields an equational normal form,
+	combining the two systems is done without issue, completing our proof of
+	Theorem \ref{thm:confluence}.
 \end{proof}
 
 
