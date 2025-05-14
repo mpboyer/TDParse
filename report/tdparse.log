@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  14 MAY 2025 09:57
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  14 MAY 2025 12:10
  system commands enabled.
 **tdparse.tex
 (./tdparse.tex
@@ -2358,7 +2358,7 @@ contour: Using real outline for `\tt \color {vulm}S' on input line 229.
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.1
 .1'
 Non-PDF special ignored!
-Non-PDF special ignored!<./luatex.UQMQHY/1.png>]
+Non-PDF special ignored!<./luatex.hLAOc7/1.png>]
 
 [6]) (./aux/non-determinism-sd.tex
 
@@ -2458,7 +2458,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
 
-[10<./luatex.UQMQHY/2.png><./luatex.UQMQHY/3.png>]
+[10<./luatex.hLAOc7/2.png><./luatex.hLAOc7/3.png>]
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
 
@@ -3065,49 +3065,79 @@ contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 16.
 
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 17.
 
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 42.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 42.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 42.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 43.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 43.
-
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 43.
-
+contour: Using real outline for `\tt \color {vulm}F' on input line 46.
+contour: Using real outline for `\tt \color {vulm}F' on input line 46.
+contour: Using real outline for `\tt \color {vulm}F' on input line 47.
+contour: Using real outline for `\tt \color {vulm}F' on input line 47.
+contour: Using real outline for `\tt \color {vulm}F' on input line 48.
+contour: Using real outline for `\tt \color {vulm}F' on input line 48.
+contour: Using real outline for `\tt \color {vulm}F' on input line 48.
+contour: Using real outline for `\tt \color {vulm}F' on input line 49.
+contour: Using real outline for `\tt \color {vulm}F' on input line 49.
 contour: Using real outline for `\tt \color {vulm}F' on input line 50.
 contour: Using real outline for `\tt \color {vulm}F' on input line 50.
-contour: Using real outline for `\tt \color {vulm}F' on input line 50.
-contour: Using real outline for `\tt \color {vulm}F' on input line 51.
-contour: Using real outline for `\tt \color {vulm}F' on input line 51.
-contour: Using real outline for `\tt \color {vulm}F' on input line 51.
-contour: Using real outline for `\tt \color {vulm}F' on input line 52.
-contour: Using real outline for `\tt \color {vulm}F' on input line 52.
-contour: Using real outline for `\tt \color {vulm}F' on input line 52.
-contour: Using real outline for `\tt \color {vulm}F' on input line 52.
-contour: Using real outline for `\tt \color {vulm}F' on input line 53.
-contour: Using real outline for `\tt \color {vulm}F' on input line 53.
-contour: Using real outline for `\tt \color {vulm}F' on input line 54.
-contour: Using real outline for `\tt \color {vulm}F' on input line 54.
-contour: Using real outline for `\tt \color {vulm}F' on input line 55.
-contour: Using real outline for `\tt \color {vulm}F' on input line 55.
-contour: Using real outline for `\tt \color {vulm}F' on input line 55.
-contour: Using real outline for `\tt \color {vulm}F' on input line 55.
-contour: Using real outline for `\tt \color {vulm}L' on input line 56.
-contour: Using real outline for `\tt \color {vulm}R' on input line 56.
-contour: Using real outline for `\tt \color {vulm}L' on input line 56.
-contour: Using real outline for `\tt \color {vulm}R' on input line 56.
-contour: Using real outline for `\tt \color {vulm}R' on input line 57.
-contour: Using real outline for `\tt \color {vulm}R' on input line 57.
-contour: Using real outline for `\tt \color {vulm}R' on input line 57.
-contour: Using real outline for `\tt \color {vulm}R' on input line 58.
-contour: Using real outline for `\tt \color {vulm}R' on input line 58.
-contour: Using real outline for `\tt \color {vulm}R' on input line 58.
-contour: Using real outline for `\tt \color {vulm}C' on input line 59.
-contour: Using real outline for `\tt \color {vulm}C' on input line 59.
+contour: Using real outline for `\tt \color {vulm}L' on input line 51.
+contour: Using real outline for `\tt \color {vulm}R' on input line 51.
+contour: Using real outline for `\tt \color {vulm}L' on input line 51.
+contour: Using real outline for `\tt \color {vulm}R' on input line 51.
+contour: Using real outline for `\tt \color {vulm}R' on input line 52.
+contour: Using real outline for `\tt \color {vulm}R' on input line 52.
+contour: Using real outline for `\tt \color {vulm}R' on input line 52.
+contour: Using real outline for `\tt \color {vulm}R' on input line 53.
+contour: Using real outline for `\tt \color {vulm}R' on input line 53.
+contour: Using real outline for `\tt \color {vulm}R' on input line 53.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 57.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 57.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 57.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 58.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 58.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 58.
+
+contour: Using real outline for `\tt \color {vulm}F' on input line 60.
+contour: Using real outline for `\tt \color {vulm}F' on input line 60.
+contour: Using real outline for `\tt \color {vulm}F' on input line 60.
+contour: Using real outline for `\tt \color {vulm}F' on input line 60.
+contour: Using real outline for `\tt \color {vulm}C' on input line 61.
+contour: Using real outline for `\tt \color {vulm}C' on input line 61.
+contour: Using real outline for `\tt \color {vulm}F' on input line 74.
+contour: Using real outline for `\tt \color {vulm}F' on input line 74.
+contour: Using real outline for `\tt \color {vulm}F' on input line 74.
+contour: Using real outline for `\tt \color {vulm}F' on input line 75.
+contour: Using real outline for `\tt \color {vulm}F' on input line 75.
+contour: Using real outline for `\tt \color {vulm}F' on input line 75.
+contour: Using real outline for `\tt \color {vulm}F' on input line 76.
+contour: Using real outline for `\tt \color {vulm}F' on input line 76.
+contour: Using real outline for `\tt \color {vulm}F' on input line 76.
+contour: Using real outline for `\tt \color {vulm}F' on input line 76.
+contour: Using real outline for `\tt \color {vulm}F' on input line 77.
+contour: Using real outline for `\tt \color {vulm}F' on input line 77.
+contour: Using real outline for `\tt \color {vulm}F' on input line 78.
+contour: Using real outline for `\tt \color {vulm}F' on input line 78.
+contour: Using real outline for `\tt \color {vulm}F' on input line 79.
+contour: Using real outline for `\tt \color {vulm}F' on input line 79.
+contour: Using real outline for `\tt \color {vulm}F' on input line 79.
+contour: Using real outline for `\tt \color {vulm}F' on input line 79.
+contour: Using real outline for `\tt \color {vulm}L' on input line 80.
+contour: Using real outline for `\tt \color {vulm}R' on input line 80.
+contour: Using real outline for `\tt \color {vulm}L' on input line 80.
+contour: Using real outline for `\tt \color {vulm}R' on input line 80.
+contour: Using real outline for `\tt \color {vulm}R' on input line 81.
+contour: Using real outline for `\tt \color {vulm}R' on input line 81.
+contour: Using real outline for `\tt \color {vulm}R' on input line 81.
+contour: Using real outline for `\tt \color {vulm}R' on input line 82.
+contour: Using real outline for `\tt \color {vulm}R' on input line 82.
+contour: Using real outline for `\tt \color {vulm}R' on input line 82.
+contour: Using real outline for `\tt \color {vulm}C' on input line 83.
+contour: Using real outline for `\tt \color {vulm}C' on input line 83.
 )
+
+LaTeX Warning: Float too large for page by 66.12688pt on input line 189.
+
 contour: Using real outline for `\tt \color {vulm}F' on input line 199.
 contour: Using real outline for `\tt \color {vulm}R' on input line 201.
 contour: Using real outline for `\tt \color {vulm}S' on input line 201.
@@ -3162,6 +3192,60 @@ Non-PDF special ignored!
 Non-PDF special ignored!]
 
 [17
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -3391,8 +3475,8 @@ Here is how much of LuaTeX's memory you used:
    67 hlist, 2 vlist, 2 rule, 16 math, 158 glue, 4 kern, 9 glyph, 494 attribute,
  123 glue_spec, 408 attribute_list, 2 write, 194 pdf_literal, 5 pdf_action, 20 p
 df_colorstack nodes
-   avail lists: 1:4,2:6867,3:2012,4:785,5:1070,6:123,7:12674,8:97,9:2834,10:21,1
-1:735
+   avail lists: 1:4,2:6868,3:2012,4:784,5:928,6:123,7:13249,8:97,9:2834,10:21,11
+:735
  106217 multiletter control sequences out of 65536+600000
  131 fonts using 14765279 bytes
  119i,39n,127p,733b,1282s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3438,7 +3522,7 @@ f-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts
 t/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/typ
 e1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msam10.pfb>
-Output written on tdparse.pdf (23 pages, 474878 bytes).
+Output written on tdparse.pdf (23 pages, 475839 bytes).
 
 PDF statistics: 896 PDF objects out of 1000 (max. 8388607)
  733 compressed objects within 8 object streams
