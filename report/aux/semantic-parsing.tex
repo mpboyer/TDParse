@@ -187,7 +187,9 @@ algorithm, and even get a correct time complexity.
 Since our grammar is not actually finite, the modified version of CYK that
 parses only the types (not the full system) will have a complexity in the
 size of $\mathcal{F}\left(\mL\right)$ that is linear, albeit with a not so
-small constant factor.
+small constant factor, which comes from the fact that our grammar's size is
+linear in $\abs{\mathcal{F}\left(\mL\right)}$.
+
 \begin{thm}
 	\label{thm:ptime-parse}
 	Semantic parsing of a sentence is polynomial in the length of the	sentence
@@ -262,42 +264,71 @@ translate into reductions in the grammar.
 
 \medskip
 
+When considering the grammar version of the semantic system, the reductions
+written below cannot be done when using only one step at a time.
+To get around this, a simple way might be to expand the size of the grammar to
+consider reductions two at a time, by adding an intermediate non-terminal.
+Then, while the size of the grammar becomes quadratic in
+$\abs{\mathcal{F}\left(\mL\right)}$, because this also reduces the number of
+reductions needed to get the derivations, this compensates the increase, and
+actually reduces the time complexity when the reducing the number of rules
+after equivalence.
+Obviously the same reasoning applies when considering reductions of length $3$,
+$4$ and more.
+We really just need to consider the same set of reductions that the one
+proposed below.
+
+\medskip
+
 First, let's consider the reductions proposed in Section \ref{sec:nondet}.
-Those define normal forms under Theorem \ref{thm:confluence} and thus we can use those to reduce the number
-of trees.
-Indeed, we usually want to reduce the number of effects by first using the rules \emph{inside} the language,
-understand, the adjunction co-unit and monadic join.
+Those define normal forms under Theorem \ref{thm:confluence} and thus we can
+use those to reduce the number of trees.
+Indeed, we usually want to reduce the number of effects by first using the
+rules \emph{inside} the language, understand, the adjunction co-unit and
+monadic join.
 Thus, when we have a presupposition of the form:
 \begin{equation*}
-	\suppfrac{\blank}{\cont x: \f{M}\f{M}\tau} \poulpe \text{or} \poulpe \suppfrac{\blank}{\cont x: RL\tau}
+	\suppfrac{\blank}{\cont x: \f{M}\f{M}\tau} \poulpe \text{or} \poulpe
+	\suppfrac{\blank}{\cont x: RL\tau}
 \end{equation*}
-we always simplify it directly, as not always doing it would propagate multiple trees.
-This in turn means we always verify the derivational rules we set up in the previous section for the join
-equations of the monad.
+we always simplify it directly, as not always doing it would propagate
+multiple trees.
+This in turn means we always verify the derivational rules we set up in the
+previous section for the join equations of the monad.
 
 \medskip
 
-Secondly, while there is no way to reduce the branching proposed in the previous section since they end in
-completely different reductions, there is another case in which two different reductions arise:
+Secondly, while there is no way to reduce the branching proposed in the
+previous section since they end in completely different reductions, there is
+another case in which two different reductions arise:
 \begin{equation*}
-	\PT{\blank}{\cont x: \f{F}\tau_{1}} \poulpe \text{and} \poulpe \PT{\blank}{\cont y: \f{G}\tau_{2}}
+	\PT{\blank}{\cont x: \f{F}\tau_{1}} \poulpe \text{and} \poulpe
+	\PT{\blank}{\cont y: \f{G}\tau_{2}}
 \end{equation*}
-Indeed, in that case we could either get a result with effects $\f{F}\f{G}$ or with effects $\f{G}\f{F}$.
-In general those effects are not the same, but if they happen to be, which trivially will be the case when one of
-the effects is external, the plural or islands functors for example.
-When the two functors commute, the order of application does not matter and thus we choose to get the outer
-effect the one of the left side of the combinator.
+Indeed, in that case we could either get a result with effects $\f{F}\f{G}$ or
+with effects $\f{G}\f{F}$.
+In general those effects are not the same, but if they happen to be, which
+trivially will be the case when one of the effects is external, the plural or
+islands functors for example.
+When the two functors commute, the order of application does not matter and
+thus we choose to get the outer effect the one of the left side of the
+combinator.
 
 \medskip
 
-The observant reader might have noticed that in the definition of $PT$, we actually do not cover all the possible
-cases, as in particular, we have not included the option of using the unit of an applicative/monad alone, as it
+The observant reader might have noticed that in the definition of $PT$, we
+actually do not cover all the possible cases, as in particular, we have not
+included the option of using the unit of an applicative/monad alone, as it
 actually would reduce to equivalent cases most of times.
-Note moreover that this is simply of scheme to apply typing rules to a syntactic derivation, but that this will not
-be enough to actually gain all reductions possible.
-This will actually happen once a confluent reduction scheme is provided for the denotations.
-When this is done, we can combine the reduction schemes for effects along with the one for denotation and the one
-for combinations in one large reduction scheme.
-Indeed, trivally, the tensor product of confluent reduction schemes forms a confluent reduction scheme, whose maximal
-reduction length is the sum of the maximal reduction lengths\footnote{Actually it is at most that, but that does not
-	really matter.}.
+Note moreover that this is simply of scheme to apply typing rules to a
+syntactic derivation, but that this will not be enough to actually gain all
+reductions possible.
+This will actually happen once a confluent reduction scheme is provided for the
+denotations.
+When this is done, we can combine the reduction schemes for effects along with
+the one for denotation and the one for combinations in one large reduction
+scheme.
+Indeed, trivally, the tensor product of confluent reduction schemes forms a
+confluent reduction scheme, whose maximal reduction length is the sum of the
+maximal reduction lengths\footnote{Actually it is at most that, but that does
+	not	really matter.}.
