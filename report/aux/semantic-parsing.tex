@@ -28,13 +28,13 @@ set of proof trees for the union of cases is the union of set of proof trees for
 Remember again that the order of presuppositions for an inference structure does not matter, so always we have the
 other order of arguments available.
 
-\begin{figure*}
+\begin{figure}
 	\centering
 	\input{aux/figures/match-judgement}
 	\caption{List of possible combinations for different presuppositions for inputs, as a definition of a function
 		$PT$ from proof trees to proof trees.}
 	\label{tab:proof-trees}
-\end{figure*}
+\end{figure}
 
 It is important to note that here the proof trees are done ``in the wrong direction'', as they are written
 top-down instead of bottom-up in the sense that we start by the axioms which are the typing judgements of
@@ -129,21 +129,22 @@ Now, all the improvements discussed in Section \ref{subsec:rewrite}
 can still be applied here, just a bit differently, as this amounts to reducing
 ambiguity in the grammar.
 
-\begin{figure*}
+\begin{figure}
 	\centering
 	\input{aux/figures/combination-cfg}
 	\caption{Possible Type Combinations in the form of a near CFG}
 	\label{fig:combination-cfg}
-\end{figure*}
+\end{figure}
 
-This grammar works in four major sections:
+This grammar works in five major sections:
 \begin{enumerate}
 	\item We reintroduce the grammar defining the type and effect system.
 	\item We introduce a structure for the semantic parse trees and their labels,
 	      the combination modes from
 	      \newcite{bumfordEffectdrivenInterpretationFunctors2025}.
 	\item We introduce rules for basic type combinations.
-	\item We introduce rules for higher-order type combinators.
+	\item We introduce rules for higher-order unary type combinators.
+	\item We introduce rules for higher-order binary type combinators.
 \end{enumerate}
 The idea of the \emph{grammatical} reduction is that from the flat sentence,
 we create a full parse tree as a sequence of types $\tau$.
@@ -159,10 +160,10 @@ combinators.
 
 We do not prove here that these typing rules cannot be written in a simpler
 syntactic structure\footnote{It is important to note that for a typing system,
-	we only have syntactic-like rules that allow, or not, to combine types.}, but it is
-easy to see why a regular expression would not work, and since we need trees,
-to express our full system, the best we can do would be to disambiguate the
-grammar.
+	we only have syntactic-like rules that allow, or not, to combine types.}, but
+it is easy to see why a regular expression would not work, and since we need
+trees, to express our full system, the best we can do would be to disambiguate
+the grammar.
 A thing to note is that this grammar is not complete but explains how types can
 be combined in a compact form.
 For example, the rules of the form $\combML_{\f{F}} M, \tau' \gets M, \tau$ are
@@ -186,9 +187,9 @@ Chomsky Normal Form for a CFG and allows us to integrate this in the CYK
 algorithm, and even get a correct time complexity.
 Since our grammar is not actually finite, the modified version of CYK that
 parses only the types (not the full system) will have a complexity in the
-size of $\mathcal{F}\left(\mL\right)$ that is linear, albeit with a not so
+size of $\mFunc\left(\mL\right)$ that is linear, albeit with a not so
 small constant factor, which comes from the fact that our grammar's size is
-linear in $\abs{\mathcal{F}\left(\mL\right)}$.
+linear in $\abs{\mFunc\left(\mL\right)}$.
 
 \begin{thm}
 	\label{thm:ptime-parse}
@@ -269,7 +270,7 @@ written below cannot be done when using only one step at a time.
 To get around this, a simple way might be to expand the size of the grammar to
 consider reductions two at a time, by adding an intermediate non-terminal.
 Then, while the size of the grammar becomes quadratic in
-$\abs{\mathcal{F}\left(\mL\right)}$, because this also reduces the number of
+$\abs{\mFunc\left(\mL\right)}$, because this also reduces the number of
 reductions needed to get the derivations, this compensates the increase, and
 actually reduces the time complexity when the reducing the number of rules
 after equivalence.
@@ -288,8 +289,8 @@ rules \emph{inside} the language, understand, the adjunction co-unit and
 monadic join.
 Thus, when we have a presupposition of the form:
 \begin{equation*}
-	\suppfrac{\blank}{\cont x: \f{M}\f{M}\tau} \poulpe \text{or} \poulpe
-	\suppfrac{\blank}{\cont x: RL\tau}
+	\PT{\blank}{\cont x: \f{M}\f{M}\tau} \poulpe \text{or} \poulpe
+	\PT{\blank}{\cont x: RL\tau}
 \end{equation*}
 we always simplify it directly, as not always doing it would propagate
 multiple trees.
@@ -316,13 +317,45 @@ combinator.
 
 \medskip
 
-The observant reader might have noticed that in the definition of $PT$, we
-actually do not cover all the possible cases, as in particular, we have not
-included the option of using the unit of an applicative/monad alone, as it
-actually would reduce to equivalent cases most of times.
-Note moreover that this is simply of scheme to apply typing rules to a
-syntactic derivation, but that this will not be enough to actually gain all
-reductions possible.
+Thirdly, there are modes that clearly encompass other ones\footnote{Here we use
+	the grammar notation for ease of explanation}.
+One should not use mode $\combMR$ or $\combDN \combMR$ instead of $\combUR$
+and the same goes for the left side, because the two derivations yield
+equivalent results.
+Same things can be said for certain other derivations containing the lowering
+and co-unit combinators.
+
+We use $\combDN$ instead of the following, in all derivations:
+\begin{itemize}
+	\item $\left\{ m_{\Id}, \combDN, m_{\Id}\right\}$ where
+	      $m \in \{\combMR, \combML\}$
+	\item $\combML_{\Id}, \combDN, \combMR_{\Id}$
+	\item $\combA_{\Id}, D, \combMR_{\Id}$, $\combML_{\Id}, D, \combA_{\Id}$
+	\item $\combC$
+\end{itemize}
+We use $\combJ$ instead of the following,
+for $j \in \{\epsilon, \combJ_{\f{F}}\}$
+\begin{itemize}
+	\item $\left\{m_{\f{F}}, j, m_{\f{F}}\right\}$ where
+	      $m \in \{\combMR, \combML\}$
+	\item $\combML_{\f{F}}, j, \combMR_{\f{f}}$
+	\item $\combA_{\f{F}}, j, \combMR_{\f{F}}$,
+	      $\combML_{\f{F}}, j, \combA_{\f{F}}$
+	\item $k, \combC$ for $k \in \{\epsilon, \combA_{\f{F}}\}$
+	\item If $\f{F}$ is commutative as a monad:
+	      \begin{itemize}
+		      \item $\combMR_{\f{F}}, \combA_{\f{F}}$
+		      \item $\combA_{\f{F}}, \combML_{\f{F}}$
+		      \item $\combMR_{\f{F}}, j, \combML_{\f{F}}$
+		      \item $\combA_{\f{F}}, j, \combA_{\f{F}}$
+	      \end{itemize}
+\end{itemize}
+
+\medskip
+
+The observant reader might have noticed that this is simply a scheme to apply
+typing rules to a syntactic derivation, but that this will not be enough to
+actually gain all reductions possible, .
 This will actually happen once a confluent reduction scheme is provided for the
 denotations.
 When this is done, we can combine the reduction schemes for effects along with
@@ -332,3 +365,4 @@ Indeed, trivally, the tensor product of confluent reduction schemes forms a
 confluent reduction scheme, whose maximal reduction length is the sum of the
 maximal reduction lengths\footnote{Actually it is at most that, but that does
 	not	really matter.}.
+

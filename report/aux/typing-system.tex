@@ -323,12 +323,12 @@ Furthermore, note that the App rule is the \texttt{fmap} rule for the identity f
 Using these typing rules for our combinators, it is important to see that our grammar will still be ambiguous and thus our reduction process will be non-deterministic.
 As an example, we provide the typing reductions for the classic example: \textsl{The man sees the girl using a telescope} in Figure \ref{fig:ud}.
 
-\begin{figure*}
+\begin{figure}
 	\centering
 	\inputtikz{parse-tree-ex}
 	\caption{Parsing trees for the typing of \textsl{The man sees the girl using a telescope}.}
 	\label{fig:ud}
-\end{figure*}
+\end{figure}
 
 This non-determinism is a component of our language's grammar and semantics: a same sentence can have multiple interpretation without context.
 By the same reasoning we applied on handlers, we choose not to resolve the ambiguity in the parser but we will try in Section \ref{sec:nondet} to reduce it to a minimum.
