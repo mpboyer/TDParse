@@ -325,31 +325,37 @@ equivalent results.
 Same things can be said for certain other derivations containing the lowering
 and co-unit combinators.
 
-We use $\combDN$ instead of the following, in all derivations:
-\begin{itemize}
-	\item $\left\{ m_{\Id}, \combDN, m_{\Id}\right\}$ where
-	      $m \in \{\combMR, \combML\}$
-	\item $\combML_{\Id}, \combDN, \combMR_{\Id}$
-	\item $\combA_{\Id}, D, \combMR_{\Id}$, $\combML_{\Id}, D, \combA_{\Id}$
-	\item $\combC$
-\end{itemize}
-We use $\combJ$ instead of the following,
+\noindent We use $\combDN$ instead of the following, in all derivations:
+% TODO: add a proof of the claim that those are equivalent. 
+\begin{multicols}{2}
+	\begin{itemize}
+		\item $m_{\Id}, \combDN, m_{\Id}$ where
+		      $m \in \{\combMR, \combML\}$
+		\item $\combML_{\Id}, \combDN, \combMR_{\Id}$
+		\item $\combA_{\Id}, \combDN, \combMR_{\Id}$
+		\item $\combML_{\Id}, \combDN, \combA_{\Id}$
+		\item $\combC$
+	\end{itemize}
+\end{multicols}
+\noindent We use $\combJ$ instead of the following,
 for $j \in \{\epsilon, \combJ_{\f{F}}\}$
-\begin{itemize}
-	\item $\left\{m_{\f{F}}, j, m_{\f{F}}\right\}$ where
-	      $m \in \{\combMR, \combML\}$
-	\item $\combML_{\f{F}}, j, \combMR_{\f{f}}$
-	\item $\combA_{\f{F}}, j, \combMR_{\f{F}}$,
-	      $\combML_{\f{F}}, j, \combA_{\f{F}}$
-	\item $k, \combC$ for $k \in \{\epsilon, \combA_{\f{F}}\}$
-	\item If $\f{F}$ is commutative as a monad:
-	      \begin{itemize}
-		      \item $\combMR_{\f{F}}, \combA_{\f{F}}$
-		      \item $\combA_{\f{F}}, \combML_{\f{F}}$
-		      \item $\combMR_{\f{F}}, j, \combML_{\f{F}}$
-		      \item $\combA_{\f{F}}, j, \combA_{\f{F}}$
-	      \end{itemize}
-\end{itemize}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item $\left\{m_{\f{F}}, j, m_{\f{F}}\right\}$ where
+		      $m \in \{\combMR, \combML\}$
+		\item $\combML_{\f{F}}, j, \combMR_{\f{f}}$
+		\item $\combA_{\f{F}}, j, \combMR_{\f{F}}$,
+		\item $\combML_{\f{F}}, j, \combA_{\f{F}}$
+		\item $k, \combC$ for $k \in \{\epsilon, \combA_{\f{F}}\}$
+		\item If $\f{F}$ is commutative as a monad:
+		      \begin{itemize}
+			      \item $\combMR_{\f{F}}, \combA_{\f{F}}$
+			      \item $\combA_{\f{F}}, \combML_{\f{F}}$
+			      \item $\combMR_{\f{F}}, j, \combML_{\f{F}}$
+			      \item $\combA_{\f{F}}, j, \combA_{\f{F}}$
+		      \end{itemize}
+	\end{itemize}
+\end{multicols}
 
 \medskip
 
@@ -365,4 +371,3 @@ Indeed, trivally, the tensor product of confluent reduction schemes forms a
 confluent reduction scheme, whose maximal reduction length is the sum of the
 maximal reduction lengths\footnote{Actually it is at most that, but that does
 	not	really matter.}.
-
