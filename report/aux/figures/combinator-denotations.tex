@@ -1,0 +1,11 @@
+\def\arraystretch{1.5}
+% f · x = (\fmap_{\f{F}} f) (x)
+% \eta = pure 
+\begin{tabular}{R@{$=$}L}
+	>               & \lambda \phi. \lambda x. \phi x                                            \\
+	<               & \lambda x. \lambda \phi. \phi x                                            \\
+	                &                                                                            \\
+	\combML_{\f{F}} & \lambda M. \lambda \f{F}x. \lambda y. \fmap_{\f{F}} (\lambda a. M(a, y)) x \\
+	\combMR_{\f{F}} & \lambda M. \lambda x. \lambda \f{F}y. \fmap_{\f{F}} (\lambda a. M(a, y)) x \\
+	\combA_{\f{F}}  & \lambda M. \lambda \f{F}x. \lambda \f{F}y. \fmap_{\f{F}} M(x, y)
+\end{tabular}

@@ -172,6 +172,29 @@ want to: we can combine $\f{R}\f{S}\e$ and $\f{C}\f{W}(\e \to \t)$ into
 $\f{R}\f{C}\f{W}\f{S}\t$ with the mode $\combML\combMR\combMR\combML <$ (see
 \cite{bumfordEffectdrivenInterpretationFunctors2025} Example 5.14).
 
+\begin{figure}
+	\centering
+	\input{aux/figures/combinator-denotations}
+	\caption{Denotations describing the effect of the combinators used in the
+		grammar describing our combination modes presented in
+		Figure \ref{fig:combination-cfg}}
+	\label{fig:combinator-denotations}
+\end{figure}
+
+Each of these combinators can be, up to order, associated with a inference
+rule, and, as such, with a higher-order denotation, which explains the actual
+effect\footnote{Pun intended} of the combinator, and are described in
+Figure \ref{fig:combinator-denotations}.
+The main reason we need to get derivations associated to combinators, is to
+properly define equivalence and reduce the number of rules in the grammar.
+Explanation on how that is done will come in Section \ref{subsec:rewrite}.
+The important thing on those derivation is that they're a direct translation
+of the rules defining the notions of functors, applicatives, monads and thus
+are not specific to any denotation system, even though we will use
+lambda-calculus styled denotations to describe them.
+The same structure for combinators apply when describing the combinators
+than when describing their rules of existence.
+
 \medskip
 
 Moreover, it is important to note that while we talk about the structure in
