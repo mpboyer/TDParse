@@ -342,9 +342,9 @@ combinator.
 
 Thirdly, there are modes that clearly encompass other ones\footnote{Here we use
 	the grammar notation for ease of explanation}.
-One should not use mode $\combMR$ or $\combDN \combMR$ instead of $\combUR$
-and the same goes for the left side, because the two derivations yield
-equivalent results.
+One should use mode $\combMR$ or $\combDN \combMR$ instead of $\combUR$
+and the same goes for the left side, because the two derivations yield simpler
+results.
 Same things can be said for certain other derivations containing the lowering
 and co-unit combinators.
 
@@ -379,6 +379,19 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 		      \end{itemize}
 	\end{itemize}
 \end{multicols}
+
+\begin{proposition}
+	The rules proposed above yield equivalent results.
+\end{proposition}
+\begin{proof}
+	For the first point, the equivalence has already been proved under Theorem
+	\ref{thm:confluence}.
+	For the second point, it is obvious since based on an equality.
+	Let's get to proving the third set of rules.
+	First, the modes $\combMR$ and $\combDN\combMR$ yield less effects in the end,
+	while still allowing for the exact same derivations in the end.
+	Of course, the same argument applies when swapping the arguments.
+\end{proof}
 
 \medskip
 
