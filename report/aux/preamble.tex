@@ -4,7 +4,6 @@
 \usepackage{tikz-dependency}
 \usepackage{diag}
 
-
 \renewcommand{\thefootnote}{\roman{footnote}}
 
 \def\cont{\Gamma\vdash}
@@ -71,6 +70,8 @@
 \def\e{\ty{e}}
 \def\t{\ty{t}}
 \def\r{\ty{r}}
+\def\ta{\ty{a}}
+\def\tb{\ty{b}}
 
 \newcolumntype{C}{>{$}c<{$}}
 	\newcolumntype{L}{>{$}l<{$}}
@@ -95,8 +96,6 @@
 \newcommand{\prooffrac}[2]{\genfrac{}{}{}{0}{\ensuremath{#1}}{\ensuremath{#2}}}%
 \DeclareMathOperator{\mFunc}{\mathcal{F}}
 
-\def\ta{\ty{a}}
-\def\tb{\ty{b}}
 \def\blank{\phantom{.}}
 \def\PT#1#2{\suppfrac{#1}{#2}\fracnotate{$\top$}\phantom{\top\quad}}
 
