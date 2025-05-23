@@ -342,25 +342,25 @@ combinator.
 
 Thirdly, there are modes that clearly encompass other ones\footnote{Here we use
 	the grammar notation for ease of explanation}.
-One should use mode $\combMR$ or $\combDN \combMR$ instead of $\combUR$
+One should not use mode $\combUR$ when using $\combMR$ or $\combDN \combMR$
 and the same goes for the left side, because the two derivations yield simpler
 results.
 Same things can be said for certain other derivations containing the lowering
 and co-unit combinators.
 
-\noindent We use $\combDN$ instead of the following, in all derivations:
-% TODO: add a proof of the claim that those are equivalent. 
+\noindent We use $\combDN$ when we have not used any of the following, in all
+derivations:
 \begin{multicols}{2}
 	\begin{itemize}
-		\item $m_{\Id}, \combDN, m_{\Id}$ where
+		\item $m_{\f{F}}, \combDN, m_{\f{F}}$ where
 		      $m \in \{\combMR, \combML\}$
-		\item $\combML_{\Id}, \combDN, \combMR_{\Id}$
-		\item $\combA_{\Id}, \combDN, \combMR_{\Id}$
-		\item $\combML_{\Id}, \combDN, \combA_{\Id}$
+		\item $\combML_{\f{F}}, \combDN, \combMR_{\f{F}}$
+		\item $\combA_{\f{F}}, \combDN, \combMR_{\f{F}}$
+		\item $\combML_{\f{F}}, \combDN, \combA_{\f{F}}$
 		\item $\combC$
 	\end{itemize}
 \end{multicols}
-\noindent We use $\combJ$ instead of the following,
+\noindent We use $\combJ$ if we have not used any of the following,
 for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 \begin{multicols}{2}
 	\begin{itemize}
@@ -380,10 +380,11 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 	\end{itemize}
 \end{multicols}
 
-\begin{proposition}
+\begin{thm}
 	The rules proposed above yield equivalent results.
-\end{proposition}
+\end{thm}
 \begin{proof}
+	% TODO: add a proof of the claim that those are equivalent. 
 	For the first point, the equivalence has already been proved under Theorem
 	\ref{thm:confluence}.
 	For the second point, it is obvious since based on an equality.
@@ -397,7 +398,7 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 
 The observant reader might have noticed that this is simply a scheme to apply
 typing rules to a syntactic derivation, but that this will not be enough to
-actually gain all reductions possible, .
+actually gain all reductions possible.
 This will actually happen once a confluent reduction scheme is provided for the
 denotations.
 When this is done, we can combine the reduction schemes for effects along with
