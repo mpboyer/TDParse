@@ -1,0 +1,68 @@
+\begin{tikzpicture}[%
+		eats/.pic={%
+				\path coordinate[dot, label=right:$\w{a}$] (a)
+				+ (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats)
+				+ (0, 2) coordinate[label=above:$\e\to\t$] (a-bool)
+				++(-2, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+				++(2, -2) coordinate[dot, label=left:$\w{mouse}$] (mouse)
+				+ (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+				\coordinate (-u) at (a-bool);
+				\coordinate (-ur) at ($(a-bool) + (1, 0)$);
+				\coordinate (-lr) at ($(bot) + (1, 0)$);
+				\coordinate (-e) at ($(mouse) + (1, 0)$);
+				\draw (mouse) -- (a) -- (eats) -- (a-bool);
+				\draw[name path=effect] (a) to[out=180, in=-90] (ctla) -- (effa);
+				\draw[dashed] (bot) -- (mouse);
+				\begin{pgfonlayer}{background}
+					\fill[catone] (bot) rectangle ($(a-bool) + (1, 0)$);
+					\fill[catmca] (bot) rectangle ($(effa) + (-1, 0)$);
+					\fill[catmc] (a) to [out=180, in=-90] (ctla) -- (effa) -- (a-bool) -- (a);
+				\end{pgfonlayer}
+			},
+		cat/.pic={
+				\path coordinate[dot, label=right:$\w{the}\w{cat}$] (cat)
+				+ (0, 2) coordinate[label=above:$\e$] (cat-bool)
+				+ (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+				++ (-1, 1) coordinate (ctlthe)
+				+ (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+				\coordinate (-u) at (cat-bool);
+				\coordinate (-ur) at ($(cat-bool) + (2, 0)$);
+				\coordinate (-lr) at ($(input) + (1, 0)$);
+				\coordinate (-e) at ($(cat) + (2, 0)$);
+				\draw (cat) -- (cat-bool);
+				\draw[dashed] (input) -- (cat);
+				\draw (cat) to[out=180, in=-90] (ctlthe) -- (effthe);
+				\begin{pgfonlayer}{background}
+					\fill[catone] (input) rectangle ($(cat-bool) + (2, 0)$);
+					\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+					\fill[catmc] (cat) to [out=180, in=-90] (ctlthe) -- (effthe) -- (cat-bool) -- (cat);
+				\end{pgfonlayer}
+			},
+	]
+	\pic (ncat) at (0, 0) {cat};
+	\pic (neats) at ($(ncat-u) + (0, 5)$) {eats};
+	%
+	\coordinate[label=$\f{M}\e$] (cn) at ($(ncat-e) + (.5, 0)$);
+	\coordinate[label=$\f{D}(\e \to \t)$] (an) at ($(neats-e) + (1.5, 0)$);
+	\coordinate[dot, label=left:$\combMR_{\f{M}}$] (fmap1) at ($(ncat-ur) + (4, 1)$);
+	\path (fmap1)
+	+ (2, 1) coordinate[label=above:$\f{D}(\e \to \t)$] (ffu)
+	+ (2, -1) coordinate[label=below:$\e$] (ffd)
+	++ (4, 0) coordinate[dot] (fmap2)
+	+ (2, 1) coordinate (fau)
+	+ (2, -1) coordinate (fad)
+	++ (4, 0) coordinate[dot] (app)
+	+ (1, 0) coordinate (end);
+	%
+	\draw (cn.east) to[out=0, in=240] (fmap1)
+	(an.east) to[out=0, in=120] (fmap1)
+	(fmap1) to[out=60, in=180] (ffu)
+	(fmap1) to[out=-60, in=180] (ffd)
+	(ffu) to[out=0, in=120] (fmap2)
+	(ffd) to[out=0, in=240] (fmap2)
+	(fmap2) to[out=60, in=180] (fau)
+	(fmap2) to[out=-60, in=180] (fad)
+	(fau) to[out=0, in=120] (app)
+	(fad) to[out=0, in=240] (app)
+	(app) -- (end);
+\end{tikzpicture}

@@ -60,13 +60,7 @@ In the following sections, we will differentiate the different \emph{regions} of
 
 
 It is important to acknowledge that a previous modelisation of parsers by string diagrams has already been proposed (\newcite{coeckeMathematicalFoundationsCompositional2010}, \newcite{wang-mascianicaStringDiagramsText2023}).
-When considering their way of using string diagrams for syntactic reductions, we can use our effects to improve the typing by asking that effects arising from a computation are sent to an axis orthogonal to the one used to represent the sentence, allowing for a reduction on a second axis in a second time.
-\begin{center}
-	% TODO: ADD DRAWING REPRESENTING WHAT WE MEAN BY THAT
-\end{center}
-Since we provide a compositional addition to a denotation system, it amounts to replacing/improving the category of meaning in the product category with the pregroup category and thus means we can integrate our theory inside their formalism.
-Indeed, we start from a meaning category $\mC$ and then build on it, instead of providing a full on denotation system\footnote{Section \ref{sec:language} proposes a translation of the english language based on usual denotations, but our system could be applied onto a fully different representation of meaning, as long as it can be mapped to a cartesian closed category.}.
-Moreover, when seeing their parsing trees as string diagrams and using the fact that we can always assume natural transformations (or $2$-cells) to be at different heights\footnote{Geometrically, see Lemma 1.7 in \newcite{delpeuchNormalizationPlanarString2022}.}, we can see that their model of string diagrams is just a rewriting of our model for vertical composition, and allows for other reductions in the parser to reduce non-determinism.
+We will develop on that in Section \ref{subsubsec:diagram-parsing}.
 We keep the work on vertically composing string diagrams as a way to see how the effects pile up, as presented in Section \ref{subsubsec:cds}.
 
 \medskip

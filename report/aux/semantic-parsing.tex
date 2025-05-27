@@ -277,6 +277,71 @@ we consider here the duration of the $\beta$-reduction:
 	\left(\lambda x. M\right)N \xrightarrow{\beta} M\left[x / N\right]
 \end{equation*}
 
+\subsubsection{Diagrammatical Parsing}
+\label{subsubsec:diagram-parsing}
+When considering \newcite{coeckeMathematicalFoundationsCompositional2010}
+way of using string diagrams for syntactic reductions, we can use our effects
+to improve the typing by asking that effects arising from a computation are
+sent to an axis orthogonal to the one used to represent the sentence, allowing
+for a reduction on a second axis in a second time.
+Since we provide a compositional addition to a denotation system, it amounts to
+replacing/improving the category of meaning in the product category with the
+pregroup category and thus means we can integrate our theory inside their
+formalism.
+Indeed, we start from a meaning category $\mC$ and then build on it, instead
+of providing a full on denotation system\footnote{Section \ref{sec:language}
+	proposes a translation of the english language based on usual denotations, but
+	our system could be applied onto a fully different representation of meaning,
+	as long as it can be mapped to a cartesian closed category.}.
+Moreover, when seeing their parsing trees as string diagrams and using the fact
+that we can always assume natural transformations (or $2$-cells) to be at
+different heights\footnote{Geometrically, see Lemma 1.7 in
+	\newcite{delpeuchNormalizationPlanarString2022}.}, we can see that their model
+of string diagrams is just a rewriting of our model for vertical composition,
+and allows for other reductions in the parser to reduce non-determinism.
+
+When considering \newcite{coeckeMathematicalFoundationsCompositional2010}
+way of using string diagrams for syntactic parsing/reductions, we can see them
+as (yet) another way of writing our parsing rules.
+In our typed category, we can make see our combinators as natural
+transformations ($2$-cells): then we can see the different sets of combinators
+as different arity natural transformations.
+$>$, $\combML_{\f{F}}$ and $\combJ_{\f{F}}$ are represented in
+Figure \ref{fig:combinator-sd}, up to the coloring of the regions, because that
+is purely for an artistic rendition\footnote{Colours make this less boring,
+	trust me}.
+
+\begin{figure}
+	\centering
+	\input{aux/figures/combinators-sd}
+	\caption{String Diagramatic Representation of Combinator Modes}
+	\label{fig:combinator-sd}
+\end{figure}
+:when
+Now, a way to see this would be to think of this as an orthogonal set of
+diagrams to the ones of Section \ref{sec:nondet}.
+What this means is that we could use the syntactic version of the diagrams to
+model our parsing, according to the rules in Figure \ref{fig:combination-cfg},
+and then combine the diagrams as in Equation \ref{eq:CSD}, as shown in Figure
+\ref{fig:syntax-diagram}.
+
+\begin{figure}
+	\centering
+	\inputtikz{syntax-diagram}
+	\caption{Representation of the Connection between Syntactic Diagrams and
+		Effectful Reduction Diagrams}
+	\label{fig:syntax-diagram}
+\end{figure}
+
+Categorically, what this means is that we start from a meaning category $\mC$,
+our typing category, and take it as our grammatical category.
+This is a form of extension on the monoidal version by
+\newcite{coeckeMathematicalFoundationsCompositional2010}, as it is seemingly a
+typed version, where we change the Pregroup category for the typing category,
+possibly taken with a product for representation of the English grammar
+representation, to accomodate for syntactic typing on top of semantic typing.
+This is, again, just another rewriting of our typing rules.
+
 \subsection{Rewriting Rules}
 \label{subsec:rewrite}
 Here we provide a rewriting system on derivation trees that allows us to
