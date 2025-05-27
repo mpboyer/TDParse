@@ -16,13 +16,13 @@
 		\end{pgfonlayer}
 	\end{tikzpicture}
 	\hspace{2.5cm}
-	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-		\path coordinate[dot, label=below:$\combML_{\f{F}}$] (m)
-		+ (1, 1) coordinate[label=above:$\beta$] (out2)
-		+ (-1, 1) coordinate[label=above:$\alpha$] (out)
-		+ (-1.5, 1) coordinate[label=above:$\f{F}$] (out1)
-		+ (-1, -1) coordinate[label=below:$\alpha$] (phi)
-		+ (1, -1) coordinate[label=below:$\beta$] (x);
+	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}, yscale=-1]
+		\path coordinate[dot, label=above:$\combML_{\f{F}}$] (m)
+		+ (1, 1) coordinate[label=below:$\beta$] (out2)
+		+ (-1, 1) coordinate[label=below:$\alpha$] (out)
+		+ (-1.5, 1) coordinate[label=below:$\f{F}$] (out1)
+		+ (-1, -1) coordinate[label=above:$\alpha$] (phi)
+		+ (1, -1) coordinate[label=above:$\beta$] (x);
 		\draw (m) to[out=180, in=90] (phi);
 		\draw (m) to[out=0, in=90] (x);
 		\draw (m) to[out=180, in=-90] (out1);
