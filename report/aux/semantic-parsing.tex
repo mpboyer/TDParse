@@ -280,27 +280,6 @@ we consider here the duration of the $\beta$-reduction:
 \subsubsection{Diagrammatical Parsing}
 \label{subsubsec:diagram-parsing}
 When considering \newcite{coeckeMathematicalFoundationsCompositional2010}
-way of using string diagrams for syntactic reductions, we can use our effects
-to improve the typing by asking that effects arising from a computation are
-sent to an axis orthogonal to the one used to represent the sentence, allowing
-for a reduction on a second axis in a second time.
-Since we provide a compositional addition to a denotation system, it amounts to
-replacing/improving the category of meaning in the product category with the
-pregroup category and thus means we can integrate our theory inside their
-formalism.
-Indeed, we start from a meaning category $\mC$ and then build on it, instead
-of providing a full on denotation system\footnote{Section \ref{sec:language}
-	proposes a translation of the english language based on usual denotations, but
-	our system could be applied onto a fully different representation of meaning,
-	as long as it can be mapped to a cartesian closed category.}.
-Moreover, when seeing their parsing trees as string diagrams and using the fact
-that we can always assume natural transformations (or $2$-cells) to be at
-different heights\footnote{Geometrically, see Lemma 1.7 in
-	\newcite{delpeuchNormalizationPlanarString2022}.}, we can see that their model
-of string diagrams is just a rewriting of our model for vertical composition,
-and allows for other reductions in the parser to reduce non-determinism.
-
-When considering \newcite{coeckeMathematicalFoundationsCompositional2010}
 way of using string diagrams for syntactic parsing/reductions, we can see them
 as (yet) another way of writing our parsing rules.
 In our typed category, we can make see our combinators as natural
@@ -317,26 +296,34 @@ is purely for an artistic rendition\footnote{Colours make this less boring,
 	\caption{String Diagramatic Representation of Combinator Modes}
 	\label{fig:combinator-sd}
 \end{figure}
-:when
+
 Now, a way to see this would be to think of this as an orthogonal set of
-diagrams to the ones of Section \ref{sec:nondet}.
-What this means is that we could use the syntactic version of the diagrams to
-model our parsing, according to the rules in Figure \ref{fig:combination-cfg},
-and then combine the diagrams as in Equation \ref{eq:CSD}, as shown in Figure
-\ref{fig:syntax-diagram}.
+diagrams to the ones of Section \ref{sec:nondet}: we could use the syntactic
+version of the diagrams to model our parsing, according to the rules in
+Figure \ref{fig:combination-cfg}, and then combine the diagrams as in Equation
+\ref{eq:CSD}, as shown in Figure \ref{fig:parsing-diagram}, which highlights
+why we can consider the diagrams orthogonals.
 The obvious reaction\footnote{That I'm sure everyone have had seeing this.} is:
-"\emph{Why is the type in the end not $\t$?}".
-This is a perfectly valid point, and this is simply a notation abuse, from the
-parsing going bottom up instead of top down.
+"\emph{Why did we start by saying we could just paste?}".
+This is a perfectly valid point, and pasting diagrams is simply a notation
+abuse, that is justified by the fact there is a possible reduction.
 In this figure we exactly see the sequence of reductions play out on the types
-of the words.
+of the words, and thus we also see what exact \emph{quasi-braiding} would be
+needed to construct the effect diagram.
+Here we talk about \emph{quasi-braiding} because, in a sense, we use $2$-cells
+to do braiding-like\footnote{Permutations on the order of the strings}
+operations on the strings, and don't actually allow for braiding inside the
+diagrammatic computation.
 
 \begin{figure}
 	\centering
-	\inputtikz{syntax-diagram}
-	\caption{Representation of the Connection between Syntactic Diagrams and
-		Effectful Reduction Diagrams}
-	\label{fig:syntax-diagram}
+	\inputtikz{parsing-diagram}
+  \caption{Representation of a parsing (sub-)diagram for the sentence 
+    \emph{the cat eats a mouse}, including the connection between the effect
+    handling diagrams from Section \ref{sec:nondet} and the syntactio-semantic
+    parsing diagrams formed combining our approach to parsing and
+  \cite{coeckeMathematicalFoundationsCompositional2010} approach to diagrams}
+  \label{fig:parsing-diagram}
 \end{figure}
 
 Categorically, what this means is that we start from a meaning category $\mC$,
@@ -347,6 +334,64 @@ typed version, where we change the Pregroup category for the typing category,
 possibly taken with a product for representation of the English grammar
 representation, to accomodate for syntactic typing on top of semantic typing.
 This is, again, just another rewriting of our typing rules.
+
+More formally, we have a first axis of string diagrams in the category
+$\mC$ - our string diagrams for effect handling, as in Section
+\ref{sec:nondet} - and a second \emph{orthogonal} axis of string diagrams
+on a larger category, with endofunctors\footnote{To ensure proper typing of the
+	diagrams.} graded by the types in our typing category $\bar{\mC}$ and
+with natural transformations mapping the combinators defined in Figures
+\ref{fig:combination-cfg} and \ref{fig:combinator-denotations}.
+The category in which we consider the second-axis string diagrams does not have
+a meaning in our compositional semantics theory, and to be more precise, we
+should talk about $1$-cells and $2$-cells instead of functors and natural
+transformations, to keep in the idea that this is really just a diagrammatic
+way of computing and presenting the operations that are put to work during
+semantic parsing.
+
+\medskip
+
+What the lines leading from combinators to functors\footnote{Remember that
+	types are objects in $\mC$ and thus functors from
+	$\mathds{1} \Rightarrow \mC$} mean categorically, is void in either category.
+Those lines are not actually part of the first axis of the string diagram,
+nor are they part of the second axis of the string diagram.
+They are used to map out the link between the two: they express the
+quasi-braiding step proposed above, and present graphically why the order of
+the strings in the resulting diagram is as it is, and what the pasting and
+quasi-braiding orders should be.
+A good approach to these diagrams might be the following: they are an extension
+of the parse trees presented in
+\newcite{bumfordEffectdrivenInterpretationFunctors2025}, applied to the
+formalism of \newcite{coeckeMathematicalFoundationsCompositional2010} and
+extended to be integrated with the handling of effects,
+as described in Section \ref{sec:nondet}, forming a full diagrammatic calculus
+system for semantic parsing.
+
+\medskip
+
+For the combinators $\combJ$, $\combDN$ and $\combC$, which are applied to
+reduce the number of effects inside a denotation, it might seem less obvious
+how to include them.
+While this may seem true, it's actually only true for the \emph{connecting}
+strings.
+Indeed, applying them to the actual \emph{parsing} part of the diagram is done
+in the exact same way as in the CFG, we just apply them when needed, and they
+will appear in the resulting denotation as an end for a string, a form of
+forced handling, in a sense, as shown in the result of Figure
+\ref{fig:parsing-diagram2}.
+For the connecting strings, it's simply a matter of adding a new phantom string
+that will send the associated $2$-cell in the effect handling diagram to 
+the connected strings.
+
+\begin{figure}
+  \centering
+  \inputtikz{parsing-diagram2}
+  \caption{Example of a parsing (sub-)diagram for the phrase
+  \emph{a cat in a box}, presenting the integration of unary combinators
+  inside the connector line.}
+  \label{fig:parsing-diagram2}
+\end{figure}
 
 \subsection{Rewriting Rules}
 \label{subsec:rewrite}
@@ -469,8 +514,13 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 
 The observant reader might have noticed that this is simply a scheme to apply
 typing rules to a syntactic derivation, but that this will not be enough to
-actually gain all reductions possible.
-This will actually happen once a confluent reduction scheme is provided for the
+actually gain all reductions possible in polynomial time.
+This is actually not feasible (because of the intrinsic ambiguity of the
+English language, as proved for example by the sentence \emph{The man sees the
+	girl using a telescope}).
+Even then, we are far from reducing to a minimum the number of different paths
+possible to get a same final denotation.
+This can only happen once a confluent reduction scheme is provided for the
 denotations.
 When this is done, we can combine the reduction schemes for effects along with
 the one for denotation and the one for combinations in one large reduction
@@ -479,3 +529,18 @@ Indeed, trivally, the tensor product of confluent reduction schemes forms a
 confluent reduction scheme, whose maximal reduction length is the sum of the
 maximal reduction lengths\footnote{Actually it is at most that, but that does
 	not	really matter.}.
+
+\medskip
+
+When using our diagrammatic approach to parsing, which, again, is just a
+rewriting in a more graphical fashion of our typing rules and our CFG-like
+rules, we can write all the reductions described above to our paradigm:
+it simply amounts to constructing a set of normal forms for the string diagrams.
+This leads to the same algorithms developed in Section \ref{sec:nondet} being
+usable here: we just have a new improved version of Theorem
+\ref{thm:confluence} which adds the normal forms specified in this section to
+the newly added \emph{orthogonal} axis of diagrammatic computations.
+What we're actually doing is computing two different normal forms along the
+tensor product of our reduction schemes\footnote{Just like we already have (or
+	should have) a tensor scheme for the denotations and combination modes.},
+but again, that only amounts to computing a larger normal form.

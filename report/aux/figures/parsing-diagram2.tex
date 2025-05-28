@@ -1,0 +1,112 @@
+\tikzset{
+	a/.pic={%
+			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -1) coordinate (input)
+			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa);
+			\node[anchor=north] at (input) {$\e \to \t$};
+			\draw (input) -- (bool);
+			\draw (a) to[out=180, in=-90] (ctla) -- (effa);
+			\coordinate (-north) at (bool);
+			\coordinate (-north east) at ($(bool) + (1, 0)$);
+			\coordinate (-east) at ($(a) + (1, 0)$);
+			\coordinate (-south east) at ($(input) + (1, 0)$);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (input) rectangle ($(bool) + (1, 0)$);
+				\fill[catmca] (input) rectangle ($(effa) + (-1, 0)$);
+				\fill[catmc] (a) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (a);
+			\end{pgfonlayer}
+		},
+	cat/.pic={
+			\path coordinate[dot, label=right:$\w{in\ a\ box}$] (box)
+			+ (-1, 1) coordinate (ctlbox)
+			+ (-1, 2) coordinate[label=above:$\f{D}$] (effbox)
+			+ (0, -1) coordinate[label=below:$\bot$] (input)
+			++ (0, 1) coordinate[label=right:$\w{cat} \land$, dot]
+			+ (0, 1) coordinate[label=above:$\e\to \t$] (out);
+			\draw[dashed] (input) -- (box);
+			\draw (box) to[out=180, in=-90] (ctlbox) -- (effbox)
+			(box) -- (out);
+			\coordinate (-north) at (out);
+			\coordinate (-north east) at ($(out) + (2, 0)$);
+			\coordinate (-east) at ($(box) + (2, 0)$);
+			\coordinate (-south east) at ($(input) + (2, 0)$);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (input) rectangle ($(out) + (2, 0)$);
+				\fill[catmca] (input) rectangle ($(effbox) + (-1, 0)$);
+				\fill[catmc] (box) to[out=180, in=-90] (ctlbox) |- (out) -- (box);
+			\end{pgfonlayer}
+		},
+	res/.pic={
+			\path coordinate[dot, label=right:$\w{cat} \land$] (rcat)
+			++ (0, 1) coordinate[dot, label=right:$\w{a}$] (ra)
+			+ (0, 3) coordinate[label=above:$\e$] (rout)
+			+ (-1, 1) coordinate[label=right:$\f{D}$] (rctla)
+			++ (0, -2) coordinate[dot, label=right:$\w{in\ a\ box}$] (rbox)
+			+ (0, -1) coordinate[label=below:$\bot$] (rbot)
+			++ (-2, 2) coordinate (rctlb)
+			++ (0, 1) coordinate[label=left:$\f{D}$] (rctlbb)
+			++ (.5, 1) coordinate[dot, label=below:$\mu_{\f{D}}$] (rmu)
+			+ (0, 1) coordinate[label=above:$\f{D}$] (reff);
+			\draw[dashed] (rbot) -- (rbox);
+			\draw (rout) -- (rbox)
+			(rbox) to[out=180, in=-90] (rctlb)
+			-- (rctlbb)
+			to[out=90, in=180] (rmu)
+			to[out=0, in=90] (rctla)
+			to[out=-90, in=180] (ra)
+			(rmu) -- (reff);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (rbot) rectangle ($(rout) + (2, 0)$);
+				\fill[catmca] (rbot) rectangle ($(reff) + (-1.5, 0)$);
+				\fill[catmc] (rbox) to[out=180, in=-90] (rctlb) -- (ra) -- (rbox);
+				\fill[catmc] (rctla) |- (ra) to[out=180, in=-90] (rctla);
+				\fill[catmc] (rctla) rectangle (rctlb);
+				\fill[catmc] (rctlbb) to[out=90, in=180] (rmu) |- (rctlbb);
+				\fill[catmc] (rmu) to[out=0, in=90] (rctla) -| (rmu);
+			\end{pgfonlayer}
+		}
+}
+
+\begin{tikzpicture}
+	\pic (nbox) at (0, 0) {cat};
+	\pic (na) at ($(nbox-north) + (0, 2.5)$) {a};
+	\node[rectangle, draw=black] (db) at ($(nbox-east) + (1, 0)$) {$\f{D}(\e \to \t)$};
+	\node[rectangle, draw=black] (da) at ($(na-east) + (1.5, 0)$) {$(\e \to \t) \to \f{D}\e$};
+	\node[rectangle, draw=black] (fmap) at ($(nbox-north east) + (3, 1)$) {$\combML_{\f{M}}$};
+	\path (fmap)
+	+ (1.5, 1) coordinate[label=above:$(\e \to \t) \to \f{D}\e$] (ffu)
+	+ (1.5, -1) coordinate[label=below:$\e \to \t$] (ffd)
+	+ (0, 3) coordinate (tfm)
+	++ (3, 0) node[rectangle, draw=black] (app) {$\rotatebox{90}{<}$}
+	+ (1, 0) coordinate[label=below:$\f{D}\e$] (fad)
+	+ (0, 3) coordinate (tfd)
+	++ (2, 0) node[rectangle, draw=black] (join) {$\combJ_{\f{D}}$}
+	+ (0, 3) coordinate (tft)
+	+ (0, 5) coordinate[label=above:$\e$] (end);
+	\begin{scope}
+		\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
+		(db) to[out=0, in=240] (fmap)
+		(da) to[out=0, in=120] (fmap)
+		(fmap) to[out=60, in=180] (ffu)
+		(fmap) to[out=-60, in=180] (ffd)
+		(ffu) to[out=0, in=120] (app)
+		(ffd) to[out=0, in=240] (app)
+		(app) -- (join);
+	\end{scope}
+	%
+	\node[circle, draw=black] (mu) at ($($(tfm)!0.5!(tfd)$) + (0, 1)$) {$\mu_{\f{D}}$};
+	\coordinate[label=above:$\f{D}$] (ff) at ($(mu) + (0, 1)$);
+	\draw[dashed] (fmap) -- (tfm)
+	(app) -- (tfd)
+	(join) -- (tft)
+	(tfm) to[out=90, in=180] (mu)
+	(tfd) to[out=90, in=0] (mu);
+	\draw[dotted, thick, postaction={on each segment={mid arrow=black}}] ($(tft) + (0, -1)$) to[out=90, in=-90] (mu);
+	\draw	(tft) -- (end) (mu) -- (ff);
+	%
+	\node (imp) at ($(join) + (.5, 0)$) {$\Rightarrow$};
+	\pic (nres) at ($(imp.east) + (3,0)$) {res};
+	\draw[->] let
+	\p{end} = ($(end) + (4.5, 0)$),
+	\p{bond} = ($(ncat-ll) + (1, -1)$),
+	in (\x{bond}, \y{bond}) -- node[below] {Direction of Reduction} (\x{end}, \y{bond});
+\end{tikzpicture}
