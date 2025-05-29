@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{21}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Bauer and Pretnar(2014)}]{bauerEffectSystemAlgebraic2014}
@@ -50,6 +50,11 @@ Andr{\'e} Joyal and Ross Street. 1991.
 \newblock \href {https://doi.org/10.1016/0001-8708(91)90003-P} {The geometry of
   tensor calculus, {{I}}}.
 \newblock \emph{Advances in Mathematics}, 88(1):55--112.
+
+\bibitem[{{Marcolli, Matilde et Chomsky, Noam et Berwick, Robert
+  C.}()}]{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}
+{Marcolli, Matilde et Chomsky, Noam et Berwick, Robert C.}
+\newblock Mathematical {{Structure}} of {{Syntactic Merge}}.
 
 \bibitem[{Mar{\v s}{\'i}k and Amblard()}]{marsikAlgebraicEffectsHandlers}
 Ji{\v r}{\'i} Mar{\v s}{\'i}k and Maxime Amblard.

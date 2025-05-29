@@ -8,50 +8,51 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: tdparse.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty year in marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic
 Warning--empty year in marsikAlgebraicEffectsHandlers
 Warning--empty journal in marsikAlgebraicEffectsHandlers
 Warning--empty year in parteeLecture2Lambda
 Warning--empty booktitle in selingerSurveyGraphicalLanguages2010
 Warning--missing publisher in selingerSurveyGraphicalLanguages2010
-You've used 20 entries,
+You've used 21 entries,
             3571 wiz_defined-function locations,
-            845 strings with 9855 characters,
-and the built_in function-call counts, 11977 in all, are:
-= -- 1113
-> -- 408
-< -- 25
-+ -- 133
-- -- 105
-* -- 721
-:= -- 1852
-add.period$ -- 76
-call.type$ -- 20
-change.case$ -- 144
-chr.to.int$ -- 20
-cite$ -- 25
-duplicate$ -- 794
-empty$ -- 926
-format.name$ -- 173
-if$ -- 2669
+            850 strings with 10121 characters,
+and the built_in function-call counts, 12357 in all, are:
+= -- 1146
+> -- 420
+< -- 26
++ -- 137
+- -- 108
+* -- 738
+:= -- 1920
+add.period$ -- 78
+call.type$ -- 21
+change.case$ -- 150
+chr.to.int$ -- 21
+cite$ -- 27
+duplicate$ -- 818
+empty$ -- 955
+format.name$ -- 177
+if$ -- 2750
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 149
-newline$ -- 97
-num.names$ -- 80
-pop$ -- 347
+missing$ -- 153
+newline$ -- 101
+num.names$ -- 84
+pop$ -- 362
 preamble$ -- 1
-purify$ -- 115
+purify$ -- 120
 quote$ -- 0
-skip$ -- 660
+skip$ -- 681
 stack$ -- 0
-substring$ -- 419
-swap$ -- 385
+substring$ -- 430
+swap$ -- 391
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 177
-warning$ -- 5
-while$ -- 80
+type$ -- 186
+warning$ -- 6
+while$ -- 83
 width$ -- 0
-write$ -- 249
-(There were 5 warnings)
+write$ -- 258
+(There were 6 warnings)

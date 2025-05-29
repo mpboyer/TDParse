@@ -318,12 +318,12 @@ diagrammatic computation.
 \begin{figure}
 	\centering
 	\inputtikz{parsing-diagram}
-  \caption{Representation of a parsing (sub-)diagram for the sentence 
-    \emph{the cat eats a mouse}, including the connection between the effect
-    handling diagrams from Section \ref{sec:nondet} and the syntactio-semantic
-    parsing diagrams formed combining our approach to parsing and
-  \cite{coeckeMathematicalFoundationsCompositional2010} approach to diagrams}
-  \label{fig:parsing-diagram}
+	\caption{Representation of a parsing (sub-)diagram for the sentence
+		\emph{the cat eats a mouse}, including the connection between the effect
+		handling diagrams from Section \ref{sec:nondet} and the syntactio-semantic
+		parsing diagrams formed combining our approach to parsing and
+		\cite{coeckeMathematicalFoundationsCompositional2010} approach to diagrams}
+	\label{fig:parsing-diagram}
 \end{figure}
 
 Categorically, what this means is that we start from a meaning category $\mC$,
@@ -380,18 +380,59 @@ in the exact same way as in the CFG, we just apply them when needed, and they
 will appear in the resulting denotation as an end for a string, a form of
 forced handling, in a sense, as shown in the result of Figure
 \ref{fig:parsing-diagram2}.
-For the connecting strings, it's simply a matter of adding a new phantom string
-that will send the associated $2$-cell in the effect handling diagram to 
+For the connecting strings, it's simply a matter of adding a new \emph{phantom}
+string that will send the associated $2$-cell in the effect handling diagram to
 the connected strings.
+In particular it is interesting to note that the resulting diagram representing
+the sentence can, in a way, be found in the connection strings that arise from
+the combinators.
 
 \begin{figure}
-  \centering
-  \inputtikz{parsing-diagram2}
-  \caption{Example of a parsing (sub-)diagram for the phrase
-  \emph{a cat in a box}, presenting the integration of unary combinators
-  inside the connector line.}
-  \label{fig:parsing-diagram2}
+	\centering
+	\inputtikz{parsing-diagram2}
+	\caption{Example of a parsing (sub-)diagram for the phrase
+		\emph{a cat in a box}, presenting the integration of unary combinators
+		inside the connector line.}
+	\label{fig:parsing-diagram2}
 \end{figure}
+
+The main reason why this point of view of diagrammatic parsing is useful
+will be clear when looking at the rewriting rules and the normal forms they
+induce, because, as seen before, string diagrams make it easy to compute
+normal forms, when provided with a confluent reduction system.
+
+\subsubsection{The Coproduct Categorical Approach to Syntax}
+\label{subsubsec:coprod}
+In this section based on the work by
+\newcite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic},
+we explore the integration of our notion inside the structure of syntactic
+merge, and why the two formalisms are compatible.
+The idea behind that structure is to see the union of trees as a product and
+the merging of trees as a coproduct in a well-defined Hopf algebra.
+Now of course, with our insights on syntactio-semantic parsing, we can either
+think of our parsing structure labeled by multiple modes, as in
+\cite{bumfordEffectdrivenInterpretationFunctors2025}, or think of it as string
+diagrams, as presented above.
+In both cases, we make a more or less implicit use of the merge operation.
+Indeed, using trees, we get back to the graded non-associative commutative
+magma operation proposed in the coproduct approach.
+While using string diagrams, we have a certain set of objects on which we can
+define a product - the tensor product of diagrams, that is, the monoidal
+operation of the category used to consider the diagrams - and a coproduct.
+Defining the coproduct is a bit trickier so we will define it \emph{with our
+	hands} in an intuitive manner.
+The coproduct on the trees simply connects to the merging of trees, so in our
+case it should only connect two different bits of our string diagrams together.
+This means that our coproduct should be adding a base type combinator.
+However that doesn't suffice to fully express our typed semantics.
+The question can be rephrased as follows: how to get a functorial
+correspondance between the labeled trees and our string diagrams that behaves
+well with regards to the product and coproduct on those objects?
+When considering basic trees, this is not possible, so we need to consider
+multi-trees, with possibly multiple edges between a node and one of its
+subtrees/children.
+% FIXME: add a reference to Bella's paper explaining the interest of such 
+% notions when talking about the syntax-semantic interface/
 
 \subsection{Rewriting Rules}
 \label{subsec:rewrite}
@@ -544,3 +585,10 @@ What we're actually doing is computing two different normal forms along the
 tensor product of our reduction schemes\footnote{Just like we already have (or
 	should have) a tensor scheme for the denotations and combination modes.},
 but again, that only amounts to computing a larger normal form.
+Moreover, considering the possible normal forms of syntactic reductions simply
+adds another way to reduce our diagrams to normal forms.
+Since all of these forms can be attained in polynomial time, it is clear that
+finding a normal-form diagram, which is exactly a normal-form denotation for
+the sentence is doable in polynomial time.
+
+
