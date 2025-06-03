@@ -160,6 +160,7 @@ Indeed, considering the equivalence relation $\mathcal{R}$ freely generated from
 	\mathcal{N} = \left( \mD / \mathcal{R} \right) / \mathcal{R}'
 \end{equation*}
 
+
 \subsection{Computing Normal Forms}
 Now that we have a set of rules telling us what we can and cannot do in our model while preserving the equality of the diagrams, we provide a combinatorial description of our diagrams to help compute the possible equalities between multiple reductions of a sentence meaning.
 
@@ -300,6 +301,7 @@ point of our theorem.
 
 
 \begin{thm}[Normalization Complexity]
+	\label{thm:normalize}
 	Reducing a diagram to its normal form is done in quadratic time in
 	the number of natural transformations in it.
 \end{thm}
@@ -315,3 +317,18 @@ point of our theorem.
 	Since we need to \emph{right} normalize before and after this method, and
 	that this is done in linear time, our theorem is proved.
 \end{proof}
+
+\subsubsection{Completeness, Soundness, Decidability}\label{subsubsec:sanity}
+Let us do a short sanity check on the well-foundedness of our reduction system.
+Clearly from its definition this equivalence system is sound, in that all the
+reductions we allow are based on actual equivalence rules, and thus each
+reduction step preserves the equivalence relationship.
+From the previous Theorem \ref{thm:normalize}, clearly, our system is
+decidable, since it's in $P$.
+However, there is no reason that our system would be complete:
+At this point, we possibly might not have the widest sound reduction system:
+there might be more reduction rules that can apply and that would
+augment the equivalence classes under the reduction relationship.
+Moreover, there is the possibility that the widest sound reduction system is
+not computable.
+This means that our current systems are decidable, sound but not complete.
