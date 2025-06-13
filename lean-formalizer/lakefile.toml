@@ -1,0 +1,10 @@
+name = "lean-formalizer"
+version = "0.1.0"
+defaultTargets = ["lean-formalizer"]
+
+[[lean_lib]]
+name = "LeanFormalizer"
+
+[[lean_exe]]
+name = "lean-formalizer"
+root = "Main"
