@@ -403,6 +403,8 @@ normal forms, when provided with a confluent reduction system.
 
 \subsubsection{The Coproduct Categorical Approach to Syntax}
 \label{subsubsec:coprod}
+% FIXME: add a reference to Bella's paper explaining the interest of such 
+% notions when talking about the syntax-semantic interface/
 In this section based on the work by
 \newcite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic},
 we explore the integration of our notion inside the structure of syntactic
@@ -431,8 +433,13 @@ well with regards to the product and coproduct on those objects?
 When considering basic trees, this is not possible, so we need to consider
 multi-trees, with possibly multiple edges between a node and one of its
 subtrees/children.
-% FIXME: add a reference to Bella's paper explaining the interest of such 
-% notions when talking about the syntax-semantic interface/
+However, since our diagram are a tool that can be seen \emph{on top} of the
+usual parsing trees, this might just not be useful.
+Indeed, what such a point of view would bring is void: our system does not
+add any new theoretical concept to the theoretical explanation of the parsing
+tree approach, and is simply a more visual explanation of the process, as well
+as an explanation of it inside the categorical framework we used to develop the
+type and effect system for a natural language.
 
 \subsection{Rewriting Rules}
 \label{subsec:rewrite}
@@ -541,14 +548,17 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 	The rules proposed above yield equivalent results.
 \end{thm}
 \begin{proof}
-	% TODO: add a proof of the claim that those are equivalent. 
 	For the first point, the equivalence has already been proved under Theorem
 	\ref{thm:confluence}.
 	For the second point, it is obvious since based on an equality.
-	Let's get to proving the third set of rules.
-	First, the modes $\combMR$ and $\combDN\combMR$ yield less effects in the end,
-	while still allowing for the exact same derivations in the end.
-	Of course, the same argument applies when swapping the arguments.
+	To prove the third set of rules, we have used the proof assistant Lean.
+	We have provided it with a full set of tactics about $\lambda$-calculus,
+	to allow to check equivalence of terms and added definitions for our types,
+	combinators and so on, to make use of its language server\footnote{Lean was
+		also used by Dylan \textsc{Bumford} to rewrite the full parser and make use
+		of its dependent type system, allowing for functions about types and
+		effects to be typed.}
+	% TODO: Create Lean project
 \end{proof}
 
 \medskip
@@ -589,10 +599,14 @@ Moreover, considering the possible normal forms of syntactic reductions simply
 adds another way to reduce our diagrams to normal forms.
 Since all of these forms can be attained in polynomial time, it is clear that
 finding a normal-form diagram, which is exactly a normal-form denotation for
-the sentence, is doable in polynomial time.
+the sentence, is doable in polynomial time\footnote{Of course, this is only
+	true when the denotations can be normalized in polynomial time.}
 
 \medskip
 
 Once again, there is no evidence that our system is complete, if not the
 contrary, so the arguments developed in Section \ref{subsubsec:sanity} are
 still valid.
+A way to "complete" it, although it would still probably be incomplete would be
+to write an automatized prover in Lean, but this is out of the scope of this
+project, as it would not do many improvements.

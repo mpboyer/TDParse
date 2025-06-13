@@ -330,9 +330,18 @@ As an example, we provide the typing reductions for the classic example: \textsl
 	\label{fig:ud}
 \end{figure}
 
-This non-determinism is a component of our language's grammar and semantics: a same sentence can have multiple interpretation without context.
-By the same reasoning we applied on handlers, we choose not to resolve the ambiguity in the parser but we will try in Section \ref{sec:nondet} to reduce it to a minimum.
-Even so some of our derivations will include ways to read from a context (for example the \textbf{Jupiter, a planet} construct), we forget about the definition of the context, or its updating after a sentence, in our first proposition.
+This non-determinism is a component of our language's grammar and semantics:
+a same sentence can have multiple interpretation without context.
+By the same reasoning we applied on handlers, we choose not to resolve the
+ambiguity in the parser but we will provide methods in Sections
+\ref{sec:nondet} and \ref{sec:parsing} to it to a minimum.
+Even so some of our derivations will include ways to read from a context (for
+example the \textbf{Jupiter, a planet} construct), we forget about the
+definition of the context, or its updating after a sentence, in our first
+proposition.
+It is also important to note that we want to be able to map effects in any
+possible order and as such, we did not provide all the possible typings for
+this sentence, see Section \ref{sec:parsing} for more details.
 
 \subsection{Decidability}
 The observant reader might have notice (without too much trouble), that our

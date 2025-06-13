@@ -81,7 +81,7 @@
 	+ (0, 3) coordinate (tfd)
 	++ (2, 0) node[rectangle, draw=black] (join) {$\combJ_{\f{D}}$}
 	+ (0, 3) coordinate (tft)
-	+ (0, 5) coordinate[label=above:$\e$] (end);
+	+ (0, 6) coordinate[label=above:$\e$] (end);
 	\begin{scope}
 		\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
 		(db) to[out=0, in=240] (fmap)
@@ -94,14 +94,16 @@
 	\end{scope}
 	%
 	\node[circle, draw=black] (mu) at ($($(tfm)!0.5!(tfd)$) + (0, 1)$) {$\mu_{\f{D}}$};
-	\coordinate[label=above:$\f{D}$] (ff) at ($(mu) + (0, 1)$);
-	\draw[dashed] (fmap) -- (tfm)
-	(app) -- (tfd)
+	\coordinate[label=above:$\f{D}$] (ff) at ($(mu) + (0, 2)$);
+	\draw[loosely dashed] (fmap) --  (tfm)
+	(app) --  (tfd);
+	\draw[loosely dashed]
 	(join) -- (tft)
-	(tfm) to[out=90, in=180] (mu)
-	(tfd) to[out=90, in=0] (mu);
-	\draw[dotted, thick, postaction={on each segment={mid arrow=black}}] ($(tft) + (0, -1)$) to[out=90, in=-90] (mu);
-	\draw	(tft) -- (end) (mu) -- (ff);
+	(tfm) to[out=90, in=180] node[pos=.5, above left] {$\f{D}$} (mu)
+	(tfd) to[out=90, in=0] node[pos=.5, above right] {$\f{D}$} (mu)
+	(mu) -- ($(mu) + (0, 1)$);
+	\draw[densely dotted, thick, postaction={on each segment={mid arrow=black}}] ($(tft) + (0, -1)$) to[out=90, in=-90] (mu);
+	\draw	(tft) -- (end) ($(mu) + (0, 1)$) -- (ff);
 	%
 	\node (imp) at ($(join) + (.5, 0)$) {$\Rightarrow$};
 	\pic (nres) at ($(imp.east) + (3,0)$) {res};
