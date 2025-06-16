@@ -65,7 +65,9 @@
 			\end{pgfonlayer}
 		}
 }
-
+% FIXME: fix out of e from J
+% TODO: Flip the pics and the outward strings to match the actual orientation
+% of the parsing diagram.
 \begin{tikzpicture}
 	\pic (nbox) at (0, 0) {cat};
 	\pic (na) at ($(nbox-north) + (0, 2.5)$) {a};
@@ -81,7 +83,7 @@
 	+ (0, 3) coordinate (tfd)
 	++ (2, 0) node[rectangle, draw=black] (join) {$\combJ_{\f{D}}$}
 	+ (0, 3) coordinate (tft)
-	+ (0, 6) coordinate[label=above:$\e$] (end);
+	+ (0, 5.5) coordinate[label=above:$\e$] (end);
 	\begin{scope}
 		\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
 		(db) to[out=0, in=240] (fmap)
@@ -109,6 +111,6 @@
 	\pic (nres) at ($(imp.east) + (3,0)$) {res};
 	\draw[->] let
 	\p{end} = ($(end) + (4.5, 0)$),
-	\p{bond} = ($(ncat-ll) + (1, -1)$),
-	in (\x{bond}, \y{bond}) -- node[below] {Direction of Reduction} (\x{end}, \y{bond});
+	\p{bond} = ($(ncat-ll) + (1, 0)$),
+	in (\x{bond}, \y{bond}) -- node[above] {Direction of Reduction} (\x{end}, \y{bond});
 \end{tikzpicture}

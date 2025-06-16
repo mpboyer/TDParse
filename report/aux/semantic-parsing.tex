@@ -103,6 +103,7 @@ semantics of a word/sentence, the allowed combinators and even the addition of r
 
 \subsection{Syntactic-Semantic Parsing}
 \label{subsec:ssparsing}
+\subsubsection{The Improved Method}
 If using a naïve strategy on the trees yields an exponential algorithm,
 the best way to improve the algorithm, is to directly leave the naïve strategy.
 To do so, we could simply extend the grammar system used to do the syntactic
@@ -403,7 +404,7 @@ normal forms, when provided with a confluent reduction system.
 
 \subsubsection{The Coproduct Categorical Approach to Syntax}
 \label{subsubsec:coprod}
-% FIXME: add a reference to Bella's paper explaining the interest of such 
+% TODO: add a reference to Bella's paper explaining the interest of such 
 % notions when talking about the syntax-semantic interface/
 In this section based on the work by
 \newcite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic},
@@ -411,11 +412,12 @@ we explore the integration of our notion inside the structure of syntactic
 merge, and why the two formalisms are compatible.
 The idea behind that structure is to see the union of trees as a product and
 the merging of trees as a coproduct in a well-defined Hopf algebra.
-Now of course, with our insights on syntactio-semantic parsing, we can either
+Now of course, with our insights on syntactico-semantic parsing, we can either
 think of our parsing structure labeled by multiple modes, as in
 \cite{bumfordEffectdrivenInterpretationFunctors2025}, or think of it as string
 diagrams, as presented above.
 In both cases, we make a more or less implicit use of the merge operation.
+
 Indeed, using trees, we get back to the graded non-associative commutative
 magma operation proposed in the coproduct approach.
 While using string diagrams, we have a certain set of objects on which we can
@@ -425,21 +427,34 @@ Defining the coproduct is a bit trickier so we will define it \emph{with our
 	hands} in an intuitive manner.
 The coproduct on the trees simply connects to the merging of trees, so in our
 case it should only connect two different bits of our string diagrams together.
-This means that our coproduct should be adding a base type combinator.
-However that doesn't suffice to fully express our typed semantics.
-The question can be rephrased as follows: how to get a functorial
+This means that our coproduct should be adding a base type combinator but that
+doesn't suffice to fully express our typed semantics.
+The question can be thus rephrased as follows: how to get a functorial
 correspondance between the labeled trees and our string diagrams that behaves
 well with regards to the product and coproduct on those objects?
-When considering basic trees, this is not possible, so we need to consider
-multi-trees, with possibly multiple edges between a node and one of its
-subtrees/children.
-However, since our diagram are a tool that can be seen \emph{on top} of the
-usual parsing trees, this might just not be useful.
+
+\medskip
+
+However, since our diagrams are a tool that can be seen \emph{on top} of the
+usual parsing trees, answering such complex questions might seem a stretch for
+an unaware linguist.
 Indeed, what such a point of view would bring is void: our system does not
 add any new theoretical concept to the theoretical explanation of the parsing
 tree approach, and is simply a more visual explanation of the process, as well
 as an explanation of it inside the categorical framework we used to develop the
 type and effect system for a natural language.
+The interest of such a connection is found in the sheer efficient beauty of a
+commutative diagram: we express that - however complicated - the two completely
+different point of views we have actually do represent the same concept.
+While this is true for trees and coproducts - since we did a rewriting of
+semantic combinations as a form of enhanced syntax, previous results stand -
+this is not in itself obvious for string diagrams.
+When considering basic trees and coproducts, this is not possible, the best
+we could have would be a forgetful functor from the string diagrams to the
+trees.
+We would thus need to consider multi-trees, with possibly multiple edges
+between a node and one of its children.
+
 
 \subsection{Rewriting Rules}
 \label{subsec:rewrite}
@@ -558,7 +573,6 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 		also used by Dylan \textsc{Bumford} to rewrite the full parser and make use
 		of its dependent type system, allowing for functions about types and
 		effects to be typed.}
-	% TODO: Create Lean project
 \end{proof}
 
 \medskip
