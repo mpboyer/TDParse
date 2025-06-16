@@ -1,45 +1,45 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Categorical Semantics of Effects: A Typing System}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Typing Category}{3}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Types}{3}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}Functors, Applicatives and Monads}{3}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Natural Transformations}{4}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1}Typing Category}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Types}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Functors, Applicatives and Monads}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Natural Transformations}{3}{subsubsection.1.1.3}%
 \contentsline {paragraph}{\numberline {1.1.3.1}Adjunctions}{4}{paragraph.1.1.3.1}%
-\contentsline {paragraph}{\numberline {1.1.3.2}Handlers}{5}{paragraph.1.1.3.2}%
-\contentsline {paragraph}{\numberline {1.1.3.3}Higher-Order Constructs}{6}{paragraph.1.1.3.3}%
+\contentsline {paragraph}{\numberline {1.1.3.2}Handlers}{4}{paragraph.1.1.3.2}%
+\contentsline {paragraph}{\numberline {1.1.3.3}Higher-Order Constructs}{5}{paragraph.1.1.3.3}%
 \contentsline {paragraph}{\numberline {1.1.3.4}Monad Transformers}{6}{paragraph.1.1.3.4}%
-\contentsline {subsection}{\numberline {1.2}Typing Judgements}{7}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Decidability}{9}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Handling Non-Determinism}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}String Diagram Modelisation of Sentences}{9}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Achieving Normal Forms}{11}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}The Composition Dilemma}{11}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Equations}{13}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Computing Normal Forms}{14}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Representing String Diagrams}{15}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{15}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Completeness, Soundness, Decidability}{16}{subsubsection.2.3.3}%
-\contentsline {section}{\numberline {3}Efficient Semantic Parsing}{17}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Naïve Semantic Parsing on Syntactic Parsing}{17}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Islands}{18}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Syntactic-Semantic Parsing}{19}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}The Improved Method}{19}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Diagrammatical Parsing}{21}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}The Coproduct Categorical Approach to Syntax}{24}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Rewriting Rules}{25}{subsection.3.3}%
-\contentsline {section}{\numberline {A}Bibliography}{28}{appendix.A}%
-\contentsline {section}{\numberline {B}Presenting a Language}{29}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}Syntax}{29}{subsection.B.1}%
-\contentsline {subsection}{\numberline {B.2}Lambda-Calculus}{29}{subsection.B.2}%
-\contentsline {subsubsection}{\numberline {B.2.1}Types of Syntax}{29}{subsubsection.B.2.1}%
-\contentsline {subsubsection}{\numberline {B.2.2}Lexicon: Semantic Denotations for Words}{29}{subsubsection.B.2.2}%
-\contentsline {subsubsection}{\numberline {B.2.3}Effects of the Language}{30}{subsubsection.B.2.3}%
-\contentsline {subsubsection}{\numberline {B.2.4}Modality, Plurality, Aspect, Tense}{30}{subsubsection.B.2.4}%
-\contentsline {subsection}{\numberline {B.3}Other Representation of Concepts}{33}{subsection.B.3}%
-\contentsline {subsubsection}{\numberline {B.3.1}Manifold Representation}{33}{subsubsection.B.3.1}%
-\contentsline {subsubsection}{\numberline {B.3.2}Vector Representation}{33}{subsubsection.B.3.2}%
-\contentsline {subsubsection}{\numberline {B.3.3}Probabilistic Monad}{33}{subsubsection.B.3.3}%
-\contentsline {section}{\numberline {C}Lean Code}{33}{appendix.C}%
-\contentsline {section}{\numberline {D}Other Considered Things}{33}{appendix.D}%
-\contentsline {subsection}{\numberline {D.1}Typing with a Product Category (and a bit of polymorphism)}{33}{subsection.D.1}%
+\contentsline {subsection}{\numberline {1.2}Typing Judgements}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Decidability}{8}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Handling Non-Determinism}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}String Diagram Modelisation of Sentences}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Achieving Normal Forms}{10}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}The Composition Dilemma}{10}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Equations}{12}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Computing Normal Forms}{13}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Representing String Diagrams}{14}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{14}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Completeness, Soundness, Decidability}{15}{subsubsection.2.3.3}%
+\contentsline {section}{\numberline {3}Efficient Semantic Parsing}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Naïve Semantic Parsing on Syntactic Parsing}{16}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Islands}{17}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Syntactic-Semantic Parsing}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}The Improved Method}{18}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Diagrammatical Parsing}{20}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}The Coproduct Categorical Approach to Syntax}{23}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Rewriting Rules}{24}{subsection.3.3}%
+\contentsline {section}{\numberline {A}Bibliography}{27}{appendix.A}%
+\contentsline {section}{\numberline {B}Presenting a Language}{28}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Syntax}{28}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Lambda-Calculus}{28}{subsection.B.2}%
+\contentsline {subsubsection}{\numberline {B.2.1}Types of Syntax}{28}{subsubsection.B.2.1}%
+\contentsline {subsubsection}{\numberline {B.2.2}Lexicon: Semantic Denotations for Words}{28}{subsubsection.B.2.2}%
+\contentsline {subsubsection}{\numberline {B.2.3}Effects of the Language}{29}{subsubsection.B.2.3}%
+\contentsline {subsubsection}{\numberline {B.2.4}Modality, Plurality, Aspect, Tense}{29}{subsubsection.B.2.4}%
+\contentsline {subsection}{\numberline {B.3}Other Representation of Concepts}{32}{subsection.B.3}%
+\contentsline {subsubsection}{\numberline {B.3.1}Manifold Representation}{32}{subsubsection.B.3.1}%
+\contentsline {subsubsection}{\numberline {B.3.2}Vector Representation}{32}{subsubsection.B.3.2}%
+\contentsline {subsubsection}{\numberline {B.3.3}Probabilistic Monad}{32}{subsubsection.B.3.3}%
+\contentsline {section}{\numberline {C}Lean Code}{32}{appendix.C}%
+\contentsline {section}{\numberline {D}Other Considered Things}{32}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}Typing with a Product Category (and a bit of polymorphism)}{32}{subsection.D.1}%

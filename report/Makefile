@@ -1,6 +1,9 @@
 main:
 	lualatex --shell-escape tdparse.tex
 
+slides:
+	lualatex --shell-escape slides.tex
+
 all:
 	make clean;
 	\rm -f tdparse.bbl;
@@ -10,5 +13,11 @@ all:
 	bibtex tdparse;
 	make main;
 
+pres:
+	make clean;
+	make slides;
+	make slides;
+	make slides;
+
 clean:
-	\rm -f tdparse.log tdparse.out tdparse.toc tdparse.aux
+	\rm -f *.log *.out *.toc *.aux
