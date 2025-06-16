@@ -1,6 +1,6 @@
 \tikzset{
 	a/.pic={%
-			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -1) coordinate (input)
+			\path coordinate[dot, label=above:$\w{a}$] (a) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -1) coordinate (input)
 			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa);
 			\node[anchor=north] at (input) {$\e \to \t$};
 			\draw (input) -- (bool);
@@ -16,11 +16,11 @@
 			\end{pgfonlayer}
 		},
 	cat/.pic={
-			\path coordinate[dot, label=right:$\w{in\ a\ box}$] (box)
+			\path coordinate[dot, label=above:$\w{in\ a\ box}$] (box)
 			+ (-1, 1) coordinate (ctlbox)
 			+ (-1, 2) coordinate[label=above:$\f{D}$] (effbox)
 			+ (0, -1) coordinate[label=below:$\bot$] (input)
-			++ (0, 1) coordinate[label=right:$\w{cat} \land$, dot]
+			++ (0, 1) coordinate[label=above:$\w{cat} \land$, dot]
 			+ (0, 1) coordinate[label=above:$\e\to \t$] (out);
 			\draw[dashed] (input) -- (box);
 			\draw (box) to[out=180, in=-90] (ctlbox) -- (effbox)
@@ -36,11 +36,11 @@
 			\end{pgfonlayer}
 		},
 	res/.pic={
-			\path coordinate[dot, label=right:$\w{cat} \land$] (rcat)
-			++ (0, 1) coordinate[dot, label=right:$\w{a}$] (ra)
+			\path coordinate[dot, label=above:$\w{cat} \land$] (rcat)
+			++ (0, 1) coordinate[dot, label=above:$\w{a}$] (ra)
 			+ (0, 3) coordinate[label=above:$\e$] (rout)
 			+ (-1, 1) coordinate[label=right:$\f{D}$] (rctla)
-			++ (0, -2) coordinate[dot, label=right:$\w{in\ a\ box}$] (rbox)
+			++ (0, -2) coordinate[dot, label=above:$\w{in\ a\ box}$] (rbox)
 			+ (0, -1) coordinate[label=below:$\bot$] (rbot)
 			++ (-2, 2) coordinate (rctlb)
 			++ (0, 1) coordinate[label=left:$\f{D}$] (rctlbb)
@@ -65,52 +65,53 @@
 			\end{pgfonlayer}
 		}
 }
-% FIXME: fix out of e from J
-% TODO: Flip the pics and the outward strings to match the actual orientation
-% of the parsing diagram.
-\begin{tikzpicture}
-	\pic (nbox) at (0, 0) {cat};
-	\pic (na) at ($(nbox-north) + (0, 2.5)$) {a};
-	\node[rectangle, draw=black] (db) at ($(nbox-east) + (1, 0)$) {$\f{D}(\e \to \t)$};
-	\node[rectangle, draw=black] (da) at ($(na-east) + (1.5, 0)$) {$(\e \to \t) \to \f{D}\e$};
-	\node[rectangle, draw=black] (fmap) at ($(nbox-north east) + (3, 1)$) {$\combML_{\f{M}}$};
-	\path (fmap)
-	+ (1.5, 1) coordinate[label=above:$(\e \to \t) \to \f{D}\e$] (ffu)
-	+ (1.5, -1) coordinate[label=below:$\e \to \t$] (ffd)
-	+ (0, 3) coordinate (tfm)
-	++ (3, 0) node[rectangle, draw=black] (app) {$\rotatebox{90}{<}$}
-	+ (1, 0) coordinate[label=below:$\f{D}\e$] (fad)
-	+ (0, 3) coordinate (tfd)
-	++ (2, 0) node[rectangle, draw=black] (join) {$\combJ_{\f{D}}$}
-	+ (0, 3) coordinate (tft)
-	+ (0, 5.5) coordinate[label=above:$\e$] (end);
-	\begin{scope}
-		\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
-		(db) to[out=0, in=240] (fmap)
-		(da) to[out=0, in=120] (fmap)
-		(fmap) to[out=60, in=180] (ffu)
-		(fmap) to[out=-60, in=180] (ffd)
-		(ffu) to[out=0, in=120] (app)
-		(ffd) to[out=0, in=240] (app)
-		(app) -- (join);
-	\end{scope}
-	%
-	\node[circle, draw=black] (mu) at ($($(tfm)!0.5!(tfd)$) + (0, 1)$) {$\mu_{\f{D}}$};
-	\coordinate[label=above:$\f{D}$] (ff) at ($(mu) + (0, 2)$);
-	\draw[loosely dashed] (fmap) --  (tfm)
-	(app) --  (tfd);
-	\draw[loosely dashed]
-	(join) -- (tft)
-	(tfm) to[out=90, in=180] node[pos=.5, above left] {$\f{D}$} (mu)
-	(tfd) to[out=90, in=0] node[pos=.5, above right] {$\f{D}$} (mu)
-	(mu) -- ($(mu) + (0, 1)$);
-	\draw[densely dotted, thick, postaction={on each segment={mid arrow=black}}] ($(tft) + (0, -1)$) to[out=90, in=-90] (mu);
-	\draw	(tft) -- (end) ($(mu) + (0, 1)$) -- (ff);
-	%
-	\node (imp) at ($(join) + (.5, 0)$) {$\Rightarrow$};
-	\pic (nres) at ($(imp.east) + (3,0)$) {res};
-	\draw[->] let
-	\p{end} = ($(end) + (4.5, 0)$),
-	\p{bond} = ($(ncat-ll) + (1, 0)$),
-	in (\x{bond}, \y{bond}) -- node[above] {Direction of Reduction} (\x{end}, \y{bond});
-\end{tikzpicture}
+\rotatebox{90}{%
+	\begin{tikzpicture}
+		\pic[rotate=-90, transform shape] (nbox) at (0, 0) {cat};
+		\pic[rotate=-90, transform shape] (na) at ($(nbox-north) + (-2, 4)$) {a};
+		\node[rectangle, draw=black] (db) at ($(nbox-north) + (1, 0)$) {$\rotatebox{-90}{\f{D}(\e \to \t)}$};
+		\node[rectangle, draw=black] (da) at ($(na-north) + (1, 0)$) {$\rotatebox{-90}{(\e \to \t) \to \f{D}\e}$};
+		\node[rectangle, draw=black] (fmap) at ($(nbox-north) + (3, 1)$) {\rotatebox{-90}{$\combML_{\f{D}}$}};
+		\path (fmap)
+		+ (1, 1) coordinate[label=above:$\rotatebox{-90}{(\e \to \t) \to \f{D}\e}$] (ffu)
+		+ (1, -1) coordinate[label=below:$\rotatebox{-90}{\e \to \t}$] (ffd)
+		+ (7, 7) coordinate (tfm)
+		++ (2, 0) node[rectangle, draw=black] (app) {$\rotatebox{-90}{>}$}
+		+ (1, 0) coordinate[label=below:$\rotatebox{-90}{\f{D}\e}$] (fad)
+		+ (5, 5) coordinate (tfd)
+		++ (2, 0) node[rectangle, draw=black] (join) {\rotatebox{-90}{$\combJ_{\f{D}}$}}
+		+ (4, 4) coordinate (tft)
+		+ (7.5, 4) coordinate[label=right:$\rotatebox{-90}{\e}$] (end)
+		;
+		\begin{scope}
+			\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
+			(db) to[out=0, in=240] (fmap)
+			(da) to[out=0, in=120] (fmap)
+			(fmap) to[out=60, in=180] (ffu)
+			(fmap) to[out=-60, in=180] (ffd)
+			(ffu) to[out=0, in=120] (app)
+			(ffd) to[out=0, in=240] (app)
+			(app) -- (join);
+		\end{scope}
+		%
+		\node[circle, draw=black] (mu) at ($($(tfm)!0.5!(tfd)$) + (1, 0)$) {\rotatebox{-90}{$\mu_{\f{D}}$}};
+		\coordinate[label=right:$\rotatebox{-90}{\f{D}}$] (ff) at ($(mu) + (3.5, 0)$);
+		\draw[loosely dashed] (fmap) to[out=90, in=180]  (tfm)
+		(app) to[out=90, in=180]  (tfd)
+		(app) to [out=90, in=180] (tft)
+		(tft) -- ($(tft) + (1, 0)$);
+		\draw[loosely dashed]
+		(tfm) to[out=0, in=90] node[pos=.5, above right] {$\rotatebox{-90}{\f{D}}$} (mu)
+		(tfd) to[out=0, in=-90] node[pos=.5, below right] {$\rotatebox{-90}{\f{D}}$} (mu)
+		(mu) -- ($(mu) + (1, 0)$);
+		\draw[densely dotted, thick, postaction={on each segment={mid arrow=black}}] (join) to[out=90, in=180] (mu);
+		\draw	($(tft) + (1, 0)$) -- (end) ($(mu) + (1, 0)$) -- (ff);
+		%
+		\node (imp) at ($(join) + (.5, 0)$) {$\Rightarrow$};
+		\pic[rotate=-90, transform shape] (nres) at ($(imp.east) + (3,0)$) {res};
+		\draw[->] let
+		\p{end} = ($(end) + (1, 0)$),
+		\p{bond} = ($(nbox-south east) + (0, -.5)$),
+		in (\x{bond}, \y{bond}) -- node[below] {\rotatebox{-180}{Direction of Reduction}} (\x{end}, \y{bond});
+	\end{tikzpicture}
+}
