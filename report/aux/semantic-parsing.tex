@@ -566,7 +566,24 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 	For the first point, the equivalence has already been proved under Theorem
 	\ref{thm:confluence}.
 	For the second point, it is obvious since based on an equality.
-	To prove the third set of rules, we have used the proof assistant Lean.
+	For the third point, it's a bit more complicated.
+	The rules about not using combinators $\combUL$ and $\combUR$ come from the
+	notion of handling and granting termination and decidability to our system.
+	The rules about adding $\combJ$ and $\combDN$ after moving two of the same
+	effect from the same side (i.e. $\combML \combML$ or $\combMR\combMR$) are
+	normalization of a the elevator equations \ref{eq:elevator}.
+	Indeed, in the denotation, the only reason to keep two of the same effects
+	and not join them\footnote{Provided they can be joined.} is to at some point
+	have something get in between the two.
+	Joining and cloture should then be done at earliest point in parsing where it
+	can be done, and that is equivalent to later points because of the elevator
+	equations, or Theorem \ref{thm:isotopy}.
+	The last set of rules follows from the following: we should not use $\combJ
+		\combML \combMR$ instead of $\combA$, as those are equivalent because of the
+	equation defining them.
+	The same thing goes for the other two, as we should use the units of monads
+	over applicative rules and fmap.
+	To prove the last set of rules, we have used the proof assistant Lean.
 	We have provided it with a full set of tactics about $\lambda$-calculus,
 	to allow to check equivalence of terms and added definitions for our types,
 	combinators and so on, to make use of its language server\footnote{Lean was
