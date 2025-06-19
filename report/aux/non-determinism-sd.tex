@@ -36,7 +36,7 @@ For simplicity reasons, and because the effects that are buried in our typing sy
 Indeed, the question of providing rules to compose the string diagram for \textbf{the} and the one for \textbf{cat} to give the one for \textbf{the cat} is a difficult question, that natural solutions to are not obvious\footnote{I will suggest a solution when discussing the set of equations between our diagrams and the way we construct our \emph{normal forms}.}.
 The natural composition rules on diagrams being the gluing together of diagrams, we do need to add something to our toolbox.
 \begin{equation}
-	\inputtikz{sd-csd-example}
+	\adjustbox{width=.8\columnwidth}{\ensuremath{\inputtikz{sd-csd-example}}}
 	\label{eq:CSD}
 	\tag{CSD}
 \end{equation}
@@ -44,7 +44,7 @@ The natural composition rules on diagrams being the gluing together of diagrams,
 To justify our proposition to only consider fully reduced expressions note that in this formalism we don't consider the expressions for our functors and natural transformations\footnote{Here, we are talking about the actual \emph{natural transformations} that are used for handling effects, whether they're the ones associated to algebraic handlers or adjunctions/monads\ldots} but simply the sequence in which they are applied.
 In particular, this means the following diagrams commute for any $F, G$ functors and $\theta$ natural transformation.
 \begin{category}
-	G\ar[r, "F"]\ar[d, "\theta"'] & F\circ G\ar[d, "F\circ \theta"] &[2cm] G\ar[r, "F"]\ar[d, "\theta"'] & G\circ F \ar[d, "\theta\circ F"] \\
+	G\ar[r, "F"]\ar[d, "\theta"'] & F\circ G\ar[d, "F\circ \theta"] &[.5cm] G\ar[r, "F"]\ar[d, "\theta"'] & G\circ F \ar[d, "\theta\circ F"] \\
 	\theta G\ar[r, "F"'] & F\circ \theta G & \theta G\ar[r, "F"'] & \theta G \circ F
 \end{category}
 The property of natural transformations to be applied before or after any arrow in the category justifies that even when composing before the handling we get the same result.
@@ -79,10 +79,10 @@ We will now provide a set of rewriting rules on string diagrams (written as equa
 \subsubsection{The Composition Dilemma}
 \label{subsubsec:cds}
 In Equation \eqref{eq:CSD} we provide an example of why composing string diagrams, in our paradigm, is not as simple as we would like.
-However, we could solve this conundrum by adding to our set of equations the following rule, which we denote as the \emph{Curryfication} rule:
+However, we could solve this conundrum by adding to our set of equations the following rule, which we denote as the \emph{Currying} rule:
 \begin{equation}
 	\inputtikz{sd-curry}
-	\label{eq:curry}\tag{Curryfication}
+	\label{eq:curry}\tag{Currying}
 \end{equation}
 This rule is to be seen as a straight-forward consequence of the isomorphism between $\mC\left( A, B\right)$
 the arrows between $A$ and $B$ and $A \Rightarrow B$ the exponential object of $B$ to the $A$.
@@ -91,10 +91,14 @@ before composing answers the question of how we create composition rules for str
 there is still a situation that is not accounted for, or at least explained:
 what happens when applying an effectful diagram\footnote{When the associated effect is monadic this
 	type of diagram represents an arrow in the Kleisli category of the monad.} to another effectful diagram?
-Take the equation below:
-\begin{equation*}
-	\inputtikz{sd-kleisli-composition}
-\end{equation*}
+Take the equation presented in Figure \ref{fig:sd-kleisli-composition}.
+\begin{figure*}
+	\begin{equation*}
+		\inputtikz{sd-kleisli-composition}
+	\end{equation*}
+	\caption{Example of easy composition of kleisli arrows in the string diagram format, with no derivation concerns.}
+	\label{fig:sd-kleisli-composition}
+\end{figure*}
 
 Note that the effects are applied in the order of the application, meaning that if we apply a function
 $\phi: \tau_{1} \to \tau_{2} \to \tau_{3}$ to an element of type $F\tau_{1}$ then to an element of
@@ -116,7 +120,7 @@ Let us now look at a few of the equations that arise from the commutation of cer
 \begin{description}
 	\item[The \emph{Elevator} Equations] are a consequence of Theorem \ref{thm:isotopy} but also highlight one of the most important properties of string diagrams in their modelisation of multi-threaded computations: what happens on one string does not influence what happens on another in the same time:
 	      \begin{equation}
-		      \inputtikz{sd-elevator}
+		      \columneq{\inputtikz{sd-elevator}}
 		      \label{eq:elevator}
 		      \tag{\href{https://î.fr/ascenseurs}{\emoji{elevator}}}
 	      \end{equation}
@@ -124,13 +128,13 @@ Let us now look at a few of the equations that arise from the commutation of cer
 	\item[The \emph{Snake} Equations] are a rewriting of the categorical diagrams equations \eqref{eq:zigzag} and \eqref{eq:zagzig} of Paragraph \ref{par:adjunctions} which are the defining properties of an adjunction.
 	      If we have an adjunction $L\dashv R$:
 	      \begin{equation}
-		      \inputtikz{sd-snake1}
+		      \columneq{\inputtikz{sd-snake1}}
 		      \tag{\rotatebox[origin=c]{90}{\emoji{snake}}}
 		      \label{eq:snek1}
 	      \end{equation}
 	      \vspace{-12pt}
 	      \begin{equation}
-		      \inputtikz{sd-snake2}
+		      \columneq{\inputtikz{sd-snake2}}
 		      \tag{\rotatebox[origin=c]{90}{\reflectbox{\emoji{snake}}}}
 		      \label{eq:snek2}
 	      \end{equation}
@@ -138,8 +142,8 @@ Let us now look at a few of the equations that arise from the commutation of cer
 
 	      What the reduction means is that we have a commutative mapping:
 	      \begin{category}[]
-		      \eqref{eq:zigzag}\ar[d, "\texttt{\textbackslash reflectbox}"']\ar[r, "\texttt{string}"]  & \eqref{eq:snek1}\ar[d, "\texttt{\textbackslash reflectbox}"]  \\
-		      \eqref{eq:zagzig}\ar[r, "\texttt{string}"'] & \eqref{eq:snek2}
+		      \eqref{eq:zigzag}\ar[d, "\texttt{\textbackslash reflectbox}"']\ar[r, "\texttt{sd}"]  & \eqref{eq:snek1}\ar[d, "\texttt{\textbackslash reflectbox}"]  \\
+		      \eqref{eq:zagzig}\ar[r, "\texttt{sd}"'] & \eqref{eq:snek2}
 	      \end{category}
 	\item[The \emph{(co-)Monadic} Equations] explain the very familiar sentence that a monad is just\footnote{Which is a monad} a monoid on the category of the endofunctors, that is, a multiplication law and a unit.
 	      Here we do not present the co-monadic equations which are the exact same one but with a few letter changes and the up and down reversed.
@@ -149,7 +153,7 @@ Let us now look at a few of the equations that arise from the commutation of cer
 		      \tag{$\eta$}
 	      \end{equation}
 	      \begin{equation}
-		      \inputtikz{sd-monad-mult}
+		      \columneq{\inputtikz{sd-monad-mult}}
 		      \label{eq:muax}
 		      \tag{$\mu$}
 	      \end{equation}

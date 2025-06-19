@@ -61,29 +61,31 @@
 			\end{pgfonlayer}
 		}
 }
-
-
+%
 \rotatebox{90}{%
-	\begin{tikzpicture}
+	\begin{tikzpicture}[yscale=.9]
 		\pic[rotate=-90, transform shape] (ncat) at (0, 0) {cat};
 		\pic[rotate=-90, transform shape] (neats) at ($(ncat-u) + (-1, 4)$) {eats};
 		%
-		\node[rectangle, draw=black] (cn) at ($(ncat-u) + (.5, 0)$) {$\rotatebox{-90}{\f{M}\e}$};
+		\node[rectangle, draw=black] (cn) at ($(ncat-u) + (1, 0)$) {$\rotatebox{-90}{\f{M}\e}$};
 		\node[rectangle, draw=black] (an) at ($(neats-u) + (1, 0)$) {$\rotatebox{-90}{\f{D}(\e \to \t)}$};
 		\node[rectangle, draw=black] (fmap1) at ($(ncat-u) + (4, 1)$) {\rotatebox{-90}{$\combML_{\f{M}}$}};
 		\path (fmap1)
 		+ (1, 1) coordinate[label=above:$\rotatebox{-90}{\f{D}(\e \to \t)}$] (ffu)
 		+ (1, -1) coordinate[label=below:$\rotatebox{-90}{\e}$] (ffd)
 		+ (0, 3) coordinate (tfm)
-		+ (6, 9) coordinate[label=right:$\rotatebox{-90}{\f{M}}$] (functorm)
+		+ (3, 6) coordinate (tfmm)
+		+ (7, 6) coordinate[label=right:$\rotatebox{-90}{\f{M}}$] (functorm)
 		++ (2, 0) node[rectangle, draw=black] (fmap2) {\rotatebox{-90}{$\combMR_{\f{D}}$}}
 		+ (1, 1) coordinate[label=above:$\rotatebox{-90}{\e \to \t}$] (fau)
 		+ (1, -1) coordinate[label=below:$\rotatebox{-90}{\e}$] (fad)
 		+ (0, 3) coordinate (tfd)
-		+ (4, 7) coordinate[label=right:$\rotatebox{-90}{\f{D}}$] (functord)
+		+ (2, 5) coordinate (tfdd)
+		+ (5, 5) coordinate[label=right:$\rotatebox{-90}{\f{D}}$] (functord)
 		++ (2, 0) node[rectangle, draw=black] (app) {$\rotatebox{-90}{>}$}
 		+ (0, 3) coordinate (tft)
-		+ (2, 5) coordinate[label=right:$\rotatebox{-90}{\t}$] (end);
+		+ (1, 4) coordinate (tftt)
+		+ (3, 4) coordinate[label=right:$\rotatebox{-90}{\t}$] (end);
 		%
 		\begin{scope}
 			\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
@@ -102,9 +104,9 @@
 		\draw[loosely dashed] (fmap1) -- (tfm)
 		(fmap2) -- (tfd)
 		(app) -- (tft);
-		\draw (tfm) to[out=90, in=180] (functorm)
-		(tfd) to[out=90, in=180] (functord)
-		(tft) to[out=90, in=180] (end);
+		\draw (tfm) to[out=90, in=180] (tfmm) -- (functorm)
+		(tfd) to[out=90, in=180] (tfdd) -- (functord)
+		(tft) to[out=90, in=180] (tftt) -- (end);
 		%
 		\node (imp) at ($(app) + (.5, 0)$) {$\Rightarrow$};
 		\pic[rotate=-90, transform shape] (nres) at ($(imp.east) + (2.5,0)$) {res};

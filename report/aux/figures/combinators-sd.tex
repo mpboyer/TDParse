@@ -1,56 +1,52 @@
-\begin{equation*}
-	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-		\path coordinate[dot, label=below:$>$] (m)
-		+ (0, 1) coordinate[label=above:$\beta$] (result)
-		+ (-1, -1) coordinate[label=below:$\alpha \to \beta$] (phi)
-		+ (1, -1) coordinate[label=below:$\alpha$] (x);
-		\draw (m) -- (result);
-		\draw (m) to[out=180, in=90] (phi);
-		\draw (m) to[out=0, in=90] (x);
-		\begin{pgfonlayer}{background}
-			\fill[catmcb] (result) -- (m) -- ($(m) + (-1, 0)$) |- (result);
-			\fill[catmcb] (result) -- (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (result);
-			\fill[catmc] (result) -- (m) -- ($(m) + (1, 0)$) |- (result);
-			\fill[catmc] (result) -- (m) to[out=0, in=90] (x) -- ($(x) + (1, 0)$) |- (result);
-			\fill[catmca] (m) to[out=0, in=90] (x) -- (phi) to[out=90, in=180] (m);
-		\end{pgfonlayer}
-	\end{tikzpicture}
-	\hspace{2.5cm}
-	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}, yscale=-1]
-		\path coordinate[dot, label=above:$\combML_{\f{F}}$] (m)
-		+ (1, 1) coordinate[label=below:$\beta$] (out2)
-		+ (-1, 1) coordinate[label=below:$\alpha$] (out)
-		+ (-1.5, 1) coordinate[label=below:$\f{F}$] (out1)
-		+ (-1, -1) coordinate[label=above:$\alpha$] (phi)
-		+ (1, -1) coordinate[label=above:$\beta$] (x);
-		\draw (m) to[out=180, in=90] (phi);
-		\draw (m) to[out=0, in=90] (x);
-		\draw (m) to[out=180, in=-90] (out1);
-		\draw (m) to[out=180, in=-90] (out);
-		\draw (m) to[out=0, in=-90] (out2);
-		\begin{pgfonlayer}{background}
-			\fill[catmcc] (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (out1) to[out=-90, in=180] (m);
-			\fill[catmc] (m) to[out=0, in=-90] (x) -- ($(x) + (1, 0)$) |- (out2) to[out=-90, in=0] (m);
-			\fill[catmca] (m) to[out=180, in=90] (phi) -- (x) to[out=90, in=0] (m);
-			\fill[catmcb] (m) to[out=180, in=-90] (out1) -- (out) to[out=-90, in=180] (m);
-			\fill[catmca] (m) to[out=180, in=-90] (out) -- (out2) to[out=-90, in=0] (m);
-		\end{pgfonlayer}
-	\end{tikzpicture}
-	\hspace{2.5cm}
-	\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-		\path coordinate[dot, label=below:$\combJ_{\f{F}}$] (m)
-		+ (0, 1) coordinate[label=above:$\f{F}$] (result)
-		+ (-1, -1) coordinate[label=below:$\f{F}$] (phi)
-		+ (1, -1) coordinate[label=below:$\f{F}$] (x);
-		\draw (m) -- (result);
-		\draw (m) to[out=180, in=90] (phi);
-		\draw (m) to[out=0, in=90] (x);
-		\begin{pgfonlayer}{background}
-			\fill[catmcb] (result) -- (m) -- ($(m) + (-1, 0)$) |- (result);
-			\fill[catmcb] (result) -- (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (result);
-			\fill[catmc] (result) -- (m) -- ($(m) + (1, 0)$) |- (result);
-			\fill[catmc] (result) -- (m) to[out=0, in=90] (x) -- ($(x) + (1, 0)$) |- (result);
-			\fill[catmca] (m) to[out=0, in=90] (x) -- (phi) to[out=90, in=180] (m);
-		\end{pgfonlayer}
-	\end{tikzpicture}
-\end{equation*}
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\path coordinate[dot, label=below:$>$] (m)
+	+ (0, 1) coordinate[label=above:$\beta$] (result)
+	+ (-1, -1) coordinate[label=below:$\alpha \to \beta$] (phi)
+	+ (1, -1) coordinate[label=below:$\alpha$] (x);
+	\draw (m) -- (result);
+	\draw (m) to[out=180, in=90] (phi);
+	\draw (m) to[out=0, in=90] (x);
+	\begin{pgfonlayer}{background}
+		\fill[catmcb] (result) -- (m) -- ($(m) + (-1, 0)$) |- (result);
+		\fill[catmcb] (result) -- (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (result);
+		\fill[catmc] (result) -- (m) -- ($(m) + (1, 0)$) |- (result);
+		\fill[catmc] (result) -- (m) to[out=0, in=90] (x) -- ($(x) + (1, 0)$) |- (result);
+		\fill[catmca] (m) to[out=0, in=90] (x) -- (phi) to[out=90, in=180] (m);
+	\end{pgfonlayer}
+\end{tikzpicture}
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}, yscale=-1]
+	\path coordinate[dot, label=above:$\combML_{\f{F}}$] (m)
+	+ (1, 1) coordinate[label=below:$\beta$] (out2)
+	+ (-1, 1) coordinate[label=below:$\alpha$] (out)
+	+ (-1.5, 1) coordinate[label=below:$\f{F}$] (out1)
+	+ (-1, -1) coordinate[label=above:$\alpha$] (phi)
+	+ (1, -1) coordinate[label=above:$\beta$] (x);
+	\draw (m) to[out=180, in=90] (phi);
+	\draw (m) to[out=0, in=90] (x);
+	\draw (m) to[out=180, in=-90] (out1);
+	\draw (m) to[out=180, in=-90] (out);
+	\draw (m) to[out=0, in=-90] (out2);
+	\begin{pgfonlayer}{background}
+		\fill[catmcc] (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (out1) to[out=-90, in=180] (m);
+		\fill[catmc] (m) to[out=0, in=-90] (x) -- ($(x) + (1, 0)$) |- (out2) to[out=-90, in=0] (m);
+		\fill[catmca] (m) to[out=180, in=90] (phi) -- (x) to[out=90, in=0] (m);
+		\fill[catmcb] (m) to[out=180, in=-90] (out1) -- (out) to[out=-90, in=180] (m);
+		\fill[catmca] (m) to[out=180, in=-90] (out) -- (out2) to[out=-90, in=0] (m);
+	\end{pgfonlayer}
+\end{tikzpicture}
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\path coordinate[dot, label=below:$\combJ_{\f{F}}$] (m)
+	+ (0, 1) coordinate[label=above:$\f{F}$] (result)
+	+ (-1, -1) coordinate[label=below:$\f{F}$] (phi)
+	+ (1, -1) coordinate[label=below:$\f{F}$] (x);
+	\draw (m) -- (result);
+	\draw (m) to[out=180, in=90] (phi);
+	\draw (m) to[out=0, in=90] (x);
+	\begin{pgfonlayer}{background}
+		\fill[catmcb] (result) -- (m) -- ($(m) + (-1, 0)$) |- (result);
+		\fill[catmcb] (result) -- (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (result);
+		\fill[catmc] (result) -- (m) -- ($(m) + (1, 0)$) |- (result);
+		\fill[catmc] (result) -- (m) to[out=0, in=90] (x) -- ($(x) + (1, 0)$) |- (result);
+		\fill[catmca] (m) to[out=0, in=90] (x) -- (phi) to[out=90, in=180] (m);
+	\end{pgfonlayer}
+\end{tikzpicture}

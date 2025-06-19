@@ -28,13 +28,13 @@ set of proof trees for the union of cases is the union of set of proof trees for
 Remember again that the order of presuppositions for an inference structure does not matter, so always we have the
 other order of arguments available.
 
-\begin{figure}
+\begin{figure*}
 	\centering
-	\input{aux/figures/match-judgement}
+	\inputtikz{match-judgement}
 	\caption{List of possible combinations for different presuppositions for inputs, as a definition of a function
 		$PT$ from proof trees to proof trees.}
 	\label{tab:proof-trees}
-\end{figure}
+\end{figure*}
 
 It is important to note that here the proof trees are done ``in the wrong direction'', as they are written
 top-down instead of bottom-up in the sense that we start by the axioms which are the typing judgements of
@@ -50,12 +50,10 @@ worst case, when using the recursive scheme that naturally arises from the defin
 Indeed, and while this may seem weird, in the case of a function $\f{F}\ta \to \tb$ where $\f{F}$ is applicative
 and the other combinator is of type $\f{F}\ta$, one might apply the function directly or apply it under the $\f{F}$
 of the argument, leading to two different proof trees:
-\begin{center}
-	\begin{align*}
-		\resizebox{\textwidth}{!}{$\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb}$} \\[1em]
-		\Japp{l}{\f{F}\ta}{\tb}{r}
-	\end{align*}
-\end{center}
+\begin{align*}
+	\columneqs{\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb}} \\[1em]
+	\Japp{l}{\f{F}\ta}{\tb}{r}
+\end{align*}
 Those two different proof trees have different semantic interpretations that may be useful, as discussed by
 \newcite{bumfordEffectdrivenInterpretationFunctors2025}, especially in their analysis of closure properties, which
 is modified in the following section.
@@ -132,7 +130,7 @@ ambiguity in the grammar.
 
 \begin{figure}
 	\centering
-	\input{aux/figures/combination-cfg}
+	\inputtikz{combination-cfg}
 	\caption{Possible Type Combinations in the form of a near CFG}
 	\label{fig:combination-cfg}
 \end{figure}
@@ -175,7 +173,7 @@ $\f{R}\f{C}\f{W}\f{S}\t$ with the mode $\combML\combMR\combMR\combML <$ (see
 
 \begin{figure}
 	\centering
-	\input{aux/figures/combinator-denotations}
+	\inputtikz{combinator-denotations}
 	\caption{Denotations describing the effect of the combinators used in the
 		grammar describing our combination modes presented in
 		Figure \ref{fig:combination-cfg}}
@@ -294,7 +292,7 @@ is purely for an artistic rendition\footnote{Colours make this less boring,
 \begin{figure}
 	\centering
 	\inputtikz{combinators-sd}
-	\caption{String Diagramatic Representation of Combinator Modes}
+	\caption{String Diagramatic Representation of Combinator Modes $>, \combML$ and $\combJ$}
 	\label{fig:combinator-sd}
 \end{figure}
 
@@ -390,7 +388,7 @@ the combinators.
 
 \begin{figure}
 	\centering
-	\input{aux/figures/parsing-diagram2}
+	\inputtikz{parsing-diagram2}
 	\caption{Example of a parsing (sub-)diagram for the phrase
 		\emph{a cat in a box}, presenting the integration of unary combinators
 		inside the connector line.}

@@ -162,17 +162,19 @@ functors $L: \A \to \B$ and $R: \B \to \A$, and a pair of natural
 transformations $\eta: \Id_{\A}  \Rightarrow R \circ L$ and
 $\epsilon: L\circ R \Rightarrow \Id_{\A}$ such that the two following equations
 are satisfied:
-\begin{equation}
-	\inputtikz{cd-zigzag}
-	\tag{\emoji{cloud-with-lightning}}
-	\label{eq:zigzag}
-\end{equation}
-\begin{equation}
-	\inputtikz{cd-zagzig}
-	\label{eq:zagzig}
-	\tag{\reflectbox{\emoji{cloud-with-lightning}}}
-\end{equation}
-
+\begin{figure*}
+	\begin{equation}
+		\inputtikz{cd-zigzag}
+		\tag{\emoji{cloud-with-lightning}}
+		\label{eq:zigzag}
+	\end{equation}
+	\begin{equation}
+		\inputtikz{cd-zagzig}
+		\label{eq:zagzig}
+		\tag{\reflectbox{\emoji{cloud-with-lightning}}}
+	\end{equation}
+	\caption{Zig-Zag (\emoji{cloud-with-lightning}) and Zag-Zig (\reflectbox{\emoji{cloud-with-lightning}}) equations defining adjunctions}
+\end{figure*}
 An adjunction defines two different structures over itself: a monad $L \circ R$
 and a comonad $R\circ L$.
 The fact these structures arise from the interaction between two effects
@@ -283,14 +285,18 @@ to the arguments of the functions they are applied to, explaining how we can
 reconciliate the following semantic equation even if some of the words are not
 marked properly:
 \begin{equation*}
-	\bf future\left(be\left( I, a\ cat \right)\right)
-	= will\ be\left( future\left( I \right), a\ cat \right)
-	= be\left( future\left( I \right), a\ cat \right)
+	\columneqs{
+		\bf future\left(be\left( I, a\ cat \right)\right)
+		= will\ be\left( future\left( I \right), a\ cat \right)
+		= be\left( future\left( I \right), a\ cat \right)
+	}
 \end{equation*}
 Indeed the above equation could be simply written by our natural transformation
 rule as:
 \begin{equation*}
-	\bf future\left( be \right)\left( arg_{1}, arg_{2} \right) = future\left( be \right)\left( arg_{2} \right)\left( future\left( arg_{1} \right) \right) = future \left( be \right) \left( future \left( arg_{2} \right) \right) \left( future \left( arg_{1} \right) \right)
+	\columneqs{
+		\bf future\left( be \right)\left( arg_{1}, arg_{2} \right) = future\left( be \right)\left( arg_{2} \right)\left( future\left( arg_{1} \right) \right) = future \left( be \right) \left( future \left( arg_{2} \right) \right) \left( future \left( arg_{1} \right) \right)
+	}
 \end{equation*}
 This is not a definitive rule as we could want to stop at a step in the
 derivation, depending on our understanding of the notion of future in
@@ -323,12 +329,12 @@ Furthermore, note that the App rule is the \texttt{fmap} rule for the identity f
 Using these typing rules for our combinators, it is important to see that our grammar will still be ambiguous and thus our reduction process will be non-deterministic.
 As an example, we provide the typing reductions for the classic example: \textsl{The man sees the girl using a telescope} in Figure \ref{fig:ud}.
 
-\begin{figure}
+\begin{figure*}
 	\centering
 	\inputtikz{parse-tree-ex}
 	\caption{Parsing trees for the typing of \textsl{The man sees the girl using a telescope}.}
 	\label{fig:ud}
-\end{figure}
+\end{figure*}
 
 This non-determinism is a component of our language's grammar and semantics:
 a same sentence can have multiple interpretation without context.

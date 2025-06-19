@@ -13,9 +13,9 @@ fully this section.
 Our syntactic categories will be written in a more linguistically
 appreciated style than the one proposed in Figure \ref{fig:sctypes}.
 Our set of categories is the following:
-\begin{equation*}
-	\left\{\tt CP, Cmp, CBar, DBar, Cor, DP, Det, Gen, GenD, Dmp, NP, TN, VP, TV, DV, AV, AdjP, TAdj, Deg, AdvP, TAdv \right\}
-\end{equation*}
+\begin{center}
+	\tt CP, Cmp, CBar, DBar, Cor, DP, Det, Gen, GenD, Dmp, NP, TN, VP, TV, DV, AV, AdjP, TAdj, Deg, AdvP, TAdv
+\end{center}
 
 \begin{figure}
 	\centering
@@ -58,12 +58,12 @@ table, but all functors will be reminded and properly defined in Figure
 For denotations that might not be clear at first glance, $\cdot_{\tt F}$ is the
 phonologic accentuation or emphasis of a word and ${\cdot, \bf a \cdot}$ is the
 apposition of a \textbf{NP} to a \textbf{DP} or proper noun.
-\begin{figure}
+\begin{figure*}
 	\centering
 	\inputtikz{lexicon-table}
 	\caption{$\lambda$-calculus representation of the english language $\mL$}
 	\label{fig:lexicon}
-\end{figure}
+\end{figure*}
 Note that for terms with two lambdas, we also say that inverting the lambdas also provides a valid denotation.
 This is important for our formalism as we want to be able to add effects in the order that we want.
 
@@ -71,12 +71,12 @@ This is important for our formalism as we want to be able to add effects in the 
 For the applicatives/monads in Figure \ref{fig:functors} we do not specify the unit and multiplication functions, as they are quite usual examples.
 We still provide the \fmap{} for good measure.
 
-\begin{figure}
+\begin{figure*}
 	\centering
 	\inputtikz{functors-table}
 	\caption{Denotations for the functors used}
 	\label{fig:functors}
-\end{figure}
+\end{figure*}
 
 Let us explain a few of those functors: $\f G$ designates reading from a certain environment of type $\r$ while $\f W$ encodes the possibility of logging a message of type $\t$ along with the expression.
 The functor $\f M$ describes the possibility for a computation to fail, for example when retrieving a value that does not exist (see $\mathbf{the}$).
@@ -110,12 +110,12 @@ It is important to note that if $\tau$ is a type, and $\cont x: \tau$ then we sh
 We then need to define the functor $\Pi$ which models the plural. We do not need to define it on types in any way other than $\Pi\left( \tau \right) = \Pi\tau$.
 We only need to look at the transformation on arrows\footnote{\texttt{fmap}, basically.}.
 This one depends on the \emph{syntactic}\footnote{Actually it depends on the word considered, but since the denotations (when considered effect-less) provided in Figure \ref{fig:lexicon} are more or less related to the syntactic category of the word, our approximation suffices.} type of the arrow, as seen in Figure \ref{fig:lexicon}.
-\begin{figure}
+\begin{figure*}
 	\centering
 	\inputtikz{plural-table}
 	\caption{(Partial) Definition for the $\Pi$ Plural Functor}
 	\label{fig:pluralfunctor}
-\end{figure}
+\end{figure*}
 There is actually a presupposition in our definition. Whenever we apply $\Pi$ to an arrow representing a predicate $p: \e \to \t$, we still apply $p$ to its argument $x$ even though we say that $\Pi p$ is the one that applies to a plural entity $x$.
 This slight notation abuse results from our point of view on plural/its predicate representation: we assume the predicate $p$ (the common noun, the adjectve, the VP\ldots) applies to an object without regarding its cardinality.
 The two point of views on the singular/plural distinction could be adapted to our formalism: whether we believe that singular is the \emph{natural} state of the objects or that it is to be always specified in the same way as plural does not change anything:

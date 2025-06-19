@@ -179,7 +179,8 @@
 \def\Sq#1{\textSq{\ensuremath{#1}}}%
 
 \def\c@lsep{2.3}
-\def\r@wsep{.8}
+\def\r@wsep{.5}
+\def\wordsep{.2}
 
 \tikzset{
 	uptree/.style={
@@ -197,7 +198,6 @@
 	wordnode/.style={
 			inner sep=0pt,
 			align=center,
-			font={\large},
 		},
 	downtree/.style={
 			draw=yulm!80!black,
@@ -212,16 +212,16 @@
 \newcommand{\utnode}[3]{%
 	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q1) at (\x1, {max(\y1, \y2)});
 	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q2) at (\x2, {max(\y1, \y2)});
-	\node (#2#3) at ($($(Q1)!0.5!(Q2)$) + (0, 1)$) [treenode] {\ensuremath{#1}};
-	\draw[uptree] ($(#2.north) + (0, .142)$) -- (#2#3.south);
-	\draw[uptree] ($(#3.north) + (0, .142)$) -- (#2#3.south);
+	\node (#2#3) at ($($(Q1)!0.5!(Q2)$) + (0, \r@wsep)$) [treenode] {\ensuremath{#1}};
+	\draw[uptree] ($(#2) + (0, \wordsep)$) -- ($(#2#3) + (0, -\wordsep)$);
+	\draw[uptree] ($(#3) + (0, \wordsep)$) -- ($(#2#3) + (0, -\wordsep)$);
 }
 \newcommand{\dtnode}[4][0.5]{%
 	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q1) at (\x1, {min(\y1, \y2)});
 	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q2) at (\x2, {min(\y1, \y2)});
-	\node (#3#4) at ($($(Q1)!#1!(Q2)$) + (0, -1)$) [treenode] {\ensuremath{#2}};
-	\draw[downtree] ($(#3.south) + (0, -.142)$) -- (#3#4.north);
-	\draw[downtree] ($(#4.south) + (0, -.142)$) -- (#3#4.north);
+	\node (#3#4) at ($($(Q1)!#1!(Q2)$) + (0, -\r@wsep)$) [treenode] {\ensuremath{#2}};
+	\draw[downtree] ($(#3) + (0, -\wordsep)$) -- ($(#3#4) + (0, +\wordsep)$);
+	\draw[downtree] ($(#4) + (0, -\wordsep)$) -- ($(#3#4) + (0, +\wordsep)$);
 }
 
 \def\inputtikz#1{
@@ -300,4 +300,10 @@
 							markings,
 							mark=at position .5 with {\arrow[#1]{stealth}}
 						}}},
-          }
+}
+
+\usepackage{adjustbox}
+\def\columneqs#1{\adjustbox{width=\columnwidth}{\ensuremath{#1}}}
+\def\columneq#1{\adjustbox{width=.8\columnwidth}{\ensuremath{#1}}}
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1},
+			cells={nodes={scale=#1}}}}

@@ -66,12 +66,12 @@
 		}
 }
 \rotatebox{90}{%
-	\begin{tikzpicture}
-		\pic[rotate=-90, transform shape] (nbox) at (0, 0) {cat};
-		\pic[rotate=-90, transform shape] (na) at ($(nbox-north) + (-2, 4)$) {a};
-		\node[rectangle, draw=black] (db) at ($(nbox-north) + (1, 0)$) {$\rotatebox{-90}{\f{D}(\e \to \t)}$};
-		\node[rectangle, draw=black] (da) at ($(na-north) + (1, 0)$) {$\rotatebox{-90}{(\e \to \t) \to \f{D}\e}$};
-		\node[rectangle, draw=black] (fmap) at ($(nbox-north) + (3, 1)$) {\rotatebox{-90}{$\combML_{\f{D}}$}};
+	\begin{tikzpicture}[yscale=.9]
+		\pic[rotate=-90, transform shape] (nbox) at (0, 1) {a};
+		\pic[rotate=-90, transform shape] (na) at ($(nbox-north) + (-2, 5)$) {cat};
+		\node[rectangle, draw=black] (db) at ($(na-north) + (1, 0)$) {$\rotatebox{-90}{\f{D}(\e \to \t)}$};
+		\node[rectangle, draw=black] (da) at ($(nbox-north) + (1, 0)$) {$\rotatebox{-90}{(\e \to \t) \to \f{D}\e}$};
+		\node[rectangle, draw=black] (fmap) at ($(nbox-north) + (3, 0)$) {\rotatebox{-90}{$\combML_{\f{D}}$}};
 		\path (fmap)
 		+ (1, 1) coordinate[label=above:$\rotatebox{-90}{(\e \to \t) \to \f{D}\e}$] (ffu)
 		+ (1, -1) coordinate[label=below:$\rotatebox{-90}{\e \to \t}$] (ffd)
@@ -85,8 +85,8 @@
 		;
 		\begin{scope}
 			\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
-			(db) to[out=0, in=240] (fmap)
-			(da) to[out=0, in=120] (fmap)
+			(da) to[out=0, in=240] (fmap)
+			(db) to[out=0, in=120] (fmap)
 			(fmap) to[out=60, in=180] (ffu)
 			(fmap) to[out=-60, in=180] (ffd)
 			(ffu) to[out=0, in=120] (app)
@@ -111,7 +111,7 @@
 		\pic[rotate=-90, transform shape] (nres) at ($(imp.east) + (3,0)$) {res};
 		\draw[->] let
 		\p{end} = ($(end) + (1, 0)$),
-		\p{bond} = ($(nbox-south east) + (0, -.5)$),
+		\p{bond} = ($(nbox-south east) + (0, -1.2)$),
 		in (\x{bond}, \y{bond}) -- node[below] {\rotatebox{-180}{Direction of Reduction}} (\x{end}, \y{bond});
 	\end{tikzpicture}
 }
