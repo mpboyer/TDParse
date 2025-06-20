@@ -400,6 +400,34 @@ will be clear when looking at the rewriting rules and the normal forms they
 induce, because, as seen before, string diagrams make it easy to compute
 normal forms, when provided with a confluent reduction system.
 
+The other reason being the tangible interpretation of how things work
+underlying the idea of a string diagram:
+Suppose you're knitting a rainbow scarf.
+You have multiple threads (the different words) of the different colours (their
+types and effects) you're using to knit the scarf.
+When you decide to change the color you take the different threads you have
+been using, and mix them up:
+You can create a new colour\footnote{I know this is not how wool works, but
+	if you prefer you can imagine a pointillist-like way of drawing using multiple
+	coloured lines that superimpose on each other, or a marching band's multiple
+	instruments playing either in harmony or in disharmony and changing that
+	during a score.} thread from two (that's the base combinators) create a
+thicker one from two of the same colour (the applicative mode and the monadic
+join), put aside a thread until a later step (that's the $\fmap$), add a new
+thread to the pattern (that's the unit), or cut a thread you will not be
+using anymore (that's the co-units and closure operators).
+Changing a thread by cutting it and making a knot at another point is basically
+what the eject combinators do.
+This more tangible representation can be seen in a larger diagram in Figure
+\ref{fig:3dparsing-diagram}.
+
+\begin{figure*}
+	\centering
+	\input{aux/figures/3d-parsing-diagram}
+	\caption{3D-like Representation of the Diagrammatic Parsing of a Sentence.}
+	\label{fig:3dparsing-diagram}
+\end{figure*}
+
 \subsubsection{The Coproduct Categorical Approach to Syntax}
 \label{subsubsec:coprod}
 % TODO: add a reference to Bella's paper explaining the interest of such 
@@ -434,8 +462,7 @@ well with regards to the product and coproduct on those objects?
 \medskip
 
 However, since our diagrams are a tool that can be seen \emph{on top} of the
-usual parsing trees, answering such complex questions might seem a stretch for
-an unaware linguist.
+usual parsing trees, answering such complex questions might seem a stretch.
 Indeed, what such a point of view would bring is void: our system does not
 add any new theoretical concept to the theoretical explanation of the parsing
 tree approach, and is simply a more visual explanation of the process, as well
