@@ -400,6 +400,17 @@ will be clear when looking at the rewriting rules and the normal forms they
 induce, because, as seen before, string diagrams make it easy to compute
 normal forms, when provided with a confluent reduction system.
 
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		\node (fig) at (0, 0) {\includegraphics[width=.8\columnwidth]{aux/figures/knitting-example}};
+		\draw[->] ($(fig.south west) + (-.1, -.1)$) -- node[anchor=east] {\rotatebox{90}{Direction of Reduction}} ($(fig.north west) + (-.1, .1)$);
+	\end{tikzpicture}
+	\caption{Example of a \emph{Jacquard} knitwork. Photography and work courtesy
+		of the author's mother.}
+	\label{fig:knitting-example}
+\end{figure}
+
 The other reason being the tangible interpretation of how things work
 underlying the idea of a string diagram:
 Suppose you're knitting a rainbow scarf.
@@ -423,6 +434,11 @@ This more tangible representation can be seen in a larger diagram in Figure
 The sections in the rectangle represent what happen when considering our
 combination step as implementing patterns inside a knitwork, as seen in Figure
 \ref{fig:knitting-example}.
+The different patterns provide, in order, a visual representation of the
+different ways one can combine two strings, i.e., two types and thus two
+denotations.
+The sections outside of the rectangle are the strings of yarn not currently
+being used to make a pattern.
 
 \begin{figure*}
 	\centering
@@ -430,14 +446,6 @@ combination step as implementing patterns inside a knitwork, as seen in Figure
 	\caption{3D-like Representation of the Diagrammatic Parsing of a Sentence.}
 	\label{fig:3dparsing-diagram}
 \end{figure*}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=.9\columnwidth]{aux/figures/knitting-example}
-	\caption{Example of a \emph{Jacquard} knitwork. Photography and work courtesy
-		of the author's mother.}
-	\label{fig:knitting-example}
-\end{figure}
 
 \subsubsection{The Coproduct Categorical Approach to Syntax}
 \label{subsubsec:coprod}
