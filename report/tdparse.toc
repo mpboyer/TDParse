@@ -1,0 +1,44 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Categorical Semantics of Effects: A Typing System}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Typing Category}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Types}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Functors, Applicatives and Monads}{3}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Natural Transformations}{3}{subsubsection.1.1.3}%
+\contentsline {paragraph}{\numberline {1.1.3.1}Adjunctions}{4}{paragraph.1.1.3.1}%
+\contentsline {paragraph}{\numberline {1.1.3.2}Handlers}{4}{paragraph.1.1.3.2}%
+\contentsline {paragraph}{\numberline {1.1.3.3}Higher-Order Constructs}{5}{paragraph.1.1.3.3}%
+\contentsline {paragraph}{\numberline {1.1.3.4}Monad Transformers}{5}{paragraph.1.1.3.4}%
+\contentsline {subsection}{\numberline {1.2}Typing Judgements}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Decidability}{6}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Handling Non-Determinism}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}String Diagram Modelisation of Sentences}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Achieving Normal Forms}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}The Composition Dilemma}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Equations}{8}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Computing Normal Forms}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Representing String Diagrams}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Equational Reductions}{10}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Completeness, Soundness, Decidability}{11}{subsubsection.2.3.3}%
+\contentsline {section}{\numberline {3}Efficient Semantic Parsing}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Naïve Semantic Parsing on Syntactic Parsing}{11}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Islands}{12}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Syntactic-Semantic Parsing}{13}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}The Improved Method}{13}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Diagrammatical Parsing}{14}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}The Coproduct Categorical Approach to Syntax}{16}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Rewriting Rules}{18}{subsection.3.3}%
+\contentsline {section}{\numberline {A}Presenting a Language}{20}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Syntax}{20}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Lambda-Calculus}{20}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {A.2.1}Types of Syntax}{20}{subsubsection.A.2.1}%
+\contentsline {subsubsection}{\numberline {A.2.2}Lexicon: Semantic Denotations for Words}{20}{subsubsection.A.2.2}%
+\contentsline {subsubsection}{\numberline {A.2.3}Effects of the Language}{20}{subsubsection.A.2.3}%
+\contentsline {subsubsection}{\numberline {A.2.4}Modality, Plurality, Aspect, Tense}{21}{subsubsection.A.2.4}%
+\contentsline {subsection}{\numberline {A.3}Other Representation of Concepts}{22}{subsection.A.3}%
+\contentsline {subsubsection}{\numberline {A.3.1}Manifold Representation}{22}{subsubsection.A.3.1}%
+\contentsline {subsubsection}{\numberline {A.3.2}Vector Representation}{22}{subsubsection.A.3.2}%
+\contentsline {subsubsection}{\numberline {A.3.3}Probabilistic Monad}{22}{subsubsection.A.3.3}%
+\contentsline {section}{\numberline {B}Lean Code}{22}{appendix.B}%
+\contentsline {section}{\numberline {C}Other Considered Things}{22}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Typing with a Product Category (and a bit of polymorphism)}{22}{subsection.C.1}%

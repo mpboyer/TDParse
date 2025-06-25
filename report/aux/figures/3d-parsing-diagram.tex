@@ -10,6 +10,7 @@
 \colorlet{crain}{vulm}
 \colorlet{cevepass}{ceve!50!cpass}
 \colorlet{cifevp}{cevepass!50!cif}
+\colorlet{cend}{cifevp!50!crain}
 
 \def\theopac{.2}
 
@@ -32,7 +33,7 @@
 		}
 }
 
-\begin{tikzpicture}
+\begin{tikzpicture}[yscale=.7]
 	\shear{.2, .7}{\pic[transform shape] (w1) at (0, 0) {pelote=cif};}
 	\shear{.2, .8}{\pic[transform shape] (w2) at ($(w1-east) + (1.5cm, .3)$) {pelote=ceve};}
 	\shear{.2, 1}{\pic[transform shape] (w3) at ($(w2-east) + (1.5cm, -.2)$) {pelote=cpass};}
@@ -48,7 +49,8 @@
 	\wool[ceve] let \p1 = (base),	\p2 = ($(w2-south) + (-.2, .011)$) in	(\x2, \y2) -- (\x2, \y1) coordinate[black, label=above left:$\e$] (everyone-f);
 	\wool[cpass] let \p1 = (base),	\p2 = (w3-south) in	(\x2, \y2) -- (\x2, \y1) coordinate[black, label=above left:$\e \to \t$] (passed);
 	\wool[crain] let \p1 = (base),	\p2 = (w4-south) in	(\x2, \y2) -- (\x2, \y1) coordinate[black, label=above left:$\t$] (rain);
-	\wool[cif, opacity=\theopac] (if) -- +(0, -8) coordinate (ifp2);
+	%
+	\wool[cif, opacity=\theopac] (if) -- +(0, -9.5) coordinate (ifp2);
 	%
 	%
 	%
@@ -59,15 +61,15 @@
 	%
 	%
 	%
-	\coordinate (evef1) at ($(everyone-f) + (-.5, -.5)$);
-	\coordinate (evet1) at ($(everyone-t) + (-1, -1)$);
+	\coordinate (evef1) at ($(everyone-f) + (-.5, -2)$);
+	\coordinate (evet1) at ($(everyone-t) + (-1, -2.5)$);
 	\path let
 	\p1 = (evef1),
-	\p2 = ($(passed) + (0, -2)$)
+	\p2 = ($(passed) + (0, -3.5)$)
 	in coordinate (pass1) at (\x1, \y2);
-	\draw[opacity=\theopac, ceve] (everyone-f) to[out=-90, in=0] (evef1) -- +(-3, 0) coordinate (eveftmp) (everyone-t) to[out=-90, in=0] (evet1) -- +(-3, 0) coordinate (evettmp);
+	\draw[opacity=\theopac, ceve] (everyone-f) -- ++(0, -1.5) to[out=-90, in=0] (evef1) -- ++(-3, 0) coordinate (eveftmp) (everyone-t) -- ++(0, -1.5) to[out=-90, in=0] (evet1) -- ++(-3, 0) coordinate (evettmp);
 	\draw[opacity=1, ceve] (evettmp) -- +(-1.5, 0) coordinate (evet2) (eveftmp) -- +(-1.5, 0) coordinate (evef2);
-	\draw[opacity=\theopac, cpass] (passed) to[out=-90, in=0] (pass1) -- +(-3, 0) coordinate (passtmp);
+	\draw[opacity=\theopac, cpass] (passed) -- ++(0, -1.5) to[out=-90, in=0] (pass1) -- ++(-3, 0) coordinate (passtmp);
 	\draw[opacity=1, cpass] (passtmp) -- +(-.5, 0) coordinate (pass2);
 	\coordinate (evef3) at ($(evef2) + (-2, -2)$);
 	\coordinate (evet3) at ($(evet2) + (-1.5, -1.5)$);
@@ -86,7 +88,7 @@
 	\wool[cevepass, opacity=\theopac] (evpaptmp2) -- ++(3.5,0) to[out=0, in=90] +(1, -1) coordinate[label=above left:$\t$] (eve-pass-t);
 	\draw[black] let
 	\p1 = ($(evpaptmp2) + (0, -.5)$),
-	\p2 = ($(evef2) + (-3.5, .2)$)
+	\p2 = ($(evef2) + (-3.5, .5)$)
 	in
 	(\x1, \y1) rectangle (\x2, \y2);
 	%
@@ -130,7 +132,7 @@
 	\wool[cifevp, opacity=\theopac] (ifevptmp) -- ++(3.5,0) to[out=0, in=90] +(1, -1) coordinate[label=above right:$\t \to \t$] (if-evp-t);
 	\draw[black] let
 	\p1 = ($(ifevptmp) + (0, -.5)$),
-	\p2 = ($(if2) + (-5, .2)$)
+	\p2 = ($(if2) + (-5, .5)$)
 	in
 	(\x1, \y1) rectangle (\x2, \y2);
 	\wool[crain, opacity=\theopac] let \p1 = (if-evp-t), \p2 = (rain) in (rain) -- (\x2, \y1) coordinate (rainp2);
@@ -143,9 +145,23 @@
 	%
 	%
 	%
-	\draw[opacity=\theopac, cifevp] (if-evp-t) to[out=-90, in=0] ++(-1, -1) -- +(-3.5, 0) (if-evp-t2);
+	\draw[opacity=\theopac, cifevp] (if-evp-t) to[out=-90, in=0] ++(-1, -1) -- +(-3.5, 0) coordinate (if-evp-t2);
 	\draw[opacity=\theopac, crain] let
 	\p1 = (if-evp-t2),
-	\p2 = ($(rainp2) + (0, -3)$) in
-	(rainp2) to[out=-90, in=0] ++ (-3, -3) -- (\x1, \y2) coordinate(raint2);
+	\p2 = ($(rainp2) + (0, -2)$) in
+	(rainp2) to[out=-90, in=0] ++ (-2, -2) -- (\x1, \y2) coordinate(rain2);
+	\draw[cifevp] (if-evp-t2) -- ++(-2, 0) to[out=180, in=90] ++(-1, -1) -- +(0, -1) coordinate (if-evp-t3);
+	\draw[crain] (rain2) to[out=180, in=90] +(-1, -1) coordinate (rain3);
+	\node[circle, draw=black] (ifrain) at ($($(if-evp-t3)!.5!(rain3)$) + (0, -1)$) {$>$};
+	\draw[cifevp] (if-evp-t3) to[out=-90, in=160] (ifrain);
+	\draw[cif] (rain3) to[out=-90, in=20] (ifrain);
+	\wool[cend] (ifrain) to[out=-90, in=180] ++(1, -1) -- ++(1, 0) coordinate (ifrain2);
+	\draw[black] let
+	\p1 = ($(ifrain2) + (0, -.5)$),
+	\p2 = ($(if-evp-t2) + (-5, .5)$)
+	in
+	(\x1, \y1) rectangle (\x2, \y2);
+	\wool[opacity=\theopac, cend] (ifrain2) -- ++(3.5, 0) to[out=0, in=90] ++(1, -1) to[out=-90, in=0] ++(-1, -1) -- ++(-3.5, 0) coordinate (sentence-t);
+	\wool[cend] (sentence-t) -- ++ (-1, 0) to[out=180, in=90] ++(-1, -1) -- +(0, -2) coordinate[label=above right:$\t$] (end);
+	\draw[black] let \p1 = (sentence-t), \p2 = ($(end) + (0, 0)$) in ($(sentence-t) + (-5, .5)$) rectangle (\x1, \y2);
 \end{tikzpicture}
