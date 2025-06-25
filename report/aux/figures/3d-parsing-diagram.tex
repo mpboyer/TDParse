@@ -134,7 +134,7 @@ in
 \node[circle, draw=black] (if-evp-dn) at ($($(if3)!.5!(eve-pass-t3)$) + (0, -1)$) {\rt{$\combDN_{\Downarrow}$}};
 \draw[cevepass] (eve-pass-f3) to[out=-90, in=20] (if-evp-dn) (eve-pass-t3) to[out=-90, in=20] (if-evp-dn);
 \draw[cif] (if3) to[out=-90, in=160] (if-evp-dn);
-\node[circle, draw=black] (if-evp-app) at ($(if-evp-dn) + (0, -2)$) {\rt{$>$}};
+\node[circle, draw=black] (if-evp-app) at ($(if-evp-dn) + (0, -2)$) {$>$};
 \draw[cif] (if-evp-dn) to[out=200, in=160] (if-evp-app);
 \draw[cevepass] (if-evp-dn) to[out=-20, in=20] (if-evp-app);
 \node[anchor=west] at (if-evp-app.east) {\rt{\vphantom{pb}$\t$}};
@@ -159,7 +159,7 @@ in
 (rainp2) to[out=-90, in=0] ++ (-2, -2) -- (\x1, \y2) coordinate(rain2);
 \draw[cifevp] (if-evp-t2) -- ++(-2, 0) to[out=180, in=90] ++(-1, -1) -- +(0, -1) coordinate (if-evp-t3);
 \draw[crain] (rain2) to[out=180, in=90] +(-1, -1) coordinate (rain3);
-\node[circle, draw=black] (ifrain) at ($($(if-evp-t3)!.5!(rain3)$) + (0, -1)$) {\rt{$>$}};
+\node[circle, draw=black] (ifrain) at ($($(if-evp-t3)!.5!(rain3)$) + (0, -1)$) {$>$};
 \draw[cifevp] (if-evp-t3) to[out=-90, in=160] (ifrain);
 \draw[cif] (rain3) to[out=-90, in=20] (ifrain);
 \wool[cend] (ifrain) to[out=-90, in=180] ++(1, -1) -- ++(1, 0) coordinate (ifrain2);
