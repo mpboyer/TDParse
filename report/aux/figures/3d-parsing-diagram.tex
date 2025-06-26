@@ -131,12 +131,12 @@ in
 \draw[cevepass] (eve-pass-t2) to[out=180, in=90] +(-1, -1) coordinate (eve-pass-t3);
 \draw[cevepass] (eve-pass-f2) to[out=180, in=90] +(-.5, -.5) coordinate (eve-pass-f3);
 %
-\node[circle, draw=black] (if-evp-dn) at ($($(if3)!.5!(eve-pass-t3)$) + (0, -1)$) {\rt{$\combDN_{\Downarrow}$}};
-\draw[cevepass] (eve-pass-f3) to[out=-90, in=20] (if-evp-dn) (eve-pass-t3) to[out=-90, in=20] (if-evp-dn);
-\draw[cif] (if3) to[out=-90, in=160] (if-evp-dn);
-\node[circle, draw=black] (if-evp-app) at ($(if-evp-dn) + (0, -2)$) {$>$};
-\draw[cif] (if-evp-dn) to[out=200, in=160] (if-evp-app);
-\draw[cevepass] (if-evp-dn) to[out=-20, in=20] (if-evp-app);
+\node[circle, draw=black] (if-evp-dn) at ($(eve-pass-t3) + (0, -1)$) {\rt{$\combDN_{\Downarrow_{\f{C}}}$}};
+\draw[cevepass] (eve-pass-f3) to[out=-90, in=45] (if-evp-dn) (eve-pass-t3) to[out=-90, in=90] (if-evp-dn);
+\draw[cif] (if3) -- ++(0, -1) coordinate (iftmp);
+\node[circle, draw=black] (if-evp-app) at ($($(if-evp-dn)!.5!(iftmp)$) + (0, -2)$) {$>$};
+\draw[cif] (iftmp) to[out=-90, in=160] (if-evp-app);
+\draw[cevepass] (if-evp-dn) to[out=-90, in=20] (if-evp-app);
 \node[anchor=west] at (if-evp-app.east) {\rt{\vphantom{pb}$\t$}};
 \node[anchor=east] at (if-evp-app.west) {\rt{\vphantom{pb}$\t\to\t\to\t$}};
 %
@@ -187,4 +187,3 @@ node[anchor=west] at (\x3, \y3) {\rotatebox{-90}{Direction of Reduction}};
 		\end{tikzpicture}
 	}
 }
-

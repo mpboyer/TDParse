@@ -2,6 +2,7 @@
 \usepackage{makecell}
 \usepackage{emoji}
 \usepackage{tikz-dependency}
+\usepackage{subcaption}
 \usetikzlibrary{decorations.markings, arrows.meta}
 \usepackage{diag}
 
@@ -183,26 +184,29 @@
 \def\wordsep{.2}
 
 \tikzset{
-	uptree/.style={
-			draw=vulm!80!black,
-			thick,
-		},
-	typenode/.style={
-			align=center,
-			text width=24mm,
-		},
-	treenode/.style={
-			align=center,
-			text width=24mm,
-		},
-	wordnode/.style={
-			inner sep=0pt,
-			align=center,
-		},
-	downtree/.style={
-			draw=yulm!80!black,
-			thick,
-		},
+uptree/.style={
+		draw=vulm!80!black,
+		thick,
+	},
+typenode/.style={
+		align=center,
+		text width=24mm,
+	},
+treenode/.style={
+		align=center,
+		text width=24mm,
+	},
+wordnode/.style={
+		inner sep=0pt,
+		align=center,
+	},
+downtree/.style={
+		draw=yulm!80!black,
+		thick,
+	},
+comb/.style={
+label=below:{#1}
+},
 }
 
 \newcommand{\wnode}[3]{%

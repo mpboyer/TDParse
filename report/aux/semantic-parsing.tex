@@ -313,6 +313,11 @@ Here we talk about \emph{quasi-braiding} because, in a sense, we use $2$-cells
 to do braiding-like\footnote{Permutations on the order of the strings}
 operations on the strings, and don't actually allow for braiding inside the
 diagrammatic computation.
+To better understand what happens in those parsing diagrams, Figure
+\ref{fig:parsing-trees} provides the translations in labelled trees of the
+parsing diagrams of Figures \ref{fig:parsing-diagram},
+\ref{fig:parsing-diagram2} and \ref{fig:3dparsing-diagram}.
+
 
 \begin{figure}
 	\centering
@@ -447,6 +452,16 @@ being used to make a pattern.
 	\label{fig:3dparsing-diagram}
 \end{figure*}
 
+\begin{figure}
+	\centering
+	\input{aux/figures/parsing-trees}
+	\caption{Labelled Trees equivalent to the parsing string diagrams of Figures
+		\ref{fig:parsing-diagram}, \ref{fig:parsing-diagram2} and
+		\ref{fig:3dparsing-diagram}.
+	}
+	\label{fig:parsing-trees}
+\end{figure}
+
 \subsubsection{The Coproduct Categorical Approach to Syntax}
 \label{subsubsec:coprod}
 % TODO: add a reference to Bella's paper explaining the interest of such 
@@ -456,48 +471,43 @@ In this section based on the work by
 we explore the integration of our notion inside the structure of syntactic
 merge, and why the two formalisms are compatible.
 The idea behind that structure is to see the union of trees as a product and
-the merging of trees as a coproduct in a well-defined Hopf algebra.
+the merging of trees as based on a coproduct in a well-defined Hopf algebra.
 Now of course, with our insights on syntactico-semantic parsing, we can either
 think of our parsing structure labeled by multiple modes, as in
 \cite{bumfordEffectdrivenInterpretationFunctors2025}, or think of it as string
 diagrams, as presented above.
 In both cases, we make a more or less implicit use of the merge operation.
 
-Indeed, using trees, we get back to the graded non-associative commutative
-magma operation proposed in the coproduct approach.
-While using string diagrams, we have a certain set of objects on which we can
-define a product - the tensor product of diagrams, that is, the monoidal
-operation of the category used to consider the diagrams - and a coproduct.
-Defining the coproduct is a bit trickier so we will define it \emph{with our
-	hands} in an intuitive manner.
-The coproduct on the trees simply connects to the merging of trees, so in our
-case it should only connect two different bits of our string diagrams together.
-This means that our coproduct should be adding a base type combinator but that
-doesn't suffice to fully express our typed semantics.
-The question can be thus rephrased as follows: how to get a functorial
-correspondance between the labeled trees and our string diagrams that behaves
-well with regards to the product and coproduct on those objects?
+\medskip
+
+Labeled trees can be seen as computed from a sequence of labeled merge.
+As such, it is easy to see how one can adapt the construction of a purely
+syntactic merge onto a semantic merge, using a similar approach.
+There is just the need for a coloured operad to create a series of labeled
+merges, like proposed in \cite{melliesCategoricalContoursChomskySchutzenberger2025}
+for example.
+Since there is a one-to-one mapping from our string diagrams to parse trees,
+mapping explained when comparing the tables for denotations of combinators
+in Figure \ref{fig:combinator-denotations} and Figure 12 in
+\cite{bumfordEffectdrivenInterpretationFunctors2025}, or by looking at the
+parse trees equivalent to string diagrams in Figures \ref{fig:parsing-diagram},
+\ref{fig:parsing-diagram2} and \ref{fig:3dparsing-diagram}, it is easy to see
+that indeed, there is a notion of merge inside our diagrams that can in a way
+be expressed through a Hopf algebra, by transporting the diagrams to and from
+their equivalent parsing diagram.
+More generally, what this means is that a merge, in our string diagrams, is
+the addition of a combinator to one, two\footnote{Or more, see
+	\ref{app:arities-and-denots}} without conditions.
+This is useful as a definition, because it allows integration of our system in
+a broader framework, including for example the notion of morphosyntactic trees.
 
 \medskip
 
-However, since our diagrams are a tool that can be seen \emph{on top} of the
-usual parsing trees, answering such complex questions might seem a stretch.
-Indeed, what such a point of view would bring is void: our system does not
-add any new theoretical concept to the theoretical explanation of the parsing
-tree approach, and is simply a more visual explanation of the process, as well
-as an explanation of it inside the categorical framework we used to develop the
-type and effect system for a natural language.
-The interest of such a connection is found in the sheer efficient beauty of a
-commutative diagram: we express that - however complicated - the two completely
-different point of views we have actually do represent the same concept.
-While this is true for trees and coproducts - since we did a rewriting of
-semantic combinations as a form of enhanced syntax, previous results stand -
-this is not in itself obvious for string diagrams.
-When considering basic trees and coproducts, this is not possible, the best
-we could have would be a forgetful functor from the string diagrams to the
-trees.
-We would thus need to consider multi-trees, with possibly multiple edges
-between a node and one of its children.
+However, this is not fully satisfying: like for syntax trees, applying a random
+sequence of merges to a set of input strings will not always yield a properly
+typed denotation.
+Since type soundness is the main feature of our system, it seems weird to have
+a definition of merge which cannot take that into account.
 
 \subsection{Rewriting Rules}
 \label{subsec:rewrite}

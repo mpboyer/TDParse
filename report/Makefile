@@ -16,6 +16,7 @@ all:
 pres:
 	make clean;
 	make slides;
+	biber slides;
 	make slides;
 	make slides;
 
