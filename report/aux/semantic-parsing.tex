@@ -184,7 +184,7 @@ Each of these combinators can be, up to order, associated with a inference
 rule, and, as such, with a higher-order denotation, which explains the actual
 effect\footnote{Pun intended} of the combinator, and are described in
 Figure \ref{fig:combinator-denotations}.
-The main reason we need to get derivations associated to combinators, is to
+The main reason we need to get denotations associated to combinators, is to
 properly define equivalence and reduce the number of rules in the grammar.
 Explanation on how that is done will come in Section \ref{subsec:rewrite}.
 The important thing on those derivation is that they're a direct translation
@@ -193,6 +193,23 @@ are not specific to any denotation system, even though we will use
 lambda-calculus styled denotations to describe them.
 The same structure for combinators apply when describing the combinators
 than when describing their rules of existence.
+This makes us able to compute the actual denotations associated to a sentence
+using our formalism, as presented in figure \ref{fig:parsing-trees}.
+Note that the order of combination modes is not actually the same as the one
+that would come from the grammar.
+The reason why will become more apparent when string diagrams for parsing are
+introduced in the next section, but simply, this comes from the fact that while
+we think of $\combML$ and $\combMR$ as reducing the number of effects on each
+side (and this is the correct way to think about those), this is not actually
+how its denotation works, but there is no real issue with that.
+
+\begin{figure}
+	\centering
+	\input{aux/figures/parsing-trees}
+	\caption{Examples of Labeled Parse Trees for a few sentences.}
+	\label{fig:parsing-trees}
+\end{figure}
+
 
 \medskip
 
@@ -326,7 +343,8 @@ parsing diagrams of Figures \ref{fig:parsing-diagram},
 		\emph{the cat eats a mouse}, including the connection between the effect
 		handling diagrams from Section \ref{sec:nondet} and the syntactio-semantic
 		parsing diagrams formed combining our approach to parsing and
-		\cite{coeckeMathematicalFoundationsCompositional2010} approach to diagrams}
+		\cite{coeckeMathematicalFoundationsCompositional2010} approach to diagrams.
+		See Figure \ref{fig:tree-box} for translation in a parse tree.}
 	\label{fig:parsing-diagram}
 \end{figure}
 
@@ -396,7 +414,8 @@ the combinators.
 	\inputtikz{parsing-diagram2}
 	\caption{Example of a parsing (sub-)diagram for the phrase
 		\emph{a cat in a box}, presenting the integration of unary combinators
-		inside the connector line.}
+		inside the connector line. See Figure \ref{fig:tree-box} for translation in
+		a parse tree.}
 	\label{fig:parsing-diagram2}
 \end{figure}
 
@@ -448,19 +467,9 @@ being used to make a pattern.
 \begin{figure*}
 	\centering
 	\input{aux/figures/3d-parsing-diagram}
-	\caption{3D-like Representation of the Diagrammatic Parsing of a Sentence.}
+	\caption{3D-like Representation of the Diagrammatic Parsing of a Sentence. See \ref{fig:tree-rain} for the translation in a Parse Tree}
 	\label{fig:3dparsing-diagram}
 \end{figure*}
-
-\begin{figure}
-	\centering
-	\input{aux/figures/parsing-trees}
-	\caption{Labelled Trees equivalent to the parsing string diagrams of Figures
-		\ref{fig:parsing-diagram}, \ref{fig:parsing-diagram2} and
-		\ref{fig:3dparsing-diagram}.
-	}
-	\label{fig:parsing-trees}
-\end{figure}
 
 \subsubsection{The Coproduct Categorical Approach to Syntax}
 \label{subsubsec:coprod}

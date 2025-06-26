@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{22}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Bauer and Pretnar(2014)}]{bauerEffectSystemAlgebraic2014}
@@ -68,6 +68,14 @@ Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger. 2015.
 \newblock In \emph{Proceedings of the 42nd {{Annual ACM SIGPLAN-SIGACT
   Symposium}} on {{Principles}} of {{Programming Languages}}}, pages 3--16,
   Mumbai India. ACM.
+
+\bibitem[{Melli{\`e}s and
+  Zeilberger(2025)}]{melliesCategoricalContoursChomskySchutzenberger2025}
+Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger. 2025.
+\newblock \href {https://doi.org/10.46298/lmcs-21(2:12)2025} {The categorical
+  contours of the {{Chomsky-Sch}}{\textbackslash}"utzenberger representation
+  theorem}.
+\newblock \emph{Logical Methods in Computer Science}, Volume 21, Issue 2:13654.
 
 \bibitem[{Moggi(1989)}]{moggiComputationalLambdacalculusMonads1989}
 E.~Moggi. 1989.
