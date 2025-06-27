@@ -1,19 +1,42 @@
-\frametitle{Lexicon}
-	\resizebox{\textwidth}{!}{
-		\setcellgapes{3pt}
-		\makegapedcells
-		\begin{NiceTabular}{>{\bf}LLL}
-			Expression & \rm Type & \lambda\text{-Term} \\
-			\word{it}{\f{G}\e}{\lambda g. g_{0}}{}
-			\word{\cdot\w{, a} \cdot}{\e \to \left(\e \to \t\right) \to \f{W}\e}{\lambda x. \lambda p. \scalar{x, p x}}{}
-			\word{which}{\left( \e \to \t \right)\to \f{S}\e}{\lambda p. \left\{x \suchthat px\right\}}{}
-			\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p^{-1}\left( \top \right) = \{x\} \text{ else } \#}{}
-			\word{a}{\left( \e \to \t \right) \to \f{D}\e}{\lambda p. \lambda s. \left\{ \scalar{x, x \ppl s}\suchthat p x\right\}}{}
-			\word{every}{\left( \e \to \t \right)\to \f{C}\e}{\lambda p. \lambda c. \forall x, px \Rightarrow cx}{}
-			\CodeAfter
-			\begin{tikzpicture}
-				\draw[double] (1|-2) -- (4|-2);
-				\foreach \r in {3,...,8} {\draw (1|-\r) -- (4|-\r);}
-			\end{tikzpicture}
-		\end{NiceTabular}
-	}
+\frametitle{Parsing Trees}
+	\centering
+	\begin{tikzpicture}[every tree node/.style={align=center, anchor=north}, level distance=2.5cm]
+		\Tree [
+		.{$\f{D}\e$ \\ $\{x \mid \w{cat} x \land \w{in\ a\ box} x \} $ \\ $\combJ_{\f{D}}\combML_{\f{D}} >$}
+		{$(\e \to \t) \to \f{D}\e$ \\ a}
+		[ .{$\f{D}(\e \to \t)$ \\ $\lambda x. \w{cat} x \land \w{in\ a\ box} x$} \edge[roof]; {cat in a box} ] ]
+	\end{tikzpicture}
+
+	\centering
+	\begin{tikzpicture}[every tree node/.style={align=center, anchor=north}, level distance=2.5cm]
+		\Tree [
+		.{$\f{M}\f{D}\t$ \\ $\left\{\mathbf{eats}(\texttt{obj=}m, \texttt{subj=}c) \middle| \w{mouse}(m)\right\}$ if $\mathbf{cat}^{-1}(\top) = \{c\}$ \\ $\combMR_{\f{M}}\combML_{\f{D}}>$}
+		[
+		.{$\f{M}(\e)$ \\ $c$ if $\mathbf{cat}^{-1}(\top) = \{c\}$} \edge[roof]; {the cat}
+		]
+		[
+		.{$\f{D}(\e \to \t)$ \\ $\left\{\lambda s. \mathbf{eats}(\texttt{obj=}m, \texttt{subj=}s) \middle| \w{mouse}(m)\right\}$} \edge[roof]; {eats a mouse}
+		]
+		]
+	\end{tikzpicture}
+
+	{\centering
+	\begin{tikzpicture}[scale=.75]
+		\tikzset{every tree node/.style={align=center, anchor=north}, level distance=2cm}
+		\Tree [
+		.\node{\t \\ $\mathbf{if}(\forall x. \w{past}\w{pass} x)(\w{past}\mathbf{rain})$ \\ $>$};
+		[ .\node{$\t \to \t$ \\ $\mathbf{if}(\forall x.\w{past}\w{pass} x)$ \\ $>$};
+		{$\t \to \t \to \t$ \\ if}
+		[
+		.\node{$\t$\\ $\forall x. \w{pass} x$ \\ $\combDN_{\Downarrow_{\f{C}}}$};
+		[ .\node{$\f{C}\t$ \\ $\lambda c.\forall x. c(\w{past}\w{pass} x)$ \\ $\combMR_{\f{C}}<$};
+		{$\f{C}\e$ \\ $\lambda c. \forall x. c\, x$ \\ everyone}
+		{$\e \to \t$ \\ $\w{past}\mathbf{pass}$ \\ passed}
+		]
+		]
+		]
+		[
+		.{\t \\ $\w{past}\mathbf{rain}$} \edge[roof]; {it was raining}
+		]
+		]
+	\end{tikzpicture}}

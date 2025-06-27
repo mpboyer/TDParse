@@ -1,20 +1,3 @@
-\documentclass[math, english, info]{beamercours}
-\makeatletter
-\def\tikzimp@rt{1}
-\makeatother
-
-\bibliography{slides.bib}
-
-\input{aux/preamble}
-
-\title{Effect-Driven Parsing}
-\subtitle{Formal studies on a categorical approach to semantic parsing}
-\institute{École Normale Supérieure | Yale University}
-\addlogo{~/DEV/latex/source/ens_psl.pdf}
-
-\begin{document}
-\maketitle
-
 \section{Introduction and a teeny tiny bit of math}
 \subsection{General Introduction}
 \begin{frame}
@@ -587,20 +570,4 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}
-	\frametitle{One less thing}
-	\vspace{-1.75cm}
-	\centering
-	\resizebox{.7\textwidth}{!}{\rotatebox{-90}{\inputtikz{3d-parsing-diagram}}}
-\end{frame}
-
-\section*{Bibliography}
-
-\begin{frame}[allowframebreaks]
-	\frametitle{Bibliography}
-	\printbibliography{}
-\end{frame}
-
-
-\end{document}
 

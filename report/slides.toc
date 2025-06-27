@@ -2,11 +2,13 @@
 \beamer@sectionintoc {1}{Introduction and a teeny tiny bit of math}{2}{0}{1}
 \beamer@subsectionintoc {1}{1}{General Introduction}{3}{0}{1}
 \beamer@subsectionintoc {1}{2}{Computer Basis}{8}{0}{1}
-\beamer@sectionintoc {2}{Implementing the Category-Theoretical Type System}{21}{0}{2}
-\beamer@subsectionintoc {2}{1}{Presenting the Type System}{22}{0}{2}
-\beamer@subsectionintoc {2}{2}{Presenting a Language}{29}{0}{2}
+\beamer@sectionintoc {2}{Implementing the category-theoretical type system}{21}{0}{2}
+\beamer@subsectionintoc {2}{1}{Meet my type system}{22}{0}{2}
+\beamer@subsectionintoc {2}{2}{Introducing a language}{29}{0}{2}
 \beamer@sectionintoc {3}{Effect Handling}{35}{0}{3}
 \beamer@subsectionintoc {3}{1}{What is a chair ?}{36}{0}{3}
 \beamer@subsectionintoc {3}{2}{The ropes of effect handling.}{41}{0}{3}
 \beamer@subsectionintoc {3}{3}{Severing the ties.}{45}{0}{3}
-\beamer@sectionintoc {4}{Semantic Parsing}{52}{0}{4}
+\beamer@sectionintoc {4}{Semantic Parsing}{51}{0}{4}
+\beamer@subsectionintoc {4}{1}{Actor's studio}{52}{0}{4}
+\beamer@subsectionintoc {4}{2}{No strings attached.}{58}{0}{4}
