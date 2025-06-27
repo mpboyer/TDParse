@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  26 JUN 2025 22:14
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  27 JUN 2025 14:19
  system commands enabled.
 **slides.tex
 (./slides.tex
@@ -2435,8 +2435,9 @@ Package caption Info: wrapfig package is loaded.
 \footlinedepth=\dimen518
 \headlineheight=\dimen519
 \headlinedepth=\dimen520
-\frametitleleftmargin=\dimen521
-\frametitlerightmargin=\dimen522
+\logoht=\dimen521
+\frametitleleftmargin=\dimen522
+\frametitlerightmargin=\dimen523
  (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
 
@@ -2454,7 +2455,7 @@ Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \c@tcblayer=\count641
 \c@tcolorbox@number=\count642
 \l__tcobox_tmpa_box=\box180
-\l__tcobox_tmpa_dim=\dimen523
+\l__tcobox_tmpa_dim=\dimen524
 \tcb@temp=\box181
 \tcb@temp=\box182
 \tcb@temp=\box183
@@ -2498,56 +2499,56 @@ LaTeX Font Info:    Trying to load font information for U+OrnementsADF on input
 (/usr/local/texlive/2024/texmf-dist/tex/latex/adforn/uornementsadf.fd))
 \tileone=\box186
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-47.
+67.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<ot1.cmap>>
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-47.
+67.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oml.cmap>>
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-247.
+267.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oms.cmap>>
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-247.
+267.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 247.
+(Font)              <14.4> on input line 267.
 <<omx.cmap>>
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 247.
+(Font)              <10> on input line 267.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 247.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 247
+(Font)              <7> on input line 267.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 267
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 247
+LaTeX Font Info:    Trying to load font information for U+msb on input line 267
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 24
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 26
 7.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-47.
+67.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd))
 (./aux/preamble.tex
@@ -2574,9 +2575,9 @@ eX
 \l__fontspec_emdef_int=\count651
 \l__fontspec_strong_int=\count652
 \l__fontspec_strongdef_int=\count653
-\l__fontspec_tmpa_dim=\dimen524
-\l__fontspec_tmpb_dim=\dimen525
-\l__fontspec_tmpc_dim=\dimen526
+\l__fontspec_tmpa_dim=\dimen525
+\l__fontspec_tmpb_dim=\dimen526
+\l__fontspec_tmpc_dim=\dimen527
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
@@ -2653,10 +2654,10 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
 \collectedbox=\box189
 )
-\tc@llx=\dimen527
-\tc@lly=\dimen528
-\tc@urx=\dimen529
-\tc@ury=\dimen530
+\tc@llx=\dimen528
+\tc@lly=\dimen529
+\tc@urx=\dimen530
+\tc@ury=\dimen531
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/adjustbox/tc-pgf.def
 File: tc-pgf.def 2019/01/04 v2.2 trimclip fall-back clipping driver using PGF
@@ -2664,14 +2665,14 @@ File: tc-pgf.def 2019/01/04 v2.2 trimclip fall-back clipping driver using PGF
 Package trimclip Info: No clipping driver 'tc-luatex.def' available.
 (trimclip)             Using fall-back PGF driver.
 )
-\adjbox@Width=\dimen531
-\adjbox@Height=\dimen532
-\adjbox@Depth=\dimen533
-\adjbox@Totalheight=\dimen534
-\adjbox@pwidth=\dimen535
-\adjbox@pheight=\dimen536
-\adjbox@pdepth=\dimen537
-\adjbox@ptotalheight=\dimen538
+\adjbox@Width=\dimen532
+\adjbox@Height=\dimen533
+\adjbox@Depth=\dimen534
+\adjbox@Totalheight=\dimen535
+\adjbox@pwidth=\dimen536
+\adjbox@pheight=\dimen537
+\adjbox@pdepth=\dimen538
+\adjbox@ptotalheight=\dimen539
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
@@ -2682,8 +2683,8 @@ LaTeX Info: Redefining \checkoddpage on input line 45.
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box190
 \sift@deathcycles=\count662
-\@vwid@loff=\dimen539
-\@vwid@roff=\dimen540
+\@vwid@loff=\dimen540
+\@vwid@roff=\dimen541
 )))
 runsystem(command -v pygmentize && touch slides.aex)...executed.
 runsystem(rm slides.aex)...executed.
@@ -2697,39 +2698,39 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./slides.aux)
 \openout1 = slides.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-4.
+5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 14.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 14
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 15.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 15
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    ... okay on input line 15.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -2739,12 +2740,12 @@ LaTeX Font Info:    ... okay on input line 14.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 398.3386pt, 28.45274pt)
-* v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
-* \paperwidth=455.24408pt
-* \paperheight=256.0748pt
-* \textwidth=398.3386pt
-* \textheight=227.62207pt
+* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=307.28987pt
+* \textheight=244.6939pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-72.26999pt
@@ -2768,13 +2769,13 @@ LaTeX Font Info:    ... okay on input line 14.
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count665
-\scratchdimen=\dimen541
+\scratchdimen=\dimen542
 \scratchbox=\box191
 \nofMPsegments=\count666
 \nofMParguments=\count667
 \everyMPshowfont=\toks86
 \MPscratchCnt=\count668
-\MPscratchDim=\dimen542
+\MPscratchDim=\dimen543
 \MPnumerator=\count669
 \makeMPintoPDFobject=\count670
 \everyMPtoPDFconversion=\toks87
@@ -2787,7 +2788,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 14.
+Package hyperref Info: Link coloring OFF on input line 15.
 
 (./slides.out) (./slides.out)
 \@outlinefile=\write8
@@ -2819,10 +2820,10 @@ tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 \c@lstlisting=\count671
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen543
-\c__nicematrix_shift_exterior_Vdots_dim=\dimen544
-\c__nicematrix_innersep_middle_dim=\dimen545
-LaTeX Info: Redefining \up on input line 14.
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen544
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen545
+\c__nicematrix_innersep_middle_dim=\dimen546
+LaTeX Info: Redefining \up on input line 15.
 Package biblatex Info: Trying to load language 'british'...
 Package biblatex Info: ... file 'british.lbx' found.
 
@@ -2856,8 +2857,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'slides.bbl' found.
 
 (./slides.bbl)
-Package biblatex Info: Reference section=0 on input line 14.
-Package biblatex Info: Reference segment=0 on input line 14.
+Package biblatex Info: Reference section=0 on input line 15.
+Package biblatex Info: Reference segment=0 on input line 15.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -2892,42 +2893,39 @@ fBuzz].
 (fontspec)             Emoji:mode=harf;script=DFLT;language=dflt;"
 
 (./slides.nav)
-Underfull \hbox (badness 10000) detected at line 14
-[][][]
- []
-
-\logoht=\dimen546
-<~/DEV/latex/source/ens_psl.pdf, id=43, 136.57294pt x 55.74188pt>
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 14.
-
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 14.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 14.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 14.
-
 Underfull \hbox (badness 10000) detected at line 15
 [][][]
  []
 
-\logoht=\dimen547
+<~/DEV/latex/source/ens_psl.pdf, id=71, 136.57294pt x 55.74188pt>
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
 Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 15.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 15.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 15.
 
+Underfull \hbox (badness 10000) detected at line 16
+[][][]
+ []
 
-\logoht=\dimen548
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 15.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 16.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 16.
+
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -2936,24 +2934,22 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 </home/matthieu/DEV/latex/source/ens_psl.pdf>]
-Underfull \hbox (badness 10000) detected at line 17
+Underfull \hbox (badness 10000) detected at line 18
 [][][]
  []
 
-\logoht=\dimen549
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 17.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 18.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.toc)
 
-\logoht=\dimen550
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 17.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 18.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -2962,24 +2958,22 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [2
 
 ]
-Underfull \hbox (badness 10000) detected at line 28
+Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-\logoht=\dimen551
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 28.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 19.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
 
-
-\logoht=\dimen552
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 28.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 19.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -2992,33 +2986,55 @@ Underfull \hbox (badness 10000) detected at line 31
 [][][]
  []
 
-\logoht=\dimen553
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
 Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 31.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
-\openout4 = slides.vrb
 
-Underfull \hbox (badness 10000) detected at line 47
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 31.
+
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
  []
 
-\logoht=\dimen554
+[4
+
+]
+Underfull \hbox (badness 10000) detected at line 34
+[][][]
+ []
+
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 47.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 34.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+\openout4 = slides.vrb
+
+Underfull \hbox (badness 10000) detected at line 50
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 50.
+
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.vrb
-\g__nicematrix_max_cell_width_dim=\dimen555
+\g__nicematrix_max_cell_width_dim=\dimen547
 \c@iRow=\count672
 \c@jCol=\count673
 \l__nicematrix_cell_box=\box192
 \l__nicematrix_the_array_box=\box193
-\l__nicematrix_left_delim_dim=\dimen556
-\l__nicematrix_right_delim_dim=\dimen557
+\l__nicematrix_left_delim_dim=\dimen548
+\l__nicematrix_right_delim_dim=\dimen549
 
 contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 6.
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 6.
@@ -3035,28 +3051,27 @@ contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 10.
 
 \g__nicematrix_ddots_int=\count674
 \g__nicematrix_iddots_int=\count675
-\g__nicematrix_delta_x_one_dim=\dimen558
-\g__nicematrix_delta_y_one_dim=\dimen559
-\g__nicematrix_delta_x_two_dim=\dimen560
-\g__nicematrix_delta_y_two_dim=\dimen561
+\g__nicematrix_delta_x_one_dim=\dimen550
+\g__nicematrix_delta_y_one_dim=\dimen551
+\g__nicematrix_delta_x_two_dim=\dimen552
+\g__nicematrix_delta_y_two_dim=\dimen553
 \l__nicematrix_initial_i_int=\count676
 \l__nicematrix_initial_j_int=\count677
 \l__nicematrix_final_i_int=\count678
 \l__nicematrix_final_j_int=\count679
 )
 
-\logoht=\dimen562
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 47.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 50.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
  []
 
-[4
+[5
 
 
 Non-PDF special ignored!
@@ -3081,52 +3096,34 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-Underfull \hbox (badness 10000) detected at line 50
+Underfull \hbox (badness 10000) detected at line 53
 [][][]
  []
 
-\logoht=\dimen563
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 50.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 53.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 \openout4 = slides.vrb
 
-Underfull \hbox (badness 10000) detected at line 64
+Underfull \hbox (badness 10000) detected at line 67
 [][][]
  []
 
-\logoht=\dimen564
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 64.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 67.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.vrb)
 
-\logoht=\dimen565
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 64.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 67.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[][][]
- []
-
-[5
-
-] (./slides.vrb)
-
-\logoht=\dimen566
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 64.
-
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3134,25 +3131,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [6
 
-]
-Underfull \hbox (badness 10000) detected at line 66
-[][][]
- []
+] (./slides.vrb)
 
-\logoht=\dimen567
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 66.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 67.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-(./slides.toc)
-
-\logoht=\dimen568
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 66.
-
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3161,24 +3146,22 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [7
 
 ]
-Underfull \hbox (badness 10000) detected at line 89
+Underfull \hbox (badness 10000) detected at line 69
 [][][]
  []
 
-\logoht=\dimen569
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 89.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 69.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
 
-
-\logoht=\dimen570
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 89.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 69.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3187,13 +3170,174 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [8
 
 ]
+Underfull \hbox (badness 10000) detected at line 71
+[][][]
+ []
 
-\logoht=\dimen571
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 89.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 71.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+\openout4 = slides.vrb
+
+Underfull \hbox (badness 10000) detected at line 97
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 97.
+
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
+
+\openout5 = slides.pyg
+ (./_minted-slides/perldoc.pygstyle)
+(./_minted-slides/77BEFC78083F13BD2F37EA5ECC40D5BA35EDE7AF608763C878A48F9BF1ADA
+D0C.pygtex
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2.
+
+Overfull \hbox (30.85654pt too wide) in paragraph at lines 2--2
+|| | |[][][][][]\TU/lmtt/b/n/8 def[][][] 
+ []
+
+
+Overfull \hbox (60.73656pt too wide) in paragraph at lines 2--2
+[]\TU/lmtt/m/n/8 add[](x, 
+ []
+
+
+Overfull \hbox (47.99255pt too wide) in paragraph at lines 2--2
+\TU/lmtt/m/n/8 y):|  
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
+
+Overfull \hbox (35.24855pt too wide) detected at line 2
+[]
+ []
+
+
+Overfull \hbox (43.45653pt too wide) in paragraph at lines 3--3
+|| | |[][][][][]\TU/lmtt/b/n/8 return[] 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 x 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 + 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 y|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 3
+[]
+ []
+
+)
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 7.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 12.
+
+\openout5 = slides.pyg
+
+(./_minted-slides/3001E70577154828A3D926EAFFD1C5F335EDE7AF608763C878A48F9BF1ADA
+D0C.pygtex
+Overfull \hbox (30.85654pt too wide) in paragraph at lines 2--2
+|| | |[][][][][]\TU/lmtt/b/n/8 def[][][] 
+ []
+
+
+Overfull \hbox (60.73656pt too wide) in paragraph at lines 2--2
+[]\TU/lmtt/m/n/8 add[](x, 
+ []
+
+
+Overfull \hbox (47.99255pt too wide) in paragraph at lines 2--2
+\TU/lmtt/m/n/8 y):|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 2
+[]
+ []
+
+
+Overfull \hbox (52.24055pt too wide) in paragraph at lines 3--3
+|| | |[][][][][]\TU/lmtt/m/n/8 print[]([]"I 
+ []
+
+
+Overfull \hbox (52.24055pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 LOVE 
+ []
+
+
+Overfull \hbox (73.48056pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 CHOMSKY"[])|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 3
+[]
+ []
+
+
+Overfull \hbox (43.45653pt too wide) in paragraph at lines 4--4
+|| | |[][][][][]\TU/lmtt/b/n/8 return[] 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 4--4
+\TU/lmtt/m/n/8 x 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 4--4
+\TU/lmtt/m/n/8 + 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 4--4
+\TU/lmtt/m/n/8 y|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 4
+[]
+ []
+
+)
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 16.
+)
+Overfull \vbox (15.21407pt too high) detected at line 97
+ []
+
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 97.
+
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3201,14 +3345,148 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [9
 
-]
+] (./slides.vrb
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 4.
 
-\logoht=\dimen572
+\openout5 = slides.pyg
+
+(./_minted-slides/77BEFC78083F13BD2F37EA5ECC40D5BA35EDE7AF608763C878A48F9BF1ADA
+D0C.pygtex
+Overfull \hbox (30.85654pt too wide) in paragraph at lines 2--2
+|| | |[][][][][]\TU/lmtt/b/n/8 def[][][] 
+ []
+
+
+Overfull \hbox (60.73656pt too wide) in paragraph at lines 2--2
+[]\TU/lmtt/m/n/8 add[](x, 
+ []
+
+
+Overfull \hbox (47.99255pt too wide) in paragraph at lines 2--2
+\TU/lmtt/m/n/8 y):|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 2
+[]
+ []
+
+
+Overfull \hbox (43.45653pt too wide) in paragraph at lines 3--3
+|| | |[][][][][]\TU/lmtt/b/n/8 return[] 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 x 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 + 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 y|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 3
+[]
+ []
+
+)
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 7.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 12.
+
+\openout5 = slides.pyg
+
+(./_minted-slides/3001E70577154828A3D926EAFFD1C5F335EDE7AF608763C878A48F9BF1ADA
+D0C.pygtex
+Overfull \hbox (30.85654pt too wide) in paragraph at lines 2--2
+|| | |[][][][][]\TU/lmtt/b/n/8 def[][][] 
+ []
+
+
+Overfull \hbox (60.73656pt too wide) in paragraph at lines 2--2
+[]\TU/lmtt/m/n/8 add[](x, 
+ []
+
+
+Overfull \hbox (47.99255pt too wide) in paragraph at lines 2--2
+\TU/lmtt/m/n/8 y):|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 2
+[]
+ []
+
+
+Overfull \hbox (52.24055pt too wide) in paragraph at lines 3--3
+|| | |[][][][][]\TU/lmtt/m/n/8 print[]([]"I 
+ []
+
+
+Overfull \hbox (52.24055pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 LOVE 
+ []
+
+
+Overfull \hbox (73.48056pt too wide) in paragraph at lines 3--3
+\TU/lmtt/m/n/8 CHOMSKY"[])|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 3
+[]
+ []
+
+
+Overfull \hbox (43.45653pt too wide) in paragraph at lines 4--4
+|| | |[][][][][]\TU/lmtt/b/n/8 return[] 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 4--4
+\TU/lmtt/m/n/8 x 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 4--4
+\TU/lmtt/m/n/8 + 
+ []
+
+
+Overfull \hbox (39.49655pt too wide) in paragraph at lines 4--4
+\TU/lmtt/m/n/8 y|  
+ []
+
+
+Overfull \hbox (35.24855pt too wide) detected at line 4
+[]
+ []
+
+)
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 16.
+)
+Overfull \vbox (15.21407pt too high) detected at line 97
+ []
+
+
+
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 89.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 97.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3217,13 +3495,22 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [10
 
 ]
+Underfull \hbox (badness 10000) detected at line 110
+[][][]
+ []
 
-\logoht=\dimen573
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 89.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 110
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 110
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3232,24 +3519,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [11
 
 ]
-Underfull \hbox (badness 10000) detected at line 91
-[][][]
- []
 
-\logoht=\dimen574
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 91.
-
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-(./slides.toc)
-
-\logoht=\dimen575
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 91.
-
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 110
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3258,24 +3533,34 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [12
 
 ]
-Underfull \hbox (badness 10000) detected at line 108
+Underfull \hbox (badness 10000) detected at line 113
 [][][]
  []
 
-\logoht=\dimen576
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 108
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 113
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
+\openout4 = slides.vrb
 
-\logoht=\dimen577
+Underfull \hbox (badness 10000) detected at line 125
+[][][]
+ []
+
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 108
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 125
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.vrb)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 125
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3283,25 +3568,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [13
 
-]
-Underfull \hbox (badness 10000) detected at line 124
-[][][]
- []
+] (./slides.vrb)
 
-\logoht=\dimen578
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 124
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 125
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-
-
-\logoht=\dimen579
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 124
-.
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3310,29 +3583,34 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [14
 
 ]
-Underfull \hbox (badness 10000) detected at line 132
+Underfull \hbox (badness 10000) detected at line 128
 [][][]
  []
 
-\logoht=\dimen580
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 132
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 128
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 132.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 132.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
+\openout4 = slides.vrb
 
-\logoht=\dimen581
+Underfull \hbox (badness 10000) detected at line 137
+[][][]
+ []
+
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 132
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 137
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.vrb)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 137
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3340,30 +3618,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [15
 
-]
-Underfull \hbox (badness 10000) detected at line 150
-[][][]
- []
+] (./slides.vrb)
 
-\logoht=\dimen582
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 150
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 137
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 150.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 150.
-
-
-\logoht=\dimen583
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 150
-.
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3372,19 +3633,34 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [16
 
 ]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 150.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 150.
+Underfull \hbox (badness 10000) detected at line 140
+[][][]
+ []
 
-
-\logoht=\dimen584
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 150
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 140
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+\openout4 = slides.vrb
+
+Underfull \hbox (badness 10000) detected at line 151
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 151
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.vrb)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 151
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3392,30 +3668,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [17
 
-]
-Underfull \hbox (badness 10000) detected at line 160
-[][][]
- []
+] (./slides.vrb)
 
-\logoht=\dimen585
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 160
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 151
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 160.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 160.
-
-
-\logoht=\dimen586
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 160
-.
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3424,24 +3683,34 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [18
 
 ]
-Underfull \hbox (badness 10000) detected at line 162
+Underfull \hbox (badness 10000) detected at line 154
 [][][]
  []
 
-\logoht=\dimen587
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 162
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 154
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-(./slides.toc)
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
-\logoht=\dimen588
+\openout4 = slides.vrb
+
+Underfull \hbox (badness 10000) detected at line 168
+[][][]
+ []
+
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 162
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 168
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.vrb)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 168
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3449,25 +3718,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [19
 
-]
-Underfull \hbox (badness 10000) detected at line 171
-[][][]
- []
+] (./slides.vrb)
 
-\logoht=\dimen589
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 171
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 168
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
-
-
-\logoht=\dimen590
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 171
-.
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3476,28 +3733,22 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [20
 
 ]
-Underfull \hbox (badness 10000) detected at line 179
+Underfull \hbox (badness 10000) detected at line 170
 [][][]
  []
 
-\logoht=\dimen591
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 179
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 170
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
 
-LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 179.
-
-
-
-\logoht=\dimen592
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 179
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 170
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
@@ -3506,19 +3757,920 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [21
 
 ]
+Underfull \hbox (badness 10000) detected at line 171
+[][][]
+ []
 
-\logoht=\dimen593
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 179
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 171
 .
-(luatex.def)             Requested size: 48.94322pt x 19.97607pt.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 171
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
  []
 
 [22
+
+]
+Underfull \hbox (badness 10000) detected at line 193
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 193
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 193
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[23
+
+]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 193
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[24
+
+]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 193
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[25
+
+]
+Underfull \hbox (badness 10000) detected at line 196
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 196
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+\openout4 = slides.vrb
+
+Underfull \hbox (badness 10000) detected at line 221
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 221
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.vrb)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 221
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[26
+
+] (./slides.vrb)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 221
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[27
+
+] (./slides.vrb)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 221
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[28
+
+]
+Underfull \hbox (badness 10000) detected at line 223
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 223
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 223
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[29
+
+]
+Underfull \hbox (badness 10000) detected at line 229
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 229
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 229
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[30
+
+]
+Underfull \hbox (badness 10000) detected at line 232
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 232
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+\openout4 = slides.vrb
+
+Underfull \hbox (badness 10000) detected at line 251
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 251
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.vrb
+contour: Using real outline for `\tt \color {vulm}G' on input line 19.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
+
+contour: Using real outline for `\tt \color {vulm}W' on input line 19.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
+
+contour: Using real outline for `\tt \color {vulm}S' on input line 19.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
+
+contour: Using real outline for `\tt \color {vulm}M' on input line 19.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
+
+contour: Using real outline for `\tt \color {vulm}D' on input line 19.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 19.
+
+contour: Using real outline for `\tt \color {vulm}C' on input line 19.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 19.
+
+)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 251
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[31
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Underfull \hbox (badness 10000) detected at line 292
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 292
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 292
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[32
+
+]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 292
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[33
+
+]
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 292
+.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 292
+.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 292
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[34
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Underfull \hbox (badness 10000) detected at line 294
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 294
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 294
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[35
+
+]
+Underfull \hbox (badness 10000) detected at line 295
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 295
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 295
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[36
+
+]
+Underfull \hbox (badness 10000) detected at line 305
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 305
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 305
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[37
+
+]
+Underfull \hbox (badness 10000) detected at line 323
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 323
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 323
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[38
+
+]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 323
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[39
+
+]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 323
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[40
+
+]
+Underfull \hbox (badness 10000) detected at line 325
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 325
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 325
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[41
+
+]
+Underfull \hbox (badness 10000) detected at line 347
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 347
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./aux/figures/sd-thecatsleeps.tex
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 3.
+contour: Using real outline for `\tt \color {vulm}M' on input line 4.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 347--347
+\TU/lmss/m/n/10.95 rep-res-ents the sen-tence
+ []
+
+
+Underfull \hbox (badness 6300) in paragraph at lines 347--347
+\TU/lmss/m/n/10.95 of the strings will be
+ []
+
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 347
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[42
+
+]
+Overfull \vbox (63.66682pt too high) detected at line 347
+ []
+
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 347
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[43
+
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Underfull \hbox (badness 10000) detected at line 359
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 359
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 359.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 359.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 359
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[44
+
+]
+Underfull \hbox (badness 10000) detected at line 361
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 361
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 361
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[45
+
+]
+Underfull \hbox (badness 10000) detected at line 389
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 389
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./aux/figures/sd-elevator.tex) (./aux/figures/sd-snake1.tex)
+(./aux/figures/sd-monad-mult.tex)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 389
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[46
+
+<./luatex.cYawnL/1.png>]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 389
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[47
+
+
+<./luatex.cYawnL/2.png>]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 389
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[48
+
+
+]
+Underfull \hbox (badness 10000) detected at line 407
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 407
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 407.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 407.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 407
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[49
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 407.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 407.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 407
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[50
+
+]
+Underfull \hbox (badness 10000) detected at line 417
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 417
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 417.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 417.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 417
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[51
+
+]
+Underfull \hbox (badness 10000) detected at line 419
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 419
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+(./slides.toc)
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 419
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[52
+
+]
+Underfull \hbox (badness 10000) detected at line 428
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 428
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 428
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[53
+
+]
+Underfull \hbox (badness 10000) detected at line 436
+[][][]
+ []
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 436
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10.95> not available
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 436.
+
+
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 436
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[54
+
+]
+
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 436
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[55
 
 
 ]
@@ -3537,45 +4689,51 @@ LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: F2FA2A8A066432EE95D278DE021561AA;755.
+(rerunfilecheck)             Checksum: DD85AC06D7E4B342E6B6B40DC86F9633;2196.
+runsystem(rm slides.pyg)...executed.
 Package logreq Info: Writing requests to 'slides.run.xml'.
 
 \openout1 = slides.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 97476 strings out of 475931
+ 99687 strings out of 475931
  156328,4101490 words of node,token memory allocated
- 18947 words of node memory still in use:
-   147 hlist, 9 vlist, 4 rule, 19 disc, 3 local_par, 20 math, 298 glue, 16 kern,
- 27 penalty, 298 glyph, 4601 attribute, 137 glue_spec, 705 attribute_list, 5 wri
-te, 1 save_pos, 336 pdf_literal, 4 pdf_start_link, 4 pdf_end_link, 1 pdf_dest, 4
- pdf_action, 82 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_restore nodes
-
-   avail lists: 1:5,2:13528,3:2671,4:506,5:187,6:46,7:3894,8:33,9:2130,10:22,11:
-184,12:1
- 117612 multiletter control sequences out of 65536+600000
- 87 fonts using 8504519 bytes
+ 21858 words of node memory still in use:
+   155 hlist, 9 vlist, 4 rule, 24 disc, 4 local_par, 22 math, 343 glue, 26 kern,
+ 45 penalty, 444 glyph, 5134 attribute, 137 glue_spec, 781 attribute_list, 5 wri
+te, 1 save_pos, 338 pdf_literal, 5 pdf_start_link, 5 pdf_end_link, 2 pdf_dest, 5
+ pdf_action, 100 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_restore node
+s
+   avail lists: 1:6,2:16544,3:2677,4:649,5:207,6:65,7:3675,8:66,9:2123,10:18,11:
+168,12:1
+ 119384 multiletter control sequences out of 65536+600000
+ 98 fonts using 10133519 bytes
  142i,20n,129p,798b,2457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regul
-ar.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmsans10-obl
-ique.otf>{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/
-local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texli
-ve/2024/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>{/usr/local/tex
-live/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2024/t
-exmf-dist/fonts/opentype/public/lm/lmsans8-regular.otf></usr/local/texlive/2024/
+ar.otf>{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/us
+r/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/tex
+live/2024/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf></usr/local/te
+xlive/2024/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.otf>{/usr/local/t
+exlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2024/tex
+mf-dist/fonts/opentype/public/lm/lmsans10-oblique.otf></usr/local/texlive/2024/t
+exmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/local/texlive/2024
+/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/local/texlive/2024/
 texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/texlive/202
 4/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></usr/local/texlive/2
-024/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/local/texlive/20
-24/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-di
-st/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/ty
-pe1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/l
-m/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on slides.pdf (22 pages, 172552 bytes).
+024/texmf-dist/fonts/opentype/public/lm/lmsans8-regular.otf></usr/local/texlive/
+2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-
+dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/
+type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public
+/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pf
+b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/20
+24/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dis
+t/fonts/type1/public/lm/lmsy8.pfb>
+Output written on slides.pdf (55 pages, 287709 bytes).
 
-PDF statistics: 390 PDF objects out of 1000 (max. 8388607)
- 283 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 131072)
- 89 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 909 PDF objects out of 1000 (max. 8388607)
+ 662 compressed objects within 7 object streams
+ 134 named destinations out of 1000 (max. 131072)
+ 145 words of extra memory for PDF output out of 10000 (max. 100000000)
 

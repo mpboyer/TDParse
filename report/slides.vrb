@@ -1,14 +1,19 @@
-\frametitle{Including Non-Determinisms and Anaphoras}
-	What should be the type of expressions such as \textbf{a cat} or \textbf{Jupiter, a planet}?
-	\pause
-
-	\smallskip
-
-	Since we should be able to use \textbf{a cat} and \textbf{the cat} interexchangebly - from a syntax point of view - they should have the same type.
-	We use effects to do the difference between:
-	\begin{equation*}
-		\w{a\ cat} = \{c \mid \w{cat} c\}
-	\end{equation*}
-	\begin{equation*}
-		\w{the\ cat} = x \text{ if } \mathbf{cat}^{-1}(\top) = \{x\} \text{ else } \#
-	\end{equation*}
+\frametitle{Lexicon}
+	\resizebox{\textwidth}{!}{
+		\setcellgapes{3pt}
+		\makegapedcells
+		\begin{NiceTabular}{>{\bf}LLL}
+			Expression & \rm Type & \lambda\text{-Term} \\
+			\word{it}{\f{G}\e}{\lambda g. g_{0}}{}
+			\word{\cdot\w{, a} \cdot}{\e \to \left(\e \to \t\right) \to \f{W}\e}{\lambda x. \lambda p. \scalar{x, p x}}{}
+			\word{which}{\left( \e \to \t \right)\to \f{S}\e}{\lambda p. \left\{x \suchthat px\right\}}{}
+			\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p^{-1}\left( \top \right) = \{x\} \text{ else } \#}{}
+			\word{a}{\left( \e \to \t \right) \to \f{D}\e}{\lambda p. \lambda s. \left\{ \scalar{x, x \ppl s}\suchthat p x\right\}}{}
+			\word{every}{\left( \e \to \t \right)\to \f{C}\e}{\lambda p. \lambda c. \forall x, px \Rightarrow cx}{}
+			\CodeAfter
+			\begin{tikzpicture}
+				\draw[double] (1|-2) -- (4|-2);
+				\foreach \r in {3,...,8} {\draw (1|-\r) -- (4|-\r);}
+			\end{tikzpicture}
+		\end{NiceTabular}
+	}
