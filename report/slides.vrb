@@ -1,0 +1,14 @@
+\frametitle{Including Non-Determinisms and Anaphoras}
+	What should be the type of expressions such as \textbf{a cat} or \textbf{Jupiter, a planet}?
+	\pause
+
+	\smallskip
+
+	Since we should be able to use \textbf{a cat} and \textbf{the cat} interexchangebly - from a syntax point of view - they should have the same type.
+	We use effects to do the difference between:
+	\begin{equation*}
+		\w{a\ cat} = \{c \mid \w{cat} c\}
+	\end{equation*}
+	\begin{equation*}
+		\w{the\ cat} = x \text{ if } \mathbf{cat}^{-1}(\top) = \{x\} \text{ else } \#
+	\end{equation*}

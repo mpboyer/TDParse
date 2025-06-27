@@ -42,14 +42,14 @@
 	\resizebox{\columnwidth}{!}{%
 		\begin{tikzpicture}[every tree node/.style={align=center, anchor=north}, level distance=2cm]
 			\Tree [
-			.\node{\t \\ $\mathbf{if}(\forall x. \w{pass} x)(\w{past}\mathbf{rain})$ \\ $>$};
-			[ .\node{$\t \to \t$ \\ $\mathbf{if}(\forall x.\w{pass} x)$ \\ $>$};
+			.\node{\t \\ $\mathbf{if}(\forall x. \w{past}\w{pass} x)(\w{past}\mathbf{rain})$ \\ $>$};
+			[ .\node{$\t \to \t$ \\ $\mathbf{if}(\forall x.\w{past}\w{pass} x)$ \\ $>$};
 			{$\t \to \t \to \t$ \\ if}
 			[
 			.\node{$\t$\\ $\forall x. \w{pass} x$ \\ $\combDN_{\Downarrow_{\f{C}}}$};
-			[ .\node{$\f{C}\t$ \\ $\lambda c.\forall x. c(\w{pass} x)$ \\ $\combMR_{\f{C}}<$};
+			[ .\node{$\f{C}\t$ \\ $\lambda c.\forall x. c(\w{past}\w{pass} x)$ \\ $\combMR_{\f{C}}<$};
 			{$\f{C}\e$ \\ $\lambda c. \forall x. c\, x$ \\ everyone}
-			{$\e \to \t$ \\ $\mathbf{pass}$ \\ passed}
+			{$\e \to \t$ \\ $\w{past}\mathbf{pass}$ \\ passed}
 			]
 			]
 			]
