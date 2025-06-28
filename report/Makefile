@@ -21,4 +21,4 @@ pres:
 	make slides;
 
 clean:
-	\rm -f *.log *.out *.toc *.aux
+	\rm -f *.log *.out *.toc *.aux *.run.xml *.nav *.blg *.bcf *.vrb

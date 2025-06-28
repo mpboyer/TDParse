@@ -3,17 +3,28 @@
 \def\tikzimp@rt{1}
 \makeatother
 
+\usepackage[dvipsnames]{xcolor}
+
 \bibliography{slides.bib}
+
+\definecolor{yaleblue}{HTML}{0F4D92}
+
+%\setmaincolor{vulm!50}
+%\setaccents{yaleblue}
+%\setbackground{white}
+%\settextcol{black}
+
 
 \input{aux/preamble}
 
 \title{Effect-Driven Parsing}
 \subtitle{Formal studies on a categorical approach to semantic parsing}
 \institute{École Normale Supérieure | Yale University}
+\addlogo{~/Pictures/Yale_University_logo.svg.png}
 \addlogo{~/DEV/latex/source/ens_psl.pdf}
 
 \begin{document}
-\maketitle
+\fancytitleframe
 
 \section{Introduction and a teeny tiny bit of math}
 \subsection{General Introduction}
@@ -29,7 +40,6 @@
 	explains how to derive the meaning of a sentence from the meaning of its
 	words.
 \end{frame}
-
 \begin{frame}[fragile]
 	\frametitle{Types in Semantics of Natural Languages}
 	\setcellgapes{3pt}
@@ -600,6 +610,7 @@
 	\frametitle{Bibliography}
 	\printbibliography{}
 \end{frame}
+
 
 
 \end{document}
