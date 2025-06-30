@@ -25,9 +25,11 @@ This delimits our usage of string diagrams as ways to look at computations and a
 Let us define the category $\mathds{1}$ with exactly one object and one arrow: the identity on that object. It will be shown in grey in the string diagrams below.
 A functor of type $\mathds{1} \to \mC$ is equivalent to choosing an object in $\mC$, and a natural between two such functors $\tau_{1}, \tau_{2}$ is exactly an arrow in $\mC$ of type $\tau_{1} \to \tau_{2}$.
 Knowing that allows us to represent the type resulting from a sequence of computations as a sequence of strings whose farthest right represents an object in $\mC$, that is, a base type.
-\begin{center}
-	\input{aux/figures/sd-thecatsleeps}
-\end{center}
+\begin{wrapfigure}{l}{.45\textwidth}
+	\begin{center}
+		\input{aux/figures/sd-thecatsleeps}
+	\end{center}
+\end{wrapfigure}
 
 For simplicity reasons, and because the effects that are buried in our typing system not only give rise to functors but also have types that are not purely currifiable, we will write our string diagrams on the fully parsed sentence, with its most simplified/composed expression.
 Indeed, the question of providing rules to compose the string diagram for \textbf{the} and the one for \textbf{cat} to give the one for \textbf{the cat} is a difficult question, that natural solutions to are not obvious, and will be discussed in the next section.
