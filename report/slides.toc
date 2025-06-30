@@ -1,0 +1,14 @@
+\babel@toc {british}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{General Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Just a teeny tiny bit of math}{8}{0}{1}
+\beamer@sectionintoc {2}{Category-theoretical type system}{21}{0}{2}
+\beamer@subsectionintoc {2}{1}{Type system}{22}{0}{2}
+\beamer@subsectionintoc {2}{2}{Introducing a language}{29}{0}{2}
+\beamer@sectionintoc {3}{Effect Handling}{36}{0}{3}
+\beamer@subsectionintoc {3}{1}{What is a chair ?}{37}{0}{3}
+\beamer@subsectionintoc {3}{2}{The ropes of effect handling.}{44}{0}{3}
+\beamer@subsectionintoc {3}{3}{Severing the ties.}{46}{0}{3}
+\beamer@sectionintoc {4}{Semantic Parsing}{53}{0}{4}
+\beamer@subsectionintoc {4}{1}{Actor's studio}{54}{0}{4}
+\beamer@subsectionintoc {4}{2}{No strings attached.}{60}{0}{4}

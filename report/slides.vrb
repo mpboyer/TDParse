@@ -1,0 +1,6 @@
+\frametitle{Where cats are stuck.}
+	\includegraphics{aux/figures/parse-tree-1.pdf}
+	\centering
+	\includegraphics{aux/figures/parse-tree-2.pdf}
+
+	{\centering \includegraphics[height=.7\pageheight]{aux/figures/parse-tree-3.pdf}}

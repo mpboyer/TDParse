@@ -3,17 +3,7 @@
 \def\tikzimp@rt{1}
 \makeatother
 
-\usepackage[dvipsnames]{xcolor}
-
 \bibliography{slides.bib}
-
-\definecolor{yaleblue}{HTML}{0F4D92}
-
-%\setmaincolor{vulm!50}
-%\setaccents{yaleblue}
-%\setbackground{white}
-%\settextcol{black}
-
 
 \input{aux/preamble}
 
@@ -26,10 +16,10 @@
 \begin{document}
 \fancytitleframe
 
-\section{Introduction and a teeny tiny bit of math}
+\section{Introduction}
 \subsection{General Introduction}
 \begin{frame}
-	\frametitle{General Introduction}
+	\frametitle{Salute}
 	This work, based on \cite{bumfordEffectdrivenInterpretationFunctors2025} aims
 	to provide a categorical formalization of a type and effects system for
 	semantic interpretation of the natural language.
@@ -40,8 +30,9 @@
 	explains how to derive the meaning of a sentence from the meaning of its
 	words.
 \end{frame}
+
 \begin{frame}[fragile]
-	\frametitle{Types in Semantics of Natural Languages}
+	\frametitle{Lost in translation}
 	\setcellgapes{3pt}
 	\makegapedcells
 	\begin{NiceTabular}{>{\bf}LLL}
@@ -60,7 +51,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Handling Non-Determinism}
+	\frametitle{A, the, your}
 	What should be the type of expressions such as \textbf{a cat} or \textbf{Jupiter, a planet}?
 	\pause
 
@@ -76,23 +67,23 @@
 	\end{equation*}
 \end{frame}
 
-\subsection{Computer Basis}
+\subsection{Just a teeny tiny bit of math}
 \begin{frame}[fragile]
-	\frametitle{Side-Effects}
+	\frametitle{DAMN PRINTER WHAT ARE YOU DOING}
 	\begin{center}
 		\begin{minipage}[b]{.45\textwidth}
 			\begin{code}{python}
-				def add(x, y):
-				return x + y
+def add(x, y):
+  return x + y
 			\end{code}
 			\centering
 			A pure program.
 		\end{minipage}
 		\begin{minipage}[b]{.45\textwidth}
 			\begin{code}{python}
-				def add(x, y):
-				print("I LOVE CHOMSKY")
-				return x + y
+def add(x, y):
+  print("I LOVE CHOMSKY")
+  return x + y
 			\end{code}
 			\centering
 			An impure program
@@ -177,11 +168,10 @@
 	denotation, reading said data makes us go back to the beginning, or almost.
 \end{frame}
 
-\section{Implementing the category-theoretical type system}
-\subsection{Meet my type system}
-
+\section{Category-theoretical type system}
+\subsection{Type system}
 \begin{frame}
-	\frametitle{A Type and Effect System}
+	\frametitle{Lexicon, but for the presentation}
 	Let $\mL$ be our language (more on that later).
 	We only suppose that our words can be applied to one another in their
 	denotation system.
@@ -203,7 +193,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Typing Rules}
+	\frametitle{Your honor}
 	\only<1-2>{We then have typing judgements for basic combinations:
 		\begin{align*}
 			\only<1>{
@@ -233,13 +223,13 @@
 \subsection{Introducing a language}
 
 \begin{frame}
-	\frametitle{Language}
+	\frametitle{What we need}
 	To present the language, we of course need the syntax of the language, as
 	well as an increased model of our lexicon.
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Lexicon}
+	\frametitle{What's that mean ?}
 	\resizebox{\textwidth}{!}{
 		\setcellgapes{3pt}
 		\makegapedcells
@@ -261,7 +251,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Higher-Order Constructs}
+	\frametitle{Independence}
 	\only<1-2>{Using the notion of functors, we can also implement higher-order semantic
 		constructions in our lexicon, such as the future, without caring about
 		morphological markers:}
@@ -299,12 +289,14 @@
 			\end{NiceTabular}
 		}
 	}
+	\only<4>{
+	}
 \end{frame}
 
 \section{Effect Handling}
 \subsection{What is a chair ?}
 \begin{frame}
-	\frametitle{Handlers}
+	\frametitle{Q}
 	A handler for an effect $F$ is a natural transformation $F \Rightarrow \Id$.
 
 	\smallskip
@@ -316,7 +308,7 @@
 
 
 \begin{frame}
-	\frametitle{Intrinsic and Speaker-Defined Handlers}
+	\frametitle{Alphabetical philosophy}
 	There are two main types of handlers that are of interest to us:
 	\pause
 	\begin{enumerate}
@@ -331,10 +323,25 @@
 		      example of the multiple ways to solve non-determinism.
 	\end{enumerate}
 \end{frame}
+\begin{frame}
+	\frametitle{Friday}
+	The notion of handlers allows us to enforce the notion of scope islands.
+	To do so, it would suffice to ask that the words enclosing the island,
+	are not defined on not certain effectful types and make handlers a part of
+	the combination modes.
 
+	\pause
+	\smallskip
+
+	We would for example have:
+	\begin{equation*}
+		\w{if}: \left(\t \setminus \mF{\mL}^{*}\f{C}\t \right) \to \t \to \t
+	\end{equation*}
+
+\end{frame}
 \subsection{The ropes of effect handling.}
 \begin{frame}[allowframebreaks]
-	\frametitle{String Diagrams in Denotations}
+	\frametitle{Pantone}
 	A string diagram is a representation of the side-effects and types of a
 	sentence across its computation.
 
@@ -343,13 +350,15 @@
 	The lines are functors (effects or base types), the nodes are natural
 	transformations.
 
+	\medskip
+
 	\begin{center}
 		\hfill
-		\begin{minipage}[b]{.5\textwidth}
+		\begin{minipage}[c]{.5\textwidth}
 			\inputtikz{sd-thecatsleeps}
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{.4\textwidth}
+		\begin{minipage}[c]{.4\textwidth}
 			This diagram for example represents the sentence \textsl{The cat sleeps}.
 			The order of the words and position of the strings will be explained in
 			detail in the next section.
@@ -358,8 +367,9 @@
 	\end{center}
 \end{frame}
 
+\subsection{Severing the ties.}
 \begin{frame}
-	\frametitle{String Diagram Equivalence}
+	\frametitle{Tying the knots}
 	String diagrams will be the formalism we use to compute equality between
 	denotations, and especially handling the denotations.
 	\begin{thm}[Theorem 3.1 \cite{selingerSurveyGraphicalLanguages2010}, Theorem 1.2 \cite{joyalGeometryTensorCalculus1991}]
@@ -370,9 +380,8 @@
 	\end{thm}
 \end{frame}
 
-\subsection{Severing the ties.}
 \begin{frame}[allowframebreaks]
-	\frametitle{Conversion Software, version 7.0.}
+	\frametitle{Version 7.0.}
 	Every property of the functors, monads, natural transformations, adjunctions
 	and more can be explained in terms of commutative diagrams, but also as
 	string diagrams.
@@ -425,7 +434,7 @@
 \section{Semantic Parsing}
 \subsection{Actor's studio}
 \begin{frame}[allowframebreaks]
-	\frametitle{CFGs}
+	\frametitle{Chomsky did nothing wrong.}
 	We use a Context-Free Grammar to model our typing system and take its product with the syntax defining grammar.
 
 	\begin{minipage}{\textwidth}
@@ -473,145 +482,52 @@
 \end{frame}
 
 \begin{frame}[allowframebreaks, fragile]
-	\frametitle{Parsing Trees}
+	\frametitle{Where cats are stuck.}
+	\includegraphics{aux/figures/parse-tree-1.pdf}
 	\centering
-	\begin{tikzpicture}[every tree node/.style={align=center, anchor=north}, level distance=2.5cm]
-		\Tree [
-		.{$\f{D}\e$ \\ $\{x \mid \w{cat} x \land \w{in\ a\ box} x \} $ \\ $\combJ_{\f{D}}\combML_{\f{D}} >$}
-		{$(\e \to \t) \to \f{D}\e$ \\ a}
-		[ .{$\f{D}(\e \to \t)$ \\ $\lambda x. \w{cat} x \land \w{in\ a\ box} x$} \edge[roof]; {cat in a box} ] ]
-	\end{tikzpicture}
+	\includegraphics{aux/figures/parse-tree-2.pdf}
 
-	\centering
-	\begin{tikzpicture}[every tree node/.style={align=center, anchor=north}, level distance=2.5cm]
-		\Tree [
-		.{$\f{M}\f{D}\t$ \\ $\left\{\mathbf{eats}(\texttt{obj=}m, \texttt{subj=}c) \middle| \w{mouse}(m)\right\}$ if $\mathbf{cat}^{-1}(\top) = \{c\}$ \\ $\combMR_{\f{M}}\combML_{\f{D}}>$}
-		[
-		.{$\f{M}(\e)$ \\ $c$ if $\mathbf{cat}^{-1}(\top) = \{c\}$} \edge[roof]; {the cat}
-		]
-		[
-		.{$\f{D}(\e \to \t)$ \\ $\left\{\lambda s. \mathbf{eats}(\texttt{obj=}m, \texttt{subj=}s) \middle| \w{mouse}(m)\right\}$} \edge[roof]; {eats a mouse}
-		]
-		]
-	\end{tikzpicture}
-
-	{\centering
-	\begin{tikzpicture}[scale=.75]
-		\tikzset{every tree node/.style={align=center, anchor=north}, level distance=2cm}
-		\Tree [
-		.\node{\t \\ $\mathbf{if}(\forall x. \w{past}\w{pass} x)(\w{past}\mathbf{rain})$ \\ $>$};
-		[ .\node{$\t \to \t$ \\ $\mathbf{if}(\forall x.\w{past}\w{pass} x)$ \\ $>$};
-		{$\t \to \t \to \t$ \\ if}
-		[
-		.\node{$\t$\\ $\forall x. \w{pass} x$ \\ $\combDN_{\Downarrow_{\f{C}}}$};
-		[ .\node{$\f{C}\t$ \\ $\lambda c.\forall x. c(\w{past}\w{pass} x)$ \\ $\combMR_{\f{C}}<$};
-		{$\f{C}\e$ \\ $\lambda c. \forall x. c\, x$ \\ everyone}
-		{$\e \to \t$ \\ $\w{past}\mathbf{pass}$ \\ passed}
-		]
-		]
-		]
-		[
-		.{\t \\ $\w{past}\mathbf{rain}$} \edge[roof]; {it was raining}
-		]
-		]
-	\end{tikzpicture}}
+	{\centering \includegraphics[height=.7\pageheight]{aux/figures/parse-tree-3.pdf}}
 \end{frame}
+
 
 \subsection{No strings attached.}
 \begin{frame}
-	\frametitle{String Diagram Combination}
-	By writing our combinators as natural transformations, we can apply the idea
-	of string diagrams to parsing, and make use of the speed of the equality
-	algorithms:
-	\resizebox{\textwidth}{!}{%
-		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-			\path coordinate[dot, label=below:$>$] (m)
-			+ (0, 1) coordinate[label=above:$\beta$] (result)
-			+ (-1, -1) coordinate[label=below:$\alpha \to \beta$] (phi)
-			+ (1, -1) coordinate[label=below:$\alpha$] (x);
-			\draw (m) -- (result);
-			\draw (m) to[out=180, in=90] (phi);
-			\draw (m) to[out=0, in=90] (x);
-			\begin{pgfonlayer}{background}
-				\fill[catmcb] (result) -- (m) -- ($(m) + (-1, 0)$) |- (result);
-				\fill[catmcb] (result) -- (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (result);
-				\fill[catmc] (result) -- (m) -- ($(m) + (1, 0)$) |- (result);
-				\fill[catmc] (result) -- (m) to[out=0, in=90] (x) -- ($(x) + (1, 0)$) |- (result);
-				\fill[catmca] (m) to[out=0, in=90] (x) -- (phi) to[out=90, in=180] (m);
-			\end{pgfonlayer}
-		\end{tikzpicture}
-		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}, yscale=-1]
-			\path coordinate[dot, label=above:$\combML_{\f{F}}$] (m)
-			+ (1, 1) coordinate[label=below:$\beta$] (out2)
-			+ (-1, 1) coordinate[label=below:$\alpha$] (out)
-			+ (-1.5, 1) coordinate[label=below:$\f{F}$] (out1)
-			+ (-1, -1) coordinate[label=above:$\alpha$] (phi)
-			+ (1, -1) coordinate[label=above:$\beta$] (x);
-			\draw (m) to[out=180, in=90] (phi);
-			\draw (m) to[out=0, in=90] (x);
-			\draw (m) to[out=180, in=-90] (out1);
-			\draw (m) to[out=180, in=-90] (out);
-			\draw (m) to[out=0, in=-90] (out2);
-			\begin{pgfonlayer}{background}
-				\fill[catmcc] (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (out1) to[out=-90, in=180] (m);
-				\fill[catmc] (m) to[out=0, in=-90] (x) -- ($(x) + (1, 0)$) |- (out2) to[out=-90, in=0] (m);
-				\fill[catmca] (m) to[out=180, in=90] (phi) -- (x) to[out=90, in=0] (m);
-				\fill[catmcb] (m) to[out=180, in=-90] (out1) -- (out) to[out=-90, in=180] (m);
-				\fill[catmca] (m) to[out=180, in=-90] (out) -- (out2) to[out=-90, in=0] (m);
-			\end{pgfonlayer}
-		\end{tikzpicture}
-		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
-			\path coordinate[dot, label=below:$\combJ_{\f{F}}$] (m)
-			+ (0, 1) coordinate[label=above:$\f{F}$] (result)
-			+ (-1, -1) coordinate[label=below:$\f{F}$] (phi)
-			+ (1, -1) coordinate[label=below:$\f{F}$] (x);
-			\draw (m) -- (result);
-			\draw (m) to[out=180, in=90] (phi);
-			\draw (m) to[out=0, in=90] (x);
-			\begin{pgfonlayer}{background}
-				\fill[catmcb] (result) -- (m) -- ($(m) + (-1, 0)$) |- (result);
-				\fill[catmcb] (result) -- (m) to[out=180, in=90] (phi) -- ($(phi) + (-1, 0)$) |- (result);
-				\fill[catmc] (result) -- (m) -- ($(m) + (1, 0)$) |- (result);
-				\fill[catmc] (result) -- (m) to[out=0, in=90] (x) -- ($(x) + (1, 0)$) |- (result);
-				\fill[catmca] (m) to[out=0, in=90] (x) -- (phi) to[out=90, in=180] (m);
-			\end{pgfonlayer}
-		\end{tikzpicture}
-	}
-	The use of string diagrams allows us to prove a set of reductions/equalities
-	between rules in our grammar, and reduce the complexity of our parsing
-	algorithm, by a confluent rewriting system just as before.
+	\frametitle{Legos, with strings}
+	\includegraphics[width=\textwidth]{aux/figures/combinators-sd.pdf}
 \end{frame}
 
 \begin{frame}
-	\frametitle{A Parsing Diagram}
-	\vspace{-1.5cm}
-	\begin{center}
-		\raisebox{0cm}{\resizebox{\textwidth}{!}{\rotatebox{-90}{\inputtikz{parsing-diagram}}}}
-	\end{center}
+	\frametitle{Crayons}
+	Based on the mathematical definitions of the combinators, we can also define
+	reduction rules as a part of the grammar (and later, on our string diagrams).
+
+	This allows us to reduce the grammar while still using the properties of
+	string diagrams to our advantage in the proofs.
 \end{frame}
 
 \begin{frame}
-	\frametitle{Another Parsing Diagram}
-	\begin{center}
-		\raisebox{0cm}{\resizebox{\textwidth}{!}{\rotatebox{-90}{\inputtikz{parsing-diagram2}}}}
-	\end{center}
+	\frametitle{Under the old willow}
+	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram.pdf}}
 \end{frame}
 
 \begin{frame}
-	\frametitle{One less thing}
-	\vspace{-1.75cm}
+	\frametitle{Under the older willow}
+	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram.pdf}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Knitting with words}
 	\centering
-	\resizebox{.7\textwidth}{!}{\rotatebox{-90}{\inputtikz{3d-parsing-diagram}}}
+	\includegraphics[width=.7\textwidth]{aux/figures/knitting-example.jpeg}
 \end{frame}
 
-\section*{Bibliography}
-
-\begin{frame}[allowframebreaks]
-	\frametitle{Bibliography}
-	\printbibliography{}
+\begin{frame}
+	\frametitle{Willows, but better!}
+	\vspace{-.25cm}
+	\centering
+	\rotatebox{-90}{\includegraphics[width=.7\pageheight]{aux/figures/3d-parsing-diagram.pdf}}
 \end{frame}
-
-
 
 \end{document}
 
