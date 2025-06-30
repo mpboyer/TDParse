@@ -1,0 +1,15 @@
+\begin{multicols}{2}
+	\small
+	$	>                    = \lambda \phi. \lambda x. \phi x $\\[1.5ex]
+	$ <                    = \lambda x. \lambda \phi. \phi x $\\[1.5ex]
+	$ \combML_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda a. M(a, y)) x $\\[1.5ex]
+	$ \combMR_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda b. M(x, b)) y $\\[1.5ex]
+	$	\combA_{\f{F}}       = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}}\lambda a. \lambda b. M(a, b))(x) \texttt{<*>} y $\\[1.5ex]
+	$	\combUL_{\f{F}}      = \lambda M. \lambda x. \lambda \phi. M(x, \lambda b. \phi(\eta_{\f{F}} b))$\\[1.5ex]
+	$	\combUR_{\f{F}}      = \lambda M. \lambda \phi. \lambda y. M(\lambda a. \phi(\eta_{\f{F}} a),y) $\\[1.5ex]
+	$ \combJ_{\f{F}}       = \lambda M. \lambda x. \lambda y. \mu_{\f{F}} M(x, y) $\\[1.5ex]
+	$\combC_{\f{L}\f{R}}  = \lambda M. \lambda x. \lambda y. \epsilon_{\f{L}\f{R}}(\fmap_{\f{L}}(\lambda l. \fmap_{\f{R}}(\lambda r. M(l, r))(y)) (x))$\\[1.5ex]
+	$	\combEL_{\f{R}}      = \lambda M. \lambda \phi. \lambda y. M(\Upsilon_{\f{R}} \phi, y)$\\[1.5ex]
+	$	\combER_{\f{R}}      = \lambda M. \lambda x. \lambda \phi. M(x, \Upsilon_{\f{R}} \phi)$\\[1.5ex]
+	$	\combDN_{\Downarrow} = \lambda M. \lambda x. \lambda y. \Downarrow M(x, y)$
+\end{multicols}

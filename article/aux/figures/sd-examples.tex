@@ -1,0 +1,16 @@
+	\begin{tikzpicture}
+		\path coordinate[dot, label=left:$h$] (h) +(0,1) coordinate[label=above:$Y$] (tl)
+		++(0,-1) coordinate[dot, label=left:$a$] (a) +(0,-3) coordinate[label=below:$X$] (bl)
+		++(2,-3) coordinate[label=below:$T'$] (br)
+		(bl) ++(1,0) coordinate[label=below:$F$] (bm)
+		(a) ++(3,0) coordinate (r) ++(0,2) coordinate[label=above:$F$] (tr);
+		\draw (bl) -- (a) -- (h) -- (tl);
+		\draw[name path=curv] (bm) to[out=90, in=-90] (r) -- (tr);
+		\draw[name path=vert] (a) to[out=0, in=90] (br);
+		\path[name intersections={of=vert and curv}] coordinate[dot, label=-45:$\alpha$] (alpha) at (intersection-1);
+		\begin{pgfonlayer}{background}
+			\fill[catmcc] ($(tl) + (-1,0)$) rectangle (br);
+			\fill[catmcb] (bl) rectangle ($(tr) + (1,0)$);
+			\fill[catmca] (bm) to[out=90, in=-90] (r) -- (tr) -- ++(1,0) -- ++(0,-5) -- cycle;
+		\end{pgfonlayer}
+	\end{tikzpicture}

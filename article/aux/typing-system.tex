@@ -1,0 +1,311 @@
+\section{Categorical Semantics of Effects: A Typing System}
+\label{sec:typingsystem}
+In this section, we will designate by $\mL$ our language, as a set of words
+(with their semantics) and syntactic rules to combine them semantically.
+We denote by $\O\left( \mL \right)$ the set of words in the language whose
+semantic representation is a low-order function and $\mF\left( \mL \right)$ the
+set of words whose semantic representation is a functor or high-order function.
+Our goals here are to describe more formally, using a categorical vocabulary,
+the environment in which the typing system for our language will exist, and how
+we connect words and other linguistic objects to the categorical formulation.
+
+\subsection{Typing Category}\label{subsec:typingcategory}
+\subsubsection{Types}\label{subsubsec:types}
+Let $\mC$ be a closed cartesian category, which will be used to represent the
+domain of types for our domain of denotations.
+This represents our main typing system, consisting of words $\O(\mL)$ that can
+be expressed without effects.
+Remember that $\mC$ contains a terminal object $\bot$ representing the empty
+type or the lack thereof.
+We can consider $\bar{\mC}$ the category closure of
+$\mF\left( \mL \right)\left(\O\left( \mL \right)\right)$, that is consisting of
+all the different type constructors (ergo, functors) that could be formed in
+the language.
+What this means is that we consider for our category objects any object that
+can be attained in a finite number from a finite number of functorial
+applications from an object of $\mC$.
+In that sense, $\bar{\mC}$ is still a closed cartesian category (since all our
+functors induce isomorphisms on their image)\footnote{Our definition does not
+	yield a closed cartesian category as there are no exponential objects between
+	results of two different functors, but this is not a real issue as we can just
+	say we add those.}.
+$\bar{\mC}$ will be our typing category (in a way).
+
+We consider for our types the quotient set
+$\star = \mathrm{Obj}\left( \bar{\mC} \right)/\mF\left( \mL \right)$.
+Since $\mF\left( \mL \right)$ does not induce an equivalence relation on
+$\Obj\left( \bar{\mC} \right)$ but a preorder, we consider the chains obtained
+by the closure of the relation $x\succeq y \Leftrightarrow \exists F, y = F(x)$
+(which is seen as a subtyping relation as proposed in
+\cite{melliesFunctorsAreType2015}).
+We also define $\star_{0}$ to be the set obtained when considering types which
+have not yet been \emph{affected}, that is $\Obj(\mC)$.
+In contexts of polymorphism, we identify $\star_{0}$ to the adequate subset of
+$\star$.
+In this paradigm, constant objects (or results of fully done computations) are
+functions with type $\bot \to \tau$ which we will denote directly by
+$\tau \in \star_{0}$.
+
+What this construct actually means, in categorical terms, is that a type is an
+object of $\bar{\mC}$ (as intended) but we add a subtyping relationship based
+on the procedure used to construct $\bar{\mC}$.
+Note that we can translate that subtyping relationship on functions as
+$F\left( A \xrightarrow{\phi} B \right)$ has both types
+$F\left( A\Rightarrow B \right)$ and $FA \Rightarrow FB$.
+
+\subsubsection{Functors, Applicatives and Monads}
+\label{subsubsec:functors}
+Our point of view leads us to consider \emph{language functors}\footnote{The
+	elements of our language, not the categorical construct.} as polymorphic
+functions: for a (possibly restrained, though it seems to always be $\star$)
+set of base types $S$, a functor is a function
+\begin{equation*}
+	x: \tau\in S\subseteq \star \mapsto F x: F\tau
+\end{equation*}
+Remember that $\star$ is a fibration of the types in $\bar{\mC}$.
+This means that if a functor can be applied to a type, it can also be applied
+to all \emph{affected} versions of that type, i.e.
+$\mF\left( L \right)(\tau\in \star)$.
+More importantly, while it seems that $F$'s type is the identity on $\star$,
+the important part is that it changes the effects applied to $x$ (or $\tau$).
+In that sense, $F$ has the following typing judgements:
+\begin{equation*}
+	\frac{\Gamma\vdash x: \tau \in \star_{0}}{\Gamma\vdash F x: F\tau \notin
+		\star_{0}} \hspace{2cm} \frac{\Gamma\vdash x:
+		\tau}{\Gamma\vdash Fx : F\tau\preceq \tau}
+\end{equation*}
+We use the same notation for the \emph{language functor} and the
+\emph{type functor} in the examples, but it is important to note those are two
+different objects, although connected.
+More precisely, the \emph{language functor} is to be seen as a function whose
+computation yields an effect, while the \emph{type functor} is the endofunctor
+of $\bar{\mC}$ (so a functor from $\mC$) that represents the effect in our
+typing category.
+
+In the same fashion, we can consider functions to have a type in $\star$ or
+more precisely of the form $\star \to \star$ which is a subset of $\star$.
+This justifies how functors can act on functions in our typing system, thanks
+to the subtyping judgement introduced above, as this provides a way to ensure
+proper typing while just propagating the effects.
+Because of propagation, this also means we can resolve the effects or keep on
+with the computation at any point during parsing, without any fear that the
+results may differ.
+
+\medskip
+
+In that sense, applicatives and monads only provide with more flexibility on
+the ways to combine functions:
+they provide intermediate judgements to help with the combination of trees.
+For example, the multiplication of the monad provides a new
+\emph{type conversion} judgement:
+\begin{equation*}
+	\frac{\Gamma\vdash x: MM\tau}{\Gamma\vdash x: M\tau \succeq MM\tau}
+\end{equation*}
+This is actually a special case of the natural transformation rule that we
+define below, which means that, in a way, types $MM\star$ and $M\star$ are
+equivalent, as there is a canonical way to go from one type to another.
+Remember however that $M\star$ is still a proper subtype of $MM\star$ and that
+the objects are not actually equal: they are simply equivalent.
+
+\subsubsection{Natural Transformations}
+\label{subsubsec:transnat}
+We could also add judgements for adjunctions, but the most interesting thing is
+to add judgements for natural transformations, as adjunctions are particular
+examples of natural transformations which arise from \emph{natural} settings.
+While in general we do not want to find natural transformations, we want to be
+able to express these in three situations:
+\begin{enumerate}
+	\item If we have an adjunction $L\dashv R$, we have natural transformations
+	      for $\Id_{\mC} \Rightarrow L \circ R$ and $R\circ L \Rightarrow \Id_{\mC}$.
+	      In particular we get a monad and a comonad from a canonical setting.
+	\item To deal with the resolution of effects, we can map handlers to natural
+	      transformations which go from some functor $F$ to the $\Id$ functor,
+	      allowing for a sequential\footnote{In particular, non-necessarily
+		      commutative} computation of the effects added to the meaning.
+	      We will develop a bit more on this idea in Paragraph \ref{par:handlers}
+	      and in Section \ref{sec:nondet}.
+	\item To create \emph{higher-order} constructs which transform words from our
+	      language into other words, while keeping the functorial aspect.
+	      This idea is developed in \ref{par:higherorder}.
+\end{enumerate}
+To see why we want this rule, which is a larger version of the monad
+multiplication and the monad/applicative unit, it suffices to see that the
+diagram defining the properties of a natural transformation provides a way
+to construct the ``correct function'' on the ``correct functor'' side of types.
+
+\medskip
+
+Remember that in the Haskell programming language, any polymorphic function is
+a natural transformation from the first type constructor to the second type
+constructor, as proved by \cite{wadlerTheoremsFree1989}.
+This will guarantee for us that given a \emph{Haskell} construction for a
+polymorphic function, we will get the associated natural transformation.
+
+\paragraph{Handlers}
+\label{par:handlers}
+As introduce by \cite{marsikAlgebraicEffectsHandlers}, the use of handlers
+as annotations to the syntactic tree of the sentence is an appropriate
+formalism.
+This could also give us a way to construct handlers for our effects as per
+\cite{bauerEffectSystemAlgebraic2014}, or
+\cite{plotkinHandlingAlgebraicEffects2013}.
+As considered by \cite{wuEffectHandlersScope2014} and
+\cite{vandenbergFrameworkHigherorderEffects2024}, handlers are to be seen
+as natural transformations describing the free monad on an algebraic effect.
+Considering handlers as so, allows us to directly handle our computations
+inside our typing system, by ``transporting'' our functors one order higher up
+without loss of information or generality since all our functors undergo the
+same transformation.
+Using the framework proposed in \cite{vandenbergFrameworkHigherorderEffects2024}
+we simply need to create handlers for our effects/functors and we will then
+have in our language the result needed.
+The only thing we will require from an algebraic handler $h$ is that for any
+applicative functor of unit $\eta$, $h\circ \eta = \id$.
+
+\medskip
+
+What does this mean in our typing category?
+It means that either our language or our parser for the language
+\footnote{Depending whether we think handling effects is an intrinsic construct
+	of the semantics of the language or whether it is associated with a speaker.}
+should contain natural transformations $F \Rightarrow \Id$ for
+$F \in \mF\left( \mL \right)$.
+In this goal, we remember that from any polymorphic function in \emph{Haskell}
+we get a natural transformation \cite{wadlerTheoremsFree1989} meaning that it
+is enough to be able to define our handler in \emph{Haskell} to be ensured of
+its good definition.
+Note that the choice of the handler being part of the lexicon or the parser
+over the other is a philosophical question more than a semantical one, as both
+options will result in semantically equivalent models, the only difference will
+be in the way we consider the resolution of effects.
+Mathematically\footnote{Computer-wise, actually.}, this means the choice of
+either one of the options is purely of detail left during the implementation.
+
+However, this choice does not arise in the case of the adjunction-induced
+handlers.
+Indeed here, the choice is caused by the non-uniqueness of the choices for
+the handlers.
+For example, two different speakers may have different ways to resolve the
+$\f{S}$ (which will be introduced as the \emph{Powerset} monad in Section
+\ref{subsec:effects}) that arises from the phrase \textsl{A chair}.
+This usual example of the differences between the cognitive representation of
+words is actually a specific example of the different possible handlers for the
+powerset representation of non-determinism/indefinites:
+there are $\abs{S}$ arrows from the initial object to $S$ in $\mathit{Set}$,
+representing the different elements of $S$.
+In that sense, while handlers may have a normal form or representation purely
+dependant on the effect, the actual handler does not necessarily have
+a canonical form.
+This is the difference with the adjunctions: adjunctions are intrinsic
+properties of the coexistence of the effects\footnote{Which we identify to
+	their functorial representations, which we may identify to their free monad in
+	the framework \cite{vandenbergFrameworkHigherorderEffects2024}.}, while the
+handlers are user-defined.
+As such, we choose to say that our handlers are implemented parser-side but
+again, this does not change our modelisation of handlers as natural
+transformations and most importantly, this does not add non-determinism to our
+model: The non-determinism that arises from the variety of possible handlers
+does not add to the non-determinism in the parsing.
+
+\paragraph{Higher-Order Constructs}
+\label{par:higherorder}
+We might want to add plurals, superlatives, tenses, aspects and other similar
+constructs which act as function modifiers.
+For each of these, we give a functor $\Pi$ corresponding to a new class of
+types along with natural transformations for all other functors $F$ which
+allows to propagate down the high-order effect.
+This transformation will need to be from $\Pi \circ F$ to
+$\Pi \circ F \circ \Pi$ or simply $\Pi \circ F \Rightarrow F \circ \Pi$
+depending on the situation.
+This allows us to add complexity not in the compositional aspects but
+in the lexicon aspects.
+
+One of the main issues with this is the following:
+In the English language, plural is marked on all words (except verbs, and even
+then case could be made for it to be marked), while future is marked only on
+verbs (through the \textit{will + verb} construct which creates a ``\emph{new}''
+verb in a sense) though it applies also to the arguments on the verb.
+A way to solve this would be to include in the natural transformations rules to
+propagate the functor depending on the type of the object.
+Consider the superlative effect \textbf{most}\footnote{We do not care about
+	morphological markings here, we say that
+	$\mathbf{largest} = \mathbf{most} \left(\mathbf{large}\right)$}.
+As it can only be applied on adjectives, we can assume its argument is a
+function (but the definition would hold anyway taking $\tau_{1} = \bot$).
+It is associated with the following function (which is a rewriting of the
+natural transformation rule):
+\begin{equation*}
+	\frac{\cont x: \tau_{1} \to \tau_{2}}{\cont \mathbf{most}\, x \coloneqq
+		\Pi_{\tau_{2}} \circ x = x \circ \Pi_{\tau_{1}}}
+\end{equation*}
+What currying implies, is that higher-order constructs can be passed down
+to the arguments of the functions they are applied to, explaining how we can
+reconciliate the following semantic equation even if some of the words are not
+marked properly:
+\begin{equation*}
+	\mathbf{future\left(be\left( I, a\ cat \right)\right)
+		= will\ be\left( future\left( I \right), a\ cat \right)
+		= be\left( future\left( I \right), a\ cat \right)}
+\end{equation*}
+Indeed the above equation could be simply written by our natural transformation
+rule as:
+\begin{equation*}
+	\begin{aligned}
+		\mathbf{future\left( be \right)\left( arg_{1}, arg_{2} \right)}
+		 & = \mathbf{future\left( be \right)\left( arg_{2} \right)\left( future\left( arg_{1} \right) \right)}                           \\
+		 & = \mathbf{future \left( be \right) \left( future \left( arg_{2} \right) \right) \left( future \left( arg_{1} \right) \right)}
+	\end{aligned}
+\end{equation*}
+This is not a definitive rule as we could want to stop at a step in the
+derivation, depending on our understanding of the notion of future in
+the language.
+
+\paragraph{Monad Transformers}
+In \cite{bumfordEffectdrivenInterpretationFunctors2025}, the authors present
+constructions which they call monad transformers or \emph{higher-order
+	constructors} and which take a monad as input and return a monad as output.
+One way to type those easily would be to simply create, for each such
+construct, a monad (the result of the application to any other monad) and a
+natural transformation which mimics the application and can be seen as the
+constructor.
+
+\subsection{Typing Judgements}\label{subsec:judgements}
+To complete this section, Figure \ref{tab:judgements} gives a simple list of different typing composition judgements through which we also re-derzive the subtyping judgement to allow for its implementation.
+\begin{figure}
+	\input{aux/figures/typing-judgements}
+	\caption{Typing and subtyping judgements for implementation of effects in the
+		type system.}
+	\label{tab:judgements}
+\end{figure}
+Note that here, the syntax is not taken into account: a function is always written left of its arguments, whether or not they are actually in that order in the sentence.
+This issue will be resolved by giving the syntactic tree of the sentence (or infering it at runtime).
+We could also add symmetry induced rules for application.
+
+Furthermore, note that the App rule is the \texttt{fmap} rule for the identity functor and that the \texttt{pure/return} and \texttt{>>=} is the \texttt{nat} rule for the monad unit (or applicative unit) and multiplication.
+
+\medskip
+
+Using these typing rules for our combinators, it is important to see that our grammar will still be ambiguous and thus our reduction process will be non-deterministic.
+
+This non-determinism is a component of our language's grammar and semantics:
+a same sentence can have multiple interpretation without context.
+It is also important to note that we want to be able to map effects in any
+possible order.
+By the same reasoning we applied on handlers, we choose not to resolve the
+ambiguity in the parser but we will provide methods in Sections
+\ref{sec:nondet} and \ref{sec:parsing} to it to a minimum.
+
+\subsection{Decidability}
+The observant reader might have notice (without too much trouble), that our
+typing system is not decidable, because of the \texttt{nat/pure/return} rules
+which may allow for infinite derivations.
+The good news is, this is only an issue when trying to type things that cannot
+be typed.
+Indeed, because of the considerations on handling, and the fact that
+semantically void units will in the end get deleted without any modifications
+on the end meaning, we can just remove the rules that allow for unbounded
+derivations, especially the usage of units of applicatives and natural
+transformations that allow to switch back and forth between two or more
+functors.
+This leads to derivations of sentences to be of bounded height, linear in the
+length of the sentence.

@@ -1,0 +1,118 @@
+\tikzset{
+	eats/.pic={%
+			\path coordinate[dot, label=above:$\w{a}$] (a)
+			+ (0, 1) coordinate[dot, label=below:$\w{eats}$] (eats)
+			+ (0, 2) coordinate[label=above:$\e\to\t$] (a-bool)
+			++(-2, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++(2, -2) coordinate[dot, label=below:$\w{mouse}$] (mouse)
+			+ (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\coordinate (-u) at (a-bool);
+			\coordinate (-ur) at ($(a-bool) + (1, 0)$);
+			\coordinate (-lr) at ($(bot) + (1, 0)$);
+			\coordinate (-e) at ($(mouse) + (1, 0)$);
+			\draw (mouse) -- (a) -- (eats) -- (a-bool);
+			\draw[name path=effect] (a) to[out=180, in=-90] (ctla) -- (effa);
+			\draw[dashed] (bot) -- (mouse);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(a-bool) + (1, 0)$);
+				\fill[catmca] (bot) rectangle ($(effa) + (-1, 0)$);
+				\fill[catmc] (a) to [out=180, in=-90] (ctla) -- (effa) -- (a-bool) -- (a);
+			\end{pgfonlayer}
+		},
+	cat/.pic={
+			\path coordinate[dot, label=above:$\w{the}\w{cat}$] (cat)
+			+ (0, 2) coordinate[label=above:$\e$] (cat-bool)
+			+ (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctlthe)
+			+ (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+			\coordinate (-u) at (cat-bool);
+			\coordinate (-ur) at ($(cat-bool) + (2, 0)$);
+			\coordinate (-lr) at ($(input) + (1, 0)$);
+			\coordinate (-e) at ($(cat) + (2, 0)$);
+			\coordinate (-ll) at ($(input) + (-2, 0)$);
+			\draw (cat) -- (cat-bool);
+			\draw[dashed] (input) -- (cat);
+			\draw (cat) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (input) rectangle ($(cat-bool) + (2, 0)$);
+				\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmc] (cat) to [out=180, in=-90] (ctlthe) -- (effthe) -- (cat-bool) -- (cat);
+			\end{pgfonlayer}
+		},
+	res/.pic={
+			\path coordinate[dot, label=above:$\w{a}\w{mouse}$] (res-a)
+			+ (0, 1) coordinate[dot, label=above:$\w{eats}$] (res-eats)
+			+ (0, 2) coordinate[label=above:$\t$] (res-bool)
+			++ (-1, 1) coordinate (res-ctla)
+			+ (0, 1) coordinate[label=above:$\f{D}$] (res-effa)
+			++ (1, -2) coordinate[dot, label=above:$\w{the}\w{cat}$] (res-the)
+			+ (-2, 2) coordinate (res-ctlthe)
+			+ (-2, 3) coordinate[label=above:$\f{M}$] (res-effthe)
+			++ (0, -1) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (res-bot);
+			\draw[dashed] (res-bot) -- (res-the);
+			\draw (res-the) -- (res-bool);
+			\draw (res-the) to[out=180, in=-90] (res-ctlthe) -- (res-effthe);
+			\draw (res-a) to[out=180, in=-90] (res-ctla) -- (res-effa);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (res-bot) rectangle ($(res-bool) + (2, 0)$);
+				\fill[catmcb] (res-bot) rectangle ($(res-effthe) + (-1, 0)$);
+				\fill[catmca] (res-the) to[out=180, in=-90] (res-ctlthe) -- (res-effthe) -- (res-bool) -- cycle;
+				\fill[catmc] (res-a) to[out=180, in=-90] (res-ctla) -- (res-effa) -- (res-bool) -- cycle;
+			\end{pgfonlayer}
+		}
+}
+%
+\rotatebox{90}{%
+	\begin{tikzpicture}[yscale=.9]
+		\pic[rotate=-90, transform shape] (ncat) at (0, 0) {cat};
+		\pic[rotate=-90, transform shape] (neats) at ($(ncat-u) + (-1, 4)$) {eats};
+		%
+		\node[rectangle, draw=black] (cn) at ($(ncat-u) + (1, 0)$) {$\rotatebox{-90}{\f{M}\e}$};
+		\node[rectangle, draw=black] (an) at ($(neats-u) + (1, 0)$) {$\rotatebox{-90}{\f{D}(\e \to \t)}$};
+		\node[rectangle, draw=black] (fmap1) at ($(ncat-u) + (4, 1)$) {\rotatebox{-90}{$\combML_{\f{M}}$}};
+		\path (fmap1)
+		+ (1, 1) coordinate[label=above:$\rotatebox{-90}{\f{D}(\e \to \t)}$] (ffu)
+		+ (1, -1) coordinate[label=below:$\rotatebox{-90}{\e}$] (ffd)
+		+ (0, 3) coordinate (tfm)
+		+ (3, 6) coordinate (tfmm)
+		+ (7, 6) coordinate[label=right:$\rotatebox{-90}{\f{M}}$] (functorm)
+		++ (2, 0) node[rectangle, draw=black] (fmap2) {\rotatebox{-90}{$\combMR_{\f{D}}$}}
+		+ (1, 1) coordinate[label=above:$\rotatebox{-90}{\e \to \t}$] (fau)
+		+ (1, -1) coordinate[label=below:$\rotatebox{-90}{\e}$] (fad)
+		+ (0, 3) coordinate (tfd)
+		+ (2, 5) coordinate (tfdd)
+		+ (5, 5) coordinate[label=right:$\rotatebox{-90}{\f{D}}$] (functord)
+		++ (2, 0) node[rectangle, draw=black] (app) {$\rotatebox{-90}{>}$}
+		+ (0, 3) coordinate (tft)
+		+ (1, 4) coordinate (tftt)
+		+ (3, 4) coordinate[label=right:$\rotatebox{-90}{\t}$] (end);
+		%
+		\begin{scope}
+			\draw[postaction={on each segment={mid arrow={black}}}, thick, vulm]
+			(cn) to[out=0, in=240] (fmap1)
+			(an) to[out=0, in=120] (fmap1)
+			(fmap1) to[out=60, in=180] (ffu)
+			(fmap1) to[out=-60, in=180] (ffd)
+			(ffu) to[out=0, in=120] (fmap2)
+			(ffd) to[out=0, in=240] (fmap2)
+			(fmap2) to[out=60, in=180] (fau)
+			(fmap2) to[out=-60, in=180] (fad)
+			(fau) to[out=0, in=120] (app)
+			(fad) to[out=0, in=240] (app);
+		\end{scope}
+		%
+		\draw[loosely dashed] (fmap1) -- (tfm)
+		(fmap2) -- (tfd)
+		(app) -- (tft);
+		\draw (tfm) to[out=90, in=180] (tfmm) -- (functorm)
+		(tfd) to[out=90, in=180] (tfdd) -- (functord)
+		(tft) to[out=90, in=180] (tftt) -- (end);
+		%
+		\node (imp) at ($(app) + (.5, 0)$) {$\Rightarrow$};
+		\pic[rotate=-90, transform shape] (nres) at ($(imp.east) + (2.5,0)$) {res};
+		\draw[->] let
+		\p{end} = ($(end) + (2, 0)$),
+		\p{bond} = ($(ncat-lr) + (1, -1.3)$),
+		in (\x{bond}, \y{bond}) -- node[below] {\rotatebox{180}{Direction of Reduction}} (\x{end}, \y{bond});
+	\end{tikzpicture}
+}

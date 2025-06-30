@@ -1,0 +1,107 @@
+\begin{aligned}
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\e\to\t$] (bool)
+			++(-2, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++(2, -2) coordinate[dot, label=left:$\w{mouse}$] (mouse) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\draw (mouse) -- (a) -- (eats) -- (bool);
+			\draw[name path=effect] (a) to[out=180, in=-90] (ctla) -- (effa);
+			\draw[dashed] (bot) -- (cat);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+				\fill[catmca] (bot) rectangle ($(effa) + (-1, 0)$);
+				\fill[catmc] (the) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (a);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		\bigotimes
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{the}\w{cat}$] (cat) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+			\draw (cat) -- (bool);
+			\draw[dashed] (input) -- (cat);
+			\draw (cat) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
+				\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmc] (cat) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (cat);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		%
+		\overset{\rm curry}{=}\,
+		%
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+			++(-2, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++(2, -2) coordinate[dot, label=left:$\w{mouse}$] (mouse) + (0, -2) coordinate[label=below:$\e$] (bot);
+			\draw (mouse) -- (a) -- (eats) -- (bool);
+			\draw[name path=effect] (a) to[out=180, in=-90] (ctla) -- (effa);
+			\draw (bot) -- (mouse);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (1, 0)$);
+				\fill[catmca] (bot) rectangle ($(effa) + (-1, 0)$);
+				\fill[catmc] (a) to [out=180, in=-90] (ctla) -- (effa) -- (bool) -- (a);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		\bigotimes
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{the}\w{cat}$] (cat) + (0, 2) coordinate[label=above:$\e$] (bool) + (0, -2) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (input)
+			++ (-1, 1) coordinate (ctlthe) + (0, 1) coordinate[label=above:$\f{M}$] (effthe);
+			\draw (cat) -- (bool);
+			\draw[dashed] (input) -- (cat);
+			\draw (cat) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (input) rectangle ($(bool) + (2, 0)$);
+				\fill[catmca] (input) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmc] (cat) to [out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- (cat);
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		%
+		\\
+		%
+		%
+		\overset{\rm paste}{=}\,
+		%
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}$] (a) + (0, 1) coordinate[dot, label=left:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+			++ (-1.5, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++ (1.5, -2) coordinate[dot, label=left:$\w{mouse}$] (mouse)
+			++ (0, -1) coordinate[dot, label=right:$\w{the}$] (the) + (-3, 2) coordinate (ctlthe) + (-3, 4) coordinate[label=above:$\f{M}$] (effthe)
+			++ (0, -1) coordinate[dot, label=left:$\w{cat}$] (cat) + (0, -1) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\draw[dashed] (bot) -- (cat);
+			\draw (cat) -- (bool);
+			\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\draw (a) to[out=180, in=-90] (ctla) -- (effa);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (1.5, 0)$);
+				\fill[catmcb] (bot) rectangle ($(effthe) + (-1.5, 0)$);
+				\fill[catmca] (the) to[out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- cycle;
+				\fill[catmc] (a) to[out=180, in=-90] (ctla) -- (effa) -- (bool) -- cycle;
+			\end{pgfonlayer}
+		\end{tikzpicture}
+		%
+		\overset{\rm compose}{=}\,
+		%
+		\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+			\path coordinate[dot, label=right:$\w{a}\w{mouse}$] (a) + (0, 1) coordinate[dot, label=right:$\w{eats}$] (eats) + (0, 2) coordinate[label=above:$\t$] (bool)
+			++ (-1, 1) coordinate (ctla) + (0, 1) coordinate[label=above:$\f{D}$] (effa)
+			++ (1, -2) coordinate[dot, label=right:$\w{the}\w{cat}$] (the) + (-2, 2) coordinate (ctlthe) + (-2, 3) coordinate[label=above:$\f{M}$] (effthe)
+			++ (0, -1) coordinate[label=below:$\phantom{\e}\bot\phantom{\e}$] (bot);
+			\draw[dashed] (bot) -- (the);
+			\draw (the) -- (bool);
+			\draw (the) to[out=180, in=-90] (ctlthe) -- (effthe);
+			\draw (a) to[out=180, in=-90] (ctla) -- (effa);
+			\begin{pgfonlayer}{background}
+				\fill[catone] (bot) rectangle ($(bool) + (2, 0)$);
+				\fill[catmcb] (bot) rectangle ($(effthe) + (-1, 0)$);
+				\fill[catmca] (the) to[out=180, in=-90] (ctlthe) -- (effthe) -- (bool) -- cycle;
+				\fill[catmc] (a) to[out=180, in=-90] (ctla) -- (effa) -- (bool) -- cycle;
+			\end{pgfonlayer}
+		\end{tikzpicture}
+	\end{aligned}
