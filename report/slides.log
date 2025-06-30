@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  30 JUN 2025 11:16
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  30 JUN 2025 11:35
  system commands enabled.
 **slides.tex
 (./slides.tex
@@ -4694,35 +4694,25 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [44
 
 ]
-Underfull \hbox (badness 10000) detected at line 368
+Underfull \hbox (badness 10000) detected at line 359
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 368.
+ line 359.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 368
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 359
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./aux/figures/sd-thecatsleeps.tex
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 3.
 contour: Using real outline for `\tt \color {vulm}M' on input line 4.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 368--368
-\TU/lmss/m/n/10.95 rep-res-ents the sen-tence
- []
-
-
-Underfull \hbox (badness 6300) in paragraph at lines 368--368
-\TU/lmss/m/n/10.95 of the strings will be
- []
-
-
-Overfull \vbox (42.0269pt too high) detected at line 368
+Overfull \vbox (5.39082pt too high) detected at line 359
  []
 
 
@@ -4730,11 +4720,11 @@ Overfull \vbox (42.0269pt too high) detected at line 368
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 368.
+ line 359.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 368
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 359
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4749,18 +4739,18 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-Underfull \hbox (badness 10000) detected at line 370
+Underfull \hbox (badness 10000) detected at line 361
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 370.
+ line 361.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 370
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 361
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.toc)
@@ -4768,11 +4758,11 @@ Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 370
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 370.
+ line 361.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 370
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 361
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4783,35 +4773,35 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [46
 
 ]
-Underfull \hbox (badness 10000) detected at line 381
+Underfull \hbox (badness 10000) detected at line 372
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 381.
+ line 372.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 381
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 372
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 381.
+(mdframed)              on input line 372.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 381.
+ mdframed uses option nobreak mdframed on input line 372.
 
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 381.
+ line 372.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 381
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 372
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4822,18 +4812,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [47
 
 ]
-Underfull \hbox (badness 10000) detected at line 410
+Underfull \hbox (badness 10000) detected at line 401
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 410.
+ line 401.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 410
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 401
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./aux/figures/sd-elevator.tex) (./aux/figures/sd-snake1.tex)
@@ -4842,11 +4832,11 @@ Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 410
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 410.
+ line 401.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 410
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 401
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4856,16 +4846,16 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [48
 
-<./luatex.hQkopV/1.png>]
+<./luatex.KBEQqS/1.png>]
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 410.
+ line 401.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 410
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 401
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4876,16 +4866,16 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [49
 
 
-<./luatex.hQkopV/2.png>]
+<./luatex.KBEQqS/2.png>]
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 410.
+ line 401.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 410
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 401
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4897,40 +4887,40 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 10000) detected at line 432
+Underfull \hbox (badness 10000) detected at line 423
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 432.
+ line 423.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 432
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 423
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 432.
+(mdframed)              on input line 423.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 432.
+ mdframed uses option nobreak mdframed on input line 423.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 432.
+(mdframed)              on input line 423.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 432.
+ mdframed uses option nobreak mdframed on input line 423.
 
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 432.
+ line 423.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 432
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 423
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4945,11 +4935,11 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 432.
+ line 423.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 432
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 423
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4961,18 +4951,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 10000) detected at line 434
+Underfull \hbox (badness 10000) detected at line 425
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 434.
+ line 425.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 434
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 425
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.toc)
@@ -4980,11 +4970,11 @@ Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 434
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 434.
+ line 425.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 434
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 425
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -4995,18 +4985,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [53
 
 ]
-Underfull \hbox (badness 10000) detected at line 435
+Underfull \hbox (badness 10000) detected at line 426
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 435.
+ line 426.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 435
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 426
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.toc)
@@ -5014,11 +5004,11 @@ Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 435
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 435.
+ line 426.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 435
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 426
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5029,78 +5019,78 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [54
 
 ]
-Underfull \hbox (badness 10000) detected at line 482
+Underfull \hbox (badness 10000) detected at line 473
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 482.
+ line 473.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 482
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 473
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 482.
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 482
+(Font)              <5> on input line 473.
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 473
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 482
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 473
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 482
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 473
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 482
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 473
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 482
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 473
 .
-contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 482
+contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 473
 .
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}C' on input line 482.
-contour: Using real outline for `\tt \color {vulm}C' on input line 482.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}C' on input line 473.
+contour: Using real outline for `\tt \color {vulm}C' on input line 473.
 
-Overfull \hbox (11.18515pt too wide) in paragraph at lines 482--482
+Overfull \hbox (11.18515pt too wide) in paragraph at lines 473--473
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--482
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
 
  []
 
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}F' on input line 482.
-contour: Using real outline for `\tt \color {vulm}L' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
-contour: Using real outline for `\tt \color {vulm}L' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
-contour: Using real outline for `\tt \color {vulm}R' on input line 482.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}F' on input line 473.
+contour: Using real outline for `\tt \color {vulm}L' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
+contour: Using real outline for `\tt \color {vulm}L' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
+contour: Using real outline for `\tt \color {vulm}R' on input line 473.
 
-Overfull \hbox (29.63948pt too wide) in paragraph at lines 482--482
+Overfull \hbox (29.63948pt too wide) in paragraph at lines 473--473
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--482
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
 
  []
 
@@ -5109,11 +5099,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 482--482
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 482.
+ line 473.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 482
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 473
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5194,11 +5184,11 @@ Non-PDF special ignored!]
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 482.
+ line 473.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 482
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 473
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5210,35 +5200,35 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 10000) detected at line 485
+Underfull \hbox (badness 10000) detected at line 476
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 485.
+ line 476.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 485
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 476
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
 \openout4 = slides.vrb
 
-Underfull \hbox (badness 10000) detected at line 491
+Underfull \hbox (badness 10000) detected at line 482
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 491.
+ line 482.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 491
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 482
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.vrb
@@ -5270,11 +5260,11 @@ Package luatex.def Info: aux/figures/parse-tree-3.pdf  used on input line 6.
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 491.
+ line 482.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 491
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 482
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5289,11 +5279,11 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 491.
+ line 482.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 491
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 482
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5309,11 +5299,11 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 491.
+ line 482.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 491
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 482
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5325,18 +5315,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 <./aux/figures/parse-tree-3.pdf>]
-Underfull \hbox (badness 10000) detected at line 494
+Underfull \hbox (badness 10000) detected at line 485
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 494.
+ line 485.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 494
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 485
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 (./slides.toc)
@@ -5344,11 +5334,11 @@ Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 494
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 494.
+ line 485.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 494
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 485
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5359,6 +5349,49 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [60
 
 ]
+Underfull \hbox (badness 10000) detected at line 489
+[][][]
+ []
+
+File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
+<use ~/Pictures/Yale_University_logo.svg.png>
+Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
+ line 489.
+(luatex.def)             Requested size: 42.18875pt x 18.25038pt.
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 489
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+warning  (file aux/figures/combinators-sd.pdf) (pdf inclusion): PDF inclusion: f
+ound PDF version '1.7', but at most version '1.5' allowed
+<aux/figures/combinators-sd.pdf, id=1009, 353.73154pt x 85.1983pt>
+File: aux/figures/combinators-sd.pdf Graphic file (type pdf)
+<use aux/figures/combinators-sd.pdf>
+Package luatex.def Info: aux/figures/combinators-sd.pdf  used on input line 489
+.
+(luatex.def)             Requested size: 307.28987pt x 74.014pt.
+
+
+File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
+<use ~/Pictures/Yale_University_logo.svg.png>
+Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
+ line 489.
+(luatex.def)             Requested size: 42.18875pt x 18.25038pt.
+File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
+<use ~/DEV/latex/source/ens_psl.pdf>
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 489
+.
+(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[][][]
+ []
+
+[61
+
+<./aux/figures/combinators-sd.pdf>]
 Underfull \hbox (badness 10000) detected at line 498
 [][][]
  []
@@ -5374,15 +5407,6 @@ Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 498
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
-warning  (file aux/figures/combinators-sd.pdf) (pdf inclusion): PDF inclusion: f
-ound PDF version '1.7', but at most version '1.5' allowed
-<aux/figures/combinators-sd.pdf, id=1009, 353.73154pt x 85.1983pt>
-File: aux/figures/combinators-sd.pdf Graphic file (type pdf)
-<use aux/figures/combinators-sd.pdf>
-Package luatex.def Info: aux/figures/combinators-sd.pdf  used on input line 498
-.
-(luatex.def)             Requested size: 307.28987pt x 74.014pt.
-
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
@@ -5399,55 +5423,21 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [][][]
  []
 
-[61
-
-<./aux/figures/combinators-sd.pdf>]
-Underfull \hbox (badness 10000) detected at line 507
-[][][]
- []
-
-File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
-<use ~/Pictures/Yale_University_logo.svg.png>
-Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 507.
-(luatex.def)             Requested size: 42.18875pt x 18.25038pt.
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 507
-.
-(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
-
-
-File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
-<use ~/Pictures/Yale_University_logo.svg.png>
-Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 507.
-(luatex.def)             Requested size: 42.18875pt x 18.25038pt.
-File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
-<use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 507
-.
-(luatex.def)             Requested size: 44.71492pt x 18.25038pt.
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[][][]
- []
-
 [62
 
 ]
-Underfull \hbox (badness 10000) detected at line 512
+Underfull \hbox (badness 10000) detected at line 503
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 512.
+ line 503.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 512
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 503
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5456,19 +5446,19 @@ found PDF version '1.7', but at most version '1.5' allowed
 <aux/figures/parsing-diagram.pdf, id=1065, 265.45172pt x 524.44934pt>
 File: aux/figures/parsing-diagram.pdf Graphic file (type pdf)
 <use aux/figures/parsing-diagram.pdf>
-Package luatex.def Info: aux/figures/parsing-diagram.pdf  used on input line 51
-2.
+Package luatex.def Info: aux/figures/parsing-diagram.pdf  used on input line 50
+3.
 (luatex.def)             Requested size: 155.53772pt x 307.28987pt.
 
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 512.
+ line 503.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 512
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 503
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5479,35 +5469,35 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [63
 
 <./aux/figures/parsing-diagram.pdf>]
-Underfull \hbox (badness 10000) detected at line 517
+Underfull \hbox (badness 10000) detected at line 508
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 517.
+ line 508.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 517
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 508
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 File: aux/figures/parsing-diagram.pdf Graphic file (type pdf)
 <use aux/figures/parsing-diagram.pdf>
-Package luatex.def Info: aux/figures/parsing-diagram.pdf  used on input line 51
-7.
+Package luatex.def Info: aux/figures/parsing-diagram.pdf  used on input line 50
+8.
 (luatex.def)             Requested size: 155.53772pt x 307.28987pt.
 
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 517.
+ line 508.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 517
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 508
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5518,36 +5508,36 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [64
 
 ]
-Underfull \hbox (badness 10000) detected at line 523
+Underfull \hbox (badness 10000) detected at line 514
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 523.
+ line 514.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 523
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 514
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 <aux/figures/knitting-example.jpeg, id=1119, 1340.00626pt x 737.75626pt>
 File: aux/figures/knitting-example.jpeg Graphic file (type jpg)
 <use aux/figures/knitting-example.jpeg>
 Package luatex.def Info: aux/figures/knitting-example.jpeg  used on input line 
-523.
+514.
 (luatex.def)             Requested size: 215.10196pt x 118.42615pt.
 
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 523.
+ line 514.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 523
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 514
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5558,18 +5548,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [65
 
 <./aux/figures/knitting-example.jpeg>]
-Underfull \hbox (badness 10000) detected at line 530
+Underfull \hbox (badness 10000) detected at line 521
 [][][]
  []
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 530.
+ line 521.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 530
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 521
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5579,18 +5569,18 @@ n: found PDF version '1.7', but at most version '1.5' allowed
 File: aux/figures/3d-parsing-diagram.pdf Graphic file (type pdf)
 <use aux/figures/3d-parsing-diagram.pdf>
 Package luatex.def Info: aux/figures/3d-parsing-diagram.pdf  used on input line
- 530.
+ 521.
 (luatex.def)             Requested size: 191.2018pt x 226.82785pt.
 
 
 File: ~/Pictures/Yale_University_logo.svg.png Graphic file (type png)
 <use ~/Pictures/Yale_University_logo.svg.png>
 Package luatex.def Info: ~/Pictures/Yale_University_logo.svg.png  used on input
- line 530.
+ line 521.
 (luatex.def)             Requested size: 42.18875pt x 18.25038pt.
 File: ~/DEV/latex/source/ens_psl.pdf Graphic file (type pdf)
 <use ~/DEV/latex/source/ens_psl.pdf>
-Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 530
+Package luatex.def Info: ~/DEV/latex/source/ens_psl.pdf  used on input line 521
 .
 (luatex.def)             Requested size: 44.71492pt x 18.25038pt.
 
@@ -5673,7 +5663,7 @@ ve/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf
 /type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publi
 c/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on slides.pdf (66 pages, 874155 bytes).
+Output written on slides.pdf (66 pages, 874053 bytes).
 
 PDF statistics: 1288 PDF objects out of 1440 (max. 8388607)
  913 compressed objects within 10 object streams
