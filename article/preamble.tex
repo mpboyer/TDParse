@@ -9,8 +9,15 @@
 \usetikzlibrary{decorations.markings, arrows.meta}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usetikzlibrary{automata, arrows, calc, matrix, positioning, math}
+\usetikzlibrary{intersections}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
 \tikzset{>=stealth}
-\usepackage{diag}
+\newcommand{\catstyle}[2]{
+	\tikzset{#1/.style={color=#2}}
+}
+\tikzset{dot/.style={circle,draw=black,fill=black,minimum size=1mm,inner sep=0mm}}
+
 
 \def\cont{\Gamma\vdash}
 \def\poulpe{\qquad}
