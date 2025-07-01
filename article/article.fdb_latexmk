@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex article"] 1751335815.32596 "article.aux" "article.bbl" "article" 1751336035.75583 0
+["bibtex article"] 1751338582.55101 "article.aux" "article.bbl" "article" 1751338832.81517 0
   "./tdparse.bib" 1751201619.30446 92310 5cb4b647ed4ac4913f7b42690500e361 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/urlbst/plainurl.bst" 1675116457 33495 46cfb45e24a877059f9f7e142c7fc61c ""
-  "article.aux" 1751336034.98826 12786 6c02ddba7bcf6abb2bc7fccab9bcc710 "pdflatex"
+  "article.aux" 1751338832.10949 20079 e36ba4122b6cc4746fb167295e5c547f "pdflatex"
   (generated)
   "article.bbl"
   "article.blg"
   (rewritten before read)
-["pdflatex"] 1751336032.01705 "article.tex" "article.pdf" "article" 1751336035.75614 0
+["pdflatex"] 1751338828.80331 "article.tex" "article.pdf" "article" 1751338832.81555 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -392,23 +392,25 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719481441 8238421 1e491794d89f3d4e75225830276605b3 ""
   "/usr/local/texlive/2024/texmf.cnf" 1701248619.29012 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "/usr/local/texlive/texmf-local/tex/latex/string-diagrams/diag.sty" 1750287351.88308 37571 9820fd9b0dff46143bfd1f1fbaddc6b5 ""
-  "article.aux" 1751336034.98826 12786 6c02ddba7bcf6abb2bc7fccab9bcc710 "pdflatex"
-  "article.bbl" 1751335815.48004 4324 6dae9567e8236f3afd5ca3fde5d15e10 "bibtex article"
-  "article.out" 1751336034.99126 3718 8aec4a5b7b318c90b4e356bb0bcc6aaa "pdflatex"
-  "article.tex" 1751335160.26548 7982 3f5f4118a3259106c787c30df591d77a ""
+  "article.aux" 1751338832.10949 20079 e36ba4122b6cc4746fb167295e5c547f "pdflatex"
+  "article.bbl" 1751338582.71904 4324 6dae9567e8236f3afd5ca3fde5d15e10 "bibtex article"
+  "article.out" 1751338832.11249 3825 f597adc292ffa7e0d781988012e9b7b2 "pdflatex"
+  "article.tex" 1751338828.01452 9636 b7679e878db5f506868f5e7da9914c9d ""
   "aux/figures/3d-parsing-diagram.pdf" 1751296691.88153 74721 592136a7f4c5caefc9dd8036f679286c ""
   "aux/figures/combination-cfg.tex" 1751234283.6584 1435 eb80faaaac706095d586ba0c814f493d ""
   "aux/figures/combinator-denotations.tex" 1751233320.67459 1277 4acee6817a982f2d1f83153f62a79a75 ""
   "aux/figures/combinators-sd.tex" 1751319258.46838 2729 0265b1e77e61c4ecd9ed135259bab417 ""
+  "aux/figures/functors-table.tex" 1751338465.55155 2458 5fd43b35213c8beba2b4fea46879a9e4 ""
   "aux/figures/knitting-example.jpeg" 1751201622.2918 209610 21c20379253804ce38a8db03d255cf1a ""
+  "aux/figures/lexicon-table.tex" 1751338554.95417 1422 d6ca50758031617b1b3e65eda57b7c9f ""
   "aux/figures/parsing-diagram.pdf" 1751296691.88209 39302 f2159774596b4a0a107c04fd9cda8afa ""
   "aux/figures/parsing-diagram2.pdf" 1751296691.882 44749 38d7f3c9e92897ab1573eda4d2ce7093 ""
   "aux/figures/sd-thecatsleeps.tex" 1751201622.29424 782 5665445b3c0fbce9075a3b19a6646f99 ""
   "aux/figures/typing-judgements.tex" 1751318173.53631 935 e7cf04064de0cfec82e473fa918618bf ""
   "aux/non-determinism-sd.tex" 1751335232.26785 11905 8612f83259ee48bb3b1eac0c663b13d4 ""
   "aux/preamble.tex" 1751305798.62282 9013 14b179c99fb2de1346d7efa5d9cb8f00 ""
-  "aux/semantic-parsing.tex" 1751336031.12413 20681 ee3df745b9fcfd3280113ce3160b768d ""
-  "aux/typing-system.tex" 1751335158.22842 10692 3c3b49b3f6e2459158a1d39684cb029b ""
+  "aux/semantic-parsing.tex" 1751336745.36238 20690 ad30908f3c5ae8e38f7d9dd04500c70c ""
+  "aux/typing-system.tex" 1751337488.35789 10715 6076598fb9849df5b75310e7c356c0fe ""
   "cc-by.pdf" 1683801828 58331 68dd46bdec592205f67dc42dd8b763fc ""
   "lipics-logo-bw.pdf" 1683801828 83561 228e2a095239965e3f4546d0433e704b ""
   "lipics-v2021.cls" 1683801828 48381 c4e7e69c9670c8faa62e8975cfe00256 ""

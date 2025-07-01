@@ -763,6 +763,12 @@ INPUT ./aux/figures/3d-parsing-diagram.pdf
 INPUT ./article.bbl
 INPUT ./article.bbl
 INPUT article.bbl
+INPUT ./aux/figures/lexicon-table.tex
+INPUT ./aux/figures/lexicon-table.tex
+INPUT aux/figures/lexicon-table.tex
+INPUT ./aux/figures/functors-table.tex
+INPUT ./aux/figures/functors-table.tex
+INPUT aux/figures/functors-table.tex
 INPUT article.aux
 INPUT ./article.out
 INPUT ./article.out

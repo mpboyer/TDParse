@@ -18,7 +18,7 @@ simplifies the rewriting of our typing judgements in a CFG.
 \begin{figure}
 	\centering
 	\input{aux/figures/combination-cfg}
-	\caption{Possible Type Combinations in the form of a near CFG}
+	\caption{Possible type combinations in the form of a near CFG}
 	\label{fig:combination-cfg}
 \end{figure}
 
@@ -52,7 +52,7 @@ rule, and, as such, with a higher-order denotation, which explains the actual
 effect\footnote{Pun intended} of the combinator, and are described in
 Figure \ref{fig:combinator-denotations}.
 
-\begin{wrapfigure}{l}{.45\textwidth}
+\begin{wrapfigure}[41]{l}{.45\textwidth}
 	\centering
 	\begin{subfigure}{.45\textwidth}
 		\centering
@@ -109,7 +109,7 @@ Figure \ref{fig:combinator-denotations}.
 			\ref{fig:3dparsing-diagram}}
 		\label{fig:tree-rain}
 	\end{subfigure}
-	\caption{Examples of Labeled Parse Trees for a few sentences.}
+	\caption{Examples of labeled parse trees for a few sentences.}
 	\label{fig:parsing-trees}
 \end{wrapfigure}
 
@@ -189,7 +189,6 @@ of variables in the function term, which in turn is linear in the number of
 terms used to construct the function term and thus of words, and the different
 \fmap being in constant time for the same reason.
 
-
 \subsection{Diagrammatical Parsing}
 \label{subsubsec:diagram-parsing}
 When considering \cite{coeckeMathematicalFoundationsCompositional2010}
@@ -214,7 +213,7 @@ diagrams to the ones of Section \ref{sec:nondet}: we could use the syntactic
 version of the diagrams to model our parsing, according to the rules in
 Figure \ref{fig:combination-cfg}, and then combine the diagrams as shown in
 Figure \ref{fig:parsing-diagram}, which highlights why we can consider the
-diagrams orthogonals.
+diagrams orthogonal.
 In this figure we exactly see the sequence of reductions play out on the types
 of the words, and thus we also see what exact \emph{quasi-braiding} would be
 needed to construct the effect diagram.
@@ -318,7 +317,7 @@ This more tangible representation can be seen in a larger diagram in Figure
 \begin{wrapfigure}[21]{l}{.5\textwidth}
 	\centering
 	\includegraphics[width=.5\textwidth]{aux/figures/3d-parsing-diagram}
-	\caption{3D-like Representation of the Diagrammatic Parsing of a Sentence. See Figure \ref{fig:tree-rain} for the translation in a Parse Tree}
+	\caption{Knitting-like representation of the diagrammatic parsing of a sentence. See Figure \ref{fig:tree-rain} for the translation in a parse tree}
 	\label{fig:3dparsing-diagram}
 \end{wrapfigure}
 

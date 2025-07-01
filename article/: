@@ -40,14 +40,12 @@
 %\supplement{Link to a code for the parser will %optional, e.g. related research data, source code, ... hosted on a repository like zenodo, figshare, GitHub, ...
 %\supplementdetails[linktext={opt. text shown instead of the URL}, cite=DBLP:books/mk/GrayR93, subcategory={Description, Subcategory}, swhid={Software Heritage Identifier}]{General Classification (e.g. Software, Dataset, Model, ...)}{URL to related version} %linktext, cite, and subcategory are optional
 
-\acknowledgements{I want to thank my mother for the knitting and putting up
-  with me peeling potatos to try knitting with toothpicks; Antoine Groudiev
-  for his precious insights on how to label equations; Paul-André Melliès for
-  his insights; Bob Frank for the help with the minimalistic merge syntactic
-  theories; and of course, Simon Charlow for his advising during my time at
-  Yale, and his help around the linguistics questions that definitely arose.}
+\acknowledgements{I want to thank my mother for the knitting; Antoine Groudiev
+for his precious insights on how to label equations; Paul-André Melliès for
+his insights; Simon Charlow for his advising during my time at Yale.}%optional
 
 %\nolinenumbers %uncomment to disable line numbering
+
 
 %Editor-only macros:: begin (do not touch as author)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \EventEditors{John Q. Open and Joan R. Access}
@@ -63,6 +61,7 @@
 \ArticleNo{23}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%
 % Document defined Commands
 \input{aux/preamble.tex}
 
@@ -86,7 +85,7 @@ To answer those questions, \cite{bumfordEffectdrivenInterpretationFunctors2025}
 provide a \textsc{Haskell} based view on the notion of typing in natural
 language semantics.
 Their main idea is to include a layer of effects which allows for improvements
-in the expressiveness of the denotations used.
+in the expressivity of the denotations used.
 This allows to model complex concepts such as anaphoras, or non-determinism in
 an easy way, independent of the actual way the words are represented.
 Indeed, when considering the usual denotations of words as typed lambda-terms,
@@ -106,7 +105,7 @@ theories which are based on three main elements: a \emph{lexicon}, a
 \emph{syntactic description} of the language, and a theory of
 \emph{composition}.
 More specifically, we explain how to extend the domain of the lexicon and the
-theory of composition to account for the phenomena described above.
+theory of composition to account for the phenomenas described above.
 We will not be discussing most of the linguistic foundations for the usage of
 the formalism, nor its usefulness.
 We refer the reader to \cite{bumfordEffectdrivenInterpretationFunctors2025} to
@@ -144,7 +143,7 @@ to explain their model of syntax.
 Similarly, \cite{melliesCategoricalContoursChomskySchutzenberger2025} provides
 a modeling of CFGs using coloured operads.
 Our approach is based on the suggestion that merge in syntax can be done using
-labels, independent on how it is mathematically modelled.
+labels, independant on how it is mathematically modelised.
 
 \input{aux/typing-system.tex}
 

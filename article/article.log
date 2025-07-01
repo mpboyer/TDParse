@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.27)  30 JUN 2025 22:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.27)  30 JUN 2025 23:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1689,7 +1689,7 @@ nput line 71.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
 )
-<orcid.pdf, id=86, 256.96pt x 256.96pt>
+<orcid.pdf, id=90, 256.96pt x 256.96pt>
 File: orcid.pdf Graphic file (type pdf)
 <use orcid.pdf>
 Package pdftex.def Info: orcid.pdf  used on input line 71.
@@ -1710,20 +1710,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-<cc-by.pdf, id=90, 88.33pt x 31.11626pt>
+<cc-by.pdf, id=94, 88.33pt x 31.11626pt>
 File: cc-by.pdf Graphic file (type pdf)
 <use cc-by.pdf>
-Package pdftex.def Info: cc-by.pdf  used on input line 126.
+Package pdftex.def Info: cc-by.pdf  used on input line 125.
 (pdftex.def)             Requested size: 39.74274pt x 14.0pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-26.
+25.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<lipics-logo-bw.pdf, id=93, 591.44762pt x 144.42657pt>
+<lipics-logo-bw.pdf, id=97, 591.44762pt x 144.42657pt>
 File: lipics-logo-bw.pdf Graphic file (type pdf)
 <use lipics-logo-bw.pdf>
-Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 126.
+Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 125.
 (pdftex.def)             Requested size: 64.00354pt x 14.0pt.
  [1.1
 
@@ -1755,9 +1755,6 @@ LaTeX Font Warning: Font shape `U/stmry/m/n' in size <8.5> not available
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <4.25> not available
 (Font)              size <5> substituted on input line 46.
-
-
-Underfull \vbox (badness 6461) has occurred while \output is active []
 
 
 
@@ -1833,7 +1830,7 @@ lmm/m/it/9 l; r\OT1/lmr/m/n/9 (-20) ))(\OML/lmm/m/it/9 y\OT1/lmr/m/n/9 (-20) ))
 
 pdfTeX warning: pdflatex (file ./aux/figures/parsing-diagram.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<aux/figures/parsing-diagram.pdf, id=283, 265.45172pt x 524.44933pt>
+<aux/figures/parsing-diagram.pdf, id=287, 265.45172pt x 524.44933pt>
 File: aux/figures/parsing-diagram.pdf Graphic file (type pdf)
 <use aux/figures/parsing-diagram.pdf>
 Package pdftex.def Info: aux/figures/parsing-diagram.pdf  used on input line 17
@@ -1845,23 +1842,23 @@ Package pdftex.def Info: aux/figures/parsing-diagram.pdf  used on input line 17
 
 pdfTeX warning: pdflatex (file ./aux/figures/parsing-diagram2.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<aux/figures/parsing-diagram2.pdf, id=328, 262.21964pt x 547.0337pt>
+<aux/figures/parsing-diagram2.pdf, id=332, 262.21964pt x 547.0337pt>
 File: aux/figures/parsing-diagram2.pdf Graphic file (type pdf)
 <use aux/figures/parsing-diagram2.pdf>
 Package pdftex.def Info: aux/figures/parsing-diagram2.pdf  used on input line 2
-31.
+30.
 (pdftex.def)             Requested size: 179.25113pt x 373.94789pt.
 
 
 [12.12 <./aux/figures/parsing-diagram2.pdf>]
-<aux/figures/knitting-example.jpeg, id=369, 1340.00626pt x 737.75626pt>
+<aux/figures/knitting-example.jpeg, id=373, 1340.00626pt x 737.75626pt>
 File: aux/figures/knitting-example.jpeg Graphic file (type jpg)
 <use aux/figures/knitting-example.jpeg>
 Package pdftex.def Info: aux/figures/knitting-example.jpeg  used on input line 
-291.
+290.
 (pdftex.def)             Requested size: 159.333pt x 87.7164pt.
 
-Overfull \hbox (3.54793pt too wide) in paragraph at lines 293--295
+Overfull \hbox (3.54793pt too wide) in paragraph at lines 292--294
  [][] 
  []
 
@@ -1869,11 +1866,11 @@ Overfull \hbox (3.54793pt too wide) in paragraph at lines 293--295
 
 pdfTeX warning: pdflatex (file ./aux/figures/3d-parsing-diagram.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<aux/figures/3d-parsing-diagram.pdf, id=372, 519.08934pt x 615.80063pt>
+<aux/figures/3d-parsing-diagram.pdf, id=376, 519.08934pt x 615.80063pt>
 File: aux/figures/3d-parsing-diagram.pdf Graphic file (type pdf)
 <use aux/figures/3d-parsing-diagram.pdf>
 Package pdftex.def Info: aux/figures/3d-parsing-diagram.pdf  used on input line
- 320.
+ 319.
 (pdftex.def)             Requested size: 199.16928pt x 236.28058pt.
 
 
@@ -1882,12 +1879,32 @@ pdf>])
 
 [14.14] (./article.bbl)
 
+[15.15] (./aux/figures/lexicon-table.tex
+\g__nicematrix_max_cell_width_dim=\dimen433
+\c@iRow=\count429
+\c@jCol=\count430
+\l__nicematrix_cell_box=\box153
+\l__nicematrix_the_array_box=\box154
+\l__nicematrix_left_delim_dim=\dimen434
+\l__nicematrix_right_delim_dim=\dimen435
+\g__nicematrix_ddots_int=\count431
+\g__nicematrix_iddots_int=\count432
+\g__nicematrix_delta_x_one_dim=\dimen436
+\g__nicematrix_delta_y_one_dim=\dimen437
+\g__nicematrix_delta_x_two_dim=\dimen438
+\g__nicematrix_delta_y_two_dim=\dimen439
+\l__nicematrix_initial_i_int=\count433
+\l__nicematrix_initial_j_int=\count434
+\l__nicematrix_final_i_int=\count435
+\l__nicematrix_final_j_int=\count436
+) (./aux/figures/functors-table.tex)
+
 Package caption Warning: Unused \captionsetup[algorithm] on input line 68.
 See the caption package documentation for explanation.
 
 
 
-[15.15] (./article.aux)
+[16.16] (./article.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
@@ -1901,16 +1918,16 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: 8AEC4A5B7B318C90B4E356BB0BCC6AAA;3718.
+(rerunfilecheck)             Checksum: F597ADC292FFA7E0D781988012E9B7B2;3825.
  ) 
 Here is how much of TeX's memory you used:
- 47702 strings out of 473600
- 983695 string characters out of 5728708
- 1970905 words of memory out of 5000000
- 69228 multiletter control sequences out of 15000+600000
- 733401 words of font info for 328 fonts, out of 8000000 for 9000
+ 49051 strings out of 473600
+ 1011320 string characters out of 5728708
+ 1988905 words of memory out of 5000000
+ 70562 multiletter control sequences out of 15000+600000
+ 733608 words of font info for 331 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,19n,110p,1004b,1253s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,24n,110p,1004b,1255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
 me5Free-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/font
 awesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
@@ -1940,10 +1957,10 @@ m/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pf
 b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/loc
 al/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/
 2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on article.pdf (15 pages, 1046890 bytes).
+Output written on article.pdf (16 pages, 1058120 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 486 compressed objects within 5 object streams
- 87 named destinations out of 1000 (max. 500000)
- 101070 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 635 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 103126 words of extra memory for PDF output out of 106986 (max. 10000000)
 
