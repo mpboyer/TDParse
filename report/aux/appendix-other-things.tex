@@ -18,5 +18,28 @@ $x: L\tau_{1} \mapsto \phi x: L\tau_{2}$ and $\phi$'s type can be written as $\s
 
 \subsection{Multiple Ways}
 \label{app:arities-and-denots}
-TODO: : add explanations on how to modify the thing to take more arities,
-or whatever the way to define a language is.
+In this section we will discuss what can happen when the denotation system
+we consider is not actually based on a compositional model, or is independent
+of the syntactic model.
+In that case, our model of using typing to retrieve parsing trees will need
+modifications to be integrated.
+
+In the case where the compositional aspects of the sentence are blurred by a
+non-binary arity, whether it's variable (leading to non-binary trees) or simply
+non-compositional and makes use of all the words of the sentence (or the ones
+prior to the last one read, like in a LLM), we can make use of higher arity
+base combinators.
+We replace the function application by the combinator adapted to our model,
+then a theoretical (or learned) analysis of the concepts that can be modeled
+by adding effects can still be done, and our work can be completed in the way
+described above.
+
+Of course in the case where no syntactic structure is used for semantics,
+using semantics to derive syntax is useless, but the formalism of string
+diagrams used to present the actual parsing can still be useful:
+it could also be used to model the attention patterns (as side-effects of the
+reading of a new token and adding its meaning to the current representation
+of the sentence).
+This is an insight of how to implement our enhancement onto a non-compositional
+system, although that of course removes a bit of the interest of the system, as
+typing will not matter in that case.
