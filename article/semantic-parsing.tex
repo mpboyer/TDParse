@@ -17,7 +17,7 @@ simplifies the rewriting of our typing judgements in a CFG.
 
 \begin{figure}
 	\centering
-	\input{aux/figures/combination-cfg}
+	\input{combination-cfg}
 	\caption{Possible type combinations in the form of a near CFG}
 	\label{fig:combination-cfg}
 \end{figure}
@@ -40,7 +40,7 @@ would be to disambiguate the grammar.
 
 \begin{figure}
 	\centering
-	\input{aux/figures/combinator-denotations}
+	\input{combinator-denotations}
 	\caption{Denotations describing the effect of the combinators used in the
 		grammar describing our combination modes presented in
 		Figure \ref{fig:combination-cfg}}
@@ -51,6 +51,16 @@ Each of these combinators can be, up to order, associated with a inference
 rule, and, as such, with a higher-order denotation, which explains the actual
 effect of the combinator, and are described in
 Figure \ref{fig:combinator-denotations}.
+
+
+The main reason we need to get denotations associated to combinators, is to
+properly define how they actually do the combination of denotations.
+The important thing on those derivation is that they're a direct translation
+of the rules defining the notions of functors, applicatives, monads and thus
+are not specific to any denotation system, even though we will use
+lambda-calculus styled denotations to describe them.
+This makes us able to compute the actual denotations associated to a sentence
+using our formalism, as presented in figure \ref{fig:parsing-trees}.
 
 \begin{wrapfigure}[41]{l}{.45\textwidth}
 	\centering
@@ -112,16 +122,6 @@ Figure \ref{fig:combinator-denotations}.
 	\caption{Examples of labeled parse trees for a few sentences.}
 	\label{fig:parsing-trees}
 \end{wrapfigure}
-
-The main reason we need to get denotations associated to combinators, is to
-properly define how they actually do the combination of denotations.
-The important thing on those derivation is that they're a direct translation
-of the rules defining the notions of functors, applicatives, monads and thus
-are not specific to any denotation system, even though we will use
-lambda-calculus styled denotations to describe them.
-This makes us able to compute the actual denotations associated to a sentence
-using our formalism, as presented in figure \ref{fig:parsing-trees}.
-
 Note that the order of combination modes is not actually the same as the one
 that would come from the grammar.
 The reason why will become more apparent when string diagrams for parsing are
@@ -171,7 +171,7 @@ This formalism gives us the following theorems:
 
 \begin{wrapfigure}[31]{r}{.45\textwidth}
 	\centering
-	\includegraphics[width=.45\textwidth]{aux/figures/parsing-diagram}
+	\includegraphics[width=.45\textwidth]{parsing-diagram}
 	\caption{Representation of a parsing diagram for the sentence
 		\emph{the cat eats a mouse}.
 		See Figure \ref{fig:tree-box} for translation in a parse tree.}
@@ -203,7 +203,7 @@ is purely for an artistic rendition.
 
 \begin{figure}
 	\centering
-	\input{aux/figures/combinators-sd}
+	\input{combinators-sd}
 	\caption{String Diagrammatic Representation of Combinator Modes $>, \combML$ and $\combJ$}
 	\label{fig:combinator-sd}
 \end{figure}
@@ -227,7 +227,7 @@ parsing diagrams of Figures \ref{fig:parsing-diagram},
 
 \begin{wrapfigure}{r}{.45\textwidth}
 	\centering
-	\includegraphics[width=.45\textwidth]{aux/figures/parsing-diagram2.pdf}
+	\includegraphics[width=.45\textwidth]{parsing-diagram2.pdf}
 	\caption{Example of a parsing diagram for the phrase
 		\emph{a cat in a box}, presenting the integration of unary combinators
 		inside the connector line. See Figure \ref{fig:tree-box} for translation in
@@ -287,7 +287,7 @@ underlying the idea of a string diagram:
 \begin{wrapfigure}{r}{.45\textwidth}
 	\centering
 	\begin{tikzpicture}
-		\node (fig) at (0, 0) {\includegraphics[width=.4\textwidth]{aux/figures/knitting-example}};
+		\node (fig) at (0, 0) {\includegraphics[width=.4\textwidth]{knitting-example}};
 		\draw[->] ($(fig.south west) + (-.1, -.1)$) -- node[anchor=east] {\rotatebox{90}{Direction of Reduction}} ($(fig.north west) + (-.1, .1)$);
 	\end{tikzpicture}
 	\caption{Example of a \emph{Jacquard} knitwork. Photography and work courtesy
@@ -316,7 +316,7 @@ This more tangible representation can be seen in a larger diagram in Figure
 
 \begin{wrapfigure}[21]{l}{.5\textwidth}
 	\centering
-	\includegraphics[width=.5\textwidth]{aux/figures/3d-parsing-diagram}
+	\includegraphics[width=.5\textwidth]{3d-parsing-diagram}
 	\caption{Knitting-like representation of the diagrammatic parsing of a sentence. See Figure \ref{fig:tree-rain} for the translation in a parse tree}
 	\label{fig:3dparsing-diagram}
 \end{wrapfigure}
