@@ -1,14 +1,13 @@
 # Fdb version 4
-["bibtex article"] 1751338582.55101 "article.aux" "article.bbl" "article" 1751338832.81517 0
+["bibtex article"] 1751338582.55101 "article.aux" "article.bbl" "article" 1751339325.10836 0
   "./tdparse.bib" 1751201619.30446 92310 5cb4b647ed4ac4913f7b42690500e361 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/urlbst/plainurl.bst" 1675116457 33495 46cfb45e24a877059f9f7e142c7fc61c ""
-  "article.aux" 1751338832.10949 20079 e36ba4122b6cc4746fb167295e5c547f "pdflatex"
+  "article.aux" 1751339324.37636 20079 e36ba4122b6cc4746fb167295e5c547f "pdflatex"
   (generated)
   "article.bbl"
   "article.blg"
   (rewritten before read)
-["pdflatex"] 1751338828.80331 "article.tex" "article.pdf" "article" 1751338832.81555 0
-  "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
+["pdflatex"] 1751339321.35664 "article.tex" "article.pdf" "article" 1751339325.10871 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -25,8 +24,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm" 1136768653 452 168d896d9b2ead965bf08c9db69c947f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm" 1136768653 452 dc44cdd7c88ff2b15557f125edfc277b ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/fontawesome5/fa5free1regular.tfm" 1622837620 1204 3c27bf26105e0c1f2d31dba92f1c652d ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/fontawesome5/fa5free1solid.tfm" 1622837620 1316 1c2ee668ea88be9bd4f39690662cc344 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm" 1254269338 12076 b54175e02101bea1addf6b2d0197ed12 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm" 1254269338 12088 d750ac78274fa7c9f73ba09914c04f8a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm" 1254269338 11276 116dd5bea6621ce4a1999f96d876084c ""
@@ -90,8 +87,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/stmaryrd/stmary9.tfm" 1302307949 848 594c171945930dfc7cc52fb30457c803 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb" 1136849748 17014 61891910dfe21ad76f9789fdafdd860e ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb" 1651520503 58496 99faf1e070706908acf67d1cfee72833 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb" 1651520503 295323 d099723373a00cc17d5ae0c9738bb5b3 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb" 1255129361 121021 1bf809ce4a594679006bd72263eba59b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx7.pfb" 1255129361 119461 4a38ff487952cdeffc81de782e40a4a0 ""
@@ -283,7 +278,6 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic-helper.sty" 1651520503 1796 6d3390e7a3f2a0f63ce89532aa30ac20 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping.def" 1651520503 107808 07e47606922c76b1824e149c54155c4c ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty" 1651520503 8112 16dbb19fca3f2df864fea49874356f35 ""
-  "/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd" 1651520503 980 1b42613a5245ed252c04030af746d737 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def" 1713382759 19440 9da9dcbb27470349a580fca7372d454b ""
@@ -392,10 +386,10 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1719481441 8238421 1e491794d89f3d4e75225830276605b3 ""
   "/usr/local/texlive/2024/texmf.cnf" 1701248619.29012 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "/usr/local/texlive/texmf-local/tex/latex/string-diagrams/diag.sty" 1750287351.88308 37571 9820fd9b0dff46143bfd1f1fbaddc6b5 ""
-  "article.aux" 1751338832.10949 20079 e36ba4122b6cc4746fb167295e5c547f "pdflatex"
+  "article.aux" 1751339324.37636 20079 e36ba4122b6cc4746fb167295e5c547f "pdflatex"
   "article.bbl" 1751338582.71904 4324 6dae9567e8236f3afd5ca3fde5d15e10 "bibtex article"
-  "article.out" 1751338832.11249 3825 f597adc292ffa7e0d781988012e9b7b2 "pdflatex"
-  "article.tex" 1751338828.01452 9636 b7679e878db5f506868f5e7da9914c9d ""
+  "article.out" 1751339324.38036 3825 f597adc292ffa7e0d781988012e9b7b2 "pdflatex"
+  "article.tex" 1751339320.2034 9869 891b5f8adbdde4367b10b676f1a41fff ""
   "aux/figures/3d-parsing-diagram.pdf" 1751296691.88153 74721 592136a7f4c5caefc9dd8036f679286c ""
   "aux/figures/combination-cfg.tex" 1751234283.6584 1435 eb80faaaac706095d586ba0c814f493d ""
   "aux/figures/combinator-denotations.tex" 1751233320.67459 1277 4acee6817a982f2d1f83153f62a79a75 ""
@@ -409,7 +403,7 @@
   "aux/figures/typing-judgements.tex" 1751318173.53631 935 e7cf04064de0cfec82e473fa918618bf ""
   "aux/non-determinism-sd.tex" 1751335232.26785 11905 8612f83259ee48bb3b1eac0c663b13d4 ""
   "aux/preamble.tex" 1751305798.62282 9013 14b179c99fb2de1346d7efa5d9cb8f00 ""
-  "aux/semantic-parsing.tex" 1751336745.36238 20690 ad30908f3c5ae8e38f7d9dd04500c70c ""
+  "aux/semantic-parsing.tex" 1751339133.08808 20689 77ce5cbd0b5b2949496035a761e5361f ""
   "aux/typing-system.tex" 1751337488.35789 10715 6076598fb9849df5b75310e7c356c0fe ""
   "cc-by.pdf" 1683801828 58331 68dd46bdec592205f67dc42dd8b763fc ""
   "lipics-logo-bw.pdf" 1683801828 83561 228e2a095239965e3f4546d0433e704b ""

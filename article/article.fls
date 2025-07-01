@@ -599,19 +599,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmss8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/fontawesome5/fa5free1regular.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/fontawesome5/fa5free1solid.tfm
-INPUT ./orcid.pdf
-INPUT ./orcid.pdf
 OUTPUT article.vtc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmss9.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
@@ -636,7 +629,6 @@ INPUT ./lipics-logo-bw.pdf
 INPUT ./lipics-logo-bw.pdf
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ./aux/typing-system.tex
 INPUT ./aux/typing-system.tex
@@ -772,8 +764,6 @@ INPUT aux/figures/functors-table.tex
 INPUT article.aux
 INPUT ./article.out
 INPUT ./article.out
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
