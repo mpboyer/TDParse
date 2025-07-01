@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.27)  29 JUN 2025 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.27)  30 JUN 2025 22:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1096,17 +1096,25 @@ File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \xcb=\skip69
 \ycb=\skip70
 )
+(/usr/local/texlive/2024/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen301
+\WF@size=\dimen302
+\c@WF@wrappedlines=\count353
+\WF@box=\box98
+\WF@everypar=\toks62
+Package: wrapfig 2003/01/31  v 3.6
+)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count353
-\calc@Bcount=\count354
-\calc@Adimen=\dimen301
-\calc@Bdimen=\dimen302
+\calc@Acount=\count354
+\calc@Bcount=\count355
+\calc@Adimen=\dimen303
+\calc@Bdimen=\dimen304
 \calc@Askip=\skip71
 \calc@Bskip=\skip72
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count355
+\calc@Ccount=\count356
 \calc@Cskip=\skip73
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
@@ -1115,26 +1123,26 @@ s/tikzlibrarydecorations.markings.code.tex
 s/tikzlibrarydecorations.code.tex
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
 s.code.tex
-\pgfdecoratedcompleteddistance=\dimen303
-\pgfdecoratedremainingdistance=\dimen304
-\pgfdecoratedinputsegmentcompleteddistance=\dimen305
-\pgfdecoratedinputsegmentremainingdistance=\dimen306
-\pgf@decorate@distancetomove=\dimen307
-\pgf@decorate@repeatstate=\count356
-\pgfdecorationsegmentamplitude=\dimen308
-\pgfdecorationsegmentlength=\dimen309
+\pgfdecoratedcompleteddistance=\dimen305
+\pgfdecoratedremainingdistance=\dimen306
+\pgfdecoratedinputsegmentcompleteddistance=\dimen307
+\pgfdecoratedinputsegmentremainingdistance=\dimen308
+\pgf@decorate@distancetomove=\dimen309
+\pgf@decorate@repeatstate=\count357
+\pgfdecorationsegmentamplitude=\dimen310
+\pgfdecorationsegmentlength=\dimen311
 )
-\tikz@lib@dec@box=\box98
+\tikz@lib@dec@box=\box99
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.markings.code.tex))
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen310
-\pgfarrowlength=\dimen311
-\pgfarrowwidth=\dimen312
-\pgfarrowlinewidth=\dimen313
+\pgfarrowinset=\dimen312
+\pgfarrowlength=\dimen313
+\pgfarrowwidth=\dimen314
+\pgfarrowlinewidth=\dimen315
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.pathreplacing.code.tex
@@ -1143,31 +1151,31 @@ brarydecorations.pathreplacing.code.tex))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/spath3/tikzlibrarycalligraphy.cod
 e.tex (/usr/local/texlive/2024/texmf-dist/tex/latex/spath3/spath3.sty
 Package: spath3 2024/05/31 v2.8 Functions for manipulating PGF soft paths
-\g__spath_output_int=\count357
-\l__spath_tmpa_dim=\dimen314
-\l__spath_tmpb_dim=\dimen315
-\l__spath_tmpa_int=\count358
-\l__spath_tmpb_int=\count359
-\l__spath_move_x_dim=\dimen316
-\l__spath_move_y_dim=\dimen317
-\l__spath_rectx_dim=\dimen318
-\l__spath_recty_dim=\dimen319
-\g__spath_anon_int=\count360
+\g__spath_output_int=\count358
+\l__spath_tmpa_dim=\dimen316
+\l__spath_tmpb_dim=\dimen317
+\l__spath_tmpa_int=\count359
+\l__spath_tmpb_int=\count360
+\l__spath_move_x_dim=\dimen318
+\l__spath_move_y_dim=\dimen319
+\l__spath_rectx_dim=\dimen320
+\l__spath_recty_dim=\dimen321
+\g__spath_anon_int=\count361
 )
-\l__cal_tmpa_int=\count361
-\l__cal_tmpb_int=\count362
-\g__cal_path_component_int=\count363
-\g__cal_label_int=\count364
-\l__cal_tmpa_dim=\dimen320
-\l__cal_tmpb_dim=\dimen321
-\l__cal_tmpc_dim=\dimen322
-\l__cal_tmpd_dim=\dimen323
-\l__cal_tmpe_dim=\dimen324
-\l__cal_tmpf_dim=\dimen325
-\l__cal_tmpg_dim=\dimen326
-\l__cal_tmph_dim=\dimen327
-\l__cal_taper_width_dim=\dimen328
-\l__cal_line_width_dim=\dimen329
+\l__cal_tmpa_int=\count362
+\l__cal_tmpb_int=\count363
+\g__cal_path_component_int=\count364
+\g__cal_label_int=\count365
+\l__cal_tmpa_dim=\dimen322
+\l__cal_tmpb_dim=\dimen323
+\l__cal_tmpc_dim=\dimen324
+\l__cal_tmpd_dim=\dimen325
+\l__cal_tmpe_dim=\dimen326
+\l__cal_tmpf_dim=\dimen327
+\l__cal_tmpg_dim=\dimen328
+\l__cal_tmph_dim=\dimen329
+\l__cal_taper_width_dim=\dimen330
+\l__cal_line_width_dim=\dimen331
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryautomata.code.tex
@@ -1179,9 +1187,9 @@ s/tikzlibrarymath.code.tex
 s/tikzlibraryfpu.code.tex
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
 e.tex))
-\tikz@math@for@depth=\count365
-\tikz@math@dimen=\dimen330
-\tikz@math@toks=\toks62
+\tikz@math@for@depth=\count366
+\tikz@math@dimen=\dimen332
+\tikz@math@toks=\toks63
 ) (/usr/local/texlive/texmf-local/tex/latex/string-diagrams/diag.sty
 Package: diag 
 
@@ -1189,7 +1197,7 @@ Package: diag
 s/tikzlibraryintersections.code.tex
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryinterse
 ctions.code.tex
-\pgf@intersect@solutions=\count366
+\pgf@intersect@solutions=\count367
 )))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
@@ -1210,54 +1218,54 @@ Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
 (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count367
-\l_MT_multwidth_dim=\dimen331
+\g_MT_multlinerow_int=\count368
+\l_MT_multwidth_dim=\dimen333
 \origjot=\skip74
-\l_MT_shortvdotswithinadjustabove_dim=\dimen332
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen333
-\l_MT_above_intertext_sep=\dimen334
-\l_MT_below_intertext_sep=\dimen335
-\l_MT_above_shortintertext_sep=\dimen336
-\l_MT_below_shortintertext_sep=\dimen337
-\xmathstrut@box=\box99
-\xmathstrut@dim=\dimen338
+\l_MT_shortvdotswithinadjustabove_dim=\dimen334
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen335
+\l_MT_above_intertext_sep=\dimen336
+\l_MT_below_intertext_sep=\dimen337
+\l_MT_above_shortintertext_sep=\dimen338
+\l_MT_below_shortintertext_sep=\dimen339
+\xmathstrut@box=\box100
+\xmathstrut@dim=\dimen340
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.sty
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgftree.sty
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.sty
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.tex
-\pgf@subpicminx=\dimen339
-\pgf@subpicminy=\dimen340
-\pgf@subpicmaxx=\dimen341
-\pgf@subpicmaxy=\dimen342
+\pgf@subpicminx=\dimen341
+\pgf@subpicminy=\dimen342
+\pgf@subpicmaxx=\dimen343
+\pgf@subpicmaxy=\dimen344
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgftree.tex
-\levelsep=\dimen343
-\subtreesep=\dimen344
-\smuggle@levelsep=\dimen345
-\smuggle@subtreesep=\dimen346
-\this@levelsep=\dimen347
-\this@subtreesep=\dimen348
-\pgftree@childx=\dimen349
-\pgftree@savechildx=\dimen350
-\pgftree@childy=\dimen351
-\pgftree@savechildy=\dimen352
-\pgftree@childi=\count368
-\pgftree@savechildi=\count369
-\pgftree@level=\count370
-\pgftree@depth=\dimen353
-\pgf@subpic@hbox@children=\box100
-\pgf@subpic@minx@children=\dimen354
-\pgf@subpic@miny@children=\dimen355
-\pgf@subpic@maxx@children=\dimen356
-\pgf@subpic@maxy@children=\dimen357
-\pgftree@lastchildx=\dimen358
-\pgftree@lastchildy=\dimen359
+\levelsep=\dimen345
+\subtreesep=\dimen346
+\smuggle@levelsep=\dimen347
+\smuggle@subtreesep=\dimen348
+\this@levelsep=\dimen349
+\this@subtreesep=\dimen350
+\pgftree@childx=\dimen351
+\pgftree@savechildx=\dimen352
+\pgftree@childy=\dimen353
+\pgftree@savechildy=\dimen354
+\pgftree@childi=\count369
+\pgftree@savechildi=\count370
+\pgftree@level=\count371
+\pgftree@depth=\dimen355
+\pgf@subpic@hbox@children=\box101
+\pgf@subpic@minx@children=\dimen356
+\pgf@subpic@miny@children=\dimen357
+\pgf@subpic@maxx@children=\dimen358
+\pgf@subpic@maxy@children=\dimen359
+\pgftree@lastchildx=\dimen360
+\pgftree@lastchildy=\dimen361
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.tex
-\@result=\toks63
-\child@list=\toks64
-\root@node=\toks65
+\@result=\toks64
+\child@list=\toks65
+\root@node=\toks66
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tipa/tipa.sty
 Package: tipa 2002/08/08 TIPA version 1.1
@@ -1286,77 +1294,77 @@ File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/nicematrix/nicematrix.sty
 Package: nicematrix 2024/06/24 v6.28a Enhanced arrays with the help of PGF/TikZ
 
-\g__nicematrix_env_int=\count371
-\g__nicematrix_NiceMatrixBlock_int=\count372
-\g__nicematrix_notes_caption_int=\count373
-\l__nicematrix_columns_width_dim=\dimen360
-\l__nicematrix_col_width_dim=\dimen361
-\g__nicematrix_row_total_int=\count374
-\g__nicematrix_col_total_int=\count375
-\g__nicematrix_last_row_node_int=\count376
-\l__nicematrix_key_nb_rows_int=\count377
-\g__nicematrix_blocks_wd_dim=\dimen362
-\g__nicematrix_blocks_ht_dim=\dimen363
-\g__nicematrix_blocks_dp_dim=\dimen364
-\l__nicematrix_width_dim=\dimen365
-\l__nicematrix_tabular_width_dim=\dimen366
-\l__nicematrix_rule_width_dim=\dimen367
-\l__nicematrix_old_iRow_int=\count378
-\l__nicematrix_old_jCol_int=\count379
-\g__nicematrix_total_X_weight_int=\count380
-\l__nicematrix_X_columns_dim=\dimen368
-\l__nicematrix_x_initial_dim=\dimen369
-\l__nicematrix_y_initial_dim=\dimen370
-\l__nicematrix_x_final_dim=\dimen371
-\l__nicematrix_y_final_dim=\dimen372
-\l__nicematrix_tmpc_dim=\dimen373
-\l__nicematrix_tmpd_dim=\dimen374
-\g__nicematrix_dp_row_zero_dim=\dimen375
-\g__nicematrix_ht_row_zero_dim=\dimen376
-\g__nicematrix_ht_row_one_dim=\dimen377
-\g__nicematrix_dp_ante_last_row_dim=\dimen378
-\g__nicematrix_ht_last_row_dim=\dimen379
-\g__nicematrix_dp_last_row_dim=\dimen380
-\g__nicematrix_width_last_col_dim=\dimen381
-\g__nicematrix_width_first_col_dim=\dimen382
-\l__nicematrix_row_min_int=\count381
-\l__nicematrix_row_max_int=\count382
-\l__nicematrix_col_min_int=\count383
-\l__nicematrix_col_max_int=\count384
-\l__nicematrix_start_int=\count385
-\l__nicematrix_end_int=\count386
-\l__nicematrix_local_start_int=\count387
-\l__nicematrix_local_end_int=\count388
-\g__nicematrix_static_num_of_col_int=\count389
-\l__nicematrix_rounded_corners_dim=\dimen383
-\l__nicematrix_tab_rounded_corners_dim=\dimen384
-\l__nicematrix_offset_dim=\dimen385
-\l__nicematrix_line_width_dim=\dimen386
-\g__nicematrix_block_box_int=\count390
-\l__nicematrix_submatrix_extra_height_dim=\dimen387
-\l__nicematrix_submatrix_left_xshift_dim=\dimen388
-\l__nicematrix_submatrix_right_xshift_dim=\dimen389
-\l__nicematrix_first_row_int=\count391
-\l__nicematrix_first_col_int=\count392
-\l__nicematrix_last_row_int=\count393
-\l__nicematrix_last_col_int=\count394
-\c@tabularnote=\count395
-\c@nicematrix_draft=\count396
-\l__nicematrix_cell_space_top_limit_dim=\dimen390
-\l__nicematrix_cell_space_bottom_limit_dim=\dimen391
-\l__nicematrix_xdots_inter_dim=\dimen392
-\l__nicematrix_xdots_shorten_start_dim=\dimen393
-\l__nicematrix_xdots_shorten_end_dim=\dimen394
-\l__nicematrix_xdots_radius_dim=\dimen395
-\l__nicematrix_notes_above_space_dim=\dimen396
-\l__nicematrix_left_margin_dim=\dimen397
-\l__nicematrix_right_margin_dim=\dimen398
-\l__nicematrix_extra_left_margin_dim=\dimen399
-\l__nicematrix_extra_right_margin_dim=\dimen400
-\c__nicematrix_max_l_dim=\dimen401
-\l__nicematrix_position_int=\count397
-\l__nicematrix_multiplicity_int=\count398
-\l__nicematrix_brace_yshift_dim=\dimen402
+\g__nicematrix_env_int=\count372
+\g__nicematrix_NiceMatrixBlock_int=\count373
+\g__nicematrix_notes_caption_int=\count374
+\l__nicematrix_columns_width_dim=\dimen362
+\l__nicematrix_col_width_dim=\dimen363
+\g__nicematrix_row_total_int=\count375
+\g__nicematrix_col_total_int=\count376
+\g__nicematrix_last_row_node_int=\count377
+\l__nicematrix_key_nb_rows_int=\count378
+\g__nicematrix_blocks_wd_dim=\dimen364
+\g__nicematrix_blocks_ht_dim=\dimen365
+\g__nicematrix_blocks_dp_dim=\dimen366
+\l__nicematrix_width_dim=\dimen367
+\l__nicematrix_tabular_width_dim=\dimen368
+\l__nicematrix_rule_width_dim=\dimen369
+\l__nicematrix_old_iRow_int=\count379
+\l__nicematrix_old_jCol_int=\count380
+\g__nicematrix_total_X_weight_int=\count381
+\l__nicematrix_X_columns_dim=\dimen370
+\l__nicematrix_x_initial_dim=\dimen371
+\l__nicematrix_y_initial_dim=\dimen372
+\l__nicematrix_x_final_dim=\dimen373
+\l__nicematrix_y_final_dim=\dimen374
+\l__nicematrix_tmpc_dim=\dimen375
+\l__nicematrix_tmpd_dim=\dimen376
+\g__nicematrix_dp_row_zero_dim=\dimen377
+\g__nicematrix_ht_row_zero_dim=\dimen378
+\g__nicematrix_ht_row_one_dim=\dimen379
+\g__nicematrix_dp_ante_last_row_dim=\dimen380
+\g__nicematrix_ht_last_row_dim=\dimen381
+\g__nicematrix_dp_last_row_dim=\dimen382
+\g__nicematrix_width_last_col_dim=\dimen383
+\g__nicematrix_width_first_col_dim=\dimen384
+\l__nicematrix_row_min_int=\count382
+\l__nicematrix_row_max_int=\count383
+\l__nicematrix_col_min_int=\count384
+\l__nicematrix_col_max_int=\count385
+\l__nicematrix_start_int=\count386
+\l__nicematrix_end_int=\count387
+\l__nicematrix_local_start_int=\count388
+\l__nicematrix_local_end_int=\count389
+\g__nicematrix_static_num_of_col_int=\count390
+\l__nicematrix_rounded_corners_dim=\dimen385
+\l__nicematrix_tab_rounded_corners_dim=\dimen386
+\l__nicematrix_offset_dim=\dimen387
+\l__nicematrix_line_width_dim=\dimen388
+\g__nicematrix_block_box_int=\count391
+\l__nicematrix_submatrix_extra_height_dim=\dimen389
+\l__nicematrix_submatrix_left_xshift_dim=\dimen390
+\l__nicematrix_submatrix_right_xshift_dim=\dimen391
+\l__nicematrix_first_row_int=\count392
+\l__nicematrix_first_col_int=\count393
+\l__nicematrix_last_row_int=\count394
+\l__nicematrix_last_col_int=\count395
+\c@tabularnote=\count396
+\c@nicematrix_draft=\count397
+\l__nicematrix_cell_space_top_limit_dim=\dimen392
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen393
+\l__nicematrix_xdots_inter_dim=\dimen394
+\l__nicematrix_xdots_shorten_start_dim=\dimen395
+\l__nicematrix_xdots_shorten_end_dim=\dimen396
+\l__nicematrix_xdots_radius_dim=\dimen397
+\l__nicematrix_notes_above_space_dim=\dimen398
+\l__nicematrix_left_margin_dim=\dimen399
+\l__nicematrix_right_margin_dim=\dimen400
+\l__nicematrix_extra_left_margin_dim=\dimen401
+\l__nicematrix_extra_right_margin_dim=\dimen402
+\c__nicematrix_max_l_dim=\dimen403
+\l__nicematrix_position_int=\count398
+\l__nicematrix_multiplicity_int=\count399
+\l__nicematrix_brace_yshift_dim=\dimen404
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/contour/contour.sty
 Package: contour 2004/11/18 v2.14 Print contoured text (HH, MH)
@@ -1372,29 +1380,28 @@ File: pdftex.cnt 2004/11/18 v2.14 Print contoured text (HH, MH)
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
-\c@tracingmulticols=\count399
-\mult@box=\box101
-\multicol@leftmargin=\dimen403
-\c@unbalance=\count400
-\c@collectmore=\count401
-\doublecol@number=\count402
-\multicoltolerance=\count403
-\multicolpretolerance=\count404
-\full@width=\dimen404
-\page@free=\dimen405
-\premulticols=\dimen406
-\postmulticols=\dimen407
+\c@tracingmulticols=\count400
+\mult@box=\box102
+\multicol@leftmargin=\dimen405
+\c@unbalance=\count401
+\c@collectmore=\count402
+\doublecol@number=\count403
+\multicoltolerance=\count404
+\multicolpretolerance=\count405
+\full@width=\dimen406
+\page@free=\dimen407
+\premulticols=\dimen408
+\postmulticols=\dimen409
 \multicolsep=\skip76
 \multicolbaselineskip=\skip77
-\partial@page=\box102
-\last@line=\box103
-\mc@boxedresult=\box104
-\maxbalancingoverflow=\dimen408
-\mult@rightbox=\box105
-\mult@grightbox=\box106
-\mult@firstbox=\box107
-\mult@gfirstbox=\box108
-\@tempa=\box109
+\partial@page=\box103
+\last@line=\box104
+\mc@boxedresult=\box105
+\maxbalancingoverflow=\dimen410
+\mult@rightbox=\box106
+\mult@grightbox=\box107
+\mult@firstbox=\box108
+\mult@gfirstbox=\box109
 \@tempa=\box110
 \@tempa=\box111
 \@tempa=\box112
@@ -1430,15 +1437,16 @@ Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
 \@tempa=\box142
 \@tempa=\box143
 \@tempa=\box144
-\c@minrows=\count405
-\c@columnbadness=\count406
-\c@finalcolumnbadness=\count407
-\last@try=\dimen409
-\multicolovershoot=\dimen410
-\multicolundershoot=\dimen411
-\mult@nat@firstbox=\box145
-\colbreak@box=\box146
-\mc@col@check@num=\count408
+\@tempa=\box145
+\c@minrows=\count406
+\c@columnbadness=\count407
+\c@finalcolumnbadness=\count408
+\last@try=\dimen411
+\multicolovershoot=\dimen412
+\multicolundershoot=\dimen413
+\mult@nat@firstbox=\box146
+\colbreak@box=\box147
+\mc@col@check@num=\count409
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
@@ -1446,14 +1454,14 @@ nment
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count409
-\float@exts=\toks66
-\float@box=\box147
-\@float@everytoks=\toks67
-\@floatcapt=\box148
+\c@float@type=\count410
+\float@exts=\toks67
+\float@box=\box148
+\@float@everytoks=\toks68
+\@floatcapt=\box149
 )
-\@float@every@algorithm=\toks68
-\c@algorithm=\count410
+\@float@every@algorithm=\toks69
+\c@algorithm=\count411
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -1462,15 +1470,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count411
-\c@ALG@rem=\count412
-\c@ALG@nested=\count413
+\c@ALG@line=\count412
+\c@ALG@rem=\count413
+\c@ALG@nested=\count414
 \ALG@tlm=\skip78
 \ALG@thistlm=\skip79
-\c@ALG@Lnr=\count414
-\c@ALG@blocknr=\count415
-\c@ALG@storecount=\count416
-\c@ALG@tmpcounter=\count417
+\c@ALG@Lnr=\count415
+\c@ALG@blocknr=\count416
+\c@ALG@storecount=\count417
+\c@ALG@tmpcounter=\count418
 \ALG@tmplength=\skip80
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -1482,10 +1490,10 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks69
-\XKV@tempa@toks=\toks70
+\XKV@toks=\toks70
+\XKV@tempa@toks=\toks71
 )
-\XKV@depth=\count418
+\XKV@depth=\count419
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -1497,78 +1505,78 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
-\collectedbox=\box149
+\collectedbox=\box150
 )
-\tc@llx=\dimen412
-\tc@lly=\dimen413
-\tc@urx=\dimen414
-\tc@ury=\dimen415
+\tc@llx=\dimen414
+\tc@lly=\dimen415
+\tc@urx=\dimen416
+\tc@ury=\dimen417
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen416
-\adjbox@Height=\dimen417
-\adjbox@Depth=\dimen418
-\adjbox@Totalheight=\dimen419
-\adjbox@pwidth=\dimen420
-\adjbox@pheight=\dimen421
-\adjbox@pdepth=\dimen422
-\adjbox@ptotalheight=\dimen423
+\adjbox@Width=\dimen418
+\adjbox@Height=\dimen419
+\adjbox@Depth=\dimen420
+\adjbox@Totalheight=\dimen421
+\adjbox@pwidth=\dimen422
+\adjbox@pheight=\dimen423
+\adjbox@pdepth=\dimen424
+\adjbox@ptotalheight=\dimen425
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count419
+\c@checkoddpage=\count420
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box150
-\sift@deathcycles=\count420
-\@vwid@loff=\dimen424
-\@vwid@roff=\dimen425
+\@vwid@box=\box151
+\sift@deathcycles=\count421
+\@vwid@loff=\dimen426
+\@vwid@roff=\dimen427
 )))
 (./article.aux)
 \openout1 = `article.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 69.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 69
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 68.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 68
 .
  (/usr/local/texlive/2024/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Info: Redefining \microtypecontext on input line 69.
-Package microtype Info: Applying patch `item' on input line 69.
-Package microtype Info: Applying patch `toc' on input line 69.
-Package microtype Info: Applying patch `eqnum' on input line 69.
-Package microtype Info: Applying patch `footnote' on input line 69.
-Package microtype Info: Applying patch `verbatim' on input line 69.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Info: Redefining \microtypecontext on input line 68.
+Package microtype Info: Applying patch `item' on input line 68.
+Package microtype Info: Applying patch `toc' on input line 68.
+Package microtype Info: Applying patch `eqnum' on input line 68.
+Package microtype Info: Applying patch `footnote' on input line 68.
+Package microtype Info: Applying patch `verbatim' on input line 68.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 69.
+LaTeX Info: Redefining \showhyphens on input line 68.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1579,17 +1587,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count421
-\scratchdimen=\dimen426
-\scratchbox=\box151
-\nofMPsegments=\count422
-\nofMParguments=\count423
-\everyMPshowfont=\toks71
-\MPscratchCnt=\count424
-\MPscratchDim=\dimen427
-\MPnumerator=\count425
-\makeMPintoPDFobject=\count426
-\everyMPtoPDFconversion=\toks72
+\scratchcounter=\count422
+\scratchdimen=\dimen428
+\scratchbox=\box152
+\nofMPsegments=\count423
+\nofMParguments=\count424
+\everyMPshowfont=\toks72
+\MPscratchCnt=\count425
+\MPscratchDim=\dimen429
+\MPnumerator=\count426
+\makeMPintoPDFobject=\count427
+\everyMPtoPDFconversion=\toks73
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1599,8 +1607,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count427
-Package hyperref Info: Link coloring OFF on input line 69.
+\c@lstlisting=\count428
+Package hyperref Info: Link coloring OFF on input line 68.
 
 (./article.out) (./article.out)
 \@outlinefile=\write6
@@ -1609,41 +1617,42 @@ Package hyperref Info: Link coloring OFF on input line 69.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: rotating package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen428
-\c__nicematrix_shift_exterior_Vdots_dim=\dimen429
-\c__nicematrix_innersep_middle_dim=\dimen430
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen430
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen431
+\c__nicematrix_innersep_middle_dim=\dimen432
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-9.
+8.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-9.
+8.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-69.
+68.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-69.
+68.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 69.
+(Font)              <10> on input line 68.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 69.
+(Font)              <7> on input line 68.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 69.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+(Font)              <5> on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1652,7 +1661,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1661,14 +1670,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 69
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 68
 .
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 6
-9.
+8.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1676,14 +1685,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 72.
+nput line 71.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd
 )
-<orcid.pdf, id=94, 256.96pt x 256.96pt>
+<orcid.pdf, id=86, 256.96pt x 256.96pt>
 File: orcid.pdf Graphic file (type pdf)
 <use orcid.pdf>
-Package pdftex.def Info: orcid.pdf  used on input line 72.
+Package pdftex.def Info: orcid.pdf  used on input line 71.
 (pdftex.def)             Requested size: 8.99843pt x 9.0pt.
 \openout3 = `article.vtc'.
 
@@ -1691,7 +1700,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
-3.
+6.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1701,20 +1710,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-<cc-by.pdf, id=99, 88.33pt x 31.11626pt>
+<cc-by.pdf, id=90, 88.33pt x 31.11626pt>
 File: cc-by.pdf Graphic file (type pdf)
 <use cc-by.pdf>
-Package pdftex.def Info: cc-by.pdf  used on input line 133.
+Package pdftex.def Info: cc-by.pdf  used on input line 126.
 (pdftex.def)             Requested size: 39.74274pt x 14.0pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-33.
+26.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<lipics-logo-bw.pdf, id=102, 591.44762pt x 144.42657pt>
+<lipics-logo-bw.pdf, id=93, 591.44762pt x 144.42657pt>
 File: lipics-logo-bw.pdf Graphic file (type pdf)
 <use lipics-logo-bw.pdf>
-Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 133.
+Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 126.
 (pdftex.def)             Requested size: 64.00354pt x 14.0pt.
  [1.1
 
@@ -1723,29 +1732,32 @@ al/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/202
 4/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/local/texlive/2024
 /texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./orcid.pdf> <./lipics-logo-bw.pdf>
  <./cc-by.pdf>] (./aux/typing-system.tex
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 31.
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 46.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.5> on input line 31.
+(Font)              <8.5> on input line 46.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.94997> on input line 31.
+(Font)              <5.94997> on input line 46.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.25> on input line 31.
+(Font)              <4.25> on input line 46.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 31.
+(Font)              size <8> substituted on input line 46.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 31.
+(Font)              size <5> substituted on input line 46.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 31.
+(Font)              size <8> substituted on input line 46.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 31.
+(Font)              size <5> substituted on input line 46.
+
+
+Underfull \vbox (badness 6461) has occurred while \output is active []
 
 
 
@@ -1755,73 +1767,47 @@ local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/
 -dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 118.
+(Font)              using `U/stmry/m/n' instead on input line 93.
 
 
 
-[3.3]
+[3.3] (./aux/figures/typing-judgements.tex)
 
-LaTeX Warning: Reference `subsec:effects' on page 4 undefined on input line 190
-.
+[4.4]) (./aux/non-determinism-sd.tex (./aux/figures/sd-thecatsleeps.tex)
 
-
-
-[4.4]
-
-[5.5] (./aux/figures/typing-judgements.tex)
-
-[6.6]) (./aux/non-determinism-sd.tex
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
-5.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+[5.5]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 3
+3.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 25.
+(microtype)             (new value: 10.0pt) on input line 33.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 25.
+(microtype)             (new value: 7.0pt) on input line 33.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/5'
-(microtype)             (new value: 5.0pt) on input line 25.
-
-(./aux/figures/sd-thecatsleeps.tex)
-Underfull \vbox (badness 3713) has occurred while \output is active []
-
-
-
-[7.7]
-
-[8.8]
+(microtype)             (new value: 5.0pt) on input line 33.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 73.
+t line 57.
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 81.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 65.
 
 
-[9.9]
+[6.6]
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/8.5'
-(microtype)             (new value: 8.5pt) on input line 136.
+(microtype)             (new value: 8.5pt) on input line 110.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/5.94997'
 
-(microtype)             (new value: 5.94997pt) on input line 136.
+(microtype)             (new value: 5.94997pt) on input line 110.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/dsrom/m/n/4.25'
-(microtype)             (new value: 4.25pt) on input line 136.
+(microtype)             (new value: 4.25pt) on input line 110.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 170.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 143.
 
 
-[10.10]) (./aux/semantic-parsing.tex
+[7.7]) (./aux/semantic-parsing.tex
 
-LaTeX Warning: Reference `tab:proof-trees' on page 11 undefined on input line 2
-0.
-
-
-LaTeX Warning: Reference `fig:english-cfg' on page 11 undefined on input line 2
-6.
-
-
-
-[11.11] (./aux/figures/combination-cfg.tex
+[8.8] (./aux/figures/combination-cfg.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1841,66 +1827,67 @@ lmm/m/it/9 l; r\OT1/lmr/m/n/9 (-20) ))(\OML/lmm/m/it/9 y\OT1/lmr/m/n/9 (-20) ))
 
 )
 
-[12.12] (./aux/figures/parsing-trees.tex)
+[9.9]
 
-LaTeX Warning: Float too large for page by 29.00853pt on input line 114.
+[10.10]
 
-
-
-[13.13]
-
-[14.14]
-
-LaTeX Warning: Reference `sec:language' on page 15 undefined on input line 187.
-
-
+pdfTeX warning: pdflatex (file ./aux/figures/parsing-diagram.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<aux/figures/parsing-diagram.pdf, id=283, 265.45172pt x 524.44933pt>
+File: aux/figures/parsing-diagram.pdf Graphic file (type pdf)
+<use aux/figures/parsing-diagram.pdf>
+Package pdftex.def Info: aux/figures/parsing-diagram.pdf  used on input line 17
+4.
+(pdftex.def)             Requested size: 179.25113pt x 354.15605pt.
 (./aux/figures/combinators-sd.tex)
 
-LaTeX Warning: Reference `eq:CSD' on page 15 undefined on input line 223.
+[11.11 <./aux/figures/parsing-diagram.pdf>]
+
+pdfTeX warning: pdflatex (file ./aux/figures/parsing-diagram2.pdf): PDF inclusi
+on: found PDF version <1.7>, but at most version <1.5> allowed
+<aux/figures/parsing-diagram2.pdf, id=328, 262.21964pt x 547.0337pt>
+File: aux/figures/parsing-diagram2.pdf Graphic file (type pdf)
+<use aux/figures/parsing-diagram2.pdf>
+Package pdftex.def Info: aux/figures/parsing-diagram2.pdf  used on input line 2
+31.
+(pdftex.def)             Requested size: 179.25113pt x 373.94789pt.
 
 
-
-[15.15]
-
-[16.16]
-<aux/figures/knitting-example.jpeg, id=393, 1340.00626pt x 737.75626pt>
+[12.12 <./aux/figures/parsing-diagram2.pdf>]
+<aux/figures/knitting-example.jpeg, id=369, 1340.00626pt x 737.75626pt>
 File: aux/figures/knitting-example.jpeg Graphic file (type jpg)
 <use aux/figures/knitting-example.jpeg>
 Package pdftex.def Info: aux/figures/knitting-example.jpeg  used on input line 
-333.
-(pdftex.def)             Requested size: 318.67207pt x 175.44408pt.
+291.
+(pdftex.def)             Requested size: 159.333pt x 87.7164pt.
 
-
-[17.17 <./aux/figures/knitting-example.jpeg>]
-
-LaTeX Warning: Reference `app:arities-and-denots' on page 18 undefined on input
- line 412.
-
-
-
-[18.18]
-
-[19.19]
-
-LaTeX Warning: Reference `eq:elevator' on page 20 undefined on input line 539.
+Overfull \hbox (3.54793pt too wide) in paragraph at lines 293--295
+ [][] 
+ []
 
 
 
-[20.20]
+pdfTeX warning: pdflatex (file ./aux/figures/3d-parsing-diagram.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<aux/figures/3d-parsing-diagram.pdf, id=372, 519.08934pt x 615.80063pt>
+File: aux/figures/3d-parsing-diagram.pdf Graphic file (type pdf)
+<use aux/figures/3d-parsing-diagram.pdf>
+Package pdftex.def Info: aux/figures/3d-parsing-diagram.pdf  used on input line
+ 320.
+(pdftex.def)             Requested size: 199.16928pt x 236.28058pt.
 
-LaTeX Warning: Reference `subsubsec:sanity' on page 21 undefined on input line 
-597.
 
-) (./article.bbl
+[13.13 <./aux/figures/knitting-example.jpeg> <./aux/figures/3d-parsing-diagram.
+pdf>])
 
-[21.21])
+[14.14] (./article.bbl)
 
-Package caption Warning: Unused \captionsetup[algorithm] on input line 69.
+Package caption Warning: Unused \captionsetup[algorithm] on input line 68.
 See the caption package documentation for explanation.
 
 
 
-[22.22] (./article.aux)
+[15.15] (./article.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
@@ -1913,56 +1900,50 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: EBDA6DA087344665B90BEB0C113B37CD;4230.
+(rerunfilecheck)             Checksum: 8AEC4A5B7B318C90B4E356BB0BCC6AAA;3718.
  ) 
 Here is how much of TeX's memory you used:
- 47880 strings out of 473600
- 986648 string characters out of 5728708
- 1962905 words of memory out of 5000000
- 69298 multiletter control sequences out of 15000+600000
- 774104 words of font info for 374 fonts, out of 8000000 for 9000
+ 47702 strings out of 473600
+ 983695 string characters out of 5728708
+ 1970905 words of memory out of 5000000
+ 69228 multiletter control sequences out of 15000+600000
+ 733401 words of font info for 328 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,19n,110p,1004b,1303s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,19n,110p,1004b,1253s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
 me5Free-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/font
 awesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
 ype1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2024/texmf-dist/fonts/
-type1/public/doublestroke/dsrom8.pfb></usr/local/texlive/2024/texmf-dist/fonts/
 type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
 ic/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx
-7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/te
-xlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024
-/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dis
-t/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/typ
-e1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/l
-m/lmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist
-/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1
-/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm
-/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmro10.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/loc
-al/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/
-2024/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2024/tex
-mf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/
-fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type
-1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm
-/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-d
-ist/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msam10.pfb>
-Output written on article.pdf (22 pages, 1073322 bytes).
+7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dis
+t/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/typ
+e1/public/lm/lmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/l
+m/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024
+/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dis
+t/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/typ
+e1/public/lm/lmro10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/
+lm/lmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.p
+fb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbo10.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dis
+t/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/typ
+e1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/l
+m/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pf
+b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/
+2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on article.pdf (15 pages, 1046890 bytes).
 PDF statistics:
- 669 PDF objects out of 1000 (max. 8388607)
- 550 compressed objects within 6 object streams
- 118 named destinations out of 1000 (max. 500000)
- 121551 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 620 PDF objects out of 1000 (max. 8388607)
+ 486 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 101070 words of extra memory for PDF output out of 106986 (max. 10000000)
 

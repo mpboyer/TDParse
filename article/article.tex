@@ -18,22 +18,21 @@
 
 \bibliographystyle{plainurl}% the mandatory bibstyle
 
-\title{Dummy title} %TODO Please add
+\title{A Diagrammatic Calculus for a Functional Model of Natural Language Semantics} %TODO Please add
 
 %\titlerunning{Dummy short title} %TODO optional, please use if title is longer than one line
 
 \author{Matthieu Pierre Boyer}{DI ENS, Paris, France \and Department of Linguistics, Yale University, USA \and \url{http://www.eleves.ens.fr/home/mpboyer}}{matthieu.boyer@ens.fr}{https://orcid.org/0000-0002-1825-0097}{}
-%TODO mandatory, please use full name; only 1 author per \author macro; first two parameters are mandatory, other parameters can be empty. Please provide at least the name of the affiliation and the country. The full address is optional. Use additional curly braces to indicate the correct name splitting when the last name consists of multiple name parts.
 
-\authorrunning{M. P. Boyer} %TODO mandatory. First: Use abbreviated first/middle names. Second (only in severe cases): Use first author plus 'et al.'
+\authorrunning{M. P. Boyer}
 
-\Copyright{Matthieu P. Boyer} %TODO mandatory, please use full first names. LIPIcs license is "CC-BY";  http://creativecommons.org/licenses/by/3.0/
+\Copyright{Matthieu P. Boyer}
 
-\ccsdesc[100]{\textcolor{red}{Replace ccsdesc macro with valid one}} %TODO mandatory: Please choose ACM 2012 classifications from https://dl.acm.org/ccs/ccs_flat.cfm 
+\ccsdesc[100]{Models of computation. | Document management and text processing.} %TODO mandatory: Please choose ACM 2012 classifications from https://dl.acm.org/ccs/ccs_flat.cfm 
 
-\keywords{Dummy keyword} %TODO mandatory; please add comma-separated list of keywords
+\keywords{Typing, Natural Language Semantics, Parsing, Side Effects, String Diagrams} %TODO mandatory; please add comma-separated list of keywords
 
-\category{} %optional, e.g. invited paper
+\category{Student Paper} %optional, e.g. invited paper
 
 \relatedversion{} %optional, e.g. full version hosted on arXiv, HAL, or other respository/website
 %\relatedversiondetails[linktext={opt. text shown instead of the URL}, cite=DBLP:books/mk/GrayR93]{Classification (e.g. Full Version, Extended Version, Previous Version}{URL to related version} %linktext and cite are optional
@@ -70,9 +69,13 @@
 
 \maketitle
 
-%TODO mandatory: add short abstract of the document
 \begin{abstract}
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent convallis orci arcu, eu mollis dolor. Aliquam eleifend suscipit lacinia. Maecenas quam mi, porta ut lacinia sed, convallis ac dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti.
+	In this paper, we study a functional programming approach to natural language
+	semantics, allowing us to increase the expressivity of a more traditional
+	denotation style.
+	We will formalize a category based type and effect system, and construct a
+	diagrammatic calculus to model parsing and handling of effects, and use it to
+	efficiently compute the denotations for sentences.
 \end{abstract}
 
 \section{Introduction}
@@ -95,7 +98,7 @@ However, there is no singular entity that is the referent of \emph{every
 	planet}, and so, the type system gets in the way of meaning, instead of being
 a tool at its service.
 
-\medskip
+\smallskip
 
 Our formalism is inscribed in the contemporary natural language semantic
 theories which are based on three main elements: a \emph{lexicon}, a
@@ -109,7 +112,7 @@ We refer the reader to \cite{bumfordEffectdrivenInterpretationFunctors2025} to
 get an overview of the linguistic considerations that are the base of the
 theory.
 
-\medskip
+\smallskip
 
 In this paper, we will provide a formal definition of an enhanced type and
 effect system for natural language semantics, based on categorical tools.
@@ -120,7 +123,7 @@ denotations (or more generally computations), we will provide efficient
 algorithms for computing the set of meanings of a sentence, from the meaning of
 its components.
 
-\section{Relative Work}
+\section{Related Work}
 This is not the first time a categorical representation of compositional
 semantics of natural language is proposed,
 \cite{coeckeMathematicalFoundationsCompositional2010} already suggested an
@@ -131,7 +134,7 @@ multiple possible parsing trees.
 We will go back later on the differences between their Lambek inspired grammars
 and our more abstract way of looking at the semantic parsing of a sentence.
 
-\medskip
+\smallskip
 
 On a completely different approach,
 \cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}
@@ -148,9 +151,13 @@ labels, independant on how it is mathematically modelised.
 
 \input{aux/semantic-parsing.tex}
 
-\bibliography{tdparse.bib}
-
 \appendix
 \section{Presenting a Language}
+In this appendix, we provide tables describing the modelisation of a subset of
+the English language in our formalism.
+
+
+\bibliography{tdparse.bib}
+
 
 \end{document}

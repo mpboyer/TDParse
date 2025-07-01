@@ -1,7 +1,10 @@
-\section{Handling Non-Determinism}
+\section{Handling Ambiguity}
 \label{sec:nondet}
-The typing judgements proposed in Section \ref{subsec:judgements} lead to ambiguity.
-In this section we propose ways to get our derivations to a certain normal form, by deriving an equivalence relation on our derivation and parsing trees, based on string diagrams.
+The typing judgements proposed in Section \ref{subsec:judgements} lead to
+ambiguity.
+In this section we propose ways to get our derivations to a certain normal
+form, by deriving an equivalence relation on our derivation and parsing trees,
+based on string diagrams.
 
 \subsection{String Diagram Modelisation of Sentences}
 \label{subsec:sd}
@@ -10,6 +13,7 @@ considered in the $2$-category of categories and functors.
 This means that we represent categories as regions of the plane, functors as
 lines separating regions and natural transformations as the intersection points
 between two lines.
+
 We will always consider application as applying to the right of the line so
 that composition is written in the same way as in equations.
 This gives us a new graphical formalism to represent our effects using a few
@@ -17,54 +21,32 @@ equality rules between diagrams.
 The commutative aspect of functional diagrams is now replaced by an equality of
 string diagrams, which will be detailed in the following section.
 
-The important aspect of string diagrams that we will use is that two diagrams that are planarily homotopic are equal \cite{joyalGeometryTensorCalculus1991} and that we can map a string diagram to a sequence of computations on computation: the vertical composition of natural transformations (bottom-up) represents the reductions that we can do on our set of effects.
-This means that even when adding handlers, we get a way to visually see the meaning get reduced from effectful composition to propositional values, without the need to specify what the handler does.
-Indeed we only look at \emph{when} we apply handlers and natural transformations reducing the number of effects.
-This delimits our usage of string diagrams as ways to look at computations and a tool to provide equality rules to reduce non-determinism by constructing an equivalence relationship (which we denote by $\eqcirc$) and yielding a quotient set of \emph{normal forms} for our computations.
+We get a way to visually see the meaning get reduced from effectful composition
+to propositional values, without the need to specify what the handler does.
+This delimits our usage of string diagrams as ways to look at computations and
+a tool to provide equality rules to reduce ambiguity.
 
-Let us define the category $\mathds{1}$ with exactly one object and one arrow: the identity on that object. It will be shown in grey in the string diagrams below.
-A functor of type $\mathds{1} \to \mC$ is equivalent to choosing an object in $\mC$, and a natural between two such functors $\tau_{1}, \tau_{2}$ is exactly an arrow in $\mC$ of type $\tau_{1} \to \tau_{2}$.
-Knowing that allows us to represent the type resulting from a sequence of computations as a sequence of strings whose farthest right represents an object in $\mC$, that is, a base type.
-\begin{wrapfigure}{l}{.45\textwidth}
-	\begin{center}
-		\input{aux/figures/sd-thecatsleeps}
-	\end{center}
+\begin{wrapfigure}{r}{.45\textwidth}
+	\centering
+	\input{aux/figures/sd-thecatsleeps}
 \end{wrapfigure}
+Let us define the category $\mathds{1}$ with exactly one object and one arrow:
+the identity on that object. It will be shown in grey in the string diagrams
+below.
+A functor of type $\mathds{1} \to \mC$ is equivalent to choosing an object in
+$\mC$, and a natural transformation between two such functors $\tau_{1},
+	\tau_{2}$ is exactly an arrow in $\mC$ of type $\tau_{1} \to \tau_{2}$.
+Knowing that allows us to represent the type resulting from a sequence of
+computations as a sequence of strings whose farthest right represents an object
+in $\mC$, that is, a base type.
 
-For simplicity reasons, and because the effects that are buried in our typing system not only give rise to functors but also have types that are not purely currifiable, we will write our string diagrams on the fully parsed sentence, with its most simplified/composed expression.
-Indeed, the question of providing rules to compose the string diagram for \textbf{the} and the one for \textbf{cat} to give the one for \textbf{the cat} is a difficult question, that natural solutions to are not obvious, and will be discussed in the next section.
+The question of providing rules to compose the string diagrams for parts of the
+sentences will be discussed in the next section, as it is related to parsing.
 
-\medskip
-
-To justify our proposition to only consider fully reduced expressions note that
-in this formalism we don't consider the expressions for our functors and
-natural transformations but simply the sequence in which they are applied.
-This works since the following diagrams commute for any $F, G$ functors and
-$\theta$ natural transformation:
-\begin{center}
-	\begin{tikzcd}
-		G\ar[r, "F"]\ar[d, "\theta"'] & F\circ G\ar[d, "F\circ \theta"] &[.5cm] G\ar[r, "F"]\ar[d, "\theta"'] & G\circ F \ar[d, "\theta\circ F"] \\
-		\theta G\ar[r, "F"'] & F\circ \theta G & \theta G\ar[r, "F"'] & \theta G \circ F
-	\end{tikzcd}
-\end{center}
-The property of natural transformations to be applied before or after any arrow in the category justifies that even when composing before the handling we get the same result.
-These properties justifies the fact that we only need to prove the equality of
-two reductions at the farthest step of the reductions, even though in practice
-the handling might be done at earlier points in the parsing.
+\smallskip
 
 In the end, we will have the need to go from a certain set of strings (the effects that applied) to a single one, through a sequence of handlers, monadic and comonadic rules and so on.
 Notice that we never reference the zero-cells and that in particular their colors are purely an artistical touch.
-
-\medskip
-
-There is however one thing that may seem to be an issue: existential quantifiers inside \textbf{if then} sentences and other functions looking like $\f{M}\ty{a} \to \ty{b}$.
-Indeed, \cite{bumfordEffectdrivenInterpretationFunctors2025} suggests that those could be of type $\f{S}\t \to \t$ and that we might want to apply that function to something of type $\f{S}\t$ by first using the unit of the monad $\f{S}$ then invoking \texttt{fmap}.
-There is no issue with that in our typing system, as this combination mode is
-the composition of two typing judgements (in a sense).
-To graphically reconciliate this and our string diagrams, especially since
-units and handlers cancel each other, we suggest to see the effects as being
-dragged along the parsing trees (or parsing string diagrams) until they're
-never needed again.
 
 \subsection{Achieving Normal Forms}
 \label{subsec:normalforms}
@@ -80,11 +62,6 @@ First, Theorem \ref{thm:isotopy} reminds the main result by \cite{joyalGeometryT
 Secondly, let us now look at a few of the equations that arise from the
 commutation of certain class of diagrams:
 \begin{description}
-	\item[The \emph{Elevator} Equations] are a consequence of Theorem
-	      \ref{thm:isotopy} but also highlight one of the most important properties
-	      of string diagrams in their modelisation of multi-threaded computations:
-	      what happens on one string does not influence what happens on another in
-	      the same time.
 	\item[The \emph{Snake} Equations] are a rewriting of the categorical diagrams
 	      which are the defining properties of an adjunction.
 	\item[The \emph{(co-)Monadic} Equations] are the string diagrammatic
@@ -124,15 +101,10 @@ of string diagrams. We describe a diagram by an ordered set of its $2$-cells (th
 transformations) along with the number of input strings, for each $2$-cell the following
 information:
 \begin{itemize}
-	\item Its horizontal position: the number of strings that are right of it (we adopt this
-	      convention to match our graphical representation of effects: the number of strings
-	      is the distance to the base type).
-	\item Its type: an array of effects (read from left to right) that are the inputs to the
-	      natural transformation and an array of effects that are the outputs to the natural
-	      transformation. The empty array represents the identity functor.
-	      Of course, we will not actually copy arrays and arrays inside our datastructure but
-	      simply copy labels which are keys to a dictionary containing such arrays to limit
-	      the size of our structure, allowing for $\O(1)$ access to the associated properties.
+	\item Its horizontal position: the number of strings that are right of it.
+	\item Its type: an array of effects that are the inputs to the natural
+	      transformation and an array of effects that are the outputs to the
+	      natural transformation.
 \end{itemize}
 We will then write a diagram $D$ as a tuple of $3$ elements\footnote{We could write it
 	as a tuple of $5$ elements by replacing $\dl{D}$ by three functions that lower level}:
@@ -144,17 +116,16 @@ $nat = \left( \dnlg{nat}, \dnin{nat}, \dnout{nat} \right)$.
 From this, we can derive a naive algorithm to check if a string diagram is
 valid or not.
 
-\medskip
+\smallskip
 
 Since our representation contains strictly more information (without slowing
 access by a non-constant factor) than the one it is based on, our
 datastructure supports the linear and polynomial time algorithms proposed with
 the structure by \cite{delpeuchNormalizationPlanarString2022}.
-This in particular means that our structure can be normalized in polynomial
-time to check for equality under Theorem \ref{thm:isotopy}.
-More precisely, the complexity of our algorithm is in $\O\left( n \times
-	\sup_{i} \abs{\dnin{\dlb{D}{i}}} + \abs{\dnout{\dlb{D}{i}}} \right)$, which
-depends on our lexicon but most of the times will be linear time.
+In particular our structure can be normalized in time
+$\O\left( n \times \sup_{i} \abs{\dnin{\dlb{D}{i}}} + \abs{\dnout{\dlb{D}{i}}}
+	\right)$, which depends on our lexicon but most of the times will be linear
+time.
 
 \subsubsection{Equational Reductions}
 We are faced a problem when computing reductions using the equations for our diagrams
@@ -191,7 +162,7 @@ equations for our description of string diagrams.
 		      \item $\dlb{D}{i + 1} = \epsilon_{L, R}$
 	      \end{itemize}
 	      This comes from the fact that we can't send either $\epsilon$
-	      above $\eta$ (or the other way around) using right reductions and
+	      above $\eta$ using right reductions and
 	      that there cannot be any natural transformations between the two.
 	      Obviously the equation for $\id_{R}$ works the same.
 	      Then, the reduction is easy: we simply delete both strings,
@@ -225,7 +196,6 @@ equations for our description of string diagrams.
 	combining the two systems is done without issue, completing our proof of
 	Theorem \ref{thm:confluence}.
 \end{proof}
-
 
 \begin{theorem}[Normalization Complexity]
 	\label{thm:normalize}
