@@ -1,0 +1,40 @@
+\section*{Introduction}
+\newcite{moggiComputationalLambdacalculusMonads1989} provided a way to view monads as effects
+in functional programming. This allows for new modes of combination in a compositional
+semantic formalism, and provides a way to model words which usually raise problems with the
+traditional lambda-calculus representation of the words. In particular we consider words such
+as \textsl{the} or \textsl{a} whose application to common nouns results in types that should
+be used in similar situations but with largely different semantics, and model those as
+functions whose application yields an effect. This allows us to develop typing judgements and
+an extended typing system for compositional semantics of natural languages.
+Type-driven compositional semantics acts under the premise that given a set of words and their
+denotations, a set of grammar rules for composition and their associated typing judgements,
+we are able to form an enhanced parser for natural language which provides a mathematical
+representation of the meaning of sentences, as proposed by \newcite{heimSemanticsGenerativeGrammar1998}.
+
+\medskip
+
+This is not the first time a categorical representation of a compositional semantics of
+natural language is proposed, \newcite{coeckeMathematicalFoundationsCompositional2010}
+already suggested an approach based on monoidal categories using an outside model of meaning.
+However, what we propose here is a representation of the different capabilities of words
+as categorical constructs: we allow for a wider set of representations inside our
+model of meaning, trading non-determinism for additional structures.
+In this regard, we basically combine the grammatical type and the meaning of a word
+by having our denotations be associated with a type: there is no need from an additional
+category outside of our typing category and we limit ourselves to reducing non-determinism
+by limiting our possibilities for combinations with a provided CFG\footnote{Or another model
+	that could generate our language.} of the language.
+
+The focus of our system is to allow more flexibility in denotations, leading to more
+possibilities of combinations.
+
+
+\subsection*{Disclaimer}
+This paper is meant to be read on a computer.
+Many diagrams, equations and proof trees are two small when printed out to be
+readable.
+However reciprocically, many pdf viewers will have trouble rendering the boxes
+around theorems and some tables, because why not.
+The author rejects any responsibility in brain or eye damage caused by the
+reading of this paper, neither in its quality nor in its contents.

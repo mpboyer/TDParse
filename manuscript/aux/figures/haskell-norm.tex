@@ -1,0 +1,35 @@
+\small
+\begin{minted}{haskell}
+		-- these filters prevent generating "spurious" derivations, which are
+		-- guaranteed to be equivalent to other derivations we're already generating
+		norm op = \case
+		-- prefer M_,(D,)U_ over the equivalent U_,(D,)M_
+		UR f -> not $ (op `startsWith`) `anyOf` [[MR f], [D, MR f]]
+			UL f -> not $ (op `startsWith`) `anyOf` [[ML f], [D, ML f]]
+		D    -> not $ (op `startsWith`) `anyOf`
+			[ [m U, D, m U] | m <- [MR, ML] ]
+			++ [ [ML U, D, MR U]
+			, [A U, D, MR U]
+			, [ML U, D, A U]
+			, [Eps]
+			]
+			J f -> not $ (op `startsWith`) `anyOf`
+		-- avoid higher-order detours for all J-able effects
+		[ [m f]  ++ k ++ [m f]  | k <- [[J f], []], m <- [MR, ML] ]
+		++ [ [ML f] ++ k ++ [MR f] | k <- [[J f], []] ]
+		++ [ [A f]  ++ k ++ [MR f] | k <- [[J f], []] ]
+		++ [ [ML f] ++ k ++ [A f]  | k <- [[J f], []] ]
+		++ [           k ++ [Eps]  | k <- [[A f], []] ] -- safe if no lexical FRFs
+		-- and all (non-split) inverse scope for commutative effects
+		++ [ [MR f   ,     A  f]   | commutative f ]
+		++ [ [A f    ,     ML f]   | commutative f ]
+		++ [ [MR f] ++ k ++ [ML f] | commutative f, k <- [[J f], []] ]
+		++ [ [A f]  ++ k ++ [A f]  | commutative f, k <- [[J f], []] ]
+
+		_ -> True
+
+		where
+		infixl 4 `anyOf`
+		anyOf = any
+		startsWith = flip isPrefixOf
+	\end{minted}

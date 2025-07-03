@@ -1,0 +1,240 @@
+\usepackage{ifthen}
+
+\def\black@or@white#1#2{%
+	\@tempdima#2 pt
+	\ifdim\@tempdima>0.5 pt
+		\definecolor{temp@c}{gray}{0}%
+	\else
+		\definecolor{temp@c}{gray}{1}%
+	\fi}
+\def\letterbox#1#{\protect\letterb@x{#1}}
+\def\letterb@x#1#2#3{%
+	\colorlet{temp@c}[gray]{#2}%
+	\extractcolorspec{temp@c}{\color@spec}%
+	\expandafter\black@or@white\color@spec
+	{\color#1{temp@c}\tallcbox#1{#2}{#3}}}
+\def\tallcbox#1#{\protect\color@box{#1}}
+\def\color@box#1#2{\color@b@x\relax{\color#1{#2}}}
+\long\def\color@b@x#1#2#3%
+{\leavevmode
+	\setbox\z@\hbox{{\set@color#3}}%
+	\ht\z@\ht\strutbox
+	\dp\z@\dp\strutbox
+	{#1{#2\color@block{\wd\z@}{\ht\z@}{\dp\z@}\box\z@}}}
+\makeatother
+
+\contourlength{0.005em}
+\def\backbox#1{\contour{black}{#1}}
+
+\def\oty#1{\backbox{\tt\color{yulm!90!black}#1}}
+\def\of#1{\backbox{\tt\color{vulm}#1}}
+\def\w#1{\mathbf{#1}\,}
+
+\def\e{\ty{e}}
+\def\t{\ty{t}}
+\def\r{\ty{r}}
+\def\ta{\ty{a}}
+\def\tb{\ty{b}}
+
+
+%%%%% colors
+\newcommand\inblack[1]{\textcolor{black}{#1}}
+\newcommand\hls[1]{\blue{#1}}
+\newcommand\mcolorbox[2]{\colorbox{#1}{\ensuremath{#2}}}
+\definecolor{bluecolor}{HTML}{3284BF}
+\definecolor{goldcolor}{HTML}{FFB300}
+% \definecolor{greencolor}{HTML}{829356}
+\definecolor{greencolor}{HTML}{608501}
+% \definecolor{greencolor}{HTML}{A3B86C}
+% \definecolor{greencolor}{HTML}{6A7846}
+\colorlet{thisblue}{bluecolor}
+\colorlet{thisgreen}{greencolor}
+\colorlet{thisgold}{goldcolor!95!black}
+\colorlet{thisorange}{orange!90!black}
+\colorlet{thisred}{red!90!black}
+\colorlet{thisviolet}{violet!75}
+\colorlet{thisgray}{gray!70!white}
+\colorlet{softblue}{thisblue!20}
+\colorlet{softred}{thisred!20}
+\colorlet{softgold}{thisgold!30}
+\newcommand{\orange}[1]{{\color{thisorange}#1}}
+\newcommand{\red}[1]{{\color{thisred}#1}}
+\newcommand{\gold}[1]{{\color{thisgold}#1}}
+% \newcommand{\olive}[1]{{\color{thisolive}#1}}
+\newcommand{\blue}[1]{{\color{thisblue}#1}}
+\newcommand{\green}[1]{{\color{thisgreen}#1}}
+\newcommand{\pink}[1]{{\color{pink}#1}}
+\newcommand{\cyan}[1]{{\color{cyan}#1}}
+\newcommand{\violet}[1]{{\color{thisviolet}#1}}
+\newcommand{\gray}[1]{{\color{thisgray}#1}}
+
+
+%%%%% types
+
+\newcommand\ty[1]{\ensuremath{\mathtt{#1}}}
+\newcommand\tyg[1]{\texttt{\textgreek{%
+  \ifx#1b\raisebox{0.4pt}{\textscale{0.9}{b}}%
+  \else\ifx#1JS\else#1\fi\fi\noboundary}}}
+\newcommand\gstretch[1]{\scalebox{1}[1.2]{$#1$}}
+\newcommand\tyab[2]{\ensuremath{#1 \times #2}}
+\newcommand\Ra{\ensuremath{\Rightarrow}}
+\newcommand\ra{\ensuremath{\mskip2mu plus 1mu\mathord{\shortrightarrow}\mskip2mu plus 1mu}}
+% \newcommand\ra{\ensuremath{\mathbin{\rightarrow}}}
+
+\newcommand{\tyset}[1]{\ensuremath{\texttt{\char`\{}\ty{#1}\texttt{\char`\}}}}
+\makeatletter
+\newcommand{\tytup}[1]{\ensuremath{\my@tytups #1,\relax\noexpand\@eolst}}
+\def\my@tytups #1,#2\@eolst{%
+  \ifx\relax#2\relax
+    \ty{#1}%
+  \else
+    \ty{#1}\mskip2mu plus 1mu\mathord{\scalebox{0.8}{$\times$}}\mskip2mu plus 1mu \my@tytups #2\@eolst%
+  \fi
+}
+\newcommand{\tysum}[1]{\ensuremath{\my@tysums #1,\relax\noexpand\@eolst}}
+\def\my@tysums #1,#2\@eolst{%
+  \ifx\relax#2\relax
+    \ty{#1}%
+  \else
+    \ty{#1}\mskip2mu plus 1mu\mathord{+}\mskip2mu plus 1mu \my@tysums #2\@eolst%
+  \fi
+}
+\makeatother
+
+%%% effect constructors
+
+\colorlet{concolor}{thisblue}
+
+\tcbsetforeverylayer{%
+  % mathstyle/.store in=\tcbmathstyle,
+  % nest/.style={right*=0pt,boxsep=-0.4pt},
+  skittle/.style={%
+    frame empty, boxrule=0pt, arc=1pt, box align=base, boxsep=0pt,
+    top=.7pt, bottom=1.1pt,
+  },
+  plain/.style={colback=white,colupper=black},
+  sub/.style={size=minimal, bottom=0.3pt, plain},
+  trans/.style={after upper pre={^{\smash{\raisebox{-0.5pt}{$\mathsmaller{+}$}}}#1}},
+  trans/.default={},
+  param/.style={after upper pre={_{\scriptstyle#1}}},
+  param/.default={},
+}
+
+\ifConChips
+  % use ambient color to create a background for effect constructor:
+  \tcbsetforeverylayer{%
+    skittle/.append style={colback=concolor!20, left=0.8pt, right=0.8pt,},
+  }
+  \colorlet{conplain}{white}
+\else
+  % use ambient color to change the font of effect constructor:
+  \tcbsetforeverylayer{%
+    skittle/.append style={colback=white, colupper=concolor, left=0pt, right=0pt,},
+  }
+  \colorlet{conplain}{black}
+\fi
+
+\makeatletter
+\sbox0{\color{black}\global\let\my@black@color\current@color}
+\newcommand*\ifblack{\ifx\my@black@color\current@color}
+\makeatother
+
+\newcommand{\defaultcolor}[2][]{%
+  \ifblack{}\else\colorlet{concolor}{.}\fi%
+  \ifmmode
+    \mathchoice
+    {\tcbm[skittle, #1]{\displaystyle\vphantom{\ensuremath{G}}\mathtt{#2}}}%
+    {\tcbm[skittle, #1]{\textstyle\vphantom{\ensuremath{G}}\mathtt{#2}}}%
+    {\tcbm[skittle, sub, #1]{%
+      \noexpandarg%
+      \IfBeginWith{#2}{\tyg}%
+        {\gstretch{\scriptscriptstyle\vphantom{\ensuremath{G}}\mathtt{#2}}}%
+        {\scriptscriptstyle\vphantom{\ensuremath{G}}\mathtt{#2}}%
+    }}%
+    {\tcbm[skittle, sub, #1]{%
+      \noexpandarg%
+      \IfBeginWith{#2}{\tyg}%
+        {\gstretch{\scriptscriptstyle\vphantom{\ensuremath{G}}\mathtt{#2}}}%
+        {\scriptscriptstyle\vphantom{\ensuremath{G}}\mathtt{#2}}%
+    }}%
+  \else
+    \tcbm[skittle, #1]{\vphantom{\ensuremath{G}}#2}%
+  \fi
+}
+
+\makeatletter
+\newcommand{\tyc}[3][]{\ensuremath{\textstyle%
+  %%% possibly comment out this outer tcbox, the \stripparens, and spacing between things
+  \ifConFrames
+    \tcbm[arc=1pt, on line, colback=white, boxsep=0pt, colframe=black,
+          left*=0.4pt, right*=0.125em, boxrule=0.4pt, box align=base, #1]%
+    {%
+      {\tcbsetforeverylayer{sharp corners=east}%
+      \my@tycs #2,\relax\noexpand\@eolst}%
+      % \,
+      \zz \smash{\mathtt{\stripparens{#3}}}
+    }
+  \else
+    {%
+      {\tcbsetforeverylayer{sharp corners=east}%
+      \my@tycs #2,\relax\noexpand\@eolst}%
+      % \,
+      \zz \smash{\mathtt{#3}}
+    }
+  \fi
+}}
+\newcommand{\tylist}[2][]{\ensuremath{\textstyle%
+  {\tcbsetforeverylayer{sharp corners=east}%
+  \my@tycs #2,\relax\noexpand\@eolst}%
+}}
+\def\my@tycs #1,#2\@eolst{%
+  \ifx\relax#2\relax
+   \tcbsetforeverylayer{rounded corners=east} #1%
+  \else
+    #1%
+    \ifConChips\relax\else\mkern1mu\fi
+    \tcbsetforeverylayer{sharp corners=all} \my@tycs #2\@eolst%
+  \fi
+}
+\newcommand{\stripparens}[1]{%
+  \expandarg
+  \IfBeginWith{#1}{(}{%
+    \StrGobbleLeft{#1}{1}[\temp]%
+    \StrGobbleRight{\temp}{1}%
+  }{#1}%
+}
+\makeatother
+
+%%% effect labels
+\newcommand{\readerletter}{R}
+\newcommand{\assignmentletter}{G}
+\newcommand{\variableletter}{V}
+\newcommand{\setletter}{S}
+\newcommand\fR[1][]{\defaultcolor[#1]\readerletter}
+\newcommand\fG[1][]{\defaultcolor[#1]\assignmentletter}
+\newcommand\fV[1][]{\defaultcolor[#1]\variableletter}
+\newcommand\fS[1][]{\defaultcolor[#1]\setletter}
+\newcommand\fF[1][]{\defaultcolor[#1]F}
+\newcommand\fD[1][]{\defaultcolor[#1]D}
+\newcommand\fC[1][]{\defaultcolor[#1]C}
+\newcommand\fM[1][]{\defaultcolor[#1]M}
+\newcommand\fT[1][]{\defaultcolor[#1]T}
+\newcommand\fW[1][]{\defaultcolor[#1]W}
+\newcommand\fH[1][]{\defaultcolor[#1]H}
+\newcommand\fI[1][]{\defaultcolor[#1]I}
+
+%%% type variables
+\makeatletter
+\def\instring#1#2{TT\fi\begingroup
+  \edef\x{\endgroup\noexpand\in@{#1}{#2}}\x\ifin@}%
+\def\isuppercase#1{%
+  \instring{#1}{ABCDEFGHIJKLMNOPQRSTUVWXYZ}%
+}%
+\makeatother
+\newcommand\tyv[2][]{%
+  \if\isuppercase{#2}%
+  \ensuremath{\mathord{\defaultcolor[#1]{\tyg{#2}}}}%
+  \else%
+  \ensuremath{\mathord{\tyg{#2}}}%
+  \fi%
+}

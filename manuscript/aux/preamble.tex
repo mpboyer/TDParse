@@ -1,0 +1,310 @@
+\usepackage{bigstrut}
+\usepackage{makecell}
+\usepackage{emoji}
+\usepackage{tikz-dependency}
+\usepackage{subcaption}
+\usetikzlibrary{decorations.markings, arrows.meta}
+\usepackage{diag}
+
+\renewcommand{\thefootnote}{\roman{footnote}}
+
+\def\cont{\Gamma\vdash}
+\def\poulpe{\qquad}
+
+\setlength\belowcaptionskip{0pt}
+\setlength\abovecaptionskip{\baselineskip}
+
+\DeclareMathOperator{\Var}{Var}
+
+\def\ppl{\mathbin{+\mkern-12mu+}}
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+{\section{\bibname}
+	\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m}
+{\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist}
+
+\def\black@or@white#1#2{%
+	\@tempdima#2 pt
+	\ifdim\@tempdima>0.5 pt
+		\definecolor{temp@c}{gray}{0}%
+	\else
+		\definecolor{temp@c}{gray}{1}%
+	\fi}
+\def\letterbox#1#{\protect\letterb@x{#1}}
+\def\letterb@x#1#2#3{%
+	\colorlet{temp@c}[gray]{#2}%
+	\extractcolorspec{temp@c}{\color@spec}%
+	\expandafter\black@or@white\color@spec
+	{\color#1{temp@c}\tallcbox#1{#2}{#3}}}
+\def\tallcbox#1#{\protect\color@box{#1}}
+\def\color@box#1#2{\color@b@x\relax{\color#1{#2}}}
+\long\def\color@b@x#1#2#3%
+{\leavevmode
+	\setbox\z@\hbox{{\set@color#3}}%
+	\ht\z@\ht\strutbox
+	\dp\z@\dp\strutbox
+	{#1{#2\color@block{\wd\z@}{\ht\z@}{\dp\z@}\box\z@}}}
+\makeatother
+
+\contourlength{0.005em}
+\def\backbox#1{\contour{black}{#1}}
+
+\def\ty#1{\backbox{\tt\color{yulm!90!black}#1}}
+\def\f#1{\backbox{\tt\color{vulm}#1}}
+\def\w#1{\mathbf{#1}\,}
+
+\def\e{\ty{e}}
+\def\t{\ty{t}}
+\def\r{\ty{r}}
+\def\ta{\ty{a}}
+\def\tb{\ty{b}}
+
+\newcolumntype{C}{>{$}c<{$}}
+	\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+\def\fmap{\texttt{fmap}}
+
+\newcommand{\suppfrac}[2]{%
+	\sbox0{$\genfrac{}{}{0pt}{0}{\ensuremath{#1}}{\ensuremath{#2}}$}%
+	\ooalign{%
+		\hidewidth
+		$\vcenter{\moveright\nulldelimiterspace
+				\hbox to\wd0{%
+					\xleaders\hbox{\kern.5pt\vrule height 0.4pt width 1.5pt\kern.5pt}\hfill
+					\kern-1.5pt
+				}%
+			}$
+		\hidewidth\cr
+		$\genfrac{}{}{0pt}{0}{\raisebox{5pt}{\ensuremath{#1}}}{\ensuremath{#2}}$\cr}%
+}
+
+
+\newcommand{\prooffrac}[2]{\genfrac{}{}{}{0}{\ensuremath{#1}}{\ensuremath{#2}}}%
+\DeclareMathOperator{\mFunc}{\mathcal{F}}
+
+\def\blank{\phantom{.}}
+\def\PT#1#2{\suppfrac{#1}{#2}\fracnotate{$\top$}\phantom{\top\quad}}
+
+\def\Japp#1#2#3#4{%
+	\prooffrac{%
+		\PT{\blank}{\cont #1: #2 \to #3} \poulpe \PT{\blank}{\cont #4: #2}
+	}{%
+		\cont #1 #4: #3
+	}\fracnotate{App}\phantom{\quad App}
+}
+
+\def\Jconj#1#2#3{%
+	\prooffrac{%
+		\PT{\blank}{\cont #1: #3 \to \t} \poulpe
+		\PT{\blank}{\cont #2: #3 \to \t}
+	}{%
+		\cont #1 \land #2: #3 \to \t
+	}\fracnotate{$\land$}\phantom{\quad \land}
+}
+
+
+\def\Jfmap#1#2#3#4#5{%
+	\prooffrac{%
+		\PT{\blank}{\cont #1: \mC \Rightarrow \mC} \poulpe \PT{\blank}{\cont #2 = #1#2': #1#3} \poulpe \PT{\PT{\blank}{\cont #2':#3} \poulpe \PT{\blank}{\cont #4:#3 \to #5}}{\cont #4#2': #5}
+	}{%
+		\cont #2#4: #1#5
+	}\fracnotate{\texttt{fmap}}\phantom{\quad\tt fmap}
+}
+
+\def\Junit#1#2#3#4#5{%
+	\prooffrac{%
+		\PT{\blank}{\cont #1: \mC \Rightarrow \mC} \poulpe
+		\PT{\blank}{\cont #2 = #1#2': #1\left(#3 \to #5\right)} \poulpe
+		\PT{%
+			\PT{\blank}{\cont #2':#3 \to #5} \poulpe
+			\PT{\blank}{\cont #4:#3}
+		}{\cont #2'#4: #5}
+	}{%
+		\cont #2#4: #1#5
+	}\fracnotate{\tt pure/return}\phantom{\quad \tt pure/return}
+}
+
+\def\sobj{\mathit{Sem}}
+\def\combMR{\text{MR}}
+\def\combML{\text{ML}}
+\def\combUR{\text{UR}}
+\def\combUL{\text{UL}}
+\def\combC{\text{C}}
+\def\combJ{\text{J}}
+\def\combA{\text{A}}
+\def\combER{\text{ER}}
+\def\combEL{\text{EL}}
+\def\combDN{\text{DN}}
+
+\makeatletter
+\newcommand{\@word}[4][]{%
+	#2 & #3 & #4\\
+	\ifx&#1&%
+	%
+	\else
+	&\multicolumn{2}{l}{Generalizes to \textbf{#1}}\\%
+	\fi%
+}
+\def\word#1#2#3#4{\@word[#4]{#1}{#2}{#3}}
+\makeatother
+
+\usepackage{calc}
+
+\makeatletter
+\def\textSq#1{%
+	\begingroup% make boxes and lengths local
+	\setlength{\fboxsep}{0.4ex}% SET ANY DESIRED PADDING HERE
+	\setbox1=\hbox{#1}% save the contents
+	\setlength{\@tempdima}{\maxof{\wd1}{\ht1+\dp1}}% size of the box
+	\setlength{\@tempdimb}{(\@tempdima-\ht1+\dp1)/2}% vertical raise
+	\raise-\@tempdimb\hbox{\fbox{\vbox to \@tempdima{%
+				\vfil\hbox to \@tempdima{\hfil\copy1\hfil}\vfil}}}%
+	\endgroup%
+}
+\def\Sq#1{\textSq{\ensuremath{#1}}}%
+
+\def\c@lsep{2.3}
+\def\r@wsep{.5}
+\def\wordsep{.2}
+
+\tikzset{
+	uptree/.style={
+			draw=vulm!80!black,
+			thick,
+		},
+	typenode/.style={
+			align=center,
+			text width=24mm,
+		},
+	treenode/.style={
+			align=center,
+			text width=24mm,
+		},
+	wordnode/.style={
+			inner sep=0pt,
+			align=center,
+		},
+	downtree/.style={
+			draw=yulm!80!black,
+			thick,
+		},
+}
+
+\newcommand{\wnode}[3]{%
+	\node (#2) at (#1*\c@lsep, 0) [wordnode] {#2};
+	\node[anchor=north] (#2-) at ($(#1*\c@lsep, 0) + (0, -.142)$) [typenode] {\ensuremath{#3}};
+}
+\newcommand{\utnode}[3]{%
+	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q1) at (\x1, {max(\y1, \y2)});
+	\path let \p1 = (#2.north), \p2 = (#3.north) in coordinate (Q2) at (\x2, {max(\y1, \y2)});
+	\node (#2#3) at ($($(Q1)!0.5!(Q2)$) + (0, \r@wsep)$) [treenode] {\ensuremath{#1}};
+	\draw[uptree] ($(#2) + (0, \wordsep)$) -- ($(#2#3) + (0, -\wordsep)$);
+	\draw[uptree] ($(#3) + (0, \wordsep)$) -- ($(#2#3) + (0, -\wordsep)$);
+}
+\newcommand{\dtnode}[4][0.5]{%
+	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q1) at (\x1, {min(\y1, \y2)});
+	\path let \p1 = (#3.south), \p2 = (#4.south) in coordinate (Q2) at (\x2, {min(\y1, \y2)});
+	\node (#3#4) at ($($(Q1)!#1!(Q2)$) + (0, -\r@wsep)$) [treenode] {\ensuremath{#2}};
+	\draw[downtree] ($(#3) + (0, -\wordsep)$) -- ($(#3#4) + (0, +\wordsep)$);
+	\draw[downtree] ($(#4) + (0, -\wordsep)$) -- ($(#3#4) + (0, +\wordsep)$);
+}
+
+\def\inputtikz#1{
+	\ifnum\tikzimp@rt=1
+		\input{aux/figures/#1}
+	\else
+		\ensuremath{\text{\Huge\color{vulm}A TikZ PICTURE GOES HERE.}}
+	\fi
+}
+\makeatother
+
+\catstyle{catone}{gray!50}
+\catstyle{catmc}{vulm!10!yulm}
+\catstyle{catmca}{vulm!20!yulm}
+\catstyle{catmcb}{vulm!30!yulm}
+\catstyle{catmcc}{vulm!40!yulm}
+\catstyle{catmcd}{vulm!50!yulm}
+\catstyle{catmce}{vulm!60!yulm}
+\catstyle{catmcf}{vulm!70!yulm}
+\catstyle{catmcg}{vulm!80!yulm}
+\catstyle{catmch}{vulm!90!yulm}
+
+\def\din#1{#1\mathrm{.S}}
+\def\dnb#1{#1\mathrm{.N}}
+\def\dlb#1#2{#1\mathrm{.L}\left(#2\right)}
+\def\dl#1{#1\mathrm{.L}}
+\def\dnlg#1{#1\mathrm{.h}}
+\def\dnin#1{#1\mathrm{.in}}
+\def\dnout#1{#1\mathrm{.out}}
+
+\newcounter{lingexcnt}
+\newcounter{tmplingexcnt}
+\renewcommand*{\thelingexcnt}{(\arabic{lingexcnt})}
+\newenvironment{sentence}[1][]{
+	\begin{list}{\thelingexcnt}{\refstepcounter{lingexcnt}}\item
+		      \ifnum\pdfstrcmp{#1}{}=0\else\label{#1}\fi
+		      }{\end{list}}
+
+\newenvironment{nsentence}{%
+	\setcounter{tmplingexcnt}{\value{lingexcnt}}
+	\addtocounter{tmplingexcnt}{-1}
+	\begin{list}{\thelingexcnt}{
+			\usecounter{lingexcnt}
+			\setcounter{lingexcnt}{\value{tmplingexcnt}}
+			\refstepcounter{lingexcnt}
+		}
+		}{\end{list}}
+
+\newcommand*{\oneSentence}[2][]{\begin{sentence}[#1]#2\end{sentence}}
+
+\tikzset{
+	on each segment/.style={
+			decorate,
+			decoration={
+					show path construction,
+					moveto code={},
+					lineto code={
+							\path [#1]
+							(\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+						},
+					curveto code={
+							\path [#1] (\tikzinputsegmentfirst)
+							.. controls
+							(\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
+							..
+							(\tikzinputsegmentlast);
+						},
+					closepath code={
+							\path [#1]
+							(\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
+						},
+				},
+		},
+	% style to add an arrow in the middle of a path
+	mid arrow/.style={postaction={decorate,decoration={
+							markings,
+							mark=at position .5 with {\arrow[#1]{stealth}}
+						}}},
+}
+
+\usepackage{adjustbox}
+\def\columneqs#1{\adjustbox{width=\columnwidth}{\ensuremath{#1}}}
+\def\columneq#1{\adjustbox{width=.8\columnwidth}{\ensuremath{#1}}}
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1},
+			cells={nodes={scale=#1}}}}

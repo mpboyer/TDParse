@@ -1,0 +1,48 @@
+\documentclass[math, english, info]{tcart}
+
+\makeatletter
+\def\tikzimp@rt{1}
+\makeatother
+
+\input{aux/preamble}
+
+\title{On a Category-Theoretic Type and Effect Inference Structure for Semantic Denotation Combinations in Natural Languages:\\ Constructing a Purely Functional Semantic Parser of English using a form of Diagrammatic Calculus integrated in Minimalistic Coproduct-based Merge Theories}
+\author{Matthieu Boyer}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\begin{abstract}
+	The main idea is that you can consider some words to act as functors in a typing category, for example determiners:
+	they don't change the way a word acts in a sentence,
+	but more the setting in which the word works by adding an effect to the work.
+	The linguistics is based mostly on work by \newcite{bumfordEffectdrivenInterpretationFunctors2025}.
+\end{abstract}
+
+\input{aux/intro.tex}
+
+\input{aux/typing-system.tex}
+
+\input{aux/non-determinism-sd.tex}
+
+\input{aux/semantic-parsing.tex}
+
+
+\section*{Acknowledgements}
+Thanks to Antoine Groudiev for his precious insights on the direction the
+snakes for \eqref{eq:snek1} and \eqref{eq:snek2} should face.
+Thanks to my mother for her understanding when I asked her if she could take
+pictures while knitting for reference for my drawings because knitting using
+toothpicks and potato peels didn't cut it.
+
+\appendix
+\bibliographystyle{main_natbib}
+\bibliography{tdparse.bib}
+
+\input{aux/language-presentation.tex}
+
+\input{aux/appendix-other-things.tex}
+
+
+\end{document}

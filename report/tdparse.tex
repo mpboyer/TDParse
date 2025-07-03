@@ -6,18 +6,19 @@
 
 \input{aux/preamble}
 
-\title{On a Category-Theoretic Type and Effect Inference Structure for Semantic Denotation Combinations in Natural Languages:\\ Constructing a Purely Functional Semantic Parser of English using a form of Diagrammatic Calculus integrated in Minimalistic Coproduct-based Merge Theories}
-\author{Matthieu Boyer}
+\title{Formalizing a Functional Programming Language for Natural Language Semantics\\ {\small Internship Report}}
+\author{Matthieu Boyer \\ {\small Under the supervision of Simon Charlow}}
 
 \begin{document}
 \maketitle
 \tableofcontents
 
 \begin{abstract}
-	The main idea is that you can consider some words to act as functors in a typing category, for example determiners:
-	they don't change the way a word acts in a sentence,
-	but more the setting in which the word works by adding an effect to the work.
-	The linguistics is based mostly on work by \newcite{bumfordEffectdrivenInterpretationFunctors2025}.
+	In this report, we will present a Haskell inspired type and effect system to
+	model natural language semantics and provide a diagrammatic calculus to help
+	with effect handling and parsing in this formalism.
+	This allows us to mimic the behaviour of anaphora and quantification directly
+	inside the type system.
 \end{abstract}
 
 \input{aux/intro.tex}
@@ -30,16 +31,19 @@
 
 
 \section*{Acknowledgements}
-Thanks to Antoine Groudiev for his precious insights on the direction the
-snakes for \eqref{eq:snek1} and \eqref{eq:snek2} should face.
-Thanks to my mother for her understanding when I asked her if she could take
-pictures while knitting for reference for my drawings because knitting using
-toothpicks and potato peels didn't cut it.
+I want to thank my mother for the knitting and putting up
+with me peeling potato to try knitting with toothpicks; Antoine Groudiev for
+his precious insights on the direction the snakes for \eqref{eq:snek1} and
+\eqref{eq:snek2} should face;
+Paul-André Melliès for his insights; Bob Frank for the help with the
+minimalistic merge syntactic theories; and of course, Simon Charlow for his
+advising during my time at Yale, and his help around the linguistics questions
+that definitely arose.
 
-\appendix
 \bibliographystyle{main_natbib}
 \bibliography{tdparse.bib}
 
+\appendix
 \input{aux/language-presentation.tex}
 
 \input{aux/appendix-other-things.tex}

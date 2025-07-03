@@ -1,0 +1,35 @@
+				  \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+					  \path coordinate[dot, label=below:$\mu$] (mubot)
+					  		+ (1, -1) coordinate[label=below:$T$] (T2)
+					  		+ (-1, -1) coordinate[label=below:$T$] (T1)
+							++ (1, 1) coordinate[dot, label=below:$\mu$] (mutop)
+							+ (1, -1) coordinate (ctl)
+							+ (1, -2) coordinate[label=below:$T$] (T3)
+							+ (0, 1) coordinate[label=above:$T$] (out);
+					\draw (mubot) to[out=180, in=90] (T1)
+							(mubot) to[out=0, in=90] (T2)
+							(mubot) to[out=90, in=180] (mutop)
+							(mutop) -- (out)
+							(mutop) to[out=0, in=90] (ctl) -- (T3);
+							\begin{pgfonlayer}{background}
+								\fill[catmc] ($(T1) + (-.3, 0)$) rectangle ($(out) + (1.3, 0)$);
+					\end{pgfonlayer}
+				  \end{tikzpicture}
+				  =
+				  \begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+					  \path coordinate[dot, label=below:$\mu$] (mubot)
+					  		+ (1, -1) coordinate[label=below:$T$] (T2)
+					  		+ (-1, -1) coordinate[label=below:$T$] (T1)
+							++ (-1, 1) coordinate[dot, label=below:$\mu$] (mutop)
+							+ (-1, -1) coordinate (ctl)
+							+ (-1, -2) coordinate[label=below:$T$] (T3)
+							+ (0, 1) coordinate[label=above:$T$] (out);
+					\draw (mubot) to[out=180, in=90] (T1);
+					\draw (mubot) to[out=0, in=90] (T2);
+					\draw (mubot) to[out=90, in=0] (mutop);
+					\draw (mutop) -- (out);
+					\draw (mutop) to[out=180, in=90] (ctl) -- (T3);
+					\begin{pgfonlayer}{background}
+							\fill[catmc] ($(T3) + (-.3, 0)$) rectangle ($(out) + (2.3, 0)$);
+					\end{pgfonlayer}
+				  \end{tikzpicture}

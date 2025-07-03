@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: tdparse.aux
+The style file: main_natbib.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: tdparse.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty year in marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic
+Warning--empty year in marsikAlgebraicEffectsHandlers
+Warning--empty journal in marsikAlgebraicEffectsHandlers
+Warning--empty year in parteeLecture2Lambda
+Warning--empty booktitle in selingerSurveyGraphicalLanguages2010
+Warning--missing publisher in selingerSurveyGraphicalLanguages2010
+You've used 19 entries,
+            3571 wiz_defined-function locations,
+            832 strings with 9763 characters,
+and the built_in function-call counts, 11089 in all, are:
+= -- 1023
+> -- 384
+< -- 22
++ -- 126
+- -- 99
+* -- 666
+:= -- 1733
+add.period$ -- 69
+call.type$ -- 19
+change.case$ -- 133
+chr.to.int$ -- 19
+cite$ -- 25
+duplicate$ -- 726
+empty$ -- 855
+format.name$ -- 162
+if$ -- 2458
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 135
+newline$ -- 91
+num.names$ -- 76
+pop$ -- 325
+preamble$ -- 1
+purify$ -- 109
+quote$ -- 0
+skip$ -- 605
+stack$ -- 0
+substring$ -- 399
+swap$ -- 343
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 168
+warning$ -- 6
+while$ -- 75
+width$ -- 0
+write$ -- 230
+(There were 6 warnings)

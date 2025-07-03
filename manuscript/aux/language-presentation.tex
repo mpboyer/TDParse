@@ -34,7 +34,7 @@ For syntactic categories\footnote{Those are a subset of the ones proposed
 	in Section \ref{subsec:syntax}.}, the types that are generally used are the
 following, and we will see it matches with our lexicon, and simplifies our
 functorial definitions\footnote{We don't consider effects in the given typings.}.
-Those are based on \cite{parteeLecture2Lambda}. Here $\Upsilon$ is the
+Those are based on \newcite{parteeLecture2Lambda}. Here $\Upsilon$ is the
 operator which retrieves the type from a certain syntactic category.
 \begin{figure}
 	\centering
@@ -149,3 +149,14 @@ Now, in quite a similar way, we can create functors from any sort of judgement t
 Indeed, we simply need to replace the $\abs{p} \geq 1$ in most of the definitions by our function and the rest would stay the same.
 Remember that our use of natural transformations is only there to allow for possible under-markings of the considered effects and propagating the value resulting from the computation of the high-order effect.
 
+\subsection{Other Representation of Concepts}
+In this section we provide explanations on how to translate other semantic descriptions of the lexicon inside our extended type system.
+
+\subsubsection{Manifold Representation}
+\newcite{goodaleManifoldsConceptualRepresentations2022} proposes a way to describe the words of the lexicon (concepts, actually) as manifold.
+
+\subsubsection{Vector Representation}
+\newcite{sadrzadehStaticDynamicVector2018} provides a way to translate vector embeddings to a typed-lambda-calculus system, and as such to a cartesian closed category, meaning we could easily apply the formalism described in Section \ref{subsec:lambdacalc}.
+
+\subsubsection{Probabilistic Monad}
+\newcite{groveProbabilisticCompositionalSemantics2023}

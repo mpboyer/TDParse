@@ -1,12 +1,11 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{22}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{Asudeh and Giorgolo(2020)}]{asudehEnrichedMeaningsNatural2020}
-Ash Asudeh and Gianluca Giorgolo. 2020.
-\newblock \emph{Enriched {{Meanings}}: {{Natural Language Semantics}} with
-  {{Category Theory}}}.
-\newblock Oxford {{Studies}} in {{Semantics}} and {{Pragmatics}}. Oxford
-  University Press, Oxford, New York.
+\bibitem[{Bauer and Pretnar(2014)}]{bauerEffectSystemAlgebraic2014}
+Andrej Bauer and Matija Pretnar. 2014.
+\newblock \href {https://doi.org/10.2168/LMCS-10(4:9)2014} {An {{Effect
+  System}} for {{Algebraic Effects}} and {{Handlers}}}.
+\newblock \emph{Logical Methods in Computer Science}, Volume 10, Issue 4.
 
 \bibitem[{Bumford and
   Charlow(2025)}]{bumfordEffectdrivenInterpretationFunctors2025}
@@ -33,6 +32,12 @@ Michael Goodale. 2022.
   Bernardy(2023)}]{groveProbabilisticCompositionalSemantics2023}
 Julian Grove and Jean-Philippe Bernardy. 2023.
 \newblock Probabilistic compositional semantics, purely.
+
+\bibitem[{Heim and Kratzer(1998)}]{heimSemanticsGenerativeGrammar1998}
+Irene Heim and Angelika Kratzer. 1998.
+\newblock \emph{Semantics in Generative Grammar}.
+\newblock Number~13 in Blackwell Textbooks in Linguistics. Blackwell, Malden,
+  MA.
 
 \bibitem[{Higginbotham(1984)}]{higginbothamEnglishNotContextFree1984}
 James Higginbotham. 1984.
@@ -72,11 +77,25 @@ Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger. 2025.
   theorem}.
 \newblock \emph{Logical Methods in Computer Science}, Volume 21, Issue 2:13654.
 
+\bibitem[{Moggi(1989)}]{moggiComputationalLambdacalculusMonads1989}
+E.~Moggi. 1989.
+\newblock \href {https://doi.org/10.1109/LICS.1989.39155} {Computational
+  lambda-calculus and monads}.
+\newblock In \emph{[1989] {{Proceedings}}. {{Fourth Annual Symposium}} on
+  {{Logic}} in {{Computer Science}}}, pages 14--23, Pacific Grove, CA, USA.
+  IEEE Comput. Soc. Press.
+
 \bibitem[{Partee()}]{parteeLecture2Lambda}
 B~Partee.
 \newblock Lecture 2. {{Lambda}} abstraction, {{NP}} semantics, and a
   {{Fragment}} of {{English}}.
 \newblock \emph{Formal Semantics}.
+
+\bibitem[{Plotkin and Pretnar(2013)}]{plotkinHandlingAlgebraicEffects2013}
+Gordon~D. Plotkin and Matija Pretnar. 2013.
+\newblock \href {https://doi.org/10.2168/LMCS-9(4:23)2013} {Handling
+  {{Algebraic Effects}}}.
+\newblock \emph{Logical Methods in Computer Science}, Volume 9, Issue 4.
 
 \bibitem[{Sadrzadeh and Muskens(2018)}]{sadrzadehStaticDynamicVector2018}
 Mehrnoosh Sadrzadeh and Reinhard Muskens. 2018.
