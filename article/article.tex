@@ -23,10 +23,11 @@
 %\titlerunning{Dummy short title} %TODO optional, please use if title is longer than one line
 
 \author{Matthieu Pierre Boyer}{DI ENS, Paris, France \and Department of Linguistics, Yale University, USA \and \url{http://www.eleves.ens.fr/home/mpboyer}}{matthieu.boyer@ens.fr}{https://orcid.org/0000-0002-1825-0097}{}
+% \author{Simon Charlow}{Department of Linguistics, Yale University, USA}{simon.charlow@yale.edu}{https://orcid.org/0000-0002-1825-0097}{}
 
-\authorrunning{M. P. Boyer}
+\authorrunning{M. P. Boyer and S. Charlow}
 
-\Copyright{Matthieu P. Boyer}
+\Copyright{Matthieu P. Boyer and Simon Charlow}
 
 \ccsdesc[100]{Models of computation. Document management and text processing.} %TODO mandatory: Please choose ACM 2012 classifications from https://dl.acm.org/ccs/ccs_flat.cfm 
 
@@ -43,9 +44,10 @@
 \acknowledgements{I want to thank my mother for the knitting and putting up
   with me peeling potatos to try knitting with toothpicks; Antoine Groudiev
   for his precious insights on how to label equations; Paul-André Melliès for
-  his insights; Bob Frank for the help with the minimalistic merge syntactic
-  theories; and of course, Simon Charlow for his advising during my time at
-  Yale, and his help around the linguistics questions that definitely arose.}
+  his insights; Bob Frank and Bella Senturia for the help with the minimalistic
+  merge syntactic theories; and of course, Simon Charlow for his advising
+  during my time at Yale, and his help around the linguistics questions that
+definitely arose.}
 
 \nolinenumbers %uncomment to disable line numbering
 
@@ -140,7 +142,8 @@ and our more abstract way of looking at the semantic parsing of a sentence.
 On a completely different approach,
 \cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}
 provide a categorical structure based on Hopf algebra and coloured operads
-to explain their model of syntax.
+to explain their model of syntax, leading to results at the interface of syntax
+and morphology presented in \cite{senturiaAlgebraicStructureMorphosyntax2025}.
 Similarly, \cite{melliesCategoricalContoursChomskySchutzenberger2025} provides
 a modeling of CFGs using coloured operads.
 Our approach is based on the suggestion that merge in syntax can be done using
@@ -180,11 +183,9 @@ modeling of a subset of the English language in our formalism.
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}{.7\textwidth}
+	\begin{subfigure}{.9\textwidth}
 		\centering
-		\resizebox{\textwidth}{!}{%
-			\input{lexicon-table.tex}
-		}
+		\input{lexicon-table.tex}
 		\caption{Lexicon for a subset of the English language}
 		\label{fig:lexicon}
 	\end{subfigure}

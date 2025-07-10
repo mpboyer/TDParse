@@ -71,6 +71,10 @@ Gordon~D. Plotkin and Matija Pretnar.
 \newblock \href {https://doi.org/10.2168/LMCS-9(4:23)2013}
   {\path{doi:10.2168/LMCS-9(4:23)2013}}.
 
+\bibitem{senturiaAlgebraicStructureMorphosyntax2025}
+Isabella Senturia and Matilde Marcolli.
+\newblock The {{Algebraic Structure}} of {{Morphosyntax}}, June 2025.
+
 \bibitem{vandenbergFrameworkHigherorderEffects2024}
 Birthe {van den Berg} and Tom Schrijvers.
 \newblock A framework for higher-order effects \& handlers.

@@ -1,0 +1,17 @@
+\def\arraystretch{1.3}
+\setcellgapes{3pt}
+\makegapedcells
+\begin{NiceTabular}{>{\bf}c>{\cont}C>{\Pi(p) = }L}
+	CN(P)    & p: \left(\e \to \t\right)                                & \lambda x.\left( px \land \abs{x} \geq 2 \right)                                                \\
+	ADJ(P)   & p: \left( \e \to \t \right)                              & \lambda x. \left( px \land \abs{x} \geq 2 \right)                                               \\
+	         & p: \left( \e \to \t \right) \to \left( \e \to \t \right) & \lambda \nu. \lambda x. \left( p\left( \nu \right)\left( x \right) \land \abs{x} \geq 2 \right) \\
+	NP       & p: \e                                                    & p                                                                                               \\
+	IV(P)/VP & p: \e \to \t                                             & \lambda o. \left( po \land \abs{x} \geq 2 \right)                                               \\
+	TV(P)    & p: \e \to \e \to \t                                      & \lambda s. \lambda o. \left( p\left( s \right)\left( o \right) \land \abs{s} \geq 2 \right)     \\
+	REL(P)   & p: \e \to \t                                             & \lambda x. \left( px \land \abs{x} \geq 2 \right)                                               \\
+	\CodeAfter
+	\begin{tikzpicture}
+		\foreach \r in {2,...,6} {\draw (1|-\r) -- (4|-\r);}
+		\draw (2|-1) -- (2|-9);
+	\end{tikzpicture}
+\end{NiceTabular}

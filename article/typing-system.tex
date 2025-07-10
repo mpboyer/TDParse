@@ -14,7 +14,7 @@ we connect words and other linguistic objects to the categorical formulation.
 Let $\mC$ be a closed cartesian category, which will be used to represent the
 domain of types for our domain of denotations.
 This represents our main typing system, consisting of words $\O(\mL)$ that can
-be expressed without effects.
+be expressed without effects (see Figure \ref{fig:lexicon} for an example).
 Remember that $\mC$ contains a terminal object $\bot$ representing the empty
 type or the lack thereof.
 We consider $\bar{\mC}$ the category closure of
@@ -44,7 +44,8 @@ $\tau \in \star_{0}$.
 \label{subsubsec:functors}
 Our point of view leads us to consider \emph{language functors}\footnote{The
 	elements of our language, not the categorical construct.} as polymorphic
-functions: for a set of base types $S$, a functor is a function:
+functions: for a (possibly restrained, though it seems to always be $\star$)
+set of base types $S$, a functor is a function
 \begin{equation*}
 	x: \tau\in S\subseteq \star \mapsto F x: F\tau
 \end{equation*}
@@ -64,6 +65,7 @@ More precisely, the \emph{language functor} is to be seen as a function whose
 computation yields an effect, while the \emph{type functor} is the endofunctor
 of $\bar{\mC}$ (so a functor from $\mC$) that represents the effect in our
 typing category.
+Examples are provided in Figure \ref{fig:functors}.
 
 \smallskip
 
@@ -112,16 +114,22 @@ polymorphic function, we will get the associated natural transformation.
 
 \paragraph{Handlers}
 \label{par:handlers}
-As introduced by \cite{marsikAlgebraicEffectsHandlers}, we use handlers
-to reduce effects by adding them to the syntactic tree.
+As introduce by \cite{marsikAlgebraicEffectsHandlers}, the use of handlers
+as annotations to the syntactic tree of the sentence is an appropriate
+formalism.
+This could also give us a way to construct handlers for our effects as per
+\cite{bauerEffectSystemAlgebraic2014}, or
+\cite{plotkinHandlingAlgebraicEffects2013}.
 As considered by \cite{wuEffectHandlersScope2014} and
 \cite{vandenbergFrameworkHigherorderEffects2024}, handlers are to be seen
 as natural transformations describing the free monad on an algebraic effect.
 Considering handlers as so, allows us to directly handle our computations
-inside our typing system.
+inside our typing system, by ``transporting'' our functors one order higher up
+without loss of information or generality since all our functors undergo the
+same transformation.
 Using the framework proposed in \cite{vandenbergFrameworkHigherorderEffects2024}
 we simply need to create handlers for our effects/functors and we will then
-have in our language the constructs needed.
+have in our language the result needed.
 The only thing we will require from an algebraic handler $h$ is that for any
 applicative functor of unit $\eta$, $h\circ \eta = \id$.
 
