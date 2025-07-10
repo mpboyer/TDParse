@@ -52,3 +52,49 @@ of the sentence).
 This is an insight of how to implement our enhancement onto a non-compositional
 system, although that of course removes a bit of the interest of the system, as
 typing will not matter in that case.
+
+\subsection{Coproduct Integration}
+In this section based on the work by
+\newcite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}
+and \newcite{senturiaAlgebraicStructureMorphosyntax2025},
+we explore the integration of our notion inside the structure of syntactic
+merge, and why the two formalisms are compatible.
+The idea behind that structure is to see the union of trees as a product and
+the merging of trees as based on a coproduct in a well-defined Hopf algebra.
+Now of course, with our insights on syntactico-semantic parsing, we can either
+think of our parsing structure labeled by multiple modes, as in
+\cite{bumfordEffectdrivenInterpretationFunctors2025}, or think of it as string
+diagrams, as presented above.
+In both cases, we make a more or less implicit use of the merge operation.
+
+\medskip
+
+Labeled trees can be seen as computed from a sequence of labeled merge.
+As such, it is easy to see how one can adapt the construction of a purely
+syntactic merge onto a semantic merge, using a similar approach.
+There is just the need for a coloured operad to create a series of labeled
+merges, like proposed in
+\cite{melliesCategoricalContoursChomskySchutzenberger2025} for example.
+Since there is a one-to-one mapping from our string diagrams to parse trees,
+mapping explained when comparing the tables for denotations of combinators
+in Figure \ref{fig:combinator-denotations} and Figure 12 in
+\cite{bumfordEffectdrivenInterpretationFunctors2025}, or by looking at the
+parse trees equivalent to string diagrams in Figures \ref{fig:parsing-diagram},
+\ref{fig:parsing-diagram2} and \ref{fig:3dparsing-diagram}, it is easy to see
+that indeed, there is a notion of merge inside our diagrams that can in a way
+be expressed through a Hopf algebra, by transporting the diagrams to and from
+their equivalent parsing diagram.
+More generally, what this means is that a merge, in our string diagrams, is
+the addition of a combinator to one, two\footnote{Or more, see
+	\ref{app:arities-and-denots}} without conditions.
+This is useful as a definition, because it allows integration of our system in
+a broader framework, including for example the notion of morphosyntactic trees.
+
+\medskip
+
+However, this is not fully satisfying: like for syntax trees, applying a random
+sequence of merges to a set of input strings will not always yield a properly
+typed denotation.
+Since type soundness is the main feature of our system, it seems weird to have
+a definition of merge which cannot take that into account.
+

@@ -1,0 +1,494 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{bumfordEffectdrivenInterpretationFunctors2025}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=b5f79d6509334a31eabc84804acca695}{%
+           family={Bumford},
+           familyi={B\bibinitperiod},
+           given={Dylan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=13ca5cdb8ee7d17611a79232017b6497}{%
+           family={Charlow},
+           familyi={C\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {LingBuzz}%
+      }
+      \strng{namehash}{dee4546abc34b2473dc1ddca0b5e8962}
+      \strng{fullhash}{dee4546abc34b2473dc1ddca0b5e8962}
+      \strng{fullhashraw}{dee4546abc34b2473dc1ddca0b5e8962}
+      \strng{bibnamehash}{dee4546abc34b2473dc1ddca0b5e8962}
+      \strng{authorbibnamehash}{dee4546abc34b2473dc1ddca0b5e8962}
+      \strng{authornamehash}{dee4546abc34b2473dc1ddca0b5e8962}
+      \strng{authorfullhash}{dee4546abc34b2473dc1ddca0b5e8962}
+      \strng{authorfullhashraw}{dee4546abc34b2473dc1ddca0b5e8962}
+      \field{labelalpha}{BC25}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Computer programs are often factored into pure components -- simple, total functions from inputs to outputs -- and components that may have side effects -- errors, changes to memory, parallel threads, abortion of the current loop, etc. We make the case that human languages are similarly organized around the give and pull of pure values and impure processes, and we'll aim to show how denotational techniques from computer science can be leveraged to support elegant and illuminating analyses of natural language composition.}
+      \field{annotation}{LingBuzz Published In: Submitted to Cambridge University Press Elements in Semantics}
+      \field{eprinttype}{LingBuzz}
+      \field{month}{3}
+      \field{shorttitle}{Effect-Driven Interpretation}
+      \field{title}{Effect-Driven Interpretation: {{Functors}} for Natural Language Composition}
+      \field{urlday}{24}
+      \field{urlmonth}{4}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/SYXFB32W/Bumford et Charlow - 2025 - Effect-driven interpretation Functors for natural.pdf;/home/matthieu/Zotero/storage/T8YATP6C/008912.html
+      \endverb
+      \keyw{composition,functors,monads,parsing,scope,semantics}
+    \endentry
+    \entry{coeckeMathematicalFoundationsCompositional2010}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=c8d0d6b0d8ca354b544208d9fa6abd9d}{%
+           family={Coecke},
+           familyi={C\bibinitperiod},
+           given={Bob},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1269c03f4d89abba55e31d4b3f8037e6}{%
+           family={Sadrzadeh},
+           familyi={S\bibinitperiod},
+           given={Mehrnoosh},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dda71bed5f391f7f7cdba143a71fad0a}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \strng{fullhash}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \strng{fullhashraw}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \strng{bibnamehash}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \strng{authorbibnamehash}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \strng{authornamehash}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \strng{authorfullhash}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \strng{authorfullhashraw}{c0f9dacb617c97e70fed8e2f5fcfdf30}
+      \field{labelalpha}{CSC10}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose a mathematical framework for a unification of the distributional theory of meaning in terms of vector space models, and a compositional theory for grammatical types, for which we rely on the algebra of Pregroups, introduced by Lambek. This mathematical framework enables us to compute the meaning of a well-typed sentence from the meanings of its constituents. Concretely, the type reductions of Pregroups are `lifted' to morphisms in a category, a procedure that transforms meanings of constituents into a meaning of the (well-typed) whole. Importantly, meanings of whole sentences live in a single space, independent of the grammatical structure of the sentence. Hence the inner-product can be used to compare meanings of arbitrary sentences, as it is for comparing the meanings of words in the distributional model. The mathematical structure we employ admits a purely diagrammatic calculus which exposes how the information flows between the words in a sentence in order to make up the meaning of the whole sentence. A variation of our `categorical model' which involves constraining the scalars of the vector spaces to the semiring of Booleans results in a Montague-style Boolean-valued semantics.}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arXiv}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{arXiv:1003.4394}
+      \field{title}{Mathematical {{Foundations}} for a {{Compositional Distributional Model}} of {{Meaning}}}
+      \field{urlday}{31}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1003.4394
+      \endverb
+      \verb{eprint}
+      \verb 1003.4394
+      \endverb
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/UCP5YYW6/Coecke et al. - 2010 - Mathematical Foundations for a Compositional Distr.pdf;/home/matthieu/Zotero/storage/QJSSPC48/1003.html
+      \endverb
+      \keyw{Computer Science - Computation and Language,Computer Science - Logic in Computer Science,Mathematics - Category Theory}
+    \endentry
+    \entry{delpeuchNormalizationPlanarString2022}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=aebd046ca2d354b09454d004a4af0412}{%
+           family={Delpeuch},
+           familyi={D\bibinitperiod},
+           given={Antonin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ccff9cb0ea86d9f63e3984a5b7d2f23a}{%
+           family={Vicary},
+           familyi={V\bibinitperiod},
+           given={Jamie},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{3d5c24db60f1ccd76217136bca191cee}
+      \strng{fullhash}{3d5c24db60f1ccd76217136bca191cee}
+      \strng{fullhashraw}{3d5c24db60f1ccd76217136bca191cee}
+      \strng{bibnamehash}{3d5c24db60f1ccd76217136bca191cee}
+      \strng{authorbibnamehash}{3d5c24db60f1ccd76217136bca191cee}
+      \strng{authornamehash}{3d5c24db60f1ccd76217136bca191cee}
+      \strng{authorfullhash}{3d5c24db60f1ccd76217136bca191cee}
+      \strng{authorfullhashraw}{3d5c24db60f1ccd76217136bca191cee}
+      \field{labelalpha}{DV22}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In the graphical calculus of planar string diagrams, equality is generated by exchange moves, which swap the heights of adjacent vertices. We show that left- and right-handed exchanges each give strongly normalizing rewrite strategies for connected string diagrams. We use this result to give a linear-time solution to the equivalence problem in the connected case, and a quadratic solution in the general case. We also give a stronger proof of the Joyal-Street coherence theorem, settling Selinger's conjecture on recumbent isotopy.}
+      \field{eprinttype}{arXiv}
+      \field{month}{1}
+      \field{number}{arXiv:1804.07832}
+      \field{title}{Normalization for Planar String Diagrams and a Quadratic Equivalence Algorithm}
+      \field{urlday}{31}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1804.07832
+      \endverb
+      \verb{eprint}
+      \verb 1804.07832
+      \endverb
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/2BAR2SFT/Delpeuch et Vicary - 2022 - Normalization for planar string diagrams and a qua.pdf
+      \endverb
+      \keyw{Computer Science - Logic in Computer Science}
+    \endentry
+    \entry{hinzeIntroducingStringDiagrams2023}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=bc723d7d077e574c937d5817c4d6e257}{%
+           family={Hinze},
+           familyi={H\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8c606738090153da5b726d3345987aed}{%
+           family={Marsden},
+           familyi={M\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \strng{fullhash}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \strng{fullhashraw}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \strng{bibnamehash}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \strng{authorbibnamehash}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \strng{authornamehash}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \strng{authorfullhash}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \strng{authorfullhashraw}{88e0c9ad48340b9f9e91f23d698fe6e1}
+      \field{labelalpha}{HM23}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{String diagrams are powerful graphical methods for reasoning in elementary category theory. Written in an informal expository style, this book provides a self-contained introduction to these diagrammatic techniques, ideal for graduate students and researchers. Much of the book is devoted to worked examples highlighting how best to use string diagrams to solve realistic problems in elementary category theory. A range of topics are explored from the perspective of string diagrams, including adjunctions, monad and comonads, Kleisli and Eilenberg--Moore categories, and endofunctor algebras and coalgebras. Careful attention is paid throughout to exploit the freedom of the graphical notation to draw diagrams that aid understanding and subsequent calculations. Each chapter contains plentiful exercises of varying levels of difficulty, suitable for self-study or for use by instructors.}
+      \field{edition}{1}
+      \field{isbn}{978-1-00-931782-5 978-1-00-931786-3}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{shorttitle}{Introducing {{String Diagrams}}}
+      \field{title}{Introducing {{String Diagrams}}: {{The Art}} of {{Category Theory}}}
+      \field{urlday}{28}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1017/9781009317825
+      \endverb
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/K5MZ5FK4/Hinze et Marsden - 2023 - Introducing String Diagrams The Art of Category T.pdf;/home/matthieu/Zotero/storage/DG7U9WEX/36F8F1BCA0C61522283C2FED620EBC0D.html
+      \endverb
+    \endentry
+    \entry{joyalGeometryTensorCalculus1991}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=879e6f70ccf8d5999602c642fcda57b3}{%
+           family={Joyal},
+           familyi={J\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod}}}%
+        {{hash=faea870f61e1c45828077d18a31465d2}{%
+           family={Street},
+           familyi={S\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d92010c48602800b7ba54dde2f390632}
+      \strng{fullhash}{d92010c48602800b7ba54dde2f390632}
+      \strng{fullhashraw}{d92010c48602800b7ba54dde2f390632}
+      \strng{bibnamehash}{d92010c48602800b7ba54dde2f390632}
+      \strng{authorbibnamehash}{d92010c48602800b7ba54dde2f390632}
+      \strng{authornamehash}{d92010c48602800b7ba54dde2f390632}
+      \strng{authorfullhash}{d92010c48602800b7ba54dde2f390632}
+      \strng{authorfullhashraw}{d92010c48602800b7ba54dde2f390632}
+      \field{labelalpha}{JS91}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00018708}
+      \field{journaltitle}{Advances in Mathematics}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{1}
+      \field{title}{The Geometry of Tensor Calculus, {{I}}}
+      \field{urlday}{28}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{volume}{88}
+      \field{year}{1991}
+      \field{urldateera}{ce}
+      \field{pages}{55\bibrangedash 112}
+      \range{pages}{58}
+      \verb{doi}
+      \verb 10.1016/0001-8708(91)90003-P
+      \endverb
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/FQWAM6RF/Joyal et Street - 1991 - The geometry of tensor calculus, I.pdf
+      \endverb
+    \endentry
+    \entry{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=21f34b135de2e9d10521e036f3329300}{%
+           family={{Marcolli, Matilde et Chomsky, Noam et Berwick, Robert C.}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{21f34b135de2e9d10521e036f3329300}
+      \strng{fullhash}{21f34b135de2e9d10521e036f3329300}
+      \strng{fullhashraw}{21f34b135de2e9d10521e036f3329300}
+      \strng{bibnamehash}{21f34b135de2e9d10521e036f3329300}
+      \strng{authorbibnamehash}{21f34b135de2e9d10521e036f3329300}
+      \strng{authornamehash}{21f34b135de2e9d10521e036f3329300}
+      \strng{authorfullhash}{21f34b135de2e9d10521e036f3329300}
+      \strng{authorfullhashraw}{21f34b135de2e9d10521e036f3329300}
+      \field{labelalpha}{Mar}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Minimalist Program advanced by Noam Chomsky thirty years ago, focusing on the biological nature of human language, has played a central role in our moder...}
+      \field{journaltitle}{MIT Press}
+      \field{langid}{american}
+      \field{title}{Mathematical {{Structure}} of {{Syntactic Merge}}}
+      \field{urlday}{29}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/EH9QXXDG/Mathematical Structure of Syntactic Merge.pdf;/home/matthieu/Zotero/storage/KGSSZRWL/mathematical-structure-of-syntactic-merge.html
+      \endverb
+    \endentry
+    \entry{moggiComputationalLambdacalculusMonads1989}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=94f50d4c9d8e6a41a508ccc34bc796d0}{%
+           family={Moggi},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Pacific Grove, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Comput. Soc. Press}%
+      }
+      \strng{namehash}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \strng{fullhash}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \strng{fullhashraw}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \strng{bibnamehash}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \strng{authorbibnamehash}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \strng{authornamehash}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \strng{authorfullhash}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \strng{authorfullhashraw}{94f50d4c9d8e6a41a508ccc34bc796d0}
+      \field{labelalpha}{Mog89}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The {$\lambda$}-calculus is considered an useful mathematical tool in the study of programming languages, since programs can be identified with {$\lambda$}-terms. However, if one goes further and uses {$\beta\eta$}-conversion to prove equivalence of programs, then a gross simplification1 is introduced, that may jeopardise the applicability of theoretical results to real situations. In this paper we introduce a new calculus based on a categorical semantics for computations. This calculus provides a correct basis for proving equivalence of programs, independent from any specific computational model.}
+      \field{booktitle}{[1989] {{Proceedings}}. {{Fourth Annual Symposium}} on {{Logic}} in {{Computer Science}}}
+      \field{isbn}{978-0-8186-1954-0}
+      \field{langid}{english}
+      \field{title}{Computational Lambda-Calculus and Monads}
+      \field{urlday}{7}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{1989}
+      \field{urldateera}{ce}
+      \field{pages}{14\bibrangedash 23}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/LICS.1989.39155
+      \endverb
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/XGQYMUFX/Moggi - 1989 - Computational lambda-calculus and monads.pdf
+      \endverb
+    \endentry
+    \entry{selingerSurveyGraphicalLanguages2010}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=0d665e53102b24b5d852725ad829d803}{%
+           family={Selinger},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{0d665e53102b24b5d852725ad829d803}
+      \strng{fullhash}{0d665e53102b24b5d852725ad829d803}
+      \strng{fullhashraw}{0d665e53102b24b5d852725ad829d803}
+      \strng{bibnamehash}{0d665e53102b24b5d852725ad829d803}
+      \strng{authorbibnamehash}{0d665e53102b24b5d852725ad829d803}
+      \strng{authornamehash}{0d665e53102b24b5d852725ad829d803}
+      \strng{authorfullhash}{0d665e53102b24b5d852725ad829d803}
+      \strng{authorfullhashraw}{0d665e53102b24b5d852725ad829d803}
+      \field{labelalpha}{Sel10}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article is intended as a reference guide to various notions of monoidal categories and their associated string diagrams. It is hoped that this will be useful not just to mathematicians, but also to physicists, computer scientists, and others who use diagrammatic reasoning. We have opted for a somewhat informal treatment of topological notions, and have omitted most proofs. Nevertheless, the exposition is sufficiently detailed to make it clear what is presently known, and to serve as a starting place for more in-depth study. Where possible, we provide pointers to more rigorous treatments in the literature. Where we include results that have only been proved in special cases, we indicate this in the form of caveats.}
+      \field{eprintclass}{math}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Survey of Graphical Languages for Monoidal Categories}
+      \field{urlday}{3}
+      \field{urlmonth}{4}
+      \field{urlyear}{2025}
+      \field{volume}{813}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \field{pages}{289\bibrangedash 355}
+      \range{pages}{67}
+      \verb{doi}
+      \verb 10.1007/978-3-642-12821-9_4
+      \endverb
+      \verb{eprint}
+      \verb 0908.3347
+      \endverb
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/8F853CTA/Selinger - 2010 - A survey of graphical languages for monoidal categ.pdf;/home/matthieu/Zotero/storage/5683YCG6/0908.html
+      \endverb
+      \keyw{Mathematics - Category Theory}
+    \endentry
+    \entry{senturiaAlgebraicStructureMorphosyntax2025}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=541a86dfe5f348891c7940271eea65e5}{%
+           family={Senturia},
+           familyi={S\bibinitperiod},
+           given={Isabella},
+           giveni={I\bibinitperiod}}}%
+        {{hash=6861a27fe8a25dcdff801a25c6e5bc00}{%
+           family={Marcolli},
+           familyi={M\bibinitperiod},
+           given={Matilde},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {LingBuzz}%
+      }
+      \strng{namehash}{be0525831ca0ad00b065e7eab0f5681d}
+      \strng{fullhash}{be0525831ca0ad00b065e7eab0f5681d}
+      \strng{fullhashraw}{be0525831ca0ad00b065e7eab0f5681d}
+      \strng{bibnamehash}{be0525831ca0ad00b065e7eab0f5681d}
+      \strng{authorbibnamehash}{be0525831ca0ad00b065e7eab0f5681d}
+      \strng{authornamehash}{be0525831ca0ad00b065e7eab0f5681d}
+      \strng{authorfullhash}{be0525831ca0ad00b065e7eab0f5681d}
+      \strng{authorfullhashraw}{be0525831ca0ad00b065e7eab0f5681d}
+      \field{labelalpha}{SM25}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Within the context of the mathematical formulation of Merge and the Strong Minimalist Thesis, we present a mathematical model of the morphology-syntax interface. In this setting, morphology has compositional properties responsible for word formation, organized into a magma of morphological trees. However, unlike syntax, we do not have movement within morphology. A coproduct decomposition exists, but it requires extending the set of morphological trees beyond those which are generated solely by the magma, to a larger set of possible morphological inputs to syntactic trees. These participate in the formation of morphosyntactic trees as an algebra over an operad, and a correspondence between algebras over an operad. The process of structure formation for morphosyntactic trees can then be described in terms of this operadic correspondence that pairs syntactic and morphological data and the morphology coproduct. We reinterpret in this setting certain operations of Distributed Morphology as transformation that allow for flexibility in moving the boundary between syntax and morphology within the morphosyntactic objects.}
+      \field{annotation}{LingBuzz Published In:}
+      \field{eprinttype}{LingBuzz}
+      \field{month}{6}
+      \field{title}{The {{Algebraic Structure}} of {{Morphosyntax}}}
+      \field{urlday}{4}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/62XT86FA/Senturia et Marcolli - 2025 - The Algebraic Structure of Morphosyntax.pdf;/home/matthieu/Zotero/storage/J8Z3QFPF/009120.html
+      \endverb
+      \keyw{distributed morphology,mathematical minimalism,morphosyntax}
+    \endentry
+    \entry{wuEffectHandlersScope2014}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=1a7e72243faeace95ec8ba8cd5e3d543}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ee8884e6f5c55d796fda4df39c101ebf}{%
+           family={Schrijvers},
+           familyi={S\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bc723d7d077e574c937d5817c4d6e257}{%
+           family={Hinze},
+           familyi={H\bibinitperiod},
+           given={Ralf},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{b77d9adef2ff808dcfa725d48f64f288}
+      \strng{fullhash}{b77d9adef2ff808dcfa725d48f64f288}
+      \strng{fullhashraw}{b77d9adef2ff808dcfa725d48f64f288}
+      \strng{bibnamehash}{b77d9adef2ff808dcfa725d48f64f288}
+      \strng{authorbibnamehash}{b77d9adef2ff808dcfa725d48f64f288}
+      \strng{authornamehash}{b77d9adef2ff808dcfa725d48f64f288}
+      \strng{authorfullhash}{b77d9adef2ff808dcfa725d48f64f288}
+      \strng{authorfullhashraw}{b77d9adef2ff808dcfa725d48f64f288}
+      \field{labelalpha}{WSH14}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Algebraic effect handlers are a powerful means for describing effectful computations. They provide a lightweight and orthogonal technique to define and compose the syntax and semantics of different effects. The semantics is captured by handlers, which are functions that transform syntax trees.Unfortunately, the approach does not support syntax for scoping constructs, which arise in a number of scenarios. While handlers can be used to provide a limited form of scope, we demonstrate that this approach constrains the possible interactions of effects and rules out some desired semantics.This paper presents two different ways to capture scoped constructs in syntax, and shows how to achieve different semantics by reordering handlers. The first approach expresses scopes using the existing algebraic handlers framework, but has some limitations. The problem is fully solved in the second approach where we introduce higher-order syntax.}
+      \field{booktitle}{Proceedings of the 2014 {{ACM SIGPLAN}} Symposium on {{Haskell}}}
+      \field{isbn}{978-1-4503-3041-1}
+      \field{month}{9}
+      \field{series}{Haskell '14}
+      \field{title}{Effect Handlers in Scope}
+      \field{urlday}{27}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1145/2633357.2633358
+      \endverb
+      \verb{file}
+      \verb /home/matthieu/Zotero/storage/H5YL93HH/Wu et al. - 2014 - Effect handlers in scope.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

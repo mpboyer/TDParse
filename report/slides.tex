@@ -1,0 +1,512 @@
+\documentclass[math, english, info]{beamercours}
+\makeatletter
+\def\tikzimp@rt{1}
+\makeatother
+
+\bibliography{tdparse.bib}
+
+\input{aux/preamble}
+
+\title{Effect-Driven Parsing}
+\subtitle{Formal studies on a categorical approach to semantic parsing}
+\institute{École Normale Supérieure | Yale University}
+\addlogo{~/Pictures/Yale_University_logo.svg.png}
+\addlogo{~/DEV/latex/source/ens_psl.pdf}
+
+\begin{document}
+\fancytitleframe
+
+\section{Introduction}
+\subsection{General Introduction}
+\begin{frame}
+	\frametitle{Context}
+	This work, based on \cite{bumfordEffectdrivenInterpretationFunctors2025} aims
+	to provide a categorical formalization of a type and effects system for
+	semantic interpretation of the natural language.
+
+	\medskip
+
+	We will develop a graphical formalism for semantic type-driven parsing that
+	explains how to derive the meaning of a sentence from the meaning of its
+	words.
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Typed Semantics for Natural Languages}
+	\setcellgapes{3pt}
+	\makegapedcells
+	\begin{NiceTabular}{>{\bf}LLL}
+		Expression & \rm Type & \lambda\text{-Term} \\
+		\word{planet}{\e\to\t}{\lambda x. \w{planet} x}{common nouns}
+		\word{carnivorous}{\left( \e \to \t \right)}{\lambda x. \w{carnivorous}x}{predicative adjectives}
+		\word{skillful}{\left( \e \to \t \right) \to \left( \e \to \t \right)}{\lambda p. \lambda x. px \land \w{skillful} x}{predicate modifier adjectives}
+		\word{Jupiter}{\e}{{\bf j}\in \Var}{proper nouns}
+		\word{sleep}{\e \to \t}{\lambda x. \w{sleep} x}{intransitive verbs}
+		\CodeAfter
+		\begin{tikzpicture}
+			\draw[double] (1|-2) -- (4|-2);
+			\foreach \r in {4,6,...,10} {\draw (1|-\r) -- (4|-\r);}
+		\end{tikzpicture}
+	\end{NiceTabular}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Syntactic Types and Semantic Types}
+	What should be the type of expressions such as \textbf{a cat} or \textbf{Jupiter, a planet}?
+	\pause
+
+	\smallskip
+
+	Since we should be able to use \textbf{a cat} and \textbf{the cat} interexchangebly - from a syntactic point of view - they should have the same type.
+	We use \emph{effects} to do the difference between them:
+	\begin{equation*}
+		\w{a\ cat} = \{c \mid \w{cat} c\}
+	\end{equation*}
+	\begin{equation*}
+		\w{the\ cat} = x \text{ if } \mathbf{cat}^{-1}(\top) = \{x\} \text{ else } \#
+	\end{equation*}
+\end{frame}
+
+\subsection{Categorical Introduction}
+\begin{frame}
+	\frametitle{Effects as Functors}
+	Since \cite{moggiComputationalLambdacalculusMonads1989}, we know that monads
+	are a good model for programming side-effects.
+
+	\pause
+
+	\medskip
+
+	In our case, functors are enough, because might sometimes not want to be able
+	to merge effects together nor create them from nothing (see below).
+\end{frame}
+
+\begin{frame}
+	\frametitle{String Diagrams}
+	String Diagrams are a formalism (see \cite{hinzeIntroducingStringDiagrams2023}
+	for example) that allows to visually represent the different threads of a
+	computation and the possible side-effects that appear.
+
+	\pause
+
+	\medskip
+
+	They were presented as a categorical object in
+	\cite{joyalGeometryTensorCalculus1991} and will be the focus of our study, as
+	a tool introduced for parsing, similarly to
+	\cite{coeckeMathematicalFoundationsCompositional2010}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Other Categorical Theories}
+	In \cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic},
+	and \cite{senturiaAlgebraicStructureMorphosyntax2025}, a mathematical model
+	of parsing trees based on a Hopf algebra is presented.
+
+	\medskip
+
+	This allows to integrate morphological features inside the syntactic
+	structures without breaking the model chosen for syntax.
+\end{frame}
+
+\section{Category-theoretical type system}
+\subsection{Type system}
+\begin{frame}
+	\frametitle{Notations}
+	Let $\mL$ be our language (more on that later).
+	We only suppose that our words can be applied to one another in their
+	denotation system.
+
+	\pause
+
+	Let $\mC$ be a cartesian closed category used for typing the lexicon and
+	$\mathcal{F}(\mL)$ be a set of functors used for representing the words
+	that add an effect to our language.
+
+	\pause\smallskip
+
+	We consider $\bar{\mC}$ the categorical closure of $\mC$ under the action
+	of $\mathcal{F}(\mL)^{*}$.
+	We close it for the cartesian product and exponential of $\mC$.
+
+	$\bar{\mC}$ represents all possible combinations of a sequence of effects
+	and a base type, contains functions and products.
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Intuitionistic-style Typing Judgements}
+	\only<1-2>{We then have typing judgements for basic combinations:
+		\begin{align*}
+			\only<1>{
+			\frac{\cont x: \tau \poulpe \cont F \in \mathcal{F}(\mL)}{\cont Fx: F\tau }\fracnotate{Cons}                                          \\[.25cm]
+			\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}               \\[.25cm]
+				\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}
+			}
+			\only<2>{
+			\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right)}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}} \\[.25cm]
+			}
+		\end{align*}
+	}
+	\only<3>{Typing judgements for natural transformations:
+		\begin{align*}
+			\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}} \\[.25cm]
+			\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}
+		\end{align*}
+		More generally:
+		\begin{align*}
+			\forall F \overset{\theta}{\Longrightarrow} G,\poulpe \frac{\cont x: F\tau \poulpe \cont G: S' \subseteq \star \poulpe \tau \in S'}{\cont x : G\tau}\fracnotate{\texttt{nat}}
+		\end{align*}
+	}
+\end{frame}
+
+\subsection{Introducing a language}
+
+\begin{frame}
+	\frametitle{Information}
+	To present the language, we of course need the syntax of the language, as
+	well as an increased model of our lexicon.
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Updated Lexicon}
+	\resizebox{\textwidth}{!}{
+		\setcellgapes{3pt}
+		\makegapedcells
+		\begin{NiceTabular}{>{\bf}LLL}
+			Expression & \rm Type & \lambda\text{-Term} \\
+			\word{it}{\f{G}\e}{\lambda g. g_{0}}{}
+			\word{\cdot\w{, a} \cdot}{\e \to \left(\e \to \t\right) \to \f{W}\e}{\lambda x. \lambda p. \scalar{x, p x}}{}
+			\word{which}{\left( \e \to \t \right)\to \f{S}\e}{\lambda p. \left\{x \suchthat px\right\}}{}
+			\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p^{-1}\left( \top \right) = \{x\} \text{ else } \#}{}
+			\word{a}{\left( \e \to \t \right) \to \f{D}\e}{\lambda p. \lambda s. \left\{ \scalar{x, x \ppl s}\suchthat p x\right\}}{}
+			\word{every}{\left( \e \to \t \right)\to \f{C}\e}{\lambda p. \lambda c. \forall x, px \Rightarrow cx}{}
+			\CodeAfter
+			\begin{tikzpicture}
+				\draw[double] (1|-2) -- (4|-2);
+				\foreach \r in {3,...,8} {\draw (1|-\r) -- (4|-\r);}
+			\end{tikzpicture}
+		\end{NiceTabular}
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Introducing Higher-Order Constructs}
+	\only<1-2>{Using the notion of functors, we can also implement higher-order semantic
+		constructions in our lexicon, such as the future, without caring about
+		morphological markers:}
+	\only<2>{%
+		\begin{equation*}
+			\columneqs{
+				\bf future\left(be\left( I, a\ cat \right)\right)
+				\xrightarrow{\beta} be\left( future\left( I \right), a\ cat \right)
+				\xrightarrow{\beta} be\left( future\left( I \right), a\ cat \right)
+			}
+		\end{equation*}
+		Those constructs are integrated by using natural transformations explaining
+		their propagation through other effects, as those are purely
+		semantic predicates.
+	}
+	\only<3>{
+		For the plural, this gives:
+		\resizebox{\textwidth}{!}{%
+			\def\arraystretch{1.3}
+			\setcellgapes{3pt}
+			\makegapedcells
+			\begin{NiceTabular}{>{\bf}c>{\cont}C>{\Pi(p) = }L}
+				CN(P)                       & p: \left(\e \to \t\right)                                & \lambda x.\left( px \land \abs{x} \geq 2 \right)                                                \\
+				\multirow{2}{*}{\bf ADJ(P)} & p: \left( \e \to \t \right)                              & \lambda x. \left( px \land \abs{x} \geq 2 \right)                                               \\
+				                            & p: \left( \e \to \t \right) \to \left( \e \to \t \right) & \lambda \nu. \lambda x. \left( p\left( \nu \right)\left( x \right) \land \abs{x} \geq 2 \right) \\
+				\multirow{2}{*}{\bf NP}     & p: \e                                                    & p                                                                                               \\
+				                            & p: \left( \e \to \t \right) \to \t                       & \lambda \nu. p\left( \Pi \nu \right)                                                            \\
+				IV(P)/VP                    & p: \e \to \t                                             & \lambda o. \left( po \land \abs{x} \geq 2 \right)                                               \\
+				TV(P)                       & p: \e \to \e \to \t                                      & \lambda s. \lambda o. \left( p\left( s \right)\left( o \right) \land \abs{s} \geq 2 \right)     \\
+				\CodeAfter
+				\begin{tikzpicture}
+					\foreach \r in {2,...,7} {\draw[dashed] ($(2|-\r) + (.1, 0)$) -- (4|-\r);}
+					\foreach \r in {2, 4, 6, 7} {\draw (1|-\r) -- (4|-\r);}
+				\end{tikzpicture}
+			\end{NiceTabular}
+		}
+	}
+	\only<4>{
+	}
+\end{frame}
+
+\section{Effect Handling}
+\subsection{Notion and usage of handlers}
+\begin{frame}
+	\frametitle{Handlers}
+	A handler for an effect $F$ is a natural transformation $F \Rightarrow \Id$,
+	as proposed in \cite{wuEffectHandlersScope2014}.
+
+	\smallskip
+
+	Handlers should also be exact inverses to monadic and applicative units:
+	this partially justifies semantically why we can remove the usage of the
+	unit rule out	of certain situations.
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Defining Handlers}
+	There are two main types of handlers that are of interest to us:
+	\pause
+	\begin{enumerate}
+		\item Language-Defined Handlers, which are defined with
+		      adjunctions and comonads, for example.
+		      Those arise from fundamental properties of the considered effects.
+		      \pause
+		\item Speaker-dependant handlers, which are considered when
+		      retrieving the denotation from a sentence from under the effects
+		      that arose in the computation of its meaning.
+		      Those need to be considered dependent on the speaker because for
+		      example of the multiple ways to solve non-determinism.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Scope Islands}
+	The notion of handlers allows us to enforce the notion of scope islands.
+	To do so, it would suffice to ask that the words enclosing the island,
+	are not defined on not certain effectful types and make handlers a part of
+	the combination modes, as introduced in
+	\cite{bumfordEffectdrivenInterpretationFunctors2025}.
+
+	\pause
+	\smallskip
+
+	We would for example have:
+	\begin{equation*}
+		\w{if}: \left(\t \setminus \mF{\mL}^{*}\f{C}\t \right) \to \t \to \t
+	\end{equation*}
+
+\end{frame}
+\subsection{String diagrams for effect handling}
+\begin{frame}[allowframebreaks]
+	\frametitle{String Diagrams Representation of Sentences}
+	Here, a string diagram is a representation of the side-effects and types of a
+	sentence across its computation.
+
+	\begin{center}
+		\begin{minipage}[c]{.45\textwidth}
+			\inputtikz{sd-thecatsleeps}
+		\end{minipage}
+		\begin{minipage}[c]{.45\textwidth}
+			This diagram for example represents the sentence \textsl{The cat sleeps}.
+			The order of the words and position of the strings will be explained in
+			detail in the next section.
+		\end{minipage}
+	\end{center}
+
+\end{frame}
+
+\subsection{Reducing in string diagrams}
+\begin{frame}
+	\frametitle{Deformation of String Diagrams}
+	String diagrams will be the formalism we use to compute equality between
+	denotations, and especially handling the denotations.
+	\begin{thm}[Theorem 3.1 \cite{selingerSurveyGraphicalLanguages2010}, Theorem 1.2 \cite{joyalGeometryTensorCalculus1991}]
+		\label{thm:isotopy}
+		A well-formed equation between morphism terms in the language of monoidal
+		categories follows from the axioms of monoidal categories if and only if it
+		holds, up to planar isotopy, in the graphical language.
+	\end{thm}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Equations on String Diagrams}
+	Every property of the functors, monads, natural transformations, adjunctions
+	and more can be explained in terms of commutative diagrams, but also as
+	string diagrams.
+
+	First, the elevator equations are a consequence of \ref{thm:isotopy}:
+	\begin{equation}
+		\resizebox{.8\textwidth}{!}{\inputtikz{sd-elevator}}
+		\tag{\emoji{elevator}}
+	\end{equation}
+
+	The Snake equations are a rewriting of the properties of an adjunction:
+	\begin{equation}
+		\resizebox{.5\textwidth}{!}{\inputtikz{sd-snake1}}
+		\tag{\rotatebox[origin=c]{90}{\emoji{snake}}}
+	\end{equation}
+
+	The Monadic equations are a rewriting of the properties of a monad:
+	\begin{equation}
+		\resizebox{.5\textwidth}{!}{\inputtikz{sd-monad-mult}}
+		\tag{$\mu$}
+	\end{equation}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Confluence of Reductions}
+	\begin{thm}[Confluence]\label{thm:confluence}
+		Our reduction system is confluent and therefore defines normal forms:
+		\begin{enumerate}
+			\item Right reductions are confluent and therefore define \emph{right} normal forms for
+			      diagrams under the equivalence relation induced by exchange.
+			\item Equational reductions are confluent and therefore define \emph{equational}
+			      normal forms for diagrams under the equivalence relation induced by exchange.
+		\end{enumerate}
+	\end{thm}
+
+	\smallskip
+
+	\begin{thm}[Normalization Complexity]
+		\label{thm:normalize}
+		Reducing a diagram to its normal form is done in quadratic time in
+		the number of natural transformations in it.
+	\end{thm}
+	This is accomplished using a formalism based on \cite{delpeuchNormalizationPlanarString2022}.
+\end{frame}
+
+\section{Semantic Parsing}
+\subsection{The general method}
+\begin{frame}[allowframebreaks]
+	\frametitle{CFG Model of Parsing}
+	We use a Context-Free Grammar to model our typing system and take its product with the syntax defining grammar.
+
+	\begin{minipage}{\textwidth}
+		\small
+		\begin{multicols}{2}
+			\def\arraystretch{1.2}
+			\begin{mgrammar}
+				\gskip
+				\firstrule{>, \beta}{\left(\alpha\to \beta\right), \alpha}{}
+				\firstrule{<, \beta}{\alpha, \left(\alpha \to \beta\right)}{}
+				\firstrule{\wedge, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
+				\firstrule{\vee, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
+				\gskip
+				\firstrule{\combJ_{\f{F}}\  \f{F}\tau}{\f{F}\f{F}\tau}{}
+				\firstrule{\combDN_{\f{C}}\  \tau}{\f{C}_{\tau}\tau}{}
+				\gskip
+			\end{mgrammar}
+
+			\def\arraystretch{1.3}
+			\begin{mgrammar}
+				\firstrule{\combML_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \beta}{}
+				\firstrule{\combMR_{\f{F}} \left(\alpha, \beta\right)}{\alpha, \f{F}\beta}{}
+				\firstrule{\combA_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \f{F}\beta}{}
+				\firstrule{\combUR_{\f{F}} \left(\alpha \to \alpha', \beta\right)}{\f{F}\alpha\to \alpha', \beta}{}
+				\firstrule{\combUL_{\f{F}} \left(\alpha, \beta\to \beta'\right)}{\alpha, \f{F}\beta \to \beta'}{}
+				\firstrule{\combC_{\f{L}\f{R}} \left(\f{L} \alpha, \f{R}\beta\right)}{\left(\alpha, \beta\right)}{}
+				\firstrule{\combER_{\f{R}} \left(\f{R}\left(\alpha \to \alpha'\right), \beta\right)}{\alpha\to \f{R}\alpha', \beta}{}
+				\firstrule{\combEL_{\f{R}} \left(\alpha, \f{R}\left(\beta \to \beta'\right)\right)}{\alpha, \beta\to \f{R}\beta'}{}
+			\end{mgrammar}
+		\end{multicols}
+	\end{minipage}
+
+	\smallskip
+
+	This grammar works in five major sections:
+	\begin{enumerate}
+		\item We reintroduce the grammar defining the type and effect system.
+		\item We introduce a structure for the semantic parse trees and their labels,
+		      the combination modes from
+		      \cite{bumfordEffectdrivenInterpretationFunctors2025}.
+		\item We introduce rules for basic type combinations.
+		\item We introduce rules for higher-order unary type combinators.
+		\item We introduce rules for higher-order binary type combinators.
+	\end{enumerate}
+	Computationally, the introduction of this labeling system increases the size
+	of the grammar by a factor linear in $\abs{\mF\left(\mL\right)}$.
+	The parsing algorithms are then still polynomial, and scaling in sentence
+	size does not change.
+\end{frame}
+
+\begin{frame}[allowframebreaks, fragile]
+	\frametitle{Semantic Parse Trees}
+	\includegraphics{aux/figures/parse-tree-1.pdf}
+	\centering
+	\includegraphics{aux/figures/parse-tree-2.pdf}
+
+	{\centering \includegraphics[height=.7\pageheight]{aux/figures/parse-tree-3.pdf}}
+\end{frame}
+
+
+\subsection{String diagrams for parsing}
+\begin{frame}
+	\frametitle{Combinators as String Diagrams}
+	\includegraphics[width=\textwidth]{aux/figures/combinators-sd.pdf}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A Parsing Diagram Step}
+	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram.pdf}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A Parsing Diagram Step}
+	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram.pdf}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Building an Intuition}
+	\centering
+	\includegraphics[width=.7\textwidth]{aux/figures/knitting-example.jpeg}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A Full Parsing Diagram}
+	\vspace{-.25cm}
+	\centering
+	\rotatebox{-90}{\includegraphics[width=.7\pageheight]{aux/figures/3d-parsing-diagram.pdf}}
+\end{frame}
+
+\subsection{String diagrams for reductions}
+\begin{frame}
+	\frametitle{Reducing the grammar}
+	We introduce denotations for our combinators, to allow us to define
+	reductions that relieve a bit the ambiguity of the parsing grammar:
+	\begin{center}
+		$	>                    = \lambda \phi. \lambda x. \phi x $\\[1.5ex]
+		$ \combML_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda a. M(a, y)) x $\\[1.5ex]
+		$	\combA_{\f{F}}       = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}}\lambda a. \lambda b. M(a, b))(x) \texttt{<*>} y $\\[1.5ex]
+		$	\combUL_{\f{F}}      = \lambda M. \lambda x. \lambda \phi. M(x, \lambda b. \phi(\eta_{\f{F}} b))$\\[1.5ex]
+		$ \combJ_{\f{F}}       = \lambda M. \lambda x. \lambda y. \mu_{\f{F}} M(x, y) $\\[1.5ex]
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reductions}
+	Reductions include the following:
+	\begin{itemize}
+		\item When two effects commute, we choose an order to apply them.
+		\item We use $\combUR$ instead of using $\combMR$ or $\combDN \combMR$ when
+		      possible.
+		\item We always use modes $\combJ$, $\combC$ and $\combDN$ as early as
+		      possible.
+		      The fact this works is a consequence of Theorem \ref{thm:isotopy} on
+		      the denotation diagrams.
+		\item All the rules provided in the previous section can be rewritten here
+		      too.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Conclusion}
+	We have formalised an enhancement of usual type systems for natural language
+	semantics.
+
+	\medskip
+
+	Thanks to the introduction of the string diagrams, this did not come at the
+	cost of comprehension of the system nor efficiency.
+
+	\pause\medskip
+
+	I would like to thank Simon Charlow for his advice, my mother for the
+	knitting, Antoine Groudiev for the rotation of the snakes in equation labels,
+	Bella Senturia, Bob Frank and Paul-André Melliès for their suggestions of
+	papers to read about categories and linguistics.
+\end{frame}
+
+\questionsframe
+
+\appendix
+
+% TODO: Add slides presenting all appendices
+
+\end{document}
+
