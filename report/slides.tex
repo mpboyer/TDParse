@@ -13,6 +13,11 @@
 \addlogo{~/Pictures/Yale_University_logo.svg.png}
 \addlogo{~/DEV/latex/source/ens_psl.pdf}
 
+% \colorlet{main-below}{yulm}
+% \colorlet{main-accents}{black}
+% \colorlet{main-background}{vulm!5}
+% \colorlet{main-text}{black}
+
 \begin{document}
 \fancytitleframe
 
@@ -232,6 +237,11 @@
 	}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Ambiguity}
+	\resizebox{\textwidth}{!}{\input{aux/figures/parse-tree-ex.tex}}
+\end{frame}
+
 \section{Effect Handling}
 \subsection{Notion and usage of handlers}
 \begin{frame}
@@ -367,26 +377,24 @@
 	\frametitle{CFG Model of Parsing}
 	We use a Context-Free Grammar to model our typing system and take its product with the syntax defining grammar.
 
-	\begin{minipage}{\textwidth}
-		\small
+	\medskip
+
+	\begin{minipage}{.9\textwidth}
 		\begin{multicols}{2}
-			\def\arraystretch{1.2}
+			\def\arraystretch{1.1}
 			\begin{mgrammar}
-				\gskip
 				\firstrule{>, \beta}{\left(\alpha\to \beta\right), \alpha}{}
 				\firstrule{<, \beta}{\alpha, \left(\alpha \to \beta\right)}{}
-				\firstrule{\wedge, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
-				\firstrule{\vee, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
 				\gskip
 				\firstrule{\combJ_{\f{F}}\  \f{F}\tau}{\f{F}\f{F}\tau}{}
 				\firstrule{\combDN_{\f{C}}\  \tau}{\f{C}_{\tau}\tau}{}
 				\gskip
+				\firstrule{\combML_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \beta}{}
+				\firstrule{\combMR_{\f{F}} \left(\alpha, \beta\right)}{\alpha, \f{F}\beta}{}
 			\end{mgrammar}
 
 			\def\arraystretch{1.3}
 			\begin{mgrammar}
-				\firstrule{\combML_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \beta}{}
-				\firstrule{\combMR_{\f{F}} \left(\alpha, \beta\right)}{\alpha, \f{F}\beta}{}
 				\firstrule{\combA_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \f{F}\beta}{}
 				\firstrule{\combUR_{\f{F}} \left(\alpha \to \alpha', \beta\right)}{\f{F}\alpha\to \alpha', \beta}{}
 				\firstrule{\combUL_{\f{F}} \left(\alpha, \beta\to \beta'\right)}{\alpha, \f{F}\beta \to \beta'}{}
@@ -397,7 +405,7 @@
 		\end{multicols}
 	\end{minipage}
 
-	\smallskip
+	\medskip
 
 	This grammar works in five major sections:
 	\begin{enumerate}
@@ -423,7 +431,6 @@
 
 	{\centering \includegraphics[height=.7\pageheight]{aux/figures/parse-tree-3.pdf}}
 \end{frame}
-
 
 \subsection{String diagrams for parsing}
 \begin{frame}
@@ -506,7 +513,71 @@
 
 \appendix
 
-% TODO: Add slides presenting all appendices
+\begin{frame}
+	\frametitle{Functor Denotations}
+	\resizebox{\textwidth}{!}{\input{aux/figures/functors-table.tex}}
+\end{frame}
 
+\begin{frame}
+	\frametitle{CFG of English}
+	\centering
+	\small
+	\begin{minipage}{.45\textwidth}
+		\setlength\tabcolsep{4pt}
+		\begin{tabular}{>{\tt}l r >{\tt}l r}
+			\firstrule{CP}{DP, VP}{}
+			\grule{Cmp, CP}{}
+			\grule{CP, CBar}{}
+			\gskip
+			\firstrule{CBar}{Cor, CP}{}
+			\gskip
+			\firstrule{Dbar}{Cor, DP}{}
+			\gskip
+			\firstrule{DP}{DP, Dbar}{}
+			\grule{Dmp, DP}{}
+			\grule{Det, NP}{}
+			\grule{Gen, TN}{}
+			\gskip
+			\firstrule{Gen}{DP, GenD}{}
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{.45\textwidth}
+		\setlength\tabcolsep{4pt}
+		\begin{tabular}{>{\tt}l r >{\tt}l r}
+			\firstrule{NP}{AdjP, NP}{}
+			\grule{NP, AdjP}{}
+			\gskip
+			\firstrule{AdjP}{TAdj, DP}{}
+			\grule{Deg, AdjP}{}
+			\gskip
+			\firstrule{VP}{TV, DP}{}
+			\grule{AV, CP}{}
+			\grule{VP, AdvP}{}
+			\gskip
+			\firstrule{TV}{DV, DP}{}
+			\gskip
+			\firstrule{AdvP}{TAdv, DP}{}
+		\end{tabular}
+	\end{minipage}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Combinator Denotations}
+	\scriptsize
+	\centering
+	$	>                    = \lambda \phi. \lambda x. \phi x $\\[1.5ex]
+	$ <                    = \lambda x. \lambda \phi. \phi x $\\[1.5ex]
+	$ \combML_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda a. M(a, y)) x $\\[1.5ex]
+	$ \combMR_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda b. M(x, b)) y $\\[1.5ex]
+	$	\combA_{\f{F}}       = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}}\lambda a. \lambda b. M(a, b))(x) \texttt{<*>} y $\\[1.5ex]
+	$	\combUL_{\f{F}}      = \lambda M. \lambda x. \lambda \phi. M(x, \lambda b. \phi(\eta_{\f{F}} b))$\\[1.5ex]
+	$	\combUR_{\f{F}}      = \lambda M. \lambda \phi. \lambda y. M(\lambda a. \phi(\eta_{\f{F}} a),y) $\\[1.5ex]
+	$ \combJ_{\f{F}}       = \lambda M. \lambda x. \lambda y. \mu_{\f{F}} M(x, y) $\\[1.5ex]
+	$\combC_{\f{L}\f{R}}  = \lambda M. \lambda x. \lambda y. \epsilon_{\f{L}\f{R}}(\fmap_{\f{L}}(\lambda l. \fmap_{\f{R}}(\lambda r. M(l, r))(y)) (x))$\\[1.5ex]
+	$	\combEL_{\f{R}}      = \lambda M. \lambda \phi. \lambda y. M(\Upsilon_{\f{R}} \phi, y)$\\[1.5ex]
+	$	\combER_{\f{R}}      = \lambda M. \lambda x. \lambda \phi. M(x, \Upsilon_{\f{R}} \phi)$\\[1.5ex]
+	$	\combDN_{\Downarrow} = \lambda M. \lambda x. \lambda y. \Downarrow M(x, y)$
+\end{frame}
 \end{document}
 
