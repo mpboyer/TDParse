@@ -59,8 +59,6 @@ The important thing on those derivation is that they're a direct translation
 of the rules defining the notions of functors, applicatives, monads and thus
 are not specific to any denotation system, even though we will use
 lambda-calculus styled denotations to describe them.
-This makes us able to compute the actual denotations associated to a sentence
-using our formalism, as presented in figure \ref{fig:parsing-trees}.
 
 \begin{wrapfigure}[41]{l}{.45\textwidth}
 	\centering
@@ -122,6 +120,9 @@ using our formalism, as presented in figure \ref{fig:parsing-trees}.
 	\caption{Examples of labeled parse trees for a few sentences.}
 	\label{fig:parsing-trees}
 \end{wrapfigure}
+
+This makes us able to compute the actual denotations associated to a sentence
+using our formalism, as presented in figure \ref{fig:parsing-trees}.
 Note that the order of combination modes is not actually the same as the one
 that would come from the grammar.
 The reason why will become more apparent when string diagrams for parsing are
@@ -300,7 +301,7 @@ types and effects) you're using to knit the scarf.
 When you decide to change the color you take the different threads you have
 been using, and mix them up.
 You can create a new colour\footnote{This is not how wool works, but
-	if you prefer you can imagine a pointillist-like way of drawing using multiple
+	if one can also imagine a pointillist-like way of drawing using multiple
 	coloured lines that superimpose on each other, or a marching band's multiple
 	instruments playing either in harmony or in disharmony and changing that
 	during a score.} thread from two (that's the base combinators) create a
@@ -314,7 +315,7 @@ This more tangible representation can be seen in a larger diagram in Figure
 \ref{fig:3dparsing-diagram}.
 
 
-\begin{wrapfigure}[21]{l}{.5\textwidth}
+\begin{wrapfigure}[22]{l}{.5\textwidth}
 	\centering
 	\includegraphics[width=.5\textwidth]{3d-parsing-diagram}
 	\caption{Knitting-like representation of the diagrammatic parsing of a sentence. See Figure \ref{fig:tree-rain} for the translation in a parse tree}
