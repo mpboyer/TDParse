@@ -1,98 +1,98 @@
 \begin{thebibliography}{10}
 
 \bibitem{asudehEnrichedMeaningsNatural2020}
-{\sc Asudeh, A., and Giorgolo, G.}
+A.~Asudeh and G.~Giorgolo.
 \newblock {\em Enriched {{Meanings}}: {{Natural Language Semantics}} with
   {{Category Theory}}}.
 \newblock Oxford {{Studies}} in {{Semantics}} and {{Pragmatics}}. Oxford
   University Press, Oxford, New York, Nov. 2020.
 
 \bibitem{bumfordEffectdrivenInterpretationFunctors2025}
-{\sc Bumford, D., and Charlow, S.}
+D.~Bumford and S.~Charlow.
 \newblock Effect-driven interpretation: {{Functors}} for natural language
   composition, Mar. 2025.
 
 \bibitem{coeckeMathematicalFoundationsCompositional2010}
-{\sc Coecke, B., Sadrzadeh, M., and Clark, S.}
+B.~Coecke, M.~Sadrzadeh, and S.~Clark.
 \newblock Mathematical {{Foundations}} for a {{Compositional Distributional
   Model}} of {{Meaning}}, Mar. 2010.
 
 \bibitem{delpeuchNormalizationPlanarString2022}
-{\sc Delpeuch, A., and Vicary, J.}
+A.~Delpeuch and J.~Vicary.
 \newblock Normalization for planar string diagrams and a quadratic equivalence
   algorithm, Jan. 2022.
 
 \bibitem{higginbothamEnglishNotContextFree1984}
-{\sc Higginbotham, J.}
+J.~Higginbotham.
 \newblock English {{Is Not}} a {{Context-Free Language}}.
-\newblock {\em Linguistic Inquiry 15}, 2 (1984), 225--234.
+\newblock {\em Linguistic Inquiry}, 15(2):225--234, 1984.
 
 \bibitem{joyalGeometryTensorCalculus1991}
-{\sc Joyal, A., and Street, R.}
+A.~Joyal and R.~Street.
 \newblock The geometry of tensor calculus, {{I}}.
-\newblock {\em Advances in Mathematics 88}, 1 (July 1991), 55--112.
+\newblock {\em Advances in Mathematics}, 88(1):55--112, July 1991.
 
 \bibitem{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}
-{\sc {Marcolli, Matilde et Chomsky, Noam et Berwick, Robert C.}}
+{Marcolli, Matilde et Chomsky, Noam et Berwick, Robert C.}
 \newblock Mathematical {{Structure}} of {{Syntactic Merge}}.
 
 \bibitem{marsikAlgebraicEffectsHandlers}
-{\sc Mar{\v s}{\'i}k, J., and Amblard, M.}
+J.~Mar{\v s}{\'i}k and M.~Amblard.
 \newblock Algebraic {{Effects}} and {{Handlers}} in {{Natural Language
   Interpretation}}.
 
 \bibitem{melliesFunctorsAreType2015}
-{\sc Melli{\`e}s, P.-A., and Zeilberger, N.}
+P.-A. Melli{\`e}s and N.~Zeilberger.
 \newblock Functors are {{Type Refinement Systems}}.
 \newblock In {\em Proceedings of the 42nd {{Annual ACM SIGPLAN-SIGACT
-  Symposium}} on {{Principles}} of {{Programming Languages}}\/} (Mumbai India,
-  Jan. 2015), ACM, pp.~3--16.
+  Symposium}} on {{Principles}} of {{Programming Languages}}}, pages 3--16,
+  Mumbai India, Jan. 2015. ACM.
 
 \bibitem{melliesCategoricalContoursChomskySchutzenberger2025}
-{\sc Melli{\`e}s, P.-A., and Zeilberger, N.}
+P.-A. Melli{\`e}s and N.~Zeilberger.
 \newblock The categorical contours of the
   {{Chomsky-Sch}}{\textbackslash}"utzenberger representation theorem.
-\newblock {\em Logical Methods in Computer Science Volume 21, Issue 2\/} (May
-  2025), 13654.
+\newblock {\em Logical Methods in Computer Science}, Volume 21, Issue 2:13654,
+  May 2025.
 
 \bibitem{parteeLecture2Lambda}
-{\sc Partee, B.}
+B.~Partee.
 \newblock Lecture 2. {{Lambda}} abstraction, {{NP}} semantics, and a
   {{Fragment}} of {{English}}.
-\newblock {\em Formal Semantics\/}.
+\newblock {\em Formal Semantics}.
 
 \bibitem{selingerSurveyGraphicalLanguages2010}
-{\sc Selinger, P.}
+P.~Selinger.
 \newblock A survey of graphical languages for monoidal categories.
-\newblock vol.~813. 2010, pp.~289--355.
+\newblock volume 813, pages 289--355. 2010.
 
 \bibitem{senturiaAlgebraicStructureMorphosyntax2025}
-{\sc Senturia, I., and Marcolli, M.}
+I.~Senturia and M.~Marcolli.
 \newblock The {{Algebraic Structure}} of {{Morphosyntax}}, June 2025.
 
 \bibitem{vandenbergFrameworkHigherorderEffects2024}
-{\sc {van den Berg}, B., and Schrijvers, T.}
+B.~{van den Berg} and T.~Schrijvers.
 \newblock A framework for higher-order effects \& handlers.
-\newblock {\em Science of Computer Programming 234\/} (May 2024), 103086.
+\newblock {\em Science of Computer Programming}, 234:103086, May 2024.
 
 \bibitem{wadlerTheoremsFree1989}
-{\sc Wadler, P.}
+P.~Wadler.
 \newblock Theorems for free!
 \newblock In {\em Proceedings of the Fourth International Conference on
-  {{Functional}} Programming Languages and Computer Architecture\/} (New York,
-  NY, USA, Nov. 1989), {{FPCA}} '89, Association for Computing Machinery,
-  pp.~347--359.
+  {{Functional}} Programming Languages and Computer Architecture}, {{FPCA}}
+  '89, pages 347--359, New York, NY, USA, Nov. 1989. Association for Computing
+  Machinery.
 
 \bibitem{wang-mascianicaStringDiagramsText2023}
-{\sc {Wang-Ma{\'s}cianica}, V.}
+V.~{Wang-Ma{\'s}cianica}.
 \newblock {\em String Diagrams for Text}.
 \newblock {{http://purl.org/dc/dcmitype/Text}}, University of Oxford, 2023.
 
 \bibitem{wuEffectHandlersScope2014}
-{\sc Wu, N., Schrijvers, T., and Hinze, R.}
+N.~Wu, T.~Schrijvers, and R.~Hinze.
 \newblock Effect handlers in scope.
 \newblock In {\em Proceedings of the 2014 {{ACM SIGPLAN}} Symposium on
-  {{Haskell}}\/} (New York, NY, USA, Sept. 2014), Haskell '14, Association for
-  Computing Machinery, pp.~1--12.
+  {{Haskell}}}, Haskell '14, pages 1--12, New York, NY, USA, Sept. 2014.
+  Association for Computing Machinery.
 
 \end{thebibliography}
