@@ -203,7 +203,7 @@ $>$, $\combML_{\f{F}}$ and $\combJ_{\f{F}}$ are represented in
 Figure \ref{fig:combinator-sd}, up to the coloring of the regions, because that
 is purely for an artistic rendition.
 
-\begin{figure}[b]
+\begin{figure}[t]
 	\centering
 	\input{combinators-sd}
 	\caption{String Diagrammatic Representation of Combinator Modes $>, \combML$ and $\combJ$}
@@ -274,19 +274,8 @@ Applying them to the actual \emph{parsing} part of the diagram is done
 in the exact same way as in the CFG: we just add them where needed, and they
 will appear in the resulting denotation as a form of forced handling, in a
 sense, as shown in the result of Figure \ref{fig:parsing-diagram2}.
-It is interesting to note that the resulting diagram representing
-the sentence can visually be found in the connection strings that arise from
-the combinators.
 
-The main reason why this point of view of diagrammatic parsing is useful
-will be clear when looking at the rewriting rules and the normal forms they
-induce, because, as seen before, string diagrams make it easy to compute
-normal forms, when provided with a confluent reduction system.
-
-The other reason being the tangible interpretation of how things work
-underlying the idea of a string diagram:
-
-\begin{wrapfigure}{r}{.45\textwidth}
+\begin{wrapfigure}[14]{r}{.45\textwidth}
 	\centering
 	\begin{tikzpicture}
 		\node (fig) at (0, 0) {\includegraphics[width=.4\textwidth]{knitting-example}};
@@ -296,9 +285,28 @@ underlying the idea of a string diagram:
 		of the author's mother.}
 	\label{fig:knitting-example}
 \end{wrapfigure}
+
+It is interesting to note that the resulting diagram representing
+the sentence can visually be found in the connection strings that arise from
+the combinators.
+The main reason why this point of view of diagrammatic parsing is useful
+will be clear when looking at the rewriting rules and the normal forms they
+induce, because, as seen before, string diagrams make it easy to compute
+normal forms, when provided with a confluent reduction system.
+
+The other reason being the tangible interpretation of how things work
+underlying the idea of a string diagram:
 Suppose you're knitting a rainbow scarf.
 You have multiple threads (the different words) of the different colours (their
 types and effects) you're using to knit the scarf.
+
+\begin{wrapfigure}[23]{l}{.5\textwidth}
+	\centering
+	\includegraphics[width=.5\textwidth]{3d-parsing-diagram}
+	\caption{Knitting-like representation of the diagrammatic parsing of a sentence. See Figure \ref{fig:tree-rain} for the translation in a parse tree}
+	\label{fig:3dparsing-diagram}
+\end{wrapfigure}
+
 When you decide to change the color you take the different threads you have
 been using, and mix them up.
 You can create a new colour\footnote{This is not how wool works, but
@@ -316,12 +324,6 @@ This more tangible representation can be seen in a larger diagram in Figure
 \ref{fig:3dparsing-diagram}.
 
 
-\begin{wrapfigure}[22]{l}{.5\textwidth}
-	\centering
-	\includegraphics[width=.5\textwidth]{3d-parsing-diagram}
-	\caption{Knitting-like representation of the diagrammatic parsing of a sentence. See Figure \ref{fig:tree-rain} for the translation in a parse tree}
-	\label{fig:3dparsing-diagram}
-\end{wrapfigure}
 
 The sections in the rectangle represent what happen when considering our
 combination step as implementing patterns inside a knitwork, as seen in Figure
