@@ -1,36 +1,44 @@
 \section{Categorical Semantics of Effects: A Typing System}
 \label{sec:typingsystem}
-In this section, we will designate by $\mL$ our language, as a set of words
-(with their semantics) and syntactic rules to combine them semantically.
-We denote by $\O\left( \mL \right)$ the set of words in the language whose
-semantic representation is a low-order function and $\mF\left( \mL \right)$ the
-set of words whose semantic representation is a functor or high-order function.
+In this section, we will formalize a type system underlying the theory proposed
+in \cite{bumfordEffectdrivenInterpretationFunctors2025}.
+To do so, we will designate by $\mL$ our language, as a set of words
+(with their associated meaning/denotation) and syntactic rules underlying
+the semantic combination.
+The absence of syntactic rules is allowed, although it partly defeats the
+purpose of this work.
+This might be useful when proposing compositional models of learned
+representations.
+
+Let $\O\left( \mL \right)$ be the set of words in the language whose semantic
+representation is a low-order function and $\mF\left( \mL \right)$ the set of
+words whose semantic representation is a functor or high-order function.
 Our goals here are to describe more formally, using a categorical vocabulary,
 the environment in which the typing system for our language will exist, and how
 we connect words and other linguistic objects to the categorical formulation.
 
-\subsection{Typing Category}\label{subsec:typingcategory}
-\subsubsection{Types}\label{subsubsec:types}
-Let $\mC$ be a closed cartesian category, which will be used to represent the
-domain of types for our domain of denotations.
-This represents our main typing system, consisting of words $\O(\mL)$ that can
-be expressed without effects (see Figure \ref{fig:lexicon} for an example).
+\subsection{Typing Category}
+\subsubsection{Types}
+Let $\mC$ be a closed cartesian category, which is used to represent the
+domain of types for our domain of uneffectful denotations.
+This represents our main typing system, consisting of types for words $\O(\mL)$
+that can be expressed without effects (see Figure \ref{fig:lexicon} for an
+example).
 Remember that $\mC$ contains a terminal object $\bot$ representing the empty
 type or the lack thereof.
-We consider $\bar{\mC}$ the category closure of
-$\mF\left( \mL \right)\left(\mC\right)$, that is consisting of
-all the different type constructors (ergo, functors) that could be formed in
-the language.
-What this means is that we consider for our category objects any object that
-can be attained in a finite number from a finite number of functorial
-applications from an object of $\mC$.
+We consider as our typing category $\bar{\mC}$ the categorical closure for
+exponentials and products of $\mF\left( \mL \right)^{*}\left(\mC\right)$,
+which consists of all the different type constructors (ergo, functors) that
+could be formed in the language.
+In that setting our types are those that can be attained in a finite number
+from a finite number of functorial applications from an object of $\mC$.
 
-We consider for our types the quotient set
+Formally, we consider for our types the quotient set
 $\star = \mathrm{Obj}\left( \bar{\mC} \right)/\mF\left( \mL \right)$.
 Since $\mF\left( \mL \right)$ does not induce an equivalence relation on
 $\Obj\left( \bar{\mC} \right)$ but a preorder, we consider the chains obtained
 by the closure of the relation $x\succeq y \Leftrightarrow \exists F, y = F(x)$
-(which is seen as a subtyping relation as proposed in
+(which should be seen as a subtyping relation as proposed in
 \cite{melliesFunctorsAreType2015}).
 We also define $\star_{0}$ to be the set obtained when considering types which
 have not yet been \emph{affected}, that is $\Obj(\mC)$.
@@ -39,13 +47,13 @@ $\star$.
 In this paradigm, constant objects (or results of fully done computations) are
 functions with type $\bot \to \tau$ which we will denote directly by
 $\tau \in \star_{0}$.
+This will be useful when defining base combinators in Section \ref{sec:parsing}.
 
 \subsubsection{Functors, Applicatives and Monads}
-\label{subsubsec:functors}
-Our point of view leads us to consider \emph{language functors}\footnote{The
+Our point of view has us consider \emph{language functors}\footnote{The
 	elements of our language, not the categorical construct.} as polymorphic
-functions: for a (possibly restrained, though it seems to always be $\star$)
-set of base types $S$, a functor is a function
+functions: for a (possibly restrained) set of base types $S$, a functor is a
+function:
 \begin{equation*}
 	x: \tau\in S\subseteq \star \mapsto F x: F\tau
 \end{equation*}
@@ -69,7 +77,7 @@ Examples are provided in Figure \ref{fig:functors}.
 
 \smallskip
 
-In that sense, applicatives and monads only provide with more flexibility on
+In this regard, applicatives and monads only provide with more flexibility on
 the ways to combine functions:
 they provide intermediate judgements to help with the combination of trees.
 For example, the multiplication of the monad provides a new
@@ -85,9 +93,9 @@ the objects are not actually equal: they are simply equivalent.
 
 \subsubsection{Natural Transformations}
 \label{subsubsec:transnat}
-We could also add judgements for adjunctions, but the most interesting thing is
-to add judgements for natural transformations, as adjunctions are particular
-examples of natural transformations which arise from \emph{natural} settings.
+We could add judgements directly for adjunctions, but we instead add judgements
+for natural transformations, as adjunctions are natural transformations which
+arise from \emph{natural} settings.
 While in general we do not want to find natural transformations, we want to be
 able to express these in three situations:
 \begin{enumerate}
@@ -108,20 +116,15 @@ types.
 
 In the Haskell programming language, any polymorphic function is
 a natural transformation from the first type constructor to the second type
-constructor, as proved by \cite{wadlerTheoremsFree1989}.
+constructor, as proved in \cite{wadlerTheoremsFree1989}.
 This will guarantee for us that given a \emph{Haskell} construction for a
 polymorphic function, we will get the associated natural transformation.
 
 \paragraph{Handlers}
-\label{par:handlers}
-As introduced:ways by \cite{marsikAlgebraicEffectsHandlers}, the use of handlers
-as annotations to the syntactic tree of the sentence is an appropriate
+As introduced by \cite{marsikAlgebraicEffectsHandlers}, the use of handlers
+as annotations to the semantic tree of the sentence is an appropriate
 formalism.
-This could also give us a way to construct handlers for our effects as per
-\cite{bauerEffectSystemAlgebraic2014}, or
-\cite{plotkinHandlingAlgebraicEffects2013}.
-As considered by \cite{wuEffectHandlersScope2014} and
-\cite{vandenbergFrameworkHigherorderEffects2024}, handlers are to be seen
+As considered by \cite{wuEffectHandlersScope2014}, handlers are to be seen
 as natural transformations describing the free monad on an algebraic effect.
 Considering handlers as so, allows us to directly handle our computations
 inside our typing system, by ``transporting'' our functors one order higher up
@@ -170,6 +173,12 @@ predicates:
 	\end{aligned}
 \end{equation*}
 
+Among other higher-order constructs that might be represented using effects are
+scope islands, which could be modelled by a functor that cannot be
+passed as argument to words that would otherwise need a closure to be applied
+first.
+See Figure \ref{fig:tree-rain} for an example, based on theory presented in
+\cite{bumfordEffectdrivenInterpretationFunctors2025}, Section 5.4.
 
 \paragraph{Monad Transformers}
 In \cite{bumfordEffectdrivenInterpretationFunctors2025}, the authors present
@@ -193,13 +202,12 @@ Note that here, the syntax is not taken into account: a function is always writt
 \smallskip
 
 Using these typing rules for our semantic parsing steps, it is important to
-see that our grammar will still be ambiguous.
-The next sections will explain how to reduce this ambiguity in quick enough
+see that our grammar will still bear ambiguity.
+The next sections will explain how to reduce this ambiguity in short enough
 time.
 
-Moreover, the observant reader might have noticed that our typing system is not
-decidable, because of the \texttt{nat/pure/return} rules which may allow for
-unbounded derivations.
+Moreover, our current typing system is not decidable, because of the
+\texttt{nat/pure/return} rules which may allow for unbounded derivations.
 This is not actually an issue because of considerations on handling, as
 semantically void units will get removed at that time.
 This leads to derivations of sentences to be of bounded height, linear in the

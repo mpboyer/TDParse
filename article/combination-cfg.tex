@@ -1,17 +1,17 @@
-\centering
+{Here, $a, b\in \star_{0}$, $\alpha, \beta, \tau \in \star$ and $\f{F}, \f{L}, \f{R} \in \mF(\mL)$ with $\f{L} \dashv \f{R}$.\flushleft}
+{\centering
 \setlength{\columnsep}{-1.5cm}
 \begin{multicols}{2}
 	\def\arraystretch{1.2}
 	\begin{mgrammar}
 		\gskip
-		\firstrule{>, \beta}{\left(\alpha\to \beta\right), \alpha}{}
-		\firstrule{<, \beta}{\alpha, \left(\alpha \to \beta\right)}{}
-		\firstrule{\wedge, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
-		\firstrule{\vee, \alpha \to \t}{\left(\alpha \to \t\right), \left(\alpha \to \t\right)}{}
+		\firstrule{>, b}{\left(a\to b\right), a}{}
+		\firstrule{<, b}{a, \left(a \to b\right)}{}
+		\firstrule{\wedge, a \to \t}{\left(a \to \t\right), \left(a \to \t\right)}{}
+		\firstrule{\vee, a \to \t}{\left(a \to \t\right), \left(a \to \t\right)}{}
 		\gskip
 		\firstrule{\combJ_{\f{F}}\  \f{F}\tau}{\f{F}\f{F}\tau}{}
-		\firstrule{\combDN_{\f{C}}\  \tau}{\f{C}_{\tau}\tau}{}
-		\gskip
+		\lfrule{\combDN_{\f{C}}\  \tau}{\f{C}_{\tau}\tau}{}
 	\end{mgrammar}
 
 	\def\arraystretch{1.3}
@@ -23,6 +23,7 @@
 		\firstrule{\combUL_{\f{F}} \left(\alpha, \beta\to \beta'\right)}{\alpha, \f{F}\beta \to \beta'}{}
 		\firstrule{\combC_{\f{L}\f{R}} \left(\f{L} \alpha, \f{R}\beta\right)}{\left(\alpha, \beta\right)}{}
 		\firstrule{\combER_{\f{R}} \left(\f{R}\left(\alpha \to \alpha'\right), \beta\right)}{\alpha\to \f{R}\alpha', \beta}{}
-		\firstrule{\combEL_{\f{R}} \left(\alpha, \f{R}\left(\beta \to \beta'\right)\right)}{\alpha, \beta\to \f{R}\beta'}{}
+		\lfrule{\combEL_{\f{R}} \left(\alpha, \f{R}\left(\beta \to \beta'\right)\right)}{\alpha, \beta\to \f{R}\beta'}{}
 	\end{mgrammar}
 \end{multicols}
+}

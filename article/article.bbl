@@ -1,13 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{bauerEffectSystemAlgebraic2014}
-Andrej Bauer and Matija Pretnar.
-\newblock An {{Effect System}} for {{Algebraic Effects}} and {{Handlers}}.
-\newblock {\em Logical Methods in Computer Science}, Volume 10, Issue 4,
-  December 2014.
-\newblock \href {https://doi.org/10.2168/LMCS-10(4:9)2014}
-  {\path{doi:10.2168/LMCS-10(4:9)2014}}.
-
 \bibitem{bumfordEffectdrivenInterpretationFunctors2025}
 Dylan Bumford and Simon Charlow.
 \newblock Effect-driven interpretation: {{Functors}} for natural language
@@ -62,14 +54,6 @@ Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger.
   May 2025.
 \newblock \href {https://doi.org/10.46298/lmcs-21(2:12)2025}
   {\path{doi:10.46298/lmcs-21(2:12)2025}}.
-
-\bibitem{plotkinHandlingAlgebraicEffects2013}
-Gordon~D. Plotkin and Matija Pretnar.
-\newblock Handling {{Algebraic Effects}}.
-\newblock {\em Logical Methods in Computer Science}, Volume 9, Issue 4,
-  December 2013.
-\newblock \href {https://doi.org/10.2168/LMCS-9(4:23)2013}
-  {\path{doi:10.2168/LMCS-9(4:23)2013}}.
 
 \bibitem{senturiaAlgebraicStructureMorphosyntax2025}
 Isabella Senturia and Matilde Marcolli.
