@@ -26,9 +26,11 @@ to propositional values, without the need to specify what the handler does.
 This delimits our usage of string diagrams as ways to look at computations and
 a tool to provide equality rules to reduce ambiguity.
 
-\begin{wrapfigure}{r}{.45\textwidth}
+\begin{wrapfigure}[17]{r}{.45\textwidth}
 	\centering
 	\input{sd-thecatsleeps}
+	\caption{String diagram for the sentence \textsl{the cat sleeps}.}
+	\label{fig:sd-thecatsleeps}
 \end{wrapfigure}
 Let us define the category $\mathds{1}$ with exactly one object and one arrow:
 the identity on that object. It will be shown in grey in the string diagrams
@@ -40,6 +42,11 @@ Knowing that allows us to represent the type resulting from a sequence of
 computations as a sequence of strings whose farthest right represents an object
 in $\mC$, that is, a base type.
 
+In the diagram of Figure \ref{fig:sd-thecatsleeps}, each string corresponds to
+a functorial effect or type layer applied during parsing.
+The base type string $\t$ is at the border of the gray area and is the one of
+the uneffectful denotation in $\mC$ while the functorial string for $\f{M}$
+introduces the effect for optionality and possible failure of the computation.
 The question of providing rules to compose the string diagrams for parts of the
 sentences will be discussed in the next section, as it is related to parsing.
 
@@ -49,57 +56,40 @@ In the end, we will have the need to go from a certain set of strings (the effec
 Notice that we never reference the zero-cells and that in particular their colors are purely an artistical touch.
 
 \subsection{Achieving Normal Forms}
-\label{subsec:normalforms}
 We will now provide a set of rewriting rules on string diagrams (written as
 equations) which define the set of different possible reductions.
 
 First, Theorem \ref{thm:isotopy} reminds the main result by \cite{joyalGeometryTensorCalculus1991} about string diagrams which shows that our artistic representation of diagrams is correct and does not modify the equation or the rule we are presenting.
 \begin{theorem}[Theorem 1.2 \cite{joyalGeometryTensorCalculus1991}]
 	\label{thm:isotopy}
-	A well-formed equation between morphism terms in the language of monoidal categories follows from the axioms of monoidal categories if and only if it holds, up to planar isotopy, in the graphical language.
+	String diagrams equivalent under planar isotopy in the graphical language are equal.
 \end{theorem}
 
-Secondly, let us now look at a few of the equations that arise from the
-commutation of certain class of diagrams:
-\begin{description}
-	\item[The \emph{Snake} Equations] are a rewriting of the categorical diagrams
-	      which are the defining properties of an adjunction.
-	\item[The \emph{(co-)Monadic} Equations] are the string diagrammatic
-	      translation of the properties of unitality and associativity of the
-	      monad.
-	      Similarly, there are co-monadic equations which are the categorical dual
-	      of the previous equations.
-\end{description}
-This set of equations, when added to our reduction rules from the Section
-\ref{sec:parsing} explain all the different reductions that can be made to
-limit non-determinism in our parsing strategies.
-Indeed, considering the equivalence relation $\mathcal{R}$ freely generated
-from the equations defined above and the equivalence relationship
-$\mathcal{R}'$ of planar isotopy from Theorem \ref{thm:isotopy}, we get a set
-of normal forms $\mathcal{N}$ from the set of all well-formed parsing diagrams
-$\mD$ defined by:
-$\mathcal{N} = \left( \mD / \mathcal{R} \right) / \mathcal{R}'$
-
+A few equations on string diagrams also arise from the commutation of certain
+class of diagrams and thus typing judgements.
+We consider the \emph{snake} equations are a rewriting of the categorical
+diagrams which are the defining properties of an adjunction and the
+\emph{(co-)monadic} equations are the string diagrammatic translation of the
+properties of unitality and associativity of monads.
+These equations (and the reduction rules from Section \ref{subsec:rewrite})
+explain all the different reductions that can be made to limit non-determinism
+in our parsing and handling strategies.
 
 \subsection{Computing Normal Forms}
-Now that we have a set of rules telling us what we can and cannot do in our model while preserving the equality of the diagrams, we provide a combinatorial description of our diagrams to help compute the possible equalities between multiple reductions of a sentence meaning.
-
-\cite{delpeuchNormalizationPlanarString2022} proposed a combinatorial description to check
-in linear time for equality under Theorem \ref{thm:isotopy}.
-However, this model does not suffice to account for all of our equations, especially as
-labelling will influence the equations for monads, comonads and adjunctions.
-To provide with more flexibility (in exchange for a bit of time complexity) we use the
-description provided and change the description of inputs and outputs of each $2$-cell by
-adding types and enforcing types.
-In this section we formally describe the data structure we propose, as well as algorithms for
-validity of diagrams and a system of rewriting that allows us to compute the normal forms
-for our system of effects.
+Now that we have a set of rules telling us what we can and cannot do in our
+model while preserving the equality of the diagrams, we provide a combinatorial
+description of our diagrams to help compute the possible equalities between
+multiple reductions of a sentence meaning.
+In this section we formally describe the data structure we propose, as well as
+proving our system of rewriting allows us to compute normal forms for our
+diagrams.
 
 \subsubsection{Representing String Diagrams}
-We follow \cite{delpeuchNormalizationPlanarString2022} in their combinatorial description
-of string diagrams. We describe a diagram by an ordered set of its $2$-cells (the natural
-transformations) along with the number of input strings, for each $2$-cell the following
-information:
+We follow \cite{delpeuchNormalizationPlanarString2022} in their combinatorial
+description of string diagrams.
+We describe a diagram by an ordered set of its $2$-cells (the natural
+transformations, including handlers of the diagram) along with the number of
+input strings, for each $2$-cell we log the following information:
 \begin{itemize}
 	\item Its horizontal position: the number of strings that are right of it.
 	\item Its type: an array of effects that are the inputs to the natural
@@ -112,12 +102,12 @@ height (or number of nodes) of $D$, $D.S$ is an array for the input strings of $
 where $D.L$ is a function which takes a natural number smaller than $D.N - 1$ and
 returns its type as a tuple of arrays
 $nat = \left( \dnlg{nat}, \dnin{nat}, \dnout{nat} \right)$.
-From this, we can derive a naive algorithm to check if a string diagram is
+This gives a naive algorithm in polynomial time to check if a string diagram is
 valid or not.
 
 \smallskip
 
-Since our representation contains strictly more information (without slowing
+Because our representation contains strictly more information (without slowing
 access by a non-constant factor) than the one it is based on, our
 datastructure supports the linear and polynomial time algorithms proposed with
 the structure by \cite{delpeuchNormalizationPlanarString2022}.
@@ -131,12 +121,10 @@ We are faced a problem when computing reductions using the equations for our dia
 which is that by definition, an equation is symmetric.
 To solve this issue, we only use equations from left to right to reduce as much as
 possible our result instead.
-This also means that trivially our reduction system computes normal forms: it suffices
-to re-apply the algorithm for recumbent equivalence after the rest of equational
-reduction is done.
 Moreover, note that all our reductions are either incompatible or commutative, which
-leads to a confluent reduction system, and the well definition of our normal forms:
-\begin{theorem}[Confluence]\label{thm:confluence}
+leads to a confluent reduction system, and the well definition of our normal forms.
+\begin{theorem}[Confluence]
+	\label{thm:confluence}
 	Our reduction system is confluent and therefore defines normal forms:
 	\begin{enumerate}
 		\item Right reductions are confluent and therefore define \emph{right} normal forms for
@@ -146,8 +134,8 @@ leads to a confluent reduction system, and the well definition of our normal for
 	\end{enumerate}
 \end{theorem}
 
-Before proving the theorem, let us first provide the reductions for the different
-equations for our description of string diagrams.
+Before proving the theorem, let us first provide the reduction rules for the
+different equations for our description of string diagrams.
 \begin{description}
 	\item[The Snake Equations]
 	      First, let's see when we can apply the equation for $\id_{L}$ to a
@@ -197,7 +185,7 @@ equations for our description of string diagrams.
 \end{proof}
 
 \begin{theorem}[Normalization Complexity]
-	\label{thm:normalize}
+	\label{thm:norm}
 	Reducing a diagram to its normal form is done in polynomial time in
 	the number of natural transformations in it.
 \end{theorem}
@@ -210,7 +198,8 @@ equations for our description of string diagrams.
 	constant time, checking if a reduction is possible at a step is done in
 	linear time, rendering the reduction algorithm quadratic in the number of
 	natural transformations.
-	Since we need to \emph{right} normalize before and after this method, and
-	that this is done in linear time, our theorem is proved.
+	Since \emph{right} normalizing in linear time before to ensure we get all
+	equational reductions and after to complete the reduction is enough,
+	we have a polynomial time algorithm.
 \end{proof}
 

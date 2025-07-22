@@ -59,6 +59,14 @@ Paul-Andr{\'e} Melli{\`e}s and Noam Zeilberger.
 Isabella Senturia and Matilde Marcolli.
 \newblock The {{Algebraic Structure}} of {{Morphosyntax}}, June 2025.
 
+\bibitem{toumiHigherOrderDisCoCatPeirceLambekMontague2023}
+Alexis Toumi and Giovanni de~Felice.
+\newblock Higher-{{Order DisCoCat}} ({{Peirce-Lambek-Montague}} semantics),
+  November 2023.
+\newblock \href {https://arxiv.org/abs/2311.17813} {\path{arXiv:2311.17813}},
+  \href {https://doi.org/10.48550/arXiv.2311.17813}
+  {\path{doi:10.48550/arXiv.2311.17813}}.
+
 \bibitem{vandenbergFrameworkHigherorderEffects2024}
 Birthe {van den Berg} and Tom Schrijvers.
 \newblock A framework for higher-order effects \& handlers.

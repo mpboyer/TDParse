@@ -10,50 +10,53 @@ purpose of this work.
 This might be useful when proposing compositional models of learned
 representations.
 
-Let $\O\left( \mL \right)$ be the set of words in the language whose semantic
-representation is a low-order function and $\mF\left( \mL \right)$ the set of
-words whose semantic representation is a functor or high-order function.
+We will use $\mF\left( \mL \right)$ to denote the set of functors or
+higher-order functions used in denotations of $\mL$.
+Those are chosen when representing the language (see Figure \ref{fig:functors}
+for examples), and should be additions to a simpler semantic theory.
 Our goals here are to describe more formally, using a categorical vocabulary,
 the environment in which the typing system for our language will exist, and how
 we connect words and other linguistic objects to the categorical formulation.
 
 \subsection{Typing Category}
 \subsubsection{Types}
-Let $\mC$ be a closed cartesian category, which is used to represent the
-domain of types for our domain of uneffectful denotations.
-This represents our main typing system, consisting of types for words $\O(\mL)$
+Let $\mC$ be a closed cartesian category representing the
+domain of types for the domains and co-domains of uneffectful denotations.
+$\mC$ is our \emph{main} typing system, consisting of types for words
 that can be expressed without effects (see Figure \ref{fig:lexicon} for an
 example).
-Remember that $\mC$ contains a terminal object $\bot$ representing the empty
-type or the lack thereof.
+The terminal object $\bot$ of $\mC$ represents the empty type or the lack
+thereof.
 We consider as our typing category $\bar{\mC}$ the categorical closure for
 exponentials and products of $\mF\left( \mL \right)^{*}\left(\mC\right)$,
 which consists of all the different type constructors (ergo, functors) that
 could be formed in the language.
-In that setting our types are those that can be attained in a finite number
-from a finite number of functorial applications from an object of $\mC$.
+In that setting our types are those that can be attained from a finite number
+of functorial applications from an object of $\mC$.
 
-Formally, we consider for our types the quotient set
-$\star = \mathrm{Obj}\left( \bar{\mC} \right)/\mF\left( \mL \right)$.
-Since $\mF\left( \mL \right)$ does not induce an equivalence relation on
-$\Obj\left( \bar{\mC} \right)$ but a preorder, we consider the chains obtained
-by the closure of the relation $x\succeq y \Leftrightarrow \exists F, y = F(x)$
-(which should be seen as a subtyping relation as proposed in
-\cite{melliesFunctorsAreType2015}).
-We also define $\star_{0}$ to be the set obtained when considering types which
-have not yet been \emph{affected}, that is $\Obj(\mC)$.
+Since $\mF\left( \mL \right)$ only induces a preorder on
+$\Obj\left( \bar{\mC} \right)$, we consider the relation on types
+$x\succeq y \Leftrightarrow \exists F, y = F(x)$ (which should be seen
+as a subtyping relation as proposed in \cite{melliesFunctorsAreType2015}).
+We then consider for our types the quotient set
+$\star = \Obj\left(\bar{\mC}\right) / ~$ where $~$ is the transitive closure of
+the subtyping relationship induced by functorial application.
+We also define $\star_{0}$ to be the subset of types containing only
+uneffectful types, i.e. $\Obj(\mC)$.
 In contexts of polymorphism, we identify $\star_{0}$ to the adequate subset of
 $\star$.
-In this paradigm, constant objects (or results of fully done computations) are
+In this paradigm, constant objects (or results of fully handled computations) are
 functions with type $\bot \to \tau$ which we will denote directly by
 $\tau \in \star_{0}$.
 This will be useful when defining base combinators in Section \ref{sec:parsing}.
 
 \subsubsection{Functors, Applicatives and Monads}
-Our point of view has us consider \emph{language functors}\footnote{The
-	elements of our language, not the categorical construct.} as polymorphic
-functions: for a (possibly restrained) set of base types $S$, a functor is a
-function:
+Our point of view has us consider \emph{language functors}\footnote{Words with
+	denotations in $\mF(\mL)$ which represent denotationally effectful
+	constructions, e.g. "a" or "the". They are to be considered with opposition to
+	the \emph{type functors} which are the mathematical construct in $\mF(\mL)$.}
+as polymorphic functions: for a
+(possibly restrained) set of base types $S$, a functor is seen as a function:
 \begin{equation*}
 	x: \tau\in S\subseteq \star \mapsto F x: F\tau
 \end{equation*}
@@ -73,33 +76,29 @@ More precisely, the \emph{language functor} is to be seen as a function whose
 computation yields an effect, while the \emph{type functor} is the endofunctor
 of $\bar{\mC}$ (so a functor from $\mC$) that represents the effect in our
 typing category.
-Examples are provided in Figure \ref{fig:functors}.
+Examples of this difference are to be found in Figures \ref{fig:lexicon} and
+\ref{fig:functors}.
 
 \smallskip
 
 In this regard, applicatives and monads only provide with more flexibility on
 the ways to combine functions:
 they provide intermediate judgements to help with the combination of trees.
-For example, the multiplication of the monad provides a new
-\emph{type conversion} judgement:
-\begin{equation*}
-	\frac{\Gamma\vdash x: MM\tau}{\Gamma\vdash x: M\tau \succeq MM\tau}
-\end{equation*}
-This is actually a special case of the natural transformation rule that we
-define below, which means that, in a way, types $MM\star$ and $M\star$ are
-equivalent, as there is a canonical way to go from one type to another.
-Remember however that $M\star$ is still a proper subtype of $MM\star$ and that
-the objects are not actually equal: they are simply equivalent.
+For example, the multiplication of the monad provides a new \emph{type
+	transformation} judgement allowing derivation of $M\tau$ from$MM\tau$.
+This is a special case of the natural transformation rule that we
+define in the next section.
 
 \subsubsection{Natural Transformations}
 \label{subsubsec:transnat}
-We could add judgements directly for adjunctions, but we instead add judgements
-for natural transformations, as adjunctions are natural transformations which
-arise from \emph{natural} settings.
-While in general we do not want to find natural transformations, we want to be
+We could add judgements directly for adjunctions and monads, but we generalize
+by adding judgements for natural transformations, as adjunctions and monadic
+rules are natural transformations which arise from \emph{natural} settings.
+While in general we do not want to create natural transformations, we want to be
 able to express these in three situations:
 \begin{enumerate}
-	\item Adjunctions.
+	\item Adjunctions, Monads and Co-Monads\footnote{Which are actually the same
+		      thing.}.
 	\item To deal with the resolution of effects as explained in Section
 	      \ref{sec:nondet}
 	\item To create \emph{higher-order} constructs which transform words from our
@@ -111,6 +110,11 @@ multiplication and the monad/applicative unit, it suffices to see that the
 diagram defining the properties of a natural transformation provides a way
 to construct the \emph{correct function} on the \emph{correct functor} side of
 types.
+From a linguistic point of view, natural transformations allow us to reason
+directly about type coercions and their coherence in the typing system,
+whether that is transporting effects across functors as in Section
+\ref{par:higherorder} or collasping nested effects and more generally handling
+them as presented in Section \ref{par:handlers} and \ref{sec:nondet}.
 
 \smallskip
 
@@ -121,6 +125,7 @@ This will guarantee for us that given a \emph{Haskell} construction for a
 polymorphic function, we will get the associated natural transformation.
 
 \paragraph{Handlers}
+\label{par:handlers}
 As introduced by \cite{marsikAlgebraicEffectsHandlers}, the use of handlers
 as annotations to the semantic tree of the sentence is an appropriate
 formalism.

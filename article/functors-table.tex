@@ -2,16 +2,16 @@
 \setcellgapes{3pt}
 \makegapedcells
 \begin{NiceTabular}{LLc}
-	\rm Constructor                                                            & \fmap                                                                                                                                                             & Typeclass \\
-	\f{G}\left( \tau \right) = \r \to \tau                                     & \f{G}\phi\left( x \right) = \lambda r. \phi \left(x r\right)                                                                                                      & Monad     \\
-	\f{W}\left( \tau \right) = \tau \times \t                                  & \f{W}\phi\left( \scalar{a, p} \right) = \scalar{\phi a, p}                                                                                                        & Monad     \\
-	\f{S}\left( \tau \right) = \{ \tau \}                                      & \f{S}\phi\left( \left\{ x \right\} \right) = \left\{ \phi(x) \right\}                                                                                             & Monad     \\
-	\f{C}\left( \tau \right) = \left( \tau \to \t \right) \to \t               & \f{C}\phi\left( x \right) = \lambda c. x\left( \lambda a. c \left( \phi a \right) \right)                                                                         & Monad     \\
-	\f{D}\left( \tau \right) = \ty{s} \to \f{S}\left(\tau \times \ty{s}\right) & \f{D}\phi\left( \lambda s. \left\{ \scalar{x, x \ppl s} \suchthat p x \right\} \right) = \lambda s. \left\{ \scalar{\phi x, \phi x \ppl s} \suchthat p x \right\} & Monad     \\
+	\rm Constructor                                                            & \fmap                                                                                                                                                             & Interpretation \\
+	\f{G}\left( \tau \right) = \r \to \tau                                     & \f{G}\phi\left( x \right) = \lambda r. \phi \left(x r\right)                                                                                                      & Read           \\
+	\f{W}\left( \tau \right) = \tau \times \t                                  & \f{W}\phi\left( \scalar{a, p} \right) = \scalar{\phi a, p}                                                                                                        & Write          \\
+	\f{S}\left( \tau \right) = \{ \tau \}                                      & \f{S}\phi\left( \left\{ x \right\} \right) = \left\{ \phi(x) \right\}                                                                                             & Powerset       \\
+	\f{C}\left( \tau \right) = \left( \tau \to \t \right) \to \t               & \f{C}\phi\left( x \right) = \lambda c. x\left( \lambda a. c \left( \phi a \right) \right)                                                                         & Continuation   \\
+	\f{D}\left( \tau \right) = \ty{s} \to \f{S}\left(\tau \times \ty{s}\right) & \f{D}\phi\left( \lambda s. \left\{ \scalar{x, x \ppl s} \suchthat p x \right\} \right) = \lambda s. \left\{ \scalar{\phi x, \phi x \ppl s} \suchthat p x \right\} & State                \\
 	\f{M}\left( \tau \right) = \tau + \bot                                     & \f{M}\phi\left( x \right) = \begin{cases}
 		                                                                                                         \phi\left( x \right) & \text{if } \cont x: \tau \\
 		                                                                                                         \#                   & \text{if } \cont x: \#
-	                                                                                                         \end{cases}                                                                                                                & Monad                \\
+	                                                                                                         \end{cases}                                                                                                                & Maybe                     \\
 	\CodeAfter
 	\begin{tikzpicture}
 		\draw[double] (1|-2) -- (4|-2);

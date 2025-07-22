@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: article.aux
+The style file: plainurl.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: tdparse.bib
+Warning--empty journal in marsikAlgebraicEffectsHandlers
+Warning--empty year in marsikAlgebraicEffectsHandlers
+You've used 13 entries,
+            2943 wiz_defined-function locations,
+            730 strings with 8199 characters,
+and the built_in function-call counts, 5723 in all, are:
+= -- 610
+> -- 184
+< -- 3
++ -- 69
+- -- 52
+* -- 324
+:= -- 796
+add.period$ -- 44
+call.type$ -- 13
+change.case$ -- 65
+chr.to.int$ -- 0
+cite$ -- 15
+duplicate$ -- 146
+empty$ -- 556
+format.name$ -- 52
+if$ -- 1504
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 7
+newline$ -- 70
+num.names$ -- 26
+pop$ -- 159
+preamble$ -- 1
+purify$ -- 52
+quote$ -- 0
+skip$ -- 415
+stack$ -- 0
+substring$ -- 212
+swap$ -- 55
+text.length$ -- 21
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 2
+while$ -- 39
+width$ -- 15
+write$ -- 151
+(There were 2 warnings)
