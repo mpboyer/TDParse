@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  14 JUL 2025 13:42
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.6.27)  16 JUL 2025 14:37
  system commands enabled.
 **tdparse.tex
 (./tdparse.tex
@@ -2378,7 +2378,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Non-PDF special ignored!
-Non-PDF special ignored!<./luatex.DcaTdj/1.png>]) (./aux/typing-system.tex
+Non-PDF special ignored!<./luatex.c5sHBB/1.png>]) (./aux/typing-system.tex
 Underfull \hbox (badness 1701) in paragraph at lines 1--1
 |[]\TU/lmr/bx/n/14.4 Cat-e-gor-i-cal Se-man-tics of Ef-
  []
@@ -2451,7 +2451,7 @@ ut line 5.
 [4
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.2
 .1'
-<./luatex.DcaTdj/2.png>] (./aux/figures/typing-judgements.tex)
+<./luatex.c5sHBB/2.png>] (./aux/figures/typing-judgements.tex)
 
 
 
@@ -2825,7 +2825,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 
 warning  (pdf backend): ignoring duplicate destination with the name 'equation.3
 .2'
-<./luatex.DcaTdj/3.png>]
+<./luatex.c5sHBB/3.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 203.
 
@@ -4284,7 +4284,13 @@ Underfull \hbox (badness 2181) in paragraph at lines 87--90
 \TU/lmr/m/n/10 http://purl.org/d-c/d-cmi-type-/-Text, Uni-ver-sity of
  []
 
-) (./aux/language-presentation.tex (./aux/figures/english-cfg.tex
+)
+
+
+
+[20
+
+] (./aux/language-presentation.tex (./aux/figures/english-cfg.tex
 Overfull \hbox (5.5406pt too wide) in paragraph at lines 21--36
  [][] 
  []
@@ -4421,7 +4427,53 @@ contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 21.
 
 )
 
-[20
+[21
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -4479,8 +4531,6 @@ Overfull \hbox (8.67004pt too wide) detected at line 99
 
 contour: Using real outline for `\tt \color {vulm}W' on input line 101.
 contour: Using real outline for `\tt \color {vulm}G' on input line 101.
-
-
 contour: Using real outline for `\tt \color {vulm}G' on input line 103.
 contour: Using real outline for `\tt \color {vulm}W' on input line 103.
 contour: Using real outline for `\tt \color {vulm}W' on input line 104.
@@ -4537,7 +4587,12 @@ contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 122
 .
 
 
-[21
+contour: Using real outline for `\tt \color {vulm}S' on input line 136.
+contour: Using real outline for `\tt \color {vulm}S' on input line 136.
+contour: Using real outline for `\tt \color {vulm}S' on input line 137.
+
+
+[22
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -4581,51 +4636,7 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!] [22
+Non-PDF special ignored!] [23
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -4784,9 +4795,6 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
-contour: Using real outline for `\tt \color {vulm}S' on input line 136.
-contour: Using real outline for `\tt \color {vulm}S' on input line 136.
-contour: Using real outline for `\tt \color {vulm}S' on input line 137.
 contour: Using real outline for `\tt \color {vulm}S' on input line 142.
 contour: Using real outline for `\tt \color {vulm}S' on input line 142.
 contour: Using real outline for `\tt \color {vulm}S' on input line 146.
@@ -4797,11 +4805,14 @@ contour: Using real outline for `\tt \color {yulm!90!black}e' on input line 151
 .
 contour: Using real outline for `\tt \color {yulm!90!black}t' on input line 151
 .
-
-
 ) (./aux/appendix-other-things.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23
+
+
+
+
+[24
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -4881,22 +4892,26 @@ Non-PDF special ignored!]
 
 )
 
-[24] (./tdparse.aux)
+[25] (./tdparse.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `tdparse.out' has not changed.
 (rerunfilecheck)             Checksum: 3B6E43FD6D4B1BD0230472C657A8166E;6086.
 )
 
 Here is how much of LuaTeX's memory you used:
- 91570 strings out of 475931
+ 91571 strings out of 475931
  305551,3417909 words of node,token memory allocated
- 1309 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 23 glue, 4 kern, 1 glyph, 111 attribute, 121 glue_s
-pec, 57 attribute_list, 2 write nodes
-   avail lists: 1:3,2:32009,3:7387,4:1170,5:792,6:89,7:16405,8:63,9:5268,10:20,1
+ 1296 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 22 glue, 4 kern, 1 glyph, 109 attribute, 121 glue_s
+pec, 56 attribute_list, 2 write nodes
+   avail lists: 1:3,2:32012,3:7387,4:1182,5:792,6:95,7:16406,8:63,9:5287,10:20,1
 1:910
  111990 multiletter control sequences out of 65536+600000
  121 fonts using 13976671 bytes
@@ -4939,10 +4954,10 @@ m/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
 4/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist
 /fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msam10.pfb>
-Output written on tdparse.pdf (24 pages, 695133 bytes).
+Output written on tdparse.pdf (25 pages, 695524 bytes).
 
-PDF statistics: 755 PDF objects out of 1000 (max. 8388607)
- 613 compressed objects within 7 object streams
- 139 named destinations out of 1000 (max. 131072)
+PDF statistics: 759 PDF objects out of 1000 (max. 8388607)
+ 616 compressed objects within 7 object streams
+ 140 named destinations out of 1000 (max. 131072)
  310 words of extra memory for PDF output out of 10000 (max. 100000000)
 
