@@ -67,13 +67,6 @@ Alexis Toumi and Giovanni de~Felice.
   \href {https://doi.org/10.48550/arXiv.2311.17813}
   {\path{doi:10.48550/arXiv.2311.17813}}.
 
-\bibitem{vandenbergFrameworkHigherorderEffects2024}
-Birthe {van den Berg} and Tom Schrijvers.
-\newblock A framework for higher-order effects \& handlers.
-\newblock {\em Science of Computer Programming}, 234:103086, May 2024.
-\newblock \href {https://doi.org/10.1016/j.scico.2024.103086}
-  {\path{doi:10.1016/j.scico.2024.103086}}.
-
 \bibitem{wadlerTheoremsFree1989}
 Philip Wadler.
 \newblock Theorems for free!

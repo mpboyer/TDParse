@@ -58,6 +58,12 @@ This makes us able to compute the actual denotations associated to a sentence
 using our formalism, as presented in figure \ref{fig:parsing-trees}.
 Note that the order of combination modes is not actually the same as the one
 that would come from the grammar.
+The reason why will become more apparent when string diagrams for parsing are
+introduced in the next section, but simply, this comes from the fact that while
+we think of $\combML$ and $\combMR$ as reducing the number of effects on each
+side (and this is the correct way to think about those), this is not actually
+how its denotation works, they are actually modifying a combination mode via
+their denotation.
 
 \begin{wrapfigure}[39]{l}{.45\textwidth}
 	\centering
@@ -120,12 +126,6 @@ that would come from the grammar.
 	\label{fig:parsing-trees}
 \end{wrapfigure}
 
-The reason why will become more apparent when string diagrams for parsing are
-introduced in the next section, but simply, this comes from the fact that while
-we think of $\combML$ and $\combMR$ as reducing the number of effects on each
-side (and this is the correct way to think about those), this is not actually
-how its denotation works, they are actually modifying a combination mode via
-their denotation.
 This formalism gives us the following theorems:
 
 \begin{theorem}
@@ -323,7 +323,7 @@ interpretation based on actual strings:
 Suppose you're knitting a rainbow scarf.
 You have multiple threads (the different words) of the different colours (their
 types and effects) you're using to knit the scarf.
-When you decide to change the color you take the different threads you have
+When you decide to change the color, you take the different threads you have
 been using, and mix them up.
 
 \begin{wrapfigure}[22]{l}{.5\textwidth}
@@ -334,7 +334,7 @@ been using, and mix them up.
 \end{wrapfigure}
 
 You can create a new colour\footnote{This is not how wool works, but
-	if one can also imagine a pointillist-like way of drawing using multiple
+	one can also imagine a pointillist-like way of drawing using multiple
 	coloured lines that superimpose on each other, or a marching band's multiple
 	instruments playing either in harmony or in disharmony and changing that
 	during a score.} thread from two (that's the base combinators).
@@ -420,6 +420,7 @@ for $j \in \{\epsilon, \combJ_{\f{F}}\}$
 \begin{theorem}
 	The rules proposed above yield equivalent results.
 \end{theorem}
+
 \begin{proof}
 	The rules about not using combinators $\combUL$ and $\combUR$ come from the
 	notion of handling and granting termination and decidability to our system.

@@ -76,7 +76,7 @@
 
 \begin{abstract}
 	In this paper, we study a functional programming approach to natural language
-	semantics, allowing us to increase the expressivity of a more traditional
+	semantics, allowing us to increase the expressiveness of a more traditional
 	denotation style.
 	We will formalize a category based type and effect system to represent the
 	semantic difference between syntactically equivalent expressions.
@@ -168,19 +168,24 @@ The functional programming approach developed in
 \cite{bumfordEffectdrivenInterpretationFunctors2025} allows for increased
 expressiveness in the choice of denotations, especially from a purely
 theoretical point of view.
-In this paper we have successfully prove that it is well-founded theoretically,
-but also that it doesn't come at the cost of comprehensibility or efficiency.
+In this paper we have successfully proven that such an approach is well-founded
+theoretically, but also that it doesn't come at the cost of comprehensibility
+or efficiency.
+Given the entirely theoretical denotations for common language objects (think
+of $\mathbf{cat} = \mathbf{cat}$ as a definition), our methods might give
+enough latitude to semanticists to imagine more precise denotations without the
+cost of heavy statistical analyses, or at least, give tools to expand on them.
+Deriving our formalism from a theory necessitates only to understand what base
+combinators exist for the model: we build upon a basic semantic theory to
+increase its expressiveness.
 
 Moreover, while our methods for implementing a type and effect system have been
-applied to natural language semantics, it could be applied in any language with
-purely compositional semantics.
-Of course, there are still improvements that can be made, in particular around
-the unorthodox use of effects to define what we have called higher-order
-constructs and scope islands, but also in integrating the theory in more
-complicated models of denotations, such as the ones learned through a neural
-network for example.
-In that case, it would suffice to understand what base combinators exist for
-the model to implement the formalism we described.
+applied to natural language semantics, they could be applied in any language
+with purely compositional semantics.
+Of course, improvements can be made, in particular around the unorthodox use of
+effects to define what we have called higher-order constructs and scope
+islands, but also in integrating the theory in more complicated models of
+denotations, such as the ones learned through a neural network for example.
 
 \appendix
 \bibliography{tdparse.bib}
