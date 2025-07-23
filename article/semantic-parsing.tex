@@ -55,7 +55,7 @@ are not actually symmetric in their "input" unlike intuitionistic inference
 rules.
 
 This makes us able to compute the actual denotations associated to a sentence
-using our formalism, as presented in figure \ref{fig:parsing-trees}.
+using our formalism, as presented in Figure \ref{fig:parsing-trees}.
 Note that the order of combination modes is not actually the same as the one
 that would come from the grammar.
 The reason why will become more apparent when string diagrams for parsing are
@@ -206,9 +206,9 @@ We can now return to the proof of the main result of this section:
 	length of the input sentence.
 \end{proof}
 
-While we have gone the hypothesis that we have a CFG for our language,
-any type of polynomial-time structure could work, as long as it is more
-expressive than a CFG.
+While we have gone the assumption that we have a CFG for our language,
+any type of polynomial-time structure could work, as long as it is at least
+as expressive as a CFG.
 
 The \emph{polynomial time combinators} assumption in Theorem
 \ref{thm:ptime-denot} is not a complex assumption, this is for example true for
@@ -256,7 +256,7 @@ be needed to construct the effect diagram.
 Here we talk about \emph{stitches} because, in a sense, we use $2$-cells
 to do braiding-like operations on the strings, and don't actually allow for
 braiding inside the diagrammatic computation, leading to the intervention of
-outside tools (combinators) which one might see as \emph{knitting needles}.
+outside tools (combinators) which serve as \emph{knitting needles}.
 To better understand what happens in those parsing diagrams, Figure
 \ref{fig:parsing-trees} provides the translations in labelled trees of the
 parsing diagrams of Figures \ref{fig:parsing-diagram},
@@ -348,7 +348,7 @@ eject combinators do.
 
 This more tangible representation can be seen in Figure
 \ref{fig:3dparsing-diagram}.
-The sections in the rectangle represent what happen when considering our
+The sections in the rectangle represent what happens when considering our
 combination step as implementing patterns inside a knitwork, as seen in Figure
 \ref{fig:knitting-example}.
 The different patterns provide, in order, a visual representation of the

@@ -111,7 +111,7 @@ types.
 From a linguistic point of view, natural transformations allow us to reason
 directly about type coercions and their coherence in the typing system,
 whether that is transporting effects across functors as in Section
-\ref{par:higherorder} or collasping nested effects and more generally handling
+\ref{par:higherorder} or collapsing nested effects and more generally handling
 them as presented in Section \ref{par:handlers} and \ref{sec:nondet}.
 
 \smallskip
@@ -128,9 +128,9 @@ As introduced by \cite{marsikAlgebraicEffectsHandlers}, the notion of handlers
 is to be considered as the way to solve effects that obfuscate the result of a
 computation.
 Following \cite{wuEffectHandlersScope2014}, we understand handlers as natural
-transformations describing the closure of an algebraic effect: they are natural
-transformations from the effect to the identity functor, effectively resolving
-them.
+transformations describing the resolution of an algebraic effect: they are
+natural transformations from the effect to the identity functor, effectively
+resolving them.
 Considering handlers this way allows us to directly handle our computations
 inside our typing system and in particular inside our parsing algorithm.
 This process will mostly be described in Sections \ref{sec:nondet} and
@@ -187,7 +187,7 @@ As such, we will say that this type of functors are \emph{external} to the
 lexicon.
 
 \subsection{Typing Judgements}\label{subsec:judgements}
-To complete this section, Figure \ref{tab:judgements} gives a simple list of different typing composition judgements through which we also re-derzive the subtyping judgement to allow for its implementation.
+To complete this section, Figure \ref{tab:judgements} gives a simple list of different typing composition judgements through which we also re-derive the subtyping judgement to allow for its implementation.
 \begin{figure}
 	\input{typing-judgements}
 	\caption{Typing and subtyping judgements for implementation of effects in the

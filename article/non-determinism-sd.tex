@@ -45,8 +45,9 @@ in $\mC$, that is, a base type.
 In the diagram of Figure \ref{fig:sd-thecatsleeps}, each string corresponds to
 a functorial effect or type layer applied during parsing.
 The base type string $\t$ is at the border of the gray area and is the one of
-the uneffectful denotation in $\mC$ while the functorial string for $\f{M}$
-introduces the effect for optionality and possible failure of the computation.
+the uneffectful denotation in $\mC$ while the \emph{functorial} string for
+$\f{M}$ introduces the effect for optionality and possible failure of the
+computation.
 The question of providing rules to compose the string diagrams for parts of the
 sentences will be discussed in the next section, as it is related to parsing.
 
@@ -102,14 +103,14 @@ height (or number of nodes) of $D$, $D.S$ is an array for the input strings of $
 where $D.L$ is a function which takes a natural number smaller than $D.N - 1$ and
 returns its type as a tuple of arrays
 $nat = \left( \dnlg{nat}, \dnin{nat}, \dnout{nat} \right)$.
-This gives a naive algorithm in polynomial time to check if a string diagram is
+This gives a naïve algorithm in polynomial time to check if a string diagram is
 valid or not.
 
 \smallskip
 
 Because our representation contains strictly more information (without slowing
 access by a non-constant factor) than the one it is based on, our
-datastructure supports the linear and polynomial time algorithms proposed with
+data structure supports the linear and polynomial time algorithms proposed with
 the structure by \cite{delpeuchNormalizationPlanarString2022}.
 In particular our structure can be normalized in time
 $\O\left( n \times \sup_{i} \abs{\dnin{\dlb{D}{i}}} + \abs{\dnout{\dlb{D}{i}}}
