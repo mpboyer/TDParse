@@ -58,12 +58,6 @@ This makes us able to compute the actual denotations associated to a sentence
 using our formalism, as presented in Figure \ref{fig:parsing-trees}.
 Note that the order of combination modes is not actually the same as the one
 that would come from the grammar.
-The reason why will become more apparent when string diagrams for parsing are
-introduced in the next section, but simply, this comes from the fact that while
-we think of $\combML$ and $\combMR$ as reducing the number of effects on each
-side (and this is the correct way to think about those), this is not actually
-how its denotation works, they are actually modifying a combination mode via
-their denotation.
 
 \begin{wrapfigure}[39]{l}{.45\textwidth}
 	\centering
@@ -126,6 +120,12 @@ their denotation.
 	\label{fig:parsing-trees}
 \end{wrapfigure}
 
+The reason why will become more apparent when string diagrams for parsing are
+introduced in the next section, but simply, this comes from the fact that while
+we think of $\combML$ and $\combMR$ as reducing the number of effects on each
+side (and this is the correct way to think about those), this is not actually
+how its denotation works, they are actually modifying a combination mode via
+their denotation.
 This formalism gives us the following theorems:
 
 \begin{theorem}
@@ -292,13 +292,6 @@ on a larger category, with formal endofunctors labelled by the types in our
 typing category $\bar{\mC}$ and formal natural transformations for the
 combinators defined in Figures \ref{fig:combination-cfg} and
 \ref{fig:combinator-denotations}.
-The category in which we consider the second-axis string diagrams does not have
-a meaning in our compositional semantics theory, and to be more precise, we
-should talk about $1$-cells and $2$-cells instead of endofunctors and natural
-transformations, to keep in the idea that this is really just a diagrammatic
-way of computing and presenting the operations that are put to work during
-semantic parsing.
-
 \begin{wrapfigure}{r}{.45\textwidth}
 	\centering
 	\begin{tikzpicture}
@@ -309,6 +302,13 @@ semantic parsing.
 		of the author's mother.}
 	\label{fig:knitting-example}
 \end{wrapfigure}
+
+The category in which we consider the second-axis string diagrams does not have
+a meaning in our compositional semantics theory, and to be more precise, we
+should talk about $1$-cells and $2$-cells instead of endofunctors and natural
+transformations, to keep in the idea that this is really just a diagrammatic
+way of computing and presenting the operations that are put to work during
+semantic parsing.
 
 The main theoretical reason why this point of view of diagrammatic parsing is
 useful will be clear when looking at the rewriting rules and the normal forms
@@ -321,10 +321,6 @@ Using orthogonal planes to visualise this interpretation cannot be well
 presented in a 3D space, and even less so on a page, so we suggest an
 interpretation based on actual strings:
 Suppose you're knitting a rainbow scarf.
-You have multiple threads (the different words) of the different colours (their
-types and effects) you're using to knit the scarf.
-When you decide to change the color, you take the different threads you have
-been using, and mix them up.
 
 \begin{wrapfigure}[22]{l}{.5\textwidth}
 	\centering
@@ -333,6 +329,10 @@ been using, and mix them up.
 	\label{fig:3dparsing-diagram}
 \end{wrapfigure}
 
+You have multiple threads (the different words) of the different colours (their
+types and effects) you're using to knit the scarf.
+When you decide to change the color, you take the different threads you have
+been using, and mix them up.
 You can create a new colour\footnote{This is not how wool works, but
 	one can also imagine a pointillist-like way of drawing using multiple
 	coloured lines that superimpose on each other, or a marching band's multiple
@@ -349,8 +349,8 @@ eject combinators do.
 This more tangible representation can be seen in Figure
 \ref{fig:3dparsing-diagram}.
 The sections in the rectangle represent what happens when considering our
-combination step as implementing patterns inside a knitwork, as seen in Figure
-\ref{fig:knitting-example}.
+combination step as implementing patterns inside a knitwork, as seen in
+Figure~\ref{fig:knitting-example}.
 The different patterns provide, in order, a visual representation of the
 different ways one can combine two strings, i.e., two types and thus two
 denotations.
