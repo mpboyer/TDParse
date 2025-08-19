@@ -65,16 +65,16 @@ This will be discussed in more detail in Section \ref{sec:parsing}.
 \end{equation}
 
 To justify our proposition to only consider fully reduced expressions note that
-in this formalism we don't consider the expressions for our functors and
+in this formalism we do not consider the expressions for our functors and
 natural transformations but simply the sequence in which they are applied.
 
 In the end, we will have the need to go from a certain set of strings (the
 effects that applied) to a single one, through a sequence of handlers, monadic
 and comonadic rules and so on.
 Notice that we never reference the zero-cells and that in particular their
-colors are purely an artistical touch.
+colors are purely an artistic touch.
 
-A previous modelisation of parsers by string diagrams has already been proposed
+A previous modeling of parsers by string diagrams has already been proposed
 (\cite{coeckeMathematicalFoundationsCompositional2010},
 \cite{wang-mascianicaStringDiagramsText2023}).
 We will develop on the differences between those in Section
@@ -107,7 +107,7 @@ certain diagrams:
 \begin{description}
 	\item[The \emph{Elevator} Equations] are a consequence of Theorem
 	      \ref{thm:isotopy} but also highlight one of the most important
-	      properties of string diagrams in their modelisation of multi-threaded
+	      properties of string diagrams in their modeling of multi-threaded
 	      computations: what happens on one string does not influence what
 	      happens on another in the same time:
 	      \begin{equation}
@@ -156,7 +156,6 @@ $\mathcal{R}'$ of planar isotopy from Theorem \ref{thm:isotopy}, we get a set
 of normal forms $\mathcal{N}$ from the set of all well-formed parsing diagrams
 $\mD$ defined by:
 $\mathcal{N} = \left( \mD / \mathcal{R} \right) / \mathcal{R}'$
-
 
 \subsection{Computing Normal Forms}
 Now that we have a set of rules telling us what we can and cannot do in our
@@ -246,7 +245,7 @@ Before proving the theorem, let us first provide the reductions for the differen
 equations for our description of string diagrams.
 \begin{description}
 	\item[The Snake Equations]
-	      First, let's see when we can apply Equation \ref{eq:snek1} to a diagram $D$ which is in \emph{right} normal form, meaning it's been right reduced as much as possible.
+	      First, let us see when we can apply Equation \ref{eq:snek1} to a diagram $D$ which is in \emph{right} normal form, meaning it's been right reduced as much as possible.
 	      Suppose we have an adjunction $L \dashv R$.
 	      Then we can reduce $D$ along \eqref{eq:snek1} at $i$ if, and only if:
 	      \begin{itemize}
@@ -297,7 +296,7 @@ equations for our description of string diagrams.
 	the number of natural transformations in it.
 \end{thm}
 \begin{proof}
-	Let's give an upper bound on the number of reductions.
+	Let us give an upper bound on the number of reductions.
 	Since each reduction either reduces the number of $2$-cells or applies at
 	most once the associativity of a monad, we know the number of reductions is
 	linear in the	number of natural transformations.

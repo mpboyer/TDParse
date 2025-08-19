@@ -49,25 +49,26 @@ $\f{F}$ of the argument, leading to two different proof trees:
 	\columneqs{\prooffrac{\cont \f{F}: \mC \Rightarrow \mC \poulpe \Junit{\f{F}}{l}{\ta}{r}{\tb}}{\cont \f{F}lr: \f{F}\tb}} \\[1em]
 	\Japp{l}{\f{F}\ta}{\tb}{r}
 \end{align*}
-Those two different proof trees have different semantic interpretations that
-may be useful, as discussed by
+Those two different proof trees yield different semantic interpretations which
+may both be useful, as discussed by
 \cite{bumfordEffectdrivenInterpretationFunctors2025}, especially in their
-analysis of closure properties, which is modified in the following section.
+analysis of closure properties, which is modified in the following section for
+a better integration in the typing system.
 
 \subsubsection{Islands}
 \cite{bumfordEffectdrivenInterpretationFunctors2025} provide a formal analysis
 of islands\footnote{Syntactic structures which prevent some notion of moving
-	outside of the island.} based on a islands being a different type of branching
+	outside of the island.} based on islands being a different type of branching
 nodes in the syntactic tree of a sentence, which asks to resolve all $\f{C}$
 effects\footnote{Those represent quantifications.} before that node or being
 resolved at that node.
 
-To reconcile this inside our type system, we propose the following change to
+To reconcile this directly inside our type system, we propose the following change to
 their formalism: once the syntactic information of an island existing is added
 to the tree, we \emph{mark} each node inside the island by adding a ``void
 effect'' to it, in the same way as we did for our model of plural.
 This translates into a functor which just maintains the \emph{island marker} on
-\texttt{fmap} and change the type of the boundary word to one that cannot take
+\texttt{fmap} and change the boundary word's type so it cannot take
 a continuation as input, which could be seen as adding a node in the semantics
 parse tree from the syntactic parse tree.
 A way to do this would be the following: we pass all functors until finding a
@@ -93,7 +94,7 @@ The idea of seeing everything as effects, while semantically void, allows us
 to translate into our theory of type-driven semantics outer information from
 syntax, morphology or phonology that influences the semantics of the
 sentence, and make use of the type system to enforce them.
-Other examples of this can be found in the modelisation of plural (for
+Other examples of this can be found in the modeling of plural (for
 morphology, see Sections \ref{par:higherorder} and \ref{subsec:modality})
 and the emphasis of the words by the $\f{F}$ effect (for phonology), and show
 the empirical well-foundedness of this point of view.
@@ -106,7 +107,7 @@ combinators and even the addition of rules.
 \subsection{Syntactic-Semantic Parsing}
 \label{subsec:ssparsing}
 \subsubsection{The Improved Method}
-As using a naïve strategy on the trees yields an exponential algorithm,
+As using a naïve strategy on the trees results in an exponential algorithm,
 we will simply extend the grammar system used to do the syntactic part of the
 parsing.
 In this section, we will take the example of a CFG since it suffices to create
@@ -268,7 +269,7 @@ is purely for an artistic rendition.
 \begin{figure}
 	\centering
 	\inputtikz{combinators-sd}
-	\caption{String Diagramatic Representation of Combinator Modes $>, \combML$ and $\combJ$}
+	\caption{String Diagrammatic Representation of Combinator Modes $>, \combML$ and $\combJ$}
 	\label{fig:combinator-sd}
 \end{figure}
 
@@ -342,7 +343,7 @@ parsing.
 
 Applying the unary combinators which reduce effects to the actual
 \emph{parsing} part of the diagram is done in the exact same way as in the CFG,
-we just apply them when needed, and they will appear in the resulting
+we apply them as needed, and they appear in the resulting
 denotation as an end for a string, a form of forced handling, in a sense, as
 shown in the result of Figure \ref{fig:parsing-diagram2}.
 For the connecting strings, it's simply a matter of adding a new \emph{phantom}

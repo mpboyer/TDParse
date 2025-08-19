@@ -57,8 +57,8 @@ types associated to regular linguistic objects.
 
 \subsubsection{Functors, Applicatives and Monads}
 \label{subsubsec:functors}
-Our point of view leads us to consider \emph{language functors}\footnote{The
-	elements of our language.} as polymorphic functions: for a set of base types
+In our framework, we consider \emph{language functors}\footnote{The elements of
+	our language.} as polymorphic functions: for a set of base types
 $S$, a functor is a function:
 \begin{equation*}
 	x: \tau\in S\subseteq \star \mapsto F x: F\tau
@@ -180,11 +180,11 @@ to reduce effects by adding them to the syntactic tree.
 As considered by \cite{wuEffectHandlersScope2014} and
 \cite{vandenbergFrameworkHigherorderEffects2024}, handlers are to be seen
 as natural transformations describing the free monad on an algebraic effect.
-Considering handlers as so, allows us to directly handle our computations
-inside our typing system.
+Considering handlers in this way allows us to directly handle computations
+inside the typing system.
 Using the framework proposed in \cite{vandenbergFrameworkHigherorderEffects2024}
-we simply need to create handlers for our effects/functors and we will then
-have in our language the constructs needed.
+we simply need handlers for our effects/functors and we will then have in our
+language the constructs needed.
 The only thing we will require from an algebraic handler $h$ is that for any
 applicative functor of unit $\eta$, $h\circ \eta = \id$.
 
@@ -215,7 +215,7 @@ This is the difference with the adjunctions: adjunctions are intrinsic
 properties of the coexistence of the effects, while the handlers are
 user-defined.
 As such, we choose to say that our handlers are implemented parser-side but
-again, this does not change our modelisation of handlers as natural
+again, this does not change our modeling of handlers as natural
 transformations and most importantly, this does not add ambiguity to our
 model: The ambiguity that arises from the choice of possible handlers
 does not add to the ambiguity in the parsing.
