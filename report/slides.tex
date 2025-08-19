@@ -10,6 +10,7 @@
 \title{Effect-Driven Parsing}
 \subtitle{Formal studies on a categorical approach to semantic parsing}
 \institute{École Normale Supérieure | Yale University}
+\date{7\textsuperscript{th} September 2025}
 \addlogo{~/Pictures/Yale_University_logo.svg.png}
 \addlogo{~/DEV/latex/source/ens_psl.pdf}
 
@@ -63,7 +64,11 @@
 	\smallskip
 
 	Since we should be able to use \textbf{a cat} and \textbf{the cat} interexchangebly - from a syntactic point of view - they should have the same type.
-	We use \emph{effects} to do the difference between them:
+	There is no one \textbf{cat} that is a representant of the cat.
+
+	\pause
+
+	We will use \emph{(side-)effects} to do the difference between them:
 	\begin{equation*}
 		\w{a\ cat} = \{c \mid \w{cat} c\}
 	\end{equation*}
@@ -82,7 +87,7 @@
 
 	\medskip
 
-	In our case, functors are enough, because might sometimes not want to be able
+	In our case however, functors are enough, because we might sometimes want to be unable
 	to merge effects together nor create them from nothing (see below).
 \end{frame}
 
@@ -118,24 +123,26 @@
 \subsection{Type system}
 \begin{frame}
 	\frametitle{Notations}
-	Let $\mL$ be our language (more on that later).
-	We only suppose that our words can be applied to one another in their
-	denotation system.
+	Let $\mL$ be our language.
+	Our only requirement is that words can be \textit{applied} to one another in
+	some sense in the	denotation system.
 
 	\pause
+	\medskip
 
 	Let $\mC$ be a cartesian closed category used for typing the lexicon and
 	$\mathcal{F}(\mL)$ be a set of functors used for representing the words
 	that add an effect to our language.
 
-	\pause\smallskip
+	\pause
+	\smallskip
 
 	We consider $\bar{\mC}$ the categorical closure of $\mC$ under the action
 	of $\mathcal{F}(\mL)^{*}$.
 	We close it for the cartesian product and exponential of $\mC$.
 
 	$\bar{\mC}$ represents all possible combinations of a sequence of effects
-	and a base type, contains functions and products.
+	and a base type, and contains functions and products.
 \end{frame}
 
 \begin{frame}[fragile]
@@ -144,10 +151,10 @@
 		\begin{align*}
 			\only<1>{
 			\frac{\cont x: \tau \poulpe \cont F \in \mathcal{F}(\mL)}{\cont Fx: F\tau }\fracnotate{Cons}                                          \\[.25cm]
-			\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}               \\[.25cm]
-				\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}
+				\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}
 			}
 			\only<2>{
+				\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App}
 			\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right)}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}} \\[.25cm]
 			}
 		\end{align*}
@@ -157,7 +164,6 @@
 			\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}} \\[.25cm]
 			\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}
 		\end{align*}
-		More generally:
 		\begin{align*}
 			\forall F \overset{\theta}{\Longrightarrow} G,\poulpe \frac{\cont x: F\tau \poulpe \cont G: S' \subseteq \star \poulpe \tau \in S'}{\cont x : G\tau}\fracnotate{\texttt{nat}}
 		\end{align*}
@@ -232,8 +238,6 @@
 				\end{tikzpicture}
 			\end{NiceTabular}
 		}
-	}
-	\only<4>{
 	}
 \end{frame}
 
