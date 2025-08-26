@@ -29,12 +29,11 @@ the formalism, nor its usefulness.
 We refer to \cite{bumfordEffectdrivenInterpretationFunctors2025} to get an
 overview of the linguistic considerations at the base of the theory.
 
-
 In this report, we will provide a formal definition of an enhanced type and
-effect system for natural language semantics, based on categorical tools.
+effect system for natural language semantics, implementing categorical tools.
 This will increase the complexity (both in terms of algorithmic operations and
 in comprehension of the model) of the parsing algorithms, but through the use
-of string diagrams to model the effect of composition on potential effectful
+of string diagrams to model the effect of composition on potentially effectful
 denotations (or more generally computations), we will provide efficient
 algorithms for computing the set of meanings of a sentence from the meaning of
 its components.
@@ -52,6 +51,9 @@ lexicon, and a visual explanation of the difference between multiple possible
 parsing trees.
 We will go back later on the differences between their Lambek inspired grammars
 and our more abstract way of looking at the semantic parsing of a sentence.
+As the last papers using this view propose using a learned representation for
+words, we refer to Appendix \ref{app:arities-and-denots} for a compositional
+view on these representations.
 
 \smallskip
 
@@ -59,13 +61,13 @@ On a completely different approach,
 \cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}
 provide a categorical structure based on Hopf algebra and coloured operads
 to explain their model of syntax.
-Their approach allowed to reconcile the works on syntactic and
-morphosyntactic trees in an upcoming paper by Isabella Senturia and Matilde
-Marcolli.
+Their approach allowed to reconcile the works on syntactic and morphosyntactic
+trees in \cite{senturiaAlgebraicStructureMorphosyntax2025}.
 Similarly, \cite{melliesCategoricalContoursChomskySchutzenberger2025} provides
 a modeling of CFGs using coloured operads.
 Our approach is based on the suggestion that merge in syntax can be done using
-labels, independent on how it is mathematically modelled.
+labels, independent on how it is mathematically modelled and thus can be
+understood in both those frameworks (see Appendix \ref{app:coproduct}).
 
 \smallskip
 

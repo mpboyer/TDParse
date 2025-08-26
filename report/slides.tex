@@ -26,15 +26,14 @@
 \subsection{General Introduction}
 \begin{frame}
 	\frametitle{Context}
-	This work, based on \cite{bumfordEffectdrivenInterpretationFunctors2025} aims
-	to provide a categorical formalization of a type and effects system for
-	semantic interpretation of the natural language.
+	\textbf{Goal.} Categorical formalization of a type--effects system for
+	natural-language semantics
+	(following \cite{bumfordEffectdrivenInterpretationFunctors2025}).
 
 	\medskip
 
-	We will develop a graphical formalism for semantic type-driven parsing that
-	explains how to derive the meaning of a sentence from the meaning of its
-	words.
+	\textbf{Method.} Develop a graphical, type-driven parsing formalism that
+	derives sentence meaning compositionally from word meanings.
 \end{frame}
 
 \begin{frame}[fragile]
@@ -58,17 +57,15 @@
 
 \begin{frame}[fragile]
 	\frametitle{Syntactic Types and Semantic Types}
-	What should be the type of expressions such as \textbf{a cat} or \textbf{Jupiter, a planet}?
+	\begin{itemize}
+		\item What is the type of \textbf{a cat} or \textbf{Jupiter, a planet}?
+		      \pause
+		\item Syntactically, \textbf{a cat} and \textbf{the cat} should be interchangeable and have the same type.
+		\item No single canonical \textbf{cat} exists: that type cannot be $\e$.
+	\end{itemize}
 	\pause
 
-	\smallskip
-
-	Since we should be able to use \textbf{a cat} and \textbf{the cat} interexchangebly - from a syntactic point of view - they should have the same type.
-	There is no one \textbf{cat} that is a representant of the cat.
-
-	\pause
-
-	We will use \emph{(side-)effects} to do the difference between them:
+	We will use \textbf{(side-)effects} to do the difference between them:
 	\begin{equation*}
 		\w{a\ cat} = \{c \mid \w{cat} c\}
 	\end{equation*}
@@ -80,20 +77,14 @@
 \subsection{Categorical Introduction}
 \begin{frame}
 	\frametitle{Effects as Functors}
-	Since \cite{moggiComputationalLambdacalculusMonads1989}, we know that monads
-	are a good model for programming side-effects.
-
+	Monads model side-effects \cite{moggiComputationalLambdacalculusMonads1989}.
 	\pause
-
-	\medskip
-
-	In our case however, functors are enough, because we might sometimes want to be unable
-	to merge effects together nor create them from nothing (see below).
+	Here, \textbf{functors suffice}: we may forbid merging/creating effects; lighter structures are useful.
 \end{frame}
 
 \begin{frame}
 	\frametitle{String Diagrams}
-	String Diagrams are a formalism (see \cite{hinzeIntroducingStringDiagrams2023}
+	\textbf{String Diagrams} are a formalism (see \cite{hinzeIntroducingStringDiagrams2023}
 	for example) that allows to visually represent the different threads of a
 	computation and the possible side-effects that appear.
 
@@ -101,21 +92,19 @@
 
 	\medskip
 
-	They were presented as a categorical object in
-	\cite{joyalGeometryTensorCalculus1991} and will be the focus of our study, as
-	a tool introduced for parsing, similarly to
-	\cite{coeckeMathematicalFoundationsCompositional2010}.
+	Categorical foundations: \cite{joyalGeometryTensorCalculus1991}; Used as
+	a tool for parsing: \cite{coeckeMathematicalFoundationsCompositional2010}.
 \end{frame}
 
 \begin{frame}
 	\frametitle{Other Categorical Theories}
-	In \cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic},
-	and \cite{senturiaAlgebraicStructureMorphosyntax2025}, a mathematical model
-	of parsing trees based on a Hopf algebra is presented.
+	\cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic},
+	and \cite{senturiaAlgebraicStructureMorphosyntax2025} use Hopf algebras to
+	give a model for parsing.
 
 	\medskip
 
-	This allows to integrate morphological features inside the syntactic
+	They integrate morphological features inside the syntactic
 	structures without breaking the model chosen for syntax.
 \end{frame}
 
@@ -123,26 +112,13 @@
 \subsection{Type system}
 \begin{frame}
 	\frametitle{Notations}
-	Let $\mL$ be our language.
-	Our only requirement is that words can be \textit{applied} to one another in
-	some sense in the	denotation system.
-
-	\pause
-	\medskip
-
-	Let $\mC$ be a cartesian closed category used for typing the lexicon and
-	$\mathcal{F}(\mL)$ be a set of functors used for representing the words
-	that add an effect to our language.
-
-	\pause
-	\smallskip
-
-	We consider $\bar{\mC}$ the categorical closure of $\mC$ under the action
-	of $\mathcal{F}(\mL)^{*}$.
-	We close it for the cartesian product and exponential of $\mC$.
-
-	$\bar{\mC}$ represents all possible combinations of a sequence of effects
-	and a base type, and contains functions and products.
+	\begin{itemize}
+		\item Language: $\mL$; words compose denotationally.
+		      \pause
+		\item Base CCC: $\mC$; effects: functors $\mathcal{F}(\mL)$.
+		\item Closure: $\bar{\mC}$ = closure of $\mC$ under $\mathcal{F}(\mL)^{*}$, products and exponentials.
+	\end{itemize}
+	Intuition: all (effect-sequence, base type) combos, with functions/products.
 \end{frame}
 
 \begin{frame}[fragile]
@@ -174,9 +150,11 @@
 
 \begin{frame}
 	\frametitle{Information}
-	To present the language, we of course need the syntax of the language, as
-	well as an increased model of our lexicon.
-\end{frame}
+	To present the language we need:
+	\begin{itemize}
+		\item The syntax of the language.
+		\item An typed lexicon (possibly with effects).
+	\end{itemize}\end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Updated Lexicon}
@@ -202,17 +180,16 @@
 
 \begin{frame}
 	\frametitle{Introducing Higher-Order Constructs}
-	Using the notion of functors, we can also implement higher-order semantic
-	constructions in our lexicon, such as the future, without caring about
-	morphological markers:
-	\pause
+	We implement higher-order semantics (e.g. the future and plural) via functors:
+
 	\begin{equation*}
 		\columneqs{
 			\bf future\left(be\left( I, a\ cat \right)\right)
-			\xrightarrow{\beta} be\left( future\left( I \right), a\ cat \right)
-			\xrightarrow{\beta} be\left( future\left( I \right), a\ cat \right)
+			\xrightarrow{\tt nat} be\left( future\left( I \right), a\ cat \right)
+			\xrightarrow{\tt nat} be\left( future\left( I \right), a\ cat \right)
 		}
 	\end{equation*}
+	\pause
 	Those constructs are integrated by using natural transformations explaining
 	their propagation through other effects, as those are purely
 	semantic predicates.
@@ -251,14 +228,12 @@
 \subsection{Notion and usage of handlers}
 \begin{frame}
 	\frametitle{Handlers}
-	A handler for an effect $F$ is a natural transformation $F \Rightarrow \Id$,
-	as proposed in \cite{wuEffectHandlersScope2014}.
+	A handler for an effect $F$ is a natural transformation $F \Rightarrow \Id$ (\cite{wuEffectHandlersScope2014}).
 
 	\smallskip
 
-	Handlers should also be exact inverses to monadic and applicative units:
-	this partially justifies semantically why we can remove the usage of the
-	unit rule out	of certain situations.
+	Handlers should invert monadic and applicative units:
+	motivating the omission of the unit rule out of certain situations.
 \end{frame}
 
 

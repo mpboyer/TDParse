@@ -1,8 +1,7 @@
 \section{Categorical Semantics of Effects: A Typing System}
-\label{sec:typingsystem}
 In this section presenting the way our typing system works, we will designate
 by $\mL$ our language, as a set of words (with their semantics) and syntactic
-rules to combine them semantically.
+rules used to combine them semantically.
 We denote by $\O\left( \mL \right)$ the set of words in the language whose
 semantic representation is a low-order function and $\mF\left( \mL \right)$ the
 set of words whose semantic representation is a functor or high-order function.
@@ -14,8 +13,8 @@ language.
 This is purely a formalization of the notions presented in
 \cite{bumfordEffectdrivenInterpretationFunctors2025}.
 
-\subsection{Typing Category}\label{subsec:typingcategory}
-\subsubsection{Types}\label{subsubsec:types}
+\subsection{Typing Category}
+\subsubsection{Types}
 Let $\mC$ be a closed cartesian category.
 This represents our main typing system, for words $\O(\mL)$ that can be
 expressed without effects.
@@ -25,7 +24,7 @@ We can consider $\bar{\mC}$ the category closure of
 $\mF\left( \mL \right)^{*}\left(\O\left( \mL \right)\right)$, that is
 consisting of all the different type constructors (ergo, functors) that could
 be formed in the language.
-What this means is that we consider for our category objects any object that
+This means our category objects are any abstract object that
 can be attained in a finite number from a finite number of functorial
 applications from an object of $\mC$.
 $\bar{\mC}$ will be our typing category.
@@ -35,7 +34,7 @@ $\star = \mathrm{Obj}\left( \bar{\mC} \right)/\mF\left( \mL \right)$.
 Since $\mF\left( \mL \right)$ does not induce an equivalence relation on
 $\Obj\left( \bar{\mC} \right)$ but a preorder, we consider the chains obtained
 by the closure of the relation $x\succeq y \Leftrightarrow \exists F, y = F(x)$
-(which is seen as a subtyping relation as proposed in
+(which is seen as a subtyping relation following
 \cite{melliesFunctorsAreType2015}).
 We also define $\star_{0}$ to be the set obtained when considering types which
 have not yet been \emph{affected}, that is $\Obj(\mC)$.
