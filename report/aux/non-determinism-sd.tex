@@ -34,7 +34,9 @@ a tool to provide equality rules to reduce non-determinism by constructing an
 equivalence relationship (which we denote by $\eqcirc$) and yielding a quotient
 set of \emph{normal forms} for our computations.
 
-\medskip
+\begin{center}
+	\inputtikz{sd-thecatsleeps}
+\end{center}
 
 Let us define the category $\mathds{1}$ with exactly one object and one arrow:
 the identity on that object.
@@ -47,9 +49,6 @@ in our diagram.
 Knowing that allows us to represent the type resulting from a sequence of
 computations as a sequence of strings whose farthest right represents an object
 in $\mC$, that is, a base type.
-\begin{center}
-	\inputtikz{sd-thecatsleeps}
-\end{center}
 
 For simplicity reasons, and because the effects that are buried in our typing
 system not only give rise to functors but also have types that are not purely
@@ -90,15 +89,14 @@ First, Theorem \ref{thm:isotopy} reminds the main result by
 \cite{joyalGeometryTensorCalculus1991} about string diagrams which shows that
 our artistic representation of diagrams is correct and does not modify the
 equation or the rule we are presenting.
-\begin{thm}[Theorem 3.1 \cite{selingerSurveyGraphicalLanguages2010},
-		Theorem 1.2 \cite{joyalGeometryTensorCalculus1991}]
+\begin{thm}
 	\label{thm:isotopy}
 	A well-formed equation between morphism terms in the language of monoidal
 	categories follows from the axioms of monoidal categories if and only if it
 	holds, up to planar isotopy, in the graphical language.
 \end{thm}
-We will not prove this theorem here as it implies huge portions of graph theory
-and algebra which are out of the scope of this paper.
+We will not prove this theorem here and refer to Theorem 3.1 in \cite{selingerSurveyGraphicalLanguages2010},
+and Theorem 1.2 in \cite{joyalGeometryTensorCalculus1991} for proofs.
 
 \medskip
 
@@ -224,7 +222,9 @@ Our structure can be normalized in polynomial time to check for equality under
 Theorem \ref{thm:isotopy} from \cite{delpeuchNormalizationPlanarString2022}.
 More precisely, the complexity of our algorithm is in $\O\left( n \times
 	\sup_{i} \abs{\dnin{\dlb{D}{i}}} + \abs{\dnout{\dlb{D}{i}}} \right)$,
-which depends on our lexicon but most of the times will be linear time.
+which depends on our lexicon but most of the times will be linear time,
+although this matters when considering Appendix \ref{app:arities-and-denots},
+which yields quadratic time.
 
 \subsubsection{Equational Reductions}
 We are faced a problem when computing reductions using the equations for our
@@ -313,8 +313,7 @@ Let us do a short check on the well-foundedness of our reduction system.
 Clearly from its definition this equivalence system is sound, in that all the
 reductions we allow are based on actual equivalence rules, and thus each
 reduction step preserves the equivalence relationship.
-From the previous Theorem \ref{thm:normalize}, clearly, our system is
-decidable, since it's in $P$.
+From the previous Theorem \ref{thm:normalize}, clearly, our system is decidable.
 However, there is no reason that our system would be complete.
 At this point, we possibly might not have the widest sound reduction system:
 there might be more reduction rules that can apply and that would
