@@ -239,53 +239,37 @@
 
 \begin{frame}
 	\frametitle{Defining Handlers}
-	There are two main types of handlers that are of interest to us:
-	\pause
+	Two types of handlers:
 	\begin{enumerate}
-		\item Language-Defined Handlers, which are defined with
-		      adjunctions and comonads, for example.
-		      Those arise from fundamental properties of the considered effects.
+		\item Language-Defined Handlers arise from fundamental properties of the considered effects.
 		      \pause
-		\item Speaker-dependant handlers, which are considered when
-		      retrieving the denotation from a sentence from under the effects
-		      that arose in the computation of its meaning.
-		      Those need to be considered dependent on the speaker because for
-		      example of the multiple ways to solve non-determinism.
+		\item Speaker-dependant handlers which are dependent on the speaker.
 	\end{enumerate}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Scope Islands}
-	The notion of handlers allows us to enforce the notion of scope islands.
-	To do so, it would suffice to ask that the words enclosing the island,
-	are not defined on not certain effectful types and make handlers a part of
-	the combination modes, as introduced in
-	\cite{bumfordEffectdrivenInterpretationFunctors2025}.
+	The notion of handlers allows us to enforce the notion of scope islands
+	as introduced in \cite{bumfordEffectdrivenInterpretationFunctors2025}.
 
 	\pause
 	\smallskip
 
 	We would for example have:
 	\begin{equation*}
-		\w{if}: \left(\t \setminus \mF{\mL}^{*}\f{C}\t \right) \to \t \to \t
+		\w{if}: \left(\t \setminus \mF\left(\mL\right)^{*}\f{C}\t \right) \to \t \to \t
 	\end{equation*}
-
+	to enforce in the type system the resolution of continuations.
 \end{frame}
-\subsection{String diagrams for effect handling}
-\begin{frame}[allowframebreaks]
-	\frametitle{String Diagrams Representation of Sentences}
-	Here, a string diagram is a representation of the side-effects and types of a
-	sentence across its computation.
 
+\subsection{String diagrams for effect handling}
+\begin{frame}
+	\frametitle{String Diagrams Representation of Sentences}
+	String diagram are a representation of the side-effects and types of a
+	sentence across its computation.
+	\pause
 	\begin{center}
-		\begin{minipage}[c]{.45\textwidth}
-			\inputtikz{sd-thecatsleeps}
-		\end{minipage}
-		\begin{minipage}[c]{.45\textwidth}
-			This diagram for example represents the sentence \textsl{The cat sleeps}.
-			The order of the words and position of the strings will be explained in
-			detail in the next section.
-		\end{minipage}
+		\scalebox{.8}{\inputtikz{sd-thecatsleeps}}
 	\end{center}
 
 \end{frame}
@@ -293,8 +277,6 @@
 \subsection{Reducing in string diagrams}
 \begin{frame}
 	\frametitle{Deformation of String Diagrams}
-	String diagrams will be the formalism we use to compute equality between
-	denotations, and especially handling the denotations.
 	\begin{thm}[Theorem 3.1 \cite{selingerSurveyGraphicalLanguages2010}, Theorem 1.2 \cite{joyalGeometryTensorCalculus1991}]
 		\label{thm:isotopy}
 		A well-formed equation between morphism terms in the language of monoidal
@@ -305,17 +287,17 @@
 
 \begin{frame}[allowframebreaks]
 	\frametitle{Equations on String Diagrams}
-	Every property of the functors, monads, natural transformations, adjunctions
+	Properties of functors, monads, natural transformations, adjunctions
 	and more can be explained in terms of commutative diagrams, but also as
 	string diagrams.
 
-	First, the elevator equations are a consequence of \ref{thm:isotopy}:
+	The Elevator Equations represent Theorem \ref{thm:isotopy}:
 	\begin{equation}
 		\resizebox{.8\textwidth}{!}{\inputtikz{sd-elevator}}
 		\tag{\emoji{elevator}}
 	\end{equation}
 
-	The Snake equations are a rewriting of the properties of an adjunction:
+	The Snake Equations are a rewriting of the properties of an adjunction:
 	\begin{equation}
 		\resizebox{.5\textwidth}{!}{\inputtikz{sd-snake1}}
 		\tag{\rotatebox[origin=c]{90}{\emoji{snake}}}
@@ -326,7 +308,6 @@
 		\resizebox{.5\textwidth}{!}{\inputtikz{sd-monad-mult}}
 		\tag{$\mu$}
 	\end{equation}
-
 \end{frame}
 
 \begin{frame}[allowframebreaks]
@@ -353,42 +334,11 @@
 
 \section{Semantic Parsing}
 \subsection{The general method}
-\begin{frame}[allowframebreaks]
+\begin{frame}
 	\frametitle{CFG Model of Parsing}
-	We use a Context-Free Grammar to model our typing system and take its product with the syntax defining grammar.
+	We use a Context-Free Grammar in five parts to model our typing system:
 
-	\medskip
-
-	\begin{minipage}{.9\textwidth}
-		\begin{multicols}{2}
-			\def\arraystretch{1.1}
-			\begin{mgrammar}
-				\firstrule{>, \beta}{\left(\alpha\to \beta\right), \alpha}{}
-				\firstrule{<, \beta}{\alpha, \left(\alpha \to \beta\right)}{}
-				\gskip
-				\firstrule{\combJ_{\f{F}}\  \f{F}\tau}{\f{F}\f{F}\tau}{}
-				\firstrule{\combDN_{\f{C}}\  \tau}{\f{C}_{\tau}\tau}{}
-				\gskip
-				\firstrule{\combML_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \beta}{}
-				\firstrule{\combMR_{\f{F}} \left(\alpha, \beta\right)}{\alpha, \f{F}\beta}{}
-			\end{mgrammar}
-
-			\def\arraystretch{1.3}
-			\begin{mgrammar}
-				\firstrule{\combA_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \f{F}\beta}{}
-				\firstrule{\combUR_{\f{F}} \left(\alpha \to \alpha', \beta\right)}{\f{F}\alpha\to \alpha', \beta}{}
-				\firstrule{\combUL_{\f{F}} \left(\alpha, \beta\to \beta'\right)}{\alpha, \f{F}\beta \to \beta'}{}
-				\firstrule{\combC_{\f{L}\f{R}} \left(\f{L} \alpha, \f{R}\beta\right)}{\left(\alpha, \beta\right)}{}
-				\firstrule{\combER_{\f{R}} \left(\f{R}\left(\alpha \to \alpha'\right), \beta\right)}{\alpha\to \f{R}\alpha', \beta}{}
-				\firstrule{\combEL_{\f{R}} \left(\alpha, \f{R}\left(\beta \to \beta'\right)\right)}{\alpha, \beta\to \f{R}\beta'}{}
-			\end{mgrammar}
-		\end{multicols}
-	\end{minipage}
-
-	\medskip
-
-	This grammar works in five major sections:
-	\begin{enumerate}
+	\begin{enumerate}[<+->]
 		\item We reintroduce the grammar defining the type and effect system.
 		\item We introduce a structure for the semantic parse trees and their labels,
 		      the combination modes from
@@ -397,24 +347,27 @@
 		\item We introduce rules for higher-order unary type combinators.
 		\item We introduce rules for higher-order binary type combinators.
 	\end{enumerate}
-	Computationally, the introduction of this labeling system increases the size
-	of the grammar by a factor linear in $\abs{\mF\left(\mL\right)}$.
-	The parsing algorithms are then still polynomial, and scaling in sentence
-	size does not change.
+	\pause
+	Complexity in $\O(\abs{\mF\left(\mL\right)}\abs{\mS}n^{3})$.
 \end{frame}
 
 \begin{frame}[allowframebreaks, fragile]
 	\frametitle{Semantic Parse Trees}
 	\includegraphics{aux/figures/parse-tree-1.pdf}
+
 	\centering
+
 	\includegraphics{aux/figures/parse-tree-2.pdf}
 
-	\centering \includegraphics[height=.7\pageheight]{aux/figures/parse-tree-3.pdf}
+	\begin{center}
+		\includegraphics[height=.7\pageheight]{aux/figures/parse-tree-3.pdf}
+	\end{center}
 \end{frame}
 
 \subsection{String diagrams for parsing}
 \begin{frame}
 	\frametitle{Combinators as String Diagrams}
+	Diagrams for combinators:
 	\includegraphics[width=\textwidth]{aux/figures/combinators-sd.pdf}
 \end{frame}
 
@@ -444,8 +397,8 @@
 \subsection{String diagrams for reductions}
 \begin{frame}
 	\frametitle{Reducing the grammar}
-	We introduce denotations for our combinators, to allow us to define
-	reductions that relieve a bit the ambiguity of the parsing grammar:
+	We introduce denotations for our combinators, to reduce the parsing grammar:
+	\pause
 	\begin{center}
 		$	>                    = \lambda \phi. \lambda x. \phi x $\\[1.5ex]
 		$ \combML_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda a. M(a, y)) x $\\[1.5ex]
@@ -489,9 +442,9 @@
 	papers to read about categories and linguistics.
 \end{frame}
 
-\questionsframe
-
 \appendix
+
+\questionsframe
 
 \begin{frame}
 	\frametitle{Functor Denotations}
@@ -538,6 +491,36 @@
 			\gskip
 			\firstrule{AdvP}{TAdv, DP}{}
 		\end{tabular}
+	\end{minipage}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{CFG for Parsing}
+	\begin{minipage}{.9\textwidth}
+		\begin{multicols}{2}
+			\def\arraystretch{1.1}
+			\begin{mgrammar}
+				\firstrule{>, \beta}{\left(\alpha\to \beta\right), \alpha}{}
+				\firstrule{<, \beta}{\alpha, \left(\alpha \to \beta\right)}{}
+				\gskip
+				\firstrule{\combJ_{\f{F}}\  \f{F}\tau}{\f{F}\f{F}\tau}{}
+				\firstrule{\combDN_{\f{C}}\  \tau}{\f{C}_{\tau}\tau}{}
+				\gskip
+				\firstrule{\combML_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \beta}{}
+				\firstrule{\combMR_{\f{F}} \left(\alpha, \beta\right)}{\alpha, \f{F}\beta}{}
+			\end{mgrammar}
+
+			\def\arraystretch{1.3}
+			\begin{mgrammar}
+				\firstrule{\combA_{\f{F}} \left(\alpha, \beta\right)}{\f{F}\alpha, \f{F}\beta}{}
+				\firstrule{\combUR_{\f{F}} \left(\alpha \to \alpha', \beta\right)}{\f{F}\alpha\to \alpha', \beta}{}
+				\firstrule{\combUL_{\f{F}} \left(\alpha, \beta\to \beta'\right)}{\alpha, \f{F}\beta \to \beta'}{}
+				\firstrule{\combC_{\f{L}\f{R}} \left(\f{L} \alpha, \f{R}\beta\right)}{\left(\alpha, \beta\right)}{}
+				\firstrule{\combER_{\f{R}} \left(\f{R}\left(\alpha \to \alpha'\right), \beta\right)}{\alpha\to \f{R}\alpha', \beta}{}
+				\firstrule{\combEL_{\f{R}} \left(\alpha, \f{R}\left(\beta \to \beta'\right)\right)}{\alpha, \beta\to \f{R}\beta'}{}
+			\end{mgrammar}
+		\end{multicols}
 	\end{minipage}
 
 \end{frame}
