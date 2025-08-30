@@ -291,23 +291,8 @@
 	and more can be explained in terms of commutative diagrams, but also as
 	string diagrams.
 
-	The Elevator Equations represent Theorem \ref{thm:isotopy}:
-	\begin{equation}
-		\resizebox{.8\textwidth}{!}{\inputtikz{sd-elevator}}
-		\tag{\emoji{elevator}}
-	\end{equation}
-
-	The Snake Equations are a rewriting of the properties of an adjunction:
-	\begin{equation}
-		\resizebox{.5\textwidth}{!}{\inputtikz{sd-snake1}}
-		\tag{\rotatebox[origin=c]{90}{\emoji{snake}}}
-	\end{equation}
-
-	The Monadic equations are a rewriting of the properties of a monad:
-	\begin{equation}
-		\resizebox{.5\textwidth}{!}{\inputtikz{sd-monad-mult}}
-		\tag{$\mu$}
-	\end{equation}
+	Moreover, Theorem \ref{thm:isotopy} can be implemented as string diagram
+	equations.
 \end{frame}
 
 \begin{frame}[allowframebreaks]
@@ -326,7 +311,7 @@
 
 	\begin{thm}[Normalization Complexity]
 		\label{thm:normalize}
-		Reducing a diagram to its normal form is done in quadratic time in
+		Normalizing a diagram is done in quadratic time in
 		the number of natural transformations in it.
 	\end{thm}
 	This is accomplished using a formalism based on \cite{delpeuchNormalizationPlanarString2022}.
@@ -353,10 +338,13 @@
 
 \begin{frame}[allowframebreaks, fragile]
 	\frametitle{Semantic Parse Trees}
-	\includegraphics{aux/figures/parse-tree-1.pdf}
+
+	{%
+		\centering
+		\includegraphics{aux/figures/parse-tree-1.pdf}
+	}
 
 	\centering
-
 	\includegraphics{aux/figures/parse-tree-2.pdf}
 
 	\begin{center}
@@ -368,6 +356,7 @@
 \begin{frame}
 	\frametitle{Combinators as String Diagrams}
 	Diagrams for combinators:
+	\medskip
 	\includegraphics[width=\textwidth]{aux/figures/combinators-sd.pdf}
 \end{frame}
 
@@ -377,8 +366,8 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{A Parsing Diagram Step}
-	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram.pdf}}
+	\frametitle{Another Parsing Diagram Step}
+	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram2.pdf}}
 \end{frame}
 
 \begin{frame}
@@ -397,8 +386,8 @@
 \subsection{String diagrams for reductions}
 \begin{frame}
 	\frametitle{Reducing the grammar}
-	We introduce denotations for our combinators, to reduce the parsing grammar:
-	\pause
+	Combinator denotations to add reductions:
+	\smallskip
 	\begin{center}
 		$	>                    = \lambda \phi. \lambda x. \phi x $\\[1.5ex]
 		$ \combML_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda a. M(a, y)) x $\\[1.5ex]
@@ -410,7 +399,6 @@
 
 \begin{frame}
 	\frametitle{Reductions}
-	Reductions include the following:
 	\begin{itemize}
 		\item When two effects commute, we choose an order to apply them.
 		\item We use $\combUR$ instead of using $\combMR$ or $\combDN \combMR$ when
@@ -426,13 +414,12 @@
 
 \begin{frame}
 	\frametitle{Conclusion}
-	We have formalised an enhancement of usual type systems for natural language
-	semantics.
-
-	\medskip
-
-	Thanks to the introduction of the string diagrams, this did not come at the
-	cost of comprehension of the system nor efficiency.
+	Results:
+	\begin{itemize}
+		\item Theoretical enhancement of a type system for natural language semantics;
+		      \pause
+		\item No more load on the user (comprehension) nor the parser (efficiency).
+	\end{itemize}
 
 	\pause\medskip
 
