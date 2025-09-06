@@ -10,14 +10,9 @@
 \title{Effect-Driven Parsing}
 \subtitle{Formal studies on a categorical approach to semantic parsing}
 \institute{École Normale Supérieure | Yale University}
-\date{7\textsuperscript{th} September 2025}
+\date{9\textsuperscript{th} September 2025}
 \addlogo{~/Pictures/Yale_University_logo.svg.png}
 \addlogo{~/DEV/latex/source/ens_psl.pdf}
-
-% \colorlet{main-below}{yulm}
-% \colorlet{main-accents}{black}
-% \colorlet{main-background}{vulm!5}
-% \colorlet{main-text}{black}
 
 \begin{document}
 \fancytitleframe
@@ -26,40 +21,38 @@
 \subsection{General Introduction}
 \begin{frame}
 	\frametitle{Context}
-	\textbf{Goal.} Categorical formalization of a type--effects system for
-	natural-language semantics
-	(following \cite{bumfordEffectdrivenInterpretationFunctors2025}).
+	\begin{itemize}
+		\item Categorical formalization of a type--effects system for
+		      natural-language semantics
+		      (following \cite{bumfordEffectdrivenInterpretationFunctors2025}).
 
-	\medskip
-
-	\textbf{Method.} Develop a graphical, type-driven parsing formalism that
-	derives sentence meaning compositionally from word meanings.
+		\item Develop a graphical, type-driven parsing formalism that
+		      derives sentence meaning compositionally from word meanings.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Typed Semantics for Natural Languages}
-	\setcellgapes{3pt}
-	\makegapedcells
-	\begin{NiceTabular}{>{\bf}LLL}
-		Expression & \rm Type & \lambda\text{-Term} \\
-		\word{planet}{\e\to\t}{\lambda x. \w{planet} x}{common nouns}
-		\word{carnivorous}{\left( \e \to \t \right)}{\lambda x. \w{carnivorous}x}{predicative adjectives}
-		\word{skillful}{\left( \e \to \t \right) \to \left( \e \to \t \right)}{\lambda p. \lambda x. px \land \w{skillful} x}{predicate modifier adjectives}
-		\word{Jupiter}{\e}{{\bf j}\in \Var}{proper nouns}
-		\word{sleep}{\e \to \t}{\lambda x. \w{sleep} x}{intransitive verbs}
-		\CodeAfter
-		\begin{tikzpicture}
-			\draw[double] (1|-2) -- (4|-2);
-			\foreach \r in {4,6,...,10} {\draw (1|-\r) -- (4|-\r);}
-		\end{tikzpicture}
-	\end{NiceTabular}
+	\begin{center}
+		\setcellgapes{3pt}
+		\makegapedcells
+		\begin{NiceTabular}{>{\bf}LLL}
+			Expression & \rm Type & \lambda\text{-Term} \\
+			\word{planet}{\e\to\t}{\lambda x. \w{planet} x}{common nouns}
+			\word{Jupiter}{\e}{{\bf j}\in \Var}{proper nouns}
+			\word{sleep}{\e \to \t}{\lambda x. \w{sleep} x}{intransitive verbs}
+			\CodeAfter
+			\begin{tikzpicture}
+				\draw[double] (1|-2) -- (4|-2);
+				\foreach \r in {4,6} {\draw (1|-\r) -- (4|-\r);}
+			\end{tikzpicture}
+		\end{NiceTabular}
+	\end{center}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Syntactic Types and Semantic Types}
 	\begin{itemize}
-		\item What is the type of \textbf{a cat} or \textbf{Jupiter, a planet}?
-		      \pause
 		\item Syntactically, \textbf{a cat} and \textbf{the cat} should be interchangeable and have the same type.
 		\item No single canonical \textbf{cat} exists: that type cannot be $\e$.
 	\end{itemize}
@@ -67,10 +60,10 @@
 
 	We will use \textbf{(side-)effects} to do the difference between them:
 	\begin{equation*}
-		\w{a\ cat} = \{c \mid \w{cat} c\}
+		\w{a\ cat} = \{c \mid \w{cat} c\} \tag{Set}
 	\end{equation*}
 	\begin{equation*}
-		\w{the\ cat} = x \text{ if } \mathbf{cat}^{-1}(\top) = \{x\} \text{ else } \#
+		\w{the\ cat} = x \text{ if } \mathbf{cat}^{-1}(\top) = \{x\} \text{ else } \# \tag{Maybe}
 	\end{equation*}
 \end{frame}
 
@@ -79,33 +72,30 @@
 	\frametitle{Effects as Functors}
 	Monads model side-effects \cite{moggiComputationalLambdacalculusMonads1989}.
 	\pause
-	Here, \textbf{functors suffice}: we may forbid merging/creating effects; lighter structures are useful.
+
+	Here, functors suffice and lighter structures are useful.
 \end{frame}
 
 \begin{frame}
 	\frametitle{String Diagrams}
-	\textbf{String Diagrams} are a formalism (see \cite{hinzeIntroducingStringDiagrams2023}
-	for example) that allows to visually represent the different threads of a
+	String Diagrams are a formalism (\cite{hinzeIntroducingStringDiagrams2023})
+	that allows to visually represent the different threads of a
 	computation and the possible side-effects that appear.
 
 	\pause
-
-	\medskip
-
-	Categorical foundations: \cite{joyalGeometryTensorCalculus1991}; Used as
-	a tool for parsing: \cite{coeckeMathematicalFoundationsCompositional2010}.
+	Used as a tool for parsing in \cite{coeckeMathematicalFoundationsCompositional2010}.
 \end{frame}
 
 \begin{frame}
 	\frametitle{Other Categorical Theories}
-	\cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic},
+	\cite{marcollimatildeetchomskynoametberwickrobertc.MathematicalStructureSyntactic}
 	and \cite{senturiaAlgebraicStructureMorphosyntax2025} use Hopf algebras to
 	give a model for parsing.
 
 	\medskip
 
-	They integrate morphological features inside the syntactic
-	structures without breaking the model chosen for syntax.
+	\cite{melliesCategoricalContoursChomskySchutzenberger2025} use operads to
+	prove results on CFGs.
 \end{frame}
 
 \section{Category-theoretical type system}
@@ -113,10 +103,10 @@
 \begin{frame}
 	\frametitle{Notations}
 	\begin{itemize}
-		\item Language: $\mL$; words compose denotationally.
+		\item Language $\mL$ of denotationally composed words.
+		\item Base typing CCC $\mC$; Effects: functors $\mathcal{F}(\mL)$.
 		      \pause
-		\item Base CCC: $\mC$; effects: functors $\mathcal{F}(\mL)$.
-		\item Closure: $\bar{\mC}$ = closure of $\mC$ under $\mathcal{F}(\mL)^{*}$, products and exponentials.
+		\item Typing CCC: $\bar{\mC}$ = closure of $\mC$ under $\mathcal{F}(\mL)^{*}$, products and exponentials.
 	\end{itemize}
 	Intuition: all (effect-sequence, base type) combos, with functions/products.
 \end{frame}
@@ -149,74 +139,28 @@
 \subsection{Introducing a language}
 
 \begin{frame}
-	\frametitle{Information}
-	To present the language we need:
+	\frametitle{Presentation}
+	To present a language in our formalism, we need:
 	\begin{itemize}
-		\item The syntax of the language.
-		\item An typed lexicon (possibly with effects).
-	\end{itemize}\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Updated Lexicon}
-	\resizebox{\textwidth}{!}{
-		\setcellgapes{3pt}
-		\makegapedcells
-		\begin{NiceTabular}{>{\bf}LLL}
-			Expression & \rm Type & \lambda\text{-Term} \\
-			\word{it}{\f{G}\e}{\lambda g. g_{0}}{}
-			\word{\cdot\w{, a} \cdot}{\e \to \left(\e \to \t\right) \to \f{W}\e}{\lambda x. \lambda p. \scalar{x, p x}}{}
-			\word{which}{\left( \e \to \t \right)\to \f{S}\e}{\lambda p. \left\{x \suchthat px\right\}}{}
-			\word{the}{\left( \e \to \t \right) \to \f{M}\e}{\lambda p. x \text{ if } p^{-1}\left( \top \right) = \{x\} \text{ else } \#}{}
-			\word{a}{\left( \e \to \t \right) \to \f{D}\e}{\lambda p. \lambda s. \left\{ \scalar{x, x \ppl s}\suchthat p x\right\}}{}
-			\word{every}{\left( \e \to \t \right)\to \f{C}\e}{\lambda p. \lambda c. \forall x, px \Rightarrow cx}{}
-			\CodeAfter
-			\begin{tikzpicture}
-				\draw[double] (1|-2) -- (4|-2);
-				\foreach \r in {3,...,8} {\draw (1|-\r) -- (4|-\r);}
-			\end{tikzpicture}
-		\end{NiceTabular}
-	}
+		\item A syntax;
+		\item A typed dictionary using effects;
+		\item A typed lexicon of non-verbal constructs.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Introducing Higher-Order Constructs}
-	We implement higher-order semantics (e.g. the future and plural) via functors:
+	We implement higher-order semantics (e.g. the future and plural) via functors.
+
+	\pause
+	\smallskip
+
+	We also enforce the notion of scope islands
+	as in \cite{bumfordEffectdrivenInterpretationFunctors2025}:
 
 	\begin{equation*}
-		\columneqs{
-			\bf future\left(be\left( I, a\ cat \right)\right)
-			\xrightarrow{\tt nat} be\left( future\left( I \right), a\ cat \right)
-			\xrightarrow{\tt nat} be\left( future\left( I \right), a\ cat \right)
-		}
+		\w{if}: \left(\t \setminus \mF\left(\mL\right)^{*}\f{C}\t \right) \to \t \to \t
 	\end{equation*}
-	\pause
-	Those constructs are integrated by using natural transformations explaining
-	their propagation through other effects, as those are purely
-	semantic predicates.
-\end{frame}
-
-\begin{frame}
-	\frametitle{Introducing Higher-Order Constructs}
-	For the plural, this gives:
-	\resizebox{\textwidth}{!}{%
-		\def\arraystretch{1.3}
-		\setcellgapes{3pt}
-		\makegapedcells
-		\begin{NiceTabular}{>{\bf}c>{\cont}C>{\Pi(p) = }L}
-			CN(P)                       & p: \left(\e \to \t\right)                                & \lambda x.\left( px \land \abs{x} \geq 2 \right)                                                \\
-			\multirow{2}{*}{\bf ADJ(P)} & p: \left( \e \to \t \right)                              & \lambda x. \left( px \land \abs{x} \geq 2 \right)                                               \\
-			                            & p: \left( \e \to \t \right) \to \left( \e \to \t \right) & \lambda \nu. \lambda x. \left( p\left( \nu \right)\left( x \right) \land \abs{x} \geq 2 \right) \\
-			\multirow{2}{*}{\bf NP}     & p: \e                                                    & p                                                                                               \\
-			                            & p: \left( \e \to \t \right) \to \t                       & \lambda \nu. p\left( \Pi \nu \right)                                                            \\
-			IV(P)/VP                    & p: \e \to \t                                             & \lambda o. \left( po \land \abs{x} \geq 2 \right)                                               \\
-			TV(P)                       & p: \e \to \e \to \t                                      & \lambda s. \lambda o. \left( p\left( s \right)\left( o \right) \land \abs{s} \geq 2 \right)     \\
-			\CodeAfter
-			\begin{tikzpicture}
-				\foreach \r in {2,...,7} {\draw[dashed] ($(2|-\r) + (.1, 0)$) -- (4|-\r);}
-				\foreach \r in {2, 4, 6, 7} {\draw (1|-\r) -- (4|-\r);}
-			\end{tikzpicture}
-		\end{NiceTabular}
-	}
 \end{frame}
 
 \begin{frame}
@@ -228,38 +172,15 @@
 \subsection{Notion and usage of handlers}
 \begin{frame}
 	\frametitle{Handlers}
-	A handler for an effect $F$ is a natural transformation $F \Rightarrow \Id$ (\cite{wuEffectHandlersScope2014}).
+	Handlers for an effect $F$ are natural transformations $F \Rightarrow \Id$ (\cite{wuEffectHandlersScope2014}) which invert units.
 
-	\smallskip
+	\smallskip\pause
 
-	Handlers should invert monadic and applicative units:
-	motivating the omission of the unit rule out of certain situations.
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Defining Handlers}
-	Two types of handlers:
-	\begin{enumerate}
+  \begin{enumerate}
 		\item Language-Defined Handlers arise from fundamental properties of the considered effects.
 		      \pause
 		\item Speaker-dependant handlers which are dependent on the speaker.
 	\end{enumerate}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Scope Islands}
-	The notion of handlers allows us to enforce the notion of scope islands
-	as introduced in \cite{bumfordEffectdrivenInterpretationFunctors2025}.
-
-	\pause
-	\smallskip
-
-	We would for example have:
-	\begin{equation*}
-		\w{if}: \left(\t \setminus \mF\left(\mL\right)^{*}\f{C}\t \right) \to \t \to \t
-	\end{equation*}
-	to enforce in the type system the resolution of continuations.
 \end{frame}
 
 \subsection{String diagrams for effect handling}
@@ -267,7 +188,6 @@
 	\frametitle{String Diagrams Representation of Sentences}
 	String diagram are a representation of the side-effects and types of a
 	sentence across its computation.
-	\pause
 	\begin{center}
 		\scalebox{.8}{\inputtikz{sd-thecatsleeps}}
 	\end{center}
@@ -285,34 +205,28 @@
 	\end{thm}
 \end{frame}
 
-\begin{frame}[allowframebreaks]
+\begin{frame}
 	\frametitle{Equations on String Diagrams}
-	Properties of functors, monads, natural transformations, adjunctions
+	Properties of monads, natural transformations, adjunctions
 	and more can be explained in terms of commutative diagrams, but also as
-	string diagrams.
+	string diagram equations.
 
 	Moreover, Theorem \ref{thm:isotopy} can be implemented as string diagram
 	equations.
 \end{frame}
 
-\begin{frame}[allowframebreaks]
+\begin{frame}
 	\frametitle{Confluence of Reductions}
 	\begin{thm}[Confluence]\label{thm:confluence}
-		Our reduction system is confluent and therefore defines normal forms:
-		\begin{enumerate}
-			\item Right reductions are confluent and therefore define \emph{right} normal forms for
-			      diagrams under the equivalence relation induced by exchange.
-			\item Equational reductions are confluent and therefore define \emph{equational}
-			      normal forms for diagrams under the equivalence relation induced by exchange.
-		\end{enumerate}
+		The reduction system defined by the specified equations is confluent and
+		therefore defines normal forms.
 	\end{thm}
 
 	\smallskip
 
 	\begin{thm}[Normalization Complexity]
 		\label{thm:normalize}
-		Normalizing a diagram is done in quadratic time in
-		the number of natural transformations in it.
+		Normalization is quadratic in the number of natural transformations.
 	\end{thm}
 	This is accomplished using a formalism based on \cite{delpeuchNormalizationPlanarString2022}.
 \end{frame}
@@ -320,32 +234,23 @@
 \section{Semantic Parsing}
 \subsection{The general method}
 \begin{frame}
-	\frametitle{CFG Model of Parsing}
-	We use a Context-Free Grammar in five parts to model our typing system:
+	\frametitle{Parsing Algorithm}
+	Typing syntax trees is exponentially too long.
 
-	\begin{enumerate}[<+->]
-		\item We reintroduce the grammar defining the type and effect system.
-		\item We introduce a structure for the semantic parse trees and their labels,
-		      the combination modes from
-		      \cite{bumfordEffectdrivenInterpretationFunctors2025}.
-		\item We introduce rules for basic type combinations.
-		\item We introduce rules for higher-order unary type combinators.
-		\item We introduce rules for higher-order binary type combinators.
-	\end{enumerate}
-	\pause
-	Complexity in $\O(\abs{\mF\left(\mL\right)}\abs{\mS}n^{3})$.
+	\pause\medskip
+
+	We use a Context-Free Grammar in five parts to model our typing system.
+	This gives a complexity in $\O(\abs{\mF\left(\mL\right)}\abs{\mS}n^{3})$.
 \end{frame}
 
 \begin{frame}[allowframebreaks, fragile]
 	\frametitle{Semantic Parse Trees}
-
-	{%
-		\centering
-		\includegraphics{aux/figures/parse-tree-1.pdf}
-	}
+	\begin{center}
+		\includegraphics{aux/figures/parse-tree-2.pdf}
+	\end{center}
 
 	\centering
-	\includegraphics{aux/figures/parse-tree-2.pdf}
+	\includegraphics{aux/figures/parse-tree-1.pdf}
 
 	\begin{center}
 		\includegraphics[height=.7\pageheight]{aux/figures/parse-tree-3.pdf}
@@ -355,19 +260,19 @@
 \subsection{String diagrams for parsing}
 \begin{frame}
 	\frametitle{Combinators as String Diagrams}
-	Diagrams for combinators:
-	\medskip
 	\includegraphics[width=\textwidth]{aux/figures/combinators-sd.pdf}
 \end{frame}
 
 \begin{frame}
 	\frametitle{A Parsing Diagram Step}
-	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram.pdf}}
+  \centering
+	\includegraphics[height=.8\textheight]{aux/figures/parsing-diagram.pdf}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Another Parsing Diagram Step}
-	\rotatebox{-90}{\includegraphics[height=\textwidth]{aux/figures/parsing-diagram2.pdf}}
+  \centering
+  \includegraphics[height=.8\textheight]{aux/figures/parsing-diagram2.pdf}
 \end{frame}
 
 \begin{frame}
@@ -378,52 +283,30 @@
 
 \begin{frame}
 	\frametitle{A Full Parsing Diagram}
-	\vspace{-.25cm}
 	\centering
-	\rotatebox{-90}{\includegraphics[width=.7\pageheight]{aux/figures/3d-parsing-diagram.pdf}}
+	\includegraphics[height=.8\textheight]{aux/figures/3d-parsing-diagram.pdf}
 \end{frame}
 
 \subsection{String diagrams for reductions}
 \begin{frame}
 	\frametitle{Reducing the grammar}
-	Combinator denotations to add reductions:
-	\smallskip
-	\begin{center}
-		$	>                    = \lambda \phi. \lambda x. \phi x $\\[1.5ex]
-		$ \combML_{\f{F}}      = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}} \lambda a. M(a, y)) x $\\[1.5ex]
-		$	\combA_{\f{F}}       = \lambda M. \lambda x. \lambda y. (\fmap_{\f{F}}\lambda a. \lambda b. M(a, b))(x) \texttt{<*>} y $\\[1.5ex]
-		$	\combUL_{\f{F}}      = \lambda M. \lambda x. \lambda \phi. M(x, \lambda b. \phi(\eta_{\f{F}} b))$\\[1.5ex]
-		$ \combJ_{\f{F}}       = \lambda M. \lambda x. \lambda y. \mu_{\f{F}} M(x, y) $\\[1.5ex]
-	\end{center}
-\end{frame}
+	We translate equalities on actual denotations (from combinators or from the denotational system) into the reduction system on string diagrams.
+  \smallskip
 
-\begin{frame}
-	\frametitle{Reductions}
-	\begin{itemize}
-		\item When two effects commute, we choose an order to apply them.
-		\item We use $\combUR$ instead of using $\combMR$ or $\combDN \combMR$ when
-		      possible.
-		\item We always use modes $\combJ$, $\combC$ and $\combDN$ as early as
-		      possible.
-		      The fact this works is a consequence of Theorem \ref{thm:isotopy} on
-		      the denotation diagrams.
-		\item All the rules provided in the previous section can be rewritten here
-		      too.
-	\end{itemize}
+  Commutation of effects, Theorem \ref{thm:isotopy} and more, allow a reduction of the constant in the algorithmic complexity.
 \end{frame}
 
 \begin{frame}
 	\frametitle{Conclusion}
-	Results:
 	\begin{itemize}
 		\item Theoretical enhancement of a type system for natural language semantics;
 		      \pause
-		\item No more load on the user (comprehension) nor the parser (efficiency).
+		\item No load added neither on the user (comprehension) nor the parser (efficiency).
 	\end{itemize}
 
 	\pause\medskip
 
-	I would like to thank Simon Charlow for his advice, my mother for the
+	I would like to thank Simon Charlow for his advice and guidance, my mother for the
 	knitting, Antoine Groudiev for the rotation of the snakes in equation labels,
 	Bella Senturia, Bob Frank and Paul-André Melliès for their suggestions of
 	papers to read about categories and linguistics.
@@ -432,6 +315,11 @@
 \appendix
 
 \questionsframe
+\begin{frame}
+  \frametitle{Lexicon}
+  \centering
+  \adjustbox{height=.4\textheight}{\input{aux/figures/lexicon-table.tex}}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Functor Denotations}
