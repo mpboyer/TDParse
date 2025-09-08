@@ -1,0 +1,15 @@
+\babel@toc {british}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{General Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Categorical Introduction}{7}{0}{1}
+\beamer@sectionintoc {2}{Category-theoretical type system}{12}{0}{2}
+\beamer@subsectionintoc {2}{1}{Type system}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Introducing a language}{17}{0}{2}
+\beamer@sectionintoc {3}{Effect Handling}{21}{0}{3}
+\beamer@subsectionintoc {3}{1}{Notion and usage of handlers}{21}{0}{3}
+\beamer@subsectionintoc {3}{2}{String diagrams for effect handling}{24}{0}{3}
+\beamer@subsectionintoc {3}{3}{Reducing in string diagrams}{25}{0}{3}
+\beamer@sectionintoc {4}{Semantic Parsing}{28}{0}{4}
+\beamer@subsectionintoc {4}{1}{The general method}{28}{0}{4}
+\beamer@subsectionintoc {4}{2}{String diagrams for parsing}{33}{0}{4}
+\beamer@subsectionintoc {4}{3}{String diagrams for reductions}{38}{0}{4}

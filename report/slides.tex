@@ -10,6 +10,7 @@
 \title{Effect-Driven Parsing}
 \subtitle{Formal studies on a categorical approach to semantic parsing}
 \institute{École Normale Supérieure | Yale University}
+\author{Matthieu Boyer}
 \date{9\textsuperscript{th} September 2025}
 \addlogo{~/Pictures/Yale_University_logo.svg.png}
 \addlogo{~/DEV/latex/source/ens_psl.pdf}
@@ -22,7 +23,7 @@
 \begin{frame}
 	\frametitle{Context}
 	\begin{itemize}
-		\item Categorical formalization of a type--effects system for
+		\item Categorical formalization of a type and effects system for
 		      natural-language semantics
 		      (following \cite{bumfordEffectdrivenInterpretationFunctors2025}).
 
@@ -40,7 +41,7 @@
 			Expression & \rm Type & \lambda\text{-Term} \\
 			\word{planet}{\e\to\t}{\lambda x. \w{planet} x}{common nouns}
 			\word{Jupiter}{\e}{{\bf j}\in \Var}{proper nouns}
-			\word{sleep}{\e \to \t}{\lambda x. \w{sleep} x}{intransitive verbs}
+			\word{chase}{\e \to \e \to \t}{\lambda o. \lambda s. \mathbf{chase}\left( o \right)\left( s \right)}{transitive verbs}
 			\CodeAfter
 			\begin{tikzpicture}
 				\draw[double] (1|-2) -- (4|-2);
@@ -53,7 +54,8 @@
 \begin{frame}[fragile]
 	\frametitle{Syntactic Types and Semantic Types}
 	\begin{itemize}
-		\item Syntactically, \textbf{a cat} and \textbf{the cat} should be interchangeable and have the same type.
+		\item Syntax \textbf{a cat} and \textbf{the cat} should have the same type: $\e$.
+		      \pause
 		\item No single canonical \textbf{cat} exists: that type cannot be $\e$.
 	\end{itemize}
 	\pause
@@ -176,7 +178,7 @@
 
 	\smallskip\pause
 
-  \begin{enumerate}
+	\begin{enumerate}
 		\item Language-Defined Handlers arise from fundamental properties of the considered effects.
 		      \pause
 		\item Speaker-dependant handlers which are dependent on the speaker.
@@ -265,14 +267,14 @@
 
 \begin{frame}
 	\frametitle{A Parsing Diagram Step}
-  \centering
+	\centering
 	\includegraphics[height=.8\textheight]{aux/figures/parsing-diagram.pdf}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Another Parsing Diagram Step}
-  \centering
-  \includegraphics[height=.8\textheight]{aux/figures/parsing-diagram2.pdf}
+	\centering
+	\includegraphics[height=.8\textheight]{aux/figures/parsing-diagram2.pdf}
 \end{frame}
 
 \begin{frame}
@@ -291,9 +293,9 @@
 \begin{frame}
 	\frametitle{Reducing the grammar}
 	We translate equalities on actual denotations (from combinators or from the denotational system) into the reduction system on string diagrams.
-  \smallskip
+	\smallskip
 
-  Commutation of effects, Theorem \ref{thm:isotopy} and more, allow a reduction of the constant in the algorithmic complexity.
+	Commutation of effects, Theorem \ref{thm:isotopy} and more, allow a reduction of the constant in the algorithmic complexity.
 \end{frame}
 
 \begin{frame}
@@ -316,9 +318,9 @@
 
 \questionsframe
 \begin{frame}
-  \frametitle{Lexicon}
-  \centering
-  \adjustbox{height=.4\textheight}{\input{aux/figures/lexicon-table.tex}}
+	\frametitle{Lexicon}
+	\centering
+	\adjustbox{height=.4\textheight}{\input{aux/figures/lexicon-table.tex}}
 \end{frame}
 
 \begin{frame}
