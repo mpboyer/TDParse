@@ -13,8 +13,8 @@
 \institute{École Normale Supérieure | Yale University}
 \author{Matthieu Boyer}
 \date{\today}
-\addlogo{~/Pictures/Yale_University_logo.svg.png}
 \addlogo{~/DEV/latex/source/ens_psl.pdf}
+\addlogo{~/Pictures/Yale_University_logo.svg.png}
 
 \begin{document}
 \fancytitleframe
@@ -28,11 +28,12 @@
 \begin{frame}
 	\frametitle{Context}
 	\begin{itemize}
-		\item Categorical formalization of a type and effects system for
-		      natural-language semantics
+		\item Given meanings for words, what is the meaning of a sentence?
+		      \pause
+		\item We provide a categorical type and effects system for
+		      natural-language semantics parsing
 		      (following \cite{bumfordEffectdrivenInterpretationFunctors2025}).
-
-		\item Develop a graphical, type-driven parsing formalism that
+		\item We develop a graphical, type-driven parsing formalism that
 		      derives sentence meaning compositionally from word meanings.
 	\end{itemize}
 \end{frame}
@@ -228,17 +229,14 @@
 
 \begin{frame}
 	\frametitle{Confluence of Reductions}
-	\begin{thm}[Confluence]\label{thm:confluence}
+	\begin{thm}[Confluence]
 		The reduction system defined by the specified equations is confluent and
-		therefore defines normal forms.
+		therefore defines normal forms.\\
+		Normalization is quadratic in the number of natural transformations.
 	\end{thm}
 
 	\smallskip
 
-	\begin{thm}[Normalization Complexity]
-		\label{thm:normalize}
-		Normalization is quadratic in the number of natural transformations.
-	\end{thm}
 	This is accomplished using a formalism based on \cite{delpeuchNormalizationPlanarString2022}.
 \end{frame}
 
@@ -250,7 +248,7 @@
 
 	\pause\medskip
 
-	We use a Context-Free Grammar in five parts to model our typing system:
+	We use a Context-Free Grammar to model our typing system:
 	each typing judgement is associated with a \textbf{combinator} describing the
 	way to combine two phrases when parsing.
 
@@ -319,13 +317,6 @@
 		      \pause
 		\item No load added neither on the user (comprehension) nor the parser (efficiency).
 	\end{itemize}
-
-	\pause\medskip
-
-	I would like to thank Simon Charlow for his advice and guidance, my mother for the
-	knitting, Antoine Groudiev for the rotation of the snakes in equation labels,
-	Bella Senturia, Bob Frank and Paul-André Melliès for their suggestions of
-	papers to read about categories and linguistics.
 \end{frame}
 
 \appendix
