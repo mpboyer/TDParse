@@ -8,8 +8,8 @@
 \input{aux/preamble}
 \DeclareFieldFormat{urldate}{}
 
-\title{\contour{black}{Effect-Driven Parsing}}
-\subtitle{\contour{black}{Formal studies on a categorical approach to semantic parsing}}
+\title{Effect-Driven Parsing}
+\subtitle{Formal studies on a categorical approach to semantic parsing}
 \institute{École Normale Supérieure | Yale University}
 \author{Matthieu Boyer}
 \date{\today}
@@ -86,15 +86,15 @@
 \begin{frame}
 	\frametitle{String Diagrams}
 	String Diagrams are a formalism (\cite{hinzeIntroducingStringDiagrams2023})
-	for visualising multi-threading computations.
+	for visualising \textbf{multi-threaded} computations.
 
 	\medskip
 
-	Theoretically, the dual of a diagram in a 2-category.
+	Theoretically, they are the duals of diagrams in a $2$-category.
 
 	\pause
 	\medskip
-	Used as a tool for parsing in \cite{coeckeMathematicalFoundationsCompositional2010}.
+	Used as a \textbf{tool for parsing} in \cite{coeckeMathematicalFoundationsCompositional2010}.
 \end{frame}
 
 \begin{frame}
@@ -114,29 +114,29 @@
 \begin{frame}
 	\frametitle{Notations}
 	\begin{itemize}
-		\item Language $\mL$ of denotationally composed words.
-		\item Base typing CCC $\mC$; Effects: functors $\mathcal{F}(\mL)$.
+		\item We use a language $\mL$ of denotationally composed words.
+		\item Start from a base typing CCC $\mC$ and effects (functors) $\mathcal{F}(\mL)$.
 		      \pause
-		\item Typing CCC: $\bar{\mC}$ = closure of $\mC$ under $\mathcal{F}(\mL)^{*}$, products and exponentials.
+		\item Our typing CCC $\bar{\mC}$ is the closure of $\mC$ under $\mathcal{F}(\mL)^{*}$, products and exponentials.
 	\end{itemize}
-	Intuition: all (effect-sequence, base type) combos, with functions/products.
+	Our types are all (effect-sequence, base type) combos, with functions/products.
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Intuitionistic-style Typing Judgements}
-	\only<1-2>{We then have typing judgements for basic combinations:
+	\only<1>{
 		\begin{align*}
-			\only<1>{
-			\frac{\cont x: \tau \poulpe \cont F \in \mathcal{F}(\mL)}{\cont Fx: F\tau }\fracnotate{Cons}               \\[.25cm]
-				\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}
-			}
-			\only<2>{
-			\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App} \\[.25cm]
-				\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right)}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}}
-			}
+			\frac{\cont x: \tau \poulpe \cont F \in \mathcal{F}(\mL)}{\cont Fx: F\tau }\fracnotate{Cons} \\[.25cm]
+			\frac{\cont x: F\tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: F\tau_{2} }\fracnotate{\texttt{fmap}}
 		\end{align*}
 	}
-	\only<3>{Typing judgements for natural transformations:
+	\only<2>{
+		\begin{align*}
+			\frac{\cont x: \tau_{1} \poulpe \cont \phi: \tau_{1} \to \tau_{2}}{\cont \phi x: \tau_{2}}\fracnotate{App} \\[.25cm]
+			\frac{\cont x: A\tau_{1} \poulpe \cont \phi: A\left( \tau_{1} \to \tau_{2} \right)}{\cont \phi x: A\tau_{2}}\fracnotate{\texttt{<*>}}
+		\end{align*}
+	}
+	\only<3>{For natural transformations:
 		\begin{align*}
 			\frac{\cont x: \tau}{\cont x: A\tau}\fracnotate{\texttt{pure/return}} \\[.25cm]
 			\frac{\cont x: MM\tau}{\cont x: M\tau}\fracnotate{\texttt{>>=}}
@@ -250,7 +250,12 @@
 
 	\pause\medskip
 
-	We use a Context-Free Grammar in five parts to model our typing system.
+	We use a Context-Free Grammar in five parts to model our typing system:
+	each typing judgement is associated with a \textbf{combinator} describing the
+	way to combine two phrases when parsing.
+
+	\smallskip\pause
+
 	This gives a complexity in $\O(\abs{\mF\left(\mL\right)}\abs{\mS}n^{3})$.
 \end{frame}
 
@@ -337,6 +342,10 @@
 	\resizebox{\textwidth}{!}{\input{aux/figures/functors-table.tex}}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Plural Functor}
+	\resizebox{\textwidth}{!}{\input{aux/figures/plural-table.tex}}
+\end{frame}
 \begin{frame}
 	\frametitle{CFG of English}
 	\centering
