@@ -6,6 +6,7 @@
 \bibliography{tdparse.bib}
 
 \input{aux/preamble}
+\DeclareFieldFormat{urldate}{}
 
 \title{Effect-Driven Parsing}
 \subtitle{Formal studies on a categorical approach to semantic parsing}
@@ -81,10 +82,14 @@
 \begin{frame}
 	\frametitle{String Diagrams}
 	String Diagrams are a formalism (\cite{hinzeIntroducingStringDiagrams2023})
-	that allows to visually represent the different threads of a
-	computation and the possible side-effects that appear.
+	for visualising multi-threading computations.
+
+	\medskip
+
+	Theoretically, the dual of a diagram in a 2-category.
 
 	\pause
+	\medskip
 	Used as a tool for parsing in \cite{coeckeMathematicalFoundationsCompositional2010}.
 \end{frame}
 
@@ -419,5 +424,11 @@
 	$	\combER_{\f{R}}      = \lambda M. \lambda x. \lambda \phi. M(x, \Upsilon_{\f{R}} \phi)$\\[1.5ex]
 	$	\combDN_{\Downarrow} = \lambda M. \lambda x. \lambda y. \Downarrow M(x, y)$
 \end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Bibliography}
+	\printbibliography
+\end{frame}
+
 \end{document}
 
